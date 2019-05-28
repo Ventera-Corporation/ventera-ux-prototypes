@@ -1,0 +1,182 @@
+.btn {
+    min-width: 112px;
+    font-weight: 700;
+    padding: 0.438rem 1.5rem 0.438rem 1.5rem;
+    border-radius: 0.1875rem;
+}
+
+.btn .iqies-report-button-link {
+    text-align: left;
+}
+
+a {
+    color: #0071bc;
+}
+
+.iqies-btn-link,
+.btn-link {
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+    color: #0071bc;
+}
+
+.iqies-btn-link:disabled,
+.iqies-btn-link.disabled,
+.btn-link:disabled,
+.btn-link.disabled {
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a:not(.list-group-item):focus,
+.iqies-btn-link:not(.list-group-item):focus,
+.btn-link:not(.list-group-item):focus {
+    outline: #0096f4 solid 0.1875rem;
+    outline-offset: 0.1875rem;
+}
+
+.iqies-btn-link {
+    padding-left: 0;
+}
+
+/* Primary outline button */
+.btn-outline-primary {
+    background-color: #fff;
+    border-color: #0071bc;
+    color: #0071bc;
+}
+
+.btn-outline-primary:hover {
+    background-color: #112e51;
+    border-color: #112e51;
+}
+
+.btn-outline-primary:disabled,
+.btn-outline-primary.disabled {
+    border-color: #d6d7d9;
+    color: #aeb0b5;
+    opacity: 1;
+}
+
+.btn-outline-primary:disabled:hover,
+.btn-outline-primary.disabled:hover {
+    background-color: transparent;
+    border-color: #d6d7d9;
+    color: #aeb0b5;
+}
+
+/* Primary button */
+.btn-primary {
+    background-color: #0071bc;
+    border-color: #0071bc;
+}
+
+.btn-primary:hover {
+    background-color: #112e51;
+}
+
+.btn-primary:focus {
+    outline: #0096f4 solid 0.1875rem;
+    outline-offset: 0.1875rem;
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+    background-color: #d6d7d9;
+    border-color: #d6d7d9;
+    color: #aeb0b5;
+    opacity: 1;
+}
+
+.btn-primary:disabled:hover,
+.btn-primary.disabled:hover {
+    background-color: #f8f8f8;
+    border-color: #d6d7d9;
+    color: #aeb0b5;
+}
+
+/* Button wrapper */
+.iqies-button-wrapper {
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.iqies-button-wrapper .btn-link {
+    font-weight: 700;
+}
+
+.iqies-button-wrapper .btn,
+.iqies-button-wrapper a {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    width: auto;
+}
+
+.iqies-button-wrapper .btn:not(.btn-link),
+.iqies-button-wrapper a:not(.btn-link) {
+    min-width: 112px;
+}
+
+.iqies-button-wrapper .btn:last-child,
+.iqies-button-wrapper a:last-child {
+    margin-right: 0;
+}
+
+
+.iqies-btn-more .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* List button group */
+.iqies-list-button-group .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 0;
+    padding: 0.5rem;
+    width: auto;
+}
+
+.iqies-list-button-group .btn:not(.btn-link) {
+    min-width: 112px;
+}
+
+.iqies-list-button-group .btn:last-child {
+    margin-right: 0;
+}
+
+.iqies-list-button-group .iqies-btn-link-bold {
+    font-weight: 700;
+}
+
+.iqies-list-button-group span {
+    color: #d6d7d9;
+}
+
+.iqies-btn-return-top {
+    margin: 0 0 1.5rem;
+}
+
+.iqies-btn-return-bottom {
+    margin: 1.5rem 0 0;
+}
+
+.btn.iqies-btn-filter {
+    padding: 0;
+}
+
+.iqies-my-report-results .btn {
+    text-align: left;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .iqies-button-wrapper .btn,
+    .iqies-button-wrapper a {
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+}
