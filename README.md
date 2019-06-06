@@ -7,3 +7,11 @@ Password: iqies123
 Compile Design System Sass to design-system.css by running the following from the root level in the terminal:
 
 `sass src/assets/sass/index.scss src/assets/css/design-system.css`
+
+
+To add custom CSS styles 
+
+src/assets/prototype-styles/prototype.css
+
+
+To view project open 
