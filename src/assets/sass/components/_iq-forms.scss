@@ -1,0 +1,22 @@
+// TODO: double check these as they were imported from iqies-ui
+.custom-control {
+  margin-bottom: 1rem;
+  min-height: 1rem;
+}
+
+.custom-control-label {
+  &::before {
+    border: 2px solid $iq-color-base;
+  }
+}
+
+.custom-control-input {
+  &:disabled ~ .custom-control-label::before {
+    border-color: $iq-color-gray-dark;
+  }
+}
+
+.iq-label {
+  font-weight: $font-weight-bold;
+  margin-bottom: 0;
+}

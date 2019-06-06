@@ -1,0 +1,21 @@
+// Overrides specific to display examples in the design system
+.iq-design-system {
+  .container-fluid {
+    padding: 0;
+    > .row {
+      margin-right: 0;
+    }
+  }
+  main {
+    // background-color: $iq-color-gray-lighter;
+    // padding: 2rem 0;
+    padding: 2rem 1rem;
+  }
+  .iq-nav {
+    border-top: 0;
+  }
+  .iq-modal.example {
+    display: inline;
+    position: relative;
+  }
+}

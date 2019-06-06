@@ -1,0 +1,31 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  min-height: calc(100vh - 237px);
+  padding: 0 1rem 2rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+a,
+// TODO: phase out use of <a> tags with button styling
+.btn {
+  font-weight: $font-weight-bold;
+}
+
+p {
+  a {
+    font-weight: $font-weight-normal;
+    text-decoration: underline;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

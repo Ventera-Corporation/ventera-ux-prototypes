@@ -1,0 +1,120 @@
+// COLOR SWATCHES DISPLAYED IN DESIGN SYSTEM
+
+// Define all color swatch appearance
+@mixin iq-color-swatch($color) {
+  background-color: $color;
+}
+
+.iq-color-swatch {
+  height: 75px;
+  margin: 0 20px 20px 0;
+}
+
+.iq-primary-swatch {
+  .iq-color-swatch {
+    height: 150px;
+  }
+}
+.iq-color-item {
+  p {
+    margin-bottom: 0;
+  }
+  margin-bottom: 40px;
+}
+// Define swatch color for each _iq-theme.scss value
+.iq-color {
+  &-primary {
+    @include iq-color-swatch($iq-color-primary);
+  }
+
+  &-primary-darker {
+    @include iq-color-swatch($iq-color-primary-darker);
+  }
+
+  &-primary-darkest {
+    @include iq-color-swatch($iq-color-primary-darkest);
+  }
+
+  &-base {
+    @include iq-color-swatch($iq-color-base);
+  }
+
+  &-gray-light {
+    @include iq-color-swatch($iq-color-gray-dark);
+  }
+
+  // secondary
+  &-secondary-alt-dark {
+    @include iq-color-swatch($iq-color-secondary-alt-dark);
+  }
+
+  &-secondary-alt {
+    @include iq-color-swatch($iq-color-secondary-alt);
+  }
+
+  &-secondary-alt-light {
+    @include iq-color-swatch($iq-color-secondary-alt-light);
+  }
+
+  &-secondary-alt-lightest {
+    @include iq-color-swatch($iq-color-secondary-alt-lightest);
+  }
+  &-secondary-focus {
+    @include iq-color-swatch($iq-color-focus);
+  }
+
+  // neutrals
+  &-gray-darker {
+    @include iq-color-swatch($iq-color-gray-darker);
+  }
+
+  &-gray-dark {
+    @include iq-color-swatch($iq-color-gray-dark);
+  }
+
+  &-gray {
+    @include iq-color-swatch($iq-color-gray);
+  }
+
+  &-gray-light {
+    @include iq-color-swatch($iq-color-gray-light);
+  }
+
+  &-gray-lighter {
+    @include iq-color-swatch($iq-color-gray-lighter);
+  }
+
+  // status colors
+  &-error-dark {
+    @include iq-color-swatch($iq-color-error-dark);
+  }
+
+  &-error {
+    @include iq-color-swatch($iq-color-error);
+  }
+
+  &-error-lightest {
+    @include iq-color-swatch($iq-color-error-lightest);
+  }
+
+  &-warn {
+    @include iq-color-swatch($iq-color-warn);
+  }
+
+  &-warn-lightest {
+    @include iq-color-swatch($iq-color-warn-lightest);
+  }
+
+  &-success {
+    @include iq-color-swatch($iq-color-success);
+  }
+
+  &-success-lightest {
+    @include iq-color-swatch($iq-color-success-lightest);
+  }
+
+  // special state
+  &-visited {
+    @include iq-color-swatch($iq-color-visited);
+  }
+}

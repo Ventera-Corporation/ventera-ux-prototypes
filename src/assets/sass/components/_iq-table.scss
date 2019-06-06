@@ -1,0 +1,438 @@
+.table {
+  margin-bottom: 2rem;
+  // TODO: make whether a column wraps configurable
+  th {
+    white-space: nowrap;
+  }
+}
+
+// TODO: Clean up
+
+// .table thead td {
+//   border-bottom: 2px solid $iq-color-gray;
+// }
+
+// .table {
+//   margin-bottom: 2rem;
+
+//   address,
+//   p {
+//     margin-bottom: 0;
+//   }
+
+//   th ~ td {
+//     border-bottom: 2px solid $table-border-color;
+//   }
+
+//   tbody tr:last-child td {
+//     border-bottom: 1px solid $table-border-color;
+//   }
+
+//   thead .iq-table-header {
+//     font-size: 0.9rem;
+//     min-width: 120px;
+//     padding: 1rem;
+//     vertical-align: bottom;
+//   }
+
+//   thead th {
+//     vertical-align: middle;
+//   }
+
+//   .form-check {
+//     padding: 0;
+//   }
+// }
+
+// tr td:last-child {
+//   white-space: nowrap;
+// }
+
+// .iq-table-sort {
+//   @extend .d-block;
+//   @extend .d-sm-none;
+
+//   margin-right: 0.5rem;
+
+//   label {
+//     margin-right: 0.5rem;
+//   }
+// }
+
+// th.sortable {
+//   cursor: pointer;
+// }
+
+// th.sortable:hover {
+//   text-decoration: underline;
+// }
+
+// th.sortable span {
+//   display: inline-block;
+// }
+
+// th.sortable span {
+//   background: url('../images/icon-sort-default.svg');
+//   background-position: right;
+//   background-repeat: no-repeat;
+//   background-size: 14px 14px;
+//   padding-right: 1.2rem;
+// }
+
+// th.sortable.ascending span {
+//   background: url('../images/icon-sort-ascending.svg');
+//   background-position: right;
+//   background-repeat: no-repeat;
+//   background-size: 14px 14px;
+//   padding-right: 1.2rem;
+// }
+
+// th.sortable.descending span {
+//   background: url('../images/icon-sort-descending.svg');
+//   background-position: right;
+//   background-repeat: no-repeat;
+//   background-size: 14px 14px;
+//   padding-right: 1.2rem;
+// }
+
+// .table {
+//   @include media-breakpoint-down(sm) {
+//     tr {
+//       background-color: $white;
+//       border-bottom: 1px solid $iq-color-gray;
+//     }
+
+//     td {
+//       border: none;
+//     }
+
+//     tbody tr:last-child td {
+//       border-bottom: none;
+//     }
+//   }
+
+//   @include media-breakpoint-up(md) {
+//     thead {
+//       display: table-header-group;
+//     }
+
+//     td {
+//       ul {
+//         margin: 0;
+//         padding-left: $table-cell-padding;
+//       }
+
+//       display: table-cell;
+
+//       .iq-label-responsive {
+//         display: none;
+//       }
+//     }
+//   }
+
+//   @include media-breakpoint-down(sm) {
+//     td {
+//       display: block;
+//     }
+
+//     thead {
+//       display: none;
+
+//       th {
+//         // cursor: pointer;
+//         border-bottom: 1px solid $table-border-color;
+//         vertical-align: top;
+//       }
+//     }
+//   }
+
+//   tr.added {
+//     background-color: $iq-color-primary-alt-lightest;
+//   }
+
+//   tr.iq-table-error-row {
+//     border-left: 0.5rem solid $iq-color-error-dark;
+
+//     .iq-table-error {
+//       color: $iq-color-error;
+//       display: inline-block;
+//       padding-top: 1rem;
+
+//       p,
+//       button {
+//         display: inline;
+//       }
+//     }
+//   }
+
+//   .btn:not(.iq-btn-medium) {
+//     padding: 0 0.25rem;
+//     vertical-align: top;
+//   }
+// }
+
+// // ============================================== from iq-ui
+// // slightly deprecated, use _data-list.scss in future
+// .data-list {
+//   width: 100%;
+
+//   &.striped {
+//     .data-list-row:nth-child(even) {
+//       background-color: $iq-color-gray-lighter;
+//     }
+//   }
+
+//   &.separated {
+//     .data-list-row:not(:last-child) {
+//       border-bottom: 1px solid $iq-color-gray-lighter;
+//     }
+//   }
+
+//   &.has-border {
+//     border: 1px solid $iq-color-gray-lighter;
+//   }
+// }
+
+// .data-list-filters,
+// .data-list-sort {
+//   margin-bottom: 1rem;
+// }
+
+// .data-list-sort {
+//   .form-group {
+//     width: 100%;
+
+//     label {
+//       margin-right: 0.5rem;
+//     }
+//   }
+// }
+
+// .data-list-body {
+//   border-bottom: 1px solid $iq-color-gray-lighter;
+//   border-top: 1px solid $iq-color-gray-lighter;
+//   margin-bottom: 2rem;
+// }
+
+// .data-list-row {
+//   padding: 0.5rem 0;
+
+//   @include media-breakpoint-up(md) {
+//     padding: 0;
+//   }
+// }
+
+// .data-list-cell {
+//   padding: 0.5rem 1rem;
+
+//   @include media-breakpoint-up(md) {
+//     padding: 1rem;
+//   }
+// }
+
+// // place on .data-list-cell for full width buttons on mobile
+// .has-button {
+//   width: 100%;
+
+//   @include media-breakpoint-up(md) {
+//     width: auto;
+//   }
+// }
+
+// .has-buttons-inline {
+//   width: 100%;
+
+//   @include media-breakpoint-up(md) {
+//     width: auto;
+
+//     button {
+//       display: inline;
+//       margin-bottom: 0;
+//       width: auto;
+//     }
+//   }
+
+//   button {
+//     display: block;
+//     margin-bottom: 0.5rem;
+//     width: 100%;
+//   }
+// }
+
+// .has-buttons-block {
+//   width: 100%;
+
+//   @include media-breakpoint-up(md) {
+//     width: auto;
+
+//     button {
+//       margin-bottom: 0;
+//       width: auto;
+//     }
+//   }
+
+//   button {
+//     margin-bottom: 0.5rem;
+//     width: 100%;
+//   }
+// }
+
+// .data-list-cell-heading,
+// .data-list-cell-heading-sm,
+// .data-list-cell-content {
+//   p {
+//     margin-bottom: 0;
+//   }
+
+//   text-transform: capitalize;
+// }
+
+// .data-list-cell-heading,
+// .data-list-cell-heading-sm {
+//   color: $iq-color-primary-darkest;
+//   font-weight: $font-weight-bold;
+// }
+
+// // This was causing cascading issues with many data list headers,
+// // not sure what commenting it out will affect. TODO: do we need this?
+// // .data-list-cell-heading {
+// //   font-size: 1.2rem;
+// // }
+
+// .data-list-cell-heading-sm {
+//   font-size: 1rem;
+// }
+
+// .iq-patient-table {
+//   @include media-breakpoint-up(sm) {
+//     table-layout: fixed;
+//     width: 100%;
+
+//     td {
+//       width: auto;
+//       word-wrap: break-word;
+//     }
+
+//     td:first-child {
+//       width: 18%;
+//     }
+
+//     th:first-child {
+//       width: 18%;
+//     }
+
+//     td:nth-child(2) {
+//       width: 18%;
+//     }
+
+//     th:nth-child(2) {
+//       width: 18%;
+//     }
+//   }
+// }
+
+// // Added gray table rows highlight blue in add/remove component
+// .table-striped tbody tr.added:nth-of-type(odd) {
+//   background-color: $iq-color-primary-alt-lightest;
+// }
+
+// .legend {
+//   border-top: 1px #ddd solid;
+//   padding: 1rem 1.25rem 0;
+// }
+
+// .legend label,
+// .legend-body {
+//   font-size: 0.9rem;
+// }
+
+// .table thead th.iq-table-header {
+//   font-size: 0.9rem;
+//   min-width: 120px;
+//   padding: 1rem;
+//   vertical-align: bottom;
+// }
+
+// table thead th.iq-table-header .iq-table-header-label {
+//   cursor: pointer;
+// }
+
+// .iq-upload-table {
+//   tbody tr:last-child td {
+//     border-bottom: none;
+//   }
+
+//   td {
+//     width: 100%;
+//   }
+
+//   th {
+//     width: 100%;
+//   }
+
+//   @include media-breakpoint-up(md) {
+//     table-layout: fixed;
+//     width: 100%;
+
+//     tbody tr:last-child td {
+//       border-bottom: 1px solid $iq-color-gray;
+//     }
+
+//     td {
+//       width: auto;
+//       word-wrap: break-word;
+//     }
+
+//     th,
+//     td {
+//       width: 20%;
+
+//       &:first-child {
+//         width: 30%;
+//       }
+
+//       &:last-child {
+//         width: 112px;
+//       }
+//     }
+//   }
+// }
+
+// .iq-table-title {
+//   margin-bottom: 1rem;
+// }
+
+// .iq-table-centered-vertical {
+//   td,
+//   th {
+//     vertical-align: middle;
+//   }
+
+//   .form-group {
+//     margin: 0;
+//   }
+// }
+
+// .iq-metadata-wrapper {
+//   &.editing {
+//     border: 1px solid $table-border-color;
+//     margin: 0 0 1rem;
+//     padding: 2rem 2.5rem 0;
+//     .row:last-child {
+//       padding-bottom: 1rem;
+//     }
+//   }
+//   .row {
+//     padding: 0 0 2rem;
+//     vertical-align: top;
+//   }
+// }
+
+// .iq-table-sm {
+//   th,
+//   td {
+//     &:not(:first-child) {
+//       padding: $table-cell-padding $table-cell-padding-sm;
+//     }
+//   }
+// }
