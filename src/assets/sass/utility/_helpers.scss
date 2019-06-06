@@ -1,0 +1,38 @@
+// visual viewport reference - use during development only
+.show-breakpoints {
+  border-right: 5px solid orange;
+
+  @include media-breakpoint-up(sm) {
+    border-right: 5px solid red;
+  }
+
+  @include media-breakpoint-up(md) {
+    border-right: 5px solid blue;
+  }
+
+  @include media-breakpoint-up(lg) {
+    border-right: 5px solid green;
+  }
+
+  @include media-breakpoint-up(xl) {
+    border-right: 5px solid purple;
+  }
+}
+
+.iq-text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+// NOTE: add to element to animate -
+// animation: App-logo-spin infinite 20s linear;
+
+@keyframes iq-animation-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

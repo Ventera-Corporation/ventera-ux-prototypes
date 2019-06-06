@@ -1,68 +1,78 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="">
-    
-    <title>iQIES Prototypes Login</title>
-
-    <link rel="stylesheet" href="assets/third-party/bootstrap-4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="">
+  <title>iQIES Prototypes Login</title>
+  <link rel="stylesheet" href="src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet" href="src/assets/prototype-styles/prototype.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="col-md-6 mx-auto">
-            <h1 class="text-center my-5">iQIES Prototypes</h1>
-            <div class="card">
-                <div class="card-body">
-                    <div class="alert alert-danger" id="wrongPassword" style="display: none">Wrong password</div>
-                    <label for="password">Password</label>
-                    <div class="input-group input-group-lg">
-                        <input class="form-control" id="password" type="password" aria-label="password"/>
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" id="loginButton" type="button">Enter</button>
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="col-md-6 mx-auto">
+      <h1 class="text-center my-5">iQIES Prototypes</h1>
+      <div class="card">
+        <div class="card-body">
+          <div class="alert alert-danger" id="wrongPassword"
+            style="display: none">Wrong password</div>
+          <label for="password">Password</label>
+          <div class="input-group input-group-lg">
+            <input class="form-control" id="password" type="password"
+              aria-label="password" />
+            <div class="input-group-append">
+              <button class="btn btn-primary" id="loginButton"
+                type="button">Enter</button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <script type="text/javascript" src="assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/third-party/popper/popper.min.js"></script>
-    <script type="text/javascript" src="assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="sha1.js"></script>
+  <script type="text/javascript"
+    src="src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript"
+    src="src/assets/third-party/popper/popper.min.js">
+  </script>
+  <script type="text/javascript"
+    src="src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="sha1.js"></script>
 
-	<script type="text/javascript">
-        "use strict";
-        function loadPage(pwd) {
-            var hash= pwd;
-            hash= Sha1.hash(pwd);
-            var url= hash + "/index.html";
-            $.ajax({
-                url : url,
-                dataType : "html",
-                success : function(data) {
-                    window.location= url;
-                },
-                error : function(xhr, ajaxOptions, thrownError) {
-                    parent.location.hash= hash;
-                    $("#wrongPassword").show();
-                    //$("#password").attr("placeholder","Wrong password");
-                    $("#password").val("");
-                }
-            });
+  <script type="text/javascript">
+    "use strict";
+
+    function loadPage(pwd) {
+      var hash = pwd;
+      hash = Sha1.hash(pwd);
+      var url = hash + "/index.html";
+      $.ajax({
+        url: url,
+        dataType: "html",
+        success: function (data) {
+          window.location = url;
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+          parent.location.hash = hash;
+          $("#wrongPassword").show();
+          //$("#password").attr("placeholder","Wrong password");
+          $("#password").val("");
         }
-        $("#loginButton").on("click", function() {
-            loadPage($("#password").val());
-        });
-        $("#password").keypress(function(e) {
-            if (e.which == 13) {
-                loadPage($("#password").val());
-            }
-        });
-        $("#password").focus();
-	</script>
+      });
+    }
+    $("#loginButton").on("click", function () {
+      loadPage($("#password").val());
+    });
+    $("#password").keypress(function (e) {
+      if (e.which == 13) {
+        loadPage($("#password").val());
+      }
+    });
+    $("#password").focus();
+
+  </script>
 </body>
+
 </html>

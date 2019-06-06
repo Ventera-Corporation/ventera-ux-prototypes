@@ -1,0 +1,36 @@
+.iq-loader {
+  &-sm,
+  &-lg {
+    animation: iq-animation-spin infinite 1s linear;
+  }
+  &-sm {
+    height: 2.625rem;
+    width: 2.625rem;
+  }
+  &-lg {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+}
+
+.iq-button-loader {
+  animation: iq-animation-spin infinite 1s linear;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+  width: 1.2rem;
+}
+
+// TODO: when fixing for full screen or component position, these should not be necessary
+.iq-loader-sm,
+.iq-loader-lg {
+  margin-bottom: 2rem;
+}
+
+@keyframes iq-animation-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
