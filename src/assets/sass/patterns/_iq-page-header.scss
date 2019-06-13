@@ -29,8 +29,21 @@
 }
 
 .iq-page-header-details {
-  a {
+  a,
+  span {
     font-weight: $font-weight-normal;
+    margin-right: 1rem;
+    &::after {
+      content: '-';
+      margin-left: 1rem;
+    }
+    &:last-child {
+      &::after {
+        content: '';
+        margin-left: 0;
+      }
+      margin-right: 0;
+    }
   }
 }
 

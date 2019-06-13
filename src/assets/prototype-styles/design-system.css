@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import '../css/global.css';
 .iq-btn-focus {
   box-shadow: none;
   outline: 3px solid #0071bc;
@@ -9656,6 +9655,40 @@ h3 {
     border-color: #dee2e6;
   }
 }
+/* stylelint-disable */
+.react-time-picker {
+  display: block;
+}
+
+.react-time-picker--disabled {
+  background-color: #f8f8f8;
+  border: 1px #f1f1f1 solid;
+}
+
+.react-time-picker__inputGroup__amPm {
+  margin-left: auto;
+}
+
+.react-time-picker__wrapper {
+  border: 0;
+}
+
+/* stylelint-enable */
+/* stylelint-disable */
+.DayPickerInput-OverlayWrapper {
+  z-index: 5;
+}
+
+[for=EndDate] ~ .date-picker-input .DayPickerInput-Overlay {
+  left: inherit;
+  right: 0;
+}
+
+.DayPickerInput {
+  width: 100%;
+}
+
+/* stylelint-enable */
 .iq-btn-focus {
   box-shadow: none;
   outline: 3px solid #0071bc;
@@ -9667,6 +9700,14 @@ h3 {
 }
 .iq-accordion .card.no-border {
   border: 0;
+}
+.iq-accordion .card.no-border button {
+  color: #0071bc;
+  font-weight: 400;
+  padding: 0;
+}
+.iq-accordion .card.no-border .card-body {
+  padding-left: 1.85rem;
 }
 .iq-accordion .card-header {
   border-bottom: 0;
@@ -9699,18 +9740,22 @@ h3 {
 }
 .alert a {
   color: #205493;
-  font-weight: 400;
+  margin-top: 1rem;
+}
+.alert button {
+  font-size: 1rem;
 }
 
 .alert-content {
   display: flex;
   flex-direction: column;
+  line-height: 1;
 }
 
 .alert-heading {
   display: inline-block;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .alert-info {
@@ -10016,10 +10061,7 @@ h3 {
 
 .iq-pagination-end:hover {
   background-color: #fff;
-  color: #d6d7d9;
-}
-.iq-pagination-end .iq-icon-small:hover {
-  fill: #da4567;
+  color: #0071bc;
 }
 
 .iq-summary-bar {
@@ -10143,6 +10185,44 @@ p {
   font-style: italic;
 }
 
+.iq-button-wrapper {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.iq-button-wrapper .btn-link {
+  font-weight: 700;
+}
+.iq-button-wrapper .btn,
+.iq-button-wrapper a {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .iq-button-wrapper .btn,
+.iq-button-wrapper a {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    width: auto;
+  }
+  .iq-button-wrapper .btn:not(.btn-link),
+.iq-button-wrapper a:not(.btn-link) {
+    min-width: 112px;
+  }
+  .iq-button-wrapper .btn:last-child,
+.iq-button-wrapper a:last-child {
+    margin-right: 0;
+  }
+}
+.iq-button-wrapper .btn:not(.btn-link),
+.iq-button-wrapper a:not(.btn-link) {
+  min-width: 112px;
+}
+.iq-button-wrapper .btn-group .btn,
+.iq-button-wrapper .btn-group a {
+  margin-right: 0;
+}
+
 .iq-page-header-wrapper.inverted {
   background: #112e51;
 }
@@ -10169,8 +10249,24 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.iq-page-header-details a {
+.iq-page-header-details a,
+.iq-page-header-details span {
   font-weight: 400;
+  margin-right: 1rem;
+}
+.iq-page-header-details a::after,
+.iq-page-header-details span::after {
+  content: "-";
+  margin-left: 1rem;
+}
+.iq-page-header-details a:last-child,
+.iq-page-header-details span:last-child {
+  margin-right: 0;
+}
+.iq-page-header-details a:last-child::after,
+.iq-page-header-details span:last-child::after {
+  content: "";
+  margin-left: 0;
 }
 
 .iq-page-header-contact {
@@ -10250,6 +10346,10 @@ p a {
   text-decoration: underline;
 }
 
+.iq-asterisk {
+  color: #e31c3d;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -10257,6 +10357,10 @@ code {
 .nav:not(.nav-tabs) .nav-link {
   border-bottom: 1px solid #d6d7d9;
   color: #212121;
+}
+.nav:not(.nav-tabs) .nav-link .iq-icon-down {
+  margin-right: 0.2rem;
+  margin-top: 0.4rem;
 }
 .nav:not(.nav-tabs) .nav-link.active {
   background-color: #fff;
@@ -10291,6 +10395,9 @@ code {
 
 .iq-subnav .nav-link {
   padding-left: 3rem;
+}
+.iq-subnav .nav-link.active {
+  padding-left: 2.5rem !important;
 }
 
 footer {

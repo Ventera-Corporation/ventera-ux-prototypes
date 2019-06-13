@@ -3,6 +3,10 @@
   .nav-link {
     border-bottom: 1px solid $iq-border-color;
     color: $iq-color-base;
+    .iq-icon-down {
+      margin-right: 0.2rem;
+      margin-top: 0.4rem;
+    }
     // TODO: mixin for these states
     &.active {
       background-color: $white;
@@ -41,5 +45,9 @@
 .iq-subnav {
   .nav-link {
     padding-left: 3rem;
+    &.active {
+      // TODO: fix this specificity
+      padding-left: 2.5rem !important;
+    }
   }
 }

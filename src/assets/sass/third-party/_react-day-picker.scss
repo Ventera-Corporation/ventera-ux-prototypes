@@ -1,0 +1,21 @@
+/* stylelint-disable */
+
+.DayPickerInput-OverlayWrapper {
+  z-index: 5;
+}
+
+// Fix for date range picker to place the calendar from
+// the right side of the input wrapper
+[for='EndDate'] ~ .date-picker-input {
+  .DayPickerInput-Overlay {
+    left: inherit;
+    right: 0;
+  }
+}
+
+// TODO: add linter ignore
+.DayPickerInput {
+  width: 100%;
+}
+
+/* stylelint-enable */
