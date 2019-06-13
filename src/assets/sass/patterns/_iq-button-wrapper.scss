@@ -1,0 +1,40 @@
+// display as block and add margin to bottom on mobile
+.iq-button-wrapper {
+  margin-bottom: 0.5rem;
+  width: 100%;
+
+  .btn-link {
+    font-weight: $font-weight-bold;
+  }
+
+  .btn,
+  a {
+    display: block;
+    margin-bottom: 0.5rem;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      display: inline-block;
+      margin: 0 1rem 0 0;
+      width: auto;
+
+      &:not(.btn-link) {
+        min-width: $iq-btn-min-width;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:not(.btn-link) {
+      min-width: $iq-btn-min-width;
+    }
+  }
+
+  // for formatting the wrapper with a bootstrap btn-group
+  .btn-group .btn,
+  .btn-group a {
+    margin-right: 0;
+  }
+}
