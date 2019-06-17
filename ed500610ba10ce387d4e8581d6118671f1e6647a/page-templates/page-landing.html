@@ -168,57 +168,94 @@
           </div>
         </div>
       </section>
+      <section>
+        <div class="row">
+          <div class="col">
+            <h2>TITLE AND TEXT</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h2>Title Placeholder</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col">
+            <h2>STEP INDICATOR</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ol class="iq-step-indicator-group">
+              <li class="iq-step-indicator iq-step-indicator-active">
+                <h2>1 <span class="iq-step-indicator-line"></span></h2>
+                <p>User Category</p>
+              </li>
+              <li class="iq-step-indicator iq-step-indicator-pending">
+                <h2>2 <span class="iq-step-indicator-line"></span></h2>
+                <p>User Role</p>
+              </li>
+              <li class="iq-step-indicator iq-step-indicator-pending">
+                <h2>3 <span class="iq-step-indicator-line"></span></h2>
+                <p>Organizations</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
       <section>
-        <div class="iqies-page-content">
-          <div class="row">
-            <div class="col">
-              <h2>BUTTONS</h2>
-            </div>
+        <div class="row">
+          <div class="col">
+            <h2>BUTTONS</h2>
           </div>
-          <div class="row mb-2">
-            <div class="col">
-              <div class="iqies-button-wrapper">
-                <button class="btn btn-primary">
-                  Button Primary
-                </button>
-                <button class="btn btn-outline-primary">
-                  Button Outline Primary
-                </button>
-                <button class="btn btn-secondary">
-                  Button Secondary
-                </button>
-                <button class="btn btn-link">
-                  Button Link
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-primary btn-sm">
-                Button Small
-              </button>
+        </div>
+        <div class="row mb-2">
+          <div class="col">
+            <div class="iq-button-wrapper">
               <button class="btn btn-primary">
-                Button Regular
+                Button Primary
               </button>
-              <button class="btn btn-primary btn-lg">
-                Button Large
+              <button class="btn btn-outline-primary">
+                Button Outline Primary
               </button>
-              <button class="btn btn-primary" disabled>
-                Button Disabled
+              <button class="btn btn-secondary">
+                Button Secondary
               </button>
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button"
-                  id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+              <button class="btn btn-link">
+                Button Link
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-primary btn-sm">
+              Button Small
+            </button>
+            <button class="btn btn-primary">
+              Button Regular
+            </button>
+            <button class="btn btn-primary btn-lg">
+              Button Large
+            </button>
+            <button class="btn btn-primary" disabled>
+              Button Disabled
+            </button>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </div>
           </div>
@@ -290,19 +327,52 @@
       <section>
         <div class="row">
           <div class="col">
+            <h2>VERTICAL NAVIGATION</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <nav class="nav flex-column iq-nav" role="navigation"><a aria-current="page" class="nav-link   " tabindex="0"
+                href="/design-system/patterns/nav-vertical">Item</a><a aria-current="page" class="nav-link  active " tabindex="0"
+                href="/design-system/patterns/nav-vertical">Active Item</a><a aria-current="page" class="nav-link   success"
+                tabindex="0" href="/design-system/patterns/nav-vertical">Success Item</a><a aria-current="page"
+                class="nav-link   danger" tabindex="0" href="/design-system/patterns/nav-vertical">Error Item</a><a
+                aria-current="page" class="nav-link disabled  " tabindex="-1" href="/design-system/patterns/nav-vertical">Disabled
+                Item</a><a aria-current="page" class="nav-link   " tabindex="0" href="/design-system/patterns/nav-vertical">Sub-Nav
+                Item<span class="float-right"><svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                      d="M.5 16.5l8-8-8-8"></path>
+                  </svg></span></a>
+              <div class="iq-subnav d-none"><a aria-current="page" class="nav-link   " tabindex="0"
+                  href="/design-system/patterns/nav-vertical">blah</a><a aria-current="page" class="nav-link   " tabindex="0"
+                  href="/design-system/patterns/nav-vertical">blah</a></div><a aria-current="page" class="nav-link   " tabindex="0"
+                href="/design-system/patterns/nav-vertical">
+                <div class="nav-link-heading">With Heading</div>Item
+              </a><a aria-current="page" class="nav-link   " tabindex="0" href="/design-system/patterns/nav-vertical">
+                <div class="nav-link-heading">With Heading</div>Item<div class="nav-link-status">With Status</div>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col">
             <h2>LEFT NAVBAR</h2>
           </div>
         </div>
         <div class="row">
           <div class="col-sm5 col-md-4 col-lg-3">
             <nav class="nav flex-column iq-nav" role="navigation"><a
-                class="nav-link   " tabindex="0" href="">Nav 1</a>
-              <a class="nav-link   " tabindex="0" href="">Nav 2</a>
-              <a class="nav-link   " tabindex="0" href="">Nav 3</a>
+                class="nav-link" tabindex="0" href="">Nav 1</a>
+              <a class="nav-link" tabindex="0" href="">Nav 2</a>
+              <a class="nav-link" tabindex="0" href="">Nav 3</a>
             </nav>
           </div>
         </div>
       </section>
+
       <section>
         <div class="row">
           <div class="col">
@@ -312,8 +382,8 @@
         <div class="row">
           <div class="col-sm5 col-md-4 col-lg-3">
             <nav class="nav flex-column iq-nav" role="navigation"><a
-                class="nav-link   " tabindex="0" href="#">Nav 1</a><a
-                class="nav-link   " tabindex="0" href="#">Nav 2<span
+                class="nav-link" tabindex="0" href="#">Nav 1</a><a
+                class="nav-link" tabindex="0" href="#">Nav 2<span
                   class="float-right"><svg class="iq-icon"
                     xmlns="http://www.w3.org/2000/svg" viewBox="help"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -321,9 +391,9 @@
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
                   </svg></span></a>
-              <div class="iq-subnav d-none"><a class="nav-link   " tabindex="0"
-                  href="#">Sub Nav 1</a><a class="nav-link   " tabindex="0"
-                  href="#">Sub Nav 2</a><a class="nav-link   " tabindex="0"
+              <div class="iq-subnav d-none"><a class="nav-link" tabindex="0"
+                  href="#">Sub Nav 1</a><a class="nav-link" tabindex="0"
+                  href="#">Sub Nav 2</a><a class="nav-link" tabindex="0"
                   href="#">Sub Nav 3</a></div>
             </nav>
           </div>
@@ -455,6 +525,31 @@
       <section>
         <div class="row">
           <div class="col">
+            <H2>BIRTHDATE</H2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <div class="form-row">
+              <div class="form-group col-3">
+                <div class="form-group"><label for="id">Month</label><input type="text" class="form-control" id="id"
+                    aria-describedby="help-id" value=""></div>
+              </div>
+              <div class="form-group col-3">
+                <div class="form-group"><label for="id">Day</label><input type="text" class="form-control" id="id"
+                    aria-describedby="help-id" value=""></div>
+              </div>
+              <div class="form-group col-3">
+                <div class="form-group"><label for="id">Year</label><input type="text" class="form-control" id="id"
+                    aria-describedby="help-id" value=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col">
             <p>This is a common 2 column pattern for inputs</p>
           </div>
         </div>
@@ -579,6 +674,29 @@
                 aria-describedby="emailHelp" placeholder="Enter password">
               <small id="emailHelp" class="form-text text-muted">Help
                 text</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col">
+            <H2>CONDITIONAL CONTENT</H2>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="iq-conditional-content">
+                <div class="form-group"><label for="id">Field Label<span class="iq-asterisk">*</span></label><input type="text"
+                    class="form-control" id="id" aria-describedby="help-id" required="" value=""></div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="iq-conditional-content">
+                <div class="form-group"><label for="id">Field Label<span class="iq-asterisk">*</span></label><input type="text"
+                    class="form-control" id="id" aria-describedby="help-id" required="" value=""></div>
+                <div class="form-group"><label for="id">Field Label<span class="iq-asterisk">*</span></label><input type="text"
+                    class="form-control" id="id" aria-describedby="help-id" required="" value=""></div>
+              </div>
             </div>
           </div>
         </div>

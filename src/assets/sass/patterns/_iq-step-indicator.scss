@@ -1,0 +1,39 @@
+.iq-step-indicator-group {
+  background-color: transparent;
+  border-radius: 0.1875rem;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.iq-step-indicator {
+  color: $iq-color-gray-light;
+  width: 12rem;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &.iq-step-indicator-complete {
+    color: $black;
+  }
+
+  &.iq-step-indicator-active {
+    color: $iq-color-primary;
+  }
+
+  &:not(:last-child) {
+    .iq-step-indicator-line::before {
+      background: $iq-color-gray-lighter;
+      content: '';
+      height: 1px;
+      margin-left: 1rem;
+      margin-top: 1rem;
+      position: absolute;
+      width: 8.5rem;
+    }
+  }
+}
