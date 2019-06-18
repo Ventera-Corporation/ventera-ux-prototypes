@@ -1848,7 +1848,7 @@ pre code {
   opacity: 1;
 }
 .form-control:disabled, .form-control[readonly] {
-  background-color: #e9ecef;
+  background-color: #d6d7d9;
   opacity: 1;
 }
 
@@ -3497,7 +3497,7 @@ input[type=button].btn-block {
   box-shadow: 0 0 0 0.2rem #0096f4;
 }
 .custom-file-input:disabled ~ .custom-file-label {
-  background-color: #e9ecef;
+  background-color: #d6d7d9;
 }
 .custom-file-input:lang(en) ~ .custom-file-label::after {
   content: "Browse";
@@ -9657,12 +9657,11 @@ h3 {
 }
 /* stylelint-disable */
 .react-time-picker {
-  display: block;
+  display: block !important;
 }
 
 .react-time-picker--disabled {
-  background-color: #f8f8f8;
-  border: 1px #f1f1f1 solid;
+  background-color: #d6d7d9 !important;
 }
 
 .react-time-picker__inputGroup__amPm {
@@ -9670,7 +9669,11 @@ h3 {
 }
 
 .react-time-picker__wrapper {
-  border: 0;
+  min-width: 125px;
+  padding: 4.75px 0.375rem;
+  color: #212121 !important;
+  border: 1px solid #d6d7d9 !important;
+  border-radius: 0.25rem;
 }
 
 /* stylelint-enable */
@@ -10223,6 +10226,11 @@ p {
   margin-right: 0;
 }
 
+.iq-conditional-content {
+  border: 1px solid #d6d7d9;
+  padding: 1rem;
+}
+
 .iq-page-header-wrapper.inverted {
   background: #112e51;
 }
@@ -10290,6 +10298,45 @@ p {
 }
 .iq-vertical-data p {
   margin: 8px 0;
+}
+
+.iq-step-indicator-group {
+  background-color: transparent;
+  border-radius: 0.1875rem;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.iq-step-indicator {
+  color: #f1f1f1;
+  width: 12rem;
+}
+.iq-step-indicator h2 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.iq-step-indicator.iq-step-indicator-complete {
+  color: #000;
+}
+.iq-step-indicator.iq-step-indicator-active {
+  color: #0071bc;
+}
+.iq-step-indicator:not(:last-child) .iq-step-indicator-line::before {
+  background: #f8f8f8;
+  content: "";
+  height: 1px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  position: absolute;
+  width: 8.5rem;
+}
+
+.iq-label p {
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .iq-design-system .container-fluid {

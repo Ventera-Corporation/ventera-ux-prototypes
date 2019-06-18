@@ -1,12 +1,12 @@
 /* stylelint-disable */
 
 .react-time-picker {
-  display: block;
+  display: block !important;
 }
 
 .react-time-picker--disabled {
-  background-color: $iq-color-gray-lighter;
-  border: 1px $iq-color-gray-light solid;
+  background-color: $iq-disabled-field-bg !important;
+  // border: 1px $iq-color-gray-lighter solid;
 }
 
 .react-time-picker__inputGroup__amPm {
@@ -14,7 +14,12 @@
 }
 
 .react-time-picker__wrapper {
-  border: 0;
+  min-width: 125px; // Prevents input from growing as values are entered
+  padding: 4.75px 0.375rem; //px ok here due to third party issue
+  // font-size: 1rem;
+  color: $iq-color-base !important;
+  border: 1px solid $iq-color-gray !important;
+  border-radius: 0.25rem;
 }
 
 /* stylelint-enable */
