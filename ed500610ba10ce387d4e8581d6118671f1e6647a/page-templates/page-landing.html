@@ -12,6 +12,17 @@
   <link rel="stylesheet"
     href="../../src/assets/prototype-styles/design-system.css">
   <link rel="stylesheet" href="../../src/assets/prototype-styles/prototype.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/bootnavbar.css">
+  <link rel="stylesheet" href="css/multilevel-dropdown.css">
+  <script src="js/bootnavbar.js" ></script>
+  <script type="text/javascript" language="JavaScript" src="functions.js"></script>
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Script-type" content="text/javascript" />
+  <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -411,8 +422,10 @@
         <div class="row">
           <div class="col-sm5 col-md-4 col-lg-3">
             <nav class="nav flex-column iq-nav" role="navigation"><a
-                class="nav-link" tabindex="0" href="#">Nav 1</a><a
-                class="nav-link" tabindex="0" href="#">Nav 2<span
+                class="nav-link" tabindex="-1" href="#">Nav 1</a><a
+                class="nav-link" tabindex="-1" href="#" id="navbarDropdown1" 
+                role="button" data-toggle="dropdown" aria-haspopup="true" 
+                aria-expanded="false" >Nav 2<span
                   class="float-right"><svg class="iq-icon"
                     xmlns="http://www.w3.org/2000/svg" viewBox="help"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -420,14 +433,24 @@
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
                   </svg></span></a>
-              <div class="iq-subnav d-none"><a class="nav-link" tabindex="0"
-                  href="#">Sub Nav 1</a><a class="nav-link" tabindex="0"
-                  href="#">Sub Nav 2</a><a class="nav-link" tabindex="0"
-                  href="#">Sub Nav 3</a></div>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown1"> 
+                      <li>
+                      <!--<div class="iq-subnav d-none"> -->
+                        <li><a class="nav-link" tabindex="0" href="#">Sub Nav 1</a></li>
+                        <li><a class="nav-link" tabindex="0" href="#">Sub Nav 2</a></li>
+                        <li><a class="nav-link" tabindex="0" href="#">Sub Nav 3</a></li>
+                      <!--</div>-->
+                      </li>
+                  </ul> 
             </nav>
           </div>
         </div>
       </section>
+
+
+
+
+
       <section>
         <div class="row">
           <div class="col">
@@ -802,9 +825,9 @@
         <div class="iq-accordion">
           <div class="card ">
             <div class="card-header d-flex" id="iq-heading-one"><button
-                class="btn btn-link btn-block d-flex align-items-center iq-accordion-label"
+                class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                 type="button" aria-expanded="false"
-                aria-controls="iq-collapse-one"><svg class="iq-icon"
+                aria-controls="iq-collapse-one" onclick="accordion()"><svg class="iq-icon"
                   xmlns="http://www.w3.org/2000/svg" viewBox="help"
                   xmlns:xlink="http://www.w3.org/1999/xlink">
                   <path fill="none" stroke="#212121" stroke-linecap="round"
@@ -821,6 +844,7 @@
           </div>
         </div>
       </section>
+
       <section>
         <div class="row">
           <div class="col">
@@ -866,7 +890,7 @@
             <div class="card-header d-flex" id="iq-heading-nMGxlOFjpA"><button
                 class="btn btn-link btn-block d-flex align-items-center iq-accordion-label"
                 type="button" aria-expanded="false"
-                aria-controls="iq-collapse-Wi7mGNDqZW"><svg class="iq-icon"
+                aria-controls="iq-collapse-Wi7mGNDqZW" onclick="showHide()"><svg class="iq-icon"
                   xmlns="http://www.w3.org/2000/svg" viewBox="help"
                   xmlns:xlink="http://www.w3.org/1999/xlink">
                   <path fill="none" stroke="#0071bc" stroke-linecap="round"
@@ -879,6 +903,7 @@
                 adipisicing elit. Ab optio vero alias facilis nemo deleniti odio
                 rerum autem sunt provident. Accusantium aperiam repudiandae
                 mollitia molestiae error iste, quod ab consequuntur?</div>
+              <!-- <svg class="iq-icon iq-icon-down"></svg> --> 
             </div>
           </div>
         </div>
