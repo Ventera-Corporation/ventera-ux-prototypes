@@ -1,0 +1,28 @@
+.page-link {
+  #first,
+  #previous {
+    @include media-breakpoint-up(lg) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  #last,
+  #next {
+    @include media-breakpoint-up(lg) {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.page-item.active {
+  span:hover {
+    cursor: default;
+  }
+}
+
+.iq-pagination-end {
+  &:hover {
+    background-color: $white;
+    color: $iq-color-primary;
+  }
+}

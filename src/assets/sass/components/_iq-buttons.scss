@@ -1,0 +1,96 @@
+// Bootstrap overrides
+
+// NOTE: technically should not need the .disabled class, but leaving it in for instances of <a> links styled as buttons - which we should phase out if possible
+
+.btn {
+  &:focus {
+    box-shadow: none;
+    outline: $iq-color-focus solid 0.1875rem;
+    outline-offset: 0.1875rem;
+  }
+}
+
+.btn-primary,
+.btn-outline-primary {
+  &:hover {
+    background-color: $iq-color-primary-darkest;
+  }
+  &:disabled,
+  &.disabled {
+    border-color: $iq-color-gray-dark;
+    color: $iq-color-gray-dark;
+    opacity: 1;
+    &:hover {
+      border-color: $iq-color-gray-dark;
+      color: $iq-color-gray-dark;
+    }
+  }
+}
+
+.btn-primary {
+  &:disabled,
+  &.disabled {
+    background-color: $iq-color-gray;
+    border-color: $iq-color-gray;
+    &:hover {
+      background-color: $iq-color-gray;
+    }
+  }
+}
+
+.btn-outline-primary {
+  &:hover {
+    border-color: $iq-color-primary-darkest;
+  }
+
+  &:disabled,
+  &.disabled {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+// iQIES specific classes
+.iq-button-group {
+  button {
+    margin-right: 4rem;
+  }
+}
+
+.iq-ds-display {
+  &-hover {
+    button {
+      background-color: $iq-color-primary-darkest;
+      color: $white;
+      &:hover,
+      &:focus {
+        background-color: $iq-color-primary-darkest;
+        color: $white;
+      }
+    }
+
+    .btn-link {
+      background-color: $white;
+      color: $iq-color-primary-darkest;
+      &:hover,
+      &:focus {
+        background-color: $white;
+        color: $iq-color-primary-darkest;
+      }
+    }
+  }
+  &-focus {
+    button {
+      box-shadow: none;
+      outline: $iq-color-focus solid 0.1875rem;
+      outline-offset: 0.1875rem;
+      &:hover,
+      &:focus {
+        box-shadow: none;
+        outline: $iq-color-focus solid 0.1875rem;
+        outline-offset: 0.1875rem;
+      }
+    }
+  }
+}

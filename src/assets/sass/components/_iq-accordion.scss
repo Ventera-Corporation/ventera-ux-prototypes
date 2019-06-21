@@ -1,0 +1,43 @@
+.iq-accordion {
+  // NOTE: temp solution for arrow rotation displacement
+  .iq-icon-down {
+    margin-top: 0.4rem;
+  }
+  .card {
+    &.no-border {
+      border: 0;
+      button {
+        color: $iq-color-primary;
+        font-weight: $font-weight-normal;
+        padding: 0;
+      }
+      .card-body {
+        padding-left: 1.85rem;
+      }
+    }
+  }
+  .card-header {
+    border-bottom: 0;
+    padding: 0;
+    button {
+      padding: 1rem;
+      text-align: left;
+    }
+    span {
+      margin-left: 0.75rem;
+    }
+  }
+  .card-body {
+    padding-left: 2.7rem;
+  }
+}
+
+.iq-accordion-actions {
+  display: flex;
+  padding-right: 1rem;
+}
+
+.iq-accordion-label,
+.iq-accordion-label:hover {
+  color: $iq-color-base;
+}

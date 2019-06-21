@@ -1,0 +1,53 @@
+// Bootstrap class overrides
+.nav:not(.nav-tabs) {
+  .nav-link {
+    border-bottom: 1px solid $iq-border-color;
+    color: $iq-color-base;
+    .iq-icon-down {
+      margin-right: 0.2rem;
+      margin-top: 0.4rem;
+    }
+    // TODO: mixin for these states
+    &.active {
+      background-color: $white;
+      border-left: 8px solid $primary;
+      padding-left: 0.75rem;
+    }
+    &.success {
+      border-left: 8px solid $success;
+    }
+    &.danger {
+      border-left: 8px solid $danger;
+    }
+    &.disabled {
+      color: $iq-font-color-disabled;
+    }
+    &:hover {
+      background-color: $iq-color-gray-light;
+      text-decoration: underline;
+    }
+  }
+}
+
+.nav-link {
+  font-weight: $font-weight-normal;
+  &.active {
+    color: $primary;
+    font-weight: $font-weight-bold;
+  }
+}
+
+// iQIES specific / non-bootstrap classes
+.iq-nav {
+  border-top: 1px solid $iq-border-color;
+}
+
+.iq-subnav {
+  .nav-link {
+    padding-left: 3rem;
+    &.active {
+      // TODO: fix this specificity
+      padding-left: 2.5rem !important;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+// iq theme variables
+// ====================================================== Colors
+// Primary
+// TODO: convert to shades using darken / lighten
+$iq-color-primary: #0071bc;
+$iq-color-primary-darker: #205493;
+$iq-color-primary-darkest: #112e51;
+$iq-color-base: #212121;
+
+// Secondary
+$iq-color-secondary-alt-dark: #00a6d2;
+$iq-color-secondary-alt: #02bfe7;
+$iq-color-secondary-alt-light: #9bdaf1;
+$iq-color-secondary-alt-lightest: #e1f3f8;
+
+// Neutrals
+$iq-color-gray-darker: #5b616b; // ?? used to be #323a45
+$iq-color-gray-dark: #aeb0b5;
+$iq-color-gray: #d6d7d9;
+$iq-color-gray-light: #f1f1f1;
+$iq-color-gray-lighter: #f8f8f8;
+
+// $iq-color-gray: #e2e6e9; // form fields
+
+// Status Colors
+$iq-color-error-dark: #cd2026;
+$iq-color-error: #e31c3d;
+$iq-color-error-lightest: #f9dede;
+
+$iq-color-warn: #fdb81e;
+$iq-color-warn-lightest: #fff1d2;
+
+$iq-color-success: #2e8540;
+$iq-color-success-lightest: #e7f4e4;
+
+// Special State
+$iq-color-visited: #4c2c92;
+$iq-color-focus: #0096f4;
+
+// Box shadow from material design
+$iq-box-shadow: 0 1px 1px 0 rgba($iq-color-gray-dark, 0.08),
+  0 1px 3px 1px rgba($iq-color-gray-dark, 0.16);
+
+// ====================================================== Layout
+// Padding / Margin
+$iq-margin-small: 1rem;
+$iq-margin-normal: 2rem;
+$iq-margin-large: 3rem;
+// TODO: replace margins above with "vertical" (below)
+$iq-vspace-small: 1rem;
+$iq-vspace-medium: 2rem;
+$iq-vspace-large: 3rem;
+
+// ==================================================== Layout Elements
+$iq-border-color: $iq-color-gray;
+
+// ====================================================== Fonts / Typography
+$iq-font-family-base: 'Open Sans', sans-serif;
+$iq-headings-color-inverted: #fff;
+$iq-font-color-disabled: $iq-color-gray-dark;
+
+// ==================================================== Typography
+// NOTE: px sizes based on 16px default * rem modifier
+$iq-heading-one-size: 2.25rem; // 36px
+$iq-heading-two-size: 1.5rem; // 24px
+$iq-heading-three-size: 1.3125rem; // 21px
+$iq-heading-four-size: 1.125rem; // 18px
+$iq-heading-five-size: 1rem; // 16px
+$iq-heading-six-size: 0.875rem; // 14px
+
+// ==================================================== Alerts
+$iq-alert-border-radius: 0;
+$iq-alert-border-width: 0;
+
+// ==================================================== Breadcrumbs
+$iq-breadcrumb-color: $iq-color-primary;
+$iq-breadcrumb-color-inverted: $iq-color-secondary-alt-light;
+
+// ====================================================== Buttons
+$iq-btn-font-weight: 700;
+$iq-btn-min-width: 112px;
+.iq-btn-focus {
+  box-shadow: none;
+  outline: 3px solid $iq-color-primary;
+  outline-offset: 5px;
+}
+
+// ====================================================== Cards
+$iq-card-title-size: $iq-heading-three-size;
+$iq-card-header-background: #f0f0f0;
+
+$iq-input-focus-box-shadow: 0 0 0 2px #fff, 0 0 0 5px $iq-color-focus;
+
+// ====================================================== Form Elements
+
+$iq-disabled-field-bg: $iq-color-gray;

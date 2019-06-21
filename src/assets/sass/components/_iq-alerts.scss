@@ -1,0 +1,48 @@
+@mixin alert(
+  $border: $iq-color-secondary-alt-dark,
+  $background: $iq-color-secondary-alt-lightest
+) {
+  background-color: $background;
+  border-left: 8px solid $border;
+  color: $iq-color-base;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: $iq-color-primary-darker;
+    margin-top: 1rem;
+  }
+  button {
+    font-size: 1rem;
+  }
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.alert-heading {
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  margin-bottom: 1rem;
+}
+
+.alert-info {
+  @include alert;
+}
+
+.alert-warning {
+  @include alert($iq-color-warn, $iq-color-warn-lightest);
+}
+
+.alert-danger {
+  @include alert($iq-color-error, $iq-color-error-lightest);
+}
+
+.alert-success {
+  @include alert($iq-color-success, $iq-color-success-lightest);
+}
