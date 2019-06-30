@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="" />
+
+  <title>Component Patterns</title>
+
+  <link rel="stylesheet"
+    href="../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet" href="../../src/assets/prototype-styles/prototype.css">
+</head>
+
+<body>
+  <button id="menu-toggle" class="btn btn-sm btn-primary">
+    <span class="iq-proto-menu-hamburger d-none">Show Menu</span>
+    <span class="iq-proto-menu-close">Hide Menu</span>
+  </button>
+  <div id="iq-proto-wrapper">
+    <div id="iq-proto-sidebar-wrapper">
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Components</strong></li>
+        <li class="list-group-item"><a href="#alerts">Alerts</a></li>
+        <li class="list-group-item"><a href="#buttons">Buttons</a></li>
+        <li class="list-group-item"><a href="#breadcrumbs">Breadcrumbs</a></li>
+        <li class="list-group-item"><a href="#cards">Cards</a></li>
+        <li class="list-group-item"><a href="#collapse">Collapse</a></li>
+        <li class="list-group-item"><a href="#forms">Forms</a></li>
+        <li class="list-group-item"><a href="#headerFooter">Header + Footer</a>
+        </li>
+        <li class="list-group-item"><a href="#modals">Modals</a></li>
+        <li class="list-group-item"><a href="#navigation">Navigation</a></li>
+        <li class="list-group-item"><a href="#pageHeaders">Page Headers</a></li>
+        <li class="list-group-item"><a href="#pagination">Pagination</a></li>
+        <li class="list-group-item"><a href="#stepIndicator">Step Indicator</a>
+        </li>
+        <li class="list-group-item"><a href="#tables">Tables</a></li>
+        <li class="list-group-item"><a href="#text">Text</a></li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="../index.html">Back to Table of
+            Contents</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="container">
+        <section>
+          <div class="row">
+            <div class="col">
+              <h1 class="mt-5">Component Patterns</h1>
+            </div>
+          </div>
+        </section>
+
+        <!-- ALERTS -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="alerts">ALERTS</h2>
+          </div>
+        </div>
+        <section>
+          <div class="alert alert-info" role="alert">
+            <div class="alert-content">Info alert</div>
+          </div>
+        </section>
+        <section>
+          <div class="alert alert-success" role="alert">
+            <div class="alert-content">Success alert</div>
+          </div>
+        </section>
+        <section>
+          <div class="alert alert-warning" role="alert">
+            <div class="alert-content">Warning alert</div>
+          </div>
+        </section>
+        <section>
+          <div class="alert alert-danger" role="alert">
+            <div class="alert-content">Error alert</div>
+          </div>
+        </section>
+        <section>
+          <div class="alert alert-info" role="alert">
+            <div class="alert-content">
+              <p class="alert-heading">Kitchen Sink</p>Alert with heading &amp;
+              dismissible
+            </div>
+            <button type="button" class="close" data-dismiss="alert"
+              aria-label="Close">
+              <svg class="iq-icon-right iq-icon"
+                xmlns="http://www.w3.org/2000/svg" viewBox="help"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path fill="#0071bc"
+                  d="M15.8 14.86L8.94 8l6.86-6.86a.67.67 0 0 0-.94-.94L8 7.06 1.14.2a.67.67 0 0 0-.94.94L7.06 8 .2 14.86a.67.67 0 0 0 .94.94L8 8.94l6.86 6.86a.67.67 0 1 0 .94-.94z">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+
+        <!-- BUTTONS -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="buttons">BUTTONS</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row mb-2">
+            <div class="col">
+              <div class="iq-button-wrapper">
+                <button class="btn btn-primary">
+                  Button Primary
+                </button>
+                <button class="btn btn-outline-primary">
+                  Button Outline Primary
+                </button>
+                <button class="btn btn-secondary">
+                  Button Secondary
+                </button>
+                <button class="btn btn-link">
+                  Button Link
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-primary btn-sm">
+                Button Small
+              </button>
+              <button class="btn btn-primary">
+                Button Regular
+              </button>
+              <button class="btn btn-primary btn-lg">
+                Button Large
+              </button>
+              <button class="btn btn-primary" disabled>
+                Button Disabled
+              </button>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button"
+                  id="dropdownMenuButton" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- BREADCRUMBS -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="breadcrumbs">BREADCRUMBS</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">First</a></li>
+                  <li class="breadcrumb-item"><a href="/">Second</a></li>
+                  <li class="breadcrumb-item">Current</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- CARDS -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="cards">CARD</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <div class="card iq-card">
+                <div class="card-body">
+                  <h3>A Card</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Dolorum, error iusto nam ex iure eaque quae
+                    asperiores voluptates repudiandae debitis explicabo cumque
+                    eos
+                    beatae labore! Officiis, explicabo.
+                    Architecto, repellat tempore.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- COLLAPSE -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="collapse">COLLAPSE</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Default Accordion</h3>
+            </div>
+          </div>
+          <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="iq-heading-one">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#iq-collapse-one"
+                  aria-controls="iq-collapse-one" type="button"
+                  onclick="toggleArrow('iq-heading-one')" aria-expanded="false">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10"
+                      d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Accordion</span>
+                </button>
+              </div>
+              <div id="iq-collapse-one" class="collapse"
+                aria-labelledby="iq-heading-one">
+                <div class="card-body">
+                  Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Ab optio vero alias facilis nemo deleniti
+                  odio
+                  rerum autem sunt provident. Accusantium aperiam repudiandae
+                  mollitia molestiae error iste, quod ab consequuntur?
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Default Accordion with Action</h3>
+            </div>
+          </div>
+          <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="iq-heading-two">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label"
+                  type="button" aria-expanded="false" data-toggle="collapse"
+                  onclick="toggleArrow('iq-heading-two')"
+                  data-target="#iq-collapse-two"
+                  aria-controls="iq-collapse-two">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10"
+                      d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Accordion with Actions</span>
+                </button>
+                <div class="iq-accordion-actions">
+                  <button type="button" class="btn btn-link">
+                    Delete
+                  </button><button type="button" class="btn btn-link">
+                    Edit
+                  </button>
+                </div>
+              </div>
+              <div id="iq-collapse-two" class="collapse"
+                aria-labelledby="iq-heading-two">
+                <div class="card-body">
+                  Lorem ipsum dolor, sit amet consectetur
+                  adipisicing elit. Hic, voluptate a unde eaque assumenda illum!
+                  Maiores aliquid reprehenderit eaque, ex explicabo laborum rem,
+                  error, placeat voluptas impedit maxime dicta corporis!
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>
+                Show / Hide
+              </h3>
+            </div>
+          </div>
+          <div class="iq-accordion">
+            <div class="card no-border" id="iq-heading-show-hide">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label"
+                  data-target="#iq-collapse-show-hide"
+                  onclick="toggleArrow('iq-heading-show-hide')"
+                  data-toggle="collapse" type="button" aria-expanded="false"
+                  aria-controls="iq-collapse-show-hide">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#0071bc" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10"
+                      d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Show / Hide</span>
+                </button>
+              </div>
+              <div id="iq-collapse-show-hide" class="collapse"
+                aria-labelledby="iq-heading-show-hide">
+                <div class="card-body px-0">
+                  Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Ab optio vero alias facilis nemo deleniti
+                  odio
+                  rerum autem sunt provident. Accusantium aperiam repudiandae
+                  mollitia molestiae error iste, quod ab consequuntur?
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- FORMS -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="forms">FORMS</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Birthdate</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="form-row">
+                <div class="form-group col-3">
+                  <div class="form-group">
+                    <label for="id">Month</label><input type="text"
+                      class="form-control" id="id" aria-describedby="help-id"
+                      value="">
+                  </div>
+                </div>
+                <div class="form-group col-3">
+                  <div class="form-group">
+                    <label for="id">Day</label><input type="text"
+                      class="form-control" id="id" aria-describedby="help-id"
+                      value="">
+                  </div>
+                </div>
+                <div class="form-group col-3">
+                  <div class="form-group">
+                    <label for="id">Year</label><input type="text"
+                      class="form-control" id="id" aria-describedby="help-id"
+                      value="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <p>This is a common 2 column pattern for inputs</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputText1">Input Label</label>
+                <input type="text" class="form-control" id="exampleInputText1"
+                  aria-describedby="textHelp" placeholder="Enter text">
+                <small id="textHelp" class="form-text text-muted">
+                  Help
+                  text
+                </small>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputText2">Input Label</label>
+                <input type="text" class="form-control" id="exampleInputText2"
+                  aria-describedby="textHelp" placeholder="Enter text">
+                <small id="textHelp" class="form-text text-muted">
+                  Help
+                  text
+                </small>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <p>This is a common 3 column pattern for inputs</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group">
+                <label for="exampleInputText1">Input Label</label>
+                <input type="text" class="form-control" id="exampleInputText1"
+                  aria-describedby="textHelp" placeholder="Enter text">
+                <small id="textHelp" class="form-text text-muted">
+                  Help
+                  text
+                </small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="exampleInputText2">Input Label</label>
+                <input type="text" class="form-control" id="exampleInputText2"
+                  aria-describedby="textHelp" placeholder="Enter text">
+                <small id="textHelp" class="form-text text-muted">
+                  Help
+                  text
+                </small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="exampleInputText3">Input Label</label>
+                <input type="text" class="form-control" id="exampleInputText3"
+                  aria-describedby="textHelp" placeholder="Enter text">
+                <small id="textHelp" class="form-text text-muted">
+                  Help
+                  text
+                </small>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <p>Inputs expand to the full width of their parent container</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="exampleInputText1">Input Label</label>
+                <input type="text" class="form-control" id="exampleInputText1"
+                  aria-describedby="textHelp" placeholder="Enter text">
+                <small id="textHelp" class="form-text text-muted">
+                  Help
+                  text
+                </small>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="exampleSelect">Select Label</label>
+                <select id="exampleSelect" class="custom-select">
+                  <option>Select One</option>
+                  <option value="customValueOne">Option One</option>
+                  <option value="customValueTwo">Option Two</option>
+                  <option value="customValueThree">Option Three</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <p>
+                By changing the "type" the input can accept text, email or
+                password
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group">
+                <label for="exampleInputText1">Input Label</label>
+                <input type="text" class="form-control" id="exampleInputText1"
+                  aria-describedby="textHelp" placeholder="Enter text">
+                <small id="textHelp" class="form-text text-muted">
+                  Help
+                  text
+                </small>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="exampleEmail">Input Email</label>
+                <input type="email" class="form-control" id="exampleEmail"
+                  aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="examplePassword">Input Password</label>
+                <input type="password" class="form-control" id="examplePassword"
+                  aria-describedby="emailHelp" placeholder="Enter password">
+                <small id="emailHelp" class="form-text text-muted">
+                  Help
+                  text
+                </small>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Conditional Content</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="iq-conditional-content">
+                <div class="form-group">
+                  <label for="id">
+                    Field Label<span class="iq-asterisk">*</span>
+                  </label><input type="text" class="form-control" id="id"
+                    aria-describedby="help-id" required="" value="">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="iq-conditional-content">
+                <div class="form-group">
+                  <label for="id">
+                    Field Label<span class="iq-asterisk">*</span>
+                  </label><input type="text" class="form-control" id="id"
+                    aria-describedby="help-id" required="" value="">
+                </div>
+                <div class="form-group">
+                  <label for="id">
+                    Field Label<span class="iq-asterisk">*</span>
+                  </label><input type="text" class="form-control" id="id"
+                    aria-describedby="help-id" required="" value="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <fieldset>
+            <legend>Radio Legend</legend>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="radio-button-1" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label" for="radio-button-1">
+                Radio
+                Button 1
+              </label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="radio-button-2" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label" for="radio-button-2">
+                Radio
+                Button 2
+              </label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="radio-button-disabled" name="example-name"
+                class="custom-control-input" value="value" disabled>
+              <label class="custom-control-label" for="radio-button-disabled">
+                Radio
+                Button Disabled
+              </label>
+            </div>
+          </fieldset>
+        </section>
+        <section>
+          <fieldset>
+            <legend>Checkbox Legend</legend>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" id="checkbox-button-1" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label" for="checkbox-button-1">
+                Checkbox 1
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" id="checkbox-button-2" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label" for="checkbox-button-2">
+                Checkbox 2
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" id="checkbox-button-disabled"
+                name="example-name" class="custom-control-input" value="value"
+                disabled>
+              <label class="custom-control-label"
+                for="checkbox-button-disabled">
+                Checkbox Disabled
+              </label>
+            </div>
+          </fieldset>
+        </section>
+
+
+        <!-- HEADER + FOOTER -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="headerFooter">HEADER + FOOTER</h2>
+          </div>
+        </div>
+        <section>
+          <header role="banner">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <nav>
+                    <a href="./">
+                      <img src="../../src/assets/images/logo-iqies.svg"
+                        class="iq-logo" alt="iQIES Logo" />
+                    </a>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </header>
+        </section>
+        <section>
+          <footer>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-10">
+                  <div class="iq-footer-content">
+                    <div class="row">
+                      <div class="col">
+                        <div class="iq-footer-heading">
+                          <a href="/">
+                            <img
+                              src="../../src/assets/images/logo-iqies-reversed.svg"
+                              class="logo iq-logo" alt="Logo iQIES White">
+                          </a><img src="../../src/assets/images/logo-cms.svg"
+                            class="img-fluid logo cms-logo d-lg-none" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <a href="/help">Help</a><span>
+                          (800)
+                          339-9313
+                        </span><a href="mailto:help@qtso.com">Email Us</a><a
+                          href="https://qtso.cms.gov/" target="_blank"
+                          rel="noopener noreferrer">
+                          QTSO <img src="../../src/assets/images/logo-cms.svg"
+                            class="iq-external-link-icon" alt="">
+                        </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                          target="_blank" rel="noopener noreferrer">
+                          Medicare <img
+                            src="../../src/assets/images/icon-link-external.svg"
+                            class="iq-external-link-icon" alt="">
+                        </a><a href="/privacy-policy">Privacy Policy</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="iq-footer-links">
+                          <a href="https://www.medicare.gov/about-us/plain-writing"
+                            target="_blank" rel="noopener noreferrer">
+                            Plain Writing <img
+                              src="../../src/assets/images/icon-link-external.svg"
+                              class="iq-external-link-icon" alt="">
+                          </a><a
+                            href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                            target="_blank" rel="noopener noreferrer">
+                            Freedom of
+                            Information Act <img
+                              src="../../src/assets/images/icon-link-external.svg"
+                              class="iq-external-link-icon" alt="">
+                          </a><a
+                            href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                            target="_blank" rel="noopener noreferrer">
+                            No Fear Act <img
+                              src="../../src/assets/images/icon-link-external.svg"
+                              class="iq-external-link-icon" alt="">
+                          </a><a href="https://get.adobe.com/reader/"
+                            target="_blank" rel="noopener noreferrer">
+                            Adobe Acrobat <img
+                              src="../../src/assets/images/icon-link-external.svg"
+                              class="iq-external-link-icon" alt="">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 d-flex align-items-center">
+                  <img src="../../src/assets/images/logo-cms.svg"
+                    class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+                </div>
+              </div>
+            </div>
+          </footer>
+        </section>
+
+
+        <!-- MODALS -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="modals">MODALS</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Modal with Title</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <p class="modal-title">Title</p>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Doloremque obcaecati doloribus et tempora
+                      tenetur distinctio nihil tempore veniam quasi.
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button"
+                      class="btn btn-primary">Action</button>
+                    <button type="button" class="btn btn-link">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Modal without Title</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Doloremque obcaecati doloribus et tempora tenetur
+                      distinctio
+                      nihil
+                      tempore veniam quasi.
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                      Action
+                    </button><button type="button" class="btn btn-link">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- NAVIGATION -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="navigation">NAVIGATION</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Vertical Navigation</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <nav class="nav flex-column iq-nav" role="navigation">
+                <a aria-current="page" class="nav-link   " tabindex="0"
+                  href="/design-system/patterns/nav-vertical">Item</a><a
+                  aria-current="page" class="nav-link  active " tabindex="0"
+                  href="/design-system/patterns/nav-vertical">Active Item</a><a
+                  aria-current="page" class="nav-link   success" tabindex="0"
+                  href="/design-system/patterns/nav-vertical">Success Item</a><a
+                  aria-current="page" class="nav-link   danger" tabindex="0"
+                  href="/design-system/patterns/nav-vertical">Error Item</a><a
+                  aria-current="page" class="nav-link disabled  " tabindex="-1"
+                  href="/design-system/patterns/nav-vertical">
+                  Disabled
+                  Item
+                </a><a aria-current="page" class="nav-link   " tabindex="0"
+                  href="/design-system/patterns/nav-vertical">
+                  Sub-Nav
+                  Item<span class="float-right">
+                    <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path fill="none" stroke="#212121" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-miterlimit="10"
+                        d="M.5 16.5l8-8-8-8"></path>
+                    </svg>
+                  </span>
+                </a>
+                <div class="iq-subnav d-none">
+                  <a aria-current="page" class="nav-link   " tabindex="0"
+                    href="/design-system/patterns/nav-vertical">blah</a><a
+                    aria-current="page" class="nav-link   " tabindex="0"
+                    href="/design-system/patterns/nav-vertical">blah</a>
+                </div><a aria-current="page" class="nav-link   " tabindex="0"
+                  href="/design-system/patterns/nav-vertical">
+                  <div class="nav-link-heading">With Heading</div>Item
+                </a><a aria-current="page" class="nav-link   " tabindex="0"
+                  href="/design-system/patterns/nav-vertical">
+                  <div class="nav-link-heading">With Heading</div>Item<div
+                    class="nav-link-status">With Status</div>
+                </a>
+              </nav>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Left Navbar</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-5 col-md-4 col-lg-3">
+              <nav class="nav flex-column iq-nav" role="navigation">
+                <a class="nav-link active" tabindex="0" id="tab1Tab"
+                  href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1"
+                  aria-selected="true">Tab 1</a>
+                <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2"
+                  data-toggle="tab" role="tab" aria-controls="tab2"
+                  aria-selected="false">Tab 2</a>
+                <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3"
+                  data-toggle="tab" role="tab" aria-controls="tab3"
+                  aria-selected="false">Tab 3</a>
+                <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4"
+                  data-toggle="tab" role="tab" aria-controls="tab4"
+                  aria-selected="false">Tab 4</a>
+                <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5"
+                  data-toggle="tab" role="tab" aria-controls="tab5"
+                  aria-selected="false">Tab 5</a>
+                <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6"
+                  data-toggle="tab" role="tab" aria-controls="tab6"
+                  aria-selected="false">Tab 6</a>
+                <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7"
+                  data-toggle="tab" role="tab" aria-controls="tab7"
+                  aria-selected="false">Tab 7</a>
+                <a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8"
+                  data-toggle="tab" role="tab" aria-controls="tab8"
+                  aria-selected="false">Tab 8</a>
+                <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9"
+                  data-toggle="tab" role="tab" aria-controls="tab9"
+                  aria-selected="false">Tab 9</a>
+                <a class="nav-link" tabindex="0" id="tab10Tab" href="#tab10"
+                  data-toggle="tab" role="tab" aria-controls="tab10"
+                  aria-selected="false">Tab 10</a>
+              </nav>
+            </div>
+            <div class="col-sm-7 col-md-8 col-lg-9">
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab1" role="tabpanel"
+                  aria-labelledby="tab1Tab">
+                  <h2>Tab 1 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab2" role="tabpanel"
+                  aria-labelledby="tab2Tab">
+                  <h2>Tab 2 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab3" role="tabpanel"
+                  aria-labelledby="tab3Tab">
+                  <h2>Tab 3 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab4" role="tabpanel"
+                  aria-labelledby="tab4Tab">
+                  <h2>Tab 4 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab5" role="tabpanel"
+                  aria-labelledby="tab5Tab">
+                  <h2>Tab 5 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab6" role="tabpanel"
+                  aria-labelledby="tab6Tab">
+                  <h2>Tab 6 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab7" role="tabpanel"
+                  aria-labelledby="tab7Tab">
+                  <h2>Tab 7 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab8" role="tabpanel"
+                  aria-labelledby="tab8Tab">
+                  <h2>Tab 8 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab9" role="tabpanel"
+                  aria-labelledby="tab9Tab">
+                  <h2>Tab 9 Title</h2>
+                </div>
+                <div class="tab-pane" id="tab10" role="tabpanel"
+                  aria-labelledby="tab10Tab">
+                  <h2>Tab 10 Title</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Left Navbar with Subnav</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm5 col-md-4 col-lg-3">
+              <nav class="nav flex-column iq-nav" role="navigation">
+                <a class="nav-link" tabindex="-1" href="#">Nav 1</a><a
+                  class="nav-link" tabindex="-1" href="#" id="navbarDropdown1"
+                  role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  Nav 2<span class="float-right">
+                    <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path fill="none" stroke="#212121" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-miterlimit="10"
+                        d="M.5 16.5l8-8-8-8"></path>
+                    </svg>
+                  </span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <li>
+                    <!--<div class="iq-subnav d-none"> -->
+                  <li><a class="nav-link" tabindex="0" href="#">Sub Nav 1</a>
+                  </li>
+                  <li><a class="nav-link" tabindex="0" href="#">Sub Nav 2</a>
+                  </li>
+                  <li><a class="nav-link" tabindex="0" href="#">Sub Nav 3</a>
+                  </li>
+                  <!--</div>-->
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- PAGE HEADERS -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="pageHeaders">PAGE HEADERS</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Default Page Header</h3>
+            </div>
+          </div>
+          <div class="iq-page-header-wrapper">
+            <div class="container">
+              <div class="iq-page-header">
+                <div class="row">
+                  <div class="col d-flex flex-column justify-content-between">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">Providers</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">
+                            iQIES
+                            289
+                          </a>
+                        </li>
+                        <li class="breadcrumb-item">Survey 86</li>
+                      </ol>
+                    </nav>
+                    <div class="iq-page-header-content">
+                      <h1>Survey 86</h1>
+                      <div class="iq-page-header-description">
+                        Description
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Inverted Page Header</h3>
+            </div>
+          </div>
+          <div class="iq-page-header-wrapper inverted">
+            <div class="container">
+              <div class="iq-page-header">
+                <div class="row">
+                  <div class="col d-flex flex-column justify-content-between">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">Providers</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">
+                            iQIES
+                            289
+                          </a>
+                        </li>
+                        <li class="breadcrumb-item">Survey 86</li>
+                      </ol>
+                    </nav>
+                    <div class="iq-page-header-content">
+                      <h1>Survey 86</h1>
+                      <div class="iq-page-header-description">
+                        Description
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Inverted with Contact Info and Summary Bar</h3>
+            </div>
+          </div>
+          <div class="iq-page-header-wrapper inverted">
+            <div class="container">
+              <div class="iq-page-header">
+                <div class="row">
+                  <div class="col d-flex flex-column justify-content-between">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">Providers</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">iQIES 289</a>
+                        </li>
+                        <li class="breadcrumb-item">Survey 86</li>
+                      </ol>
+                    </nav>
+                    <div class="iq-page-header-content">
+                      <h1>Survey 86</h1>
+                      <div class="iq-page-header-details">
+                        <span>Text</span><a
+                          href="/design-system/patterns">Link</a><a
+                          href="/design-system/patterns">Link</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-3 iq-page-header-contact">
+                    <address>
+                      667 Bent Ridge Lane<br>Suite 1000<br>Lorton, VA
+                      60010<br>
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-summary-bar">
+              <div class="container">
+                <div class="row ">
+                  <div class="col d-flex align-items-center">
+                    <div class="iq-summary-bar-data" data-index="0">
+                      <p>Survey Type</p>
+                      <p>Health</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="1">
+                      <p>Status</p>
+                      <p>Open</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="2">
+                      <p>Start Date</p>
+                      <p>11/01/2018</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="3">
+                      <p>End Date</p>
+                      <p>11/30/2018</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="4">
+                      <p>Revisit Status</p>
+                      <p>Recommended</p>
+                    </div>
+                    <div class="iq-summary-bar-action">
+                      <button class="btn btn-link">
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- PAGINATION -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="pagination">PAGINATION</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link iq-pagination-end d-none d-md-block"
+                      href="#">
+                      <svg class="iq-icon-left iq-icon-small"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="help"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g transform="translate(-1060.5 -568.5)">
+                          <path fill="none" stroke="#0071bc"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            stroke-miterlimit="10"
+                            transform="rotate(180 539.772 292.75)"
+                            d="M9.543.5L.5 8.5l9.043 8"></path>
+                          <path fill="none" stroke="#0071bc"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            stroke-miterlimit="10"
+                            transform="rotate(180 535.272 292.75)"
+                            d="M9.543.5L.5 8.5l9.043 8"></path>
+                        </g>
+                      </svg><span class="d-none d-lg-inline ml-2">First</span>
+                    </a>
+                  </li>
+                  <li class="page-item disabled">
+                    <a class="page-link iq-pagination-end d-none d-md-block"
+                      href="#">
+                      <svg class="iq-icon-left iq-icon-small"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="help"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path fill="none" stroke="#0071bc"
+                          stroke-linecap="round" stroke-linejoin="round"
+                          stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                      </svg><span
+                        class="d-none d-lg-inline ml-2">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item"><a class="page-link" href="#">6</a></li>
+                  <li class="page-item"><a class="page-link" href="#">7</a></li>
+                  <li class="page-item"><a class="page-link" href="#">8</a></li>
+                  <li class="page-item disabled">
+                    <a class="page-link iq-pagination-end d-none d-md-block"
+                      href="#">
+                      <span class="d-none d-lg-inline mr-2">
+                        Next
+                      </span><svg class="iq-icon-right iq-icon-small"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="help"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path fill="none" stroke="#0071bc"
+                          stroke-linecap="round" stroke-linejoin="round"
+                          stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="page-item disabled">
+                    <a class="page-link iq-pagination-end d-none d-md-block"
+                      href="#">
+                      <span class="d-none d-lg-inline mr-2">Last</span><svg
+                        class="iq-icon-right iq-icon-small"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="help"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g transform="translate(-1060.5 -568.5)">
+                          <path fill="none" stroke="#0071bc"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            stroke-miterlimit="10"
+                            transform="rotate(180 539.772 292.75)"
+                            d="M9.543.5L.5 8.5l9.043 8"></path>
+                          <path fill="none" stroke="#0071bc"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            stroke-miterlimit="10"
+                            transform="rotate(180 535.272 292.75)"
+                            d="M9.543.5L.5 8.5l9.043 8"></path>
+                        </g>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- STEP INDICATOR -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="stepIndicator">STEP INDICATOR</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <ol class="iq-step-indicator-group">
+                <li class="iq-step-indicator iq-step-indicator-active">
+                  <h2>1 <span class="iq-step-indicator-line"></span></h2>
+                  <p>User Category</p>
+                </li>
+                <li class="iq-step-indicator iq-step-indicator-pending">
+                  <h2>2 <span class="iq-step-indicator-line"></span></h2>
+                  <p>User Role</p>
+                </li>
+                <li class="iq-step-indicator iq-step-indicator-pending">
+                  <h2>3 <span class="iq-step-indicator-line"></span></h2>
+                  <p>Organizations</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- TABLES -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="tables">TABLES</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">This is a very long heading </th>
+                      <th scope="col">Normal </th>
+                      <th scope="col">Short </th>
+                      <th scope="col">Normal Heading </th>
+                      <th scope="col">Heading </th>
+                      <th scope="col">Heading </th>
+                      <th scope="col">Pretty Long heading </th>
+                      <th scope="col">Heading </th>
+                      <th scope="col">Heading </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>This is some very very very long cell content</td>
+                      <td>Cell B</td>
+                      <td>Cell C</td>
+                      <td>Cell D</td>
+                      <td>Cell E</td>
+                      <td>Cell F</td>
+                      <td>Cell G</td>
+                      <td>Cell H</td>
+                      <td>Cell I</td>
+                    </tr>
+                    <tr>
+                      <td>Cell A</td>
+                      <td>Cell B</td>
+                      <td>Cell C</td>
+                      <td>Cell D</td>
+                      <td>Cell E</td>
+                      <td>Cell F</td>
+                      <td>Cell G</td>
+                      <td>Cell H</td>
+                      <td>Cell I</td>
+                    </tr>
+                    <tr>
+                      <td>Cell A</td>
+                      <td>Cell B</td>
+                      <td>Cell C</td>
+                      <td>Cell D</td>
+                      <td>Cell E</td>
+                      <td>Cell F</td>
+                      <td>Cell G</td>
+                      <td>Cell H</td>
+                      <td>Cell I</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- TEXT -->
+        <div class="row">
+          <div class="col">
+            <h2 class="iq-proto-heading" id="text">TEXT</h2>
+          </div>
+        </div>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>View State Vertical</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="iq-label">
+                <p>Default Label</p>
+              </div>
+              <p>Default Content</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="row">
+            <div class="col">
+              <h3>Title and Text</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h2>Title Placeholder</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="text/javascript"
+    src="../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+  </script>
+  <script type="text/javascript"
+    src="../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript"
+    src="../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="../../src/assets/js/scripts.js"></script>
+</body>
+
+</html>
