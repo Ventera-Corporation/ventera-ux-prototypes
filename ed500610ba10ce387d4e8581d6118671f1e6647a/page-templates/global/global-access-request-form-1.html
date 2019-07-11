@@ -46,13 +46,27 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    Home
+                    <a href="../../index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    Access Request Form
                   </li>
                 </ol>
               </nav>
-              <div class="iq-page-header-content">
-                <h1>Welcome to iQIES</h1>
-              </div>
+              <ol class="iq-step-indicator-group">
+                <li class="iq-step-indicator iq-step-indicator-active">
+                  <h2>1 <span class="iq-step-indicator-line"></span></h2>
+                  <p>User Category</p>
+                </li>
+                <li class="iq-step-indicator iq-step-indicator-pending">
+                  <h2>2 <span class="iq-step-indicator-line"></span></h2>
+                  <p>User Role</p>
+                </li>
+                <li class="iq-step-indicator iq-step-indicator-pending">
+                  <h2>3 <span class="iq-step-indicator-line"></span></h2>
+                  <p>Organizations</p>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
@@ -60,11 +74,85 @@
     </div>
 
     <div class="container">
+      <div class="row">
+        <div class="col"> 
+              <div class="iq-page-header-content">
+                <h3 class="mb-2 iq-label">STEP 1</h3>
+                <h1 class="mb-3">Select a User Category</h1>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mb-4">
       <div class="row no-gutters">
         <div class="col-xl-7 col-md-10">
           <p class="lead">
-            iQIES is the Internet Quality Improvement and Evaluation System and home to everything you need to manage provider and patient information and ensure quality healthcare for the most vulnerable patients.  
+            Select the category of your organization to begin the role request process.
           </p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col col-xl-7 col-md-10 lead">
+          <section>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-1" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-1">
+                Provider
+              </label>
+              <p>Healthcare organizations, agencies, and services.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-2" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-2">
+                Vendor
+              </label>
+              <p>Data and assessment submitters on behalf of providers.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-3" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-3">
+                State Agency
+              </label>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-4" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-4">
+                Regional Office
+              </label>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-5" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-5">
+                Accrediting Organization
+              </label>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-6" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-6">
+                CMS Central OFfice
+              </label>
+              <p>Security, enforcement, and support for system users.</p>
+            </div>
+          </section>
         </div>
       </div>
     </div>
@@ -73,22 +161,7 @@
       <div class="row mb-5">
         <div class="col">
           <div class="iq-button-wrapper">
-            <button class="btn btn-primary btn-lg">Request User Role</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col">
-          <h2>Pending Requests</h2>
-          <div class="row no-gutters">
-            <div class="col-xl-7 col-md-10">
-              <p class="lead">
-                You have no pending role requests.  
-              </p>
-            </div>
+            <button class="btn btn-primary btn-lg">Next</button>
           </div>
         </div>
       </div>
