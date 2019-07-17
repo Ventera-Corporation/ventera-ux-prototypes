@@ -1,39 +1,39 @@
 .iq-step-indicator-group {
-  background-color: transparent;
-  border-radius: 0.1875rem;
   display: flex;
-  flex-wrap: wrap;
   list-style: none;
   margin-bottom: 2rem;
   padding: 0;
 }
 
 .iq-step-indicator {
-  color: $iq-color-gray-light;
+  color: $iq-color-gray-dark;
   width: 12rem;
+
+  // TODO: change IqHeading to accept font weight via class .text-bold
 
   h2 {
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
 
-  &.iq-step-indicator-complete {
-    color: $black;
-  }
-
-  &.iq-step-indicator-active {
-    color: $iq-color-primary;
-  }
-
   &:not(:last-child) {
-    .iq-step-indicator-line::before {
-      background: $iq-color-gray-lighter;
+    &::before {
+      background: $iq-color-gray-dark;
       content: '';
       height: 1px;
-      margin-left: 1rem;
+      margin-left: 2rem;
       margin-top: 1rem;
       position: absolute;
       width: 8.5rem;
     }
+  }
+}
+
+.iq-step-indicator {
+  &-complete {
+    color: $iq-color-base;
+  }
+  &-active {
+    color: $iq-color-primary;
   }
 }
