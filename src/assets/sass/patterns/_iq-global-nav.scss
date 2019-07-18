@@ -26,7 +26,9 @@
     border-bottom: 0.3125rem solid transparent;
     margin-left: 3rem;
     padding: 1.9rem 0;
-    &:active {
+    &:active,
+    &:focus,
+    &:hover {
       border-bottom: 0.3125rem solid $iq-color-primary;
     }
   }
@@ -41,11 +43,13 @@
     &:not(:last-of-type) {
       border-bottom: 0.3125rem solid transparent;
       padding: 1.9rem 0;
-      &:active {
+      &:active,
+      &:focus,
+      &:hover {
         border-bottom: 0.3125rem solid $iq-color-primary;
       }
       .dropdown-menu {
-        margin-top: 0.3rem;
+        margin-top: 2.4rem;
       }
     }
   }
