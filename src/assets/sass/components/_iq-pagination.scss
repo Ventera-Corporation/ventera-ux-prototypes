@@ -1,28 +1,68 @@
-.page-link {
-  #first,
-  #previous {
-    @include media-breakpoint-up(lg) {
+// TODO: still needs responsive adjustments to prevent breaking out of container
+
+.page-item {
+  display: flex;
+  svg {
+    margin-bottom: 0.1rem;
+  }
+  &.active {
+    span:hover {
+      cursor: default;
+    }
+  }
+  &.disabled {
+    path {
+      stroke: #6c757d;
+    }
+  }
+}
+
+.iq-page-first,
+.iq-page-last {
+  svg {
+    width: 1.2rem;
+  }
+}
+
+.iq-page-first,
+.iq-page-last,
+.iq-page-previous,
+.iq-page-next {
+  &:hover {
+    path {
+      stroke: $white;
+    }
+  }
+}
+
+.iq-page-first {
+  @include media-breakpoint-up(xl) {
+    svg {
       margin-right: 0.5rem;
     }
   }
+}
 
-  #last,
-  #next {
-    @include media-breakpoint-up(lg) {
+.iq-page-last {
+  @include media-breakpoint-up(xl) {
+    svg {
       margin-left: 0.5rem;
     }
   }
 }
 
-.page-item.active {
-  span:hover {
-    cursor: default;
+.iq-page-previous {
+  @include media-breakpoint-up(md) {
+    svg {
+      margin-right: 0.5rem;
+    }
   }
 }
 
-.iq-pagination-end {
-  &:hover {
-    background-color: $white;
-    color: $iq-color-primary;
+.iq-page-next {
+  @include media-breakpoint-up(md) {
+    svg {
+      margin-left: 0.5rem;
+    }
   }
 }

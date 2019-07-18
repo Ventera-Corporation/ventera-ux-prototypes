@@ -1,0 +1,38 @@
+@mixin toast($border: $iq-color-secondary-alt-dark) {
+  border-left: 8px solid $border;
+}
+
+.toast {
+  color: $iq-color-base;
+  min-height: 115px;
+  .toast-header {
+    border-bottom: 0;
+    padding-bottom: 0.3rem;
+    p {
+      margin: 0;
+    }
+    svg {
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+  .toast-body {
+    padding-top: 0;
+  }
+}
+
+.toast-info {
+  @include toast;
+}
+
+.toast-warning {
+  @include toast($iq-color-warn);
+}
+
+.toast-danger {
+  @include toast($iq-color-error);
+}
+
+.toast-success {
+  @include toast($iq-color-success);
+}
