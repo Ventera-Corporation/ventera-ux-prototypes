@@ -346,7 +346,7 @@ $table-accent-bg: $iq-color-gray-lighter;
 // $table-active-bg:             $table-hover-bg !default;
 
 // $table-border-width:          $border-width !default;
-// $table-border-color:          $border-color !default;
+$table-border-color: $iq-border-color;
 
 // $table-head-bg:               $gray-200 !default;
 // $table-head-color:            $gray-700 !default;
@@ -397,7 +397,7 @@ $input-btn-focus-color: $iq-color-focus;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 $btn-padding-y: 0.438rem;
-$btn-padding-x: 1.5rem;
+$btn-padding-x: 1rem;
 // $btn-font-family:             $input-btn-font-family !default;
 // $btn-font-size:               $input-btn-font-size !default;
 // $btn-line-height:             $input-btn-line-height !default;
@@ -408,7 +408,7 @@ $btn-padding-x: 1.5rem;
 // $btn-line-height-sm:          $input-btn-line-height-sm !default;
 
 // $btn-padding-y-lg:            $input-btn-padding-y-lg !default;
-// $btn-padding-x-lg:            $input-btn-padding-x-lg !default;
+$btn-padding-x-lg: 1.5rem;
 // $btn-font-size-lg:            $input-btn-font-size-lg !default;
 // $btn-line-height-lg:          $input-btn-line-height-lg !default;
 
@@ -715,29 +715,29 @@ $nav-tabs-link-active-bg: transparent;
 // Dropdown menu container and contents.
 
 // $dropdown-min-width:                10rem !default;
-// $dropdown-padding-y:                .5rem !default;
+$dropdown-padding-y: 0;
 // $dropdown-spacer:                   .125rem !default;
 // $dropdown-font-size:                $font-size-base !default;
 // $dropdown-color:                    $body-color !default;
 // $dropdown-bg:                       $white !default;
-// $dropdown-border-color:             rgba($black, .15) !default;
+$dropdown-border-color: $iq-color-gray-dark;
 // $dropdown-border-radius:            $border-radius !default;
 // $dropdown-border-width:             $border-width !default;
 // $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;
-// $dropdown-divider-bg:               $gray-200 !default;
-// $dropdown-divider-margin-y:         $nav-divider-margin-y !default;
+$dropdown-divider-bg: $iq-color-gray-dark;
+$dropdown-divider-margin-y: 0;
 // $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
 
 // $dropdown-link-color:               $gray-900 !default;
 // $dropdown-link-hover-color:         darken($gray-900, 5%) !default;
-// $dropdown-link-hover-bg:            $gray-100 !default;
+$dropdown-link-hover-bg: $iq-color-gray-light;
 
 // $dropdown-link-active-color:        $component-active-color !default;
 // $dropdown-link-active-bg:           $component-active-bg !default;
 
 // $dropdown-link-disabled-color:      $gray-600 !default;
 
-// $dropdown-item-padding-y:           .25rem !default;
+$dropdown-item-padding-y: 1.063rem;
 // $dropdown-item-padding-x:           1.5rem !default;
 
 // $dropdown-header-color:             $gray-600 !default;
@@ -785,7 +785,7 @@ $pagination-hover-bg: $iq-color-primary;
 $card-spacer-x: 1rem;
 // $card-border-width:                 $border-width !default;
 // $card-border-radius:                $border-radius !default;
-// $card-border-color:                 rgba($black, .125) !default;
+$card-border-color: rgba($iq-color-base, 0.125);
 // $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg: $white;
 // $card-cap-color:                    null !default;
@@ -852,18 +852,18 @@ $card-cap-bg: $white;
 
 // Toasts
 
-// $toast-max-width:                   350px !default;
-// $toast-padding-x:                   .75rem !default;
-// $toast-padding-y:                   .25rem !default;
+$toast-max-width: 272px !default;
+$toast-padding-x: 1rem !default;
+$toast-padding-y: 1rem !default;
 // $toast-font-size:                   .875rem !default;
-// $toast-color:                       null !default;
-// $toast-background-color:            rgba($white, .85) !default;
+$toast-color: $iq-color-base;
+// $toast-background-color: rgba($white, 0.85) !default;
 // $toast-border-width:                1px !default;
-// $toast-border-color:                rgba(0, 0, 0, .1) !default;
+$toast-border-color: rgba($iq-color-base, 0.125);
 // $toast-border-radius:               .25rem !default;
-// $toast-box-shadow:                  0 .25rem .75rem rgba($black, .1) !default;
+$toast-box-shadow: 0;
 
-// $toast-header-color:                $gray-600 !default;
+$toast-header-color: $iq-color-base;
 // $toast-header-background-color:     rgba($white, .85) !default;
 // $toast-header-border-color:         rgba(0, 0, 0, .05) !default;
 

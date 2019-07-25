@@ -1,6 +1,6 @@
 // TODO: double check these as they were imported from iqies-ui
 .custom-control {
-  margin-bottom: 1rem;
+  margin-bottom: $iq-margin-small;
   min-height: 1rem;
 }
 
@@ -18,5 +18,10 @@
 
 .iq-label {
   font-weight: $font-weight-bold;
-  margin-bottom: 0;
+  margin-bottom: $iq-margin-smaller;
+}
+
+.iq-conditional-content {
+  border: 1px solid $iq-color-gray;
+  padding: 1rem;
 }

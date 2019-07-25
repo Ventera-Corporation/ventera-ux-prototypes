@@ -1,0 +1,56 @@
+.iq-global-nav {
+  box-shadow: 0 0.9375rem 0.625rem -0.9375rem $iq-color-gray-dark;
+  a {
+    color: $black;
+    font-weight: normal;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  nav {
+    align-items: center;
+    display: flex;
+    button {
+      display: flex;
+      margin-left: auto;
+      margin-right: 1.25rem;
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+  .iq-assessments-link {
+    border-bottom: 0.3125rem solid transparent;
+    margin-left: 3rem;
+    padding: 1.9rem 0;
+    &:active,
+    &:focus,
+    &:hover {
+      border-bottom: 0.3125rem solid $iq-color-primary;
+    }
+  }
+  .dropdown {
+    margin-left: 3rem;
+    &::before {
+      margin-right: 20px;
+    }
+    svg {
+      margin: 0 0 0 0.3125rem;
+    }
+    &:not(:last-of-type) {
+      border-bottom: 0.3125rem solid transparent;
+      padding: 1.9rem 0;
+      &:active,
+      &:focus,
+      &:hover {
+        border-bottom: 0.3125rem solid $iq-color-primary;
+      }
+      .dropdown-menu {
+        margin-top: 2.4rem;
+      }
+    }
+  }
+}

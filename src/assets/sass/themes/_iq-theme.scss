@@ -38,18 +38,28 @@ $iq-color-visited: #4c2c92;
 $iq-color-focus: #0096f4;
 
 // Box shadow from material design
-$iq-box-shadow: 0 1px 1px 0 rgba($iq-color-gray-dark, 0.08),
-  0 1px 3px 1px rgba($iq-color-gray-dark, 0.16);
+$iq-box-shadow: 0 1px 1px 0 rgba($iq-color-gray-darker, 0.08),
+  0 1px 3px 1px rgba($iq-color-gray-darker, 0.16);
 
 // ====================================================== Layout
-// Padding / Margin
+// Padding / Margin (TODO: get rid of these in favor of vspace/hspace
+$iq-margin-smaller: 0.5rem;
 $iq-margin-small: 1rem;
 $iq-margin-normal: 2rem;
 $iq-margin-large: 3rem;
-// TODO: replace margins above with "vertical" (below)
+
+// Vertical Spacers
+$iq-vspace-smallest: 0.25rem;
+$iq-vspace-smaller: 0.5rem;
 $iq-vspace-small: 1rem;
 $iq-vspace-medium: 2rem;
 $iq-vspace-large: 3rem;
+
+// Horizontal Spacers
+$iq-hspace-smaller: 0.5rem;
+$iq-hspace-small: 1rem;
+$iq-hspace-medium: 2rem;
+$iq-hspace-large: 3rem;
 
 // ==================================================== Layout Elements
 $iq-border-color: $iq-color-gray;
@@ -79,11 +89,6 @@ $iq-breadcrumb-color-inverted: $iq-color-secondary-alt-light;
 // ====================================================== Buttons
 $iq-btn-font-weight: 700;
 $iq-btn-min-width: 112px;
-.iq-btn-focus {
-  box-shadow: none;
-  outline: 3px solid $iq-color-primary;
-  outline-offset: 5px;
-}
 
 // ====================================================== Cards
 $iq-card-title-size: $iq-heading-three-size;
