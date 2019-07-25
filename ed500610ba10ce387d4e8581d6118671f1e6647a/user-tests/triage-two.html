@@ -18,7 +18,14 @@
       aria-atomic="true">
       <div class="toast-header">
         <p class="mr-auto">Complaint Survey Approved</p>
-        <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close"><span aria-hidden="true"><svg class="iq-icon-right iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#212121" d="M8.7153,8,15.8536.8616A.5048.5048,0,0,0,15.14.1478L8.0014,7.2861.8631.1478A.5048.5048,0,1,0,.1492.8616L7.2876,8,.1492,15.1383a.5048.5048,0,1,0,.7139.7138L8.0014,8.7138,15.14,15.8521a.5048.5048,0,0,0,.7139-.7138Z"></path></svg></span></button>
+        <button type="button" class="ml-2 close" data-dismiss="toast"
+          aria-label="Close"><span aria-hidden="true"><svg
+              class="iq-icon-right iq-icon" xmlns="http://www.w3.org/2000/svg"
+              viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path fill="#212121"
+                d="M8.7153,8,15.8536.8616A.5048.5048,0,0,0,15.14.1478L8.0014,7.2861.8631.1478A.5048.5048,0,1,0,.1492.8616L7.2876,8,.1492,15.1383a.5048.5048,0,1,0,.7139.7138L8.0014,8.7138,15.14,15.8521a.5048.5048,0,0,0,.7139-.7138Z">
+              </path>
+            </svg></span></button>
       </div>
       <div class="toast-body">
         Provider: Good Samaritan</br>
@@ -49,11 +56,12 @@
               <button class="dropdown-toggle" data-toggle="dropdown"
                 id="dropdownMenu2" data-offset="100,32">
                 <img src="../../src/assets/images/icon-bell-disabled.svg" />
-            </button>
+              </button>
               <div class="dropdown-menu dropdown-menu-right"
                 aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">
-                  <p><span class="font-weight-bold">Complaint Survey Approved</span><br>
+                  <p><span class="font-weight-bold">Complaint Survey
+                      Approved</span><br>
                     Provider: Good Samaritan<br>
                     CCN: 100056<br>
                     Survey Due Date: 08/20/2019<br>
@@ -211,11 +219,14 @@
                   <label for="exampleSelect">Not Applicable Reason</label>
                   <select id="exampleSelect" class="custom-select">
                     <option>-- Select One --</option>
-                    <option value="customValueOne">Not a federally certified provider</option>
+                    <option value="customValueOne">Not a federally certified
+                      provider</option>
                     <option value="customValueTwo">Not in jurisdiction</option>
-                    <option value="customValueThree">Occurred too far in the past</option>
+                    <option value="customValueThree">Occurred too far in the
+                      past</option>
                     <option value="customValueThree">Duplicate intake</option>
-                    <option value="customValueThree">Previously investigated</option>
+                    <option value="customValueThree">Previously investigated
+                    </option>
                     <option value="customValueThree">Other</option>
                   </select>
                 </div>
@@ -399,14 +410,14 @@
     src="../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
   </script>
   <script type="text/javascript">
-
     const toast = $(".toast");
-    const toastButton = $(".toast-header button").on("click", function(){
+    const toastButton = $(".toast-header button").on("click", function () {
       toast.hide();
     })
     setTimeout(function () {
       toast.addClass("show");
-      $(".dropdown-toggle img").attr('src', '../../src/assets/images/icon-bell-notification.svg');
+      $(".dropdown-toggle img").attr('src',
+        '../../src/assets/images/icon-bell-notification.svg');
     }, 5000);
     setTimeout(function () {
       toast.fadeOut();
