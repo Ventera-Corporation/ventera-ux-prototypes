@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="">
 
-  <title>Access Request Form</title>
+  <title>Access Request Form 1</title>
 
   <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
@@ -21,13 +21,13 @@
       <div class="row">
         <div class="col">
           <nav>
-            <a href="../../index.html">
-              <img src="../../../src/assets/images/logo-iqies.svg"
-                class="iq-logo" alt="Logo iQIES Color" />
-            </a>
             <div class="col-md-9">
+              <a href="../../index.html">
+                <img src="../../../src/assets/images/logo-iqies.svg"
+                  class="iq-logo" alt="Logo iQIES Color" />
+              </a>
             </div>
-            <div class="col-md-3">
+            <div class="text-right col-md-3">
               <button class="btn btn-outline-primary">MENU</button>
             </div>
           </nav>
@@ -39,8 +39,8 @@
   <main>
 
     <div class="iq-page-header-wrapper">
-      <div class="container">
-        <div class="iq-page-header">
+      <div class="container mt-5">
+        <span class="iq-page-header">
           <div class="row">
             <div class="col d-flex flex-column justify-content-between">
               <nav aria-label="breadcrumb">
@@ -53,22 +53,29 @@
                   </li>
                 </ol>
               </nav>
-              <ol class="iq-step-indicator-group">
-                <li class="iq-step-indicator iq-step-indicator-active">
-                  <h2>1 <span class="iq-step-indicator-line"></span></h2>
-                  <p>User Category</p>
-                </li>
-                <li class="iq-step-indicator iq-step-indicator-pending">
-                  <h2>2 <span class="iq-step-indicator-line"></span></h2>
-                  <p>User Role</p>
-                </li>
-                <li class="iq-step-indicator iq-step-indicator-pending">
-                  <h2>3 <span class="iq-step-indicator-line"></span></h2>
-                  <p>Organizations</p>
-                </li>
-              </ol>
             </div>
           </div>
+        </span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-xl-7 col-md-10">
+          <ol class="iq-step-indicator-group">
+            <li class="iq-step-indicator iq-step-indicator-active">
+              <h2>1 <span class="iq-step-indicator-line"></span></h2>
+              <p>User Category</p>
+            </li>
+            <li class="iq-step-indicator iq-step-indicator-pending">
+              <h2>2 <span class="iq-step-indicator-line"></span></h2>
+              <p>User Role</p>
+            </li>
+            <li class="iq-step-indicator iq-step-indicator-pending">
+              <h2>3 <span class="iq-step-indicator-line"></span></h2>
+              <p>Organizations</p>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
@@ -93,8 +100,6 @@
         </div>
       </div>
     </div>
-
-
 
 
     <div class="container">
@@ -148,7 +153,7 @@
               <input type="radio" id="radio-button-6" name="example-name"
                 class="custom-control-input" value="value">
               <label class="custom-control-label iq-label" for="radio-button-6">
-                CMS Central OFfice
+                CMS Central Office
               </label>
               <p>Security, enforcement, and support for system users.</p>
             </div>
@@ -157,11 +162,13 @@
       </div>
     </div>
 
+    
+
     <div class="container">
       <div class="row mb-5">
         <div class="col">
           <div class="iq-button-wrapper">
-            <button class="btn btn-primary btn-lg">Next</button>
+            <button class="btn btn-primary btn-lg" onclick="window.location.href='global-access-request-form-2.html'">Next</button>
           </div>
         </div>
       </div>

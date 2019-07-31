@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="">
 
-  <title>Global</title>
+  <title>Access Request Form 2</title>
 
   <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
@@ -39,56 +39,124 @@
   <main>
 
     <div class="iq-page-header-wrapper">
-      <div class="container mt-3">
-        <div class="iq-page-header">
+      <div class="container mt-5">
+        <span class="iq-page-header">
           <div class="row">
             <div class="col d-flex flex-column justify-content-between">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    Home
+                    <a href="../../index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    Access Request Form
                   </li>
                 </ol>
               </nav>
-              <div class="iq-page-header-content">
-                <h1>Welcome to iQIES</h1>
-              </div>
             </div>
           </div>
-        </div>
+        </span>
       </div>
     </div>
 
     <div class="container">
       <div class="row no-gutters">
         <div class="col-xl-7 col-md-10">
+          <ol class="iq-step-indicator-group">
+            <li class="iq-step-indicator iq-step-indicator-complete">
+              <h2>1 <span class="iq-step-indicator-line"></span></h2>
+              <p>User Category</p>
+            </li>
+            <li class="iq-step-indicator iq-step-indicator-active">
+              <h2>2 <span class="iq-step-indicator-line"></span></h2>
+              <p>User Role</p>
+            </li>
+            <li class="iq-step-indicator iq-step-indicator-pending">
+              <h2>3 <span class="iq-step-indicator-line"></span></h2>
+              <p>Organizations</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col"> 
+              <div class="iq-page-header-content">
+                <h3 class="mb-2 iq-label">STEP 2</h3>
+                <h1 class="mb-3">Select a User Role</h1>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mb-4">
+      <div class="row no-gutters">
+        <div class="col-xl-7 col-md-10">
           <p class="lead">
-            iQIES is the Internet Quality Improvement and Evaluation System and home to everything you need to manage provider and patient information and ensure quality healthcare for the most vulnerable patients.  
+            Select the category of your organization to begin the role request process.
           </p>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="row mb-5">
-        <div class="col">
-          <div class="iq-button-wrapper">
-              <a class="btn btn-primary btn-lg" href="global-access-request-form-1.html">Request User Role</a>
-          </div>
+      <div class="row mb-4">
+        <div class="col col-xl-7 col-md-10 lead">
+          <section>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-1" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-1">
+                Assessment Submitter
+              </label>
+              <p>Upload patient assessments, generate and view reports.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-2" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-2">
+                Provider Administrator
+              </label>
+              <p>Create and manage patient profiles, create and manage assessments, generate and view reports.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-3" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-3">
+                Assessment Coordinator
+              </label>
+              <p>Create and manage patient profiles, create and manage assessments, generate and view reports.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-4" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-4">
+                Assessment Viewer
+              </label>
+              <p>View patient profiles, view assessments, generate and view reports.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-5" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-5">
+                Provider Security Official
+              </label>
+              <p>iQIES user account approvals.</p>
+            </div>
+          </section>
         </div>
       </div>
     </div>
+    
 
     <div class="container">
-      <div class="row mb-4">
+      <div class="row mb-5">
         <div class="col">
-          <h2>Pending Requests</h2>
-          <div class="row no-gutters">
-            <div class="col-xl-7 col-md-10">
-              <p class="lead">
-                You have no pending role requests.  
-              </p>
-            </div>
+          <div class="iq-button-wrapper">
+            <button class="btn btn-primary btn-lg" onclick="window.location.href='global-access-request-form-3.html'">Next</button>
+            <button class="btn btn-link btn-lg" onclick="window.location.href='global-access-request-form-1.html'">Previous</button>
           </div>
         </div>
       </div>

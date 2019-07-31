@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="">
 
-  <title>Global</title>
+  <title>Access Request Form 3</title>
 
   <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
@@ -39,56 +39,151 @@
   <main>
 
     <div class="iq-page-header-wrapper">
-      <div class="container mt-3">
-        <div class="iq-page-header">
+      <div class="container mt-5">
+        <span class="iq-page-header">
           <div class="row">
             <div class="col d-flex flex-column justify-content-between">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    Home
+                    <a href="../../index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    Access Request Form
                   </li>
                 </ol>
               </nav>
-              <div class="iq-page-header-content">
-                <h1>Welcome to iQIES</h1>
-              </div>
             </div>
           </div>
-        </div>
+        </span>
       </div>
     </div>
 
     <div class="container">
       <div class="row no-gutters">
         <div class="col-xl-7 col-md-10">
+          <ol class="iq-step-indicator-group">
+            <li class="iq-step-indicator iq-step-indicator-complete">
+              <h2>1 <span class="iq-step-indicator-line"></span></h2>
+              <p>User Category</p>
+            </li>
+            <li class="iq-step-indicator iq-step-indicator-complete">
+              <h2>2 <span class="iq-step-indicator-line"></span></h2>
+              <p>User Role</p>
+            </li>
+            <li class="iq-step-indicator iq-step-indicator-active">
+              <h2>3 <span class="iq-step-indicator-line"></span></h2>
+              <p>Organizations</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col"> 
+              <div class="iq-page-header-content">
+                <h3 class="mb-2 iq-label">STEP 3</h3>
+                <h1 class="mb-3">Add Organizations</h1>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mb-4">
+      <div class="row no-gutters">
+        <div class="col-xl-7 col-md-10">
           <p class="lead">
-            iQIES is the Internet Quality Improvement and Evaluation System and home to everything you need to manage provider and patient information and ensure quality healthcare for the most vulnerable patients.  
+            Add providers for the <b>Assessment Submitter</b> role by entering their CCN.
+          </p>
+        </div>
+        <div class="col-xl-7 col-md-10 mt-3">
+          <p>
+            All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)
           </p>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="row mb-5">
-        <div class="col">
-          <div class="iq-button-wrapper">
-              <a class="btn btn-primary btn-lg" href="global-access-request-form-1.html">Request User Role</a>
-          </div>
+      <div class="row mb-4">
+        <div class="col col-xl-7 col-md-10 lead">
+          <section>
+
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                  <div class="form-group mt-3">
+                    <label for="id">
+                      CCN<span class="iq-asterisk">*</span>
+                    </label><input type="text" class="form-control" id="id"
+                      aria-describedby="help-id" required="" value="">
+                  </div>
+              </div>
+              <div class="col-12 col-sm-6 mt-5">
+                <button class="btn btn-primary">Add</button>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="row mb-4">
+      <div class="row">
         <div class="col">
-          <h2>Pending Requests</h2>
-          <div class="row no-gutters">
-            <div class="col-xl-7 col-md-10">
-              <p class="lead">
-                You have no pending role requests.  
-              </p>
-            </div>
+          <p>3 Providers</p>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="sortable">Provider
+                  <img src="../../../src/assets/images/icon-sort-default.svg" alt="icon sort" class="iq-icon-medium">
+                </th>
+                <th class="sortable">Provider Type
+                  <img src="../../../src/assets/images/icon-sort-default.svg" alt="icon sort" class="iq-icon-medium">
+                </th>
+                <th class="sortable">CCN
+                  <img src="../../../src/assets/images/icon-sort-default.svg" alt="icon sort" class="iq-icon-medium">
+                </th>
+                <th class="sortable">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ABC Agency <br> 3572 Example St. Miami, FL 12345</td>
+                <td>HHA</td>
+                <td>212295</td>
+                <td></td>
+                <td class="text-right"><a href="">Remove</a></td>
+              </tr>
+              <tr>
+                <td>ABC1111 Agency <br> 2199 Fake St. Miami, FL 12352</td>
+                <td>HHA</td>
+                <td>122471</td>
+                <td></td>
+                <td class="text-right"><a href="">Remove</a></td>
+              </tr>
+              <tr>
+                <td>ABC2222 agnecy <br> 3572 Rich St. Miami, FL 12321</td>
+                <td>HHA</td>
+                <td>012294</td>
+                <td> </td>
+                <td class="text-right"><a href="">Remove</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col">
+          <div class="iq-button-wrapper">
+            <button class="btn btn-primary btn-lg" onclick="window.location.href='global-access-request-form-3.html'">Submit Request</button>
+            <button class="btn btn-link btn-lg" onclick="window.location.href='global-access-request-form-2.html'">Previous</button>
           </div>
         </div>
       </div>
