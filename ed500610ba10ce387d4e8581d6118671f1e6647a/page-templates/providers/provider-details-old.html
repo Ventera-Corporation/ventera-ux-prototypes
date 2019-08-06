@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Providers</title>
+<title>Providers without fixes</title>
 <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet"
@@ -84,7 +84,7 @@
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="tab-content">
-          <div class="tab-pane hha active" id="tab1" role="tabpanel"
+          <div class="tab-pane  active" id="tab1" role="tabpanel"
                     aria-labelledby="tab1Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -330,7 +330,7 @@
             
             </section>
           </div>
-          <div class="tab-pane hha" id="tab2" role="tabpanel"
+          <div class="tab-pane " id="tab2" role="tabpanel"
                     aria-labelledby="tab2Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -360,16 +360,15 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="address1M">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="address1M"
+                    <label for="addressM1">Address 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control" id="addressM1"
                             required>
-                     <p class="iq-input-error-msg hide">This field is required</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="address2M">Address 2</label>
-                    <input type="text" class="form-control" id="address2M">
+                    <label for="addressM2">Address 2</label>
+                    <input type="text" class="form-control" id="addressM2">
                   </div>
                 </div>
               </div>
@@ -377,9 +376,8 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="cityM">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="cityM"
+                    <input type="text" class="form-control" id="cityM"
                             required>
-                    <p class="iq-input-error-msg hide">This field is required</p>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -443,10 +441,9 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label for="zipCodeX">ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="zipCodeX"
+                    <label for="zipCodeM">ZIP Code <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control" id="zipCodeM"
                             required>
-                     <p class="iq-input-error-msg hide">This field is required</p>
                   </div>
                 </div>
               </div>
@@ -454,7 +451,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .editView').removeClass('active'); $('#tab2 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
+                    <button class="btn btn-primary" onClick="$('#tab2 .editView').removeClass('active'); $('#tab2 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab2 .editView').removeClass('active'); $('#tab2 .readView').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -469,7 +466,7 @@
             
             </section>
           </div>
-          <div class="tab-pane hha" id="tab3" role="tabpanel"
+          <div class="tab-pane " id="tab3" role="tabpanel"
                     aria-labelledby="tab3Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -729,7 +726,7 @@
               
             </section>
           </div>
-          <div class="tab-pane hha" id="tab4" role="tabpanel"
+          <div class="tab-pane " id="tab4" role="tabpanel"
                     aria-labelledby="tab4Tab">
              
             <!--<section class="editView deemInfo">
@@ -934,7 +931,7 @@
             </section>
    
           </div>
-          <div class="tab-pane hha" id="tab5" role="tabpanel"
+          <div class="tab-pane " id="tab5" role="tabpanel"
                     aria-labelledby="tab5Tab">
               <div class="row tabTitle">
               <div class="col-md-10">
@@ -1046,7 +1043,7 @@
               
             </section>
           </div>
-          <div class="tab-pane hha" id="tab6" role="tabpanel"
+          <div class="tab-pane " id="tab6" role="tabpanel"
                     aria-labelledby="tab6Tab">
             
             <section class="editView active firstTime">
@@ -1364,7 +1361,7 @@
               </div>
               </section>
           </div>
-            <div class="tab-pane hha" id="tab7" role="tabpanel"
+            <div class="tab-pane " id="tab7" role="tabpanel"
                     aria-labelledby="tab7Tab">
             
                 
@@ -1513,7 +1510,7 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane hha" id="tab8" role="tabpanel"
+          <div class="tab-pane " id="tab8" role="tabpanel"
                     aria-labelledby="tab8Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -1652,7 +1649,7 @@
                 </div>
             </section>
           </div>
-          <div class="tab-pane hha" id="tab9" role="tabpanel"
+          <div class="tab-pane " id="tab9" role="tabpanel"
                     aria-labelledby="tab9Tab">
              <section class="editView newAdmin active">
               <div class="row">
@@ -2052,7 +2049,7 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane hha" id="tab10" role="tabpanel"
+          <div class="tab-pane " id="tab10" role="tabpanel"
                     aria-labelledby="tab10Tab">
             <h2>Attachments</h2>
               <p>Add and manage attachments for this provider.</p>
