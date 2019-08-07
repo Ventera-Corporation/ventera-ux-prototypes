@@ -187,8 +187,27 @@ label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616
 
 table.table-striped { border: 0; }
 .table th, .table td { border-top: 0; }
-.table thead th { border-bottom: 0; }
+.table thead th { border-bottom: 1px solid #D8D8D8; border-top: 1px solid #D8D8D8; }
+.table tbody td { border-bottom: 1px solid #F1F1F1; }
+.table thead th.sortable span {
+    display: inline-block;
+    background: url('../images/icon-sort-default.svg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    padding-right: 1.2rem;
+}
+.table thead th.sortable.descending span {
+    background-image: url('../images/icon-sort-descending.svg');
+}
+.table thead th.sortable.ascending span {
+    background-image: url('../images/icon-sort-ascending.svg');
+}
 
+/*.table tbody td, .table thead th { text-align: center; }
+.table tbody td:first-child, .table thead th:first-child { text-align: left; }*/
+.table tbody td.currency, .table thead th.currency { text-align: right; }
+.table tbody td.count, .table thead th.count { text-align: right; }
 
 .iq-list { margin-bottom: 2rem; padding: 1rem; }
 .iq-list p { margin-bottom: 0; }
