@@ -52,7 +52,7 @@
         <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
       </div>
     </div>-->
-      <br><br>
+  
     <div class="row">
       <div class="col-md-12">
         <div class="alert alert-success successMsg hide" role="alert">
@@ -62,7 +62,7 @@
           <div class="alert-content"><div class="row">
               <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
               <div class="col-sm-11">
-                 <p> Unable to save. Please correct the errors below.</p> 
+                 <p> Unable to save. Please review and correct the following items:</p> 
                   <ul>
                       <li><a href="#address1M">Address 1</a> is required</li>
                       <li><a href="#cityM">City</a> is required</li>
@@ -91,7 +91,7 @@
               <div class="col-md-10">
                 <h2>Basic Information</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary" onClick="$('#tab1 .editView').addClass('active'); $('#tab1 .readView').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -313,7 +313,7 @@
               <div class="col-md-10">
                 <h2>Mailing Address</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab2 .editView').addClass('active'); $('#tab2 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -439,9 +439,12 @@
               </div>
             </section>
             <section class="readView">
-                <p><i class="fas fa-check-circle"></i> Same as Facility Address</p>
-            <div class="iq-list">
                 
+            <div class="iq-list">
+                <div class="row">
+                    <div class="col-md-4"><p class="iq-label">Same as Facility Address</p></div>
+                    <div class="col-md-8"><p>Yes</p></div>
+                </div>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Address</p></div>
                   <div class="col-md-8"><p>123 Temporary Road, Suite 100<br>
@@ -459,7 +462,7 @@
                 <h2>Certification and Licensure</h2>
                 <!--<p>Manage status and identifiers for this provider, including; federal certification, state licensure, and additional identifiers. [pending CMS approval] </p>-->
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab3 .editView').addClass('active'); $('#tab3 .readView').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
@@ -688,7 +691,7 @@
                 <h2>Deeming Information</h2>
                 <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
               </div>
-              <div class="col-md-2"></div>
+              <div class="col-md-2 text-right"></div>
             </div>
                    <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                      <div class="row">
@@ -742,7 +745,7 @@
                 <h2>Deeming Information</h2>
                 <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
               </div>
-              <div class="col-md-2"><button class="btn btn-outline-primary" onClick="$('#tab4 .editView.deemInfo').addClass('active'); $('#tab4 .readView').removeClass('active'); ">Edit</button></div>
+              <div class="col-md-2 text-right"><button class="btn btn-outline-primary" onClick="$('#tab4 .editView.deemInfo').addClass('active'); $('#tab4 .readView').removeClass('active'); ">Edit</button></div>
             </div>
             <div class="iq-list">
                 <div class="row">
@@ -771,7 +774,7 @@
                     <div class="col-md-10">
                       <h4>The Joint Commission (TJC)</h4>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 text-right">
                       <button class="btn btn-outline-primary" onClick="$('#tab4 .readView').removeClass('active'); $('#tab4 .readView.editTJC').addClass('active');">Edit</button>
                     </div>
                   </div>
@@ -805,7 +808,7 @@
                     <div class="col-md-10">
                       <h4>Accreditation Commission for Health Care (ACHC)</h4>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 text-right">
                       <button class="btn btn-outline-primary">Edit</button>
                     </div>
                   </div>
@@ -1011,7 +1014,7 @@
               <div class="col-md-10">
                 <h2>Operating Details</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab5 .editView').addClass('active'); $('#tab5 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -1059,6 +1062,22 @@
                         <option>December</option>
                     </select>
                     </p>
+                </div>
+                <div class="col-md-6">
+                   <div class="form-group">
+                       <label>&nbsp;</label>
+                       <div class="custom-control custom-checkbox">
+                           <input id="hasSpecialOperatingHours" type="checkbox" name="hasSpecialOperatingHours" class="custom-control-input" onchange="if(this.checked){ $('.specHours').removeClass('hide'); } else { $('.specHours').addClass('hide'); } ">
+                           <label id="hasSpecialOperatingHours-label-id" nesting="hasSpecialOperatingHours-label-id" for="hasSpecialOperatingHours" class="custom-control-label"><span class="">Special Hours of Operations</span></label>
+                       </div><span id="hasSpecialOperatingHours-help" class="form-text">Indicator that the provider has non-standard operating hours</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group hide specHours">
+                        <label>Special Operating Hours <span class="iq-asterisk">*</span>
+                        <input type="text" class="form-control" required>
+                        </label>
+                    </div>  
                 </div>
               </div>
               <!--<div class="row">
@@ -1115,7 +1134,7 @@
               <div class="col-md-10">
                 <h2>Add Branch</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .editView').addClass('active'); $('#tab6 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>-->
               </div>
             </div>
@@ -1257,7 +1276,7 @@
                 <h2>Additional Branch Addresses</h2> <p class="iq-page-header-description">Manage and add additional branches for the provider.</p>
                 <p><button class="btn btn-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.firstTime').addClass('active');">Add Branch</button></p>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 
               </div>
             </div>
@@ -1267,23 +1286,32 @@
                 <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
                   <div class="row">
-                    <div class="col-md-10">
-                      <h3>BrightHope North</h3>
+                    <div class="col-md-8">
+                      <h3>BrightHope North<br><small>Branch Office</small></h3>
                     </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.editSplint').addClass('active');">Edit</button>
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.editSplint').addClass('active');">Edit</button>
+                        <button class="btn btn-link float-right">Delete</button>
                     </div>
                   </div>
                 </div>
                       <div class="iq-list">
-                <div class="row">
+                <!--<div class="row">
                   <div class="col-md-4"><p class="iq-label">Branch Type</p></div>
                   <div class="col-md-8"><p>Branch Office</p></div>
-                </div>
+                </div>-->
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Branch Address</p></div>
                   <div class="col-md-8"><p>123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County not available</span></p></div>
                 </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Date Created</p></div>
+                  <div class="col-md-8"><p>8/15/2019</p></div>
+                </div>          
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
+                  <div class="col-md-8"><p>8/15/2019</p></div>
+                </div>          
             </div>
                 </div>
               </section>
@@ -1482,7 +1510,7 @@
                 <h2>Additional Contacts</h2> <p class="iq-page-header-description">Manage and add additional contacts for the provider.</p>
                 <p><button class="btn btn-primary" onclick="$('#tab7 .readView').removeClass('active'); $('#tab7 .editView').removeClass('active'); $('#tab7 .editView.firstTime').addClass('active');">Add Contact</button></p>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 
               </div>
             </div>
@@ -1493,21 +1521,21 @@
                 <div class="iqies-list-row-header">
                   <div class="row">
                     <div class="col-md-10">
-                      <h3>Mary Carriger</h3>
+                      <h3>Mary Carriger<br><small>Emergency Contact</small></h3>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 text-right">
                       <button class="btn btn-outline-primary" onclick="$('#tab7 .readView').removeClass('active'); $('#tab7 .editView').removeClass('active'); $('#tab7 .editView.editMary').addClass('active');">Edit</button>
                     </div>
                   </div>
                 </div>
                 <div class="iq-list">
-                <div class="row">
+                <!--<div class="row">
                   <div class="col-md-4"><p class="iq-label">Contact Type</p></div>
                   <div class="col-md-8"><p>Emergency Contact</p></div>
-                </div>
+                </div>-->
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Phone</p></div>
-                  <div class="col-md-8"><p>(703) 123-1234</p></div>
+                  <div class="col-md-8"><p>(703) 123-1234 Ext. 123</p></div>
                 </div>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Fax</p></div>
@@ -1542,7 +1570,7 @@
                            <div class="row">
                         <div class="col-md-8"> <p><label>Phone<input type="tel" class="form-control" value="(703) 123-1234"></label></p>
                              </div>
-                               <div class="col-md-4"><p><label>Ext<input type="text" size="4" class="form-control"></label></p></div>
+                               <div class="col-md-4"><p><label>Ext<input type="text" size="4" class="form-control" value="123"></label></p></div>
                           </div>
                             
                         </div>
@@ -1566,6 +1594,7 @@
                     <button class="btn btn-primary btn-lg" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                      <button class="btn btn-link danger float-right">Delete</button>
                   </div>
                 </div>
               </div>
@@ -1580,7 +1609,7 @@
                 <h2>Medicare Administrative Contractor (MAC) Information</h2>
                
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab8 .editView').addClass('active'); $('#tab8 .readView').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
@@ -1878,7 +1907,7 @@
                 <h2>Administrators</h2> 
                 <p><button class="btn btn-primary" onclick="$('#tab9 .readView').removeClass('active'); $('#tab9 .editView').removeClass('active'); $('#tab9 .editView.newAdmin').addClass('active');">Add Administrator</button></p>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 
               </div>
             </div>
@@ -1889,7 +1918,7 @@
                     <div class="col-md-10">
                       <h3>Mr. Edward P. Munch<small class="bottom">Primary Administrator</small></h3>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 text-right">
                       <button class="btn btn-outline-primary" onclick="$('#tab9 .readView').removeClass('active'); $('#tab9 .editView').removeClass('active'); $('#tab9 .editView.editEdward').addClass('active');">Edit</button>
                     </div>
                   </div>
@@ -2090,6 +2119,7 @@
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab9 .editView').removeClass('active'); $('#tab9 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button class="btn btn-link" onClick="$('#tab9 .editView').removeClass('active'); $('#tab9 .readView').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                      <button class="btn btn-link danger float-right">Delete</button>
                   </div>
                 </div>
               </div>

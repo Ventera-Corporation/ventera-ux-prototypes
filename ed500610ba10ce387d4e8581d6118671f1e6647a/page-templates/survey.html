@@ -4,11 +4,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Providers per design kit</title>
+<title>Survey</title>
 <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
+    href="../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/prototype.css">
+    href="../../src/assets/prototype-styles/prototype.css">
     <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 </head>
 
@@ -17,42 +17,99 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <nav> <a href="/index.html"> <img src="../../../src/assets/images/logo-iqies.svg"
+        <nav> <a href="/index.html"> <img src="../../src/assets/images/logo-iqies.svg"
                 class="iq-logo" alt="Logo iQIES Color" /> </a> </nav>
       </div>
     </div>
   </div>
 </header>
 <main>
-  <div class="iq-page-header-wrapper inverted">
-    <div class="container">
-      <div class="iq-page-header">
-        <div class="row">
-          <div class="col d-flex flex-column justify-content-between">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"> <a href="../../index.html">Home</a> </li>
-                <li class="breadcrumb-item"> <a href="">Providers</a> </li>
-                <li class="breadcrumb-item"> <a href="">CCN 123456</a> </li>
-                <li class="breadcrumb-item"> Provider Details</li>
-              </ol>
-            </nav>
-            <div class="iq-page-header-content">
-              <h1>Provider Details</h1>
-              <div class="iq-page-header-description"> Brighthope Home Care, LLC | CCN 123456</div>
+<div class="iq-page-header-wrapper inverted">
+            <div class="container">
+              <div class="iq-page-header">
+                <div class="row">
+                  <div class="col d-flex flex-column justify-content-between">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">Providers</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="/design-system/patterns">CCN 136598</a>
+                        </li>
+                        <li class="breadcrumb-item">Survey 19A2-H2</li>
+                      </ol>
+                    </nav>
+                    <div class="iq-page-header-content">
+                      <h1>Survey 19A2-H2</h1>
+                      <div class="iq-page-header-details">
+                        <a href="/providers/provider-profile.html">Access Home Care | CCN 136598</a> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-3 iq-page-header-contact">
+                    <address>
+                      667 Bent Ridge Lane<br>Suite 1000<br>Lorton, VA
+                      60010<br>
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-summary-bar">
+              <div class="container">
+                <div class="row ">
+                  <div class="col d-flex align-items-center">
+                    <div class="iq-summary-bar-data" data-index="0">
+                      <p>Survey Status</p>
+                      <p>New</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="1">
+                      <p>Survey Type</p>
+                      <p>Health</p>
+                    </div>
+                    
+                    <div class="iq-summary-bar-data" data-index="2">
+                      <p>Start Date</p>
+                      <p>03/20/2019</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="3">
+                      <p>Exit Date</p>
+                      <p class="iq-not-available">Not available</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="4">
+                      <p>Revisit Status</p>
+                      <p>Not Determined</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="5">
+                      <p>Survey Category</p>
+                      <ul>
+                        <li>Revisit <a href="#">19A2-H1</a></li> 
+                        <li>Recertification</li>
+                        <li>Complaint</li>
+                      </ul>
+                    </div>
+                    <!--<div class="iq-summary-bar-action">
+                      <button class="btn btn-link">
+                        View Details
+                      </button>
+                    </div>-->
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    
   <div class="container" id="mainContent">
     <!--<div class="row">
       <div class="col">
         <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
       </div>
     </div>-->
- 
+  
     <div class="row">
       <div class="col-md-12">
         <div class="alert alert-success successMsg hide" role="alert">
@@ -62,7 +119,7 @@
           <div class="alert-content"><div class="row">
               <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
               <div class="col-sm-11">
-                 <p> Unable to save. Please review and correct the following items:</p> 
+                 <p> Unable to save. Please correct the errors below.</p> 
                   <ul>
                       <li><a href="#address1M">Address 1</a> is required</li>
                       <li><a href="#cityM">City</a> is required</li>
@@ -73,29 +130,33 @@
         </div>
       </div>
       <div class="col-sm-5 col-md-4 col-lg-3">
-        <nav class="nav flex-column iq-nav" role="navigation"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a> <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Additional Branch Addresses</a>
-            <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Operating Details</a>
-            <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Administrators</a>
-            <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Additional Contacts</a>
-            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Certification and Licensure</a> 
-            <a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">MAC Information</a> 
-            <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">Deeming Information</a>   
-             
-            <a class="nav-link" tabindex="0" id="tab10Tab" href="#tab10" data-toggle="tab" role="tab" aria-controls="tab10" aria-selected="false">Attachments</a></nav>
+        <nav class="nav flex-column iq-nav" role="navigation">
+            <a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="false">Basic Information</a> 
+            <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Responsible Staff</a> 
+            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Survey Team</a>
+            <a class="nav-link" tabindex="0" id="tab3-1Tab" href="#tab3-1" data-toggle="tab" role="tab" aria-controls="tab3-1" aria-selected="false">Citations and POC</a>
+            <a class="nav-link" tabindex="0" id="tab3-2Tab" href="#tab3-2" data-toggle="tab" role="tab" aria-controls="tab3-2" aria-selected="true">Statement of Deficiencies</a>
+            <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">CMS-1572</a>
+            <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">CMS-670</a>
+            <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Letters</a>
+            <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Notes</a> 
+            <a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">Attachments</a>
+           </nav>
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="tab-content">
           <div class="tab-pane hha active" id="tab1" role="tabpanel"
                     aria-labelledby="tab1Tab">
             <div class="row tabTitle">
-              <div class="col-md-10">
+              <div class="col-sm-10">
                 <h2>Basic Information</h2>
+                <!--<p>Manage the basic information for this survey</p>-->
               </div>
-              <div class="col-md-2 text-right">
-                <button class="btn btn-outline-primary" onClick="$('#tab1 .editView').addClass('active'); $('#tab1 .readView').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
+              <div class="col-sm-2 text-right">
+                <button class="btn btn-outline-primary hide" onClick="$('#tab3-2 .editView').addClass('active'); $('#tab3-2 .readView').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
-            <section class="editView">
+            <section class="editView active">
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -103,160 +164,95 @@
               </div>
                <div class="row">
               <div class="col-md-12">
-                <p><label>Legal Business Name <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" value="Brighthope Home Care, LLC">
-                    <span class="form-text">The provider name that is registered with the IRS and the Legal Business Name reported on the CMS 855</span>
+                <p><label>Survey Type</label>
+                    Health
                 </p>
               </div>
-              <div class="col-md-12"><div class="form-group">
-                 <label>Doing Business As Name <span class="iq-asterisk">*</span></label>
-                    
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" checked id="sameAsBusName"
-                            name="sameAsBusName"
-                            class="custom-control-input" value="value">
-                    <label class="custom-control-label"
-                            for="sameAsBusName"> Same as Legal Business Name </label>
-                  </div>
-               
-                    <input type="text" class="form-control" value="Brighthope Home Care, LLC">
-              </div>
-                   </div>
+              <div class="col-md-12">
+                  <h3>Survey Categories <span class="iq-asterisk">*</span></h3>
+                  <p>Survey categories that are associated with citations cannot be removed.</p>
+                  
+                  
+                  
+                </div>
             <div class="col-md-6">
-                <p><label>Provider Type <span class="iq-asterisk">*</span></label>
-                  <select class="form-control">
-                      <option disabled>Select ...</option>
-                      <option>Clinical Laboratory</option>
-                      <option selected>Home Health Agency</option>
-                      <option>Hospice</option>
-                      <option>Inpatient Rehab Facility</option>
-                      <option>Long Term Care Hospital</option>
-                      <option>Nursing Home</option>
-                  </select>
-                </p>
+                <fieldset>
+                <legend>Federal Categories</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="fc1" checked class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="fc1">Recertification </label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="fc2" checked disabled class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="fc2">Complaint <a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Uncheck all Open Intakes below first."><i class="fal fa-info-circle fa-lg"></i></a></label>
+                </div>
+              </fieldset>
               </div>
                 <div class="col-md-6">
-                <p> <label>Provider Sub-Type</label>
-                  <select class="form-control">
-                      <option selected>Not Applicable</option>  
-                  </select>
-                </p>
+                <fieldset>
+                <legend>State Categories</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="sc1" checked disabled class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="sc1">Re-Licensure </label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="sc2" checked disabled class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="sc2">Licensure Complaint <a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Uncheck all Open Intakes below first."><i class="fal fa-info-circle fa-lg"></i></a></label>
+                </div>
+              </fieldset>
               </div>
                  
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="mu">Management Unit</label>
-                    <select id="mu" class="form-control"><option>Select one</option><option>OHLS Staff</option></select>
-                  </div>
+                <fieldset>
+                <legend>Open Intakes to Include in Complaint Survey <span class="iq-asterisk">*</span></legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="oi1" checked disabled class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="oi1">Complaint 12193 <a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Associated with an allegation."><i class="fal fa-info-circle fa-lg"></i></a></label> 
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="oi2" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="oi2">Complaint 11978</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="oi3" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="oi3">Complaint 11999</label>
+                </div>
+              </fieldset>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="wu">Work Unit</label>
-                     <select id="wu" class="form-control"><option>Select one</option><option>OHLS Staff</option></select>
-                  </div>
+                  
                 </div>
             <div class="col-md-12">
-                <br>
-                <fieldset><legend><h3>Primary Practice Location</h3></legend>
-                    <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="address1">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="address1"
-                            required>
-                  </div>
+                <h3>Regulation Sets <span class="iq-asterisk">*</span></h3>
+                   </div>
+            <div class="col-md-6">
+                <fieldset>
+                <legend>Federal Regulation Sets</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="frs1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="frs1">Psychiatric Hospitals (FED - R - 5.01)</label>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="address2">Address 2</label>
-                    <input type="text" class="form-control" id="address2">
-                  </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="frs2" checked class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="frs2">Portable X-Ray Requirements (FED - H - 6)</label>
                 </div>
-              </div>
-            <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="city">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="city"
-                            required>
-                  </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="frs3" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="frs3">Standards Long-Term Care Units (FED - A - 8)</label>
                 </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="state">State</label>
-                    <select class="form-control" id="state">
-                      <option value=""></option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">District Of Columbia</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
-                      <option value="KY">Kentucky</option>
-                      <option value="LA">Louisiana</option>
-                      <option value="ME">Maine</option>
-                      <option value="MD">Maryland</option>
-                      <option value="MA">Massachusetts</option>
-                      <option value="MI">Michigan</option>
-                      <option value="MN">Minnesota</option>
-                      <option value="MS">Mississippi</option>
-                      <option value="MO">Missouri</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NV">Nevada</option>
-                      <option value="NH">New Hampshire</option>
-                      <option value="NJ">New Jersey</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="NY">New York</option>
-                      <option value="NC">North Carolina</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
-                      <option value="OR">Oregon</option>
-                      <option value="PA">Pennsylvania</option>
-                      <option value="RI">Rhode Island</option>
-                      <option value="SC">South Carolina</option>
-                      <option value="SD">South Dakota</option>
-                      <option value="TN">Tennessee</option>
-                      <option value="TX">Texas</option>
-                      <option value="UT">Utah</option>
-                      <option value="VT">Vermont</option>
-                      <option value="VA">Virginia</option>
-                      <option value="WA">Washington</option>
-                      <option value="WV">West Virginia</option>
-                      <option value="WI">Wisconsin</option>
-                      <option value="WY">Wyoming</option>
-                    </select>
-                  </div>
+              </fieldset>
+            </div> 
+            <div class="col-md-6">
+                <fieldset>
+                <legend>State Regulation Sets</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="sr1" checked disabled class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="sr1">Home Health Patient Units (ST - G - 8)</label>
                 </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="zipCode">ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="zipCode"
-                            required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="county">County</label>
-                    <input type="text" class="form-control" id="county">
-                  </div>
-                </div>
-                        
-              </div>
-                </fieldset>
-                 
+                
+              </fieldset>
+                   </div>
+                   <div class="col-md-12">
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
@@ -269,45 +265,170 @@
               </div>
             </div>
             </section>
-            <section class="readView active">
-            <div class="row">
-              <div class="col-md-10">
-                <p><label>Legal Business Name</label>
-                Brighthope Home Care, LLC</p>
+            <section class="readView">
+            <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Proposed Notice Date</p></div>
+                  <div class="col-md-8"><p>05/11/2019</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Proposed Effective Date</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>05/11/2019
+                    </p>
+                  </div>
+                </div>
+           <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Imposed Effective Date</p>
               </div>
-              <div class="col-md-10">
-                <p> <label>Doing Business As Name</label>
-                  Brighthope Home Care, LLC
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
                 </p>
               </div>
-            <div class="col-md-5">
-                <p><label>Provider Type</label>
-                  Home Health Agency
-                </p>
-              </div>
-                <div class="col-md-5">
-                <p> <label>Provider Sub-Type</label>
-                  <span class="iqies-not-available">Not applicable</span>
-                </p>
-              </div><div class="col-md-5">
-                <p> <label>Management Unit</label>
-                    <span class="iqies-not-available">Not available</span>
-                </p>
-              </div>
-                 <div class="col-md-5">
-                <p> <label>Work Unit</label>
-                   <span class="iqies-not-available">Not available</span>
-                </p>
-              </div>
-            <div class="col-md-5">
-                <p><label>Primary Practice Location</label>
-                  667 Bent Ridge Lane, Suite B<br />
-                  000 Lorton, VA 60010<br />
-                  Fairfax County
-                </p>
-              </div>
-            
             </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Imposed Notice Date</p>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Last Day in Effect</p>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Compliance Date</p>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Determination Date</p>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Sanction Status</p>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
+                </p>
+              </div>
+            </div>
+        </div>
+            
+            <h3>Penalties</h3>
+            <p>Add Per Instance / Per Day penalties to this Civil Money Penalty.</p>
+            <div class="iq-button-wrapper">
+                <button class="btn btn-primary">Add Penalty</button>    
+                <button class="btn btn-outline-primary">Add CMPTS Case</button>
+            </div>    
+            
+            <div class="iq-list">
+                <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Per Instance Total</p>
+              </div>
+              <div class="col-md-8">
+                <p>Per Instance
+                </p>
+              </div>
+                </div>
+                    <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Per Day Total</p>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
+                </p>
+              </div>
+                </div>
+           <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">Survey EFGH12 Total</p>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p class="iq-label">CMPTS Case ID</p>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">Not available
+                </p>
+              </div>
+            </div>
+            
+        </div>
+            
+            <nav class="nav nav-horizontal">
+              <a class="nav-link active" href="enforcement/h-tab-1">Per Instance (1)</a>
+              <a class="nav-link" href="enforcement/h-tab-2">Per Day (0)</a>
+            </nav>
+            <div class="tab-content">
+                <div class="tab-pane active" id="h-tab-1">
+                    <div class="table-wrapper">  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="sortable descending"><span>Date</span></th>
+      <th scope="col" class="sortable currency"><span>Imposed Amount</span></th>
+      <th scope="col" class="sortable count"><span>Imposed # of Instances</span></th>
+      <th scope="col" class="sortable"><span>CMP in Effect</span></th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">03/20/2019</td>
+      <td class="currency">$2,000.00</td>
+      <td class="count">102</td>
+      <td>Imposed</td>
+      <td><a href="#" >Actions</a></td>
+    </tr>
+    <tr>
+      <td scope="row">03/20/2019</td>
+      <td class="currency">$400.00</td>
+      <td class="count">2</td>
+      <td>Imposed</td>
+      <td><a href="#">Actions</a></td>
+    </tr>
+    <tr>
+      <td scope="row">03/20/2019</td>
+      <td class="currency">$12,520.00</td>
+      <td class="count">30</td>
+      <td>Imposed</td>
+      <td><a href="#" >Actions</a></td>
+    </tr>
+  </tbody>
+</table></div>
+                </div> 
+                <div class="tab-pane" id="h-tab-2">
+                xxx
+                </div>
+            </div>
+            
             </section>  
           </div>
           <div class="tab-pane hha" id="tab2" role="tabpanel"
@@ -316,7 +437,7 @@
               <div class="col-md-10">
                 <h2>Mailing Address</h2>
               </div>
-              <div class="col-md-2 text-right">
+              <div class="col-md-2">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab2 .editView').addClass('active'); $('#tab2 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -456,7 +577,7 @@
                 <h2>Certification and Licensure</h2>
                 <!--<p>Manage status and identifiers for this provider, including; federal certification, state licensure, and additional identifiers. [pending CMS approval] </p>-->
               </div>
-              <div class="col-md-2 text-right">
+              <div class="col-md-2">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab3 .editView').addClass('active'); $('#tab3 .readView').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
@@ -734,7 +855,7 @@
                 <h2>Deeming Information</h2>
                 <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
               </div>
-              <div class="col-md-2 text-right"><button class="btn btn-outline-primary" onClick="$('#tab4 .editView.deemInfo').addClass('active'); $('#tab4 .readView').removeClass('active'); ">Edit</button></div>
+              <div class="col-md-2"><button class="btn btn-outline-primary" onClick="$('#tab4 .editView.deemInfo').addClass('active'); $('#tab4 .readView').removeClass('active'); ">Edit</button></div>
             </div>
               <div class="row">
                 <div class="col-md-5">
@@ -763,7 +884,7 @@
                     <div class="col-md-10">
                       <h4>The Joint Commission (TJC)</h4>
                     </div>
-                    <div class="col-md-2 text-right">
+                    <div class="col-md-2">
                       <button class="btn btn-outline-primary" onClick="$('#tab4 .readView').removeClass('active'); $('#tab4 .readView.editTJC').addClass('active');">Edit</button>
                     </div>
                   </div>
@@ -804,7 +925,7 @@
                     <div class="col-md-10">
                       <h4>Accreditation Commission for Health Care (ACHC)</h4>
                     </div>
-                    <div class="col-md-2 text-right">
+                    <div class="col-md-2">
                       <button class="btn btn-outline-primary">Edit</button>
                     </div>
                   </div>
@@ -1012,7 +1133,7 @@
               <div class="col-md-10">
                 <h2>Operating Details</h2>
               </div>
-              <div class="col-md-2 text-right">
+              <div class="col-md-2">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab5 .editView').addClass('active'); $('#tab5 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -1060,22 +1181,6 @@
                         <option>December</option>
                     </select>
                     </p>
-                </div>
-                <div class="col-md-6">
-                   <div class="form-group">
-                       <label>&nbsp;</label>
-                       <div class="custom-control custom-checkbox">
-                           <input id="hasSpecialOperatingHours" type="checkbox" name="hasSpecialOperatingHours" class="custom-control-input" onchange="if(this.checked){ $('.specHours').removeClass('hide'); } else { $('.specHours').addClass('hide'); } ">
-                           <label id="hasSpecialOperatingHours-label-id" nesting="hasSpecialOperatingHours-label-id" for="hasSpecialOperatingHours" class="custom-control-label"><span class="">Special Hours of Operations</span></label>
-                       </div><span id="hasSpecialOperatingHours-help" class="form-text">Indicator that the provider has non-standard operating hours</span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group hide specHours">
-                        <label>Special Operating Hours <span class="iq-asterisk">*</span>
-                        <input type="text" class="form-control" required>
-                        </label>
-                    </div>  
                 </div>
               </div>
               <!--<div class="row">
@@ -1142,7 +1247,7 @@
               <div class="col-md-10">
                 <h2>Add Branch</h2>
               </div>
-              <div class="col-md-2 text-right">
+              <div class="col-md-2">
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .editView').addClass('active'); $('#tab6 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>-->
               </div>
             </div>
@@ -1284,7 +1389,7 @@
                 <h2>Additional Branch Addresses</h2> <p class="iq-page-header-description">Manage and add additional branches for the provider.</p>
                 <p><button class="btn btn-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.firstTime').addClass('active');">Add Branch</button></p>
               </div>
-              <div class="col-md-2 text-right">
+              <div class="col-md-2">
                 
               </div>
             </div>
@@ -1293,34 +1398,26 @@
                 <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
                   <div class="row">
-                    <div class="col-md-8">
-                      <h3>BrightHope North<br><small class="bottom">Branch Office</small></h3>
+                    <div class="col-md-10">
+                      <h3>Splint</h3>
                     </div>
-                    <div class="col-md-4 text-right iq-button-col">
-                      <button class="btn btn-outline-primary float-right" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.editSplint').addClass('active');">Edit</button>
-                        <button class="btn btn-link float-right">Delete</button>
+                    <div class="col-md-2">
+                      <button class="btn btn-outline-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.editSplint').addClass('active');">Edit</button>
                     </div>
                   </div>
                 </div>
                       
                 <div class="row">
-                    <!--<div class="col-md-5">
+                    <div class="col-md-5">
                           <p><label>Branch Type</label>
                           Branch Office</p>
-                  </div>-->
-                    <div class="col-md-10">
+                  </div>
+                    <div class="col-md-5">
                           <p>
                             <label>Branch Address</label>
                           123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County not available</span></p>
+                        
                       </div>
-                    <div class="col-md-5">
-                        <p><label>Date Created</label>
-                        8/15/2019</p>
-                    </div>
-                    <div class="col-md-5">
-                        <p><label>Last Updated</label>
-                        8/15/2019</p>
-                    </div>
                   </div></div>
               </section>
               <section class="editView editSplint">
@@ -1526,24 +1623,23 @@
               <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
                   <div class="row">
-                    <div class="col-md-8">
-                      <h3>Mary Carriger<br><small>Emergency Contact</small></h3>
+                    <div class="col-md-10">
+                      <h3>Mary Carriger</h3>
                     </div>
-                    <div class="col-md-4 text-right iq-button-col">
-                      <button class="btn btn-outline-primary float-right" onclick="$('#tab7 .readView').removeClass('active'); $('#tab7 .editView').removeClass('active'); $('#tab7 .editView.editMary').addClass('active');">Edit</button>
-                      <button class="btn btn-link float-right">Delete</button>
+                    <div class="col-md-2">
+                      <button class="btn btn-outline-primary" onclick="$('#tab7 .readView').removeClass('active'); $('#tab7 .editView').removeClass('active'); $('#tab7 .editView.editMary').addClass('active');">Edit</button>
                     </div>
                   </div>
                 </div>
                       
                 <div class="row">
-                   <!-- <div class="col-md-5">
+                    <div class="col-md-5">
                           <p><label>Contact Type</label>
                           Emergency Contact</p>
-                      </div>-->
+                      </div>
                     <div class="col-md-5">
                           <p><label>Phone</label>
-                          (703) 123-1234 Ext. 123</p>
+                          (703) 123-1234</p>
                       </div>
                     <div class="col-md-5">
                           <p><label>Fax</label>
@@ -1577,7 +1673,7 @@
                            <div class="row">
                         <div class="col-md-8"> <p><label>Phone<input type="tel" class="form-control" value="(703) 123-1234"></label></p>
                              </div>
-                               <div class="col-md-4"><p><label>Ext<input type="text" size="4" class="form-control" value="123"></label></p></div>
+                               <div class="col-md-4"><p><label>Ext<input type="text" size="4" class="form-control"></label></p></div>
                           </div>
                             
                         </div>
@@ -1601,7 +1697,6 @@
                     <button class="btn btn-primary btn-lg" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                      <button class="btn btn-link danger float-right" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Delete</button>
                   </div>
                 </div>
               </div>
@@ -1616,7 +1711,7 @@
                 <h2>Medicare Administrative Contractor (MAC) Information</h2>
                
               </div>
-              <div class="col-md-2 text-right">
+              <div class="col-md-2">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab8 .editView').addClass('active'); $('#tab8 .readView').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
@@ -1930,7 +2025,7 @@
                     <div class="col-md-10">
                       <h3>Mr. Edward P. Munch<small class="bottom">Primary Administrator</small></h3>
                     </div>
-                    <div class="col-md-2 text-right">
+                    <div class="col-md-2">
                       <button class="btn btn-outline-primary" onclick="$('#tab9 .readView').removeClass('active'); $('#tab9 .editView').removeClass('active'); $('#tab9 .editView.editEdward').addClass('active');">Edit</button>
                     </div>
                   </div>
@@ -2139,7 +2234,6 @@
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab9 .editView').removeClass('active'); $('#tab9 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button class="btn btn-link" onClick="$('#tab9 .editView').removeClass('active'); $('#tab9 .readView').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                       <button class="btn btn-link danger float-right">Delete</button>
                   </div>
                 </div>
               </div>
@@ -2201,8 +2295,8 @@
           <div class="row">
             <div class="col">
               <div class="iq-footer-heading"> <a href="/"> <img
-                      src="../../../src/assets/images/logo-iqies-reversed.svg"
-                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../../src/assets/images/logo-cms.svg"
+                      src="../../src/assets/images/logo-iqies-reversed.svg"
+                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../src/assets/images/logo-cms.svg"
                     class="img-fluid logo cms-logo d-lg-none" alt=""> </div>
             </div>
           </div>
@@ -2210,48 +2304,48 @@
             <div class="col"> <a href="/help">Help</a><span> (800)
               339-9313 </span><a href="mailto:help@qtso.com">Email Us</a><a
                   href="https://qtso.cms.gov/" target="_blank"
-                  rel="noopener noreferrer"> QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                  rel="noopener noreferrer"> QTSO <img src="../../src/assets/images/logo-cms.svg"
                     class="iq-external-link-icon" alt=""> </a><a href="https://www.cms.gov/Medicare/Medicare.html"
                   target="_blank" rel="noopener noreferrer"> Medicare <img
-                    src="../../../src/assets/images/icon-link-external.svg"
+                    src="../../src/assets/images/icon-link-external.svg"
                     class="iq-external-link-icon" alt=""> </a><a href="/privacy-policy">Privacy Policy</a> </div>
           </div>
           <div class="row">
             <div class="col">
               <div class="iq-footer-links"> <a href="https://www.medicare.gov/about-us/plain-writing"
                     target="_blank" rel="noopener noreferrer"> Plain Writing <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a
                     href="https://www.cms.gov/center/freedom-of-information-act-center.html"
                     target="_blank" rel="noopener noreferrer"> Freedom of
                 Information Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a
                     href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
                     target="_blank" rel="noopener noreferrer"> No Fear Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a href="https://get.adobe.com/reader/" target="_blank"
                     rel="noopener noreferrer"> Adobe Acrobat <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a> </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-2 d-flex align-items-center"> <img src="../../../src/assets/images/logo-cms.svg"
+      <div class="col-lg-2 d-flex align-items-center"> <img src="../../src/assets/images/logo-cms.svg"
             class="logo cms-logo d-none d-lg-block" alt="CMS Logo"> </div>
     </div>
   </div>
 </footer>
 <script type="text/javascript"
-    src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+    src="../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
   </script> 
 <script type="text/javascript"
-    src="../../../src/assets/third-party/popper/popper.min.js"></script> 
+    src="../../src/assets/third-party/popper/popper.min.js"></script> 
 <script type="text/javascript"
-    src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+    src="../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
   </script> 
-<script type="text/javascript" src="../../../src/assets/js/scripts.js">
+<script type="text/javascript" src="../../src/assets/js/scripts.js">
   </script>
     <script type="text/javascript">
  

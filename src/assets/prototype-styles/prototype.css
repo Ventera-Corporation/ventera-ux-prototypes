@@ -115,6 +115,8 @@ section {
 .hha .iqies-required-text { font-size: .875rem; margin-bottom: 2rem; }
 .hha fieldset { margin-bottom: 1.5rem; }
 .hha p.infoText { margin-bottom: 1rem; }
+.iq-button-col .btn { margin-right: 1rem;}
+
 .editView, .readView { display: none; }
 .editView.active, .readView.active { display: block; }
 label input, label select { margin-top: .5rem; }
@@ -126,7 +128,7 @@ div.alert { margin-bottom: 2rem;}
 
 .iqies-label { font-weight: bold; }
 .nav:not(.nav-tabs) .nav-link:hover { text-decoration: none !important; }
-.iqies-button-wrapper { margin-bottom: 1.5rem; }
+.iqies-button-wrapper { margin-bottom: 2rem; padding: 1rem 0; }
 .iqies-list-row {
     border-top: 1px solid #d6d7d9;
     padding: 2rem 0;
@@ -179,11 +181,15 @@ label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616
 .nav-link.iq-subnav { padding-left: 2.5rem; }
 .nav-link.iq-subnav.active { padding-left: 2rem !important; }
 
+.iq-summary-bar-data ul { margin-bottom: 0; padding-left: 1rem; }
+.iq-summary-bar-data ul li { padding-left: 0;  }
+.iq-summary-bar-data:nth-child(5) { border-right: 1px solid #d6d7d9; }
 .iq-summary-bar-data:last-child { border-right: 0; }
 
 .nav.nav-horizontal { border-bottom: 1px solid #D6D7D9; margin-bottom: 1rem; }
 .nav.nav-horizontal:not(.nav-tabs) .nav-link { border-bottom: 0; color: #0A71B9; padding: 1rem 2rem; }
-.nav.nav-horizontal:not(.nav-tabs) .nav-link.active, .nav.nav-horizontal .nav-link.active { border-bottom: 4px solid #0071bc; padding-left: 1.25rem; border-left: 0; color: #202020; }
+.nav.nav-horizontal:not(.nav-tabs) .nav-link.active, .nav.nav-horizontal .nav-link.active { border-bottom: 4px solid #0071bc; padding-left: 2rem; border-left: 0; color: #202020; }
+
 
 .table-wrapper { overflow: hidden; width: 100%; }
 table.table-striped { border: 0; overflow: auto; width: 100%;}
@@ -214,3 +220,17 @@ table.table-striped { border: 0; overflow: auto; width: 100%;}
 .iq-list p { margin-bottom: 0; }
 .iq-list > div > div { padding: 1rem; }
 .iq-list > div:nth-of-type(odd){ background-color: #f8f8f8; }
+.iq-list > div:last-child { border-bottom: 1px solid #f1f1f1; }
+
+.float-right { float: right; }
+
+.hha ul li { padding: .125rem 0; }
+.card.iq-card { margin-bottom: 1rem; }
+.hha .breadcrumb { margin-bottom: 2rem; }
+.iq-accordion { margin-bottom: .5rem; }
+.iq-nav { margin-bottom: 2rem; }
+.iq-page-header-wrapper { margin-bottom: 3rem; }
+.hha .iq-page-header { height: auto; }
+.iq-return-link { margin-top: -1.5rem; margin-bottom: 2rem; }
+
+.hha .iq-button-wrapper { padding: 1rem 0; }
