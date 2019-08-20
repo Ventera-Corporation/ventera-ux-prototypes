@@ -18,22 +18,11 @@
 
 <body>
   <header>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <nav>
-            <a href="../../index.html">
-              <img src="../../../src/assets/images/logo-iqies.svg"
-                class="iq-logo" alt="Logo iQIES Color" />
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
+    <div class="container-fluid"> </div>
   </header>
 
   <main>
-    <div class="iq-page-header-wrapper hha">
+    <div class="iq-page-header-wrapper hha mb-0">
       <div class="container">
         <div class="iq-page-header">
           <div class="row">
@@ -44,15 +33,16 @@
                     <a href="../../index.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
-                    Providers
+                    <a href="providers-landing.html">Providers</a>
                   </li>
                   <li class="breadcrumb-item">
-                    Find a Provider
+                    Find Provider Information
                   </li>
                 </ol>
               </nav>
               <div class="iq-page-header-content">
-                <h1>Find a Provider</h1>
+                <h1>Find Provider Information</h1>
+                  <p>Search for providers, surveys, intakes, and enforcements.</p>
               </div>
             </div>
           </div>
@@ -73,26 +63,37 @@
     <div class="container hha">
     
           <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-4">
+                   <div class="form-group">
+                      <label>Type
+                      <select class="form-control">
+                          <option>Provider</option>    
+                          <option>Survey</option>
+                          <option>Intake</option>
+                          <option>Enforcement</option>
+                      </select></label>
+                  </div>
+              </div> <div class="col-md-5"></div>
+              <div class="col-md-4">
                   <div class="form-group">
                       <label>Provider Name
                       <input class="form-control" type="text" value=""></label>
                   </div>
               </div>
-              <div class="col-md-6">
+              <!--<div class="col-md-6">
                   <div class="form-group">
                       <label>Business Name
                       <select class="form-control" label="Business Name"><option value="businessName">Doing Business As Name</option><option value="legalName">Legal Business Name</option><option value="both">Either</option></select></label>
                   </div>
-              </div>
-              <div class="col-md-6">
+              </div>-->
+              <div class="col-md-4">
                   <div class="form-group">
                       <label>Provider Types
                          <input id="providerTypes" class="form-control" type="text" placeholder="Type to search and enter" onChange="if($(this).val() != ''){ $('.subtypesGroup').removeClass('hide')}">
                       </label>
                   </div>
               </div>
-              <div class="col col-md-6">
+              <!--<div class="col col-md-6">
                   <div class="form-group hide subtypesGroup">
                       <label>Provider Subtypes
                           <input id="subtypes" class="form-control" type="text" placeholder="Type to search and enter">
@@ -104,20 +105,43 @@
                   <div class="form-group">
                       <label>iQIES ID<input class="form-control" type="text" value=""></label>
                   </div>
-              </div>
+              </div>-->
               <div class="col col-md-3">
                   <div class="form-group">
-                      <label>CCN<input class="form-control" type="text" value=""></label>
+                      <label>CCN/CLIA ID<input class="form-control" type="text" value=""></label>
                   </div>
               </div>
-              <div class="col col-md-3">
+              <!--<div class="col col-md-3">
                   <div class="form-group">
                       <label>State Facility ID<input class="form-control" type="text" value=""></label>
                   </div>
+              </div>-->
+              <div class="col col-md-3">
+                  <div class="form-group">
+                      <label>State
+                      <input class="form-control" type="text" value="" id="states" placeholder="Type to search and enter">
+                      </label>
+                  </div>
+              </div>
+              <div class="col col-md-3">
+                  <div class="form-group">
+                      <label>Management Unit
+                      <select class="form-control" disabled><option></option></select>
+                      </label>
+                      <p class="help-text">State must be selected</p>
+                  </div>
+              </div>
+              <div class="col col-md-3">
+                  <div class="form-group">
+                      <label>Work Unit
+                       <select class="form-control" disabled><option></option></select>
+                      </label>
+                      <p class="help-text">Management unit must be selected</p>
+                  </div>
               </div>
           </div>
-          <p><button class="btn btn-link showhide" onclick="$('#advancedOps').removeClass('hide'); $('.showhide').toggleClass('hide'); "><i class="fal fa-plus" style="margin-right: .5rem;"></i> Show advanced search options</button>
-          <button class="btn btn-link showhide hide" onclick="$('#advancedOps').addClass('hide'); $('.showhide').toggleClass('hide'); "><i class="fal fa-minus" style="margin-right: .5rem;"></i> Hide advanced search options</button>
+          <p><button class="btn btn-link showhide" onclick="$('#advancedOps').removeClass('hide'); $('.showhide').toggleClass('hide'); "><i class="fal fa-plus" style="margin-right: .5rem;"></i> Show Advanced Search</button>
+          <button class="btn btn-link showhide hide" onclick="$('#advancedOps').addClass('hide'); $('.showhide').toggleClass('hide'); "><i class="fal fa-minus" style="margin-right: .5rem;"></i> Hide Advanced Search</button>
           </p>
           <div class="row hide" id="advancedOps">
               
@@ -151,13 +175,13 @@
                       <label>City<input class="form-control" type="text" value=""></label>
                   </div>
               </div>
-              <div class="col col-md-3">
+              <!--<div class="col col-md-3">
                   <div class="form-group">
                       <label>State
                       <input class="form-control" type="text" value="" id="states" placeholder="Type to search and enter">
                       </label>
                   </div>
-              </div>
+              </div>-->
               <div class="col col-md-2">
                   <div class="form-group">
                       <label>ZIP Code<input class="form-control" type="text" value=""></label>
@@ -166,7 +190,7 @@
               <div class="col col-md-6">
                   <div class="form-group">
                       <label>CMS Region
-                      <input class="form-control" type="text" value="" id="CMSRegion" placeholder="Type to search and enter">
+                      <input class="form-control" type="text" value="" id="cmsregion" placeholder="Type to search and enter">
                       </label>
                   </div>
               </div>
@@ -192,10 +216,13 @@
               </div>
           </div>
          
+        <section>
+          <h4>Selected Criteria (0)</h4>
+        <p class="iq-no-results">There are no selected criteria.</p></section>
           <div class="row">
               <div class="col">
                   <div class="iqies-button-wrapper iqies-margin-bottom">
-                      <button id="viewProviderSearchResults" type="submit" class="btn btn-primary">Find Provider</button>
+                      <button id="viewProviderSearchResults" type="submit" class="btn btn-primary btn-lg">Search</button> <button class="btn btn-link btn-lg">Reset</button>
                   </div>
               </div>
           </div>
@@ -437,7 +464,7 @@
         }
       });
       
-      $( "#CMSRegions" )
+      $( "#cmsregion" )
       // don't navigate away from the field on tab when selecting an item
       .on( "keydown", function( event ) {
         if ( event.keyCode === $.ui.keyCode.TAB &&

@@ -30,12 +30,12 @@
     </div>
   </header>
 
-  <main>
-    <div class="iq-page-header-wrapper">
+  <main class="hha">
+    <div class="iq-page-header-wrapper mb-0">
       <div class="container">
         <div class="iq-page-header">
           <div class="row">
-            <div class="col d-flex flex-column justify-content-between">
+            <div class="col">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
@@ -69,13 +69,68 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col">
-          <div class="iq-button-wrapper">
-            <a href="find-a-provider.html" class="btn btn-primary btn-lg">Find a Provider</a>
+          <div class="iq-button-wrapper"><a href="find-a-provider.html" class="btn btn-primary btn-lg">Find Provider Information</a>
             <button class="btn btn-outline-primary btn-lg">
               Add a Provider
             </button>
           </div>
         </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+              <h2>My Watchlist</h2>
+              <p>Find provider information to add surveys, intakes, and enforcements to My Watchlist.</p>
+              
+                <nav class="nav nav-horizontal">
+              <a class="nav-link active" href="h-tab-1">Survey (0)</a>
+              <a class="nav-link" href="h-tab-2">Intake (0)</a>
+              <a class="nav-link" href="h-tab-3">Enforcement (0)</a>
+            </nav>
+            <div class="tab-content">
+                <div class="tab-pane active" id="h-tab-1">
+                    <p class="iq-no-results">You are not following any surveys at this time.</p>
+                </div> 
+                <div class="tab-pane" id="h-tab-2">
+                
+                </div>
+                <div class="tab-pane" id="h-tab-3">
+                    <div class="table-wrapper">  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="sortable descending"><span>Date</span></th>
+      <th scope="col" class="sortable currency"><span>Imposed Amount</span></th>
+      <th scope="col" class="sortable count"><span>Imposed # of Instances</span></th>
+      <th scope="col" class="sortable"><span>CMP in Effect</span></th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">03/20/2019</td>
+      <td class="currency">$2,000.00</td>
+      <td class="count">102</td>
+      <td>Imposed</td>
+      <td><a href="#" >Actions</a></td>
+    </tr>
+    <tr>
+      <td scope="row">03/20/2019</td>
+      <td class="currency">$400.00</td>
+      <td class="count">2</td>
+      <td>Imposed</td>
+      <td><a href="#">Actions</a></td>
+    </tr>
+    <tr>
+      <td scope="row">03/20/2019</td>
+      <td class="currency">$12,520.00</td>
+      <td class="count">30</td>
+      <td>Imposed</td>
+      <td><a href="#" >Actions</a></td>
+    </tr>
+  </tbody>
+</table></div>
+                </div>
+            </div>
+          </div>  
       </div>
     </div>
   </main>
