@@ -121,9 +121,25 @@
         <nav class="nav flex-column iq-nav" role="navigation">
             <a class="nav-link" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="false">Basic Information</a> 
             <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Responsible Staff</a> 
-            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Sanctions</a>
-                <a class="nav-link iq-subnav" tabindex="0" id="tab3-1Tab" href="#tab3-1" data-toggle="tab" role="tab" aria-controls="tab3-1" aria-selected="false">Directed Plan of Correction</a>
-                <a class="nav-link iq-subnav active" tabindex="0" id="tab3-2Tab" href="#tab3-2" data-toggle="tab" role="tab" aria-controls="tab3-2" aria-selected="true">Civil Money Penalty</a>
+            <a class="nav-link has-subnav is-open" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false" onClick="if($(this).hasClass('is-open')){
+                $(this).removeClass('is-open'); 
+                $(this).children('.iq-icon').removeClass('iq-icon-up');  
+                $(this).children('.iq-icon').addClass('iq-icon-down'); 
+                $('.sanctions.iq-subnav-group').addClass('hide');
+                $('.sanctions .nav-link.iq-subnav').removeClass('active');
+            } else {
+                $(this).addClass('is-open'); 
+                $(this).children('.iq-icon').addClass('iq-icon-up');  
+                $(this).children('.iq-icon').removeClass('iq-icon-down'); 
+                $('.sanctions.iq-subnav-group').removeClass('hide');
+            }">Sanctions <svg class="iq-icon iq-icon-up" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#0071bc" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10"
+                      d="M.5 16.5l8-8-8-8"></path>
+                  </svg></a>
+                <div class="iq-subnav-group sanctions"><a class="nav-link iq-subnav" tabindex="0" id="tab3-1Tab" href="#tab3-1" data-toggle="tab" role="tab" aria-controls="tab3-1" aria-selected="false">Directed Plan of Correction</a>
+                <a class="nav-link iq-subnav active" tabindex="0" id="tab3-2Tab" href="#tab3-2" data-toggle="tab" role="tab" aria-controls="tab3-2" aria-selected="true">Civil Money Penalty</a></div>
             <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">Specialties</a>
             <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Letters</a>
             <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Appeals</a>
@@ -436,8 +452,8 @@
         </div>
             
             <nav class="nav nav-horizontal">
-              <a class="nav-link active" href="h-tab-1">Per Instance (1)</a>
-              <a class="nav-link" href="h-tab-2">Per Day (0)</a>
+              <a class="nav-link active" href="#h-tab-1">Per Instance (1)</a>
+              <a class="nav-link" href="#h-tab-2">Per Day (0)</a>
             </nav>
             <div class="tab-content">
                 <div class="tab-pane active" id="h-tab-1">
@@ -477,7 +493,36 @@
 </table></div>
                 </div> 
                 <div class="tab-pane" id="h-tab-2">
-                xxx
+                    <p>2 Branches</p>
+                <div class="table-wrapper">  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="sortable"><span>Branch</span></th>
+      <th scope="col" class="sortable descending"><span>Date Created</span></th>
+      
+      <th scope="col" class="sortable"><span>Last Updated</span></th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">South Access Home Care</td>
+      <td>08/16/2019</td>
+        <td>08/16/2019</td>
+      <td><a href="#" >Delete</a> | <a href="#">Edit</a></td>
+    </tr>
+    <tr>
+       <td scope="row">North Access Home Care</td>
+      <td>08/16/2019</td>
+        <td>08/16/2019</td>
+      <td><a href="#" >Delete</a> | <a href="#">Edit</a></td>
+    </tr>
+    
+  </tbody>
+</table></div>
+                    
+                    <div class="iq-button-wrapper">
+                        <button class="btn btn-outline-primary">Add Another Branch</button></div>
                 </div>
             </div>
             

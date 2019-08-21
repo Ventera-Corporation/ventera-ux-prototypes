@@ -128,6 +128,11 @@ div.alert { margin-bottom: 2rem;}
 
 .iqies-label { font-weight: bold; }
 .nav:not(.nav-tabs) .nav-link:hover { text-decoration: none !important; }
+
+.nav-link.has-subnav .iq-icon {
+    float: right;
+}
+
 .iqies-button-wrapper { margin-bottom: 2rem; padding: 1rem 0; }
 .iqies-list-row {
     border-top: 1px solid #d6d7d9;
@@ -238,10 +243,15 @@ table.table-striped { border: 0; overflow: auto; width: 100%;}
 .iq-accordion.tertiary > .card > .card-header { font-weight: 400; font-size: 1.5rem; background-color: #f7f7f7;  }
 .iq-accordion.tertiary > .card > .card-header button.btn-block { font-weight: 400; font-size: 1.5rem; }
 .iq-accordion .card-header:hover, .iq-accordion.tertiary > .card > .card-header:hover { background-color: #f1f1f1; }
+.iq-accordion .card-header button.btn-block:hover, .iq-accordion .btn-link.btn-block:focus { text-decoration: none;  }
 
-.iq-accordion .card-header button.btn-block:hover, .iq-accordion .btn-link.btn-block:focus,  .iq-accordion .btn-block.btn-link.focus { text-decoration: none;  }
+.iq-accordion.showhide .card-header:hover { background-color: transparent; }
+.iq-accordion.showhide .card-header button.btn-block:hover, .iq-accordion.showhide .card-header .btn-link.btn-block:focus { text-decoration: underline; }
 
 .iq-accordion .card-header .btn-block > i { font-weight: 200; font-size: 1.25rem; margin-right: 1rem; }
 
 .iq-accordion.tertiary .card-body .card-header .btn-block { font-size: 1.25rem; }
 .iq-accordion.tertiary .card-body .card-header .btn-block small { font-size: .875rem; font-weight: normal; }
+
+.iqies-label-responsive { display: none !important;}
+.page-link img { height: 16px; margin-right: .5rem; margin-left: .5rem }

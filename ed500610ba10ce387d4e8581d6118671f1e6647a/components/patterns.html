@@ -329,6 +329,43 @@
             </div>
           </div>
         </section>
+          
+        <section>
+            <h3>Tertiary Accordion</h3>
+            <div class="iq-accordion tertiary">
+            <div class="card ">
+              <div class="card-header d-flex" id="s1header">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label"
+                  type="button" aria-expanded="false" data-toggle="collapse"
+                  onclick="toggleArrow('s1header')"
+                  data-target="#site1"
+                  aria-controls="site1">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10"
+                      d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>BrightHope North<br><small class="bottom">Branch Office</small></span>
+                </button>
+                <div class="iq-accordion-actions">
+                  <button type="button" class="btn btn-link">
+                    Delete
+                  </button><button type="button" class="btn btn-link">
+                    Edit
+                  </button>
+                </div>
+              </div>
+              <div id="site1" class="collapse hha"
+               >
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </section>
         <section>
           <div class="row">
             <div class="col">
@@ -337,7 +374,7 @@
               </h3>
             </div>
           </div>
-          <div class="iq-accordion">
+          <div class="iq-accordion showhide">
             <div class="card no-border" id="iq-heading-show-hide">
               <div class="card-header d-flex">
                 <button
