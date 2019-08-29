@@ -135,7 +135,7 @@
               <div class="col-md-12">
                 <p><label>Legal Business Name <span class="iq-asterisk">*</span></label>
                     <input type="text" class="form-control" value="" required>
-                   
+                   <span class="help-text">The provider name that is registered with the IRS and the Legal Business Name reported on the CMS 855</span>
                 </p>
               </div>
               <div class="col-md-12"><div class="form-group">
@@ -148,6 +148,7 @@
                             for="sameAsBusName"> Same as Legal Business Name </label>
                   </div>
                   <input type="text" class="form-control" value="">
+                  <p class="help-text">The name under which the provider operates and the Doing Business As Name reported on the CMS 855</p>
               </div>
                    </div>
      
@@ -194,8 +195,8 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label for="state">State</label>
-                    <select class="form-control" id="state">
+                    <label for="state">State <span class="iq-asterisk">*</span></label>
+                    <select class="form-control" id="state" onChange="if(this.options[this.selectedIndex].value != ''){ $('#stateRegion').prop('disabled',false);}">
                       <option value=""></option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -264,10 +265,52 @@
                     <input type="text" class="form-control" id="county">
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>OSCaR State Region
+                            <select id="stateRegion" disabled class="form-control"><option>Select one</option><option>xxx</option></select></label>
+                        <p class="help-text" id="stateRegionHelp">State must be selected</p>
+                    </div>
+                </div>
+                
+                
+                
+                <!--<div class="col-md-6">
+                    <div class="form-group">
+                        <label>CMS Region
+                        <input class="form-control" type="text" value="" id="CMSRegions" disabled></label>
+                        <p class="help-text">Autopopulated after State is selected</p>
+                    </div>
+                </div>-->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Management Unit
+                        <input class="form-control" type="text" value="" disabled></label>
+                        <p class="help-text">xxx</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Work Unit
+                        <input class="form-control" type="text" value="" disabled></label>
+                        <p class="help-text">yyy</p>
+                    </div>
+                </div>
+                        
+              </div>
+                </fieldset>
+                <fieldset><legend><h3>Contact Information</h3></legend>
+                   <div class="row">
+                    <div class="col-md-4">
                     <div class="form-group">
                         <label>Phone
                         <input class="form-control" maxlength="10" type="tel" value=""></label>
+                    </div>
+                </div>
+                       <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Extension
+                        <input class="form-control" maxlength="4" type="text" value=""></label>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -276,17 +319,9 @@
                         <input class="form-control" maxlength="10" type="tel" value=""></label>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>OSCaR State Region/CMS Region
-                        <input class="form-control" type="text" value="" id="CMSRegions"></label>
-                        <p class="help-text">Type to search and enter</p>
-                    </div>
                 </div>
-                
-                        
-              </div>
                 </fieldset>
+                
                  
               <div class="row">
                 <div class="col">
@@ -305,19 +340,43 @@
             <div class="iq-list">
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Legal Business Name</p></div>
-                  <div class="col-md-8"><p>Brighthope Home Care, LLC</p></div>
+                  <div class="col-md-8"><p>BrightHope Hospice</p></div>
                 </div>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Doing Business As Name</p></div>
-                  <div class="col-md-8"><p>Brighthope Home Care, LLC</p></div>
+                  <div class="col-md-8"><p>Brighthope Hospice</p></div>
                 </div>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Provider Type</p></div>
-                  <div class="col-md-8"><p>Home Health Agency</p></div>
+                  <div class="col-md-8"><p>Hospice</p></div>
                 </div>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Provider Sub-Type</p></div>
-                  <div class="col-md-8"><p class="iqies-not-available">Not applicable</p></div>
+                  <div class="col-md-8"><p>xxx</p></div>
+                </div>
+                
+                
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Primary Location</p></div>
+                  <div class="col-md-8"><p>667 Bent Ridge Lane, Suite B<br />
+                  000 Lorton, VA 60010<br />
+                  Fairfax County</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Phone</p></div>
+                  <div class="col-md-8"><p class="iqies-not-available">Not available</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Fax</p></div>
+                  <div class="col-md-8"><p class="iqies-not-available">Not available</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">OSCaR State Region</p></div>
+                  <div class="col-md-8"><p>1</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">CMS Region</p></div>
+                  <div class="col-md-8"><p class="iqies-not-available">3 - Philadelphia</p></div>
                 </div>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Management Unit</p></div>
@@ -326,12 +385,6 @@
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Work Unit</p></div>
                   <div class="col-md-8"><p class="iqies-not-available">Not available</p></div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Primary Practice Location</p></div>
-                  <div class="col-md-8"><p>667 Bent Ridge Lane, Suite B<br />
-                  000 Lorton, VA 60010<br />
-                  Fairfax County</p></div>
                 </div>
             </div>
                 
