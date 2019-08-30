@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="col-sm-5 col-md-4 col-lg-3">
-        <nav class="nav flex-column iq-nav" role="navigation"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a> <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Additional Branch Addresses</a>
+        <nav class="nav flex-column iq-nav" role="navigation"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a> <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Branches/Sites</a>
             <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Operating Details</a>
             <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Administrators</a>
             <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Additional Contacts</a>
@@ -1134,14 +1134,13 @@
             <section class="editView firstTime">
             <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Add Branch</h2>
+                <h2>Add Branch/Site</h2>
               </div>
               <div class="col-md-2 text-right">
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .editView').addClass('active'); $('#tab6 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>-->
               </div>
             </div>
-                
-              <div class="row">
+                 <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
@@ -1158,6 +1157,53 @@
                       <option>Child Affiliate Office</option><option>Sibling Affiliate</option></select>
                   </div>
                 </div>
+                
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="bc">Branch CCN</label>
+                     <input class="form-control" id="bc" type="text" maxlength="10">
+                      <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
+                      <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
+                      <li>Followed by capital letter Q</li>
+                          <li>Followed by the next 4 positions of the Medicare ID</li>
+                          <li>Followed by the next sequential number of facility branches starting with 001</li>
+                      </ul>
+                      </div>
+                  </div>
+                </div>
+                  <div class="col-md-6">&nbsp;</div>
+                  <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="bs">Branch Status</label>
+                     <select class="form-control" id="bs" onchange="switch(this.options[this.selectedIndex].value){
+                        case 'active':  $('.bclosed').addClass('hide'); break;      
+                        case 'closed': $('.bclosed').removeClass('hide'); break;  
+                        case 'other': $('.bclosed').addClass('hide'); break; 
+                                                                    }"><option>Select one</option><option selected value="active">Active</option>
+                      <option value="closed">Closed</option><option value="other">Other</option></select>
+                  </div>
+                </div>
+                <div class="col-md-3"><div class="form-group">
+                    <label for="bop">Open Date</label>
+                     <input type="date" class="form-control" id="bop">
+                             </div>
+                </div>  
+                 <div class="col-md-3 hide bclosed">
+                     <div class="form-group">
+                    <label for="bcl">Close Date</label>
+                     <input type="date" class="form-control" id="bcl" />
+                  </div>
+                  </div>
+                
+                <div class="col-md-12 bclosed hide">
+                    <div class="form-group"><label for="clReason">Reason for Closing</label>
+                             <input type="text" id="clReason" class="form-control"></div>
+                  </div>
+                 
+                  
+        
+                        
+                  
                   <div class="col-md-12">
                       <br>
                 <fieldset><legend><h3>Branch Address</h3></legend>
@@ -1259,30 +1305,32 @@
                 
               </div>
                 </fieldset>
+                  </div>
+                </div>
+             
+                  
                  
-              <div class="row">
-                <div class="col">
+              
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .editView').removeClass('active'); $('#tab6 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab6 .editView').removeClass('active'); $('#tab6 .readView').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
-                </div>
-              </div>
-              </div>
-              </div>
+                
+          
+            
               </section>
               <section class="readView active">
                   <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Additional Branch Addresses</h2> <p class="iq-page-header-description">Manage and add additional branches for the provider.</p>
-                <p><button class="btn btn-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.firstTime').addClass('active');">Add Branch</button></p>
+                <h2>Branches/Sites</h2> <p class="iq-page-header-description">Manage and add branches/sites for the provider.</p>
+                <p><button class="btn btn-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.firstTime').addClass('active');">Add Branch/Site</button></p>
               </div>
               <div class="col-md-2 text-right">
                 
               </div>
             </div>
-                  <p class="infoText"><span class="baCount">1</span> Additional Branches</p>
+                  <p class="infoText"><span class="baCount">1</span> Additional Branches/Sites</p>
                   
             
                 <div class="iqies-list-row">
@@ -1306,14 +1354,18 @@
                   <div class="col-md-4"><p class="iq-label">Branch Address</p></div>
                   <div class="col-md-8"><p>123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County not available</span></p></div>
                 </div>
+                          <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Branch Status</p></div>
+                  <div class="col-md-8"><p>Active</p></div>
+                </div>   
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Date Created</p></div>
+                  <div class="col-md-4"><p class="iq-label">Date Opened</p></div>
                   <div class="col-md-8"><p>8/15/2019</p></div>
                 </div>          
-                <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
+                <!--<div class="row">
+                  <div class="col-md-4"><p class="iq-label">Date Closed</p></div>
                   <div class="col-md-8"><p>8/15/2019</p></div>
-                </div>          
+                </div>    -->      
             </div>
                 </div>
               </section>

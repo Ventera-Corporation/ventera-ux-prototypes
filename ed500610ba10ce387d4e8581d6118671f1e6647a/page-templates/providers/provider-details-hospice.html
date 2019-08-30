@@ -26,27 +26,75 @@
 </header>
 <main>
   <div class="iq-page-header-wrapper inverted">
-    <div class="container">
-      <div class="iq-page-header">
-        <div class="row">
-          <div class="col d-flex flex-column justify-content-between">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"> <a href="../../index.html">Home</a> </li>
-                <li class="breadcrumb-item"> <a href="">Providers</a> </li>
-                <li class="breadcrumb-item"> <a href="">IQIES 113344</a> </li>
-                <li class="breadcrumb-item"> Provider Details</li>
-              </ol>
-            </nav>
-            <div class="iq-page-header-content">
-              <h1>Provider Details</h1>
-              <div class="iq-page-header-description"><a href="#">Sample Hospice | IQIES 113344</a></div>
+            <div class="container">
+              <div class="iq-page-header">
+                <div class="row">
+                  <div class="col d-flex flex-column justify-content-between">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="providers-landing.html">Providers</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          BrightHope
+                        </li>
+                       
+                      </ol>
+                    </nav>
+                    <div class="iq-page-header-content">
+                      <h1>BrightHope</h1>
+                      <div class="iq-page-header-details">
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->IQIES 123456 - <em>Non-Deemed</em>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-3 iq-page-header-contact">
+                    <address>
+                      667 Bent Ridge Lane<br>Suite 1000<br>Lorton, VA
+                      60010<br>
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-summary-bar">
+              <div class="container">
+                <div class="row ">
+                  <div class="col d-flex align-items-center">
+                    <div class="iq-summary-bar-data" data-index="0">
+                      <p>Provider Type</p>
+                      <p>Hospice</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="1">
+                      <p>Certification Status</p>
+                      <p>Pending</p>
+                    </div>
+                    
+                    <div class="iq-summary-bar-data" data-index="2">
+                      <p>Administrator</p>
+                      <p><a href="#">Dana Yang <i class="fa fa-envelope" title="Send Email"></i></a></p>
+                    </div>
+                      <!--<div class="iq-summary-bar-data" data-index="3">
+                      <p>Administrator Email</p>
+                      <p class="iq-not-available">Not Available</p>
+                    </div>-->
+                    <div class="iq-summary-bar-data" data-index="4">
+                      <p>LSC Requirement</p>
+                      <p>Undetermined</p>
+                    </div>
+                    <!--<div class="iq-summary-bar-action p-1">
+                      <a href="provider-details-hh.html" class="btn btn-link">
+                        View Details
+                      </a>
+                    </div>-->
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="container" id="mainContent">
     <!--<div class="row">
       <div class="col">
@@ -74,7 +122,7 @@
         </div>
       </div>
       <div class="col-sm-5 col-md-4 col-lg-3">
-        <nav class="nav flex-column iq-nav" role="navigation"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a> <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Branches/Sites</a>
+        <nav class="nav flex-column iq-nav" role="navigation"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <!--<a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a>--> <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Locations</a>
             <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Associations</a>
             <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Administrators</a>
             <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Ownership</a>
@@ -196,7 +244,7 @@
                 <div class="col-md-3">
                   <div class="form-group">
                     <label for="state">State <span class="iq-asterisk">*</span></label>
-                    <select class="form-control" id="state" onChange="if(this.options[this.selectedIndex].value != ''){ $('#stateRegion').prop('disabled',false);}">
+                    <select class="form-control" id="state" onChange="if(this.options[this.selectedIndex].value != ''){ $('.stateDependent').prop('disabled',false);}">
                       <option value=""></option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -268,7 +316,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>OSCaR State Region
-                            <select id="stateRegion" disabled class="form-control"><option>Select one</option><option>xxx</option></select></label>
+                            <select disabled class="form-control stateDependent"><option>Select one</option><option>xxx</option></select></label>
                         <p class="help-text" id="stateRegionHelp">State must be selected</p>
                     </div>
                 </div>
@@ -285,15 +333,15 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Management Unit
-                        <input class="form-control" type="text" value="" disabled></label>
-                        <p class="help-text">xxx</p>
+                       <select disabled class="form-control stateDependent"><option>Select one</option><option>xxx</option></select></label>
+                        <p class="help-text">State must be selected</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Work Unit
-                        <input class="form-control" type="text" value="" disabled></label>
-                        <p class="help-text">yyy</p>
+                        <select disabled class="form-control stateDependent"><option>Select one</option><option>xxx</option></select></label>
+                        <p class="help-text">State must be selected</p>
                     </div>
                 </div>
                         
@@ -313,15 +361,135 @@
                         <input class="form-control" maxlength="4" type="text" value=""></label>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="form-group">
                         <label>Fax
                         <input class="form-control" maxlength="10" type="tel" value=""></label>
                     </div>
                 </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Email
+                        <input class="form-control" type="email" value=""></label>
+                    </div>
+                </div>      
+                       
                 </div>
                 </fieldset>
-                
+                <fieldset><legend><h3>Mailing Address</h3></legend>
+                     <div class="row">
+                <div class="col">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" id="sameAsFacilityAddress"
+                            name="sameAsFacilityAddress"
+                            class="custom-control-input" value="value">
+                    <label class="custom-control-label"
+                            for="sameAsFacilityAddress"> Same as Primary Location </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Name of Contact</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">&nbsp;
+                  </div><div class="col-md-6">
+                  <div class="form-group">
+                    <label for="address1M">Address 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control required-form-input" id="address1M"
+                            required>
+                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="address2M">Address 2</label>
+                    <input type="text" class="form-control" id="address2M">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="cityM">City <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control required-form-input" id="cityM"
+                            required>
+                    <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="state">State</label>
+                    <select class="form-control" id="stateM">
+                      <option value=""></option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL">Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="zipCodeX">ZIP Code <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control required-form-input" id="zipCodeX"
+                            required>
+                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
+                  </div>
+                </div>
+              </div>
+                </fieldset>
+             
                  
               <div class="row">
                 <div class="col">
@@ -354,22 +522,6 @@
                   <div class="col-md-4"><p class="iq-label">Provider Sub-Type</p></div>
                   <div class="col-md-8"><p>xxx</p></div>
                 </div>
-                
-                
-                <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Primary Location</p></div>
-                  <div class="col-md-8"><p>667 Bent Ridge Lane, Suite B<br />
-                  000 Lorton, VA 60010<br />
-                  Fairfax County</p></div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Phone</p></div>
-                  <div class="col-md-8"><p class="iqies-not-available">Not available</p></div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Fax</p></div>
-                  <div class="col-md-8"><p class="iqies-not-available">Not available</p></div>
-                </div>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">OSCaR State Region</p></div>
                   <div class="col-md-8"><p>1</p></div>
@@ -386,7 +538,33 @@
                   <div class="col-md-4"><p class="iq-label">Work Unit</p></div>
                   <div class="col-md-8"><p class="iqies-not-available">Not available</p></div>
                 </div>
-            </div>
+                  </div>
+                <h3>Contact Information</h3>
+                <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Primary Location</p></div>
+                  <div class="col-md-8"><p>667 Bent Ridge Lane, Suite B<br />
+                  000 Lorton, VA 60010<br />
+                  Fairfax County</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><p class="iq-label">Mailing Address</p></div>
+                    <div class="col-md-8"><p class="iq-not-available">Same as Primary Location</p></div>
+                    </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Phone</p></div>
+                  <div class="col-md-8"><p>(123) 123-1234 <span class="ml-2">Ext. 123</span></p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Fax</p></div>
+                  <div class="col-md-8"><p class="iqies-not-available">Not available</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Email</p></div>
+                  <div class="col-md-8"><p class="iqies-not-available">Not available</p></div>
+                </div>
+                </div>
+          
                 
             
             </section>  
@@ -511,16 +689,14 @@
                   </div>
                 </div>
               </div>
-              <br>
-              <div class="row">
-                <div class="col">
+              
+              
                   <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .editView').removeClass('active'); $('#tab2 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
                     <button
                             class="btn btn-link" onClick="$('#tab2 .editView').removeClass('active'); $('#tab2 .readView').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
-                </div>
-              </div>
+               
             </section>
             <section class="readView">
                 
@@ -1216,7 +1392,7 @@
             <section class="editView firstTime">
             <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Add Branch</h2>
+                <h2>Add Location</h2>
               </div>
               <div class="col-md-2 text-right">
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .editView').addClass('active'); $('#tab6 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>-->
@@ -1240,6 +1416,53 @@
                       <option>Child Affiliate Office</option><option>Sibling Affiliate</option></select>
                   </div>
                 </div>
+                
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="bc">Branch CCN</label>
+                     <input class="form-control" id="bc" type="text" maxlength="10">
+                      <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
+                      <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
+                      <li>Followed by capital letter Q</li>
+                          <li>Followed by the next 4 positions of the Medicare ID</li>
+                          <li>Followed by the next sequential number of facility branches starting with 001</li>
+                      </ul>
+                      </div>
+                  </div>
+                </div>
+                  <div class="col-md-6">&nbsp;</div>
+                  <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="bs">Branch Status</label>
+                     <select class="form-control" id="bs" onchange="switch(this.options[this.selectedIndex].value){
+                        case 'active':  $('.bclosed').addClass('hide'); break;      
+                        case 'closed': $('.bclosed').removeClass('hide'); break;  
+                        case 'other': $('.bclosed').addClass('hide'); break; 
+                                                                    }"><option>Select one</option><option selected value="active">Active</option>
+                      <option value="closed">Closed</option><option value="other">Other</option></select>
+                  </div>
+                </div>
+                <div class="col-md-3"><div class="form-group">
+                    <label for="bop">Open Date</label>
+                     <input type="date" class="form-control" id="bop">
+                             </div>
+                </div>  
+                 <div class="col-md-3 hide bclosed">
+                     <div class="form-group">
+                    <label for="bcl">Close Date</label>
+                     <input type="date" class="form-control" id="bcl" />
+                  </div>
+                  </div>
+                
+                <div class="col-md-12 bclosed hide">
+                    <div class="form-group"><label for="clReason">Reason for Closing</label>
+                             <input type="text" id="clReason" class="form-control"></div>
+                  </div>
+                 
+                  
+        
+                        
+                  
                   <div class="col-md-12">
                       <br>
                 <fieldset><legend><h3>Branch Address</h3></legend>
@@ -1341,7 +1564,8 @@
                 
               </div>
                 </fieldset>
-                 
+                  </div>
+                </div>
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
@@ -1351,20 +1575,19 @@
                   </div>
                 </div>
               </div>
-              </div>
-              </div>
+           
               </section>
               <section class="readView active">
                   <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Branches/Sites</h2> <p class="iq-page-header-description">Manage and add additional branches or sites for the provider.</p>
-                <p><button class="btn btn-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.firstTime').addClass('active');">Add Branch/Site</button></p>
+                <h2>Locations</h2> <p>Manage and add additional locations for the provider.</p>
+                <p><button class="btn btn-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.firstTime').addClass('active');">Add Location</button></p>
               </div>
               <div class="col-md-2 text-right">
                 
               </div>
             </div>
-                  <p class="infoText"><span class="baCount">2</span> Branches/Sites</p>
+                  <p class="infoText"><span class="baCount">2</span> Locations</p>
         
          <div class="iq-accordion tertiary">
             <div class="card ">
@@ -1380,7 +1603,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>BrightHope North<br><small class="bottom">Branch Office</small></span>
+                  </svg><span>BrightHope - CCN 12345<br><small class="bottom">Primary Location &mdash; ACTIVE, 8/15/2019</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
@@ -1394,7 +1617,7 @@
                >
                 <div class="card-body">
                   <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             
                         <div class="bd-example">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -1436,32 +1659,41 @@
     </a>
   </div>
 </div>
-                         <p>Brief description of the site</p>
+                         
                             
                             
-                            <!--<div class="iq-list">
+                         <div class="iq-list">
+                <!--<div class="row">
+                  <div class="col-md-4"><p class="iq-label"></p></div>
+                  <div class="col-md-8"><p></p></div>
+                </div>  -->
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Branch Address</p></div>
-                  <div class="col-md-8"><p>123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County not available</span></p></div>
+                  <div class="col-md-8"><p><a href="#"><i class="fal fa-map-marker-alt"></i>123 Temporary Road, Suite 100<br>Reston, VA 20190</a><br><span class="iqies-not-available">County not available</span></p></div>
                 </div>
+                 <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Facility/Branch ID</p></div>
+                  <div class="col-md-8"><p>54321</p></div>
+                </div>              
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Date Created</p></div>
+                  <div class="col-md-4"><p class="iq-label">Branch Status</p></div>
+                  <div class="col-md-8"><p>Active</p></div>
+                </div>  
+                             <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Open Date</p></div>
                   <div class="col-md-8"><p>8/15/2019</p></div>
                 </div>          
-                <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
-                  <div class="col-md-8"><p>8/15/2019</p></div>
-                </div>          
-            </div>-->
+                        
+            </div>
                         </div>
-                        <div class="col-md-4">
+                       <!-- <div class="col-md-4">
                            <div>
                                 <p><label>Address</label>
-                            123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County not available</span></p>
+                             123 Temporary Road<br>Suite 100<br>Reston, VA 20190</a><br><span class="iqies-not-available">County not available</span></p>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.1291793328915!2d-77.33793048382407!3d38.94387715180661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64ae7bd3d28ff%3A0x33a50cc929336b1c!2sVentera+Corporation!5e0!3m2!1sen!2sus!4v1566314784533!5m2!1sen!2sus" frameborder="0" style="width: 100%; min-height: 200px; border:0" allowfullscreen></iframe>
                               </div>
                             
-                        </div>
+                        </div>-->
                     </div>
                     <div class="row mt-md-3">
                         <div class="col md-12">
@@ -1481,7 +1713,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility<br><small class="bottom">Building - 2016</small></span>
+                  </svg><span>Tranquility<br><small class="bottom">Building &mdash; ACTIVE, 3/2/2016</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
@@ -1515,7 +1747,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Solarium<br><small class="bottom">Wing - 2000</small></span>
+                  </svg><span>Solarium<br><small class="bottom">Wing &mdash; ACTIVE, 5/21/2000</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
@@ -1555,7 +1787,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>BrightHope South<br><small class="bottom">Sibling Affliate</small></span>
+                  </svg><span>BrightHope South<br><small class="bottom">Sibling Affliate &mdash; CLOSED</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
