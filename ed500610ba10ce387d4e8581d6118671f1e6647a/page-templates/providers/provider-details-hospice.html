@@ -123,9 +123,9 @@
       </div>
       <div class="col-sm-5 col-md-4 col-lg-3">
         <nav class="nav flex-column iq-nav" role="navigation"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <!--<a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a>--> <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Locations</a>
-            <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Associations</a>
+            <!--<a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Associations</a>-->
             <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Administrators</a>
-            <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Ownership</a>
+            <!--<a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Ownership</a>-->
             <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Licensing</a> 
             <a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">Other</a> 
             <!--<a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">Deeming Information</a>   
@@ -222,7 +222,7 @@
                     <label for="address1">Address Line 1 <span class="iq-asterisk">*</span>
                     <input type="text" class="form-control" id="address1"
                             required></label>
-                      <p class="help-text">E.g. 123 Street Name</p>
+                      <p class="help-text hide">E.g. 123 Street Name</p>
                       
                   </div>
                 </div>
@@ -230,7 +230,7 @@
                   <div class="form-group">
                     <label for="address2">Address Line 2
                     <input type="text" class="form-control" id="address2"  style="margin-top: .5rem;"></label>
-                    <p class="help-text">E.g. Apt 1</p>
+                    <p class="help-text hide">E.g. Apt 1</p>
                   </div>
                 </div>
           
@@ -1405,13 +1405,13 @@
                 </div>
                   <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bn">Branch Name <span class="iq-asterisk">*</span></label>
+                    <label for="bn">Location Name <span class="iq-asterisk">*</span></label>
                      <input type="text" class="form-control" id="bn" required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bt">Branch Type</label>
+                    <label for="bt">Location Type</label>
                      <select class="form-control" id="bt"><option>Select one</option><option>Branch Office</option>
                       <option>Child Affiliate Office</option><option>Sibling Affiliate</option></select>
                   </div>
@@ -1419,7 +1419,7 @@
                 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bc">Branch CCN</label>
+                    <label for="bc">Branch CCN <span class="iq-asterisk">*</span></label>
                      <input class="form-control" id="bc" type="text" maxlength="10">
                       <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
                       <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
@@ -1432,15 +1432,20 @@
                 </div>
                   <div class="col-md-6">&nbsp;</div>
                   <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="bs">Branch Status</label>
-                     <select class="form-control" id="bs" onchange="switch(this.options[this.selectedIndex].value){
-                        case 'active':  $('.bclosed').addClass('hide'); break;      
-                        case 'closed': $('.bclosed').removeClass('hide'); break;  
-                        case 'other': $('.bclosed').addClass('hide'); break; 
-                                                                    }"><option>Select one</option><option selected value="active">Active</option>
-                      <option value="closed">Closed</option><option value="other">Other</option></select>
-                  </div>
+                 <fieldset>
+                <legend>Status <span class="iq-asterisk" title="Required field">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="r-fcs1" checked name="fcs" class="custom-control-input" value="value"
+                     onChange="$('.bclosed').addClass('hide');">
+                  <label class="custom-control-label" for="r-fcs1"> Active </label>
+                </div>
+                          <div class="custom-control custom-radio">
+                  <input type="radio" id="r-fcs2" name="fcs" class="custom-control-input" value="value"
+                     onChange="$('.bclosed').removeClass('hide');">
+                  <label class="custom-control-label" for="r-fcs2"> Terminated </label>
+                </div>
+                          
+                      </fieldset>
                 </div>
                 <div class="col-md-3"><div class="form-group">
                     <label for="bop">Open Date</label>
@@ -1454,18 +1459,18 @@
                   </div>
                   </div>
                 
-                <div class="col-md-12 bclosed hide">
+                <!--<div class="col-md-12 bclosed hide">
                     <div class="form-group"><label for="clReason">Reason for Closing</label>
                              <input type="text" id="clReason" class="form-control"></div>
-                  </div>
+                  </div>-->
                  
                   
         
                         
                   
                   <div class="col-md-12">
-                      <br>
-                <fieldset><legend><h3>Branch Address</h3></legend>
+                      
+                <fieldset><legend><h3>Location Address</h3></legend>
                     <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -1580,7 +1585,7 @@
               <section class="readView active">
                   <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Locations</h2> <p>Manage and add additional locations for the provider.</p>
+                <h2>Locations</h2> <p>Manage and add locations for the provider.</p>
                 <p><button class="btn btn-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.firstTime').addClass('active');">Add Location</button></p>
               </div>
               <div class="col-md-2 text-right">
@@ -1603,7 +1608,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>BrightHope - CCN 12345<br><small class="bottom">Primary Location &mdash; ACTIVE, 8/15/2019</small></span>
+                  </svg><span>BrightHope<br><small class="bottom" style="color: #5b616b">Primary Location | CCN 12345 | ACTIVE</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
@@ -1668,18 +1673,18 @@
                   <div class="col-md-8"><p></p></div>
                 </div>  -->
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Branch Address</p></div>
-                  <div class="col-md-8"><p><a href="#"><i class="fal fa-map-marker-alt"></i>123 Temporary Road, Suite 100<br>Reston, VA 20190</a><br><span class="iqies-not-available">County not available</span></p></div>
+                  <div class="col-md-4"><p class="iq-label">Location Address</p></div>
+                  <div class="col-md-8"><p><a href="#" class="mapLink"><i class="fal fa-map-marker-alt"></i> <span>123 Temporary Road, Suite 100<br>Reston, VA 20190</span></a><!--<br><span class="iqies-not-available">County not available</span>--></p></div>
                 </div>
                  <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Facility/Branch ID</p></div>
-                  <div class="col-md-8"><p>54321</p></div>
+                  <div class="col-md-4"><p class="iq-label">Provider CCN</p></div>
+                  <div class="col-md-8"><p>IQIES 12345</p></div>
                 </div>              
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Branch Status</p></div>
+                  <div class="col-md-4"><p class="iq-label">Status</p></div>
                   <div class="col-md-8"><p>Active</p></div>
                 </div>  
-                             <div class="row">
+                <div class="row">
                   <div class="col-md-4"><p class="iq-label">Open Date</p></div>
                   <div class="col-md-8"><p>8/15/2019</p></div>
                 </div>          
@@ -1713,7 +1718,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility<br><small class="bottom">Building &mdash; ACTIVE, 3/2/2016</small></span>
+                  </svg><span>Tranquility<br><small class="bottom">Building | ACTIVE</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
@@ -1747,7 +1752,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Solarium<br><small class="bottom">Wing &mdash; ACTIVE, 5/21/2000</small></span>
+                  </svg><span>Solarium<br><small class="bottom">Wing | TERMINATED</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
@@ -1787,7 +1792,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>BrightHope South<br><small class="bottom">Sibling Affliate &mdash; CLOSED</small></span>
+                  </svg><span>BrightHope South<br><small class="bottom" style="color: #5b616b">Sibling Affliate | CCN 12345 | TERMINATED</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
@@ -1801,7 +1806,7 @@
                >
                 <div class="card-body">
                   <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             
                         <div class="bd-example">
   <div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel">
@@ -1843,32 +1848,43 @@
     </a>
   </div>
 </div>
-                         <p>Brief description of the site</p>
-                            
-                            
-                            <!--<div class="iq-list">
+                        
+                        <div class="iq-list">
+                <!--<div class="row">
+                  <div class="col-md-4"><p class="iq-label"></p></div>
+                  <div class="col-md-8"><p></p></div>
+                </div>  -->
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Branch Address</p></div>
-                  <div class="col-md-8"><p>123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County not available</span></p></div>
+                  <div class="col-md-4"><p class="iq-label">Location Address</p></div>
+                  <div class="col-md-8"><p><a href="#" class="mapLink"><i class="fal fa-map-marker-alt"></i> <span>123 Temporary Road, Suite 100<br>Reston, VA 20190</span></a><!--<br><span class="iqies-not-available">County not available</span>--></p></div>
                 </div>
+                 <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Branch CCN</p></div>
+                  <div class="col-md-8"><p>54321</p></div>
+                </div>              
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Date Created</p></div>
-                  <div class="col-md-8"><p>8/15/2019</p></div>
+                  <div class="col-md-4"><p class="iq-label">Status</p></div>
+                  <div class="col-md-8"><p>Terminated</p></div>
+                </div>  
+                             <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Open Date</p></div>
+                  <div class="col-md-8"><p>1/21/1999</p></div>
                 </div>          
-                <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
-                  <div class="col-md-8"><p>8/15/2019</p></div>
+                            <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Close Date</p></div>
+                  <div class="col-md-8"><p>8/11/2019</p></div>
                 </div>          
-            </div>-->
+                        
+            </div>
                         </div>
-                        <div class="col-md-4">
+                        <!--<div class="col-md-4">
                            <div>
                                 <p><label>Address</label>
                             222 Somewhere Road, Suite 204<br>Reston, VA 20190<br>Fairfax County</p>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.1291793328915!2d-77.33793048382407!3d38.94387715180661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64ae7bd3d28ff%3A0x33a50cc929336b1c!2sVentera+Corporation!5e0!3m2!1sen!2sus!4v1566314784533!5m2!1sen!2sus" frameborder="0" style="width: 100%; min-height: 200px; border:0" allowfullscreen></iframe>
                               </div>
                             
-                        </div>
+                        </div>-->
                     </div>
                     <div class="row mt-md-3">
                         <div class="col md-12">
@@ -1888,7 +1904,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility<br><small class="bottom">Building - 2016</small></span>
+                  </svg><span>Morrison<br><small class="bottom">Building | TERMINATED</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
@@ -1922,7 +1938,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Solarium<br><small class="bottom">Wing - 2000</small></span>
+                  </svg><span>3rd Floor<br><small class="bottom">Floor | TERMINATED</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link">
