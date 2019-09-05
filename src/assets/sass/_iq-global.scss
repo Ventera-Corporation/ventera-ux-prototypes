@@ -1,3 +1,19 @@
+// @import-normalize; // usage tbd
+
+// TODO: check cross browser
+@font-face {
+  font-family: 'Open Sans';
+  src: local('OpenSans Regular'), local('OpenSans-Regular'),
+    url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  src: local('OpenSans Bold'), local('OpenSans-Bold'),
+    url('../fonts/OpenSans-Bold.ttf');
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,8 +28,26 @@ section {
   margin-bottom: 2.5rem;
 }
 
+h1 {
+  margin-bottom: $iq-heading-one-margin;
+}
+h2 {
+  margin-bottom: $iq-heading-two-margin;
+}
+h3 {
+  margin-bottom: $iq-heading-three-margin;
+}
+h4 {
+  margin-bottom: $iq-heading-four-margin;
+}
+h5 {
+  margin-bottom: $iq-heading-five-margin;
+}
+p {
+  margin-bottom: $iq-paragraph-margin;
+}
+
 a,
-// TODO: phase out use of <a> tags with button styling
 .btn {
   font-weight: $font-weight-bold;
 }
@@ -24,12 +58,33 @@ p {
     text-decoration: underline;
   }
 }
+.form-text {
+  font-size: $iq-text-help-size;
+  margin-bottom: $iq-text-help-margin;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+// TBS
+
+label {
+  font-weight: 700;
+}
+small {
+  margin-bottom: $iq-text-small-margin;
+}
+.display-1 {
+  margin-bottom: $iq-display-1-margin;
+}
 
 .iq-asterisk {
   color: $iq-color-error;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.iq-btn-focus {
+  box-shadow: none;
+  outline: 3px solid $iq-color-primary;
+  outline-offset: 5px;
 }

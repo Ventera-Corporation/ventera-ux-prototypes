@@ -1,103 +1,117 @@
  /* NOTE: Custom prototype CSS goes in this file */
 
-@font-face {
-  font-family: "Open Sans";
-  src:
-    url("../fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
-    url("../fonts/OpenSans-Regular-webfont.woff") format("woff"),
-    url("../fonts/OpenSans-Regular-webfont.ttf") format("truetype");
+ @font-face {
+   font-family: "Open Sans";
+   src:
+     url("../fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+     url("../fonts/OpenSans-Regular-webfont.woff") format("woff"),
+     url("../fonts/OpenSans-Regular-webfont.ttf") format("truetype");
+ }
+
+ @font-face {
+   font-family: "Open Sans";
+   src:
+     url("../fonts/OpenSans-Bold-webfont.woff2") format("woff2"),
+     url("../fonts/OpenSans-Bold-webfont.woff") format("woff"),
+     url("../fonts/OpenSans-Bold-webfont.ttf") format("truetype");
+   font-weight: 700;
+ }
+
+ body {
+   overflow-y: scroll;
+   overflow-x: hidden;
+ }
+
+ main {
+   min-height: calc(100vh - 285px);
+   padding-bottom: 3rem;
+   padding-left: 0;
+   padding-right: 0;
+ }
+
+ section {
+   /* This isn't ok, it needs to be scoped to a specific view, it breaks other layouts - commenting out for now, also rem only for margins, no px */
+   /* margin-bottom: 50px; */
+ }
+
+ .iq-proto-heading {
+   font-weight: 700;
+ }
+
+ /* Components Sidebar Menu */
+
+ #menu-toggle {
+   position: fixed;
+   top: 1.5rem;
+   left: 1.5rem;
+   z-index: 9999;
+   display: block;
+ }
+
+ #iq-proto-wrapper {
+   padding-left: 210px;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+ }
+
+ #iq-proto-wrapper.toggled {
+   padding-left: 0;
+ }
+
+ #iq-proto-wrapper.toggled #iq-proto-sidebar-wrapper {
+   width: 0;
+ }
+
+ #iq-proto-sidebar-wrapper {
+   z-index: 8888;
+   position: fixed;
+   overflow-x: hidden;
+   left: 210px;
+   width: 210px;
+   overflow-y: auto;
+   margin-left: -210px;
+   background-color: #112E51;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+   height: 100%;
+   color: #fff;
+ }
+
+ #iq-proto-sidebar-wrapper .list-group {
+   margin-top: 4.5rem;
+ }
+
+ #iq-proto-sidebar-wrapper .list-group .list-group-item {
+   background-color: transparent;
+   border: 0;
+   margin: 0 1rem;
+   padding: 0.5rem;
+ }
+
+ #iq-proto-sidebar-wrapper a {
+   color: #fff;
+   opacity: .8;
+   text-decoration: none;
+   font-weight: 300;
+ }
+
+ #iq-proto-sidebar-wrapper a:hover {
+   opacity: 1;
+ }
+
+nav a {
+    color: #212121;
+    font-style: normal;
 }
 
-@font-face {
-  font-family: "Open Sans";
-  src:
-    url("../fonts/OpenSans-Bold-webfont.woff2") format("woff2"),
-    url("../fonts/OpenSans-Bold-webfont.woff") format("woff"),
-    url("../fonts/OpenSans-Bold-webfont.ttf") format("truetype");
-  font-weight: 700;
+.nav-icons .dropdown-toggle::after {
+    display: none;
 }
-
-body {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-main {
-  min-height: calc(100vh - 285px);
-  padding-bottom: 3rem;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-section {
-  margin-bottom: 50px;
-}
-
-.iq-proto-heading {
-  font-weight: 700;
-}
-
-/* Components Sidebar Menu */
-
-#menu-toggle {
-  position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
-  z-index: 9999;
-  display: block;
-}
-
-#iq-proto-wrapper {
-  padding-left: 210px;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-#iq-proto-wrapper.toggled {
-  padding-left: 0;
-}
-
-#iq-proto-wrapper.toggled #iq-proto-sidebar-wrapper {
-  width: 0;
-}
-
-#iq-proto-sidebar-wrapper {
-  z-index: 8888;
-  position: fixed;
-  overflow-x: hidden;
-  left: 210px;
-  width: 210px;
-  overflow-y: auto;
-  margin-left: -210px;
-  background-color: #112E51;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  height: 100%;
-  color: #fff;
-}
-
-#iq-proto-sidebar-wrapper .list-group {
-  margin-top: 4.5rem;
-}
-
-#iq-proto-sidebar-wrapper .list-group .list-group-item {
-  background-color: transparent;
-  border: 0;
-  margin: 0 1rem;
-  padding: 0.5rem;
-}
-
-#iq-proto-sidebar-wrapper a {
-  color: #fff;
-  opacity: .8;
-  text-decoration: none;
-  font-weight: 300;
-}
-
-#iq-proto-sidebar-wrapper a:hover {
-  opacity: 1;
+.nav-icons .dropdown-item {
+    font-weight: normal;
+	font-size: 14px;
 }
