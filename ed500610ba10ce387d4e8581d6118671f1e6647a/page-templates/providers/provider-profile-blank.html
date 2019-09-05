@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Provider Profile</title>
+<link rel="stylesheet"
+    href="../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+    <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <nav> <a href="/index.html"> <img src="../../../src/assets/images/logo-iqies.svg"
+                class="iq-logo" alt="Logo iQIES Color" /> </a> </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+<div class="iq-page-header-wrapper inverted">
+            <div class="container">
+              <div class="iq-page-header">
+                <div class="row">
+                  <div class="col d-flex flex-column justify-content-between">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="providers-landing.html">Providers</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          A Better Way
+                        </li>
+                       
+                      </ol>
+                    </nav>
+                    <div class="iq-page-header-content">
+                      <h1>A Better Way</h1>
+                      <div class="iq-page-header-details">
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->IQIES 123456 - <em>Non-Deemed</em>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-3 iq-page-header-contact">
+                    <address>
+                      667 Bent Ridge Lane<br>Suite 1000<br>Lorton, VA
+                      60010<br>
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-summary-bar">
+              <div class="container">
+                <div class="row ">
+                  <div class="col d-flex align-items-center">
+                    <div class="iq-summary-bar-data" data-index="0">
+                      <p>Provider Type</p>
+                      <p>Home Health Agency</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="1">
+                      <p>Certification Status</p>
+                      <p>Pending</p>
+                    </div>
+                    
+                    <div class="iq-summary-bar-data" data-index="2">
+                      <p>Administrator</p>
+                      <p><a href="#" data-toggle="tooltip" title="Email: Dana.Yang@cms.org">Dana Yang</a></p>
+                    </div>
+                      <!--<div class="iq-summary-bar-data" data-index="3">
+                      <p>Administrator Email</p>
+                      <p class="iq-not-available">Not Available</p>
+                    </div>-->
+                    <div class="iq-summary-bar-data" data-index="4">
+                      <p>LSC Survey Status</p>
+                      <p class="iq-not-available">Not Available</p>
+                    </div>
+                    <div class="iq-summary-bar-action p-1">
+                      <a href="provider-details-hh.html" class="btn btn-link">
+                        View Details
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+  <div class="container " id="mainContent">
+    <!--<div class="row">
+      <div class="col">
+        <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
+      </div>
+    </div>-->
+  
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success successMsg hide" role="alert">
+          <div class="alert-content">Changes saved successfully</div>
+        </div>
+        <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 <p> Unable to save. Please correct the errors below.</p> 
+                  <ul>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                  </ul>
+              </div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+          <section>
+          <h2>Recent Surveys</h2>
+            <div class="iq-button-wrapper" style="margin-top: -1rem;">
+              <a class="btn btn-primary" href="/providers/64606/surveys/create">Add Survey</a>
+              <button type="button" disabled="" to="/providers/64606/surveys" class="btn btn-outline-primary hide">View All Surveys</button>
+          </div>
+        <p class="iq-not-available">There are no surveys for this provider</p>
+          
+          
+    </section>
+          <section>
+        <h2>Recent Intakes</h2>
+          
+          
+           <!--<div class="iq-button-wrapper" style="margin-top: -1rem;">
+              <a class="btn btn-primary" href="/providers/64606/surveys/create">Add Intake</a>
+              <button type="button" disabled="" to="/providers/64606/surveys" class="btn btn-outline-primary">View All Intakes</button>
+          </div>-->
+           <p class="iq-not-available">No Intakes can be added until the provider is certified.</p>
+          </section>
+          <section>
+          <h2>Recent Enforcements</h2>
+              <!--<div class="iq-button-wrapper" style="margin-top: -1rem;">
+              <a class="btn btn-primary" href="/providers/64606/surveys/create">Add Enforcement</a>
+              <button type="button" disabled="" to="/providers/64606/surveys" class="btn btn-outline-primary">View All Enforcements</button>
+          </div>-->
+          <p class="iq-not-available">No Enforcements can be added until the provider is certified.</p>
+          </section>
+        </div>
+        
+      
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="iq-footer-content">
+          <div class="row">
+            <div class="col">
+              <div class="iq-footer-heading"> <a href="/"> <img
+                      src="../../../src/assets/images/logo-iqies-reversed.svg"
+                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../../src/assets/images/logo-cms.svg"
+                    class="img-fluid logo cms-logo d-lg-none" alt=""> </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col"> <a href="/help">Help</a><span> (800)
+              339-9313 </span><a href="mailto:help@qtso.com">Email Us</a><a
+                  href="https://qtso.cms.gov/" target="_blank"
+                  rel="noopener noreferrer"> QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                    class="iq-external-link-icon" alt=""> </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                  target="_blank" rel="noopener noreferrer"> Medicare <img
+                    src="../../../src/assets/images/icon-link-external.svg"
+                    class="iq-external-link-icon" alt=""> </a><a href="/privacy-policy">Privacy Policy</a> </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="iq-footer-links"> <a href="https://www.medicare.gov/about-us/plain-writing"
+                    target="_blank" rel="noopener noreferrer"> Plain Writing <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a
+                    href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                    target="_blank" rel="noopener noreferrer"> Freedom of
+                Information Act <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a
+                    href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                    target="_blank" rel="noopener noreferrer"> No Fear Act <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a href="https://get.adobe.com/reader/" target="_blank"
+                    rel="noopener noreferrer"> Adobe Acrobat <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 d-flex align-items-center"> <img src="../../../src/assets/images/logo-cms.svg"
+            class="logo cms-logo d-none d-lg-block" alt="CMS Logo"> </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript"
+    src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+  </script> 
+<script type="text/javascript"
+    src="../../../src/assets/third-party/popper/popper.min.js"></script> 
+<script type="text/javascript"
+    src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+  </script> 
+<script type="text/javascript" src="../../../src/assets/js/scripts.js">
+  </script>
+    <script type="text/javascript">
+ 
+$(document).ready(function () {
+   
+ $('[data-toggle="tooltip"]').tooltip(); 
+window.setTimeout(function() {
+    $(".alert-success").fadeTo(1000, 0).slideUp(1000, function(){
+        $(this).addClass('hide'); 
+    });
+}, 5000);
+ 
+});
+
+    </script>
+</body>
+</html>

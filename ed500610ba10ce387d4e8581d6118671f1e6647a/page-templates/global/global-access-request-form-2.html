@@ -5,13 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="">
 
-  <title>Providers</title>
+  <title>Access Request Form 2</title>
 
   <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
-  <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+  <link rel="stylesheet"
+    href="../../../src/assets/prototype-styles/prototype.css">
 </head>
 
 <body>
@@ -20,10 +21,15 @@
       <div class="row">
         <div class="col">
           <nav>
-            <a href="../../index.html">
-              <img src="../../../src/assets/images/logo-iqies.svg"
-                class="iq-logo" alt="Logo iQIES Color" />
-            </a>
+            <div class="col-md-9">
+              <a href="../../index.html">
+                <img src="../../../src/assets/images/logo-iqies.svg"
+                  class="iq-logo" alt="Logo iQIES Color" />
+              </a>
+            </div>
+            <div class="text-right col-md-3">
+              <button class="btn btn-outline-primary">MENU</button>
+            </div>
           </nav>
         </div>
       </div>
@@ -31,106 +37,128 @@
   </header>
 
   <main>
-    <div class="iq-page-header-wrapper mb-0">
-      <div class="container">
-        <div class="iq-page-header">
+
+    <div class="iq-page-header-wrapper">
+      <div class="container mt-5">
+        <span class="iq-page-header">
           <div class="row">
-            <div class="col">
+            <div class="col d-flex flex-column justify-content-between">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
                     <a href="../../index.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
-                    Providers
+                    Access Request Form
                   </li>
                 </ol>
               </nav>
-              <div class="iq-page-header-content">
-                <h1>Providers</h1>
-              </div>
             </div>
           </div>
+        </span>
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="row no-gutters">
+        <div class="col-xl-7 col-md-10">
+          <ol class="iq-step-indicator-group">
+            <li class="iq-step-indicator iq-step-indicator-complete">
+              <h2>1 <span class="iq-step-indicator-line"></span></h2>
+              <p>User Category</p>
+            </li>
+            <li class="iq-step-indicator iq-step-indicator-active">
+              <h2>2 <span class="iq-step-indicator-line"></span></h2>
+              <p>User Role</p>
+            </li>
+            <li class="iq-step-indicator iq-step-indicator-pending">
+              <h2>3 <span class="iq-step-indicator-line"></span></h2>
+              <p>Organizations</p>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
 
     <div class="container">
+      <div class="row">
+        <div class="col"> 
+              <div class="iq-page-header-content">
+                <h3 class="mb-2 iq-label">STEP 2</h3>
+                <h1 class="mb-3">Select a User Role</h1>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mb-4">
       <div class="row no-gutters">
         <div class="col-xl-7 col-md-10">
           <p class="lead">
-            Current and accurate provider information is vital to quality health
-            care.
+            Select the category of your organization to begin the role request process.
           </p>
         </div>
       </div>
     </div>
 
     <div class="container">
-      <div class="row mb-5">
-        <div class="col">
-          <div class="iq-button-wrapper"><a href="find-a-provider.html" class="btn btn-primary btn-lg">Find a Provider</a>
-            <button class="btn btn-outline-primary btn-lg">
-              Add a Provider
-            </button>
-          </div>
+      <div class="row mb-4">
+        <div class="col col-xl-7 col-md-10 lead">
+          <section>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-1" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-1">
+                Assessment Submitter
+              </label>
+              <p>Upload patient assessments, generate and view reports.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-2" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-2">
+                Provider Administrator
+              </label>
+              <p>Create and manage patient profiles, create and manage assessments, generate and view reports.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-3" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-3">
+                Assessment Coordinator
+              </label>
+              <p>Create and manage patient profiles, create and manage assessments, generate and view reports.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-4" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-4">
+                Assessment Viewer
+              </label>
+              <p>View patient profiles, view assessments, generate and view reports.</p>
+            </div>
+            <div class="custom-control custom-radio mb-4">
+              <input type="radio" id="radio-button-5" name="example-name"
+                class="custom-control-input" value="value">
+              <label class="custom-control-label iq-label" for="radio-button-5">
+                Provider Security Official
+              </label>
+              <p>iQIES user account approvals.</p>
+            </div>
+          </section>
         </div>
       </div>
-      <div class="row hide">
-          <div class="col-md-12">
-              <h2>My Watchlist</h2>
-              <p>Find provider information to add surveys, intakes, and enforcements to My Watchlist.</p>
-              
-                <nav class="nav nav-horizontal">
-              <a class="nav-link active" href="h-tab-1">Survey (0)</a>
-              <a class="nav-link" href="h-tab-2">Intake (0)</a>
-              <a class="nav-link" href="h-tab-3">Enforcement (0)</a>
-            </nav>
-            <div class="tab-content">
-                <div class="tab-pane active" id="h-tab-1">
-                    <p class="iq-no-results">You are not following any surveys at this time.</p>
-                </div> 
-                <div class="tab-pane" id="h-tab-2">
-                
-                </div>
-                <div class="tab-pane" id="h-tab-3">
-                    <div class="table-wrapper">  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col" class="sortable descending"><span>Date</span></th>
-      <th scope="col" class="sortable currency"><span>Imposed Amount</span></th>
-      <th scope="col" class="sortable count"><span>Imposed # of Instances</span></th>
-      <th scope="col" class="sortable"><span>CMP in Effect</span></th>
-      <th scope="col">&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="row">03/20/2019</td>
-      <td class="currency">$2,000.00</td>
-      <td class="count">102</td>
-      <td>Imposed</td>
-      <td><a href="#" >Actions</a></td>
-    </tr>
-    <tr>
-      <td scope="row">03/20/2019</td>
-      <td class="currency">$400.00</td>
-      <td class="count">2</td>
-      <td>Imposed</td>
-      <td><a href="#">Actions</a></td>
-    </tr>
-    <tr>
-      <td scope="row">03/20/2019</td>
-      <td class="currency">$12,520.00</td>
-      <td class="count">30</td>
-      <td>Imposed</td>
-      <td><a href="#" >Actions</a></td>
-    </tr>
-  </tbody>
-</table></div>
-                </div>
-            </div>
-          </div>  
+    </div>
+    
+
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col">
+          <div class="iq-button-wrapper">
+            <a class="btn btn-primary btn-lg" href="global-access-request-form-3.html">Next</a>
+            <a class="btn btn-link btn-lg" href="global-access-request-form-1.html">Previous</a>
+          </div>
+        </div>
       </div>
     </div>
   </main>
