@@ -9,6 +9,8 @@
     href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/prototype.css">
+    <link rel="stylesheet"
+    href="../../../src/assets/prototype-styles/hha.css">
     <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 </head>
 
@@ -52,7 +54,7 @@
                   </div>
                   <div class="col-md-5 col-lg-3 iq-page-header-contact">
                     <address>
-                      667 Bent Ridge Lane<br>Suite 1000<br>Lorton, VA
+                      <a href="#" data-toggle="tooltip" data-placement="top" title="Name of Provider Long Long Long Text">Name of Provider Long ...</a><br>667 Bent Ridge Lane<br>Suite 1000<br>Lorton, VA
                       60010<br>
                     </address>
                   </div>
@@ -145,7 +147,7 @@
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="tab-content">
-          <div class="tab-pane hha active" id="tab1" role="tabpanel"
+          <div class="tab-pane  active" id="tab1" role="tabpanel"
                     aria-labelledby="tab1Tab">
             <div class="row tabTitle">
               <div class="col-sm-10">
@@ -153,10 +155,10 @@
                 <!--<p>Manage the basic information for this survey</p>-->
               </div>
               <div class="col-sm-2 text-right">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab3-2 .editView').addClass('active'); $('#tab3-2 .readView').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
+                <button class="btn btn-outline-primary hide" onClick="$('#tab3-2 .edit-view').addClass('active'); $('#tab3-2 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
-            <section class="editView active">
+            <section class="edit-view active">
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -256,16 +258,16 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab1 .editView').removeClass('active'); $('#tab1 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab1 .editView').removeClass('active'); $('#tab1 .readView').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
               </div>
             </div>
             </section>
-            <section class="readView">
+            <section class="read-view">
             <div class="iq-list">
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Proposed Notice Date</p></div>
@@ -431,17 +433,17 @@
             
             </section>  
           </div>
-          <div class="tab-pane hha" id="tab2" role="tabpanel"
+          <div class="tab-pane " id="tab2" role="tabpanel"
                     aria-labelledby="tab2Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Mailing Address</h2>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab2 .editView').addClass('active'); $('#tab2 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
+                <button class="btn btn-outline-primary hide" onClick="$('#tab2 .edit-view').addClass('active'); $('#tab2 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
-            <section class="editView active">
+            <section class="edit-view active">
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -555,14 +557,14 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .editView').removeClass('active'); $('#tab2 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
+                    <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
                     <button
-                            class="btn btn-link" onClick="$('#tab2 .editView').removeClass('active'); $('#tab2 .readView').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
             </section>
-            <section class="readView">
+            <section class="read-view">
                 <p><i class="fas fa-check-circle"></i> Same as Facility Address</p>
               
                     <p><label>Address</label>123 Temporary Road, Suite 100<br>
@@ -570,7 +572,7 @@
             
             </section>
           </div>
-          <div class="tab-pane hha" id="tab3" role="tabpanel"
+          <div class="tab-pane " id="tab3" role="tabpanel"
                     aria-labelledby="tab3Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -578,10 +580,10 @@
                 <!--<p>Manage status and identifiers for this provider, including; federal certification, state licensure, and additional identifiers. [pending CMS approval] </p>-->
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab3 .editView').addClass('active'); $('#tab3 .readView').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+                <button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
-            <section class="editView active">
+            <section class="edit-view active">
               <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
               <h3>Federal Certification</h3>
               <fieldset>
@@ -729,12 +731,12 @@
                 <input type="text" class="form-control" id="ein" aria-describedby="help-id" value="">
               </p>
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .editView').removeClass('active'); $('#tab3 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
-                            class="btn btn-link" onClick="$('#tab3 .editView').removeClass('active'); $('#tab3 .readView').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
-            <section class="readView">
+            <section class="read-view">
               <h3>Federal Certification</h3>
               <p>
                 <label>Federal Certification Status</label>
@@ -791,11 +793,11 @@
                 123-34-3345 </p>
             </section>
           </div>
-          <div class="tab-pane hha" id="tab4" role="tabpanel"
+          <div class="tab-pane " id="tab4" role="tabpanel"
                     aria-labelledby="tab4Tab">
             
             
-            <section class="editView deemInfo">
+            <section class="edit-view deemInfo">
              <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Deeming Information</h2>
@@ -835,27 +837,27 @@
                        <div class="row">
                 <div class="col-md-10">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab4 .editView').removeClass('active'); 
-                                                             $('#tab4 .readView').removeClass('active'); 
-                                                             $('#tab4 .readView.deemingInfo').addClass('active'); 
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab4 .edit-view').removeClass('active'); 
+                                                             $('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); 
                                                              ">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab4 .editView').removeClass('active'); $('#tab4 .readView').removeClass('active'); 
-                                                             $('#tab4 .readView.deemingInfo').addClass('active');  ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
                    
                   </div>
                 </div>
               </div>
                        </section>
-            <section class="readView active deemingInfo">
+            <section class="read-view active deemingInfo">
                 <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Deeming Information</h2>
                 <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
               </div>
-              <div class="col-md-2"><button class="btn btn-outline-primary" onClick="$('#tab4 .editView.deemInfo').addClass('active'); $('#tab4 .readView').removeClass('active'); ">Edit</button></div>
+              <div class="col-md-2"><button class="btn btn-outline-primary" onClick="$('#tab4 .edit-view.deemInfo').addClass('active'); $('#tab4 .read-view').removeClass('active'); ">Edit</button></div>
             </div>
               <div class="row">
                 <div class="col-md-5">
@@ -870,14 +872,14 @@
                 </div>
               </div>
               </section>
-              <section class="readView active deemingInfo">
+              <section class="read-view active deemingInfo">
             
               <h3>Accrediting Organizations</h3>
               <p>Add and manage accreditation organizations and status.</p>
               <div class="iqies-button-wrapper">
-                <button type="button" class="btn btn-primary" onClick="$('#tab4 .readView').removeClass('active'); $('#tab4 .readView.addNew').addClass('active');">Add Accrediting Organization</button>
+                <button type="button" class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.addNew').addClass('active');">Add Accrediting Organization</button>
               </div>
-              <p class="infoText"><span class="aoCount">2</span> Accrediting Organizations</p>
+              <p class="info-text"><span class="aoCount">2</span> Accrediting Organizations</p>
               <div class="iqies-list-row TJC">
                 <div class="iqies-list-row-header">
                   <div class="row">
@@ -885,7 +887,7 @@
                       <h4>The Joint Commission (TJC)</h4>
                     </div>
                     <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onClick="$('#tab4 .readView').removeClass('active'); $('#tab4 .readView.editTJC').addClass('active');">Edit</button>
+                      <button class="btn btn-outline-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editTJC').addClass('active');">Edit</button>
                     </div>
                   </div>
                 </div>
@@ -947,10 +949,10 @@
                 
               </div>
             </section>
-            <section class="readView editTJC">
+            <section class="read-view editTJC">
                 <div class="row">
       <div class="col">
-        <button class="btn btn-link px-0 mb-4" onClick="$('#tab4 .readView').removeClass('active'); $('#tab4 .readView.deemingInfo').addClass('active');  ">&lt; Return to Deeming Information</button>
+        <button class="btn btn-link px-0 mb-4" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.deemingInfo').addClass('active');  ">&lt; Return to Deeming Information</button>
       </div>
     </div>
               <h2>Edit Accrediting Organization</h2>
@@ -1021,25 +1023,25 @@
               <div class="row">
                 <div class="col-md-10">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab4 .readView').removeClass('active'); 
-                                                             $('#tab4 .readView.deemingInfo').addClass('active'); 
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); 
                                                              ">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab4 .readView').removeClass('active'); 
-                                                             $('#tab4 .readView.deemingInfo').addClass('active');  ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
-                    <button class="btn btn-link danger float-right" onClick="$('#tab4 .readView').removeClass('active'); 
-                                                             $('#tab4 .readView.deemingInfo').addClass('active'); 
+                    <button class="btn btn-link danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>
                   </div>
                 </div>
               </div>
             </section>
-            <section class="readView addNew">
+            <section class="read-view addNew">
                 <div class="row">
       <div class="col">
-        <button class="btn btn-link px-0 mb-4" onClick="$('#tab4 .readView').removeClass('active'); $('#tab4 .readView.deemingInfo').addClass('active');  ">&lt; Return to Deeming Information</button>
+        <button class="btn btn-link px-0 mb-4" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.deemingInfo').addClass('active');  ">&lt; Return to Deeming Information</button>
       </div>
     </div>
               <h2>Add Accrediting Organization</h2>
@@ -1110,16 +1112,16 @@
               <div class="row">
                 <div class="col-md-10">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab4 .readView').removeClass('active'); 
-                                                             $('#tab4 .readView.deemingInfo').addClass('active'); 
+                    <button class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); 
                                                              ">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab4 .readView').removeClass('active'); 
-                                                             $('#tab4 .readView.deemingInfo').addClass('active');  ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
-                    <!--<button class="btn btn-link danger float-right" onClick="$('#tab4 .readView').removeClass('active'); 
-                                                             $('#tab4 .readView.deemingInfo').addClass('active'); 
+                    <!--<button class="btn btn-link danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>-->
                   </div>
                 </div>
@@ -1127,17 +1129,17 @@
             </section>  
             
           </div>
-           <div class="tab-pane hha" id="tab5" role="tabpanel"
+           <div class="tab-pane " id="tab5" role="tabpanel"
                     aria-labelledby="tab5Tab">
               <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Operating Details</h2>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab5 .editView').addClass('active'); $('#tab5 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
+                <button class="btn btn-outline-primary hide" onClick="$('#tab5 .edit-view').addClass('active'); $('#tab5 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
-            <section class="editView active">
+            <section class="edit-view active">
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -1198,14 +1200,14 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab5 .editView').removeClass('active'); $('#tab5 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab5 .editView').removeClass('active'); $('#tab5 .readView').addClass('active');  $('#tab5 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active');  $('#tab5 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
             </section>
-            <section class="readView">
+            <section class="read-view">
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -1239,16 +1241,16 @@
               
             </section>
           </div>
-          <div class="tab-pane hha" id="tab6" role="tabpanel"
+          <div class="tab-pane " id="tab6" role="tabpanel"
                     aria-labelledby="tab6Tab">
             
-            <section class="editView active firstTime">
+            <section class="edit-view active firstTime">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Add Branch</h2>
               </div>
               <div class="col-md-2">
-                <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .editView').addClass('active'); $('#tab6 .readView').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>-->
+                <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .edit-view').addClass('active'); $('#tab6 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>-->
               </div>
             </div>
                 
@@ -1374,26 +1376,26 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab6 .editView').removeClass('active'); $('#tab6 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab6 .editView').removeClass('active'); $('#tab6 .readView').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
               </div>
               </div>
               </section>
-              <section class="readView">
+              <section class="read-view">
                   <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Additional Branch Addresses</h2> <p class="iq-page-header-description">Manage and add additional branches for the provider.</p>
-                <p><button class="btn btn-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.firstTime').addClass('active');">Add Branch</button></p>
+                <p><button class="btn btn-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.firstTime').addClass('active');">Add Branch</button></p>
               </div>
               <div class="col-md-2">
                 
               </div>
             </div>
-                  <p class="infoText"><span class="baCount">1</span> Additional Branches</p>
+                  <p class="info-text"><span class="baCount">1</span> Additional Branches</p>
                   
                 <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
@@ -1402,7 +1404,7 @@
                       <h3>Splint</h3>
                     </div>
                     <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onclick="$('#tab6 .readView').removeClass('active'); $('#tab6 .editView').removeClass('active'); $('#tab6 .editView.editSplint').addClass('active');">Edit</button>
+                      <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</button>
                     </div>
                   </div>
                 </div>
@@ -1420,7 +1422,7 @@
                       </div>
                   </div></div>
               </section>
-              <section class="editView editSplint">
+              <section class="edit-view editSplint">
             
                 <h2>Edit Branch</h2>
               <div class="row">
@@ -1545,11 +1547,11 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab6 .editView').removeClass('active'); $('#tab6 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab6 .editView').removeClass('active'); $('#tab6 .readView').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                       
-                      <button class="btn btn-link danger float-right" onClick="$('#tab6 .editView').removeClass('active'); $('#tab6 .readView').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Delete</button>
+                      <button class="btn btn-link danger float-right" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Delete</button>
                   </div>
                 </div>
               </div>
@@ -1557,12 +1559,12 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane hha" id="tab7" role="tabpanel"
+          <div class="tab-pane " id="tab7" role="tabpanel"
                     aria-labelledby="tab7Tab">
             
                 
               
-            <section class="editView newContact active">
+            <section class="edit-view newContact active">
               <div class="row">
                 <div class="col-md-12"><h2>Add Contact</h2>
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -1600,26 +1602,26 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
                 </div>
               </div>
             </section>
-            <section class="readView">
+            <section class="read-view">
                   <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Additional Contacts</h2> <p class="iq-page-header-description">Manage and add additional contacts for the provider.</p>
-                <p><button class="btn btn-primary" onclick="$('#tab7 .readView').removeClass('active'); $('#tab7 .editView').removeClass('active'); $('#tab7 .editView.firstTime').addClass('active');">Add Contact</button></p>
+                <p><button class="btn btn-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.firstTime').addClass('active');">Add Contact</button></p>
               </div>
               <div class="col-md-2">
                 
               </div>
             </div>
-                  <p class="infoText"><span class="baCount">1</span> Additional Contacts</p>
+                  <p class="info-text"><span class="baCount">1</span> Additional Contacts</p>
               <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
                   <div class="row">
@@ -1627,7 +1629,7 @@
                       <h3>Mary Carriger</h3>
                     </div>
                     <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onclick="$('#tab7 .readView').removeClass('active'); $('#tab7 .editView').removeClass('active'); $('#tab7 .editView.editMary').addClass('active');">Edit</button>
+                      <button class="btn btn-outline-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editMary').addClass('active');">Edit</button>
                     </div>
                   </div>
                 </div>
@@ -1655,7 +1657,7 @@
                       </div>
                   </div></div>
               </section>
-           <section class="editView editMary">
+           <section class="edit-view editMary">
               <h2>Edit Additional Contact</h2>
               <div class="row">
                 <div class="col-md-12">
@@ -1694,9 +1696,9 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab7 .editView').removeClass('active'); $('#tab7 .readView').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -1704,7 +1706,7 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane hha" id="tab8" role="tabpanel"
+          <div class="tab-pane " id="tab8" role="tabpanel"
                     aria-labelledby="tab8Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -1712,10 +1714,10 @@
                
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab8 .editView').addClass('active'); $('#tab8 .readView').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+                <button class="btn btn-outline-primary hide" onClick="$('#tab8 .edit-view').addClass('active'); $('#tab8 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
-            <section class="editView active">
+            <section class="edit-view active">
               <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
           
               
@@ -1801,12 +1803,12 @@
               </div>
               
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary btn-lg" onClick="$('#tab8 .editView').removeClass('active'); $('#tab8 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab8 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary btn-lg" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab8 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
-                            class="btn btn-link" onClick="$('#tab8 .editView').removeClass('active'); $('#tab8 .readView').addClass('active');  $('#tab8 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active');  $('#tab8 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
-            <section class="readView">
+            <section class="read-view">
               <div class="row">
                   <div class="col-md-5">
                      <p><label>MAC Company Name</label>
@@ -1843,9 +1845,9 @@
                 </div>
             </section>
           </div>
-          <div class="tab-pane hha" id="tab9" role="tabpanel"
+          <div class="tab-pane " id="tab9" role="tabpanel"
                     aria-labelledby="tab9Tab">
-            <section class="editView newAdmin active">
+            <section class="edit-view newAdmin active">
               <div class="row">
                 <div class="col-md-12"><h2>Add Administrator</h2>
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -1999,8 +2001,8 @@
                  <div class="row">
                     <div class="col">
                       <div class="iq-button-wrapper">
-                        <button class="btn btn-primary btn-lg" onClick="$('#tab9 .editView').removeClass('active'); $('#tab9 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
-                        <button class="btn btn-link" onClick="$('#tab9 .editView').removeClass('active'); $('#tab9 .readView').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                        <button class="btn btn-primary btn-lg" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
+                        <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                       </div>
                     </div>
                   </div>
@@ -2008,17 +2010,17 @@
                 </div>
               </div>
             </section>
-            <section class="readView">
+            <section class="read-view">
                   <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Administrators</h2> 
-                <p><button class="btn btn-primary" onclick="$('#tab9 .readView').removeClass('active'); $('#tab9 .editView').removeClass('active'); $('#tab9 .editView.newAdmin').addClass('active');">Add Administrator</button></p>
+                <p><button class="btn btn-primary" onclick="$('#tab9 .read-view').removeClass('active'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .edit-view.newAdmin').addClass('active');">Add Administrator</button></p>
               </div>
               <div class="col-md-2">
                 
               </div>
             </div>
-                  <p class="infoText"><span class="baCount">1</span> Administrators</p>
+                  <p class="info-text"><span class="baCount">1</span> Administrators</p>
               <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
                   <div class="row">
@@ -2026,7 +2028,7 @@
                       <h3>Mr. Edward P. Munch<small class="bottom">Primary Administrator</small></h3>
                     </div>
                     <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onclick="$('#tab9 .readView').removeClass('active'); $('#tab9 .editView').removeClass('active'); $('#tab9 .editView.editEdward').addClass('active');">Edit</button>
+                      <button class="btn btn-outline-primary" onclick="$('#tab9 .read-view').removeClass('active'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .edit-view.editEdward').addClass('active');">Edit</button>
                     </div>
                   </div>
                 </div>
@@ -2076,7 +2078,7 @@
                 
                 </div>
            </section>
-           <section class="editView editEdward">
+           <section class="edit-view editEdward">
               <h2>Edit Administrator</h2>
               <div class="row">
                 <div class="col-md-12">
@@ -2232,8 +2234,8 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab9 .editView').removeClass('active'); $('#tab9 .readView').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button class="btn btn-link" onClick="$('#tab9 .editView').removeClass('active'); $('#tab9 .readView').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -2241,7 +2243,7 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane hha" id="tab10" role="tabpanel"
+          <div class="tab-pane " id="tab10" role="tabpanel"
                     aria-labelledby="tab10Tab">
             <h2>Attachments</h2>
               <p>Add and manage attachments for this provider.</p>
