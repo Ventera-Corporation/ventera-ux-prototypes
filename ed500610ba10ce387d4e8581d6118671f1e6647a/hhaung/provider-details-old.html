@@ -4,11 +4,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Providers</title>
+<title>Providers without fixes</title>
 <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+<link rel="stylesheet"
+    href="../../../src/assets/prototype-styles/prototype.css">
      <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 </head>
 
@@ -47,9 +47,9 @@
     </div>
   </div>
   <div class="container">
-    <div class="row iq-return-link">
+    <div class="row">
       <div class="col">
-        <button class="btn btn-link">&lt; Return to Provider</button>
+        <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
       </div>
     </div>
     <div class="row">
@@ -360,16 +360,15 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="address1M">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="address1M"
+                    <label for="addressM1">Address 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control" id="addressM1"
                             required>
-                     <p class="iq-input-error-msg hide">This field is required</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="address2M">Address 2</label>
-                    <input type="text" class="form-control" id="address2M">
+                    <label for="addressM2">Address 2</label>
+                    <input type="text" class="form-control" id="addressM2">
                   </div>
                 </div>
               </div>
@@ -377,9 +376,8 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="cityM">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="cityM"
+                    <input type="text" class="form-control" id="cityM"
                             required>
-                    <p class="iq-input-error-msg hide">This field is required</p>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -443,10 +441,9 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label for="zipCodeX">ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="zipCodeX"
+                    <label for="zipCodeM">ZIP Code <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control" id="zipCodeM"
                             required>
-                     <p class="iq-input-error-msg hide">This field is required</p>
                   </div>
                 </div>
               </div>
@@ -454,7 +451,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
+                    <button class="btn btn-primary" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -1058,8 +1055,9 @@
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .edit-view').addClass('active'); $('#tab6 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>-->
               </div>
             </div>
-                <div class="row">
-                 <div class="col-md-12">
+                
+              <div class="row">
+                <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
                   <div class="col-md-6">
@@ -1075,66 +1073,9 @@
                       <option>Child Affiliate Office</option><option>Sibling Affiliate</option></select>
                   </div>
                 </div>
-                
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bc">Branch CCN <span class="iq-asterisk">*</span></label>
-                     <input class="form-control" id="bc" type="text" maxlength="10">
-                      <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
-                      <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
-                      <li>Followed by capital letter Q</li>
-                          <li>Followed by the next 4 positions of the Medicare ID</li>
-                          <li>Followed by the next sequential number of facility branches starting with 001</li>
-                      </ul>
-                      </div>
-                  </div>
-                </div>
-                  <div class="col-md-6">&nbsp;</div>
-                  <div class="col-md-3">
+                  <div class="col-md-12">
                       
-                      <fieldset>
-                <legend>Branch Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs1" checked name="fcs" class="custom-control-input" value="value"
-                     onChange="$('.bclosed').addClass('hide');">
-                  <label class="custom-control-label" for="r-fcs1"> Active </label>
-                </div>
-                          <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs2" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('.bclosed').removeClass('hide');">
-                  <label class="custom-control-label" for="r-fcs2"> Terminated </label>
-                </div>
-                          
-                      </fieldset>
-                  <div class="form-group hide">
-                    <label for="bs">Branch Status</label>
-                      <div class="iq-btn-group" id="bs">
-                          <button class="btn btn-outline-primary active" onClick="$('#bs button').removeClass('active'); $(this).addClass('active'); $('.bclosed').addClass('hide'); ">Active</button>
-                          <button class="btn btn-outline-primary" onClick="$('#bs button').removeClass('active'); $(this).addClass('active'); $('.bclosed').removeClass('hide'); ">Terminated</button>
-                      </div>
-                      
-                    <!-- <select class="form-control" id="bs" onchange="switch(this.options[this.selectedIndex].value){
-                        case 'active':  $('.bclosed').addClass('hide'); break;      
-                        case 'closed': $('.bclosed').removeClass('hide'); break;  
-                        case 'other': $('.bclosed').addClass('hide'); break; 
-                                                                    }"><option>Select one</option><option selected value="active">Active</option>
-                      <option value="closed">Closed</option><option value="other">Other</option></select> -->
-                  </div>
-                </div>
-                <div class="col-md-3"><div class="form-group">
-                    <label for="bop">Open Date</label>
-                     <input type="date" class="form-control" id="bop">
-                             </div>
-                </div>  
-                 <div class="col-md-3 hide bclosed">
-                     <div class="form-group">
-                    <label for="bcl">Close Date</label>
-                     <input type="date" class="form-control" id="bcl" />
-                  </div>
-                  </div>
-                 <div class="col-md-12">
-                      <br>
-                <fieldset><legend><h3>Branch Address</h3></legend>
+                <fieldset><legend><h3>Address</h3></legend>
                     <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -1233,16 +1174,18 @@
                 
               </div>
                 </fieldset>
+                 
+              <div class="row">
+                <div class="col">
+                  <div class="iq-button-wrapper">
+                    <button class="btn btn-primary" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button
+                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
-             
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                  </div>
-                
-             
+              </div>
+              </div>
+              </div>
               </section>
               <section class="read-view">
                   <div class="row tabTitle">
@@ -1256,29 +1199,30 @@
             </div>
                
                 
-                <p class="info-text"><span class="baCount">1</span> Additional Branch</p>
-                  <div class="table-wrapper">  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col" class="sortable descending"><span>Branch</span></th>
-      <th scope="col" class="sortable"><span>Status</span></th>
-      <th scope="col" class="sortable"><span>Opened</span></th>
-      <th scope="col" class="sortable"><span>Closed</span></th>
-      <th scope="col">&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="row"><h4>BrightHope North<br><small>Branch Office<br>CCN# 123Q111001</small></h4>
-          123 Temporary Road, Suite 100<br>Reston, VA 20190</td>
-      <td>Active</td>
-      <td>8/15/2019</td>
-      <td><p class="iq-not-available">Not Applicable</p></td>
-      <td><a href="#">Delete</a> | <a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a></td>
-    </tr>
-    
-  </tbody>
-</table></div>
+                <p class="info-text"><span class="baCount">1</span> additional branches</p>
+                  <div class="iqies-list-row">
+                <div class="iqies-list-row-header">
+                  <div class="row">
+                    <div class="col-md-10">
+                      <h3>Splinter</h3>
+                    </div>
+                    <div class="col-md-2">
+                      <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</button>
+                    </div>
+                  </div>
+                </div>
+                      
+                <div class="row">
+                    <div class="col-md-5">
+                          <p><label>Branch Type</label>
+                          Branch Office</p>
+                      </div>
+                    <div class="col-md-5">
+                          <p><label>Address</label>
+                          123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County not available</span></p>
+                        
+                      </div>
+                  </div></div>
               </section>
               <section class="edit-view editSplint">
             
@@ -1290,7 +1234,7 @@
                   <div class="col-md-6">
                   <div class="form-group">
                     <label for="bn2">Branch Name <span class="iq-asterisk">*</span></label>
-                     <input type="text" value="BrightHope North" class="form-control" id="bn2" required>
+                     <input type="text" value="Splint" class="form-control" id="bn2" required>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -1300,59 +1244,9 @@
                       <option>Child Affiliate Office</option><option>Sibling Affiliate</option></select>
                   </div>
                 </div>
-                  
-                    
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Branch CCN
-                     <input class="form-control" type="text" maxlength="10" value="12Q1111001"></label>
-                      <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
-                      <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
-                      <li>Followed by capital letter Q</li>
-                          <li>Followed by the next 4 positions of the Medicare ID</li>
-                          <li>Followed by the next sequential number of facility branches starting with 001</li>
-                      </ul>
-                      </div>
-                  </div>
-                </div>
-                  <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Facility/Branch ID
-                     </label>12345
-                      
-                  </div>
-                  </div>
-                  <div class="col-md-3">
-                  <fieldset>
-                <legend>Branch Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs3" checked name="fcs" class="custom-control-input" value="value"
-                     onChange="$('.bclosed').addClass('hide');">
-                  <label class="custom-control-label" for="r-fcs3"> Active </label>
-                </div>
-                          <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs4" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('.bclosed').removeClass('hide');">
-                  <label class="custom-control-label" for="r-fcs4"> Terminated </label>
-                </div>
-                          
-                      </fieldset>
-                </div>
-                <div class="col-md-3"><div class="form-group">
-                    <label>Open Date</label>
-                     <input type="date" class="form-control">
-                             </div>
-                </div>  
-                 <div class="col-md-3 hide bclosed">
-                     <div class="form-group">
-                    <label>Close Date</label>
-                     <input type="date" class="form-control" />
-                  </div>
-                  </div>
-                  
                   <div class="col-md-12">
-                      <br>
-                <fieldset><legend><h3>Branch Address</h3></legend>
+                      
+                <fieldset><legend><h3>Address</h3></legend>
                     <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -1455,7 +1349,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                       
@@ -1465,7 +1359,7 @@
               </div>
               </div>
               </div>
-            </section>
+              </section>
           </div>
             <div class="tab-pane " id="tab7" role="tabpanel"
                     aria-labelledby="tab7Tab">

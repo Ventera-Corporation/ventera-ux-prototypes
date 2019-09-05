@@ -4,12 +4,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Providers</title>
-<link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
-     <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<title>Providers per design kit</title>
+<link rel="stylesheet" href="../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../src/assets/prototype-styles/prototype.css">
+<link rel="stylesheet" href="../../src/assets/prototype-styles/hha.css">
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 </head>
 
 <body>
@@ -17,7 +16,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <nav> <a href="/index.html"> <img src="../../../src/assets/images/logo-iqies.svg"
+        <nav> <a href="/index.html"> <img src="../../src/assets/images/logo-iqies.svg"
                 class="iq-logo" alt="Logo iQIES Color" /> </a> </nav>
       </div>
     </div>
@@ -31,66 +30,67 @@
           <div class="col d-flex flex-column justify-content-between">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"> <a href="../../index.html">Home</a> </li>
-                <li class="breadcrumb-item"> <a href="">Providers</a> </li>
-                <li class="breadcrumb-item"> <a href="">CCN 123456</a> </li>
-                <li class="breadcrumb-item"> Details </li>
+                <li class="breadcrumb-item"> <a href="../index.html">Home</a> </li>
+                <li class="breadcrumb-item"> <a href="providers-landing.html">Providers</a> </li>
+                <li class="breadcrumb-item"> <a href="provider-profile.html">A Better Way</a> </li>
+                <li class="breadcrumb-item"> Provider Details</li>
               </ol>
             </nav>
             <div class="iq-page-header-content">
               <h1>Provider Details</h1>
-              <div class="iq-page-header-description"> Brighthope Home Care, LLC </div>
+              <div class="iq-page-header-description"><a href="provider-profile.html">A Better Way</a> | CCN 123456</div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row iq-return-link">
+  <div class="container" id="mainContent">
+    <!--<div class="row">
       <div class="col">
-        <button class="btn btn-link">&lt; Return to Provider</button>
+        <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
       </div>
-    </div>
+    </div>-->
+ 
     <div class="row">
       <div class="col-md-12">
         <div class="alert alert-success successMsg hide" role="alert">
           <div class="alert-content">Changes saved successfully</div>
         </div>
+        <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 <p> Unable to save. Please review and correct the following items:</p> 
+                  <ul>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                  </ul>
+              </div></div>
+          </div>
+        </div>
       </div>
       <div class="col-sm-5 col-md-4 col-lg-3">
-        <nav class="nav flex-column iq-nav" role="navigation"> <a class="nav-link active" tabindex="0" id="tab1Tab"
-                    href="#tab1" data-toggle="tab" role="tab"
-                    aria-controls="tab1" aria-selected="true">General
-          Information</a> <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2"
-                    data-toggle="tab" role="tab" aria-controls="tab2"
-                    aria-selected="false">Mailing Address</a> <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3"
-                    data-toggle="tab" role="tab" aria-controls="tab3"
-                    aria-selected="false">Certification and Licensure</a> <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4"
-                    data-toggle="tab" role="tab" aria-controls="tab4"
-                    aria-selected="false">Deeming Information</a> <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5"
-                    data-toggle="tab" role="tab" aria-controls="tab5"
-                    aria-selected="false">Operating Details</a> <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6"
-                    data-toggle="tab" role="tab" aria-controls="tab6"
-                    aria-selected="false">Additional Branch Addresses</a> <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7"
-                    data-toggle="tab" role="tab" aria-controls="tab7"
-                    aria-selected="false">Additional Contacts</a> <a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8"
-                    data-toggle="tab" role="tab" aria-controls="tab8"
-                    aria-selected="false">MAC Information</a> <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9"
-                    data-toggle="tab" role="tab" aria-controls="tab9"
-                    aria-selected="false">Administrators</a> <a class="nav-link" tabindex="0" id="tab10Tab" href="#tab10"
-                    data-toggle="tab" role="tab" aria-controls="tab10"
-                    aria-selected="false">Attachments</a> </nav>
+        <nav class="nav flex-column iq-nav" role="navigation"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a> <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Additional Branch Addresses</a>
+            <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Operating Details</a>
+            <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Administrators</a>
+            <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Additional Contacts</a>
+            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Certification and Licensure</a> 
+            <a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">MAC Information</a> 
+            <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">Deeming Information</a>   
+             
+            <a class="nav-link" tabindex="0" id="tab10Tab" href="#tab10" data-toggle="tab" role="tab" aria-controls="tab10" aria-selected="false">Attachments</a></nav>
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="tab-content">
-          <div class="tab-pane  active" id="tab1" role="tabpanel"
+          <div class="tab-pane hha active" id="tab1" role="tabpanel"
                     aria-labelledby="tab1Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Basic Information</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -259,7 +259,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -270,73 +270,52 @@
             </section>
             <section class="read-view active">
             <div class="row">
-              <div class="col-md-5">
-                <label class="iq-label">Provider Legal Business Name</label>
+              <div class="col-md-10">
+                <p><label>Legal Business Name</label>
+                A Better Way</p>
               </div>
-              <div class="col-md-5">
-                <p>Brighthope Home Care, LLC</p>
+              <div class="col-md-10">
+                <p> <label>Doing Business As Name</label>
+                  A Better Way
+                </p>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5">
-                <label class="iq-label">Doing Business As Name</label>
+            <div class="col-md-5">
+                <p><label>Provider Type</label>
+                  Home Health Agency
+                </p>
               </div>
-              <div class="col-md-5">
-                <p>Brighthope Home Care, LLC</p>
+                <div class="col-md-5">
+                <p> <label>Provider Sub-Type</label>
+                  <span class="iqies-not-available">Not applicable</span>
+                </p>
+              </div><div class="col-md-5">
+                <p> <label>Management Unit</label>
+                    <span class="iqies-not-available">Not available</span>
+                </p>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5">
-                <p class="iq-label">Provider Type</p>
+                 <div class="col-md-5">
+                <p> <label>Work Unit</label>
+                   <span class="iqies-not-available">Not available</span>
+                </p>
               </div>
-              <div class="col-md-5">
-                <p>Home Health Agency</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5">
-                <p class="iq-label">Provider Sub-Type</p>
-              </div>
-              <div class="col-md-5">
-                <p class="iqies-not-available">Not Applicable</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5">
-                <p class="iq-label">Address</p>
-              </div>
-              <div class="col-md-5">
-                <p> 667 Bent Ridge Lane, Suite B<br />
+            <div class="col-md-5">
+                <p><label>Primary Practice Location</label>
+                  667 Bent Ridge Lane, Suite B<br />
                   000 Lorton, VA 60010<br />
-                  Fairfax County </p>
+                  Fairfax County
+                </p>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5">
-                <p class="iq-label">Management Unit</p>
-              </div>
-              <div class="col-md-5">
-                <p class="iqies-not-available">Not available</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-5">
-                <p class="iq-label">Work Unit</p>
-              </div>
-              <div class="col-md-5">
-                <p class="iqies-not-available">Not available</p>
-              </div>
-            </div>
             
-            </section>
+            </div>
+            </section>  
           </div>
-          <div class="tab-pane " id="tab2" role="tabpanel"
+          <div class="tab-pane hha" id="tab2" role="tabpanel"
                     aria-labelledby="tab2Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Mailing Address</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab2 .edit-view').addClass('active'); $('#tab2 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -363,7 +342,7 @@
                     <label for="address1M">Address 1 <span class="iq-asterisk">*</span></label>
                     <input type="text" class="form-control required-form-input" id="address1M"
                             required>
-                     <p class="iq-input-error-msg hide">This field is required</p>
+                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -379,7 +358,7 @@
                     <label for="cityM">City <span class="iq-asterisk">*</span></label>
                     <input type="text" class="form-control required-form-input" id="cityM"
                             required>
-                    <p class="iq-input-error-msg hide">This field is required</p>
+                    <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -446,7 +425,7 @@
                     <label for="zipCodeX">ZIP Code <span class="iq-asterisk">*</span></label>
                     <input type="text" class="form-control required-form-input" id="zipCodeX"
                             required>
-                     <p class="iq-input-error-msg hide">This field is required</p>
+                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
                   </div>
                 </div>
               </div>
@@ -454,7 +433,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
+                    <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
                     <button
                             class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -469,15 +448,15 @@
             
             </section>
           </div>
-          <div class="tab-pane " id="tab3" role="tabpanel"
+          <div class="tab-pane hha" id="tab3" role="tabpanel"
                     aria-labelledby="tab3Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Certification and Licensure</h2>
-                <p>Manage status and identifiers for this provider, including; federal certification, state licensure, and additional identifiers. [pending CMS approval] </p>
+                <!--<p>Manage status and identifiers for this provider, including; federal certification, state licensure, and additional identifiers. [pending CMS approval] </p>-->
               </div>
-              <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
+              <div class="col-md-2 text-right">
+                <button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
             <section class="edit-view active">
@@ -582,19 +561,22 @@
                   <div class="col-md-4">
                     <p>
                       <label for="issue">Issue Date</label>
-                      <input type="date" class="form-control" id="issue" aria-describedby="help-id" value="">
+                      <input type="date" class="form-control" id="issue" aria-describedby="iss-d-help" value="">
+                      <span class="help-text" id="iss-d-help">MM/DD/YYYY</span>
                     </p>
                   </div>
                   <div class="col-md-4">
                     <p>
                       <label for="eff">Effective Date</label>
-                      <input type="date" class="form-control" id="eff" aria-describedby="help-id" value="">
+                      <input type="date" class="form-control" id="eff" aria-describedby="eff-d-help" value="">
+                        <span class="help-text" id="eff-d-help">MM/DD/YYYY</span>
                     </p>
                   </div>
                   <div class="col-md-4">
                     <p>
                       <label for="exp">Expiration Date</label>
-                      <input type="date" disabled class="form-control" id="exp" aria-describedby="help-id" value="">
+                      <input type="date" disabled class="form-control" id="exp" aria-describedby="exp-d-help" value="">
+                        <span class="help-text" id="exp-d-help">MM/DD/YYYY</span>
                     </p>
                   </div>
                 </div>
@@ -625,115 +607,80 @@
                 <input type="text" class="form-control" id="ein" aria-describedby="help-id" value="">
               </p>
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
                             class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
             <section class="read-view">
               <h3>Federal Certification</h3>
-              
-             <div class="row">
-              <div class="col-md-5">
-                <p class="iq-label">Federal Certification Status</p>
-              </div>
-              <div class="col-md-5">
-                <p>Certified </p>
-              </div>
-            </div>   
-            <div class="row">
-              <div class="col-md-5">
-                <p class="iq-label">CCN</p>
-              </div>
-              <div class="col-md-5">
-                <p>121323232</p>
-              </div>
-            </div>   
-            <div class="row">
-              <div class="col-md-5">
-                 <p class="iq-label">Certification Date</p>
-              </div>
-              <div class="col-md-5">
-                <p>07/30/2019</p>
-              </div>
-            </div>   
-            <h3>State Licensure</h3>
-            <div class="row">
-              <div class="col-md-5">
-                <p class="iq-label">State Licensure Status</p>
-              </div>
-              <div class="col-md-5">
-                <p>Licensed</p>
-              </div>
-            </div>   
-            <div class="row">
-              <div class="col-md-5">
-                 <p class="iq-label">License Type</p>
-              </div>
-              <div class="col-md-5">
-                <p>Permanent</p>
-              </div>
-            </div> 
-            <div class="row">
-              <div class="col-md-5">
-                 <p class="iq-label">License Number</p>
-              </div>
-              <div class="col-md-5">
-                <p>31325352353</p>
-              </div>
-            </div> 
-            <div class="row">
-              <div class="col-md-5">
-                 <p class="iq-label">Issue Date</p>
-              </div>
-              <div class="col-md-5">
-                <p>07/30/2019 </p>
-              </div>
-            </div> 
-            <div class="row">
-              <div class="col-md-5">
-                 <p class="iq-label">Effective Date</p>
-              </div>
-              <div class="col-md-5">
-                <p>07/30/2019</p>
-              </div>
-            </div> 
-            <div class="row">
-              <div class="col-md-5">
-                 <p class="iq-label">Expiration Date</p>
-              </div>
-              <div class="col-md-5">
-                <p>07/29/2022</p>
-              </div>
-            </div>     
-             
-              <h3>Additional Identifiers</h3>
+              <p>
+                <label>Federal Certification Status</label>
+                Certified </p>
               <div class="row">
-              <div class="col-md-5">
-                 <p class="iq-label">Medicaid ID</p>
+                <div class="col-md-5">
+                  <p>
+                    <label>CCN</label>
+                    12345454354 </p>
+                </div>
+                <div class="col-md-5">
+                  <p>
+                    <label>Certification Date</label>
+                    <span>07/30/2019</span> </p>
+                </div>
               </div>
-              <div class="col-md-5">
-                <p>M343535</p>
+              <h3>State Licensure</h3>
+              <p>
+                <label>State Licensure Status</label>
+                Licensed</p>
+              <div class="row">
+                <div class="col-md-5">
+                  <p>
+                    <label>License Type</label>
+                    Permanent </p>
+                </div>
+                <div class="col-md-5">
+                  <p>
+                    <label>License Number</label>
+                    31325352353 </p>
+                </div>
+                <div class="col-md-5">
+                  <p>
+                    <label>Issue Date</label>
+                    07/30/2019 </p>
+                </div>
+                <div class="col-md-5">
+                  <p>
+                    <label>Effective Date</label>
+                    07/30/2019 </p>
+                </div>
+                <div class="col-md-5">
+                  <p>
+                    <label>Expiration Date</label>
+                    07/29/2022 </p>
+                </div>
               </div>
-            </div> 
-                <div class="row">
-              <div class="col-md-5">
-                 <p class="iq-label">Employee/Tax Identification Number</p>
-              </div>
-              <div class="col-md-5">
-                <p>123-34-3345</p>
-              </div>
-            </div> <p>
-                <label></label>
-                 </p>
-              
+              <h3>Additional Identifiers</h3>
+              <p>
+                <label>Medicaid ID</label>
+                M343535 </p>
+              <p>
+                <label>Employee/Tax Identification Number</label>
+                123-34-3345 </p>
             </section>
           </div>
-          <div class="tab-pane " id="tab4" role="tabpanel"
+          <div class="tab-pane hha" id="tab4" role="tabpanel"
                     aria-labelledby="tab4Tab">
-             
-            <!--<section class="edit-view deemInfo">
-             
+            
+            
+            <section class="edit-view deemInfo">
+             <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Deeming Information</h2>
+                <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
                    <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                      <div class="row">
                            <div class="col-md-12"> 
@@ -741,7 +688,7 @@
                               <fieldset>
             <legend>Deemed Status <span class="iq-asterisk" title="Required field">*</span></legend>
             <div class="custom-control custom-radio">
-              <input type="radio" id="radio-button-ds1" name="ds" class="custom-control-input" value="value" onChange="$('#deemedDate').addClass('hide');">
+              <input type="radio" id="radio-button-ds1" name="ds" class="custom-control-input" value="value" onChange="$('#deemedDate').addClass('hide');" checked>
               <label class="custom-control-label" for="radio-button-ds1">
                 Non-Deemed
               </label>
@@ -759,78 +706,97 @@
                            <div class="col-md-4">
                                 <div class="iq-conditional-content hide" id="deemedDate">
                              <p><label for="dd">Deemed Date<span class="iq-asterisk" title="Required field">*</span></label>
-                       <input type="date" class="form-control" id="dd" aria-describedby="help-id" required="" value="">
+                       <input type="date" class="form-control" id="dd" aria-describedby="help-id" required="" value=""><span class="help-text">MM/DD/YYYY</span>
                                     </p></div>
                            </div>
                        </div>
-                     
-                       </section>-->
+                       <div class="row">
+                <div class="col-md-10">
+                  <div class="iq-button-wrapper">
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab4 .edit-view').removeClass('active'); 
+                                                             $('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
+                                                             $('.alert.successMsg').removeClass('hide'); 
+                                                             ">Save</button>
+                    <button
+                            class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
+                      
+                   
+                  </div>
+                </div>
+              </div>
+                       </section>
             <section class="read-view active deemingInfo">
-              <div class="row tabTitle">
+                <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Deeming Information</h2>
                 <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
               </div>
-              <div class="col-md-2"></div>
+              <div class="col-md-2 text-right"><button class="btn btn-outline-primary" onClick="$('#tab4 .edit-view.deemInfo').addClass('active'); $('#tab4 .read-view').removeClass('active'); ">Edit</button></div>
             </div>
               <div class="row">
                 <div class="col-md-5">
-                  <p class="iqies-label">Deemed Status</p>
+                  <p>
+                    <label class="iqies-label">Deemed Status</label>
+                    Non-Deemed</p>
                 </div>
                 <div class="col-md-5">
-                    <p>Non-Deemed</p>
+                  <p>
+                    <label>Deemed Date</label>
+                    <span class="iqies-not-available">Not available</span></p>
                 </div>
-            </div>
-            <div class="row">
-            <div class="col-md-5">
-                  <p class="iqies-label">Deemed Date</p>
-                </div>
-                <div class="col-md-5">
-                    <p><span class="iqies-not-available">Not available</span></p>
-                </div>
-            </div>
-           
+              </div>
+              </section>
+              <section class="read-view active deemingInfo">
+            
               <h3>Accrediting Organizations</h3>
-              <p>Add a new accrediting organization and manage accreditation organizations and status.</p>
+              <p>Add and manage accreditation organizations and status.</p>
               <div class="iqies-button-wrapper">
-                <button type="button" disabled="" to="/providers/1029075/details/deeming-information/add" class="btn btn-primary">Add Accrediting Organization</button>
+                <button type="button" class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.addNew').addClass('active');">Add Accrediting Organization</button>
               </div>
               <p class="info-text"><span class="aoCount">2</span> Accrediting Organizations</p>
               <div class="iqies-list-row TJC">
                 <div class="iqies-list-row-header">
                   <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                       <h4>The Joint Commission (TJC)</h4>
                     </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editTJC').addClass('active');">Edit</button>
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editTJC').addClass('active');">Edit</button>
+                        <button class="btn btn-link float-right">Delete</button>
                     </div>
                   </div>
                 </div>
-                <table class="iqies-list-table-row">
-                  <tbody>
-                    <tr>
-                      <td><p class="iqies-label">AO Facility Id</p></td>
-                      <td><p class="iqies-not-available">Not available</p></td>
-                    </tr>
-                    <tr>
-                      <td><p class="iqies-label">Accreditation Status</p></td>
-                      <td><p>Accredited</p></td>
-                    </tr>
-                    <tr>
-                      <td><p class="iqies-label">Initial Accreditation Date</p></td>
-                      <td><p>06/01/2019</p></td>
-                    </tr>
-                    <tr>
-                      <td><p class="iqies-label">Current Accreditation Date</p></td>
-                      <td><p>06/01/2019</p></td>
-                    </tr>
-                    <tr>
-                      <td><p class="iqies-label">Expiration Date</p></td>
-                      <td><p>06/05/2019</p></td>
-                    </tr>
-                  </tbody>
-                </table>
+                
+                <div class="row">
+                    <div class="col-md-5">
+                        <p><label>AO Facility ID</label>
+                           <span class="iqies-not-available">Not available</span>
+                        </p>
+                    </div>  
+                    <div class="col-md-5">
+                        <p><label>Accreditation Status</label>
+                            Accredited
+                        </p>
+                    </div>  
+                    <div class="col-md-5">
+                        <p><label>Initial Accreditation Date</label>
+                            06/01/2019
+                        </p>
+                    </div>  
+                    <div class="col-md-5">
+                        <p><label>Current Accreditation Date</label>
+                            06/01/2019
+                        </p>
+                    </div>  
+                    <div class="col-md-5">
+                        <p><label>Expiration Date</label>
+                            06/05/2020
+                        </p>
+                    </div>  
+                    
+                </div>
               </div>
               <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
@@ -838,34 +804,48 @@
                     <div class="col-md-10">
                       <h4>Accreditation Commission for Health Care (ACHC)</h4>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 text-right">
                       <button class="btn btn-outline-primary">Edit</button>
                     </div>
                   </div>
                 </div>
-                <table class="iqies-list-table-row">
-                  <tbody>
-                    <tr>
-                      <td><p class="iqies-label">AO Facility Id</p></td>
-                      <td><p class="iqies-not-available">Not available</p></td>
-                    </tr>
-                    <tr>
-                      <td><p class="iqies-label">Accreditation Status</p></td>
-                      <td><p>Pending accreditation</p></td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="row">
+                    <div class="col-md-5">
+                        <p><label>AO Facility ID</label>
+                            <span class="iqies-not-available">Not available</span>
+                        </p>
+                    </div>  
+                    <div class="col-md-5">
+                        <p><label>Accreditation Status</label>
+                            Pending accreditation
+                        </p>
+                    </div>  
+                      
+                </div>
+                
+                
               </div>
             </section>
             <section class="read-view editTJC">
-              <h2><small class="top">Accrediting Organization</small><br>The Joint Comission (TJC)</h2>
+                <div class="row">
+      <div class="col">
+        <button class="btn btn-link px-0 mb-4" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.deemingInfo').addClass('active');  ">&lt; Return to Deeming Information</button>
+      </div>
+    </div>
+              <h2>Edit Accrediting Organization</h2>
             
               <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
               <div class="row"><div class="col-md-5">
+                  <p><label>Accrediting Organization</label>
+                  <input type="text" value="The Joint Commission (TJC)" disabled class="form-control" />  
+              </p>
+                  </div>
+                <div class="col-md-5">
                   <p><label>AO Facility ID</label>
                   <input type="text" value="" class="form-control" />  
               </p>
-                  </div></div>
+                  </div>
+                </div>
               
               
               <fieldset>
@@ -877,7 +857,7 @@
                 </div>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="radio-button-as2" name="as" class="custom-control-input" value="value"
-                     onChange="$('#accForm').removeClass('hide'); ">
+                     onChange="$('#accForm').removeClass('hide'); " checked>
                   <label class="custom-control-label" for="radio-button-as2"> Accredited </label>
                 </div>
                 <div class="custom-control custom-radio">
@@ -891,24 +871,116 @@
                   <label class="custom-control-label" for="radio-button-as4"> Terminated </label>
                 </div>
               </fieldset>
-              <div class="iq-conditional-content hide" id="accForm">
+              <div class="iq-conditional-content" id="accForm">
                 <div class="row">
                   <div class="col-md-4">
                     <p>
                       <label for="asi"> Initial Accreditation Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="date" class="form-control" id="asi" aria-describedby="help-id" required="" value="">
+                      <input type="text" class="form-control" id="asi" aria-describedby="help-id" required="" value="06/01/2019">
+                      <span class="help-text">MM/DD/YYYY</span>
                     </p>
                   </div>
                   <div class="col-md-4">
                     <p>
                       <label for="cad"> Current Accreditation Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="date" class="form-control" id="cad" aria-describedby="help-id" required="" value="">
+                      <input type="text" class="form-control" id="cad" aria-describedby="help-id" required="" value="06/01/2019">
+                        <span class="help-text">MM/DD/YYYY</span>
                     </p>
                   </div>
                   <div class="col-md-4">
                     <p>
                       <label for="ed"> Expiration Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="date" class="form-control" id="ed" aria-describedby="help-id" required="" value="">
+                      <input type="text" class="form-control" id="ed" aria-describedby="help-id" required="" value="06/05/2020">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="iq-button-wrapper">
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
+                                                             $('.alert.successMsg').removeClass('hide'); 
+                                                             ">Save</button>
+                    <button
+                            class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
+                      
+                    <button class="btn btn-link danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
+                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
+                                                             $('.alert.successMsg').removeClass('hide'); $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="read-view addNew">
+                <div class="row">
+      <div class="col">
+        <button class="btn btn-link px-0 mb-4" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.deemingInfo').addClass('active');  ">&lt; Return to Deeming Information</button>
+      </div>
+    </div>
+              <h2>Add Accrediting Organization</h2>
+            
+              <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+              <div class="row"><div class="col-md-5">
+                  <p><label for="aoAdd">Accrediting Organization</label>
+                  <input type="text" id="aoAdd" value="" class="form-control" />  
+              </p>
+                  </div>
+                <div class="col-md-5">
+                  <p><label for="aoFID">AO Facility ID </label> 
+                  <input type="text" value="" id="aoFID" class="form-control" />
+              </p>
+                  </div>
+                </div>
+              
+              
+              <fieldset>
+                <legend>Accreditation Status <span class="iq-asterisk" title="Required field">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="radio-button-as1b" name="asb" class="custom-control-input" value="value"
+                     onChange="$('#accForm2').addClass('hide'); ">
+                  <label class="custom-control-label" for="radio-button-as1b"> Pending accreditation </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="radio-button-as2b" name="asb" class="custom-control-input" value="value"
+                     onChange="$('#accForm2').removeClass('hide'); ">
+                  <label class="custom-control-label" for="radio-button-as2b"> Accredited </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="radio-button-as3b" name="asb" class="custom-control-input" value="value" 
+                     onChange="$('#accForm2').addClass('hide');">
+                  <label class="custom-control-label" for="radio-button-as3b"> Withdrawn </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="radio-button-as4b" name="asb" class="custom-control-input" value="value"
+                     onChange="$('#accForm2').addClass('hide'); ">
+                  <label class="custom-control-label" for="radio-button-as4b"> Terminated </label>
+                </div>
+              </fieldset>
+              <div class="iq-conditional-content hide" id="accForm2">
+                <div class="row">
+                  <div class="col-md-4">
+                    <p>
+                      <label for="asi2"> Initial Accreditation Date<span class="iq-asterisk" title="Required field">*</span></label>
+                      <input type="date" class="form-control" id="asi2" aria-describedby="asi2-help-id" required="" value="">
+                        <span class="help-text" id="asi2-help-id">MM/DD/YYYY</span>
+                    </p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>
+                      <label for="cad2"> Current Accreditation Date<span class="iq-asterisk" title="Required field">*</span></label>
+                      <input type="date" class="form-control" id="cad2" aria-describedby="cad2-help-id" required="" value="">
+                        <span class="help-text" id="cad2-help-id">MM/DD/YYYY</span>
+                    </p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>
+                      <label for="ed2"> Expiration Date<span class="iq-asterisk" title="Required field">*</span></label>
+                      <input type="date" class="form-control" id="ed2" aria-describedby="ed2-help-id" required="" value="">
+                        <span class="help-text" id="ed2-help-id">MM/DD/YYYY</span>
                     </p>
                   </div>
                 </div>
@@ -919,28 +991,28 @@
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide');
+                                                             $('.alert.successMsg').removeClass('hide'); 
                                                              ">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
-                    <button class="btn btn-outline-danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
+                    <!--<button class="btn btn-link danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide');  $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>
+                                                             $('.alert.successMsg').removeClass('hide'); $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>-->
                   </div>
                 </div>
               </div>
-            </section>
-   
+            </section>  
+            
           </div>
-          <div class="tab-pane " id="tab5" role="tabpanel"
+           <div class="tab-pane hha" id="tab5" role="tabpanel"
                     aria-labelledby="tab5Tab">
               <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Operating Details</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab5 .edit-view').addClass('active'); $('#tab5 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -960,14 +1032,14 @@
                    <p>
                     <label for="dateOpened">Date Opened</label>
                     <input type="date" class="form-control" id="dateOpened">
-                    <span class="help-text">mm/dd/yyyy</span>
+                    <span class="help-text">MM/DD/YYYY</span>
                    </p>
                 </div>
                 <div class="col-md-6">
                    <p>
                     <label for="insExp">Insurance Expiration Date</label>
                     <input type="date" class="form-control" id="insExp">
-                    <span class="help-text">mm/dd/yyyy</span>
+                    <span class="help-text">MM/DD/YYYY</span>
                    </p>
                 </div>
                 <div class="col-md-6">
@@ -989,6 +1061,22 @@
                     </select>
                     </p>
                 </div>
+                <div class="col-md-6">
+                   <div class="form-group">
+                       <label>&nbsp;</label>
+                       <div class="custom-control custom-checkbox">
+                           <input id="hasSpecialOperatingHours" type="checkbox" name="hasSpecialOperatingHours" class="custom-control-input" onchange="if(this.checked){ $('.specHours').removeClass('hide'); } else { $('.specHours').addClass('hide'); } ">
+                           <label id="hasSpecialOperatingHours-label-id" nesting="hasSpecialOperatingHours-label-id" for="hasSpecialOperatingHours" class="custom-control-label"><span class="">Special Hours of Operations</span></label>
+                       </div><span id="hasSpecialOperatingHours-help" class="form-text">Indicator that the provider has non-standard operating hours</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group hide specHours">
+                        <label>Special Operating Hours <span class="iq-asterisk">*</span>
+                        <input type="text" class="form-control" required>
+                        </label>
+                    </div>  
+                </div>
               </div>
               <!--<div class="row">
                 <div class="col">
@@ -1005,7 +1093,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active');  $('#tab5 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -1046,7 +1134,7 @@
               
             </section>
           </div>
-          <div class="tab-pane " id="tab6" role="tabpanel"
+          <div class="tab-pane hha" id="tab6" role="tabpanel"
                     aria-labelledby="tab6Tab">
             
             <section class="edit-view active firstTime">
@@ -1054,12 +1142,13 @@
               <div class="col-md-10">
                 <h2>Add Branch</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .edit-view').addClass('active'); $('#tab6 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>-->
               </div>
             </div>
-                <div class="row">
-                 <div class="col-md-12">
+                
+              <div class="row">
+                <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
                   <div class="col-md-6">
@@ -1076,63 +1165,7 @@
                   </div>
                 </div>
                 
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bc">Branch CCN <span class="iq-asterisk">*</span></label>
-                     <input class="form-control" id="bc" type="text" maxlength="10">
-                      <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
-                      <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
-                      <li>Followed by capital letter Q</li>
-                          <li>Followed by the next 4 positions of the Medicare ID</li>
-                          <li>Followed by the next sequential number of facility branches starting with 001</li>
-                      </ul>
-                      </div>
-                  </div>
-                </div>
-                  <div class="col-md-6">&nbsp;</div>
-                  <div class="col-md-3">
-                      
-                      <fieldset>
-                <legend>Branch Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs1" checked name="fcs" class="custom-control-input" value="value"
-                     onChange="$('.bclosed').addClass('hide');">
-                  <label class="custom-control-label" for="r-fcs1"> Active </label>
-                </div>
-                          <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs2" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('.bclosed').removeClass('hide');">
-                  <label class="custom-control-label" for="r-fcs2"> Terminated </label>
-                </div>
-                          
-                      </fieldset>
-                  <div class="form-group hide">
-                    <label for="bs">Branch Status</label>
-                      <div class="iq-btn-group" id="bs">
-                          <button class="btn btn-outline-primary active" onClick="$('#bs button').removeClass('active'); $(this).addClass('active'); $('.bclosed').addClass('hide'); ">Active</button>
-                          <button class="btn btn-outline-primary" onClick="$('#bs button').removeClass('active'); $(this).addClass('active'); $('.bclosed').removeClass('hide'); ">Terminated</button>
-                      </div>
-                      
-                    <!-- <select class="form-control" id="bs" onchange="switch(this.options[this.selectedIndex].value){
-                        case 'active':  $('.bclosed').addClass('hide'); break;      
-                        case 'closed': $('.bclosed').removeClass('hide'); break;  
-                        case 'other': $('.bclosed').addClass('hide'); break; 
-                                                                    }"><option>Select one</option><option selected value="active">Active</option>
-                      <option value="closed">Closed</option><option value="other">Other</option></select> -->
-                  </div>
-                </div>
-                <div class="col-md-3"><div class="form-group">
-                    <label for="bop">Open Date</label>
-                     <input type="date" class="form-control" id="bop">
-                             </div>
-                </div>  
-                 <div class="col-md-3 hide bclosed">
-                     <div class="form-group">
-                    <label for="bcl">Close Date</label>
-                     <input type="date" class="form-control" id="bcl" />
-                  </div>
-                  </div>
-                 <div class="col-md-12">
+                  <div class="col-md-12">
                       <br>
                 <fieldset><legend><h3>Branch Address</h3></legend>
                     <div class="row">
@@ -1233,16 +1266,18 @@
                 
               </div>
                 </fieldset>
-                  </div>
-                </div>
-             
+                 
+              <div class="row">
+                <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
-                
-             
+                </div>
+              </div>
+              </div>
+              </div>
               </section>
               <section class="read-view">
                   <div class="row tabTitle">
@@ -1250,35 +1285,44 @@
                 <h2>Additional Branch Addresses</h2> <p class="iq-page-header-description">Manage and add additional branches for the provider.</p>
                 <p><button class="btn btn-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.firstTime').addClass('active');">Add Branch</button></p>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 
               </div>
             </div>
-               
-                
-                <p class="info-text"><span class="baCount">1</span> Additional Branch</p>
-                  <div class="table-wrapper">  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col" class="sortable descending"><span>Branch</span></th>
-      <th scope="col" class="sortable"><span>Status</span></th>
-      <th scope="col" class="sortable"><span>Opened</span></th>
-      <th scope="col" class="sortable"><span>Closed</span></th>
-      <th scope="col">&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="row"><h4>BrightHope North<br><small>Branch Office<br>CCN# 123Q111001</small></h4>
-          123 Temporary Road, Suite 100<br>Reston, VA 20190</td>
-      <td>Active</td>
-      <td>8/15/2019</td>
-      <td><p class="iq-not-available">Not Applicable</p></td>
-      <td><a href="#">Delete</a> | <a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a></td>
-    </tr>
-    
-  </tbody>
-</table></div>
+                  <p class="info-text"><span class="baCount">1</span> Additional Branches</p>
+                  
+                <div class="iqies-list-row">
+                <div class="iqies-list-row-header">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h3>BrightHope North<br><small class="bottom">Branch Office</small></h3>
+                    </div>
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</button>
+                        <button class="btn btn-link float-right">Delete</button>
+                    </div>
+                  </div>
+                </div>
+                      
+                <div class="row">
+                    <!--<div class="col-md-5">
+                          <p><label>Branch Type</label>
+                          Branch Office</p>
+                  </div>-->
+                    <div class="col-md-10">
+                          <p>
+                            <label>Branch Address</label>
+                          123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County not available</span></p>
+                      </div>
+                    <div class="col-md-5">
+                        <p><label>Date Created</label>
+                        8/15/2019</p>
+                    </div>
+                    <div class="col-md-5">
+                        <p><label>Last Updated</label>
+                        8/15/2019</p>
+                    </div>
+                  </div></div>
               </section>
               <section class="edit-view editSplint">
             
@@ -1290,7 +1334,7 @@
                   <div class="col-md-6">
                   <div class="form-group">
                     <label for="bn2">Branch Name <span class="iq-asterisk">*</span></label>
-                     <input type="text" value="BrightHope North" class="form-control" id="bn2" required>
+                     <input type="text" value="Splint" class="form-control" id="bn2" required>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -1300,56 +1344,6 @@
                       <option>Child Affiliate Office</option><option>Sibling Affiliate</option></select>
                   </div>
                 </div>
-                  
-                    
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Branch CCN
-                     <input class="form-control" type="text" maxlength="10" value="12Q1111001"></label>
-                      <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
-                      <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
-                      <li>Followed by capital letter Q</li>
-                          <li>Followed by the next 4 positions of the Medicare ID</li>
-                          <li>Followed by the next sequential number of facility branches starting with 001</li>
-                      </ul>
-                      </div>
-                  </div>
-                </div>
-                  <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Facility/Branch ID
-                     </label>12345
-                      
-                  </div>
-                  </div>
-                  <div class="col-md-3">
-                  <fieldset>
-                <legend>Branch Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs3" checked name="fcs" class="custom-control-input" value="value"
-                     onChange="$('.bclosed').addClass('hide');">
-                  <label class="custom-control-label" for="r-fcs3"> Active </label>
-                </div>
-                          <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs4" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('.bclosed').removeClass('hide');">
-                  <label class="custom-control-label" for="r-fcs4"> Terminated </label>
-                </div>
-                          
-                      </fieldset>
-                </div>
-                <div class="col-md-3"><div class="form-group">
-                    <label>Open Date</label>
-                     <input type="date" class="form-control">
-                             </div>
-                </div>  
-                 <div class="col-md-3 hide bclosed">
-                     <div class="form-group">
-                    <label>Close Date</label>
-                     <input type="date" class="form-control" />
-                  </div>
-                  </div>
-                  
                   <div class="col-md-12">
                       <br>
                 <fieldset><legend><h3>Branch Address</h3></legend>
@@ -1467,7 +1461,7 @@
               </div>
             </section>
           </div>
-            <div class="tab-pane " id="tab7" role="tabpanel"
+          <div class="tab-pane hha" id="tab7" role="tabpanel"
                     aria-labelledby="tab7Tab">
             
                 
@@ -1488,9 +1482,9 @@
                         <div class="col-md-6">
                            <div class="row">
                         <div class="col-md-8"> <p><label>Phone<input type="tel" class="form-control"></label></p>
-                               </div>
+                             </div>
                                <div class="col-md-4"><p><label>Ext<input type="text" size="4" class="form-control"></label></p></div>
-                            </div>
+                          </div>
                             
                         </div>
                         <div class="col-md-6"><p><label>Fax
@@ -1510,7 +1504,7 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -1529,29 +1523,28 @@
                 
               </div>
             </div>
-               
-                
-                <p class="info-text"><span class="baCount">1</span> additional contacts</p>
-                  <div class="iqies-list-row">
+                  <p class="info-text"><span class="baCount">1</span> Additional Contacts</p>
+              <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
                   <div class="row">
-                    <div class="col-md-10">
-                      <h3>Mary Carriger</h3>
+                    <div class="col-md-8">
+                      <h3>Mary Carriger<br><small>Emergency Contact</small></h3>
                     </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editMary').addClass('active');">Edit</button>
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editMary').addClass('active');">Edit</button>
+                      <button class="btn btn-link float-right">Delete</button>
                     </div>
                   </div>
                 </div>
                       
                 <div class="row">
-                    <div class="col-md-5">
+                   <!-- <div class="col-md-5">
                           <p><label>Contact Type</label>
                           Emergency Contact</p>
-                      </div>
+                      </div>-->
                     <div class="col-md-5">
                           <p><label>Phone</label>
-                          (703) 123-1234</p>
+                          (703) 123-1234 Ext. 123</p>
                       </div>
                     <div class="col-md-5">
                           <p><label>Fax</label>
@@ -1568,7 +1561,7 @@
                   </div></div>
               </section>
            <section class="edit-view editMary">
-               <h2>Edit Additional Contact</h2>
+              <h2>Edit Additional Contact</h2>
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -1584,9 +1577,9 @@
                         <div class="col-md-6">
                            <div class="row">
                         <div class="col-md-8"> <p><label>Phone<input type="tel" class="form-control" value="(703) 123-1234"></label></p>
-                               </div>
-                               <div class="col-md-4"><p><label>Ext<input type="text" size="4" class="form-control"></label></p></div>
-                            </div>
+                             </div>
+                               <div class="col-md-4"><p><label>Ext<input type="text" size="4" class="form-control" value="123"></label></p></div>
+                          </div>
                             
                         </div>
                         <div class="col-md-6"><p><label>Fax
@@ -1606,9 +1599,10 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                      <button class="btn btn-link danger float-right" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Delete</button>
                   </div>
                 </div>
               </div>
@@ -1616,14 +1610,14 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab8" role="tabpanel"
+          <div class="tab-pane hha" id="tab8" role="tabpanel"
                     aria-labelledby="tab8Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Medicare Administrative Contractor (MAC) Information</h2>
                
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab8 .edit-view').addClass('active'); $('#tab8 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
@@ -1713,7 +1707,7 @@
               </div>
               
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab8 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary btn-lg" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab8 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
                             class="btn btn-link" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active');  $('#tab8 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
@@ -1755,9 +1749,9 @@
                 </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab9" role="tabpanel"
+          <div class="tab-pane hha" id="tab9" role="tabpanel"
                     aria-labelledby="tab9Tab">
-             <section class="edit-view newAdmin active">
+            <section class="edit-view newAdmin active">
               <div class="row">
                 <div class="col-md-12"><h2>Add Administrator</h2>
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -1787,7 +1781,7 @@
                                 <input id="lastName" name="lastName" class="form-control" autocapitalize="none" type="text" value="">
                             </div>
                         </div>
-                    </div>
+                  </div>
 
                 <div class="row">
                         <div class="col-12 col-md-4">
@@ -1808,7 +1802,7 @@
                                 <input id="email" name="email" class="form-control" autocapitalize="none" type="email" value="">
                             </div>
                         </div>
-                    </div>
+                  </div>
 
                 <fieldset><!--<legend><h3>Address</h3></legend>-->
                     <div class="row">
@@ -1911,7 +1905,7 @@
                  <div class="row">
                     <div class="col">
                       <div class="iq-button-wrapper">
-                        <button class="btn btn-primary" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
+                        <button class="btn btn-primary btn-lg" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
                         <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                       </div>
                     </div>
@@ -1930,17 +1924,16 @@
                 
               </div>
             </div>
-               
-                
-                <p class="info-text"><span class="baCount">1</span> administrators</p>
-                  <div class="iqies-list-row">
+                  <p class="info-text"><span class="baCount">1</span> Administrators</p>
+              <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
                   <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                       <h3>Mr. Edward P. Munch<small class="bottom">Primary Administrator</small></h3>
                     </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onclick="$('#tab9 .read-view').removeClass('active'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .edit-view.editEdward').addClass('active');">Edit</button>
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab9 .read-view').removeClass('active'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .edit-view.editEdward').addClass('active');">Edit</button>
+                    <button class="btn btn-link float-right">Delete</button>
                     </div>
                   </div>
                 </div>
@@ -1991,7 +1984,7 @@
                 </div>
            </section>
            <section class="edit-view editEdward">
-               <h2>Edit Administrator</h2>
+              <h2>Edit Administrator</h2>
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -2021,7 +2014,7 @@
                                 <input id="lastNameEE" name="lastNameEE" class="form-control" autocapitalize="none" type="text" value="">
                             </div>
                         </div>
-                    </div>
+                  </div>
 
                 <div class="row">
                         <div class="col-12 col-md-4">
@@ -2042,7 +2035,7 @@
                                 <input id="emailEE" name="emailEE" class="form-control" autocapitalize="none" type="email" value="">
                             </div>
                         </div>
-                    </div>
+                  </div>
 
                 <fieldset><!--<legend><h3>Address</h3></legend>-->
                     <div class="row">
@@ -2146,8 +2139,9 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary btn-lg" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                       <button class="btn btn-link danger float-right">Delete</button>
                   </div>
                 </div>
               </div>
@@ -2155,7 +2149,7 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab10" role="tabpanel"
+          <div class="tab-pane hha" id="tab10" role="tabpanel"
                     aria-labelledby="tab10Tab">
             <h2>Attachments</h2>
               <p>Add and manage attachments for this provider.</p>
@@ -2190,7 +2184,7 @@
                     <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
                         <input type="text" class="form-control file-description-text">
                         </label><span class="fdt"></span></p>
-           <p><button class="btn btn-primary" onClick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('Not available'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button></p>
+           <p><button class="btn btn-primary btn-lg" onClick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('Not available'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button></p>
                     </div>
                 </div>
               </div>
@@ -2209,8 +2203,8 @@
           <div class="row">
             <div class="col">
               <div class="iq-footer-heading"> <a href="/"> <img
-                      src="../../../src/assets/images/logo-iqies-reversed.svg"
-                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../../src/assets/images/logo-cms.svg"
+                      src="../../src/assets/images/logo-iqies-reversed.svg"
+                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../src/assets/images/logo-cms.svg"
                     class="img-fluid logo cms-logo d-lg-none" alt=""> </div>
             </div>
           </div>
@@ -2218,56 +2212,56 @@
             <div class="col"> <a href="/help">Help</a><span> (800)
               339-9313 </span><a href="mailto:help@qtso.com">Email Us</a><a
                   href="https://qtso.cms.gov/" target="_blank"
-                  rel="noopener noreferrer"> QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                  rel="noopener noreferrer"> QTSO <img src="../../src/assets/images/logo-cms.svg"
                     class="iq-external-link-icon" alt=""> </a><a href="https://www.cms.gov/Medicare/Medicare.html"
                   target="_blank" rel="noopener noreferrer"> Medicare <img
-                    src="../../../src/assets/images/icon-link-external.svg"
+                    src="../../src/assets/images/icon-link-external.svg"
                     class="iq-external-link-icon" alt=""> </a><a href="/privacy-policy">Privacy Policy</a> </div>
           </div>
           <div class="row">
             <div class="col">
               <div class="iq-footer-links"> <a href="https://www.medicare.gov/about-us/plain-writing"
                     target="_blank" rel="noopener noreferrer"> Plain Writing <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a
                     href="https://www.cms.gov/center/freedom-of-information-act-center.html"
                     target="_blank" rel="noopener noreferrer"> Freedom of
                 Information Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a
                     href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
                     target="_blank" rel="noopener noreferrer"> No Fear Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a href="https://get.adobe.com/reader/" target="_blank"
                     rel="noopener noreferrer"> Adobe Acrobat <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a> </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-2 d-flex align-items-center"> <img src="../../../src/assets/images/logo-cms.svg"
+      <div class="col-lg-2 d-flex align-items-center"> <img src="../../src/assets/images/logo-cms.svg"
             class="logo cms-logo d-none d-lg-block" alt="CMS Logo"> </div>
     </div>
   </div>
 </footer>
 <script type="text/javascript"
-    src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+    src="../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
   </script> 
 <script type="text/javascript"
-    src="../../../src/assets/third-party/popper/popper.min.js"></script> 
+    src="../../src/assets/third-party/popper/popper.min.js"></script> 
 <script type="text/javascript"
-    src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+    src="../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
   </script> 
-<script type="text/javascript" src="../../../src/assets/js/scripts.js">
+<script type="text/javascript" src="../../src/assets/js/scripts.js">
   </script>
-   
     <script type="text/javascript">
-
-$(document).ready(function () {
  
+$(document).ready(function () {
+   
+ $('[data-toggle="tooltip"]').tooltip(); 
 window.setTimeout(function() {
-    $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+    $(".alert-success").fadeTo(1000, 0).slideUp(1000, function(){
         $(this).addClass('hide'); 
     });
 }, 5000);
