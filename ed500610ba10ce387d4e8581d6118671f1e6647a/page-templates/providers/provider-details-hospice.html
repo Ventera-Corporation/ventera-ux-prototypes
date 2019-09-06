@@ -218,23 +218,21 @@
                 <br>
                 <fieldset><legend><h3>Primary Location</h3></legend>
                     <div class="row">
-                <div class="col-md-6">
+               <div class="col-md-12">
                   <div class="form-group">
-                    <label for="address1">Address Line 1 <span class="iq-asterisk">*</span>
-                    <input type="text" class="form-control" id="address1"
-                            required></label>
-                      <p class="help-text hide">E.g. 123 Street Name</p>
-                      
+                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
+                            required>
+                      <span class="help-text">Number and street name or PO box</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label for="address2">Address Line 2
-                    <input type="text" class="form-control" id="address2"  style="margin-top: .5rem;"></label>
-                    <p class="help-text hide">E.g. Apt 1</p>
+                    <label>Address Line 2</label>
+                    <input type="text" class="form-control">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
                   </div>
                 </div>
-          
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="city">City <span class="iq-asterisk">*</span></label>
@@ -390,25 +388,20 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+               
+                 <div class="col-md-12">
                   <div class="form-group">
-                      <label>Name of Contact</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">&nbsp;
-                  </div><div class="col-md-6">
-                  <div class="form-group">
-                    <label for="address1M">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="address1M"
+                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
-                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
+                      <span class="help-text">Number and street name or PO box</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label for="address2M">Address 2</label>
-                    <input type="text" class="form-control" id="address2M">
+                    <label>Address Line 2</label>
+                    <input type="text" class="form-control">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
                   </div>
                 </div>
               </div>
@@ -598,18 +591,19 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input"
+                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
-                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
+                      <span class="help-text">Number and street name or PO box</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label>Address 2</label>
+                    <label>Address Line 2</label>
                     <input type="text" class="form-control">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
                   </div>
                 </div>
               </div>
@@ -1562,6 +1556,7 @@
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                      <button class="btn danger btn-link float-right">Delete</button>
                   </div>
                 </div>
               </div>
@@ -1768,14 +1763,15 @@
                 </div>
                   <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bn">Location Name <span class="iq-asterisk">*</span></label>
-                     <input type="text" class="form-control" id="bn" required>
+                    <label>Location Name <span class="iq-asterisk">*</span></label>
+                     <input type="text" class="form-control" required>
+                      
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bt">Location Type</label>
-                    <select class="form-control" id="bt" onChange="if(this.options[this.selectedIndex].value == 'primary'){ alert('There is an existing Primary Location. Do you wish to reassign this location as primary location? ')}"><option>Select one</option>
+                    <label>Location Type</label>
+                    <select class="form-control" onChange="if(this.options[this.selectedIndex].value == 'primary'){ alert('There is an existing Primary Location. Do you wish to reassign this location as primary location? ')}"><option>Select one</option>
                          
                          <option>Branch Office</option>
                     <option>Child Affiliate Office</option><option>Sibling Affiliate</option><!--<option value="primary">Primary Location</option>--></select>
@@ -1784,8 +1780,8 @@
                 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bc">Branch CCN <span class="iq-asterisk">*</span></label>
-                     <input class="form-control" disabled id="bc" type="text" maxlength="10" ><!--onFocus="$('#bccn-rules').removeClass('hide')" onBlur="$('#bccn-rules').addClass('hide');"
+                    <label>Branch CCN <span class="iq-asterisk">*</span></label>
+                     <input class="form-control" disabled type="text" maxlength="10" ><!--onFocus="$('#bccn-rules').removeClass('hide')" onBlur="$('#bccn-rules').addClass('hide');"
                       <div class="alert alert-info hide" id="bccn-rules" style="display: block"><h5><strong>To create your 10-digit Branch CCN</strong></h5>
                       <ul><li>Begin with the first 2 characters of your Provider CCN</li>
                       <li>Followed by capital "Q"</li>
@@ -1820,14 +1816,14 @@
                     </fieldset>
                 </div>
                 <div class="col-md-3"><div class="form-group">
-                    <label for="bop">Open Date</label>
-                     <input type="date" class="form-control" id="bop">
+                    <label>Open Date</label>
+                     <input type="date" class="form-control">
                              </div>
                 </div>  
                  <div class="col-md-3 hide bclosed">
                      <div class="form-group">
-                    <label for="bcl">Close Date</label>
-                     <input type="date" class="form-control" id="bcl" />
+                    <label>Close Date</label>
+                     <input type="date" class="form-control" />
                   </div>
                 </div>
                 
@@ -1844,32 +1840,34 @@
                       
                 <fieldset><legend><h3>Location Address</h3></legend>
                     <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label for="address1B">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="address1B"
+                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
+                      <span class="help-text">Number and street name or PO box</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label for="address2B">Address 2</label>
-                    <input type="text" class="form-control" id="address2B">
+                    <label>Address Line 2</label>
+                    <input type="text" class="form-control">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
                   </div>
                 </div>
               </div>
             <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="cityB">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="cityB"
+                    <label>City <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label for="stateB">State</label>
-                    <select class="form-control" id="stateB">
+                    <label>State</label>
+                    <select class="form-control">
                       <option value=""></option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -1927,15 +1925,15 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label for="zipCodeB">ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="zipCodeB"
+                    <label>ZIP Code <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="countyB">County</label>
-                    <input type="text" class="form-control" id="countyB">
+                    <label>County</label>
+                    <input type="text" class="form-control">
                   </div>
                 </div>
                 
@@ -2419,9 +2417,7 @@
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="confirmLocationDeletion">Delete</button>
-                    <a href="#" class="btn btn-link" style="margin-top: 1.6rem;" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editBranch1').addClass('active');">
-                    Edit
-                  </a>
+                  <a href="#" class="btn btn-link" style="margin-top: 2.1rem;" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editBranch1').addClass('active');">Edit</a>
                 </div>
               </div>
               <div id="site2" class="collapse">
@@ -3038,17 +3034,19 @@
                       
                 <fieldset><legend><h3>Location Address</h3></legend>
                     <div class="row">
-                <div class="col-md-6">
+                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Address 1 <span class="iq-asterisk">*</span></label>
+                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
                     <input type="text" class="form-control" value="667 Bent Ridge Lane"
                             required>
+                      <span class="help-text">Number and street name or PO box</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label>Address 2</label>
+                    <label>Address Line 2</label>
                     <input type="text" class="form-control" value="Suite 1000">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
                   </div>
                 </div>
               </div>
@@ -3242,17 +3240,19 @@
                       
                 <fieldset><legend><h3>Location Address</h3></legend>
                     <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label>Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" value="123 Temporary Road"
+                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
+                      <span class="help-text">Number and street name or PO box</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label>Address 2</label>
-                    <input type="text" class="form-control" value="Suite 100">
+                    <label>Address Line 2</label>
+                    <input type="text" class="form-control">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
                   </div>
                 </div>
               </div>
@@ -3395,7 +3395,7 @@
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                      <button class="btn btn-outline-danger btn-link float-right">Delete</button>
+                      <button class="btn danger btn-link float-right">Delete</button>
                   </div>
                 </div>
               </div>
@@ -3743,19 +3743,21 @@
 
                 <fieldset><!--<legend><h3>Address</h3></legend>-->
                     <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="addressLine1-label" for="addressLine1" class="">Address Line 1</label>
-                                <input id="addressLine1" name="addressLine1" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="addressLine2-label" for="addressLine2" class="">Address Line 2</label>
-                                <input id="addressLine2" name="addressLine2" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-
+                         <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
+                            required>
+                      <span class="help-text">Number and street name or PO box</span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address Line 2</label>
+                    <input type="text" class="form-control">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
+                  </div>
+                </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label id="city-label" for="cityAdmin" class="">City</label>
@@ -3967,18 +3969,21 @@
 
                 <fieldset><!--<legend><h3>Address</h3></legend>-->
                     <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="addressLine1-labelEE" for="addressLine1EE" class="">Address Line 1</label>
-                                <input id="addressLine1EE" name="addressLine1EE" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="addressLine2-labelEE" for="addressLine2EE" class="">Address Line 2</label>
-                                <input id="addressLine2EE" name="addressLine2EE" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
+                         <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
+                            required>
+                      <span class="help-text">Number and street name or PO box</span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address Line 2</label>
+                    <input type="text" class="form-control">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
+                  </div>
+                </div>
 
                         <div class="col-12 col-md-6">
                             <div class="form-group">

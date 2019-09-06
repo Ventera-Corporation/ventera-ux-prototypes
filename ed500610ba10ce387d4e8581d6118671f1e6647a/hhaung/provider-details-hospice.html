@@ -1766,16 +1766,17 @@
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                   <div class="form-group">
-                    <label for="bn">Location Name <span class="iq-asterisk">*</span></label>
-                     <input type="text" class="form-control" id="bn" required>
+                    <label>Location Name <span class="iq-asterisk">*</span></label>
+                     <input type="text" class="form-control" required>
+                      
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label for="bt">Location Type</label>
-                    <select class="form-control" id="bt" onChange="if(this.options[this.selectedIndex].value == 'primary'){ alert('There is an existing Primary Location. Do you wish to reassign this location as primary location? ')}"><option>Select one</option>
+                    <label>Location Type</label>
+                    <select class="form-control" onChange="if(this.options[this.selectedIndex].value == 'primary'){ alert('There is an existing Primary Location. Do you wish to reassign this location as primary location? ')}"><option>Select one</option>
                          
                          <option>Branch Office</option>
                     <option>Child Affiliate Office</option><option>Sibling Affiliate</option><!--<option value="primary">Primary Location</option>--></select>
@@ -1784,8 +1785,8 @@
                 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bc">Branch CCN <span class="iq-asterisk">*</span></label>
-                     <input class="form-control" disabled id="bc" type="text" maxlength="10" ><!--onFocus="$('#bccn-rules').removeClass('hide')" onBlur="$('#bccn-rules').addClass('hide');"
+                    <label>Branch CCN <span class="iq-asterisk">*</span></label>
+                     <input class="form-control" disabled type="text" maxlength="10" ><!--onFocus="$('#bccn-rules').removeClass('hide')" onBlur="$('#bccn-rules').addClass('hide');"
                       <div class="alert alert-info hide" id="bccn-rules" style="display: block"><h5><strong>To create your 10-digit Branch CCN</strong></h5>
                       <ul><li>Begin with the first 2 characters of your Provider CCN</li>
                       <li>Followed by capital "Q"</li>
@@ -1820,14 +1821,14 @@
                     </fieldset>
                 </div>
                 <div class="col-md-3"><div class="form-group">
-                    <label for="bop">Open Date</label>
-                     <input type="date" class="form-control" id="bop">
+                    <label>Open Date</label>
+                     <input type="date" class="form-control">
                              </div>
                 </div>  
                  <div class="col-md-3 hide bclosed">
                      <div class="form-group">
-                    <label for="bcl">Close Date</label>
-                     <input type="date" class="form-control" id="bcl" />
+                    <label>Close Date</label>
+                     <input type="date" class="form-control" />
                   </div>
                 </div>
                 
@@ -1844,32 +1845,34 @@
                       
                 <fieldset><legend><h3>Location Address</h3></legend>
                     <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label for="address1B">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="address1B"
+                    <label>Address 1 <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
+                      <span class="help-text">Number and street name or PO box</span>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label for="address2B">Address 2</label>
-                    <input type="text" class="form-control" id="address2B">
+                    <label>Address 2</label>
+                    <input type="text" class="form-control">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
                   </div>
                 </div>
               </div>
             <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="cityB">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="cityB"
+                    <label>City <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label for="stateB">State</label>
-                    <select class="form-control" id="stateB">
+                    <label>State</label>
+                    <select class="form-control">
                       <option value=""></option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -1927,15 +1930,15 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label for="zipCodeB">ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="zipCodeB"
+                    <label>ZIP Code <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control"
                             required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="countyB">County</label>
-                    <input type="text" class="form-control" id="countyB">
+                    <label>County</label>
+                    <input type="text" class="form-control">
                   </div>
                 </div>
                 
