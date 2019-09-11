@@ -1,0 +1,25 @@
+.iq-to-top {
+  background: $iq-color-secondary-alt-lightest;
+  //This is broken btw. was previously "fixed" but they want it to hug the right edge of the "container", not the screen.
+  border: 0;
+  border-radius: 3px;
+  bottom: 20px;
+  color: $iq-color-primary-darkest;
+  font-weight: $font-weight-bold;
+  height: 64px;
+  padding: 1rem;
+  // position: fixed;
+  right: 30px;
+  width: 64px;
+  // z-index: 100;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &:active,
+  &:hover {
+    background: $iq-color-primary-darkest;
+    color: $iq-color-secondary-alt-lightest;
+  }
+}
