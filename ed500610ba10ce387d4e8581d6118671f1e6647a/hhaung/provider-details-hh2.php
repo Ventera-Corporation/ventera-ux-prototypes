@@ -1159,9 +1159,9 @@
                 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="bc">Branch CCN</label>
+                    <label for="bc">Medicare Branch ID</label>
                      <input class="form-control" id="bc" type="text" maxlength="10">
-                      <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
+                      <div class="help-text"><h6>Business Rules for 10-digits Medicare Branch ID</h6>
                       <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
                       <li>Followed by capital letter Q</li>
                           <li>Followed by the next 4 positions of the Medicare ID</li>
@@ -1397,9 +1397,9 @@
                     
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Branch CCN
+                    <label>Medicare Branch ID
                      <input class="form-control" type="text" maxlength="10" value="12Q1111001"></label>
-                      <div class="help-text"><h6>Business Rules for 10-digits Branch CCN</h6>
+                      <div class="help-text"><h6>Business Rules for 10-digits Medicare Branch ID</h6>
                       <ul><li>First 2 positions of the parent facility Medicare ID (State Code)</li>
                       <li>Followed by capital letter Q</li>
                           <li>Followed by the next 4 positions of the Medicare ID</li>

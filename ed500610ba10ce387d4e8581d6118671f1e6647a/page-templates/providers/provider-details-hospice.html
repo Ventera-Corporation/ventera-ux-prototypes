@@ -47,13 +47,14 @@
                     <div class="iq-page-header-content">
                       <h1>BrightHope</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->IQIES 123456 - <em>Non-Deemed</em>
-                      </div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->IQIES 123456 - Hospice - Non-Deemed</div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-3 iq-page-header-contact">
                     <address>
                       667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010<br>
+                      <!--<i class="fal fa-phone-alt"></i> (123) 123-1234<br>
+                      <a href="#" style="display: inline-block; "><i class="fal fa-envelope"></i> Email</a> | <a href="#" style="display: inline-block; "><i class="fal fa-external-link"></i> Website</a>-->
                     </address>
                   </div>
                 </div>
@@ -63,12 +64,8 @@
               <div class="container">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
-                    <div class="iq-summary-bar-data" data-index="0">
-                      <p>Provider Type</p>
-                      <p>Hospice</p>
-                    </div>
-                    <div class="iq-summary-bar-data" data-index="1">
-                      <p>Certification Status</p>
+<div class="iq-summary-bar-data" data-index="1">
+              <p>Certification Status</p>
                       <p>Pending</p>
                     </div>
                     
@@ -105,6 +102,9 @@
       <div class="col-md-12">
         <div class="alert alert-success successMsg hide" role="alert">
           <div class="alert-content">Changes saved successfully</div>
+        </div>
+        <div class="alert alert-success certificationChanged hide" role="alert">
+          <div class="alert-content">Changes saved successfully. Provider's CCN has been assigned to reflect that this provider has been federally certified.  </div>
         </div>
         <div class="alert alert-danger errorMsg hide" role="alert">
           <div class="alert-content"><div class="row">
@@ -677,9 +677,8 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label for="zipCodeX">ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="zipCodeX"
-                            required>
+                    <label>ZIP Code <span class="iq-asterisk">*</span></label>
+                    <input type="text" class="form-control required-form-input" required>
                      <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
                   </div>
                 </div>
@@ -727,59 +726,91 @@
               <fieldset>
                 <legend>Federal Certification Status <span class="iq-asterisk" title="Required field">*</span></legend>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs1" name="fcs" class="custom-control-input" value="value"
+                  <input type="radio" id="radio-button-fcs1" name="fcs" class="custom-control-input"
                      onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').addClass('hide');">
                   <label class="custom-control-label" for="radio-button-fcs1"> Not Applicable </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs2" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').addClass('hide');">
+                  <input type="radio" id="radio-button-fcs2" name="fcs" class="custom-control-input"
+                     onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').addClass('hide');" checked="checked">
                   <label class="custom-control-label" for="radio-button-fcs2"> Pending Certification </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs3" name="fcs" class="custom-control-input" value="value" 
+                  <input type="radio" id="radio-button-fcs3" name="fcs" class="custom-control-input" 
                      onChange="$('#certifiedForm').removeClass('hide'); $('#terminatedForm').addClass('hide');">
                   <label class="custom-control-label" for="radio-button-fcs3"> Certified </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs4" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('#certifiedForm').addClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated </label>
+                  <input type="radio" disabled id="radio-button-fcs4" name="fcs" class="custom-control-input"
+                     onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').removeClass('hide'); ">
+                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated <!-- tooltip --></label>
                 </div>
               </fieldset>
               <div class="iq-conditional-content hide" id="certifiedForm">
                 <div class="row">
                   <div class="col-md-4">
                     <p>
-                      <label for="ccn">CCN <span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="text" class="form-control" id="ccn" aria-describedby="help-id" required="" value="">
+                      <label>CCN</label>
+                      <span class="iq-not-available">CCN will be automatically entered based on business rules</span>
                     </p>
                   </div>
                   <div class="col-md-4">
                     <p>
                       <label>Certification Date</label>
-                      <span>07/30/2019</span> </p>
+                      <span class="iq-not-available">Certification Date will be automatically entered based on Survey Exit date</span>
+                    <!--<span class="help-text">This date is based on Survey Exit Date</span>--> </p>
+                  </div>
+                    <div class="col-md-4">
+                    <p>
+                      <label>Original Participation Date</label>
+                      <input type="date" class="form-control">
+                      <span class="help-text">MM/DD/YYYY</span> </p>
                   </div>
                 </div>
               </div>
               <div class="iq-conditional-content hide" id="terminatedForm">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ccn2">CCN <span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="text" class="form-control" id="ccn2" aria-describedby="help-id" required="" value="">
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ter">Termination Date <span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="date" class="form-control" id="ter" aria-describedby="help-id" required="" value="">
-                    </p>
-                  </div>
+                  
+                   <fieldset>
+                <legend>Withdrawal Type <span class="iq-asterisk" title="Required field">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="withdraw1" name="w" class="custom-control-input" value="value">
+                  <label class="custom-control-label" for="withdraw1"> Involuntary Withdrawal </label>
                 </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="withdraw2" name="w" class="custom-control-input" value="value">
+                  <label class="custom-control-label" for="withdraw2"> Voluntary Withdrawal </label>
+                </div>
+                <div class="row">
+                   <div class="col-md-4">
+                    <p>
+                      <label>Termination Date <span class="iq-asterisk" title="Required field">*</span></label>
+                      <input type="date" class="form-control" required="" value="">
+                      <span class="help-text">MM/DD/YYYY</span>
+                    </p>
+                  </div>
+                    <div class="col-md-8">
+                    <p>
+                      <label>Reason <span class="iq-asterisk" title="Required field">*</span></label>
+                      <select class="control-form"><option>Select one</option>
+                        <option value="1">Active</option>
+                          <option value="6">Fail to Meet Health/Safety</option>
+                          <option value="7">Fail to Meet Agreement</option>
+                          <option value="8">Provider Status Change</option>
+                        </select>
+                    </p>
+                  </div>
+                    <div class="col-md-4">
+                    <p>
+                      <label>CCN</label>
+                      789456123
+                    </p>
+                  </div>
+                 
+                </div>
+                  </fieldset>
               </div>
               <h3>State Licensure</h3>
-              <fieldset>
+              <!--<fieldset>
                 <legend>State Licensure Status <span class="iq-asterisk" title="Required field">*</span></legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="radio-button-sl1" name="sl" class="custom-control-input" value="value"
@@ -801,75 +832,76 @@
                      onChange="$('#licensedForm').addClass('hide'); ">
                   <label class="custom-control-label" for="radio-button-sl4"> Terminated </label>
                 </div>
-              </fieldset>
-              <div class="iq-conditional-content hide" id="licensedForm">
+              </fieldset>-->
+              
                 <div class="row">
                   <div class="col-md-4">
                     <p>
-                      <label for="lt">License Type <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                      <select class="form-control" id="lt">
-                        <option>Select ...</option>
+                      <label>License Type <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
+                      <select class="form-control">
+                        <option>Select one</option>
                         <option>Permanent</option>
-                        <option>Temporary</option>
+                        <option>Annual</option>
+                          <option>Bi-Annual</option>
                       </select>
                     </p>
                   </div>
                   <div class="col-md-4">
                     <p>
-                      <label for="ln">License Number <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                      <input type="text" class="form-control" id="ln" aria-describedby="help-id" value="">
+                      <label>License Number <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
+                      <input type="text" class="form-control" value="">
+                    </p>
+                  </div>
+                    <div class="col-md-4">&nbsp;</div>
+                  <div class="col-md-4">
+                    <p>
+                      <label>Issue Date</label>
+                      <input type="date" class="form-control" value="">
+                      <span class="help-text">MM/DD/YYYY</span>
                     </p>
                   </div>
                   <div class="col-md-4">
                     <p>
-                      <label for="issue">Issue Date</label>
-                      <input type="date" class="form-control" id="issue" aria-describedby="iss-d-help" value="">
-                      <span class="help-text" id="iss-d-help">MM/DD/YYYY</span>
+                      <label>Effective Date</label>
+                      <input type="date" class="form-control" value="">
+                      <span class="help-text">MM/DD/YYYY</span>
                     </p>
                   </div>
-                  <div class="col-md-4">
+                    <div class="col-md-4">
                     <p>
-                      <label for="eff">Effective Date</label>
-                      <input type="date" class="form-control" id="eff" aria-describedby="eff-d-help" value="">
-                        <span class="help-text" id="eff-d-help">MM/DD/YYYY</span>
+                      <label>Expiration Date</label>
+                      <input type="date" class="form-control" value="">
+                      <span class="help-text">MM/DD/YYYY</span>
                     </p>
                   </div>
-                  <div class="col-md-4">
+                    <div class="col-md-4">
                     <p>
-                      <label for="exp">Expiration Date</label>
-                      <input type="date" disabled class="form-control" id="exp" aria-describedby="exp-d-help" value="">
-                        <span class="help-text" id="exp-d-help">MM/DD/YYYY</span>
+                      <label>Termination Date</label>
+                      <input type="date" class="form-control" value="">
+                      <span class="help-text">MM/DD/YYYY</span>
                     </p>
                   </div>
                 </div>
-              </div>
-              <div class="iq-conditional-content hide" id="terminatedLForm">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ln2">License Number <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                      <input type="text" class="form-control" id="ln2" aria-describedby="help-id" value="">
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ter2">Termination Date <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                      <input type="date" class="form-control" id="ter2" aria-describedby="help-id"  value="">
-                    </p>
-                  </div>
-                </div>
-              </div>
+           
+              
               <h3>Additional Identifiers</h3>
               <p>
-                <label for="medicaid">Medicaid ID<!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                <input type="text" class="form-control" id="medicaid" aria-describedby="help-id" value="">
+                <label>Medicaid ID<!--<span class="iq-asterisk" title="Required field">*</span>--></label>
+                <input type="text" class="form-control" value="">
+                  <span class="help-text">Number assigned to a provider by the state Medicaid agency for external control or billing purposes</span>
               </p>
               <p>
-                <label for="ein">Employee/Tax Identification Number <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                <input type="text" class="form-control" id="ein" aria-describedby="help-id" value="">
+                <label>Employee/Tax Identification Number <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
+                <input type="text" class="form-control" value="">
+                  <span class="help-text">Federal tax identification number known as the Employer Identification Number (EIN) used to identify a business entity</span>
+              </p>
+                <p>
+                <label>State Facility ID</label>
+                <input type="text" class="form-control" value="">
+                  <span class="help-text">Unique identifier assigned by the state</span>
               </p>
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confirmCertificateSave">Save</button>
                 <button
                             class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
@@ -883,10 +915,16 @@
                 </div> 
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">CCN</p></div>
-                  <div class="col-md-8"><p>12345454354</p></div>
+                  <div class="col-md-8">
+                    <p>123456</p>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Certification Date</p></div>
+                  <div class="col-md-8"><p>07/30/2019</p><span class="help-text">This date is based on Survey Exit date</span></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><p class="iq-label">Original Participation Date</p></div>
                   <div class="col-md-8"><p>07/30/2019</p></div>
                 </div>
                 
@@ -931,7 +969,10 @@
                   <div class="col-md-4"><p class="iq-label">Employee/Tax Identification Number</p></div>
                   <div class="col-md-8"><p>123-34-3345</p></div>
                 </div>
-              
+              <div class="row">
+                  <div class="col-md-4"><p class="iq-label">State Facility ID</p></div>
+                  <div class="col-md-8"><p>S12345</p></div>
+                </div>
               </div>
               
             </section>
@@ -1399,11 +1440,35 @@
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
-                  <div class="col-md-12">
+                  <div class="col-md-7">
+                      <p><label>Parent Location <span class="iq-asterisk">*</span></label>
+                      <select class="form-control parentLoc" onchange="switch(this.options[this.selectedIndex].value){ 
+                            case '0':       $('.parentLocAddress').addClass('hide'); 
+                                            break;
+                            case 'primary': $('.parentLocAddress').removeClass('hide'); 
+                                            $('.parentLocAddress span').addClass('hide');  
+                                            $('.parentLocAddress .primary').removeClass('hide');  
+                                            break;
+                            case 'branch1': $('.parentLocAddress').removeClass('hide'); 
+                                            $('.parentLocAddress span').addClass('hide');  
+                                            $('.parentLocAddress .branch1').removeClass('hide');  
+                                            break;
+                      } "><option value="0">Select one</option><option value="primary" selected>Bright Hope (Primary Location)</option><option value="branch1">BrightHope South</option></select>
+                      </p>
+                  </div>
+                  <div class="col-md-5">
+                    <p class="parentLocAddress"><label>Parent Location Address</label>
+                      <span class="primary">667 Bent Ridge Lane<br>
+Suite 1000<br>
+Barrington, IL 60010</span>
+                      <span class="branch1 hide">123 Temporary Road, Suite 100<br>Reston, VA 20190</span>
+                    </p>
+                  </div>
+                  <div class="col-md-3">
                       <p><label>Building ID</label>
                       XY</p>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-9">
                   <div class="form-group">
                     <label>Building Name <span class="iq-asterisk">*</span></label>
                      <input type="text" class="form-control" value="Tranquility" required>
@@ -1429,6 +1494,7 @@
                   <div class="form-group">
                     <label>Location Description</label>
                       <textarea rows="3" class="form-control"></textarea>
+                      <span class="help-text">Additional details such as landmarks, directions, etc. </span>
                   </div>
                 </div>
                   <div class="col-md-3">
@@ -1455,7 +1521,7 @@
                 <div class="col-md-12">
                       
                  <fieldset>
-                <legend>Building Status <span class="iq-asterisk" title="Required field">*</span></legend>
+                <legend>Building Status</legend>
                 
                 <div class="iq-btn-group buildingStatus">
                     <button class="btn btn-outline-primary active" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide'); ">Active</button> 
@@ -1478,7 +1544,7 @@
                 </div>-->
                      
                           
-                    </fieldset>
+                  </fieldset>
                     
                     <div class="iq-conditional-content" style="margin-top: .5rem;">
                       <div class="lsc-fi"><p><label>LSC Form Indicator</label>
@@ -1520,15 +1586,17 @@
                     
                   </div>
                   <div class="col-md-4">
-                      <p><label>Haz. Area Separate?</label>
-                      <select class="form-control"><option>Select one</option><option>Yes</option><option>No</option><option selected>Not Available</option></select>
+                      <p>
+                        <label>Hazmat Area Separate</label>
+                        <select class="form-control"><option>Select one</option><option>Yes</option><option>No</option><option selected>Not Available</option></select>
                       </p>
                   </div>
                 
                  
                   <div class="col-md-4">
-                      <p><label>Is Sprinkler Required?</label>
-                          <select class="form-control"><option>Select one</option><option>Yes</option><option selected>No</option><option>Not Available</option></select>
+                      <p>
+                        <label>Sprinkler Required</label>
+                        <select class="form-control"><option>Select one</option><option>Yes</option><option selected>No</option><option>Not Available</option></select>
                       </p>
                   </div>
                   <div class="col-md-4">
@@ -1542,7 +1610,7 @@
                      <input type="date" class="form-control" >
                       <p class="help-text">MM/DD/YYYY</p>
                   </div>
-                  </div>
+                </div>
                 
                   
                   <div class="col-md-12">
@@ -1578,17 +1646,37 @@
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
-                  <div class="col-md-3">
+                  <div class="col-md-7">
+                      <p><label>Parent Location <span class="iq-asterisk">*</span></label>
+                      <select class="form-control parentLoc" onChange="switch(this.options[this.selectedIndex].value){ 
+                            case '0':       $('.parentLocAddress').addClass('hide'); 
+                                            break;
+                            case 'primary': $('.parentLocAddress').removeClass('hide'); 
+                                            $('.parentLocAddress span').addClass('hide');  
+                                            $('.parentLocAddress .primary').removeClass('hide');  
+                                            break;
+                            case 'branch1': $('.parentLocAddress').removeClass('hide'); 
+                                            $('.parentLocAddress span').addClass('hide');  
+                                            $('.parentLocAddress .branch1').removeClass('hide');  
+                                            break;
+                      } "><option value="0">Select one</option><option value="primary">Bright Hope (Primary Location)</option><option value="branch1">BrightHope South</option></select>
+                      </p>
+                  </div>
+                <div class="col-md-5">
+                    <p class="parentLocAddress hide"><label>Parent Location Address</label>
+                      <span class="primary">667 Bent Ridge Lane<br>
+Suite 1000<br>
+Barrington, IL 60010</span>
+                      <span class="branch1 hide">123 Temporary Road, Suite 100<br>Reston, VA 20190</span>
+                    </p>
+                  </div>
+                <div class="col-md-3">
                       <p><label>Building ID <span class="iq-asterisk">*</span></label>
                       <input type="text" class="form-control" maxlength="2" style="width: 4rem" /><span class="help-text">Limit to 2 characters</span></p>
                       
                   </div>
-                  <div class="col-md-9">
-                      <p><label>Parent Location <span class="iq-asterisk">*</span></label>
-                      <select class="form-control parentLoc"><option>Select one</option><option value="primary">Bright Hope (Primary Location)</option><option value="branch1">BrightHope South</option></select>
-                      </p>
-                  </div>
-                  <div class="col-md-6">
+                  
+                <div class="col-md-9">
                   <div class="form-group">
                     <label>Building Name <span class="iq-asterisk">*</span></label>
                      <input type="text" class="form-control" value="" required>
@@ -1614,6 +1702,7 @@
                   <div class="form-group">
                     <label>Location Description</label>
                       <textarea rows="3" class="form-control"></textarea>
+                       <span class="help-text">Additional details such as landmarks, directions, etc. </span>
                   </div>
                 </div>
                   <div class="col-md-3">
@@ -1663,7 +1752,7 @@
                 </div>-->
                      
                           
-                    </fieldset>
+                  </fieldset>
                     
                     <div class="iq-conditional-content" style="margin-top: .5rem;">
                       <div class="lsc-fi"><p><label>LSC Form Indicator</label>
@@ -1705,15 +1794,17 @@
                     
                   </div>
                   <div class="col-md-4">
-                      <p><label>Haz. Area Separate?</label>
-                      <select class="form-control"><option selected>Select one</option><option>Yes</option><option>No</option><option>Not Available</option></select>
+                      <p>
+                        <label>Hazmat Area Separate</label>
+                        <select class="form-control"><option selected>Select one</option><option>Yes</option><option>No</option><option>Not Available</option></select>
                       </p>
                   </div>
                 
                  
                   <div class="col-md-4">
-                      <p><label>Is Sprinkler Required?</label>
-                          <select class="form-control"><option selected>Select one</option><option>Yes</option><option>No</option><option>Not Available</option></select>
+                      <p>
+                        <label>Sprinkler Required</label>
+                        <select class="form-control"><option selected>Select one</option><option>Yes</option><option>No</option><option>Not Available</option></select>
                       </p>
                   </div>
                   <div class="col-md-4">
@@ -1727,7 +1818,7 @@
                      <input type="date" class="form-control" >
                       <p class="help-text">MM/DD/YYYY</p>
                   </div>
-                  </div>
+                </div>
                 
                   
                   <div class="col-md-12">
@@ -1778,40 +1869,35 @@
                   </div>
                 </div>
                 
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label>Branch CCN <span class="iq-asterisk">*</span></label>
-                     <input class="form-control" disabled type="text" maxlength="10" ><!--onFocus="$('#bccn-rules').removeClass('hide')" onBlur="$('#bccn-rules').addClass('hide');"
-                      <div class="alert alert-info hide" id="bccn-rules" style="display: block"><h5><strong>To create your 10-digit Branch CCN</strong></h5>
+                    <label>Medicare Branch ID</label>
+                    <p class="iq-not-available">Automatically generated once the provider is certified</p>
+              
+                     <!--<input class="form-control" disabled type="text" maxlength="10" >
+                      <div class="help-text">Medicare Branch ID can be entered once the Provider's CCN has been entered<h6><strong>To create your 10-digit Medicare Branch ID</strong></h6>
                       <ul><li>Begin with the first 2 characters of your Provider CCN</li>
                       <li>Followed by capital "Q"</li>
                           <li>Follow by the next 4 characters of Provider CCN</li>
                           <li>Follow by the next sequential number of facility branches, starting with 001</li>
                       </ul>
                       </div>-->
-                      <div class="help-text">Branch CCN can be entered once the Provider's CCN has been entered<!--<h6><strong>To create your 10-digit Branch CCN</strong></h6>
-                      <ul><li>Begin with the first 2 characters of your Provider CCN</li>
-                      <li>Followed by capital "Q"</li>
-                          <li>Follow by the next 4 characters of Provider CCN</li>
-                          <li>Follow by the next sequential number of facility branches, starting with 001</li>
-                      </ul>-->
-                      </div>
                   </div>
                 </div>
-                  <div class="col-md-6">&nbsp;</div>
+                  
                   <div class="col-md-3">
                  <fieldset>
                 <legend>Status <span class="iq-asterisk" title="Required field">*</span></legend>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs1" checked name="fcs" class="custom-control-input" value="value"
+                  <input type="radio" id="locS-1" checked name="locS" class="custom-control-input" value="value"
                      onChange="$('.bclosed').addClass('hide');">
-                  <label class="custom-control-label" for="r-fcs1"> Active </label>
+                  <label class="custom-control-label" for="locS-1"> Open</label>
                 </div>
-                          <div class="custom-control custom-radio">
-                  <input type="radio" id="r-fcs2" name="fcs" class="custom-control-input" value="value"
+                    <div class="custom-control custom-radio">
+                  <input type="radio" id="locS-2" name="locS" class="custom-control-input" value="value"
                      onChange="$('.bclosed').removeClass('hide');">
-                  <label class="custom-control-label" for="r-fcs2"> Closed/Terminated </label>
-                </div>
+                  <label class="custom-control-label" for="locS-2"> Closed</label>
+                    </div>
                           
                     </fieldset>
                 </div>
@@ -1822,8 +1908,8 @@
                 </div>  
                  <div class="col-md-3 hide bclosed">
                      <div class="form-group">
-                    <label>Close Date</label>
-                     <input type="date" class="form-control" />
+                       <label>Closed Date</label>
+                       <input type="date" class="form-control" />
                   </div>
                 </div>
                 
@@ -1942,20 +2028,21 @@
                     
                       
                       <fieldset><legend><h3>Buildings</h3></legend>
-                      <div class="iq-button-wrapper" style="margin-top: -1.5rem;"><button class="btn btn-outline-primary">Add New</button></div>
-                      <p class="iq-not-available">No buildings available</p>
+                      <div class="iq-button-wrapper" style="margin-top: -1.5rem;"><button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active');">Add Building</button></div>
+                      <p class="iq-not-available">No buildings have been added</p>
                       </fieldset>  <fieldset><legend><h3>Attachments</h3></legend>
                    
             
               <div class="row" style="margin-top: -.5rem;">
-                  <div class="col-lg-12"><p>Add or manage associated files and images for this location. </p></div>
+                  <div class="col-lg-12"><p>Add and manage attachments for this provider's location. </p></div>
                   <div class="col-lg-3 col-md-6">
-                  <p>
-                  <label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload" name="file" class="form-control-file" onclick="$('#fileDetails').removeClass('hide');">Select File</label></p></div>
+                  <p class="mb-2">
+                  <label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload" name="file" class="form-control-file" onclick="$('#fileDetails').removeClass('hide'); $('.noAttachments').addClass('hide');">Select File</label></p></div>
               </div>
               
               <p class="help-text" style="margin-top: -1rem;">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
               <br>
+                      <p class="iq-not-available noAttachments">No attachments have been added</p>
               <!--<div class="file-attachment-card">
                 <div class="row">
                     <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> LetterSent060119.pdf</h3></div>
@@ -2006,16 +2093,18 @@
               <section class="read-view active">
                   <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Locations &amp; Buildings</h2> <p>Manage and add locations and buildings for the provider.</p>
-                  <div class="custom-control custom-checkbox">
+                <h2>Locations and Buildings</h2>
+                <p class="iq-page-header-description">Add and manage locations and buildings for this provider.</p>
+                
+                <div class="iq-button-wrapper"><button class="btn btn-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.firstTime').addClass('active');">Add Location</button>
+                  <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active');">Add Building</button>
+                  </div>
+                  <div class="custom-control custom-checkbox mb-5">
                     <input type="checkbox" id="showBonly"
                             name="showB" onChange="if(this.checked){ $('.all').addClass('hide'); $('.buildings').removeClass('hide'); $('.parentLocation').removeClass('hide'); } else { $('.all').removeClass('hide'); $('.buildings').addClass('hide'); $('.parentLocation').addClass('hide'); }"
                             class="custom-control-input" value="value">
                     <label class="custom-control-label"
                             for="showBonly"> View Buildings Only </label>
-                  </div>
-                <div class="iq-button-wrapper"><button class="btn btn-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.firstTime').addClass('active');">Add Location</button>
-                  <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active');">Add Building</button>
                   </div>
               </div>
               <div class="col-md-2 text-right">
@@ -2024,9 +2113,8 @@
             </div>
                   
                   <article class="all">
-                  <h3>Active Locations</h3>
-                  
-                  <p class="info-text"><span class="baCount">2</span> Active Locations</p>
+                    <h3>Open Locations</h3>
+                    <p class="info-text"><span class="baCount">2</span> Locations, 6 Buildings</p>
         
          <div class="iq-accordion tertiary">
             <div class="card ">
@@ -2056,7 +2144,7 @@
                    <div class="iq-list" style="margin-bottom: 1rem;">
                 <div class="row" style="margin-top: -1rem;">
                   
-                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="#" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>667 Bent Ridge Lane, Suite 100<br>Barrington, IL 60010</span></a><br><span style="padding-left: 1.25rem">Lake County</span></p></div>
+                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="#" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>667 Bent Ridge Lane, Suite 100<br>Barrington, IL 60010</span></a><!--<br><span style="padding-left: 1.25rem">Lake County</span>--></p></div>
                 </div>
                   </div>
                 <div class="card-body">
@@ -2145,7 +2233,7 @@
                     <div class="row">
                         <div class="col md-12">
                             <h3>Buildings</h3>
-                            <p><button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('primary');">Add New</button></p>
+                            <p><button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('primary');">Add Building</button></p>
                         <div class="iq-accordion">
             <div class="card ">
               <div class="card-header d-flex" id="s1b1header">
@@ -2160,7 +2248,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility<br><small class="bottom">Building | ACTIVE | Effective 10/25/2000</small></span>
+                  </svg><span>Tranquility<br><small class="bottom">Building | <i class="fas fa-square status-blue"></i> Active | Effective 10/25/2000</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2260,7 +2348,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility 1B<br><small class="bottom">Apartment Unit | LICENSED ONLY | Effective 05/21/2014</small></span>
+                  </svg><span>Tranquility 1B<br><small class="bottom">Apartment Unit | <i class="fas fa-square status-lime"></i> Licensed Only | Effective 05/21/2014</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2293,8 +2381,9 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility Floor 3<br><small class="bottom">Floor | ACTIVE |<span class="iq-not-available">No Effective Date</span></small></span>
-                </button>
+                  </svg>
+                  <span>Tranquility Floor 3<br>
+                  <small class="bottom">Floor | <em class="fas fa-square status-white"></em> Active  |<span class="iq-not-available">No effective date</span></small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                   <button type="button" class="btn btn-link">
@@ -2326,7 +2415,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Solarium<br><small class="bottom">Wing | CLOSED 03/16/2012</small></span>
+                  </svg><span>Solarium<br><small class="bottom">Wing | <i class="fas fa-square status-gray"></i> Closed 03/16/2012</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2354,9 +2443,9 @@
                    
             
               <div class="row" style="margin-top: -1rem;">
-                  <div class="col-lg-12"><p>Add or manage associated files and images for this location. </p></div>
+                  <div class="col-lg-12"><p>Add and manage attachments for this provider's location.</p></div>
                   <div class="col-lg-3 col-md-6">
-                  <p>
+                  <p class="mb-2">
                   <label for="fileUpload2" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload2" name="file" class="form-control-file" onclick="$('#fileDetails2').removeClass('hide');">Select File</label></p></div>
               </div>
               
@@ -2413,11 +2502,12 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>BrightHope South<br><small class="bottom" style="color: #5b616b">Branch Office | CCN 54321 | Opened 1/21/1999 | 2 Buildings</small></span>
-                </button>
+                  </svg>
+                  <span>BrightHope South<br>
+                  <small class="bottom" style="color: #5b616b">Branch Office | <span class="iq-not-available">ID not available</span> | Opened 1/21/1999 | 2 Buildings</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmLocationDeletion">Delete</button>
-                  <a href="#" class="btn btn-link" style="margin-top: 2.1rem;" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editBranch1').addClass('active');">Edit</a>
+                  <a href="#" class="btn btn-link" style="margin-top: 1.8rem;" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editBranch1').addClass('active');">Edit</a>
                 </div>
               </div>
               <div id="site2" class="collapse">
@@ -2428,7 +2518,7 @@
                 </div>  -->
                 <div class="row">
                  
-                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="#" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>123 Temporary Road, Suite 100<br>Reston, VA 20190</span></a><!--<br><span class="iqies-not-available">County not available</span>--></p></div>
+                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="#" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>123 Temporary Road, Suite 100<br>Reston, VA 20190</span></a></p></div>
                 </div>
                  
                              
@@ -2494,7 +2584,7 @@
                     <div class="row">
                         <div class="col md-12">
                             <h3>Buildings</h3>
-                           <p><button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('branch1');">Add New</button></p>
+                           <p><button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('branch1');">Add Building</button></p>
                         <div class="iq-accordion">
             <div class="card ">
               <div class="card-header d-flex" id="s2b1header">
@@ -2509,7 +2599,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Morrison<br><small class="bottom">Building | ACTIVE | Effective 03/12/2012</small></span>
+                  </svg><span>Morrison<br><small class="bottom">Building | <i class="fas fa-square status-blue"></i> Active | Effective 03/12/2012</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button><button type="button" class="btn btn-link">
@@ -2541,7 +2631,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>3rd Floor<br><small class="bottom">Floor | CLOSED 09/02/2018</small></span>
+                  </svg><span>3rd Floor<br><small class="bottom">Floor | <i class="fas fa-square status-gray"></i> Closed 09/02/2018</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2568,9 +2658,9 @@
                    
             
               <div class="row" style="margin-top: -1rem;">
-                  <div class="col-lg-12"><p>Add or manage associated files and images for this location. </p></div>
+                  <div class="col-lg-12"><p>Add and manage attachments for this provider's location. </p></div>
                   <div class="col-lg-3 col-md-6">
-                  <p>
+                  <p class="mb-2">
                   <label for="fileUpload3" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload3" name="file" class="form-control-file" onclick="$('#fileDetails3').removeClass('hide');">Select File</label></p></div>
               </div>
               
@@ -2614,8 +2704,8 @@
             </div>
           </div>
             <br><br>
-                  <h3>Terminated Locations</h3>
-                  <p class="info-text">1 Terminated Location</p>
+            <h3>Closed Locations</h3>
+            <p class="info-text">1 Location</p>
                   <div class="iq-accordion tertiary">
             <div class="card ">
               <div class="card-header d-flex" id="s3header">
@@ -2632,7 +2722,7 @@
                       d="M.5 16.5l8-8-8-8"></path>
                   </svg>
                   <span>BrightHope North<br>
-                  <small class="bottom" style="color: #5b616b">Sibling Affliate | CCN 11111 | TERMINATED 2/12/2003 | 0 Buildings</small></span></button>
+                  <small class="bottom" style="color: #5b616b">Sibling Affliate | <span class="iq-not-available">ID not available</span> | Closed 2/12/2003</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmLocationDeletion">Delete</button><button type="button" class="btn btn-link" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint3').addClass('active');">
                     Edit
@@ -2670,7 +2760,7 @@
                         <div class="col md-12">
                             <h3>Buildings</h3>
                             <p><button class="btn btn-outline-primary">Add New</button></p>
-                        <p class="iq-not-available">No buildings present</p>
+                        <p class="iq-not-available">No buildings have been added.</p>
                             
                         </div>
                     </div>
@@ -2680,15 +2770,15 @@
                    
             
               <div class="row" style="margin-top: -1rem;">
-                  <div class="col-lg-12"><p>Add or manage associated files and images for this location. </p></div>
+                  <div class="col-lg-12"><p>Add and manage attachments for this provider's location. </p></div>
                   <div class="col-lg-3 col-md-6">
-                  <p>
+                  <p class="mb-2">
                   <label for="fileUpload4" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload4" name="file" class="form-control-file" onclick="$('#fileDetails4').removeClass('hide');">Select File</label></p></div>
               </div>
               
               <p class="help-text" style="margin-top: -1rem;">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
               <br>
-               <p class="iq-not-available">No attachments present</p>
+               <p class="iq-not-available">No attachments have been added.</p>
               <div class="file-attachment-card hide">
                 <div class="row">
                     <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> BuildingImage.jpg</h3></div>
@@ -2729,8 +2819,8 @@
                   
                   </article>
                   <article class="buildings hide">
-               <h3>Active Buildings</h3>
-                      <p class="info-text">3 Active Buildings</p>
+               <h3>Open Buildings</h3>
+                      <p class="info-text">3 Buildings</p>
                   
                         <div class="iq-accordion">
             <div class="card ">
@@ -2746,7 +2836,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility<br><small class="bottom">Building | ACTIVE | Effective 10/25/2000</small></span>
+                  </svg><span>Tranquility<br><small class="bottom">Building | <i class="fas fa-square status-blue"></i> Active | Effective 10/25/2000</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2846,7 +2936,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility 1B<br><small class="bottom">Apartment Unit | LICENSED ONLY | Effective 05/21/2014</small></span>
+                  </svg><span>Tranquility 1B<br><small class="bottom">Apartment Unit | <i class="fas fa-square status-lime"></i> Licensed Only | Effective 05/21/2014</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2879,7 +2969,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility Floor 3<br><small class="bottom">Floor | ACTIVE |<span class="iq-not-available">No Effective Date</span></small></span>
+                  </svg><span>Tranquility Floor 3<br><small class="bottom">Floor | <i class="fas fa-square status-white"></i> Active |<span class="iq-not-available">No effective date</span></small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2900,7 +2990,7 @@
           </div>
                       <br><br>
                       <h3>Closed Buildings</h3>
-                      <p class="info-text">3 Closed Buildings</p>
+                      <p class="info-text">3 Buildings</p>
                         <div class="iq-accordion">
             <div class="card ">
               <div class="card-header d-flex" id="s4b1header">
@@ -2915,7 +3005,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Morrison<br><small class="bottom">Building | CLOSED 03/12/2012</small></span>
+                  </svg><span>Morrison<br><small class="bottom">Building | <i class="fas fa-square status-gray"></i> Closed 03/12/2012</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2948,7 +3038,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>3rd Floor<br><small class="bottom">Floor | CLOSED 09/02/2018</small></span>
+                  </svg><span>3rd Floor<br><small class="bottom">Floor | <i class="fas fa-square status-gray"></i> Closed 09/02/2018</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -2981,7 +3071,7 @@
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Solarium<br><small class="bottom">Wing | CLOSED 03/16/2012</small></span>
+                  </svg><span>Solarium<br><small class="bottom">Wing | <i class="fas fa-square status-gray"></i> Closed 03/16/2012</small></span>
                 </button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
@@ -3135,7 +3225,7 @@
                 
               </div>
                 </fieldset>
-                  </div>
+                </div>
                 </div>
               <div class="row">
                 <div class="col">
@@ -3147,7 +3237,7 @@
                 </div>
               </div>
            
-              </section>
+            </section>
               <section class="edit-view editBranch1">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -3177,39 +3267,25 @@
                   </div>
                 </div>
                 
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
-                    <label>Branch CCN</label>
-                     54321<!--onFocus="$('#bccn-rules').removeClass('hide')" onBlur="$('#bccn-rules').addClass('hide');"
-                      <div class="alert alert-info hide" id="bccn-rules" style="display: block"><h5><strong>To create your 10-digit Branch CCN</strong></h5>
-                      <ul><li>Begin with the first 2 characters of your Provider CCN</li>
-                      <li>Followed by capital "Q"</li>
-                          <li>Follow by the next 4 characters of Provider CCN</li>
-                          <li>Follow by the next sequential number of facility branches, starting with 001</li>
-                      </ul>
-                      </div>-->
-                      <div class="help-text hide"><!--Branch CCN can be entered once the Provider's CCN has been entered--><h6><strong>To create your 10-digit Branch CCN</strong></h6>
-                      <ul><li>Begin with the first 2 characters of your Provider CCN</li>
-                      <li>Followed by capital "Q"</li>
-                          <li>Follow by the next 4 characters of Provider CCN</li>
-                          <li>Follow by the next sequential number of facility branches, starting with 001</li>
-                      </ul>
-                      </div>
+                    <label>Medicare Branch ID</label>
+                    <p class="iq-not-available">Automatically generated once the provider is certified</p>
                   </div>
                 </div>
-                  <div class="col-md-6">&nbsp;</div>
+              
                   <div class="col-md-3">
                  <fieldset>
                 <legend>Status <span class="iq-asterisk" title="Required field">*</span></legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="eb-s1" checked name="eb-s" class="custom-control-input" value="value"
                      onChange="$('.bclosed').addClass('hide');">
-                  <label class="custom-control-label" for="eb-s1"> Active </label>
+                  <label class="custom-control-label" for="eb-s1"> Open </label>
                 </div>
                           <div class="custom-control custom-radio">
                   <input type="radio" id="eb-s2" name="eb-s" class="custom-control-input" value="value"
                      onChange="$('.bclosed').removeClass('hide');">
-                  <label class="custom-control-label" for="eb-s2"> Closed/Terminated </label>
+                  <label class="custom-control-label" for="eb-s2"> Closed </label>
                 </div>
                           
                     </fieldset>
@@ -3222,7 +3298,7 @@
                 </div>  
                  <div class="col-md-3 hide bclosed">
                      <div class="form-group">
-                    <label>Close Date</label>
+                    <label>Closed Date</label>
                      <input type="date" class="form-control" />
                   </div>
                 </div>
@@ -3243,15 +3319,14 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Address Line 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control"
-                            required>
+                    <input type="text" class="form-control" value="123 Temporary Road" required>
                       <span class="help-text">Number and street name or PO box</span>
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Address Line 2</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" value="Suite 100" >
                       <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
                   </div>
                 </div>
@@ -3260,8 +3335,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" value="Reston"
-                            required>
+                    <input type="text" class="form-control" value="Reston" required>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -3343,20 +3417,20 @@
                       
                       <fieldset><legend><h3>Buildings</h3></legend>
                       <div class="iq-button-wrapper" style="margin-top: -1.5rem;"><button class="btn btn-outline-primary">Add New</button></div>
-                      <p class="iq-not-available">No buildings present</p>
+                      <p class="iq-not-available">No buildings have been added</p>
                       </fieldset>  <fieldset><legend><h3>Attachments</h3></legend>
                    
             
               <div class="row" style="margin-top: -.5rem;">
-                  <div class="col-lg-12"><p>Add or manage associated files and images for this location. </p></div>
+                  <div class="col-lg-12"><p>Add and manage attachments for this provider's location. </p></div>
                   <div class="col-lg-3 col-md-6">
-                  <p>
-                  <label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload-bs" name="file" class="form-control-file" onclick="$('#fileDetails-bs').removeClass('hide'); $('.noattachments').addClass('hide');">Select File</label></p></div>
+                  <p class="mb-2">
+                  <label for="fileUpload-bs" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload-bs" name="file" class="form-control-file" onclick="$('#fileDetails-bs').removeClass('hide'); $('.noattachments').addClass('hide');">Select File</label></p></div>
               </div>
               
               <p class="help-text" style="margin-top: -1rem;">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
               <br>
-                      <p class="iq-not-available noattachments">No attachments present</p>
+                      <p class="iq-not-available noattachments">No attachments have been added</p>
               <!--<div class="file-attachment-card">
                 <div class="row">
                     <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> LetterSent060119.pdf</h3></div>
@@ -4085,7 +4159,7 @@
           <div class="tab-pane " id="tab10" role="tabpanel" aria-labelledby="tab10Tab">
             <h2>Attachments</h2>
               <p>Add and manage attachments for this provider.</p>
-              <div class="row"><div class="col-lg-3 col-md-6"><p>
+              <div class="row"><div class="col-lg-3 col-md-6"><p class="mb-2">
                   <label for="fileUploadX" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPloadX" name="file" class="form-control-file" onClick="$('#fileDetailsX').removeClass('hide');">Select File</label></p></div>
               </div>
               
@@ -4167,7 +4241,26 @@
     </div>
   </div>
 </div>
-    
+<!-- confirmation of saving after certificate and license modal -->
+<div class="modal fade" id="confirmCertificateSave" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+        <h4><strong>Confirm Certification</strong></h4>
+        <p>Once Federal Certification Status is confirmed as certified:</p>
+          <ul><li>This provider will be assigned a system-generated CCN.</li>
+          <!--<li>Certification Date will be automatically entered based on Survey Exit date</li>-->
+          <li>Any branches that have been added will be assigned a system-generated Medicare Branch ID.</li></ul>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.certificationChanged').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Confirm</button>
+          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
 <footer>
   <div class="container">
     <div class="row">
@@ -4234,7 +4327,7 @@ $(document).ready(function () {
    
  $('[data-toggle="tooltip"]').tooltip(); 
 window.setTimeout(function() {
-    $(".alert-success").fadeTo(1000, 0).slideUp(1000, function(){
+    $(".alert-success").fadeTo(5000, 0).slideUp(5000, function(){
         $(this).addClass('hide'); 
     });
 }, 5000);
