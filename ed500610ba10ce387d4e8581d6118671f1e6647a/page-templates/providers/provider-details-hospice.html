@@ -39,20 +39,23 @@
                           <a href="providers-landing.html">Providers</a>
                         </li>
                         <li class="breadcrumb-item">
-                          BrightHope
+                          <a href="provider-profile-blank.html">BrightHope</a>
                         </li>
-                       
+                        <li class="breadcrumb-item">
+                          Provider Details
+                        </li>
                       </ol>
                     </nav>
                     <div class="iq-page-header-content">
-                      <h1>BrightHope</h1>
+                      <h1>Provider Details</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->IQIES 123456 - Hospice - Non-Deemed</div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Non-Deemed</div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-3 iq-page-header-contact">
                     <address>
-                      667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010<br>
+                       667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010<br>
+                        <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>Map</span></a>
                       <!--<i class="fal fa-phone-alt"></i> (123) 123-1234<br>
                       <a href="#" style="display: inline-block; "><i class="fal fa-envelope"></i> Email</a> | <a href="#" style="display: inline-block; "><i class="fal fa-external-link"></i> Website</a>-->
                     </address>
@@ -1204,9 +1207,7 @@
                             class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
-                    <button class="btn btn-link danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide'); $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>
+                    
                   </div>
                 </div>
               </div>
@@ -1293,9 +1294,7 @@
                             class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
-                    <!--<button class="btn btn-link danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide'); $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>-->
+                    
                   </div>
                 </div>
               </div>
@@ -1464,7 +1463,7 @@ Barrington, IL 60010</span>
                   </div>
                   <div class="col-md-3">
                       <p><label>Building ID</label>
-                      XY</p>
+T1</p>
                   </div>
                   <div class="col-md-9">
                   <div class="form-group">
@@ -1523,7 +1522,7 @@ Barrington, IL 60010</span>
                 
                 <div class="iq-btn-group buildingStatus">
                     <button class="btn btn-outline-primary active" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide'); ">Active</button> 
-                    <button class="btn btn-outline-primary" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');   $('.stateRS').removeClass('hide'); ">Licensed Only</button>
+                    <button class="btn btn-outline-primary" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');   $('.stateRS').removeClass('hide'); ">State Licensed Only</button>
                     <button class="btn btn-outline-primary" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').removeClass('hide'); $('.lsc-fi').addClass('hide');  $('.stateRS').addClass('hide');  ">Closed</button>
                 </div>
                 <!--<div class="custom-control custom-radio">
@@ -1622,7 +1621,7 @@ Barrington, IL 60010</span>
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                      <button class="btn danger btn-link float-right">Delete</button>
+                      
                   </div>
                 </div>
               </div>
@@ -1731,7 +1730,7 @@ Barrington, IL 60010</span>
                 
                 <div class="iq-btn-group buildingStatus">
                     <button class="btn btn-outline-primary active" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide'); ">Active</button> 
-                    <button class="btn btn-outline-primary" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');   $('.stateRS').removeClass('hide'); ">Licensed Only</button>
+                    <button class="btn btn-outline-primary" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');   $('.stateRS').removeClass('hide'); ">State Licensed Only</button>
                     <button class="btn btn-outline-primary" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').removeClass('hide'); $('.lsc-fi').addClass('hide');  $('.stateRS').addClass('hide');  ">Closed</button>
                 </div>
                 <!--<div class="custom-control custom-radio">
@@ -2024,53 +2023,6 @@ Barrington, IL 60010</span>
               </div>
                 </fieldset>
                     
-                      
-                      <fieldset><legend><h3>Buildings</h3></legend>
-                      <div class="iq-button-wrapper" style="margin-top: -1.5rem;"><button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active');">Add Building</button></div>
-                      <p class="iq-not-available">No buildings have been added</p>
-                      </fieldset>  <fieldset><legend><h3>Attachments</h3></legend>
-                   
-            
-              <div class="row" style="margin-top: -.5rem;">
-                  <div class="col-lg-12"><p>Add and manage attachments for this provider's location. </p></div>
-                  <div class="col-lg-3 col-md-6">
-                  <p class="mb-2">
-                  <label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload" name="file" class="form-control-file" onclick="$('#fileDetails').removeClass('hide'); $('.noAttachments').addClass('hide');">Select File</label></p></div>
-              </div>
-              
-              <p class="help-text" style="margin-top: -1rem;">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
-              <br>
-                      <p class="iq-not-available noAttachments">No attachments have been added</p>
-              <!--<div class="file-attachment-card">
-                <div class="row">
-                    <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> LetterSent060119.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 file-description"><p><label>File Description</label>
-                        Lorem ipsum dolor sit amet</p>
-           
-                    </div>
-                </div>
-              </div>-->
-              <div class="file-attachment-card hide" id="fileDetails">
-                <div class="row">
-                    
-                    <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> File Name.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
-                </div>
-                <div class="row">
-                   
-                    <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
-                        <input type="text" class="form-control file-description-text">
-                        </label><span class="fdt"></span></p>
-           <p><button class="btn btn-primary btn-lg" onclick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('Not available'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button></p>
-                    </div>
-                </div>
-              </div>
-                
-    
-                      </fieldset>
                   </div>
               </div>
               <div class="row">
@@ -2142,7 +2094,7 @@ Barrington, IL 60010</span>
                    <div class="iq-list" style="margin-bottom: 1rem;">
                 <div class="row" style="margin-top: -1rem;">
                   
-                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>667 Bent Ridge Lane, Suite 100<br>Barrington, IL 60010</span></a><!--<br><span style="padding-left: 1.25rem">Lake County</span>--></p></div>
+                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>667 Bent Ridge Lane, Suite 100<br>Barrington, IL 60010</span></a><!--<br><span style="padding-left: 1.25rem">Lake County</span>--></p></div>
                 </div>
                   </div>
                 <div class="card-body">
@@ -2246,8 +2198,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility<br><small class="bottom">Building | <i class="fas fa-square status-blue"></i> Active | Effective 10/25/2000</small></span>
-                </button>
+                  </svg>
+                  <span>Tranquility<br>
+                  <small class="bottom">T1 | Building | <em class="fas fa-square status-blue"></em> Active | Effective 10/25/2000</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                   <button type="button" class="btn btn-link" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.building1').addClass('active');">
@@ -2265,7 +2218,7 @@ Barrington, IL 60010</span>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Building ID</p></div>
                   <div class="col-md-8">
-                    <p>XY</p>
+                    <p>T1</p>
                   </div>
                 </div>
                 <div class="row">
@@ -2346,8 +2299,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility 1B<br><small class="bottom">Apartment Unit | <i class="fas fa-square status-lime"></i> Licensed Only | Effective 05/21/2014</small></span>
-                </button>
+                  </svg>
+                  <span>Tranquility 1B<br>
+                  <small class="bottom">T2 | Apartment Unit | <em class="fas fa-square status-lime"></em> Licensed Only | Effective 05/21/2014</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                   <button type="button" class="btn btn-link">
@@ -2381,7 +2335,7 @@ Barrington, IL 60010</span>
                       d="M.5 16.5l8-8-8-8"></path>
                   </svg>
                   <span>Tranquility Floor 3<br>
-                  <small class="bottom">Floor | <em class="fas fa-square status-white"></em> Active  |<span class="iq-not-available">No effective date</span></small></span></button>
+                  <small class="bottom">T3 | Floor | <em class="fas fa-square status-white"></em> Active  |<span class="iq-not-available">No effective date</span></small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                   <button type="button" class="btn btn-link">Edit</button>
@@ -2411,8 +2365,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Solarium<br><small class="bottom">Wing | <i class="fas fa-square status-gray"></i> Closed 03/16/2012</small></span>
-                </button>
+                  </svg>
+                  <span>Solarium<br>
+                  <small class="bottom">S1 | Wing | <em class="fas fa-square status-gray"></em> Closed 03/16/2012</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                   <button type="button" class="btn btn-link">
@@ -2514,7 +2469,7 @@ Barrington, IL 60010</span>
                 </div>  -->
                 <div class="row">
                  
-                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/3MeC3wsXFoyESYaW8" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>123 Temporary Road, Suite 100<br>Reston, VA 20190</span></a></p></div>
+                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/3MeC3wsXFoyESYaW8" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>123 Temporary Road, Suite 100<br>Reston, VA 20190</span></a></p></div>
                 </div>
                  
                              
@@ -2595,8 +2550,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Morrison<br><small class="bottom">Building | <i class="fas fa-square status-blue"></i> Active | Effective 03/12/2012</small></span>
-                </button>
+                  </svg>
+                  <span>Morrison<br>
+                  <small class="bottom">M1 | Building | <em class="fas fa-square status-blue"></em> Active | Effective 03/12/2012</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button><button type="button" class="btn btn-link">
                     Edit
@@ -2627,8 +2583,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>3rd Floor<br><small class="bottom">Floor | <i class="fas fa-square status-gray"></i> Closed 09/02/2018</small></span>
-                </button>
+                  </svg>
+                  <span>3rd Floor<br>
+                  <small class="bottom">M2 | Floor | <em class="fas fa-square status-gray"></em> Closed 09/02/2018</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                     <button type="button" class="btn btn-link">
@@ -2733,7 +2690,7 @@ Barrington, IL 60010</span>
                 </div>  -->
                 <div class="row">
                   
-                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/3MeC3wsXFoyESYaW8" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>555 Any Road, Suite 100<br>Any Town, ST 11111</span></a><!--<br><span class="iqies-not-available">County not available</span>--></p></div>
+                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/3MeC3wsXFoyESYaW8" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>555 Any Road, Suite 100<br>Any Town, ST 11111</span></a><!--<br><span class="iqies-not-available">County not available</span>--></p></div>
                 </div>
                         
             </div>
@@ -2832,8 +2789,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility<br><small class="bottom">Building | <i class="fas fa-square status-blue"></i> Active | Effective 10/25/2000</small></span>
-                </button>
+                  </svg>
+                  <span>Tranquility<br>
+                  <small class="bottom">T1 | Building | <em class="fas fa-square status-blue"></em> Active | Effective 10/25/2000</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                     <button type="button" class="btn btn-link" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.building1').addClass('active');">
@@ -2851,7 +2809,7 @@ Barrington, IL 60010</span>
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Building ID</p></div>
                   <div class="col-md-8">
-                    <p>XY</p>
+                    <p>T1</p>
                   </div>
                 </div>
                 <div class="row">
@@ -2932,8 +2890,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility 1B<br><small class="bottom">Apartment Unit | <i class="fas fa-square status-lime"></i> Licensed Only | Effective 05/21/2014</small></span>
-                </button>
+                  </svg>
+                  <span>Tranquility 1B<br>
+                  <small class="bottom">T2 | Apartment Unit | <em class="fas fa-square status-lime"></em> Licensed Only | Effective 05/21/2014</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                     <button type="button" class="btn btn-link">
@@ -2965,8 +2924,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Tranquility Floor 3<br><small class="bottom">Floor | <i class="fas fa-square status-white"></i> Active |<span class="iq-not-available">No effective date</span></small></span>
-                </button>
+                  </svg>
+                  <span>Tranquility Floor 3<br>
+                  <small class="bottom">T3 | Floor | <em class="fas fa-square status-white"></em> Active |<span class="iq-not-available">No effective date</span></small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                     <button type="button" class="btn btn-link">
@@ -3001,8 +2961,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Morrison<br><small class="bottom">Building | <i class="fas fa-square status-gray"></i> Closed 03/12/2012</small></span>
-                </button>
+                  </svg>
+                  <span>Morrison<br>
+                  <small class="bottom">M1 | Building | <em class="fas fa-square status-gray"></em> Closed 03/12/2012</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                     <button type="button" class="btn btn-link">
@@ -3034,8 +2995,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>3rd Floor<br><small class="bottom">Floor | <i class="fas fa-square status-gray"></i> Closed 09/02/2018</small></span>
-                </button>
+                  </svg>
+                  <span>3rd Floor<br>
+                  <small class="bottom">M2 | Floor | <em class="fas fa-square status-gray"></em> Closed 09/02/2018</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                     <button type="button" class="btn btn-link">
@@ -3067,8 +3029,9 @@ Barrington, IL 60010</span>
                     <path fill="none" stroke="#212121" stroke-linecap="round"
                       stroke-linejoin="round" stroke-miterlimit="10"
                       d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Solarium<br><small class="bottom">Wing | <i class="fas fa-square status-gray"></i> Closed 03/16/2012</small></span>
-                </button>
+                  </svg>
+                  <span>Solarium<br>
+                  <small class="bottom">W1 | Wing | <em class="fas fa-square status-gray"></em> Closed 03/16/2012</small></span></button>
                 <div class="iq-accordion-actions">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                   <button type="button" class="btn btn-link">
@@ -3411,52 +3374,7 @@ Barrington, IL 60010</span>
                 </fieldset>
                     
                       
-                      <fieldset><legend><h3>Buildings</h3></legend>
-                      <div class="iq-button-wrapper" style="margin-top: -1.5rem;"><button class="btn btn-outline-primary">Add New</button></div>
-                      <p class="iq-not-available">No buildings have been added</p>
-                      </fieldset>  <fieldset><legend><h3>Attachments</h3></legend>
-                   
-            
-              <div class="row" style="margin-top: -.5rem;">
-                  <div class="col-lg-12"><p>Add and manage attachments for this provider's location. </p></div>
-                  <div class="col-lg-3 col-md-6">
-                  <p class="mb-2">
-                  <label for="fileUpload-bs" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload-bs" name="file" class="form-control-file" onclick="$('#fileDetails-bs').removeClass('hide'); $('.noattachments').addClass('hide');">Select File</label></p></div>
-              </div>
-              
-              <p class="help-text" style="margin-top: -1rem;">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
-              <br>
-                      <p class="iq-not-available noattachments">No attachments have been added</p>
-              <!--<div class="file-attachment-card">
-                <div class="row">
-                    <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> LetterSent060119.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 file-description"><p><label>File Description</label>
-                        Lorem ipsum dolor sit amet</p>
-           
-                    </div>
-                </div>
-              </div>-->
-              <div class="file-attachment-card hide" id="fileDetails-bs">
-                <div class="row">
-                    
-                    <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> File Name.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
-                </div>
-                <div class="row">
-                   
-                    <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
-                        <input type="text" class="form-control file-description-text">
-                        </label><span class="fdt"></span></p>
-           <p><button class="btn btn-primary btn-lg" onclick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('Not available'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button></p>
-                    </div>
-                </div>
-              </div>
-                
-    
-                      </fieldset>
+                        
                   </div>
               </div>
               <div class="row">
@@ -3465,7 +3383,7 @@ Barrington, IL 60010</span>
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                      <button class="btn danger btn-link float-right">Delete</button>
+       
                   </div>
                 </div>
               </div>
@@ -3614,7 +3532,7 @@ Barrington, IL 60010</span>
                     <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                      <button class="btn btn-link danger float-right">Delete</button>
+                    
                   </div>
                 </div>
               </div>
@@ -4144,7 +4062,7 @@ Barrington, IL 60010</span>
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                      <button class="btn btn-link danger float-right">Delete</button>
+                      
                   </div>
                 </div>
               </div>
