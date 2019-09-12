@@ -101,9 +101,7 @@
         <div class="alert alert-success successMsg hide" role="alert">
           <div class="alert-content">Changes saved successfully</div>
         </div>
-        <div class="alert alert-success certificationChanged hide" role="alert">
-          <div class="alert-content">Changes saved successfully. Provider's CCN has been assigned to reflect that this provider has been federally certified.  </div>
-        </div>
+        
         <div class="alert alert-danger errorMsg hide" role="alert">
           <div class="alert-content"><div class="row">
               <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
@@ -715,33 +713,33 @@
                 <!--<p>Manage status and identifiers for this provider, including; federal certification, state licensure, and additional identifiers. [pending CMS approval] </p>-->
               </div>
               <div class="col-md-2 text-right">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+                <button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
               </div>
             </div>
-            <section class="edit-view active">
+            <section class="edit-view">
               <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
               <h3>Federal Certification</h3>
               <fieldset>
                 <legend>Federal Certification Status <span class="iq-asterisk" title="Required field">*</span></legend>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs1" name="fcs" class="custom-control-input"
+                  <input type="radio" disabled id="radio-button-fcs1" name="fcs" class="custom-control-input"
                      onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').addClass('hide');">
                   <label class="custom-control-label" for="radio-button-fcs1"> Not Applicable </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs2" name="fcs" class="custom-control-input"
-                     onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').addClass('hide');" checked="checked">
+                  <input type="radio" disabled id="radio-button-fcs2" name="fcs" class="custom-control-input"
+                     onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').addClass('hide');">
                   <label class="custom-control-label" for="radio-button-fcs2"> Pending Certification </label>
                 </div>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="radio-button-fcs3" name="fcs" class="custom-control-input" 
-                     onChange="$('#certifiedForm').removeClass('hide'); $('#terminatedForm').addClass('hide');">
+                     onChange="$('#certifiedForm').removeClass('hide'); $('#terminatedForm').addClass('hide');" checked="checked">
                   <label class="custom-control-label" for="radio-button-fcs3"> Certified </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" disabled id="radio-button-fcs4" name="fcs" class="custom-control-input"
+                  <input type="radio" id="radio-button-fcs4" name="fcs" class="custom-control-input"
                      onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').removeClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated <!-- tooltip --></label>
+                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated</label>
                 </div>
               </fieldset>
               <div class="iq-conditional-content hide" id="certifiedForm">
@@ -749,13 +747,13 @@
                   <div class="col-md-4">
                     <p>
                       <label>CCN</label>
-                      <span class="iq-not-available">CCN will be automatically entered based on business rules</span>
+                      <span class="iq-not-available">CCN will be automatically assigned</span>
                     </p>
                   </div>
                   <div class="col-md-4">
                     <p>
                       <label>Certification Date</label>
-                      <span class="iq-not-available">Certification Date will be automatically entered based on Survey Exit date</span>
+                      <span class="iq-not-available">Certification Date will be generated based on the survey exit date</span>
                     <!--<span class="help-text">This date is based on Survey Exit Date</span>--> </p>
                   </div>
                     <div class="col-md-4">
@@ -797,10 +795,10 @@
                         </select>
                     </p>
                   </div>
-                    <div class="col-md-4">
+                <div class="col-md-4">
                     <p>
                       <label>CCN</label>
-                      789456123
+                     123456
                     </p>
                   </div>
                  
@@ -904,7 +902,7 @@
                             class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
-            <section class="read-view">
+            <section class="read-view active">
               <h3>Federal Certification</h3>
               <div class="iq-list">
                 <div class="row">
@@ -1586,7 +1584,7 @@ Barrington, IL 60010</span>
                   <div class="col-md-4">
                       <p>
                         <label>Hazmat Area Separate</label>
-                        <select class="form-control"><option>Select one</option><option>Yes</option><option>No</option><option selected>Not Available</option></select>
+                        <select class="form-control"><option>Select one</option><option>Yes</option><option>No</option></select>
                       </p>
                   </div>
                 
@@ -1594,7 +1592,7 @@ Barrington, IL 60010</span>
                   <div class="col-md-4">
                       <p>
                         <label>Sprinkler Required</label>
-                        <select class="form-control"><option>Select one</option><option>Yes</option><option selected>No</option><option>Not Available</option></select>
+                        <select class="form-control"><option>Select one</option><option>Yes</option><option selected>No</option></select>
                       </p>
                   </div>
                   <div class="col-md-4">
@@ -1794,7 +1792,7 @@ Barrington, IL 60010</span>
                   <div class="col-md-4">
                       <p>
                         <label>Hazmat Area Separate</label>
-                        <select class="form-control"><option selected>Select one</option><option>Yes</option><option>No</option><option>Not Available</option></select>
+                        <select class="form-control"><option selected>Select one</option><option>Yes</option><option>No</option></select>
                       </p>
                   </div>
                 
@@ -1802,7 +1800,7 @@ Barrington, IL 60010</span>
                   <div class="col-md-4">
                       <p>
                         <label>Sprinkler Required</label>
-                        <select class="form-control"><option selected>Select one</option><option>Yes</option><option>No</option><option>Not Available</option></select>
+                        <select class="form-control"><option selected>Select one</option><option>Yes</option><option>No</option></select>
                       </p>
                   </div>
                   <div class="col-md-4">
@@ -2309,12 +2307,12 @@ Barrington, IL 60010</span>
                   <div class="col-md-8"><p>Type I - Fire Resistive Construction</p></div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Haz. Area Separate?</p></div>
+                  <div class="col-md-4"><p class="iq-label">Hazmat Area Separate</p></div>
                   <div class="col-md-8"><p class="iq-not-available">Not Available</p></div>
                 </div>     
                
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Is Sprinkler Required?</p></div>
+                  <div class="col-md-4"><p class="iq-label">Sprinkler Required</p></div>
                   <div class="col-md-8"><p>No</p></div>
                 </div>          
                 <div class="row">
@@ -2897,12 +2895,12 @@ Barrington, IL 60010</span>
                   <div class="col-md-8"><p>Type I - Fire Resistive Construction</p></div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Haz. Area Separate?</p></div>
+                  <div class="col-md-4"><p class="iq-label">Hazmat Area Separate</p></div>
                   <div class="col-md-8"><p class="iq-not-available">Not Available</p></div>
                 </div>     
                
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Is Sprinkler Required?</p></div>
+                  <div class="col-md-4"><p class="iq-label">Sprinkler Required</p></div>
                   <div class="col-md-8"><p>No</p></div>
                 </div>          
                 <div class="row">
