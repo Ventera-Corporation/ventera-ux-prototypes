@@ -1121,7 +1121,7 @@
                   <div class="form-group hide">
                     <label for="bs">Branch Status</label>
                       <div class="iq-btn-group" id="bs">
-                          <button class="btn btn-outline-primary active" onClick="$('#bs button').removeClass('active'); $(this).addClass('active'); $('.bclosed').addClass('hide'); ">Open</button>
+                        <button class="btn btn-outline-primary active" onClick="$('#bs button').removeClass('active'); $(this).addClass('active'); $('.bclosed').addClass('hide'); ">Open</button>
                           <button class="btn btn-outline-primary" onClick="$('#bs button').removeClass('active'); $(this).addClass('active'); $('.bclosed').removeClass('hide'); ">Closed</button>
                       </div>
                       
@@ -1134,14 +1134,17 @@
                   </div>
                 </div>
                 <div class="col-md-3"><div class="form-group">
-                    <label for="bop">Open Date</label>
-                     <input type="date" class="form-control" id="bop">
+                    <label>Open Date <span class="iq-asterisk" title="Required field">*</span></label>
+                     <input type="date" class="form-control">
+                    <span class="help-text">MM/DD/YYYY</span>
                              </div>
                 </div>  
                  <div class="col-md-3 hide bclosed">
                      <div class="form-group">
-                    <label for="bcl">Closed Date</label>
-                     <input type="date" class="form-control" id="bcl" />
+                    <label>Closed Date <span class="iq-asterisk" title="Required field">*</span></label>
+                     <input type="date" class="form-control" />
+                         <span class="help-text">MM/DD/YYYY</span>
+                         
                   </div>
                   </div>
                  <div class="col-md-12">
