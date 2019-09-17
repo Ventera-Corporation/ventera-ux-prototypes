@@ -55,9 +55,7 @@
                   <div class="col-md-5 col-lg-3 iq-page-header-contact">
                     <address>
                        667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010<br><i class="far fa-phone-office"></i> (888) 888-8888<br>
-                        <a href="#"><i class="far fa-envelope"></i> Email</a> | <a href="#"><i class="far fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="far fa-map-marker-alt"></i> <span>Map</span></a>
-                      <!--<i class="fal fa-phone-alt"></i> (123) 123-1234<br>
-                      <a href="#" style="display: inline-block; "><i class="fal fa-envelope"></i> Email</a> | <a href="#" style="display: inline-block; "><i class="fal fa-external-link"></i> Website</a>-->
+                        <a href="mailto:admin@brighthope.com"><i class="far fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="far fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="far fa-map-marker-alt"></i> <span>Map</span></a>
                     </address>
                   </div>
                 </div>
@@ -730,23 +728,25 @@
                      onChange="$('#certifiedForm').removeClass('hide'); $('#terminatedForm').addClass('hide');">
                   <label class="custom-control-label" for="radio-button-fcs3"> Certified </label>
                 </div>
-                <div class="custom-control custom-radio">
+                <!-- <div class="custom-control custom-radio">
                   <input type="radio" disabled id="radio-button-fcs4" name="fcs" class="custom-control-input"
                      onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').removeClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated <!-- tooltip --></label>
-                </div>
+                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated tooltip</label>
+                </div> -->
               </fieldset>
               <div class="iq-conditional-content hide" id="certifiedForm">
                 <div class="row">
                   <div class="col-md-4">
                     <p>
                       <label>CCN</label>
-                      <span class="iq-not-available">CCN will be automatically assigned</span></p>
+                      <span class="iq-not-available">CCN will be automatically assigned</span>
+                    </p>
                   </div>
                   <div class="col-md-4">
                     <p>
                       <label>Certification Date</label>
-                      <span class="iq-not-available">Certification Date will be generated based on the survey exit date</span><!--<span class="help-text">This date is based on Survey Exit Date</span>--> </p>
+                      <span class="iq-not-available">Certification Date will be generated based on the survey exit date</span>
+                    <!--<span class="help-text">This date is based on Survey Exit Date</span>--> </p>
                   </div>
                     <div class="col-md-4">
                     <p>
@@ -761,13 +761,18 @@
                    <fieldset>
                 <legend>Withdrawal Type <span class="iq-asterisk" title="Required field">*</span></legend>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="withdraw1" name="w" class="custom-control-input" value="value">
-                  <label class="custom-control-label" for="withdraw1"> Involuntary Withdrawal </label>
+                  <input type="radio" id="withdraw1" name="w" class="custom-control-input" value="value" onChange="if(this.checked){ $('.terminationReason option.invol').removeClass('hide'); $('.terminationReason option.vol').addClass('hide'); $('.terminationReason option.other').addClass('hide'); }">
+                  <label class="custom-control-label" for="withdraw1"> Involuntary</label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="withdraw2" name="w" class="custom-control-input" value="value">
-                  <label class="custom-control-label" for="withdraw2"> Voluntary Withdrawal </label>
+                  <input type="radio" id="withdraw2" name="w" class="custom-control-input" value="value" onChange="if(this.checked){ $('.terminationReason option.invol').addClass('hide'); $('.terminationReason option.vol').removeClass('hide'); $('.terminationReason option.other').addClass('hide'); }">
+                  <label class="custom-control-label" for="withdraw2"> Voluntary</label>
                 </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="withdraw3" name="w" class="custom-control-input" value="value" onChange="if(this.checked){ $('.terminationReason option.invol').addClass('hide'); $('.terminationReason option.vol').addClass('hide'); $('.terminationReason option.other').removeClass('hide'); }">
+                  <label class="custom-control-label" for="withdraw3"> Other</label>
+                </div>
+                       <br>
                 <div class="row">
                    <div class="col-md-4">
                     <p>
@@ -779,21 +784,33 @@
                     <div class="col-md-8">
                     <p>
                       <label>Reason <span class="iq-asterisk" title="Required field">*</span></label>
-                      <select class="control-form"><option>Select one</option>
-                        <option value="1">Active</option>
-                          <option value="6">Fail to Meet Health/Safety</option>
-                          <option value="7">Fail to Meet Agreement</option>
-                          <option value="8">Provider Status Change</option>
+                      <select class="form-control terminationReason"><option>Select one</option>
+                          <option class="vol">xxxx</option>
+                           <option class="vol">yyyy</option>
+                           <option class="vol">zzzz</option>
+                          <option value="6" class="invol">Fail to Meet Health/Safety</option>
+                          <option value="7" class="invol">Fail to Meet Agreement</option>
+                          <option value="8" class="other">Provider Status Change</option>
                         </select>
+                    </p>
+                  </div>
+                   <div class="col-md-4">
+                    <p>
+                      <label>CCN</label>
+                      123456
+                    </p>
+                  </div>
+                 <!--<div class="col-md-4">
+                    <p>
+                      <label>Certification Date</label>
+                      10/01/2018
                     </p>
                   </div>
                     <div class="col-md-4">
                     <p>
-                      <label>CCN</label>
-                      789456123
-                    </p>
-                  </div>
-                 
+                      <label>Original Participation Date</label>
+                      08/03/2017</p>
+                  </div>-->
                 </div>
                   </fieldset>
               </div>

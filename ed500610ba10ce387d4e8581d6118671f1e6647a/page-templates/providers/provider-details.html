@@ -502,7 +502,7 @@
                   <label class="custom-control-label" for="radio-button-fcs3"> Certified </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" disabled id="radio-button-fcs4" name="fcs" class="custom-control-input"
+                  <input type="radio" id="radio-button-fcs4" name="fcs" class="custom-control-input"
                      onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').removeClass('hide'); ">
                   <label class="custom-control-label" for="radio-button-fcs4"> Terminated <!-- tooltip --></label>
                 </div>
@@ -534,13 +534,18 @@
                    <fieldset>
                 <legend>Withdrawal Type <span class="iq-asterisk" title="Required field">*</span></legend>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="withdraw1" name="w" class="custom-control-input" value="value">
-                  <label class="custom-control-label" for="withdraw1"> Involuntary Withdrawal </label>
+                  <input type="radio" id="withdraw1" name="w" class="custom-control-input" value="value" onChange="if(this.checked){ $('.terminationReason option.invol').removeClass('hide'); $('.terminationReason option.vol').addClass('hide'); $('.terminationReason option.other').addClass('hide'); }">
+                  <label class="custom-control-label" for="withdraw1"> Involuntary</label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="withdraw2" name="w" class="custom-control-input" value="value">
-                  <label class="custom-control-label" for="withdraw2"> Voluntary Withdrawal </label>
+                  <input type="radio" id="withdraw2" name="w" class="custom-control-input" value="value" onChange="if(this.checked){ $('.terminationReason option.invol').addClass('hide'); $('.terminationReason option.vol').removeClass('hide'); $('.terminationReason option.other').addClass('hide'); }">
+                  <label class="custom-control-label" for="withdraw2"> Voluntary</label>
                 </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="withdraw3" name="w" class="custom-control-input" value="value" onChange="if(this.checked){ $('.terminationReason option.invol').addClass('hide'); $('.terminationReason option.vol').addClass('hide'); $('.terminationReason option.other').removeClass('hide'); }">
+                  <label class="custom-control-label" for="withdraw3"> Other</label>
+                </div>
+                       <br>
                 <div class="row">
                    <div class="col-md-4">
                     <p>
@@ -552,11 +557,13 @@
                     <div class="col-md-8">
                     <p>
                       <label>Reason <span class="iq-asterisk" title="Required field">*</span></label>
-                      <select class="form-control"><option>Select one</option>
-                        <option value="1">Active</option>
-                          <option value="6">Fail to Meet Health/Safety</option>
-                          <option value="7">Fail to Meet Agreement</option>
-                          <option value="8">Provider Status Change</option>
+                      <select class="form-control terminationReason"><option>Select one</option>
+                          <option class="vol">xxxx</option>
+                           <option class="vol">yyyy</option>
+                           <option class="vol">zzzz</option>
+                          <option value="6" class="invol">Fail to Meet Health/Safety</option>
+                          <option value="7" class="invol">Fail to Meet Agreement</option>
+                          <option value="8" class="other">Provider Status Change</option>
                         </select>
                     </p>
                   </div>
