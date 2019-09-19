@@ -117,6 +117,14 @@
               </div></div>
           </div>
         </div>
+        <div class="alert alert-danger attachmentError hide" role="alert">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 Unable to save. Please select a file for attachment.
+              </div></div>
+          </div>
+        </div>
       </div>
       <div class="col-sm-5 col-md-4 col-lg-3">
         <nav class="nav flex-column iq-nav" role="navigation"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <!--<a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a>--><a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Locations and Buildings</a> <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Operating Details</a> <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Administrators</a> <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Additional Contacts</a> <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Certification and Licensure</a> <a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">MAC Information</a> <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">Deeming Information</a> <a class="nav-link" tabindex="0" id="tab10Tab" href="#tab10" data-toggle="tab" role="tab" aria-controls="tab10" aria-selected="false">Attachments</a></nav>
@@ -477,8 +485,7 @@
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -675,8 +682,7 @@
               
                   <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
-                    <button
-                            class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                
             </section>
@@ -907,8 +913,7 @@
               </p>
               <div class="iq-button-wrapper">
                 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confirmCertificateSave">Save</button>
-                <button
-                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
             <section class="read-view">
@@ -1027,13 +1032,11 @@
                 <div class="col-md-10">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab4 .edit-view').removeClass('active'); 
-                                                             $('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide'); 
-                                                             ">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
+                     $('#tab4 .read-view').removeClass('active'); 
+                     $('#tab4 .read-view.deemingInfo').addClass('active'); 
+                     $('.alert.successMsg').removeClass('hide'); 
+                     ">Save</button>
+                    <button class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
                    
                   </div>
@@ -1207,8 +1210,7 @@
                                                              $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); 
                                                              ">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
+                    <button class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
                     
@@ -1294,9 +1296,7 @@
                                                              $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); 
                                                              ">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
                       
                     
                   </div>
@@ -1393,8 +1393,7 @@
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active');  $('#tab5 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active');  $('#tab5 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -1623,8 +1622,7 @@ T1</p>
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                       
                   </div>
                 </div>
@@ -1831,8 +1829,7 @@ Barrington, IL 60010</span>
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -2035,8 +2032,7 @@ Barrington, IL 60010</span>
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -2382,24 +2378,40 @@ Barrington, IL 60010</span>
                 <div class="table-wrapper">  <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col" class="sortable descending"><span>Attached File</span></th>
-      <th scope="col" class="sortable"><span>Description</span></th>
+      <th scope="col" class="sortable descending" style="width: 15rem;"><span>Attached File</span></th>
       <th scope="col" class="sortable"><span>Uploaded</span></th>
+      <th scope="col"><span>Description</span></th>
       <th scope="col">&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><p><i class="far fa-paperclip"></i> <a href="#">LetterSent060119.pdf</a></p></td>
-      <td><p>This is the description of the file that is long and wraps to multiple lines</p></td>
-      <td><p>05/08/2019</p></td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">Delete</a> | <a href="#" class="btn btn-link">Edit</a></div></td>
+      
+      <td><p>05/08/2019</p></td><td><p class="desText">This is the description of the file that is long and wraps to multiple lines</p>
+        <p class="desText hide"><textarea rows="5" class="form-control">This is the description of the file that is long and wraps to multiple lines</textarea></p></td>
+      <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+    <button class="dropdown-item" onClick="$(this).parents('tr').hide();">Delete</button>
+  </div>
+          </div></td>
     </tr>
     <tr class="newAttachmentRow hide">
       <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
-      <td><p>Lorem ipsum dolor sit amet</p></td>
       <td><p>09/20/2019</p></td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">Delete</a> | <a href="#" class="btn btn-link">Edit</a></div></td>
+        <td><p class="desText">Lorem ipsum dolor sit amet</p><p class="desText hide"><textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea></p></td>
+      
+    <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+    <button class="dropdown-item" onClick="$(this).parents('tr').hide();">Delete</button>
+  </div>
+          </div></td>
     </tr>
   </tbody>
 </table></div> 
@@ -2428,9 +2440,9 @@ Barrington, IL 60010</span>
                   </svg>
                   <span>BrightHope South<br>
                   <small class="bottom" style="color: #5b616b">Branch Office | ID 002 | Opened 01/21/1999 | 2 Buildings</small></span></button>
-                <div class="iq-accordion-actions">
+                <div class="iq-accordion-actions align-items-center">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmLocationDeletion">Delete</button>
-                  <a href="#" class="btn btn-link" style="margin-top: 1.8rem;" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editBranch1').addClass('active');">Edit</a>
+                  <a href="#" class="btn btn-link" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editBranch1').addClass('active');">Edit</a>
                 </div>
               </div>
               <div id="site2" class="collapse">
@@ -2585,24 +2597,39 @@ Barrington, IL 60010</span>
                 <div class="table-wrapper">  <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col" class="sortable descending"><span>Attached File</span></th>
-      <th scope="col" class="sortable"><span>Description</span></th>
-      <th scope="col" class="sortable"><span>Uploaded</span></th>
+      <th scope="col" class="sortable descending" style="width: 15rem;"><span>Attached File</span></th>
+      
+      <th scope="col" class="sortable"><span>Uploaded</span></th><th scope="col" class="sortable"><span>Description</span></th>
       <th scope="col">&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><p><i class="far fa-paperclip"></i> <a href="#">Building Image.jpg</a></p></td>
-      <td><p>This is the photo of the building from the front</p></td>
       <td><p>08/19/2019</p></td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">Delete</a> | <a href="#" class="btn btn-link">Edit</a></div></td>
+        <td><p class="desText"></p><p class="desText hide"><textarea rows="3" class="form-control">This is the photo of the building from the front</textarea></p></td>
+      
+      <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+    <button class="dropdown-item" onClick="$(this).parents('tr').hide();">Delete</button>
+  </div>
+          </div></td>
     </tr>
     <tr class="newAttachmentRow hide">
       <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
-      <td><p>Lorem ipsum dolor sit amet</p></td>
-      <td><p>09/20/2019</p></td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">Delete</a> | <a href="#" class="btn btn-link">Edit</a></div></td>
+      
+      <td><p>09/20/2019</p></td><td><p class="desText">Lorem ipsum dolor sit amet</p><p class="desText hide"><textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea></p></td>
+     <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+    <button class="dropdown-item" onClick="$(this).parents('tr').hide();">Delete</button>
+  </div>
+          </div></td>
     </tr>
   </tbody>
 </table></div> 
@@ -3123,8 +3150,7 @@ Barrington, IL 60010</span>
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -3316,8 +3342,7 @@ Barrington, IL 60010</span>
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
        
                   </div>
                 </div>
@@ -3344,8 +3369,23 @@ Barrington, IL 60010</span>
               </div>
               
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('#tab6 .newAttachmentRow').removeClass('hide'); if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('Not available'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button>
-                <button class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');">Cancel</button>
+                <button class="btn btn-primary btn-lg" onClick="if( $('#fileDetails2').hasClass('hide') ){  
+                    $('.alert.attachmentError').removeClass('hide'); 
+                } else {  
+                    $('#tab6 .edit-view').removeClass('active'); 
+                    $('#tab6 .read-view').addClass('active'); 
+                    $('#tab6 .newAttachmentRow').removeClass('hide'); 
+                    if($('.file-description-text').val()) { 
+                        $('.file-description .fdt').html($('.file-description-text').val());
+                    } else { 
+                        $('.file-description .fdt').html('Not available'); 
+                        $('.file-description .fdt').addClass('iq-not-available');
+                    } 
+                    $(this).hide(); 
+                    $('.file-description-text').addClass('hide'); 
+                    $('.alert.attachmentError').addClass('hide'); 
+                }">Save</button>
+                <button class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); };">Cancel</button>
               </div>
                 
               </section>
@@ -3394,8 +3434,7 @@ Barrington, IL 60010</span>
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -3490,8 +3529,7 @@ Barrington, IL 60010</span>
                 <div class="col">
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                     
                   </div>
                 </div>
@@ -3598,8 +3636,7 @@ Barrington, IL 60010</span>
               
               <div class="iq-button-wrapper">
                 <button class="btn btn-primary btn-lg" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab8 .tabTitle .btn').removeClass('hide');">Save</button>
-                <button
-                            class="btn btn-link" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active');  $('#tab8 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                <button class="btn btn-link" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active');  $('#tab8 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
             <section class="read-view">
