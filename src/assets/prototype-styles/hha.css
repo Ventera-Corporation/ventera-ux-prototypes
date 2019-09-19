@@ -170,7 +170,7 @@ color: #d6d7d9;
 }
 
 table.table-striped p { margin-bottom: 0; }
-table.table-striped .iqies-list-button-group { margin: -.5rem 0;}
+table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: nowrap; color: #aeb0b5;  }
 
 /* ALERTS */
 .alert-content { flex-direction: row; }
@@ -199,3 +199,28 @@ i.status-white, em.status-white { color: #02bfe7;  }
 i.status-gray, em.status-gray { color: #d6d7d9; }
 
 .iq-page-header-contact a { display: inline-block; }
+.iq-page-header-contact { padding: 0 1.5rem;}
+
+/* INPUT GROUP */
+.input-group { margin-bottom: 2rem; }
+.input-group input.form-control { height: auto; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.input-group .btn { border-top-left-radius: 0; border-bottom-left-radius: 0;  }
+.input-group-help-text { margin-top: -1.5rem; margin-bottom: 2rem; }
+
+.iq-accordion .card-header .btn .iq-accordion-title { font-weight: 400 !important; }
+.iq-accordion .card-header .iq-accordion-actions button {padding: .5rem 1rem; }
+
+.iq-accordion .card.no-border .iq-button-wrapper button {
+    padding: .438rem 1rem; 
+    color: #0071bc;
+    border-color: #0071bc;
+    font-weight: 700; 
+}
+.iq-accordion .card.no-border .iq-button-wrapper button:hover {
+    color: white;
+}
+.iq-accordion .card.no-border .card-header > button { 
+    color: #0071bc;
+    font-weight: 400;
+    padding: 0;
+}
