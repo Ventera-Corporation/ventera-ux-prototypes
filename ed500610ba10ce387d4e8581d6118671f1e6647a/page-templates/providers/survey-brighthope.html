@@ -128,9 +128,9 @@
         <nav class="nav flex-column iq-nav" role="navigation">
             <a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="false">Basic Information</a> 
             <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Responsible Staff</a> 
-            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Survey Team</a>
-            <a class="nav-link" tabindex="0" id="tab3-1Tab" href="#tab3-1" data-toggle="tab" role="tab" aria-controls="tab3-1" aria-selected="false">Citations and POC</a>
-            <a class="nav-link" tabindex="0" id="tab3-2Tab" href="#tab3-2" data-toggle="tab" role="tab" aria-controls="tab3-2" aria-selected="true">Statement of Deficiencies</a>
+            <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Survey Team</a>
+            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Citations and POC</a>
+            <a class="nav-link" tabindex="0" id="tab10Tab" href="#tab10" data-toggle="tab" role="tab" aria-controls="tab10" aria-selected="false">Statement of Deficiencies</a>
             <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">CMS-417 &amp; 643</a>
             <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Timesheet</a>
             <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Letters</a>
@@ -142,16 +142,15 @@
         <div class="tab-content">
           <div class="tab-pane active" id="tab1" role="tabpanel"
                     aria-labelledby="tab1Tab">
-            <div class="row tabTitle">
+           
+            <section class="edit-view active">
+                 <div class="row tabTitle">
               <div class="col-sm-10">
                 <h2>Basic Information</h2>
-                <!--<p>Manage the basic information for this survey</p>-->
+                <p>Enter the basic information for this survey.</p>
               </div>
-              <div class="col-sm-2 text-right">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
-              </div>
+              
             </div>
-            <section class="edit-view active">
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -304,6 +303,15 @@
             </div>
             </section>
             <section class="read-view">
+                 <div class="row tabTitle">
+              <div class="col-sm-10">
+                <h2>Basic Information</h2>
+                <p>Manage the basic information for this survey</p>
+              </div>
+              <div class="col-sm-2 text-right">
+                <button class="btn btn-outline-primary hide" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
+              </div>
+            </div>
             <div class="iq-list">
                 <div class="row">
                   <div class="col-md-4"><p class="iq-label">Survey Type</p></div>
@@ -382,21 +390,16 @@
           </div>
           <div class="tab-pane " id="tab2" role="tabpanel"
                     aria-labelledby="tab2Tab">
-            <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Responsible Staff</h2>
-              </div>
-              <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab2 .edit-view').addClass('active'); $('#tab2 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
-              </div>
-            </div>
+            
             <section class="edit-view active">
+                <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Add Responsible Staff</h2><p>Find and add the responsible staff for this survey</p>
+              </div>
+             
+            </div>
               <div class="row">
-                <div class="col-md-12">
-                  <!--<p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>-->
-                  <p>Find and add the responsible staff for this survey</p>
-                  
-                </div>
+                
               
                 <div class="col-md-6">
       <label class="sr-only" for="inlineFormInputGroup">Search</label>
@@ -405,7 +408,7 @@
         $('.searchButton').click();
     }" >
           <div class="input-group-postpend">
-         <button type="submit" class="btn btn-outline-primary searchButton" onClick="if($('#inlineFormInputGroup').val().indexOf('s') > -1 && $('#inlineFormInputGroup').val().indexOf('m') > -1){ $('.staffMembers tbody tr').addClass('hide'); $('.staffMembers tbody tr.sm').removeClass('hide'); }">Search</button>
+         <button type="submit" class="btn btn-outline-primary searchButton" onClick="if($('#inlineFormInputGroup').val().indexOf('s') > -1 && $('#inlineFormInputGroup').val().indexOf('m') > -1){ $('#tab2 .staffMembers tbody tr').addClass('hide'); $('#tab2 .staffMembers tbody tr.sm').removeClass('hide'); $('#tab2 .staffMembers .info-text').toggleClass('hide'); }">Search</button>
         </div>
       </div><div class="input-group-help-text help-text">Search by name</div>
       
@@ -437,11 +440,12 @@
                 </div>
               </div>
                
-              <div class="row mt-4">
+              <div class="row mt-4 staffMembers">
                 <div class="col-md-12">
                
                   <p class="info-text"><span class="baCount">1-10</span> of 112 Staff Members</p>
-                  <div class="table-wrapper">  <table class="table table-striped staffMembers">
+                  <p class="info-text hide">Filtered Results: 2 Found</p>
+                  <div class="table-wrapper">  <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col" class="sortable descending"><span>Name</span></th>
@@ -566,7 +570,15 @@
               </div>
             </section>
             <section class="read-view">
-                <p>Add and manage the responsible staff for this survey.</p>
+                <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Responsible Staff</h2> <p class="iq-page-header-description">Add and manage the responsible staff for this survey.</p>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary hide" onClick="$('#tab2 .edit-view').addClass('active'); $('#tab2 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
+              </div>
+            </div>
+               
               
                 <div class="iq-button-wrapper"><button class="btn btn-primary">Add Staff</button></div>
             <p class="info-text"><span class="baCount">1</span> Staff Member</p>
@@ -591,164 +603,557 @@
                 </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab3" role="tabpanel"
-                    aria-labelledby="tab3Tab">
-            <div class="row tabTitle">
+            <div class="tab-pane " id="tab9" role="tabpanel"
+                    aria-labelledby="tab9Tab">
+            
+            <section class="edit-view active">
+                <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Certification and Licensure</h2>
-                <!--<p>Manage status and identifiers for this provider, including; federal certification, state licensure, and additional identifiers. [pending CMS approval] </p>-->
+                <h2>Add Survey Team Members</h2>
+                  <p>Find and add the team members for this survey</p>
               </div>
-              <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+              
+            </div>
+              <div class="row">
+                
+              
+                <div class="col-md-6">
+      <label class="sr-only" for="surveyTeamSearch">Search</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="surveyTeamSearch" onKeyUp="if (event.keyCode === 13) {
+        $('#tab9 .searchButton').click();
+    }" >
+          <div class="input-group-postpend">
+         <button type="submit" class="btn btn-outline-primary searchButton" onClick="if($('#surveyTeamSearch').val().indexOf('s') > -1 && $('#surveyTeamSearch').val().indexOf('m') > -1){ $('#tab9 .staffMembers tbody tr').addClass('hide'); $('#tab9 .staffMembers tbody tr.sm').removeClass('hide'); $('#tab9 .staffMembers .info-text').toggleClass('hide'); }">Search</button>
+        </div>
+      </div><div class="input-group-help-text help-text">Search by name</div>
+      
+    </div>
+                
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="iq-accordion showhide">
+            <div class="card no-border" id="iq-heading-show-hide2">
+              <div class="card-header d-flex">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#iq-collapse-show-hide2" onclick="toggleArrow('iq-heading-show-hide2')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="iq-collapse-show-hide2">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Show Filter</span>
+                </button>
+              </div>
+              <div id="iq-collapse-show-hide2" class="collapse" aria-labelledby="iq-heading-show-hide2">
+                <div class="card-body px-0">
+                  Lorem, ipsum dolor sit amet consectetur
+                  adipisicing elit. Ab optio vero alias facilis nemo deleniti
+                  odio
+                  rerum autem sunt provident. Accusantium aperiam repudiandae
+                  mollitia molestiae error iste, quod ab consequuntur?
+                </div>
               </div>
             </div>
+          </div>
+                </div>
+              </div>
+               
+              <div class="row mt-4 staffMembers">
+                <div class="col-md-12">
+               
+                  <p class="info-text"><span class="baCount">1-10</span> of 112 Staff Members</p>
+                    <p class="info-text hide">Filtered Results: 2 Found</p>
+                  <div class="table-wrapper">  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="sortable ascending"><span>Name</span></th>
+        <th scope="col" class="sortable"><span>Discipline</span></th> 
+      <th scope="col" class="sortable"><span>Management Unit</span></th>
+      <th scope="col" class="sortable"><span>Work Unit</span></th>
+<!--      <th scope="col">&nbsp;</th>-->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Adams, Charlotte</label>
+            </div></td>
+        <td><p>Registered Nurse</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+    <tr>
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Adams, Ethan</label>
+            </div></td>
+        <td><p></p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+    <tr class="ad">
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Adrian, James</label>
+            </div></td>
+        <td><p></p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+    <tr class="ad">
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Adrian, Noah</label>
+            </div></td>
+        <td><p></p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+    <tr>
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Aran, Sophia</label>
+            </div></td>
+        <td><p></p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+      <tr>
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Aranie, Sue</label>
+            </div></td>
+          <td><p></p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+      <tr>
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Bell, Kathy</label>
+            </div></td>
+          <td><p></p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+    <tr>
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Brown, Lucy</label>
+            </div></td>
+        <td><p>Registered Nurse</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+      <tr>
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Buttieg, Nathan</label>
+            </div></td>
+          <td><p></p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+      <tr>
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+          <label class="custom-control-label">Cameron, Poe</label>
+            </div></td>
+          <td><p></p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+      <td><p class="iq-not-available">Not available</p></td>
+    </tr>
+      <tr class="sm hide">
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="smithadam2">
+          <label class="custom-control-label" for="smithadam2">Smith, Adam</label>
+            </div></td>
+          <td><p></p></td>
+      <td><p>OHLS Staff</p></td>
+      <td><p>OHLS Staff</p></td>
+    </tr>
+    <tr class="sm hide">
+      <td scope="row"><div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="smithjane2">
+          <label class="custom-control-label" for="smithjane2">Smith, Jane</label>
+            </div></td>
+        <td><p></p></td>
+      <td><p>OHLS Staff</p></td>
+      <td><p>OHLS Staff</p></td>
+    </tr>
+  </tbody>
+</table></div> 
+                    <nav aria-label="Results Data Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link d-none d-md-block" aria-label="First" type="button"><img alt="first" src="../../../src/assets/images/icon-arrow-left-double.svg" aria-hidden="true"><span class="d-none d-lg-inline">First</span></button></li><li class="page-item disabled"><button class="page-link" aria-label="Previous" type="button"><img alt="previous" src="../../../src/assets/images/icon-left-caret-primary.svg" aria-hidden="true"><span class="d-none d-lg-inline">Previous</span></button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link" aria-label="Next" type="button"><span class="d-none d-lg-inline">Next</span><img alt="next" src="../../../src/assets/images/icon-right-caret-primary.svg" aria-hidden="true"></button></li><li class="page-item"><button type="button" class="page-link d-none d-md-block" aria-label="Last"><span class="d-none d-lg-inline">Last</span><img alt="last" src="../../../src/assets/images/icon-arrow-right-double.svg" aria-hidden="true"></button></li></ul></nav>
+                    
+                    
+                </div>
+                
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="iq-button-wrapper">
+                    <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');}">Add</a>
+                    <!--<button class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>-->
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="read-view">
+                <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Survey Team</h2><p class="iq-page-header-description">Add and manage the team members for this survey.</p>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary hide" onClick="$('#tab9 .edit-view').addClass('active'); $('#tab9 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
+              </div>
+            </div>
+                
+              
+                <div class="iq-button-wrapper"><button class="btn btn-primary">Add Team Member</button></div>
+            <p class="info-text"><span class="baCount">1</span> Team Member</p>
+                  <div class="table-wrapper">  <table class="table table-striped addedStaffMembers">
+  <thead>
+    <tr>
+      <th scope="col" class="sortable descending"><span>Name</span></th>
+      <th scope="col" class="sortable"><span>Management Unit</span></th>
+      <th scope="col" class="sortable"><span>Work Unit</span></th>
+   <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row"><p>Smith, Adam</p></td>
+      <td><p>OHLS Staff</p></td>
+      <td><p>OHLS Staff</p></td>
+      <td><a href="#">Delete</a></td>
+    </tr>
+                      </tbody>
+                      </table>
+                </div>
+            </section>
+          </div>
+          <div class="tab-pane " id="tab3" role="tabpanel"
+                    aria-labelledby="tab3Tab">
+           
             <section class="edit-view active">
-              <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-              <h3>Federal Certification</h3>
-              <fieldset>
-                <legend>Federal Certification Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs1" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').addClass('hide');">
-                  <label class="custom-control-label" for="radio-button-fcs1"> Not Applicable </label>
+                 <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Add Citations</h2>
+                <p>Expand the tag to view the regulation text and interpretive guidelines. </p>
+              </div>
+              
+            </div>
+              <div class="row">
+                <div class="col-md-6">
+      <label class="sr-only" for="citeSearch">Search</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
+        $('.searchButton').click();
+    }" >
+          <div class="input-group-postpend">
+         <button type="submit" class="btn btn-outline-primary searchButton" onClick="if($('#citeSearch').val().indexOf('s') > -1 && $('#citeSearch').val().indexOf('m') > -1){ $('#tab3 .staffMembers tbody tr').addClass('hide'); $('#tab3 .staffMembers tbody tr.sm').removeClass('hide'); $('#tab3 .staffMembers .info-text').toggleClass('hide'); }">Search</button>
+        </div>
+      </div><div class="input-group-help-text help-text">Search by keyword, tag title, or number</div>
+      
+    </div>
+                
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="iq-accordion showhide">
+            <div class="card no-border" id="iq-heading-show-hide3">
+              <div class="card-header d-flex">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#iq-collapse-show-hide3" onclick="toggleArrow('iq-heading-show-hide3')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="iq-collapse-show-hide3">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Show Filter</span>
+                </button>
+              </div>
+              <div id="iq-collapse-show-hide3" class="collapse" aria-labelledby="iq-heading-show-hide3">
+                <div class="card-body px-0">
+                  <fieldset>
+                <legend>Filter by</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter1">Emergency Preparedness (FED - E - 1.01)</label> 
                 </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs2" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').addClass('hide');">
-                  <label class="custom-control-label" for="radio-button-fcs2"> Pending Certification </label>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter2" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter2">HOME HEALTH AGENCIES (FED - G - 11.01)</label>
                 </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs3" name="fcs" class="custom-control-input" value="value" 
-                     onChange="$('#certifiedForm').removeClass('hide'); $('#terminatedForm').addClass('hide');">
-                  <label class="custom-control-label" for="radio-button-fcs3"> Certified </label>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter3" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter3">Citation title and number only</label>
                 </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-fcs4" name="fcs" class="custom-control-input" value="value"
-                     onChange="$('#certifiedForm').addClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated </label>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter4" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter4">Regulation text only</label>
                 </div>
+                    <div class="iq-button-wrapper" style="margin-bottom: -2rem;">
+                      <button class="btn btn-outline-primary btn">Apply</button>
+                      </div>
               </fieldset>
-              <div class="iq-conditional-content hide" id="certifiedForm">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ccn">CCN <span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="text" class="form-control" id="ccn" aria-describedby="help-id" required="" value="">
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label>Certification Date</label>
-                      <span>07/30/2019</span> </p>
-                  </div>
                 </div>
               </div>
-              <div class="iq-conditional-content hide" id="terminatedForm">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ccn2">CCN <span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="text" class="form-control" id="ccn2" aria-describedby="help-id" required="" value="">
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ter">Termination Date <span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="date" class="form-control" id="ter" aria-describedby="help-id" required="" value="">
-                    </p>
-                  </div>
+            </div>
+          </div>
                 </div>
               </div>
-              <h3>State Licensure</h3>
-              <fieldset>
-                <legend>State Licensure Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-sl1" name="sl" class="custom-control-input" value="value"
-                     onChange="$('#licensedForm').addClass('hide'); $('#terminatedLForm').addClass('hide');">
-                  <label class="custom-control-label" for="radio-button-sl1"> Not Applicable </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-sl2" name="sl" class="custom-control-input" value="value"
-                     onChange="$('#licensedForm').addClass('hide'); $('#terminatedLForm').addClass('hide');">
-                  <label class="custom-control-label" for="radio-button-sl2"> Pending Licensure </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-sl3" name="sl" class="custom-control-input" value="value" 
-                     onChange="$('#licensedForm').removeClass('hide'); $('#terminatedLForm').addClass('hide');">
-                  <label class="custom-control-label" for="radio-button-sl3"> Licensed </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-sl4" name="sl" class="custom-control-input" value="value"
-                     onChange="$('#licensedForm').addClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-sl4"> Terminated </label>
-                </div>
-              </fieldset>
-              <div class="iq-conditional-content hide" id="licensedForm">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p>
-                      <label for="lt">License Type <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                      <select class="form-control" id="lt">
-                        <option>Select ...</option>
-                        <option>Permanent</option>
-                        <option>Temporary</option>
-                      </select>
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ln">License Number <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                      <input type="text" class="form-control" id="ln" aria-describedby="help-id" value="">
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="issue">Issue Date</label>
-                      <input type="date" class="form-control" id="issue" aria-describedby="iss-d-help" value="">
-                      <span class="help-text" id="iss-d-help">MM/DD/YYYY</span>
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="eff">Effective Date</label>
-                      <input type="date" class="form-control" id="eff" aria-describedby="eff-d-help" value="">
-                        <span class="help-text" id="eff-d-help">MM/DD/YYYY</span>
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="exp">Expiration Date</label>
-                      <input type="date" disabled class="form-control" id="exp" aria-describedby="exp-d-help" value="">
-                        <span class="help-text" id="exp-d-help">MM/DD/YYYY</span>
-                    </p>
-                  </div>
+               
+              <div class="row mt-4 staffMembers">
+                <div class="col-md-12">
+               
+                  
+                  
+                   
+                <nav class="nav nav-horizontal">
+              <a class="nav-link active" href="#h-tab-1">1-10 of 235 Citations<span class="info-text hide">Filtered Results: 2 Found</span></a>
+              <a class="nav-link" href="#h-tab-2">0 Citations Added</a>
+            </nav>
+            <div class="tab-content">
+                <div class="tab-pane active" id="h-tab-1">
+                    <div class="iq-accordion">
+            <div class="card">
+              <div class="card-header d-flex" id="cite1">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite1')" data-target="#cite1content" aria-controls="cite1content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br><strong>0000 - Initial Comments</strong></span>
+                </button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
                 </div>
               </div>
-              <div class="iq-conditional-content hide" id="terminatedLForm">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ln2">License Number <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                      <input type="text" class="form-control" id="ln2" aria-describedby="help-id" value="">
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ter2">Termination Date <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                      <input type="date" class="form-control" id="ter2" aria-describedby="help-id"  value="">
-                    </p>
-                  </div>
+              <div id="cite1content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
                 </div>
               </div>
-              <h3>Additional Identifiers</h3>
-              <p>
-                <label for="medicaid">Medicaid ID<!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                <input type="text" class="form-control" id="medicaid" aria-describedby="help-id" value="">
-              </p>
-              <p>
-                <label for="ein">Employee/Tax Identification Number <!--<span class="iq-asterisk" title="Required field">*</span>--></label>
-                <input type="text" class="form-control" id="ein" aria-describedby="help-id" value="">
-              </p>
+            </div>
+          </div>
+                    <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite2">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite2')" data-target="#cite2content" aria-controls="cite2content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br><strong>0100 - General Requirements - Other</strong></span>
+                </button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite2content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite3">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite3')" data-target="#cite3content" aria-controls="cite3content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg>
+                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
+                  <strong>0111 - Building Rehabilitation</strong></span></button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite3content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite4">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite4')" data-target="#cite4content" aria-controls="cite4content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg>
+                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
+                  <strong>0112 - Sprinkler Requirements for Major Rehabilitation</strong></span></button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite4content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite5">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite5')" data-target="#cite5content" aria-controls="cite5content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg>
+                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
+                  <strong>0131 - Multiple Occupancies</strong></span></button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite5content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite10">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite10')" data-target="#cite10content" aria-controls="cite10content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br><strong>0132 - Multiple Occupancies - Contiguous Non-Health</strong></span>
+                </button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite10content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite6">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite6')" data-target="#cite6content" aria-controls="cite6content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg>
+                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
+                  <strong>0133 - Multiple Occupancies - Construction Type</strong></span></button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite6content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite7">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite7')" data-target="#cite7content" aria-controls="cite7content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg>
+                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
+                  <strong>0161 - Building Construction Type and Height</strong></span></button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite7content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite8">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite8')" data-target="#cite8content" aria-controls="cite8content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg>
+                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
+                  <strong>0162 - Roofing Systems Involving Combustibles</strong></span></button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite8content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex" id="cite9">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite9')" data-target="#cite9content" aria-controls="cite9content">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg>
+                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
+                  <strong>0163 - Interior Non-Bearing Wall Construction</strong></span></button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button type="button" class="btn btn-outline-primary">
+                    Add
+                  </button>
+                </div>
+              </div>
+              <div id="cite9content" class="collapse ">
+                <div class="card-body">
+                  
+                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    
+                    <nav aria-label="Results Data Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link d-none d-md-block" aria-label="First" type="button"><img alt="first" src="../../../src/assets/images/icon-arrow-left-double.svg" aria-hidden="true"><span class="d-none d-lg-inline">First</span></button></li><li class="page-item disabled"><button class="page-link" aria-label="Previous" type="button"><img alt="previous" src="../../../src/assets/images/icon-left-caret-primary.svg" aria-hidden="true"><span class="d-none d-lg-inline">Previous</span></button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link" aria-label="Next" type="button"><span class="d-none d-lg-inline">Next</span><img alt="next" src="../../../src/assets/images/icon-right-caret-primary.svg" aria-hidden="true"></button></li><li class="page-item"><button type="button" class="page-link d-none d-md-block" aria-label="Last"><span class="d-none d-lg-inline">Last</span><img alt="last" src="../../../src/assets/images/icon-arrow-right-double.svg" aria-hidden="true"></button></li></ul></nav>
+                </div> 
+                <div class="tab-pane" id="h-tab-2">
+                   
+                  
+                </div>
+            </div>
+                    
+                    
+                    
+                </div>
+                
+              </div>
+<br>
               <div class="iq-button-wrapper">
                 <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
@@ -756,60 +1161,212 @@
               </div>
             </section>
             <section class="read-view">
-              <h3>Federal Certification</h3>
-              <p>
-                <label>Federal Certification Status</label>
-                Certified </p>
-              <div class="row">
-                <div class="col-md-5">
-                  <p>
-                    <label>CCN</label>
-                    12345454354 </p>
+                 <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Citations and POC</h2>
+                
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+              </div>
+            </div>
+                <div class="row"><div class="col-md-12">
+                 <h3>Plan of Correction (POC)</h3>
+                <p>The Plan of Correction can be added once citations have been locked and the Statement of Deficiencies has been sent.</p>
+              
+                <hr>
+                <h3>Citations</h3>
+                <p class="iq-page-header-description">Add and manage citations for this survey. All citation writing must be marked as complete to lock citations.</p>
+                <div class="iq-button-wrapper">
+                <button class="btn btn-primary">Add Citations</button> <button class="btn btn-outline-primary"><i class="fas fa-lock-alt"></i> Lock Citations</button>
                 </div>
-                <div class="col-md-5">
-                  <p>
-                    <label>Certification Date</label>
-                    <span>07/30/2019</span> </p>
+                </div></div>
+              
+            <div class="row">
+                <div class="col">
+                  <div class="iq-accordion showhide">
+            <div class="card no-border" id="viewCitesFilterHeader">
+              <div class="card-header d-flex">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#viewCitesFilterContent" onclick="toggleArrow('#viewCitesFilter')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="viewCitesFilter">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Show Filter</span>
+                </button>
+              </div>
+              <div id="viewCitesFilterContent" class="collapse" aria-labelledby="viewCitesFilterHeader">
+                <div class="card-body px-0">
+                    <div class="row">
+                    <div class="col-md-6">
+                      <fieldset>
+                <legend>Immediate Jeopardy</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter1v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter1v">Associated with an immediate jeopardy</label> 
+                </div>
+                  </fieldset>     
+                
+                <fieldset>
+                    <legend>Federal Regulation Sets</legend>    
+                    <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter2v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter2v">Emergency Preparedness (FED - E - 01.01)</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter3v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter3v">LSC 2012 Health Existing (FED - K - 01.01)</label>
+                </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Survey Cateogory</legend> 
+                    <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter4v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter4v">Recertification</label>
+                </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Buildings</legend>    
+                    <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter5v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter5v">01 - RES UNIT - FREESTANDING 9 BEDS</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter6v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter6v">B1 - RES UNIT - FREESTANDING 8 BEDROOM STRUCTURE ON THE WEST SIDE OF NORTHWEST FRANKLIN ST</label>
+                </div>
+                </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                    <fieldset>
+                <legend>Status</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter7v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter7v">Writing Pending</label> 
+                </div>
+                        <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter8v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter8v">Writing in Progress</label> 
+                </div>
+                        <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter9v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter9v">Ready for Merge</label> 
+                </div>
+                        <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter10v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter10v">Writing Complete</label> 
+                </div>
+                        <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter11v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter11v">Corrected</label> 
+                </div>
+                  </fieldset>
+                        <fieldset><legend>Tag Type</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter12v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter12v">Memo</label> 
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter13v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter13v">Condition</label> 
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFilter14v" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFilter14v">Status</label> 
+                </div>
+                        
+                        </fieldset>
+                    </div>
+                    </div>
+                
+                    <div class="iq-button-wrapper" style="margin-bottom: -2rem;">
+                      <button class="btn btn-outline-primary btn">Apply</button>
+                      </div>
+             
                 </div>
               </div>
-              <h3>State Licensure</h3>
-              <p>
-                <label>State Licensure Status</label>
-                Licensed</p>
-              <div class="row">
-                <div class="col-md-5">
-                  <p>
-                    <label>License Type</label>
-                    Permanent </p>
-                </div>
-                <div class="col-md-5">
-                  <p>
-                    <label>License Number</label>
-                    31325352353 </p>
-                </div>
-                <div class="col-md-5">
-                  <p>
-                    <label>Issue Date</label>
-                    07/30/2019 </p>
-                </div>
-                <div class="col-md-5">
-                  <p>
-                    <label>Effective Date</label>
-                    07/30/2019 </p>
-                </div>
-                <div class="col-md-5">
-                  <p>
-                    <label>Expiration Date</label>
-                    07/29/2022 </p>
+            </div>
+          </div>
                 </div>
               </div>
-              <h3>Additional Identifiers</h3>
-              <p>
-                <label>Medicaid ID</label>
-                M343535 </p>
-              <p>
-                <label>Employee/Tax Identification Number</label>
-                123-34-3345 </p>
+                
+              <p class="info-text mt-4"><span class="aoCount">2</span> Citations</p>
+              <div class="iqies-list-row iniComment">
+                <div class="iqies-list-row-header">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h4>0000 - Initial Comments</h4>
+                    </div>
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editIniComment').addClass('active');">Edit</button>
+                        <button class="btn btn-link float-right">Delete</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="iq-list">
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Status</p></div>
+                      <div class="col-md-8"><p>Writing in Progress</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
+                      <div class="col-md-8"><p>09/04/2019</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Authors</p></div>
+                      <div class="col-md-8"><p>Jane Smith</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Tag Type</p></div>
+                      <div class="col-md-8"><p></p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Regulation Set</p></div>
+                      <div class="col-md-8"><p>LSC 20120 Health Existing (FED - K - 03.03)</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Survey Category</p></div>
+                      <div class="col-md-8"><p>Initial Certification</p></div>
+                    </div>
+                </div>
+              </div>
+               <div class="iqies-list-row iniComment">
+                <div class="iqies-list-row-header">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h4>0224 - Horizontal Sliding Doors</h4>
+                    </div>
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editIniComment').addClass('active');">Edit</button>
+                        <button class="btn btn-link float-right">Delete</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="iq-list">
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Status</p></div>
+                      <div class="col-md-8"><p>Writing in Progress</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
+                      <div class="col-md-8"><p>09/04/2019</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Authors</p></div>
+                      <div class="col-md-8"><p>Jane Smith</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Tag Type</p></div>
+                      <div class="col-md-8"><p>Element</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Regulation Set</p></div>
+                      <div class="col-md-8"><p>LSC 20120 Health Existing (FED - K - 03.03)</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><p class="iq-label">Survey Category</p></div>
+                      <div class="col-md-8"><p>Initial Certification</p></div>
+                    </div>
+                </div>
+              </div>
             </section>
           </div>
           <div class="tab-pane " id="tab4" role="tabpanel"
