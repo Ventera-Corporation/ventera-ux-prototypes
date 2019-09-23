@@ -1370,8 +1370,8 @@
               </div>
             </section>
             <section class="edit-view cite224">
-                <p><a href="#" class="btn btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
-              <h2>Citation 0224</h2>
+                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+              <h2>Edit Citation 0224</h2>
                 <p>Horizontal Sliding Doors - NFPA 101</p>
                 <div class="row mb-5">
                 <div class="col">
@@ -1396,7 +1396,7 @@
                 
                 <h3>Citation Overview</h3>
                 <fieldset>
-                <legend>Buildings <span class="iq-required-text">*</span></legend>
+                <legend>Buildings <span class="iq-asterisk" title="Required field">*</span></legend>
                     <p>Only buildings assigned to the current regulation set will appear in this list.</p>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="citeB1" class="custom-control-input" value="value">
@@ -1425,7 +1425,7 @@
                 </div>
               </fieldset>
                 
-              <div class="iq-conditional-content">
+              <div class="iq-conditional-content pl-4">
                 <fieldset>
                 <legend>Substantiated Allegations</legend>
                 <div class="custom-control custom-checkbox">
@@ -1456,7 +1456,7 @@
                 
                 <h3>Citation Text</h3>
                 <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
-                <div class="editTextDiv mb-5"></div>
+                <div class="editTextDiv"></div>
                 <div class="iq-button-wrapper">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="citeWC" class="custom-control-input" value="value">
@@ -1468,15 +1468,23 @@
                 <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
                 <p class="iq-not-available">No attachments have been added</p>
                 <div class="iq-button-wrapper">
-                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
-                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
             <section class="read-view cite224">
-                <p><a href="#" class="btn btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
-              <h2>Citation 0224</h2>
+                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+               <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Citation 0224</h2>
                 <p>Horizontal Sliding Doors - NFPA 101</p>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view.cite224').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+              </div>
+            </div>
+                
                 <div class="row mb-5">
                 <div class="col">
                   <div class="iq-accordion showhide">
@@ -1538,6 +1546,7 @@
                 
                 <h3>Citation Text</h3>
                 <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
+                <p><button class="btn btn-outline-primary">Merge Citation Text</button></p>
                 <div class="table-wrapper mb-5">  <table class="table table-striped">
   <thead>
     <tr><th scope="col" class="sortable"><span>Order</span></th> 
@@ -1550,21 +1559,30 @@
   </thead>
   <tbody>
     <tr>
-      <td></td>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
+          </div></td>
       <td scope="row"><p>Smith, James</p></td>
       <td><p>08/27/2019 2:04 PM</p></td>
       <td><p>Writing in Progress</p></td>
         <td><a href="#">Delete</a> | <a href="#">Edit</a></td>
     </tr>
     <tr>
-      <td></td>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
+          </div></td>
       <td scope="row"><p>Thomas, Jane</p></td>
       <td><p>08/27/2019 1:43 PM</p></td>
       <td><p>Writing in Progress</p></td>
         <td><a href="#">View</a></td>
     </tr>
     <tr>
-      <td></td>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-down"></i></button>
+          </div></td>
       <td scope="row"><p>Chae, Matthew</p></td>
       <td><p>08/30/2019 10:21 AM</p></td>
       <td><p>Writing in Progress</p></td>
@@ -1580,7 +1598,7 @@
                 <p class="iq-not-available">No attachments have been added</p>
                 
                 <div class="iq-button-wrapper">
-                <p><a href="#" class="btn btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               </div>
             </section>             
           </div>
