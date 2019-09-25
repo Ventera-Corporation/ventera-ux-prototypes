@@ -6,7 +6,7 @@ h1 { font-weight: 400; }
 h2 { font-size: 1.875rem; font-weight: 400; }
 h3 { font-size: 1.5rem; font-weight: 400;}
 h4 { font-size: 1.25rem; font-weight: 400; }
-h5 { font-size: 1rem; font-weight: 400; }
+h5 { font-size: 1rem; font-weight: 700; }
 p, .form-group { margin-bottom: 2rem; }
 label { font-weight: 700; display: block;}
 label.custom-control-label { font-weight: 400; }
@@ -55,7 +55,7 @@ padding: 1rem;
 .iqies-list-table-row td p { margin-bottom: 0;}
 .iq-conditional-content { margin-top: -1rem; margin-bottom: 2rem; padding-bottom: 0; }
 .iq-not-available { color: #5B616B; }
-.help-text, .form-text { font-size: .8rem; color: #5B616B; display: block; margin-top: .25rem;}
+.help-text, .form-text { font-size: .875rem; color: #5B616B; display: block; margin-top: .25rem;}
 .btn-link.danger { color: #e31c3d; }
 
 h2 small.top { font-size: 1rem; font-weight: 400; color: #222; }
@@ -79,10 +79,6 @@ small.bottom .iq-not-available { margin-left: 0; }
 label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616b; }
 .iq-input-error { border: 1px solid #e31c3d; }
 .iq-input-error-msg { color: #cd2026; font-size: .8125rem; margin-top: .5rem; }
-
-.alert-danger .alert-content i { color: #e31c3d;  }
-.alert-content ul li { padding: .25rem 0; }
-.alert-content ul { margin-bottom: 0; padding-left: 1.25rem;  }
 
 .nav-link.iq-subnav { padding-left: 2.5rem; }
 .nav-link.iq-subnav.active { padding-left: 2rem !important; }
@@ -174,8 +170,19 @@ table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: no
 
 /* ALERTS */
 .alert-content { flex-direction: row; }
-.alert-content i { float: left; margin-right: .5rem; }
+.alert-info .alert-content::before { 
+    content: '\f05a';
+    font-family: "Font Awesome 5 Pro"; 
+    font-weight: 700;
+    margin-right: .5rem; 
+    color: #02BFE7; /* secondary alt */
+}
+.alert-content ul li { padding: .25rem 0; }
+.alert-content ul { margin-bottom: 0; padding-left: 1.25rem;  }
+
 .alert-info i { color: #02bfe7; }
+.alert-danger .alert-content i { color: #e31c3d;  }
+
 .help-text ul { padding-left: 1rem; }
 .help-text h6 { margin-bottom: 0; }
 
