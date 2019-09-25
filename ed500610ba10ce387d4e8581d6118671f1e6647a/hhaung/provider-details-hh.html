@@ -58,16 +58,19 @@
           <div class="alert-content">Changes saved successfully</div>
         </div>
         <div class="alert alert-danger errorMsg hide" role="alert">
-          <div class="alert-content"><div class="row">
-              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
-              <div class="col-sm-11">
+          <div class="alert-content">
+           
+                  <div id="mailError">
                  <p> Unable to save. Please review and correct the following items:</p> 
                   <ul>
-                      <li><a href="#address1M">Address 1</a> is required</li>
-                      <li><a href="#cityM">City</a> is required</li>
+                      <li class="first"><a href="#address1M">Address 1</a> is required</li>
+                      <li class="second"><a href="#cityM">City</a> is required</li>
                       <li><a href="#zipCodeX">Zip Code</a> is required</li>
-                  </ul>
-              </div></div>
+                  </ul></div>
+                  <div id="mailErrorFree" class="hide">
+                    All errors have been corrected. <a href="#saveM">Please continue to save your changes.</a>
+                  </div>
+             
           </div>
         </div>
       </div>
@@ -340,9 +343,11 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="address1M">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="address1M"
+                    <input type="text" class="form-control required-form-input" id="address1M" onBlur="if($(this).val() != ''){ $(this).next('p').children('.errorM').addClass('hide'); $('.required-form-input').removeClass('iq-input-error');  }"
                             required>
-                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
+                     <p class="iq-input-error-msg hide"><span class="errorM"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</span>
+                         <a href="#mailError" onClick="$('#mailError li.first').addClass('hide'); $(this).hide();" class="float-right">Go back to error message &gt;</a></p>
+                     
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -356,9 +361,10 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="cityM">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="cityM"
+                    <input type="text" class="form-control required-form-input" id="cityM" onBlur="if($(this).val() != ''){ $(this).next('p').children('.errorM').addClass('hide'); $('.required-form-input').removeClass('iq-input-error');  }"
                             required>
-                    <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
+                     <p class="iq-input-error-msg hide"><span class="errorM"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</span>
+                         <a href="#mailError" onClick="$('#mailError li.second').addClass('hide'); $(this).hide();" class="float-right">Go back to error message &gt;</a></p>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -423,9 +429,10 @@
                 <div class="col-md-3">
                   <div class="form-group">
                     <label for="zipCodeX">ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="zipCodeX"
+                    <input type="text" class="form-control required-form-input" id="zipCodeX" onBlur="if($(this).val() != ''){ $(this).next('p').children('.errorM').addClass('hide'); $('.required-form-input').removeClass('iq-input-error');  }"
                             required>
-                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
+                     <p class="iq-input-error-msg hide"><span class="errorM"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</span>
+                         <a href="#mailError" onClick="$('#mailError').addClass('hide'); $('#mailErrorFree').removeClass('hide'); $('.errorMsg').removeClass('alert-danger'); $('.errorMsg').addClass('alert-success');  $(this).hide();" class="float-right">Go back to error message &gt;</a></p>
                   </div>
                 </div>
               </div>
@@ -433,7 +440,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
+                    <a href="#mainContent" id="saveM" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
                     <button
                             class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
