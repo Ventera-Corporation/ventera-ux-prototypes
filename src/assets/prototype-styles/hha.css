@@ -169,13 +169,23 @@ table.table-striped p { margin-bottom: 0; }
 table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: nowrap; color: #aeb0b5;  }
 
 /* ALERTS */
-.alert-content { flex-direction: row; }
+.alert-content { display: block; flex-direction: row; line-height: 1.5rem; }
+.alert-content::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; margin-top: .0625rem;  }
 .alert-info .alert-content::before { 
     content: '\f05a';
-    font-family: "Font Awesome 5 Pro"; 
-    font-weight: 700;
-    margin-right: .5rem; 
     color: #02BFE7; /* secondary alt */
+}
+.alert-success .alert-content::before { 
+    content: '\f058';
+    color: #2E8540; /* success */
+}
+.alert-warning .alert-content::before { 
+    content: '\f06a';
+    color: #FDB81E; /* warn */
+}
+.alert-danger .alert-content::before { 
+    content: '\f057';
+    color: #CD2026; /* error dark */
 }
 .alert-content ul li { padding: .25rem 0; }
 .alert-content ul { margin-bottom: 0; padding-left: 1.25rem;  }
