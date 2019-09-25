@@ -172,6 +172,7 @@ table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: no
 .alert-content { display: block; flex-direction: row; line-height: 1.5rem; width: 100%; }
 .alert-content p { margin-bottom: 0; }
 .alert-content::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; margin-top: .0625rem;  }
+.iq-input-error-msg::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; }
 .alert-info .alert-content::before { 
     content: '\f05a';
     color: #02BFE7; /* secondary alt */
@@ -184,7 +185,7 @@ table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: no
     content: '\f06a';
     color: #FDB81E; /* warn */
 }
-.alert-danger .alert-content::before { 
+.alert-danger .alert-content::before, .iq-input-error-msg::before { 
     content: '\f057';
     color: #CD2026; /* error dark */
 }
