@@ -171,6 +171,8 @@ table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: no
 /* ALERTS */
 .alert-content { display: block; flex-direction: row; line-height: 1.5rem; width: 100%; }
 .alert-content p { margin-bottom: 0; }
+.alert button.close { display: flex; flex-direction: column; padding-top: .25rem; }
+.alert button.close:hover { opacity: 1; }
 .alert-content::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; margin-top: .0625rem;  }
 .iq-input-error-msg::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; }
 .alert-info .alert-content::before { 
