@@ -169,7 +169,8 @@ table.table-striped p { margin-bottom: 0; }
 table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: nowrap; color: #aeb0b5;  }
 
 /* ALERTS */
-.alert-content { display: block; flex-direction: row; line-height: 1.5rem; }
+.alert-content { display: block; flex-direction: row; line-height: 1.5rem; width: 100%; }
+.alert-content p { margin-bottom: 0; }
 .alert-content::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; margin-top: .0625rem;  }
 .alert-info .alert-content::before { 
     content: '\f05a';
@@ -187,8 +188,7 @@ table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: no
     content: '\f057';
     color: #CD2026; /* error dark */
 }
-.alert-content ul li { padding: .25rem 0; }
-.alert-content ul { margin-bottom: 0; padding-left: 1.25rem;  }
+.alert-content ul { margin-bottom: 0; padding-left: 3rem;  }
 
 .alert-info i { color: #02bfe7; }
 .alert-danger .alert-content i { color: #e31c3d;  }
