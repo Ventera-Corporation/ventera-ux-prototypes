@@ -12,7 +12,7 @@
     href="../../src/assets/prototype-styles/design-system.css">
   <link rel="stylesheet" href="../../src/assets/prototype-styles/prototype.css">
     <link rel="stylesheet" href="../../src/assets/prototype-styles/hha.css">
-        <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+    <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 </head>
 
 <body>
@@ -23,8 +23,24 @@
   <div id="iq-proto-wrapper">
     <div id="iq-proto-sidebar-wrapper">
       <ul class="list-group">
-        <li class="list-group-item"><strong>Components</strong></li>
-        <li class="list-group-item"><a href="#alerts">Alerts</a></li>
+        <li class="list-group-item"><strong>Color Palette</strong></li>
+        <li class="list-group-item"><a href="#colorPrimary">Primary</a></li>
+          <li class="list-group-item"><a href="#colorSecondary">Secondary</a></li>
+          <li class="list-group-item"><a href="#colorNeutrals">Neutrals</a></li>
+          <li class="list-group-item"><a href="#colorStatus">Status</a></li>
+        <li class="list-group-item"><strong>Typography</strong></li>
+          <li class="list-group-item"><a href="#typoFont">Typeface</a></li>
+          <li class="list-group-item"><a href="#typoDisplay">Display</a></li>
+          <li class="list-group-item"><a href="#typoHeading">Heading</a></li>
+          <li class="list-group-item"><a href="#typoParagraph">Paragraph</a></li>
+          <li class="list-group-item"><a href="#typoOther">Other</a></li>
+          <li class="list-group-item"><strong>Alerts &amp; Toasts</strong></li>
+        <li class="list-group-item"><a href="#alertInfo">Info Alert</a></li>
+          <li class="list-group-item"><a href="#alertSuccess">Success Alert</a></li>
+          <li class="list-group-item"><a href="#alertWarning">Warning Alert</a></li>
+          <li class="list-group-item"><a href="#alertError">Error Alert</a></li>
+          <li class="list-group-item"><a href="#alertToast">Toasts</a></li>
+          <li class="list-group-item"><strong>Buttons</strong></li>
         <li class="list-group-item"><a href="#buttons">Buttons</a></li>
         <li class="list-group-item"><a href="#breadcrumbs">Breadcrumbs</a></li>
         <li class="list-group-item"><a href="#cards">Cards</a></li>
@@ -48,15 +64,293 @@
     </div>
 
     <main>
-      <div class="container">
-        <section>
-          <div class="row">
-            <div class="col">
-              <h1 class="mt-5">Component Patterns</h1>
-            </div>
-          </div>
-        </section>
-
+      <div class="container card-body">
+          <h1>iQIES Design System</h1>
+          
+          <section id="color">
+              <h2>Color Palette</h2>
+              <article id="colorPrimary" class="mb-5"><h3>Primary</h3>
+                  <div class="row">
+                      <div class="col-sm-6 col-md-3"><div class="iq-color-primary iq-color-swatch mb-0"></div>
+                      <small>#0071BC<br>primary<br>Button, Selection, Links</small></div>
+                      <div class="col-sm-6 col-md-3"><div class="iq-color-primary-darker iq-color-swatch mb-0"></div>
+                      <small>#205493<br>primary-darker<br>Action on alert</small></div>
+                      <div class="col-sm-6 col-md-3"><div class="iq-color-primary-darkest iq-color-swatch mb-0"></div>
+                      <small>#112E51<br>primary-darkest<br>Header</small></div>
+                      <div class="col-sm-6 col-md-3"><div class="iq-color-base iq-color-swatch mb-0"></div>
+                      <small>#212121<br>base<br>Active Text</small></div>
+                  </div>
+              </article>
+              <article id="colorSecondary" class="mb-5"><h3>Secondary</h3>
+                  <div class="row">
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-secondary-alt-dark iq-color-swatch mb-0"></div>
+                      <small>#00A6D2<br>secondary-alt-dark<br></small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-secondary-alt iq-color-swatch mb-0"></div>
+                      <small>#02BFE7<br>secondary-alt</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-secondary-alt-light iq-color-swatch mb-0"></div>
+                      <small>#9BDAF1<br>secondary-alt-light<br>Links on dark header</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-secondary-alt-lightest iq-color-swatch mb-0"></div>
+                      <small>#E1F3F8<br>secondary-alt-lightest</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-secondary-focus iq-color-swatch mb-0"></div>
+                      <small>#0096F4<br>secondary-focus</small></div>
+                  </div>
+              </article>
+              <article id="colorNeutrals" class="mb-5"><h3>Neutrals</h3>
+                  <div class="row">
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-gray-darker iq-color-swatch mb-0"></div>
+                      <small>#5B616B<br>gray-darker<br>Inactive text</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-gray-dark iq-color-swatch mb-0"></div>
+                      <small>#AEB0B5<br>gray-dark<br>Disabled button text</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-gray iq-color-swatch mb-0"></div>
+                      <small>#D6D7D9<br>gray<br>Disabled buttons dividers</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-gray-light iq-color-swatch mb-0"></div>
+                      <small>#F1F1F1<br>gray-light<br>Menu selection color dividers</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-gray-lighter iq-color-swatch mb-0"></div>
+                      <small>#F8F8F8<br>gray-lighter<br>Zebra Striped</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-white iq-color-swatch mb-0" style="border: 1px solid #ddd;"></div>
+                      <small>#FFFFFF<br>white</small></div>
+                  </div>
+              </article>
+              <article id="colorStatus" class="mb-5"><h3>Status</h3>
+                  <div class="row">
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-error-dark iq-color-swatch mb-0"></div>
+                      <small>#CD2026<br>error-dark</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-error iq-color-swatch mb-0"></div>
+                      <small>#E31C3D<br>error</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-error-lightest iq-color-swatch mb-0"></div>
+                      <small>#F9DEDE<br>error-lightest</small></div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-warn iq-color-swatch mb-0"></div>
+                      <small>#FDB81E<br>warn</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-warn-lightest iq-color-swatch mb-0"></div>
+                      <small>#FFF1D2<br>warn-lightest</small></div> 
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-success iq-color-swatch mb-0"></div>
+                      <small>#2E8540<br>success</small></div>
+                      <div class="col-sm-6 col-md-3 mb-4"><div class="iq-color-success-lightest iq-color-swatch mb-0"></div>
+                      <small>#E7F4E4<br>success-lightest</small></div> 
+                  </div>
+              </article>
+          </section>
+          
+          <section id="typography">
+              <h2>Typography</h2>
+              <article id="typoFont">
+                  <h3>Typeface</h3>
+                  <p>Open Sans is a clean and modern sans-serif typeface designed by Steve Matteson and commissioned by Google. It is especially designed for legibility across print, web, and mobile interfaces.</p> 
+                  <p>Open Sans is excellent for any type of use. It’s incredibly readable in small sizes and also works great when printed in huge letters. The best thing of all, it’s a free font! You are free to use and download it for your next design project.</p>
+                  <p>It’s a well known and modern font that is being used more and more on new websites. Because of it’s simplicity it really makes your content easily readable. The same thing goes for oﬄine content. When printed it will make your documents amazing.</p>
+              </article>
+              <article id="typoDisplay">
+                  <h3>Display</h3>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <p class="display-1">Display 1 - 60</p>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Display</strong>
+                              <br><label class="iq-inline-label">font-size</label> 60px (3.75rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> none
+                          </p>
+                      </div>
+                  </div>
+                  
+              </article>
+              <article id="typoHeading">
+                  <h3>Heading</h3>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h1>Heading 1 - 36</h1>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Heading 1</strong>
+                              <br><label class="iq-inline-label">font-size</label> 36px (2.25rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 24px (1.5rem)
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h2>Heading 2 - 30</h2>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Heading 2</strong>
+                              <br><label class="iq-inline-label">font-size</label> 30px (1.875rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 24px (1.5rem)
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h3>Heading 3 - 24</h3>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Heading 3</strong>
+                              <br><label class="iq-inline-label">font-size</label> 24px (1.5rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 20px (1.25rem)
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h4>Heading 4 - 20</h4>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Heading 4</strong>
+                              <br><label class="iq-inline-label">font-size</label> 20px (1.25rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 20px (1.25rem)
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h5>Heading 5 - 16</h5>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Heading 5</strong>
+                              <br><label class="iq-inline-label">font-size</label> 16px (1rem)
+                              <br><label class="iq-inline-label">font-weight</label> bold (700)
+                              <br><label class="iq-inline-label">margin bottom</label> 16px (1rem)
+                          </p>
+                      </div>
+                  </div>
+                  
+              </article>
+              <article id="typoParagraph">
+                  <h3>Paragraph</h3>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <p>Paragraph - 16</p>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Paragraph</strong>
+                              <br><label class="iq-inline-label">font-size</label> 16px (1rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 32px (2rem)
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <p class="iq-not-available">No Information Text - 36</p>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>No information text - iq-not-available</strong>
+                              <br><label class="iq-inline-label">font-size</label> 16px (1rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 16px (1rem)
+                          </p>
+                      </div>
+                  </div>
+                  
+              </article>
+              <article id="typoOther">
+                  <h3>Other</h3>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label>Label - 16</label>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Label</strong>
+                              <br><label class="iq-inline-label">font-size</label> 16px (1rem)
+                              <br><label class="iq-inline-label">font-weight</label> bold (700)
+                              <br><label class="iq-inline-label">margin bottom</label> 16px (1rem)
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <legend>Legend - 16</legend>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Legend</strong>
+                              <br><label class="iq-inline-label">font-size</label> 16px (1rem)
+                              <br><label class="iq-inline-label">font-weight</label> bold (700)
+                              <br><label class="iq-inline-label">margin bottom</label> 16px (1rem)
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <p><small>Small Paragraph Text - 14</small></p>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Small Paragraph Text <small>(&lt;p&gt;&lt;small&gt;)</small></strong>
+                              <br><label class="iq-inline-label">font-size</label> 14px (0.875rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 16px (1rem)
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="iq-summary-bar-data">
+                          <p>Label - 14</p></div>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Label 14 (Summary Bar)</strong>
+                              <br><label class="iq-inline-label">font-size</label> 14px (0.875rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 16px (1rem)
+                              <br><label class="iq-inline-label">Color</label> iq-color-gray-darker
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6">
+                          <p class="help-text">Help-Text (Form-Text) - 13</p>
+                      </div>
+                      <div class="col-md-6">
+                          <p>
+                              <strong>Help-Text (Form-Text)</strong>
+                              <br><label class="iq-inline-label">font-size</label> 13px (0.8125rem)
+                              <br><label class="iq-inline-label">font-weight</label> regular (400)
+                              <br><label class="iq-inline-label">margin bottom</label> 16px (1rem)
+                              <br><label class="iq-inline-label">Color</label> iq-color-gray-darker
+                          </p>
+                      </div>
+                  </div>
+              </article>
+          </section>
+          
+           <section id="alerts">
+              <h2>Alerts &amp; Toasts</h2>
+              <article id="alertInfo">
+                  <h3>Info Alert</h3>
+                  <div class="alert alert-info" role="alert">
+                    <div class="alert-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</div>
+                  </div>
+                  <div class="alert alert-info" role="alert">
+                    <div class="alert-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.<br><a href="#">Action</a></div>
+                  </div>
+               </article>
+            </section>
+            
+            <section id="buttons">
+              <h2>Buttons</h2>
+              <article id="buttonPrimary">
+                  <h3>Primary Buttons</h3>
+               </article>
+            </section>
         <!-- ALERTS -->
         <div class="row">
           <div class="col">

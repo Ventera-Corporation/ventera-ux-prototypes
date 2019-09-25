@@ -12,6 +12,7 @@
     <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/hha.css">
     <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+
 </head>
 
 <body>
@@ -835,7 +836,7 @@
           <div class="tab-pane " id="tab3" role="tabpanel"
                     aria-labelledby="tab3Tab">
            
-            <section class="edit-view active">
+            <section class="edit-view addCites active">
                  <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Add Citations</h2>
@@ -1160,14 +1161,14 @@
                             class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
-            <section class="read-view">
+            <section class="read-view all">
                  <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Citations and POC</h2>
                 
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+                <!--<button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>-->
               </div>
             </div>
                 <div class="row"><div class="col-md-12">
@@ -1293,10 +1294,10 @@
                 <div class="iqies-list-row-header">
                   <div class="row">
                     <div class="col-md-8">
-                      <h4>0000 - Initial Comments</h4>
+                      <h4><a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active');  $('#tab3 .edit-view.cite0').addClass('active');">0000 - Initial Comments</a></h4>
                     </div>
                     <div class="col-md-4 text-right iq-button-col">
-                      <button class="btn btn-outline-primary float-right" onclick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editIniComment').addClass('active');">Edit</button>
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .read-view.editIniComment').addClass('active');">Edit</button>
                         <button class="btn btn-link float-right">Delete</button>
                     </div>
                   </div>
@@ -1304,7 +1305,7 @@
                 <div class="iq-list">
                     <div class="row">
                       <div class="col-md-4"><p class="iq-label">Status</p></div>
-                      <div class="col-md-8"><p>Writing in Progress</p></div>
+                      <div class="col-md-8"><p>Writing Pending</p></div>
                     </div>
                     <div class="row">
                       <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
@@ -1316,7 +1317,7 @@
                     </div>
                     <div class="row">
                       <div class="col-md-4"><p class="iq-label">Tag Type</p></div>
-                      <div class="col-md-8"><p></p></div>
+                      <div class="col-md-8"><p>Standard</p></div>
                     </div>
                     <div class="row">
                       <div class="col-md-4"><p class="iq-label">Regulation Set</p></div>
@@ -1332,10 +1333,10 @@
                 <div class="iqies-list-row-header">
                   <div class="row">
                     <div class="col-md-8">
-                      <h4>0224 - Horizontal Sliding Doors</h4>
+                      <h4><a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active');  $('#tab3 .read-view.cite224').addClass('active');">0224 - Horizontal Sliding Doors</a></h4>
                     </div>
                     <div class="col-md-4 text-right iq-button-col">
-                      <button class="btn btn-outline-primary float-right" onclick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editIniComment').addClass('active');">Edit</button>
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .edit-view.cite224').addClass('active');">Edit</button>
                         <button class="btn btn-link float-right">Delete</button>
                     </div>
                   </div>
@@ -1368,6 +1369,238 @@
                 </div>
               </div>
             </section>
+            <section class="edit-view cite224">
+                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+              <h2>Edit Citation 0224</h2>
+                <p>Horizontal Sliding Doors - NFPA 101</p>
+                <div class="row mb-5">
+                <div class="col">
+                  <div class="iq-accordion showhide">
+            <div class="card no-border" id="citeSourceHeader">
+              <div class="card-header d-flex">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#citeSource" onclick="toggleArrow('citeSourceHeader')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="citeSource">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Show Regulation Text and Interpretive Guidelines</span>
+                </button>
+              </div>
+              <div id="citeSource" class="collapse" aria-labelledby="citeSourceHeader">
+                <div class="card-body px-0">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+                </div>
+              </div>
+                
+                <h3>Citation Overview</h3>
+                <fieldset>
+                <legend>Buildings <span class="iq-asterisk" title="Required field">*</span></legend>
+                    <p>Only buildings assigned to the current regulation set will appear in this list.</p>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeB1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeB1">01 - RES UNIT - FREESTANDING 9 BEDS - Active</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeB2" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeB2">B1 - RES UNIT - FREESTANDING 8 BEDROOM STRUCTURE ON THE WEST SIDE OF NORTHWEST FRANKLIN ST - Active</label>
+                </div>
+              </fieldset>
+                
+                <h3>Survey Category</h3>
+                 <fieldset>
+                <legend>Federal Categories</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFC1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFC1">H - Life Safety Code</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFC2" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFC2">I - Recertification</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeFC3" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeFC3">Complaints</label>
+                </div>
+              </fieldset>
+                
+              <div class="iq-conditional-content pl-4">
+                <fieldset>
+                <legend>Substantiated Allegations</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeSA1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeSA1">Admission, Transfer, &amp; Discharge Rights - <a href="#">Complaint 9864</a></label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeSA2" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeSA2">Death - General - <a href="#">Complaint 9864</a></label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeSA3" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeSA3">Dental Services - <a href="#">Complaint 9864</a></label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeSA4" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeSA4">Dietary Services - <a href="#">Complaint 9864</a></label>
+                </div>
+              </fieldset>
+                </div>
+                
+                <h3>Deficient Practice Statement</h3>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeDPS" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeDPS">Associated with an immediate jeopardy</label>
+                </div>
+                <div class="editTextDiv mb-5"></div>
+                
+                <h3>Citation Text</h3>
+                <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
+                <div class="editTextDiv"></div>
+                <div class="iq-button-wrapper">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="citeWC" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="citeWC">Writing Complete</label>
+                </div>
+                </div>
+                <h3>Attachments</h3>
+                <p class="mb-0">Add and manage attachments for this citation.</p>
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
+                <p class="iq-not-available">No attachments have been added</p>
+                <div class="iq-button-wrapper">
+                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button
+                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+              </div>
+            </section>
+            <section class="read-view cite224">
+                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+               <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Citation 0224</h2>
+                <p>Horizontal Sliding Doors - NFPA 101</p>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view.cite224').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+              </div>
+            </div>
+                
+                <div class="row mb-5">
+                <div class="col">
+                  <div class="iq-accordion showhide">
+            <div class="card no-border" id="citeSourceHeader2">
+              <div class="card-header d-flex">
+                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#citeSource2" onclick="toggleArrow('citeSourceHeader2')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="citeSource2">
+                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Show Regulation Text and Interpretive Guidelines</span>
+                </button>
+              </div>
+              <div id="citeSource2" class="collapse" aria-labelledby="citeSourceHeader2">
+                <div class="card-body px-0">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+                </div>
+              </div>
+                
+                <h3>Citation Overview</h3>
+               <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Buildings</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>01 - RES UNIT - FREESTANDING 9 BEDS - Active</p>
+                  </div>
+                </div>
+               <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Survey Category</p>
+                  </div>
+                  <div class="col-md-8">
+                    <ul><li>H - Life Safety Code</li>
+                      <li>Complaints</li></ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Substantiated Allegations</p>
+                  </div>
+                  <div class="col-md-8">
+                    <ul><li>Admission, Transfer, &amp; Discharge Rights - <a href="#">Complaint 9864</a></li>
+                     </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Deficient Practice Statement</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+                </div>
+                
+                <h3>Citation Text</h3>
+                <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
+                <p><button class="btn btn-outline-primary">Merge Citation Text</button></p>
+                <div class="table-wrapper mb-5">  <table class="table table-striped">
+  <thead>
+    <tr><th scope="col" class="sortable"><span>Order</span></th> 
+      <th scope="col" class="sortable ascending"><span>Name</span></th>
+        
+      <th scope="col" class="sortable"><span>Last Updated</span></th>
+      <th scope="col" class="sortable"><span>Status</span></th>
+ <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
+          </div></td>
+      <td scope="row"><p>Smith, James</p></td>
+      <td><p>08/27/2019 2:04 PM</p></td>
+      <td><p>Writing in Progress</p></td>
+        <td><a href="#">Delete</a> | <a href="#">Edit</a></td>
+    </tr>
+    <tr>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
+          </div></td>
+      <td scope="row"><p>Thomas, Jane</p></td>
+      <td><p>08/27/2019 1:43 PM</p></td>
+      <td><p>Writing in Progress</p></td>
+        <td><a href="#">View</a></td>
+    </tr>
+    <tr>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-down"></i></button>
+          </div></td>
+      <td scope="row"><p>Chae, Matthew</p></td>
+      <td><p>08/30/2019 10:21 AM</p></td>
+      <td><p>Writing in Progress</p></td>
+        <td><a href="#">View</a></td>
+    </tr>
+    
+  </tbody>
+</table></div>
+                
+                <h3>Attachments</h3>
+                <p class="mb-0">Add and manage attachments for this citation.</p>
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
+                <p class="iq-not-available">No attachments have been added</p>
+                
+                <div class="iq-button-wrapper">
+                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+              </div>
+            </section>             
           </div>
           <div class="tab-pane " id="tab4" role="tabpanel"
                     aria-labelledby="tab4Tab">
@@ -2421,8 +2654,8 @@
                 </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab9" role="tabpanel"
-                    aria-labelledby="tab9Tab">
+          <div class="tab-pane " id="tab11" role="tabpanel"
+                    aria-labelledby="tab11Tab">
             <section class="edit-view newAdmin active">
               <div class="row">
                 <div class="col-md-12"><h2>Add Administrator</h2>
@@ -2923,10 +3156,13 @@
 <script type="text/javascript"
     src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
   </script> 
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
 <script type="text/javascript" src="../../../src/assets/js/scripts.js">
   </script>
     <script type="text/javascript">
- 
+ var editor = new FroalaEditor('.editTextDiv'); 
+        
 $(document).ready(function () {
    
  $('[data-toggle="tooltip"]').tooltip(); 
