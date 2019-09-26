@@ -1452,12 +1452,27 @@
                   <input type="checkbox" id="citeDPS" class="custom-control-input" value="value">
                    <label class="custom-control-label" for="citeDPS">Associated with an immediate jeopardy</label>
                 </div>
+                <button class="btn btn-link" data-toggle="modal" data-target="#shortcuts">View keyboard short cuts</button>
                 <div class="editTextDiv"></div>
                 <p class="help-text mb-5">Limit to 500 characters</p>
                 
                 <h3>Citation Text</h3>
                 <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
+                <button class="btn btn-link" data-toggle="toast" data-target="#shortcutsToast">View keyboard short cuts</button>
                 <div class="editTextDiv"></div><p class="help-text mb-5">Limit to 500 characters</p>
+                
+                <div class="toast alert-info fade show" id="shortcutsToast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0; top: 30%; ">
+  <div class="toast-header">
+    <strong class="mr-auto">Heading</strong>
+    <small>11 mins ago</small>
+    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Hello, world! This is an info toast message.
+  </div>
+</div>
                 
                 <div class="iq-button-wrapper">
                 <div class="custom-control custom-checkbox">
@@ -3100,6 +3115,66 @@
     </div>
   </div>
 </main>
+<div class="modal fade" id="shortcuts" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+    <div class="modal-content">
+      <!--<div class="modal-header">
+        <h5 class="modal-title" id="confirmDeletionTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>-->
+      <div class="modal-body">
+          <h4><strong>Keyboard Shortcuts for Text Editor</strong></h4>
+         <div id="basic-formatting" class="docs-group anchor">
+            <h3 class="title-left-border">Basic Formatting</h3>
+
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>A</code> or <code>⌘ Cmd</code> + <code>A</code></h4>
+                  <p class="text-tint">Selects all text in the editable area of the Froala Rich Text Editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>B</code> or <code>⌘ Cmd</code> + <code>B</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Bold</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>I</code> or <code>⌘ Cmd</code> + <code>I</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Itallic</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>U</code> or <code>⌘ Cmd</code> + <code>U</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Underline</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>S</code> or <code>⌘ Cmd</code> + <code>S</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Strikethrough</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>]</code> or <code>⌘ Cmd</code> + <code>]</code></h4>
+                  <p class="text-tint">Indents the current paragraph.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>[</code> or <code>⌘ Cmd</code> + <code>[</code></h4>
+                  <p class="text-tint">Outdents the current paragraph.</p>
+                </div>
+                </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 <footer>
   <div class="container">
     <div class="row">

@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="../../src/assets/prototype-styles/prototype.css">
     <link rel="stylesheet" href="../../src/assets/prototype-styles/hha.css">
     <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+    <style>
+        section { margin-bottom: 5rem; }
+        article { margin-bottom: 3rem; }
+    </style>
 </head>
 
 <body>
@@ -41,7 +45,20 @@
           <li class="list-group-item"><a href="#alertError">Error Alert</a></li>
           <li class="list-group-item"><a href="#alertToast">Toasts</a></li>
           <li class="list-group-item"><strong>Buttons</strong></li>
-        <li class="list-group-item"><a href="#buttons">Buttons</a></li>
+        <li class="list-group-item"><a href="#buttonPrimary">Primary Button</a></li>
+           <li class="list-group-item"><a href="#buttonSecondary">Secondary Button</a></li>
+           <li class="list-group-item"><a href="#buttonLink">Link Button</a></li>
+           <li class="list-group-item"><a href="#aLink">Link</a></li>
+           <li class="list-group-item"><a href="#buttonDropdown">Dropdown Button</a></li>
+           <li class="list-group-item"><a href="#buttonToggle">Toggle Button</a></li>
+           <li class="list-group-item"><strong>Form: Elements</strong></li>
+        <li class="list-group-item"><a href="#formInput">Input Fields</a></li>
+          <li class="list-group-item"><a href="#formView">View State</a></li>
+          <li class="list-group-item"><a href="#formSelect">Select Element</a></li>
+          <li class="list-group-item"><a href="#formDateTime">Date and Time Picker</a></li>
+          <li class="list-group-item"><a href="#formSearch">Search &amp; Filter</a></li>
+          <li class="list-group-item"><a href="#formCheckRadio">Checkbox and Radio Button</a></li>
+          
         <li class="list-group-item"><a href="#breadcrumbs">Breadcrumbs</a></li>
         <li class="list-group-item"><a href="#cards">Cards</a></li>
         <li class="list-group-item"><a href="#collapse">Collapse</a></li>
@@ -573,121 +590,122 @@
             
             <section id="buttons">
               <h2>Buttons</h2>
+             
               <article id="buttonPrimary">
                   <h3>Primary Button</h3>
+                  <p>Hover and focus over the buttons see the hover and focus styles.</p>
                   <div class="row">
-                      <div class="col-sm-6">
-                          <p><button class="btn btn-lg btn-primary">Default</button></p>
+                      <div class="col-sm-3 col-md-3">
+                          <p><button class="btn btn-lg btn-primary">Default Large</button></p>
+                          <p> <button class="btn btn-primary">Default Regular</button></p>
+                          <p> <button class="btn btn-sm btn-primary">Default Small</button></p>
                       </div>
-                      <div class="col-sm-6">
-                          <button class="btn btn-lg btn-primary" disabled>Default</button>
+                      <div class="col-sm-3 col-md-2">
+                           <p><button class="btn btn-lg btn-primary" disabled>Disabled</button></p>
+                          <p> <button class="btn btn-primary" disabled>Disabled</button></p>
+                            <p><button class="btn btn-sm btn-primary" disabled>Disabled</button></p>
                       </div>
-                      <div class="col-sm-6">
-                         <p> <button class="btn btn-primary">Default</button></p>
+                       <div class="col-sm-3 col-md-2">
+                           <p><button class="btn btn-danger">Error</button></p>
+                          <p><button class="btn btn-success">Success</button></p>
+                          
+                         
                       </div>
-                      <div class="col-sm-6">
-                          <button class="btn btn-primary" disabled>Default</button>
+                      <div class="col-sm-3 col-md-2">
+                          <p><button class="btn btn-warning">Warning</button></p>
+                          <p><button class="btn btn-info">Info</button></p>
                       </div>
-                      <div class="col-sm-6">
-                         <p> <button class="btn btn-sm btn-primary">Default</button></p>
+                      <div class="col-sm-3 col-md-2">
+                        <p><button class="btn btn-dark">Dark</button></p>
+                          <p><button class="btn btn-light">Light</button></p>
+                          <p><button class="btn btn-secondary">Secondary</button></p>
                       </div>
-                      <div class="col-sm-6">
-                          <p><button class="btn btn-sm btn-primary" disabled>Default</button></p>
+                      
+                  </div>
+               </article>
+                  
+                  <article id="buttonSecondary">
+                  <h3>Secondary Button</h3>
+                  <div class="row">
+                      <div class="col-sm-3 col-md-3">
+                          <p><button class="btn btn-lg btn-outline-primary">Default Large</button></p>
+                          <p> <button class="btn btn-outline-primary">Default Regular</button></p>
+                          <p> <button class="btn btn-sm btn-outline-primary">Default Small</button></p>
+                          
+                      </div>
+                      <div class="col-sm-3 col-md-2">
+                           <p><button class="btn btn-lg btn-outline-primary" disabled>Disabled</button></p>
+                          <p> <button class="btn btn-outline-primary" disabled>Disabled</button></p>
+                          <p><button class="btn btn-sm btn-outline-primary" disabled>Disabled</button></p>
+                      </div>
+                      
+                      <div class="col-sm-3 col-md-2">
+                           <p><button class="btn btn-outline-danger btn-lg">Error</button></p>
+                          
+                      </div>
+                      <div class="col-sm-12 col-md-12">
+                          <p><strong>Do NOT Use</strong></p>
+                          <p><button class="btn btn-outline-success">Success</button>
+                              <button class="btn btn-outline-warning">Warning</button>
+                              <button class="btn btn-outline-info">Info</button>
+                              <button class="btn btn-outline-dark">Dark</button>
+                              <button class="btn btn-outline-light">Light</button>
+                              <button class="btn btn-outline-secondary">Secondary</button></p>
                       </div>
                   </div>
                   
                </article>
-            </section>
-        <!-- ALERTS -->
-        <div class="row">
-          <div class="col">
-           
-          </div>
-        </div>
-        <section>
-          <div class="alert alert-info" role="alert">
-            <div class="alert-content">Info alert</div>
-          </div>
-        </section>
-        <section>
-          <div class="alert alert-success" role="alert">
-            <div class="alert-content">Success alert</div>
-          </div>
-        </section>
-        <section>
-          <div class="alert alert-warning" role="alert">
-            <div class="alert-content">Warning alert</div>
-          </div>
-        </section>
-        <section>
-          <div class="alert alert-danger" role="alert">
-            <div class="alert-content">Error alert</div>
-          </div>
-        </section>
-        <section>
-          <div class="alert alert-info" role="alert">
-            <div class="alert-content">
-              <p class="alert-heading">Kitchen Sink</p>Alert with heading &amp;
-              dismissible
-            </div>
-            <button type="button" class="close" data-dismiss="alert"
-              aria-label="Close">
-              <svg class="iq-icon-right iq-icon"
-                xmlns="http://www.w3.org/2000/svg" viewBox="help"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path fill="#0071bc"
-                  d="M15.8 14.86L8.94 8l6.86-6.86a.67.67 0 0 0-.94-.94L8 7.06 1.14.2a.67.67 0 0 0-.94.94L7.06 8 .2 14.86a.67.67 0 0 0 .94.94L8 8.94l6.86 6.86a.67.67 0 1 0 .94-.94z">
-                </path>
-              </svg>
-            </button>
-          </div>
-        </section>
-
-
-        <!-- BUTTONS -->
-        <div class="row">
-          <div class="col">
-            <h2 class="iq-proto-heading" id="buttons">BUTTONS</h2>
-          </div>
-        </div>
-        <section>
-          <div class="row mb-2">
-            <div class="col">
-              <div class="iq-button-wrapper">
-                <button class="btn btn-primary">
-                  Button Primary
-                </button>
-                <button class="btn btn-outline-primary">
-                  Button Outline Primary
-                </button>
-                <button class="btn btn-secondary">
-                  Button Secondary
-                </button>
-                <button class="btn btn-link">
-                  Button Link
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-primary btn-sm">
-                Button Small
-              </button>
-              <button class="btn btn-primary">
-                Button Regular
-              </button>
-              <button class="btn btn-primary btn-lg">
-                Button Large
-              </button>
-              <button class="btn btn-primary" disabled>
-                Button Disabled
-              </button>
-              <div class="dropdown">
+                  <article id="buttonLink">
+                  <h3>Link Button</h3>
+                  <div class="row">
+                      <div class="col-sm-3 col-md-3">
+                          <p><button class="btn btn-lg btn-link">Default Large</button></p>
+                           <p> <button class="btn btn-link">Default Regular</button></p>
+                          <p> <button class="btn btn-sm btn-link">Default Small</button></p>
+                          
+                          
+                      </div>
+                      <div class="col-sm-3 col-md-2">
+                          <p><button class="btn btn-lg btn-link" disabled>Disabled</button></p>
+                          <p> <button class="btn btn-link" disabled>Disabled</button></p>
+                          <p><button class="btn btn-sm btn-link" disabled>Disabled</button></p>
+                      </div>
+                      <div class="col-sm-3 col-md-2">
+                          <p><button class="btn btn-lg btn-link danger">Error</button></p>
+                      </div>
+                     
+                  </div>
+                  
+               </article>
+                
+                <article id="aLink">
+                  <h3>Link</h3>
+                  <div class="row">
+                      <div class="col-sm-3 col-md-3">
+                          <p><a href="#">Link</a></p>
+                          
+                      </div>
+                      <div class="col-sm-3 col-md-2">
+                         
+                      </div>
+                      <div class="col-sm-3 col-md-2">
+                         
+                      </div>
+                     
+                  </div>
+                  
+               </article>
+                
+                <article id="buttonDropdown">
+                <h3>Dropdown Button</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                        <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button"
                   id="dropdownMenuButton" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
-                  Dropdown button
+                  Dropdown Menu Button
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">Action</a>
@@ -695,10 +713,145 @@
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </div>
+                        </div>
+                        <div class="col-md-4">
+                        <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown Menu Link</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item">Edit</button>
+    <button class="dropdown-item">Delete</button>
+  </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </article>
+                
+                <article id="buttonToggle">
+                    <h3>Toggle Button</h3>
+                    <fieldset>
+                <legend>Button Group Label</legend>
+                
+                <div class="iq-btn-group buildingStatus">
+                    <button class="btn btn-outline-primary active" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide'); ">Active</button> 
+                    <button class="btn btn-outline-primary" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');   $('.stateRS').removeClass('hide'); ">Licensed Only</button>
+                    <button class="btn btn-outline-primary" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').removeClass('hide'); $('.lsc-fi').addClass('hide');  $('.stateRS').addClass('hide');  ">Closed</button>
+                </div>
+                    </fieldset>
+                </article>
+            </section>
+       
+<section id="formElements">
+    <h2>Form Elements</h2>
+    <article id="formInput">
+        <h3>Input Fields</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Field Label
+                    <input type="text">
+                    <span class="help-text">Hint/Help copy</span></label>
+                </div>
             </div>
-          </div>
-        </section>
-
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Field Label
+                    <input type="text" disabled>
+                    <span class="help-text">Disabled Hint/Help copy</span></label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Field Label
+                    <input type="text" class="iq-input-error">
+                    <span class="iq-input-error-msg">Error message</span></label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Field Label <span class="iq-asterisk">*</span>
+                    <input type="text">
+                    <span class="help-text">Hint/Help copy</span></label>
+                </div>
+            </div>
+            
+        </div>    
+    </article>
+    <article id="formView">
+        <h3>View State</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <p>
+                    <label>Form Label/Title</label>
+                    Form content
+                </p>
+            </div>
+            <div class="col-md-3">
+                
+                   <p><label>Form Label/Title</label>
+                    <span class="iq-not-available">Not available</span></p>
+            
+            </div>
+            <div class="col-md-12">
+              <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Left Label/Title in medium 4 columns</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Form content on the right in medium 8 columns</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Left Label/Title</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p class="iq-not-available">Not available</p>
+                  </div>
+                </div>
+            </div>
+            </div>
+            
+        </div>    
+    </article>
+    <article id="formSelect">
+        <h3>Select Element</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Label
+                        <select><option>Select one</option><option>Item 1</option><option>Item 2</option><option>Item 3</option></select>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Label
+                        <select disabled><option>Select one</option><option>Item 1</option><option>Item 2</option><option>Item 3</option></select>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Label
+                        <select class="iq-input-error"><option>Select one</option><option>Item 1</option><option>Item 2</option><option>Item 3</option></select>
+                        <span class="iq-input-error-msg">Error message</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                   <label>Label <span class="iq-asterisk">*</span>
+                        <select><option>Select one</option><option>Item 1</option><option>Item 2</option><option>Item 3</option></select>
+                    </label>
+                </div>
+            </div>
+            
+        </div>    
+    </article>
+</section>
 
         <!-- BREADCRUMBS -->
         <div class="row">
