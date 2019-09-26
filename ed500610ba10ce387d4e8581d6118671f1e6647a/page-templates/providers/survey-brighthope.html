@@ -1452,11 +1452,13 @@
                   <input type="checkbox" id="citeDPS" class="custom-control-input" value="value">
                    <label class="custom-control-label" for="citeDPS">Associated with an immediate jeopardy</label>
                 </div>
-                <div class="editTextDiv mb-5"></div>
+                <div class="editTextDiv"></div>
+                <p class="help-text mb-5">Limit to 500 characters</p>
                 
                 <h3>Citation Text</h3>
                 <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
-                <div class="editTextDiv"></div>
+                <div class="editTextDiv"></div><p class="help-text mb-5">Limit to 500 characters</p>
+                
                 <div class="iq-button-wrapper">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="citeWC" class="custom-control-input" value="value">
@@ -3161,7 +3163,8 @@
 <script type="text/javascript" src="../../../src/assets/js/scripts.js">
   </script>
     <script type="text/javascript">
- var editor = new FroalaEditor('.editTextDiv'); 
+ var editor = new FroalaEditor('div.editTextDiv', { charCounterMax: 500}); 
+
         
 $(document).ready(function () {
    
