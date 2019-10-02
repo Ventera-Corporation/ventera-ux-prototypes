@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<header>
+<header>re
   <div class="container-fluid">
     <div class="row">
       <div class="col">
@@ -294,7 +294,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -419,12 +419,11 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-accordion showhide">
-            <div class="card no-border" id="iq-heading-show-hide">
+            <div class="card no-border">
               <div class="card-header d-flex">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#iq-collapse-show-hide" onclick="toggleArrow('iq-heading-show-hide')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="iq-collapse-show-hide">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Show Filter</span>
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iq-collapse-show-hide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Filter</span><span class="hide">Hide Filter</span>
                 </button>
               </div>
               <div id="iq-collapse-show-hide" class="collapse" aria-labelledby="iq-heading-show-hide">
@@ -554,7 +553,7 @@
     </tr>
   </tbody>
 </table></div> 
-                    <nav aria-label="Results Data Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link d-none d-md-block" aria-label="First" type="button"><img id="first" alt="first" src="../../../src/assets/images/icon-arrow-left-double.svg" aria-hidden="true"><span class="d-none d-lg-inline">First</span></button></li><li class="page-item disabled"><button class="page-link" aria-label="Previous" type="button"><img id="previous" alt="previous" src="../../../src/assets/images/icon-left-caret-primary.svg" aria-hidden="true"><span class="d-none d-lg-inline">Previous</span></button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link" aria-label="Next" type="button"><span class="d-none d-lg-inline">Next</span><img id="next" alt="next" src="../../../src/assets/images/icon-right-caret-primary.svg" aria-hidden="true"></button></li><li class="page-item"><button type="button" class="page-link d-none d-md-block" aria-label="Last"><span class="d-none d-lg-inline">Last</span><img id="last" alt="last" src="../../../src/assets/images/icon-arrow-right-double.svg" aria-hidden="true"></button></li></ul></nav>
+                    <nav aria-label="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" aria-label="First" type="button">First</button></li><li class="page-item disabled"><button class="page-link previous" aria-label="Previous" type="button">Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link next" aria-label="Next" type="button">Next</button></li><li class="page-item"><button type="button" class="page-link last" aria-label="Last">Last</button></li></ul></nav>
                     
                     
                 </div>
@@ -564,7 +563,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Add</a>
+                    <a href="#mainContent" class="btn btn-primary" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Add</a>
                     <!--<button class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>-->
                   </div>
                 </div>
@@ -576,12 +575,12 @@
                 <h2>Responsible Staff</h2> <p class="iq-page-header-description">Add and manage the responsible staff for this survey.</p>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab2 .edit-view').addClass('active'); $('#tab2 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
+                
               </div>
             </div>
                
               
-                <div class="iq-button-wrapper"><button class="btn btn-primary">Add Staff</button></div>
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Staff</button></div>
             <p class="info-text"><span class="baCount">1</span> Staff Member</p>
                   <div class="table-wrapper">  <table class="table table-striped addedStaffMembers">
   <thead>
@@ -635,15 +634,14 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-accordion showhide">
-            <div class="card no-border" id="iq-heading-show-hide2">
+            <div class="card no-border">
               <div class="card-header d-flex">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#iq-collapse-show-hide2" onclick="toggleArrow('iq-heading-show-hide2')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="iq-collapse-show-hide2">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Show Filter</span>
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iq-collapse-show-hide2" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Filter</span><span class="hide">Hide Filter</span>
                 </button>
               </div>
-              <div id="iq-collapse-show-hide2" class="collapse" aria-labelledby="iq-heading-show-hide2">
+              <div id="iq-collapse-show-hide2" class="collapse">
                 <div class="card-body px-0">
                   Lorem, ipsum dolor sit amet consectetur
                   adipisicing elit. Ab optio vero alias facilis nemo deleniti
@@ -783,7 +781,7 @@
     </tr>
   </tbody>
 </table></div> 
-                    <nav aria-label="Results Data Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link d-none d-md-block" aria-label="First" type="button"><img alt="first" src="../../../src/assets/images/icon-arrow-left-double.svg" aria-hidden="true"><span class="d-none d-lg-inline">First</span></button></li><li class="page-item disabled"><button class="page-link" aria-label="Previous" type="button"><img alt="previous" src="../../../src/assets/images/icon-left-caret-primary.svg" aria-hidden="true"><span class="d-none d-lg-inline">Previous</span></button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link" aria-label="Next" type="button"><span class="d-none d-lg-inline">Next</span><img alt="next" src="../../../src/assets/images/icon-right-caret-primary.svg" aria-hidden="true"></button></li><li class="page-item"><button type="button" class="page-link d-none d-md-block" aria-label="Last"><span class="d-none d-lg-inline">Last</span><img alt="last" src="../../../src/assets/images/icon-arrow-right-double.svg" aria-hidden="true"></button></li></ul></nav>
+                    <nav aria-label="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" aria-label="First" type="button">First</button></li><li class="page-item disabled"><button class="page-link previous" aria-label="Previous" type="button">Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link next" aria-label="Next" type="button">Next</button></li><li class="page-item"><button type="button" class="page-link last" aria-label="Last">Last</button></li></ul></nav>
                     
                     
                 </div>
@@ -793,7 +791,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');}">Add</a>
+                    <a href="#mainContent" class="btn btn-primary" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');}">Add</a>
                     <!--<button class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>-->
                   </div>
                 </div>
@@ -805,12 +803,12 @@
                 <h2>Survey Team</h2><p class="iq-page-header-description">Add and manage the team members for this survey.</p>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab9 .edit-view').addClass('active'); $('#tab9 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
+                
               </div>
             </div>
                 
               
-                <div class="iq-button-wrapper"><button class="btn btn-primary">Add Team Member</button></div>
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Team Member</button></div>
             <p class="info-text"><span class="baCount">1</span> Team Member</p>
                   <div class="table-wrapper">  <table class="table table-striped addedStaffMembers">
   <thead>
@@ -862,15 +860,14 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-accordion showhide">
-            <div class="card no-border" id="iq-heading-show-hide3">
+            <div class="card no-border">
               <div class="card-header d-flex">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#iq-collapse-show-hide3" onclick="toggleArrow('iq-heading-show-hide3')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="iq-collapse-show-hide3">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Show Filter</span>
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iq-collapse-show-hide3" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Filter</span><span class="hide">Hide Filter</span>
                 </button>
               </div>
-              <div id="iq-collapse-show-hide3" class="collapse" aria-labelledby="iq-heading-show-hide3">
+              <div id="iq-collapse-show-hide3" class="collapse">
                 <div class="card-body px-0">
                   <fieldset>
                 <legend>Filter by</legend>
@@ -913,13 +910,14 @@
             </nav>
             <div class="tab-content">
                 <div class="tab-pane active" id="h-tab-1">
-                    <div class="iq-accordion">
+                    <div class="accordion-wrapper">
+                    <div class="iq-accordion secondary data-focus">
             <div class="card">
-              <div class="card-header d-flex" id="cite1">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite1')" data-target="#cite1content" aria-controls="cite1content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br><strong>0000 - Initial Comments</strong></span>
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite1content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0000 - Initial Comments</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
@@ -935,13 +933,13 @@
               </div>
             </div>
           </div>
-                    <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite2">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite2')" data-target="#cite2content" aria-controls="cite2content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br><strong>0100 - General Requirements - Other</strong></span>
+                    <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite2content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0100 - General Requirements - Other</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
@@ -957,15 +955,13 @@
               </div>
             </div>
           </div>
-                    <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite3">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite3')" data-target="#cite3content" aria-controls="cite3content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg>
-                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
-                  <strong>0111 - Building Rehabilitation</strong></span></button>
+                    <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite3content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0111 - Building Rehabilitation</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -980,15 +976,13 @@
               </div>
             </div>
           </div>
-                    <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite4">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite4')" data-target="#cite4content" aria-controls="cite4content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg>
-                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
-                  <strong>0112 - Sprinkler Requirements for Major Rehabilitation</strong></span></button>
+                    <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0112 - Sprinkler Requirements for Major Rehabilitation</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1003,15 +997,13 @@
               </div>
             </div>
           </div>
-                    <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite5">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite5')" data-target="#cite5content" aria-controls="cite5content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg>
-                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
-                  <strong>0131 - Multiple Occupancies</strong></span></button>
+                    <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite5content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0131 - Multiple Occupancies</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1026,13 +1018,13 @@
               </div>
             </div>
           </div>
-            <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite10">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite10')" data-target="#cite10content" aria-controls="cite10content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br><strong>0132 - Multiple Occupancies - Contiguous Non-Health</strong></span>
+                    <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite10content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0132 - Multiple Occupancies - Contiguous Non-Health</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
@@ -1048,15 +1040,13 @@
               </div>
             </div>
           </div>
-                    <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite6">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite6')" data-target="#cite6content" aria-controls="cite6content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg>
-                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
-                  <strong>0133 - Multiple Occupancies - Construction Type</strong></span></button>
+                   <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite6content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0133 - Multiple Occupancies - Construction Type</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1071,15 +1061,13 @@
               </div>
             </div>
           </div>
-                    <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite7">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite7')" data-target="#cite7content" aria-controls="cite7content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg>
-                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
-                  <strong>0161 - Building Construction Type and Height</strong></span></button>
+                   <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite7content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0161 - Building Construction Type and Height</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1094,15 +1082,13 @@
               </div>
             </div>
           </div>
-                    <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite8">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite8')" data-target="#cite8content" aria-controls="cite8content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg>
-                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
-                  <strong>0162 - Roofing Systems Involving Combustibles</strong></span></button>
+                    <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite8content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0162 - Roofing Systems Involving Combustibles</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1117,15 +1103,13 @@
               </div>
             </div>
           </div>
-                    <div class="iq-accordion">
-            <div class="card ">
-              <div class="card-header d-flex" id="cite9">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" type="button" aria-expanded="false" data-toggle="collapse" onclick="toggleArrow('cite9')" data-target="#cite9content" aria-controls="cite9content">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#212121" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg>
-                  <span class="iq-accordion-title">LSC 20120 Health Existing (FED - K - 03.03)<br>
-                  <strong>0163 - Interior Non-Bearing Wall Construction</strong></span></button>
+                   <div class="iq-accordion secondary data-focus">
+            <div class="card">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#cite9content" type="button" onclick="$(this).toggleClass('expanded');">
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0163 - Interior Non-Bearing Wall Construction</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1140,8 +1124,8 @@
               </div>
             </div>
           </div>
-                    
-                    <nav aria-label="Results Data Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link d-none d-md-block" aria-label="First" type="button"><img alt="first" src="../../../src/assets/images/icon-arrow-left-double.svg" aria-hidden="true"><span class="d-none d-lg-inline">First</span></button></li><li class="page-item disabled"><button class="page-link" aria-label="Previous" type="button"><img alt="previous" src="../../../src/assets/images/icon-left-caret-primary.svg" aria-hidden="true"><span class="d-none d-lg-inline">Previous</span></button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link" aria-label="Next" type="button"><span class="d-none d-lg-inline">Next</span><img alt="next" src="../../../src/assets/images/icon-right-caret-primary.svg" aria-hidden="true"></button></li><li class="page-item"><button type="button" class="page-link d-none d-md-block" aria-label="Last"><span class="d-none d-lg-inline">Last</span><img alt="last" src="../../../src/assets/images/icon-arrow-right-double.svg" aria-hidden="true"></button></li></ul></nav>
+                    </div>
+                    <nav aria-label="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" aria-label="First" type="button">First</button></li><li class="page-item disabled"><button class="page-link previous" aria-label="Previous" type="button">Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link next" aria-label="Next" type="button">Next</button></li><li class="page-item"><button type="button" class="page-link last" aria-label="Last">Last</button></li></ul></nav>
                 </div> 
                 <div class="tab-pane" id="h-tab-2">
                    
@@ -1156,9 +1140,9 @@
               </div>
 <br>
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary" onClick="$('#tab3 .edit-view').removeClass('active');  $('#tab3 .read-view.all').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
-                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
             <section class="read-view all">
@@ -1179,22 +1163,21 @@
                 <h3>Citations</h3>
                 <p class="iq-page-header-description">Add and manage citations for this survey. All citation writing must be marked as complete to lock citations.</p>
                 <div class="iq-button-wrapper">
-                <button class="btn btn-primary">Add Citations</button> <button class="btn btn-outline-primary"><i class="fas fa-lock-alt"></i> Lock Citations</button>
+                <button class="btn btn-outline-primary">Add Citations</button> <button class="btn btn-outline-primary"><i class="fas fa-lock-alt"></i> Lock Citations</button>
                 </div>
                 </div></div>
               
             <div class="row">
                 <div class="col">
                   <div class="iq-accordion showhide">
-            <div class="card no-border" id="viewCitesFilterHeader">
+            <div class="card no-border">
               <div class="card-header d-flex">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#viewCitesFilterContent" onclick="toggleArrow('#viewCitesFilter')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="viewCitesFilter">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Show Filter</span>
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#viewCitesFilterContent" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Filter</span><span class="hide">Hide Filter</span>
                 </button>
               </div>
-              <div id="viewCitesFilterContent" class="collapse" aria-labelledby="viewCitesFilterHeader">
+              <div id="viewCitesFilterContent" class="collapse">
                 <div class="card-body px-0">
                     <div class="row">
                     <div class="col-md-6">
@@ -1376,15 +1359,14 @@
                 <div class="row mb-5">
                 <div class="col">
                   <div class="iq-accordion showhide">
-            <div class="card no-border" id="citeSourceHeader">
+            <div class="card no-border">
               <div class="card-header d-flex">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#citeSource" onclick="toggleArrow('citeSourceHeader')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="citeSource">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Show Regulation Text and Interpretive Guidelines</span>
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeSource" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Regulation Text and Interpretive Guidelines</span><span class="hide">Hide Regulation Text and Interpretive Guidelines</span>
                 </button>
               </div>
-              <div id="citeSource" class="collapse" aria-labelledby="citeSourceHeader">
+              <div id="citeSource" class="collapse">
                 <div class="card-body px-0">
                   
                 </div>
@@ -1485,7 +1467,7 @@
                 <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
                 <p class="iq-not-available">No attachments have been added</p>
                 <div class="iq-button-wrapper">
-                <button class="btn btn-primary btn-lg" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
                             class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
@@ -1505,17 +1487,16 @@
                 <div class="row mb-5">
                 <div class="col">
                   <div class="iq-accordion showhide">
-            <div class="card no-border" id="citeSourceHeader2">
+            <div class="card no-border">
               <div class="card-header d-flex">
-                <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-target="#citeSource2" onclick="toggleArrow('citeSourceHeader2')" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="citeSource2">
-                  <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path fill="none" stroke="#0071bc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M.5 16.5l8-8-8-8"></path>
-                  </svg><span>Show Regulation Text and Interpretive Guidelines</span>
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeSource2" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Regulation Text and Interpretive Guidelines</span><span class="hide">Hide Regulation Text and Interpretive Guidelines</span>
                 </button>
               </div>
-              <div id="citeSource2" class="collapse" aria-labelledby="citeSourceHeader2">
+              <div id="citeSource2" class="collapse">
                 <div class="card-body px-0">
-                  
+                  lorem ipsum
                 </div>
               </div>
             </div>
@@ -1663,7 +1644,7 @@
                        <div class="row">
                 <div class="col-md-10">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab4 .edit-view').removeClass('active'); 
+                    <button class="btn btn-primary" onClick="$('#tab4 .edit-view').removeClass('active'); 
                                                              $('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); 
@@ -1849,7 +1830,7 @@
               <div class="row">
                 <div class="col-md-10">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab4 .read-view').removeClass('active'); 
+                    <button class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); 
                                                              ">Save</button>
@@ -2026,7 +2007,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active');  $('#tab5 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -2202,7 +2183,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -2373,7 +2354,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                       
@@ -2428,7 +2409,7 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -2522,7 +2503,7 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -2629,7 +2610,7 @@
               </div>
               
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary btn-lg" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab8 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-primary" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab8 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
                             class="btn btn-link" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active');  $('#tab8 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
@@ -2827,7 +2808,7 @@
                  <div class="row">
                     <div class="col">
                       <div class="iq-button-wrapper">
-                        <button class="btn btn-primary btn-lg" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
+                        <button class="btn btn-primary" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
                         <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                       </div>
                     </div>
@@ -3060,7 +3041,7 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary btn-lg" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
@@ -3104,7 +3085,7 @@
                     <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
                         <input type="text" class="form-control file-description-text">
                         </label><span class="fdt"></span></p>
-           <p><button class="btn btn-primary btn-lg" onClick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('Not available'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button></p>
+           <p><button class="btn btn-primary" onClick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('Not available'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button></p>
                     </div>
                 </div>
               </div>
@@ -3242,7 +3223,7 @@
 
         
 $(document).ready(function () {
-   
+
  $('[data-toggle="tooltip"]').tooltip(); 
 window.setTimeout(function() {
     $(".alert-success").fadeTo(1000, 0).slideUp(1000, function(){
