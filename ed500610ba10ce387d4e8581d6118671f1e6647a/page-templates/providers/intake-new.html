@@ -4,22 +4,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BrightHope Survey</title>
+<title>New Intake for BrightHope</title>
 <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
-    <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/hha.css">
- 
+     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 
 </head>
 
 <body>
-<header>re
+<header>
   <div class="container-fluid">
     <div class="row">
       <div class="col">
@@ -47,12 +44,12 @@
                           <a href="provider-profile-blank.html">BrightHope</a>
                         </li>
                         <li class="breadcrumb-item">
-                          Survey FFB-H1
+                          New Intake
                         </li>
                       </ol>
                     </nav>
                     <div class="iq-page-header-content">
-                      <h1>Survey FFB-H1</h1>
+                      <h1>New Intake</h1>
                       <div class="iq-page-header-details">
                         <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
                     </div>
@@ -66,7 +63,7 @@
                 </div>
               </div>
             </div>
-            <div class="iq-summary-bar">
+            <div class="iq-summary-bar hide">
               <div class="container">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
@@ -131,15 +128,15 @@
       <div class="col-sm-5 col-md-4 col-lg-3">
         <nav class="nav flex-column iq-nav" role="navigation">
             <a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="false">Basic Information</a> 
-            <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Responsible Staff</a> 
-            <a class="nav-link" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Survey Team</a>
-            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Citations and POC</a>
-            <a class="nav-link" tabindex="0" id="tab10Tab" href="#tab10" data-toggle="tab" role="tab" aria-controls="tab10" aria-selected="false">Statement of Deficiencies</a>
-            <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">CMS-417 &amp; 643</a>
-            <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Timesheet</a>
-            <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Letters</a>
-            <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Notes</a> 
-            <a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">Attachments</a>
+            <a class="nav-link disabled" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Responsible Staff</a> 
+            <a class="nav-link disabled" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Parties Involved</a>
+            <a class="nav-link disabled" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Allegations</a>
+            <a class="nav-link disabled" tabindex="0" id="tab10Tab" href="#tab10" data-toggle="tab" role="tab" aria-controls="tab10" aria-selected="false">Triage</a>
+            <a class="nav-link disabled" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">Survey</a>
+            <a class="nav-link disabled" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Letters</a>
+            <a class="nav-link disabled" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Notes</a>
+            <a class="nav-link disabled" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Attachments</a> 
+            <!--<a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">Attachments</a>-->
            </nav>
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
@@ -151,7 +148,7 @@
                  <div class="row tabTitle">
               <div class="col-sm-10">
                 <h2>Basic Information</h2>
-                <p>Enter the basic information for this survey.</p>
+                <p>Enter the basic information for this intake.</p>
               </div>
               
             </div>
@@ -160,151 +157,84 @@
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
               </div>
-               <div class="row">
-              <div class="col-md-12">
                 
-                    <fieldset>
-                <legend>Survey Type <span class="iq-asterisk" title="Required field">*</span></legend>
+              <fieldset>
+                <legend>Intake Type <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="surveyType1" checked name="st" class="custom-control-input" value="">
-                  <label class="custom-control-label" for="surveyType1"> Health</label>
+                  <input type="radio" id="intakeType1" name="intakeType" class="custom-control-input" onChange="if( $(this).prop('checked') ) { $('.complaintForm').removeClass('hide'); }">
+                  <label class="custom-control-label" for="intakeType1"> Complaint </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="surveyType2" name="st" class="custom-control-input" value="">
-                  <label class="custom-control-label" for="surveyType2"> Life Safety Code (LSC)</label>
+                  <input type="radio" id="intakeType2" name="intakeType" class="custom-control-input" onChange="if( $(this).prop('checked') ){ $('.complaintForm').addClass('hide'); }">
+                  <label class="custom-control-label" for="intakeType2"> Incident </label>
+                </div>
+                </fieldset>
+                
+                <div class="complaintForm hide">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p><label>Intake Subtype <span class="iq-asterisk">*</span></label><select required>
+                            <option selected disabled>Select one</option><option>Federal CoPs, CFCs, RFPs, EMTALA</option>
+                            <option>State-only, licensure</option><option>No state or federal provider compliance issue involved</option></select></p>
+                    </div> <div class="col-md-4"></div>
+                  <div class="col-md-4">
+                    <p><label>Intake Method</label><select>
+                            <option selected disabled>Select one</option>
+                            <option>Email</option>
+                            <option>In Person</option>
+                            <option>Telephone</option>
+                            <option>Written</option>
+                            <option>Media</option>
+                            <option>Hotline</option>
+                            <option>Fax</option>
+                            <option>Online</option>
+                            <option>Referral</option>
+                            <option>Other</option>
+                          </select></p>
                     </div>
-                          
-                      </fieldset>
-              
-              </div>
-              <div class="col-md-12">
-                  <h3>Survey Categories <span class="iq-asterisk">*</span></h3>
-                  <p>Survey categories that are associated with citations cannot be removed.</p>
-                  
-                  
-                  
-                </div>
-            <div class="col-md-6">
-                <fieldset>
-                <legend>Federal Categories</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="fc1" checked class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="fc1">Initial Certification </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="fc2" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="fc2">Sample Validation <!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Uncheck all Open Intakes below first."><i class="fal fa-info-circle fa-lg"></i></a>--></label>
-                </div>
-              </fieldset>
-              </div>
-                <div class="col-md-6">
-                <fieldset>
-                <legend>State Categories</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="sc1" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="sc1">Re-Licensure <!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Description on how to enable"><i class="fal fa-info-circle fa-lg"></i></a>--></label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="sc2" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="sc2">Licensure Complaint <!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Uncheck all Open Intakes below first."><i class="fal fa-info-circle fa-lg"></i></a>--></label>
-                </div>
-              </fieldset>
-              </div>
-                 
-             <!--   <div class="col-md-6">
-                <fieldset>
-                <legend>Open Intakes to Include in Complaint Survey <span class="iq-asterisk">*</span></legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="oi1" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="oi1">Complaint 12193 <a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Associated with an allegation."><i class="fal fa-info-circle fa-lg"></i></a></label> 
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="oi2" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="oi2">Complaint 11978</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="oi3" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="oi3">Complaint 11999</label>
-                </div>
-              </fieldset>
-                </div>
-                <div class="col-md-6">
-                  
-                </div>-->
-            <div class="col-md-12">
-                <h3>Regulation Sets <span class="iq-asterisk">*</span></h3>
-                
-                   </div>
-            <div class="col-md-6">
-                <fieldset>
-                <legend>Federal Regulation Sets</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="frs1" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="frs1">Psychiatric Hospitals (FED - R - 5.01)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="frs2" checked class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="frs2">Portable X-Ray Requirements (FED - H - 6)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="frs3" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="frs3">Standards Long-Term Care Units (FED - A - 8)</label>
-                </div>
-              </fieldset>
-            </div> 
-            <div class="col-md-6">
-                <fieldset>
-                <legend>State Regulation Sets</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="sr1" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="sr1">Home Health Patient Units (ST - G - 8)</label>
-                </div>
-                
-              </fieldset>
-                   </div>
-              <div class="col-md-12">
-                <h3>Survey Status</h3>
-              </div> 
-              <div class="col-md-6">
-                  <fieldset>
-                <legend>Survey Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="surveyStatus1" checked name="ss" class="custom-control-input" value="">
-                  <label class="custom-control-label" for="surveyStatus1"> Open</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="surveyStatus2" name="ss" class="custom-control-input" value="">
-                  <label class="custom-control-label" for="surveyStatus2"> Closed</label>
-                    </div>
-                          
-                      </fieldset>     
-              </div>
-                   <div class="col-md-6"></div>
-                   <div class="col-md-4">
-                       <p><label>Start Date</label>
-                       <input type="date" class="form-control">
-                           <span class="help-text">MM/DD/YYYY</span>
-                       </p>
-                   </div>
                     <div class="col-md-4">
-                       <p><label>Exit Date</label>
-                       <input type="date" class="form-control">
+                        <p><label>Intake Start Date <span class="iq-asterisk">*</span>
+                            <input type="date"> 
                             <span class="help-text">MM/DD/YYYY</span>
-                       </p>
-                   </div>
-                   
-                   <div class="col-md-12">
-              <div class="row">
-                <div class="col">
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><label>Intake Start Time <span class="iq-asterisk">*</span>
+                            <input type="time"> 
+                            <span class="help-text">HH:MM</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><label>ITracking ID
+                            <input type="text"> 
+                            <span class="help-text">Optional ID used by states, additional agencies, or systems.</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="col-md-8">
+                    <p><label>Sources</label>
+                    <textarea wrap="soft" id="intakeSources"></textarea>
+                      <span class="help-text">Type to search and select one or more</span>
+                    </p>
+                    </div>
+                    <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="text-right"><label class="float-left mt-2">Summary of Complaint</label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
+                <div class="editTextDiv"></div>
+                <p class="help-text mb-5">Limit to 500 characters</p>
+                    </div>
+                    </div>
+                </div>
+                    <div class="iq-button-wrapper">
+                <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active');  $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
+                <button class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
-              </div>
-              </div>
-            </div>
+                
+                
+                
             </section>
             <section class="read-view">
                  <div class="row tabTitle">
@@ -3209,31 +3139,69 @@
     </div>
   </div>
 </footer>
-<script type="text/javascript"
-    src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
-  </script> 
-<script type="text/javascript"
-    src="../../../src/assets/third-party/popper/popper.min.js"></script> 
-<script type="text/javascript"
-    src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
-  </script> 
-    <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script> 
+<script type="text/javascript" src="../../../src/assets/third-party/popper/popper.min.js"></script> 
+<script type="text/javascript" src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script> 
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
-<script type="text/javascript" src="../../../src/assets/js/scripts.js">
+<script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+})
+    $( function() {
+    var availableIntakeSources = [
+        "Accreditation Organization", "Anonymous", "CMS", "Congressional Inquiry", "Coroner", "Current Staff", "Entity Self-Reported", "ESRD Network", "Family", "FDA", "Former Staff", "Friend", "Media", "Medicare Intermediary/Carrier", "Ombudsman", "Other", "Other Health Provider", "Other State Agency", "Physician", "PT Organization", "Quality Improvement Organization", "Resident/Patient/Client", "State Survey Agency"                
+    ];
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+    $( "#intakeSources" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableIntakeSources, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+    });
   </script>
-    <script type="text/javascript">
+<script type="text/javascript">
  var editor = new FroalaEditor('div.editTextDiv', { charCounterMax: 500}); 
-
         
 $(document).ready(function () {
-
- $('[data-toggle="tooltip"]').tooltip(); 
-window.setTimeout(function() {
-    $(".alert-success").fadeTo(1000, 0).slideUp(1000, function(){
-        $(this).addClass('hide'); 
-    });
-}, 5000);
- 
+    window.setTimeout(function() {
+        $(".alert-success").fadeTo(1000, 0).slideUp(1000, function(){
+            $(this).addClass('hide'); 
+        });
+    }, 5000);
 });
 
     </script>

@@ -68,6 +68,7 @@
           <li class="list-group-item form hide"><a href="#formConditional">Conditional Box</a></li>
           <li class="list-group-item form hide"><a href="#formMultiSelect">Multi-Select</a></li>
           <li class="list-group-item form hide"><a href="#formFileAttachment">File Attachment Upload</a></li>
+          <li class="list-group-item form hide"><a href="#formTextEditor">Text Editor</a></li>
            <li class="list-group-title"><a href="#" class="has-subnav" onClick="$(this).toggleClass('expanded'); $(this).parent('li').siblings('.accordion').toggleClass('hide');">Accordion</a></li>
         <li class="list-group-item accordion hide"><a href="#accordionDefault">Default Accordion</a></li>
         <li class="list-group-item accordion hide"><a href="#accordionAction">Default Accordion with Action</a></li>
@@ -1030,6 +1031,12 @@
                 </div>
               </div>
     
+    </article>
+    <article id="formTextEditor">
+    <h3>Text Editor</h3>
+         <div class="text-right"><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
+                <div class="editTextDiv"></div>
+                <p class="help-text mb-5">Limit to 500 characters</p>
     </article>
 </section>
        
@@ -2316,10 +2323,14 @@ Barrington, IL 60010<br>
   <script type="text/javascript" src="../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../../src/assets/third-party/popper/popper.min.js"></script>
   <script type="text/javascript" src="../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
   <script type="text/javascript" src="../../src/assets/js/scripts.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
   <script>
 $(function () {
+   var editor = new FroalaEditor('div.editTextDiv', { charCounterMax: 500}); 
   $('[data-toggle="tooltip"]').tooltip();
 })
     $( function() {
