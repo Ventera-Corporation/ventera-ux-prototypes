@@ -234,8 +234,11 @@
                 
                 
                 <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active');  $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide'); $('.nav.iq-nav .nav-link').removeClass('disabled'); ">Save</button>
-                <button class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active');  $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide'); $('.nav.iq-nav .nav-link').removeClass('disabled'); $('#newVal').val('1'); ">Save</button>
+                <button class="btn btn-link" onClick="if($('#newVal').val() == 0){
+                      window.location = 'provider-profile.html';                  
+                    } else {('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); }">Cancel</button>
+                    <input type="hidden" id="newVal" value="0">
                   </div>
             </section>
             <section class="read-view">
