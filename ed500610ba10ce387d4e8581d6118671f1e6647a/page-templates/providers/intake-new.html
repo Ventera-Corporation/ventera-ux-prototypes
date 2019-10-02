@@ -192,22 +192,24 @@
                             <option>Other</option>
                           </select></p>
                     </div>
+                    <div class="col-md-8"></div>
                     <div class="col-md-4">
                         <p><label>Intake Start Date <span class="iq-asterisk">*</span>
-                            <input type="date"> 
+                            <input type="date" value="2019-10-10"> 
                             <span class="help-text">MM/DD/YYYY</span>
                             </label>
                         </p>
                     </div>
                     <div class="col-md-4">
                         <p><label>Intake Start Time <span class="iq-asterisk">*</span>
-                            <input type="time"> 
+                            <input type="time" value="15:35"> 
                             <span class="help-text">HH:MM</span>
                             </label>
                         </p>
                     </div>
-                    <div class="col-md-4">
-                        <p><label>ITracking ID
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <p><label>Tracking ID
                             <input type="text"> 
                             <span class="help-text">Optional ID used by states, additional agencies, or systems.</span>
                             </label>
@@ -227,20 +229,20 @@
                     </div>
                     </div>
                 </div>
-                    <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active');  $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
-                <button class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                  </div>
+                    
                 </div>
                 
                 
-                
+                <div class="iq-button-wrapper">
+                <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active');  $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide'); $('.nav.iq-nav .nav-link').removeClass('disabled'); ">Save</button>
+                <button class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                  </div>
             </section>
             <section class="read-view">
                  <div class="row tabTitle">
               <div class="col-sm-10">
                 <h2>Basic Information</h2>
-                <p>Manage the basic information for this survey</p>
+                
               </div>
               <div class="col-sm-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
@@ -248,76 +250,59 @@
             </div>
             <div class="iq-list">
                 <div class="row">
-                  <div class="col-md-4"><p class="iq-label">Survey Type</p></div>
-                  <div class="col-md-8"><p>Life Safety Code</p></div>
+                  <div class="col-md-4"><p class="iq-label">Intake Type</p></div>
+                  <div class="col-md-8"><p>Complaint</p></div>
                 </div>
-            </div>
-            <h3>Survey Categories</h3>
-            <div class="iq-list">
                 <div class="row">
                   <div class="col-md-4">
-                    <p class="iq-label">Federal Categories</p>
+                    <p class="iq-label">Intake Subtype</p>
                   </div>
                   <div class="col-md-8">
-                    <p>Initial Certification</p>
+                    <p>State-only, licensure</p>
                   </div>
                 </div>
-           <div class="row">
-              <div class="col-md-4">
-                <p class="iq-label">State Categories</p>
-              </div>
-              <div class="col-md-8">
-                <p class="iq-not-available">Not available</p>
-              </div>
-            </div>
+               <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Intake Method</p>
+                  </div>
+                  <div class="col-md-8">
+                    Telephone
+                  </div>
                 </div>
-                <h3>Regulation Sets</h3>
-            <div class="iq-list">
-            <div class="row">
-              <div class="col-md-4">
-                <p class="iq-label">Federal Regulation Sets</p>
-              </div>
-              <div class="col-md-8">
-                <p>LSC 20120 Health Existing (FED - K - 01.01)</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <p class="iq-label">State Regulation Sets</p>
-              </div>
-              <div class="col-md-8">
-                <p class="iq-not-available">Not available
-                </p>
-              </div>
-            </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Intake Start Date/Time</p>
+                  </div>
+                  <div class="col-md-8">
+                    10/10/2019 3:35 PM
+                  </div>
                 </div>
-            <h3>Survey Status</h3>
-            <div class="iq-list">
-            <div class="row">
-              <div class="col-md-4">
-                <p class="iq-label">Status</p>
-              </div>
-              <div class="col-md-8">
-                <p>Open</p>
-              </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Tracking ID</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p class="iq-not-available">Not available</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p class="iq-label">Sources</p>
+                  </div>
+                  <div class="col-md-8">
+                    <ul><li>Anonymous</li><li>Friend</li></ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Summary of Complaint</label>
+                  
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                  </div>
+                </div>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <p class="iq-label">Start Date</p>
-              </div>
-              <div class="col-md-8">
-                <p>01/09/2020</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <p class="iq-label">Exit Date</p>
-              </div>
-              <div class="col-md-8">
-                <p>01/12/2020</p>
-              </div>
-            </div>
-        </div>
+               
           
             
             </section>  
