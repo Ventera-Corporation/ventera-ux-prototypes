@@ -180,8 +180,6 @@ input.iq-input-error {
 .modal-header .modal-title { margin-bottom: 0; }
 .modal-header .close { font-size: 2.5rem; font-weight: 100; line-height: 1rem; margin-right: -1.5rem; }
 .modal-body .close { position: absolute; top: 2rem; right: 1.5rem; margin-left: 1rem; font-size: 2.5rem !important; font-weight: 100; line-height: 1rem; }
-.alert .close, .alert button.close { font-size: 2rem !important; font-weight: 100; line-height: 1rem; }
-.toast-header .close { font-size: 2rem !important; font-weight: 100; line-height: 1rem;}
 
 /* CARD STRIPED LIST */
 .iq-list { margin-bottom: 2rem; padding: 1rem; }
@@ -229,6 +227,7 @@ input.iq-input-error {
 /* show/hide link */
 .iq-accordion.showhide .card-header:hover { background-color: transparent; }
 .iq-accordion.showhide .card-header button.btn-block:hover, .iq-accordion.showhide .card-header .btn-link.btn-block:focus { text-decoration: underline; }
+.iq-accordion .card.no-border .card-body button, .iq-accordion .card.no-border .card-body .btn { padding: 0.438rem 1rem; margin-right: 1rem; }
 
 
 /* ACCORDION BUTTONS */
@@ -309,6 +308,8 @@ div.alert { margin-bottom: 2rem;}
     color: #CD2026; /* error dark */
 }
 .alert-content ul { margin-bottom: 0; padding-left: 3rem; line-height: 1rem; }
+.alert .close, .alert button.close { font-size: 2rem !important; font-weight: 100; line-height: 1rem; }
+.toast-header .close { font-size: 2rem !important; font-weight: 100; line-height: 1rem;}
 
 /* TOAST */
 .toast-header  strong::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; margin-top: .0625rem;  }
