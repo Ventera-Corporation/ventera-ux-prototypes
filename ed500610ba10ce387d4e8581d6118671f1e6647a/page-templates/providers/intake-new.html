@@ -614,33 +614,7 @@
 <input type="hidden" value="0" id="anonCount">
            
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary" onClick="
-    $('input[name=involveType]').each(function (index, obj) {
-        if($(this).prop('checked') == true){ $('#involveTypeCount').val('1'); }
-    }); 
-    if( $('#involveTypeCount').val() == '0' ){      
-        $('.involveTypeCountError').removeClass('hide'); 
-    } else { 
-        $('.involveTypeCountError').addClass('hide'); 
-        $('.involveTypeForm').addClass('hide');                                                                     
-        if($('#anonCount').val() == '0' ){                                                
-            $('.edit-view').removeClass('active');
-            if($('#involveType1').prop('checked') == true ){
-               $('.edit-view.complainant').addClass('active');         
-            }                                                               
-            if($('#involveType2').prop('checked') == true ){
-               $('.edit-view.perp').addClass('active');         
-            }   
-            if($('#involveType3').prop('checked') == true ){
-               $('.edit-view.affected').addClass('active');         
-            }   
-            if($('#involveType4').prop('checked') == true ){
-               $('.edit-view.otherParty').addClass('active');         
-            }   
-        } else {
-            $('.edit-view').removeClass('active');                                        $('.read-view').addClass('active');
-        }
-    }">Add</a>
+                    <a href="#mainContent" class="btn btn-primary" onClick="sortParties();">Add</a>
                   </div>
                 
             </section>
@@ -3650,6 +3624,39 @@ $(document).ready(function () {
     }, 5000);
 });
 
+function sortParties(){
+    $('input[name=involveType]').each(function (index, obj) {
+        if($(this).prop('checked') == true){ $('#involveTypeCount').val('1'); }
+    }); 
+    if( $('#involveTypeCount').val() == '0' ){   
+        console.log('no radio selected');                                                              
+        $('.involveTypeCountError').removeClass('hide'); 
+    } else { 
+        console.log('radio selected');                                                                    
+        $('.involveTypeCountError').addClass('hide'); 
+        $('.involveTypeForm').addClass('hide');                                                                     
+        if($('#anonCount').val() == '1'){                                                   console.log('anonymous');                                            
+            $('.edit-view').removeClass('active');                                       $('.read-view').addClass('active');
+            
+            $('#anon2').click();                                                                 
+        } else {
+            console.log('not anonymous');   
+            $('.edit-view').removeClass('active');
+            if($('#involveType1').prop('checked') == true ){
+               $('.edit-view.complainant').addClass('active');         
+            }                                                               
+            if($('#involveType2').prop('checked') == true ){
+               $('.edit-view.perp').addClass('active');         
+            }   
+            if($('#involveType3').prop('checked') == true ){
+               $('.edit-view.affected').addClass('active');         
+            }   
+            if($('#involveType4').prop('checked') == true ){
+               $('.edit-view.otherParty').addClass('active');         
+            }                                                                           
+        }                                                                      
+    }
+}
     </script>
 </body>
 </html>
