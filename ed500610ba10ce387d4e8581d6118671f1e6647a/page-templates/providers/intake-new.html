@@ -2044,24 +2044,42 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p><label>Category</label>
-                        <input type="text">
+                        <select><option>Select one</option>
+                            <option value="12">Accidents</option>
+                            <option value="25">Administration/Personnel</option>
+                            <option value="8">Admission, Transfer &amp; Discharge Rights</option><option value="9">Death - General</option><option value="13">Dental Services</option><option value="14">Dietary Services</option><option value="19">Educational Services</option><option value="29">Falsification of Records/Reports</option><option value="34">Fatality/Transfusion Fatality</option><option value="26">Fraud/False Billing</option><option value="23">Infection Control</option><option value="4">Injury of Unknown Origin</option><option value="3">Misappropriation of Property</option><option value="15">Nursing Services</option><option value="36">Other</option><option value="20">Other Services</option><option value="16">Pharmaceutical Services</option><option value="22">Physical Environment</option><option value="17">Physician Services</option><option value="31">Quality Control</option><option value="11">Quality of Care/Treatment</option><option value="10">Quality of Life</option><option value="18">Rehabilitation Services</option><option value="1">Resident/Patient/Client Abuse</option><option value="24">Resident/Patient/Client Assessment</option><option value="2">Resident/Patient/Client Neglect</option><option value="7">Resident/Patient/Client Rights</option><option value="5">Restraints/Seclusion - Death</option><option value="6">Restraints/Seclusion - General</option><option value="35">State Licensure</option><option value="38">State Monitoring</option><option value="30">Unqualified Personnel</option></select>
                         </p>
                     </div>
                     <div class="col-md-6">
-                      <p class="hide"><label>Subcategory</label>
+                      <p class="subcat hide"><label>Subcategory</label>
                         <input type="text">
                       </p>
                     </div>
                     <div class="col-md-12">
-                        <p><label>Seriousness</label>
-                        <input type="text">
-                        </p>
+                       
+                        <fieldset>
+                <legend>Seriousness</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="seriousness1" checked name="seriousness" class="custom-control-input">
+                  <label class="custom-control-label" for="seriousness1"> Minor</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="seriousness2" name="seriousness" class="custom-control-input">
+                  <label class="custom-control-label" for="seriousness2"> Moderate</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="seriousness3" disabled name="seriousness" class="custom-control-input">
+                  <label class="custom-control-label" for="seriousness3"> Critical </label>
+                </div>
+                </fieldset>
+                       
                     </div>
                     <div class="col-md-6">
                         <p><label>Person Affected</label>
-                        <input type="text">
+                        <select><option>Select one</option><option>Lucinda O</option></select>
                         </p>
                     </div>
+                    <div class="col-md-6"></div>
                     <div class="col-md-6">
                         <p><label>Shift</label>
                         <input type="text">
