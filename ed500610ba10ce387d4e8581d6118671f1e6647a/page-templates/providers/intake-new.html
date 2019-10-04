@@ -622,6 +622,11 @@
             <!-- new complainant -->  
             <section class="edit-view complainant">
                 <h2>Add Complainant</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
                 <div class="form-group">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="confidential" class="custom-control-input">
@@ -787,6 +792,11 @@
             <!-- edit complainant --> 
             <section class="edit-view editComplainant">
                 <h2>Edit Complainant</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
                 <div class="form-group">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" checked id="confidentialE" class="custom-control-input">
@@ -951,7 +961,11 @@
             <!-- new perp -->
             <section class="edit-view perp">
                 <h2>Add Alleged Perpetrator</h2>
-                
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <p><label>Role</label>
@@ -1103,7 +1117,11 @@
             <!-- edit perp -->
             <section class="edit-view editPerp">
                 <h2>Edit Alleged Perpetrator</h2>
-                
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <p><label>Role</label>
@@ -1255,6 +1273,11 @@
             <!-- new affected -->
             <section class="edit-view affected">
                 <h2>Add Person Affected</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
                 <div class="form-group">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="confidential2" class="custom-control-input">
@@ -1329,6 +1352,11 @@
             <!-- edit affected -->
             <section class="edit-view editAffected">
                 <h2>Edit Person Affected</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
                 <div class="form-group">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" checked id="confidential2E" class="custom-control-input">
@@ -1403,6 +1431,11 @@
             <!-- new other -->
             <section class="edit-view otherParty">
                 <h2>Add Other Party</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
                 <div class="form-group">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="witness" class="custom-control-input">
@@ -1558,6 +1591,11 @@
             <!-- edit other -->
             <section class="edit-view editOtherParty">
                 <h2>Edit Other Party</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
                 <div class="form-group">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" checked id="witnessE" class="custom-control-input">
@@ -1991,6 +2029,360 @@
                       </table>
                 </div>
             </section>
+          </div>
+          <div class="tab-pane " id="tab4" role="tabpanel" aria-labelledby="tab4Tab">
+            
+            <!-- new complainant -->  
+            <section class="edit-view addAllegation active">
+                <h2>Add Allegation</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><label>Category</label>
+                        <input type="text">
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="hide"><label>Subcategory</label>
+                        <input type="text">
+                      </p>
+                    </div>
+                    <div class="col-md-12">
+                        <p><label>Seriousness</label>
+                        <input type="text">
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><label>Person Affected</label>
+                        <input type="text">
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><label>Shift</label>
+                        <input type="text">
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                <div class="form-group">
+                    <label>Date
+                    <input type="date">
+                    <span class="help-text">MM/DD/YYYY</span></label>
+                </div>
+            </div>
+                    <div class="col-md-2">
+                <div class="form-group">
+                    <label>Time
+                    <input type="time" value="07:00">
+                    <span class="help-text">HH:MM</span></label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="text-right"><label class="float-left mt-2">Allegation Details <span class="iq-asterisk">*</span></label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
+                <div class="editTextDiv"></div>
+                <!--<p class="help-text mb-5">Limit to 500 characters</p>-->
+                    </div>
+                    </div>
+                </div>  
+                <div class="iq-button-wrapper">
+                    <a href="#mainContent" class="btn btn-primary" onClick="
+     $('#tab4 .edit-view').removeClass('active'); 
+     $('#tab4 .read-view').addClass('active'); 
+     $('.successMsg').removeClass('hide'); 
+     $('.addedAllegation .x').removeClass('hide');">Save</a>
+                    <button class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').addClass('active');  ">Cancel</button>
+                  </div>
+            </section>
+            
+            
+              
+            <!-- read view -->
+            <section class="read-view">
+                <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Parties Involved</h2><p class="iq-page-header-description">Add and manage the parties involved for this intake.</p>
+              </div>
+              <div class="col-md-2">
+                
+              </div>
+            </div>
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view.partyType').addClass('active'); $('#tab3 .read-view').removeClass('active');">Add Party</button>  
+                </div>                
+                <p class="info-text"><span class="partyCount">1 Party</span> Involved</p>
+                
+<div class="accordion-wrapper addedParty">
+<div class="iq-accordion anon hide">
+    <div class="card ">
+      <div class="card-header d-flex">
+        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP1" type="button" onclick="$(this).toggleClass('expanded');">
+          <span>Anonymous Party<br><small>Complainant</small></span>
+        </button>
+        <div class="iq-accordion-actions d-flex align-items-center">
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+            Delete
+          </button>
+          
+        </div>
+      </div>
+      <div id="aP1" class="collapse">
+        <div class="card-body">
+           <p class="iq-not-available">Not applicable</p>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="iq-accordion complainant hide">
+    <div class="card ">
+      <div class="card-header d-flex">
+        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP2" type="button" onclick="$(this).toggleClass('expanded');">
+          <span>Desrocher, Annette<br><small>Complainant: Confidential, Primary</small></span>
+        </button>
+        <div class="iq-accordion-actions d-flex align-items-center">
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+            Delete
+          </button>
+          <button type="button" class="btn btn-outline-primary" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editComplainant').addClass('active'); ">Edit</button>
+        </div>
+      </div>
+      <div id="aP2" class="collapse">
+        <div class="card-body">
+          <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4"><label>Relationship to Person Affected</label></div>
+              <div class="col-md-8"><p>Family</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Address</label></div>
+              <div class="col-md-8"><p>2024 Upper Lake Dr<br>Reston, VA 20191</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Work Phone</label></div>
+              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Home Phone</label></div>
+              <div class="col-md-8"><p>(571) 333-9833</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Mobile Phone</label></div>
+              <div class="col-md-8"><p>(571) 333-9833</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Email</label></div>
+              <div class="col-md-8"><p>adrocher@gmail.com</p></div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+</div>   
+<div class="iq-accordion perp hide">
+    <div class="card ">
+      <div class="card-header d-flex">
+        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP3" type="button" onclick="$(this).toggleClass('expanded');">
+          <span>MacMahon, Joel<br><small>Alleged Perpetrator</small></span>
+        </button>
+        <div class="iq-accordion-actions d-flex align-items-center">
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+            Delete
+          </button>
+          <button type="button" class="btn btn-outline-primary" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editPerp').addClass('active'); ">Edit</button>
+        </div>
+      </div>
+      <div id="aP3" class="collapse">
+        <div class="card-body">
+           <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4"><label>Role</label></div>
+              <div class="col-md-8"><p>Staff Member</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>License Number</label></div>
+              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+            </div> 
+            <div class="row">
+              <div class="col-md-4"><label>Title</label></div>
+              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+            </div>    
+            <div class="row">
+              <div class="col-md-4"><label>Address</label></div>
+              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Work Phone</label></div>
+              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Home Phone</label></div>
+              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Fax</label></div>
+              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Email</label></div>
+              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+            </div>
+
+        </div>
+                 
+        </div>
+      </div>
+    </div>
+</div> 
+<div class="iq-accordion affected hide">
+    <div class="card ">
+      <div class="card-header d-flex">
+        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP4" type="button" onclick="$(this).toggleClass('expanded');">
+          <span>Hugo, Victoria<br><small>Person Affected: Confidential</small></span>
+        </button>
+        <div class="iq-accordion-actions d-flex align-items-center">
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+            Delete
+          </button>
+          <button type="button" class="btn btn-outline-primary" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editAffected').addClass('active'); ">Edit</button>
+        </div>
+      </div>
+      <div id="aP4" class="collapse">
+        <div class="card-body">
+           <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4"><label>Gender</label></div>
+              <div class="col-md-8"><p>Female</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Date of Birth</label></div>
+              <div class="col-md-8"><p>06/23/1970</p></div>
+            </div> 
+            <div class="row">
+              <div class="col-md-4"><label>Admission Date</label></div>
+              <div class="col-md-8"><p>10/01/2019</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Discharge Date</label></div>
+              <div class="col-md-8"><p>10/03/2019</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Summary of Complaint</label></div>
+              <div class="col-md-8"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+            </div> 
+          </div>
+          
+        </div>
+      </div>
+    </div>
+</div> 
+<div class="iq-accordion otherParty hide">
+    <div class="card ">
+      <div class="card-header d-flex">
+        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP5" type="button" onclick="$(this).toggleClass('expanded');">
+          <span>Crow, Lucinda<br><small>Other Party: Possible Witness</small></span>
+        </button>
+        <div class="iq-accordion-actions d-flex align-items-center">
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+            Delete
+          </button>
+          <button type="button" class="btn btn-outline-primary" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editOtherParty').addClass('active'); ">Edit</button>
+        </div>
+      </div>
+      <div id="aP5" class="collapse">
+        <div class="card-body">
+            <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4"><label>Address</label></div>
+                  <div class="col-md-8"><p>2446 Ridgehampton Ct<br>Reston, VA 20191</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Work Phone</label></div>
+                  <div class="col-md-8"><p>(703) 234-4567 Ext. 123</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Alternative Phone</label></div>
+                  <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Fax</label></div>
+                  <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Email</label></div>
+                  <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                </div>
+                
+            </div>
+          
+        </div>
+      </div>
+    </div>
+</div> 
+</div><!-- end accordion -->
+                
+<div class="table-wrapper">  <table class="table table-striped addedParty hide">
+  <thead>
+    <tr>
+      <th scope="col" class="sortable descending"><span>Name</span></th>
+      <th scope="col" class="sortable"><span>Involvement</span></th>
+      <th scope="col" class="sortable"><span></span></th>
+   <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row"><p>Anonymous Party</p></td>
+      <td><p>Complainant</p></td>
+      <td><p></p></td>
+      <td class="iqies-list-button-group"><a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
+    </tr>
+    <tr class="complainant hide">
+      <td scope="row"><p>Desrocher, Annette</p></td>
+      <td><p>Complainant: Confidential, Primary</p></td>
+      <td><p></p></td>
+      <td class="iqies-list-button-group">
+          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.viewComplainant').addClass('active'); ">View</a>
+          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editComplainant').addClass('active'); ">Edit</a>
+          <a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
+    </tr>
+    <tr class="perp hide">
+      <td scope="row"><p>MacMahon, Joel</p></td>
+      <td><p>Alleged Perpetrator</p></td>
+      <td><p></p></td>
+      <td class="iqies-list-button-group">
+          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.viewPerp').addClass('active'); ">View</a>
+          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editPerp').addClass('active'); ">Edit</a>
+          <a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
+    </tr>
+    <tr class="affected hide">
+      <td scope="row"><p>Hugo, Victoria</p></td>
+      <td><p>Person Affected: Confidential</p></td>
+      <td><p></p></td>
+      <td class="iqies-list-button-group">
+          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.viewAffected').addClass('active'); ">View</a>
+          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editAffected').addClass('active'); ">Edit</a>
+          <a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
+    </tr>
+    
+    <tr class="otherParty hide">
+      <td scope="row"><p>Crow, Lucinda</p></td>
+      <td><p>Other Party: Possible Witness</p></td>
+      <td><p></p></td>
+      <td class="iqies-list-button-group">
+          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.viewOtherParty').addClass('active'); ">View</a>
+          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editOtherParty').addClass('active'); ">Edit</a>
+          <a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
+    </tr>
+                      </tbody>
+                      </table>
+                </div>
+            </section>
+      
+            
           </div>
           <div class="tab-pane " id="tab9" role="tabpanel"
                     aria-labelledby="tab9Tab">
@@ -2761,342 +3153,7 @@
               </div>
             </section>             
           </div>
-          <div class="tab-pane " id="tab4" role="tabpanel"
-                    aria-labelledby="tab4Tab">
-            
-            
-            <section class="edit-view deemInfo">
-             <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Deeming Information</h2>
-                <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
-              </div>
-              <div class="col-md-2"></div>
-            </div>
-                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                     <div class="row">
-                           <div class="col-md-12"> 
-                             
-                              <fieldset>
-            <legend>Deemed Status <span class="iq-asterisk" title="Required field">*</span></legend>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="radio-button-ds1" name="ds" class="custom-control-input" value="value" onChange="$('#deemedDate').addClass('hide');" checked>
-              <label class="custom-control-label" for="radio-button-ds1">
-                Non-Deemed
-              </label>
-            </div>
-             <div class="custom-control custom-radio">
-              <input type="radio" id="radio-button-ds2" name="ds" class="custom-control-input" value="value" onChange="$('#deemedDate').removeClass('hide');">
-              <label class="custom-control-label" for="radio-button-ds2">
-                Deemed
-              </label>
-            </div>
-                               </fieldset>
-            
-                            
-                           </div>
-                           <div class="col-md-4">
-                                <div class="iq-conditional-content hide" id="deemedDate">
-                             <p><label for="dd">Deemed Date<span class="iq-asterisk" title="Required field">*</span></label>
-                       <input type="date" class="form-control" id="dd" aria-describedby="help-id" required="" value=""><span class="help-text">MM/DD/YYYY</span>
-                                    </p></div>
-                           </div>
-                       </div>
-                       <div class="row">
-                <div class="col-md-10">
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab4 .edit-view').removeClass('active'); 
-                                                             $('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide'); 
-                                                             ">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
-                      
-                   
-                  </div>
-                </div>
-              </div>
-                       </section>
-            <section class="read-view active deemingInfo">
-                <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Deeming Information</h2>
-                <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
-              </div>
-              <div class="col-md-2"><button class="btn btn-outline-primary" onClick="$('#tab4 .edit-view.deemInfo').addClass('active'); $('#tab4 .read-view').removeClass('active'); ">Edit</button></div>
-            </div>
-              <div class="row">
-                <div class="col-md-5">
-                  <p>
-                    <label class="iqies-label">Deemed Status</label>
-                    Non-Deemed</p>
-                </div>
-                <div class="col-md-5">
-                  <p>
-                    <label>Deemed Date</label>
-                    <span class="iqies-not-available">Not available</span></p>
-                </div>
-              </div>
-              </section>
-              <section class="read-view active deemingInfo">
-            
-              <h3>Accrediting Organizations</h3>
-              <p>Add and manage accreditation organizations and status.</p>
-              <div class="iqies-button-wrapper">
-                <button type="button" class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.addNew').addClass('active');">Add Accrediting Organization</button>
-              </div>
-              <p class="info-text"><span class="aoCount">2</span> Accrediting Organizations</p>
-              <div class="iqies-list-row TJC">
-                <div class="iqies-list-row-header">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <h4>The Joint Commission (TJC)</h4>
-                    </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editTJC').addClass('active');">Edit</button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-5">
-                        <p><label>AO Facility ID</label>
-                           <span class="iqies-not-available">Not available</span>
-                        </p>
-                    </div>  
-                    <div class="col-md-5">
-                        <p><label>Accreditation Status</label>
-                            Accredited
-                        </p>
-                    </div>  
-                    <div class="col-md-5">
-                        <p><label>Initial Accreditation Date</label>
-                            06/01/2019
-                        </p>
-                    </div>  
-                    <div class="col-md-5">
-                        <p><label>Current Accreditation Date</label>
-                            06/01/2019
-                        </p>
-                    </div>  
-                    <div class="col-md-5">
-                        <p><label>Expiration Date</label>
-                            06/05/2020
-                        </p>
-                    </div>  
-                    
-                </div>
-              </div>
-              <div class="iqies-list-row">
-                <div class="iqies-list-row-header">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <h4>Accreditation Commission for Health Care (ACHC)</h4>
-                    </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-outline-primary">Edit</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5">
-                        <p><label>AO Facility ID</label>
-                            <span class="iqies-not-available">Not available</span>
-                        </p>
-                    </div>  
-                    <div class="col-md-5">
-                        <p><label>Accreditation Status</label>
-                            Pending accreditation
-                        </p>
-                    </div>  
-                      
-                </div>
-                
-                
-              </div>
-            </section>
-            <section class="read-view editTJC">
-                <div class="row">
-      <div class="col">
-        <button class="btn btn-link px-0 mb-4" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.deemingInfo').addClass('active');  ">&lt; Return to Deeming Information</button>
-      </div>
-    </div>
-              <h2>Edit Accrediting Organization</h2>
-            
-              <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-              <div class="row"><div class="col-md-5">
-                  <p><label>Accrediting Organization</label>
-                  <input type="text" value="The Joint Commission (TJC)" disabled class="form-control" />  
-              </p>
-                  </div>
-                <div class="col-md-5">
-                  <p><label>AO Facility ID</label>
-                  <input type="text" value="" class="form-control" />  
-              </p>
-                  </div>
-                </div>
-              
-              
-              <fieldset>
-                <legend>Accreditation Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-as1" name="as" class="custom-control-input" value="value"
-                     onChange="$('#accForm').addClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-as1"> Pending accreditation </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-as2" name="as" class="custom-control-input" value="value"
-                     onChange="$('#accForm').removeClass('hide'); " checked>
-                  <label class="custom-control-label" for="radio-button-as2"> Accredited </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-as3" name="as" class="custom-control-input" value="value" 
-                     onChange="$('#accForm').addClass('hide');">
-                  <label class="custom-control-label" for="radio-button-as3"> Withdrawn </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-as4" name="as" class="custom-control-input" value="value"
-                     onChange="$('#accForm').addClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-as4"> Terminated </label>
-                </div>
-              </fieldset>
-              <div class="iq-conditional-content" id="accForm">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p>
-                      <label for="asi"> Initial Accreditation Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="text" class="form-control" id="asi" aria-describedby="help-id" required="" value="06/01/2019">
-                      <span class="help-text">MM/DD/YYYY</span>
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="cad"> Current Accreditation Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="text" class="form-control" id="cad" aria-describedby="help-id" required="" value="06/01/2019">
-                        <span class="help-text">MM/DD/YYYY</span>
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ed"> Expiration Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="text" class="form-control" id="ed" aria-describedby="help-id" required="" value="06/05/2020">
-                        <span class="help-text">MM/DD/YYYY</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-                
-              <div class="row">
-                <div class="col-md-10">
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide'); 
-                                                             ">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
-                      
-                    <button class="btn btn-link danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide'); $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="read-view addNew">
-                <div class="row">
-      <div class="col">
-        <button class="btn btn-link px-0 mb-4" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.deemingInfo').addClass('active');  ">&lt; Return to Deeming Information</button>
-      </div>
-    </div>
-              <h2>Add Accrediting Organization</h2>
-            
-              <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-              <div class="row"><div class="col-md-5">
-                  <p><label for="aoAdd">Accrediting Organization</label>
-                  <input type="text" id="aoAdd" value="" class="form-control" />  
-              </p>
-                  </div>
-                <div class="col-md-5">
-                  <p><label for="aoFID">AO Facility ID </label> 
-                  <input type="text" value="" id="aoFID" class="form-control" />
-              </p>
-                  </div>
-                </div>
-              
-              
-              <fieldset>
-                <legend>Accreditation Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-as1b" name="asb" class="custom-control-input" value="value"
-                     onChange="$('#accForm2').addClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-as1b"> Pending accreditation </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-as2b" name="asb" class="custom-control-input" value="value"
-                     onChange="$('#accForm2').removeClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-as2b"> Accredited </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-as3b" name="asb" class="custom-control-input" value="value" 
-                     onChange="$('#accForm2').addClass('hide');">
-                  <label class="custom-control-label" for="radio-button-as3b"> Withdrawn </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="radio-button-as4b" name="asb" class="custom-control-input" value="value"
-                     onChange="$('#accForm2').addClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-as4b"> Terminated </label>
-                </div>
-              </fieldset>
-              <div class="iq-conditional-content hide" id="accForm2">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p>
-                      <label for="asi2"> Initial Accreditation Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="date" class="form-control" id="asi2" aria-describedby="asi2-help-id" required="" value="">
-                        <span class="help-text" id="asi2-help-id">MM/DD/YYYY</span>
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="cad2"> Current Accreditation Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="date" class="form-control" id="cad2" aria-describedby="cad2-help-id" required="" value="">
-                        <span class="help-text" id="cad2-help-id">MM/DD/YYYY</span>
-                    </p>
-                  </div>
-                  <div class="col-md-4">
-                    <p>
-                      <label for="ed2"> Expiration Date<span class="iq-asterisk" title="Required field">*</span></label>
-                      <input type="date" class="form-control" id="ed2" aria-describedby="ed2-help-id" required="" value="">
-                        <span class="help-text" id="ed2-help-id">MM/DD/YYYY</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-                
-              <div class="row">
-                <div class="col-md-10">
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide'); 
-                                                             ">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active');  ">Cancel</button>
-                      
-                    <!--<button class="btn btn-link danger float-right" onClick="$('#tab4 .read-view').removeClass('active'); 
-                                                             $('#tab4 .read-view.deemingInfo').addClass('active'); 
-                                                             $('.alert.successMsg').removeClass('hide'); $('.iqies-list-row.TJC').addClass('hide'); $('.aoCount').html('1');">Delete</button>-->
-                  </div>
-                </div>
-              </div>
-            </section>  
-            
-          </div>
+       
           <div class="tab-pane " id="tab5" role="tabpanel"
                     aria-labelledby="tab5Tab">
               <div class="row tabTitle">
