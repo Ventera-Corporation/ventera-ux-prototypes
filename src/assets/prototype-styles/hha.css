@@ -110,6 +110,10 @@ p.info-text { margin-bottom: 1rem; }
 .help-text h6 { margin-bottom: 0; }
 
 
+/* FROALA TEXT EDITOR */
+.second-toolbar a#logo { float: right; margin-right: .75rem; }
+.second-toolbar span.fr-counter { float: left; }
+
 /* FORM ERROR HANDLING */
 label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616b; }
 .iq-input-error { border: 1px solid #e31c3d; }
@@ -133,6 +137,7 @@ input.iq-input-error {
 .file-attachment-card h3 { font-size: 1.25rem; margin-bottom: 2rem; }
 .file-attachment-card h3 i, .file-attachment-card h3 span { margin-right: .5rem; }
 .file-attachment-card .file-description { padding-left: 3rem; }
+
 
 
 /* SIDE NAV / LEFT NAV */
@@ -183,8 +188,9 @@ input.iq-input-error {
 
 /* CARD STRIPED LIST */
 .iq-list { margin-bottom: 2rem; padding: 1rem; }
-.iq-list p { margin-bottom: 0; }
+.iq-list p, iq-list label { margin-bottom: 0; }
 .iq-list ul { list-style-position: inside; padding-left: 0;}
+.iq-list ul li, .iq-list ol li { padding: 0; }
 .iq-list > div > div { padding: 1rem; }
 .iq-list > div:nth-of-type(odd){ background-color: #f8f8f8; }
 .iq-list > div:last-child { border-bottom: 1px solid #f1f1f1; }
