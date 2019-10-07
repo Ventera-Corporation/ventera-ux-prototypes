@@ -96,6 +96,7 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .form-control {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 input:not([type=checkbox]):not([type=radio]):disabled, select:disabled, textarea:disabled, .form-control:disabled { background-color: #d6d7d9; border: 1px solid #AEB0B5; opacity: 1;}
+input[type=text]:read-only { border: 0; background-color: #f1f1f1;  }
 .input-group > .form-control { width: 1% !important; }
 .iqies-required-text { font-size: .875rem; margin-bottom: 2rem; }
 fieldset { margin-bottom: 1.5rem; }
@@ -116,13 +117,16 @@ p.info-text { margin-bottom: 1rem; }
 
 /* FORM ERROR HANDLING */
 label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616b; }
-.iq-input-error { border: 1px solid #e31c3d; }
+.iq-input-error, input.iq-input-error  { border: 1px solid #e31c3d; }
 .iq-input-error-msg { color: #cd2026; font-size: .8125rem; margin-top: .5rem; font-weight: normal;}
 .iq-input-error-msg::before, .iq-input-info-msg::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; line-height: 1.5rem; }
+.iq-input-error-msg a { text-decoration: none; }
+.iq-input-error-msg a:hover { text-decoration: underline; }
+
 .iq-input-info-msg { color: #212121; font-size: .8125rem; margin-top: .5rem; font-weight: normal; }
-input.iq-input-error {
-    border: 1px solid #e31c3d !important;
-}
+
+
+
 
 /* FILE ATTACHMENT */
 .form-control-file {
@@ -238,15 +242,16 @@ input.iq-input-error {
 
 /* ACCORDION BUTTONS */
 .iq-accordion .card-header .btn .iq-accordion-title { font-weight: 400 !important; }
-.iq-accordion .card.no-border .iq-button-wrapper button {
+.iq-accordion .card.no-border .card-header .iq-button-wrapper button {
     padding: .438rem 1rem; 
     color: #0071bc;
     border-color: #0071bc;
     font-weight: 700; 
 }
-.iq-accordion .card.no-border .iq-button-wrapper button:hover {
+.iq-accordion .card.no-border .card-header .iq-button-wrapper button:hover {
     color: white;
 }
+.iq-accordion .card.no-border .card-body .iq-button-wrapper .btn.btn-primary { color: white; }
 .iq-accordion .card.no-border .card-header > button { 
     color: #0071bc;
     font-weight: 400;
