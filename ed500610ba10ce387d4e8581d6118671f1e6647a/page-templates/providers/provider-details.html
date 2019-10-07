@@ -46,7 +46,7 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container" id="mainContent">
     <div class="row iq-return-link">
       <div class="col">
         <button class="btn btn-link">&lt; Return to Provider</button>
@@ -54,9 +54,7 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="alert alert-success successMsg hide" role="alert">
-          <div class="alert-content">Changes saved successfully</div>
-        </div>
+        
       </div>
       <div class="col-sm-5 col-md-4 col-lg-3">
         <nav class="nav flex-column iq-nav" role="navigation"> <a class="nav-link active" tabindex="0" id="tab1Tab"
@@ -83,6 +81,25 @@
                     aria-selected="false">Attachments</a> </nav>
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
+        <div class="alert alert-success successMsg hide" role="alert">
+          <div class="alert-content">Changes saved successfully</div>
+        </div>
+         <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content">
+           
+                  <div id="mailError">
+                 <p> Unable to save. Please review and correct the following items:</p> 
+                  <ul>
+                      <li class="first"><a href="#address1M">Address 1</a> is required</li>
+                      <li class="second"><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                  </ul></div>
+                  <div id="mailErrorFree" class="hide">
+                    All errors have been corrected. <a href="#saveM">Please continue to save your changes.</a>
+                  </div>
+             
+          </div>
+        </div>
         <div class="tab-content">
           <div class="tab-pane  active" id="tab1" role="tabpanel"
                     aria-labelledby="tab1Tab">
@@ -330,13 +347,13 @@
             
             </section>
           </div>
-          <div class="tab-pane " id="tab2" role="tabpanel"
+          <div class="tab-pane hha" id="tab2" role="tabpanel"
                     aria-labelledby="tab2Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Mailing Address</h2>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 text-right">
                 <button class="btn btn-outline-primary hide" onClick="$('#tab2 .edit-view').addClass('active'); $('#tab2 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
@@ -361,9 +378,11 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="address1M">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="address1M"
+                    <input type="text" class="form-control required-form-input" id="address1M" onBlur="if($(this).val() != ''){ $(this).next('p').children('.errorM').addClass('hide'); $('.required-form-input').removeClass('iq-input-error'); $(this).next('p').removeClass('iq-input-error-msg'); $(this).next('p').addClass('help-text');  }"
                             required>
-                     <p class="iq-input-error-msg hide">This field is required</p>
+                     <p class="iq-input-error-msg hide"><span class="errorM">This field is required</span>
+                         <a href="#mailError" onClick=" $('#mailError li.first').addClass('hide'); $(this).hide();" class="float-right">Return to error message <i class="fal fa-angle-right"></i></a></p>
+                     
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -377,9 +396,10 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="cityM">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="cityM"
+                    <input type="text" class="form-control required-form-input" id="cityM" onBlur="if($(this).val() != ''){ $(this).next('p').children('.errorM').addClass('hide'); $('.required-form-input').removeClass('iq-input-error'); $(this).next('p').removeClass('iq-input-error-msg'); $(this).next('p').addClass('help-text');  }"
                             required>
-                    <p class="iq-input-error-msg hide">This field is required</p>
+                     <p class="iq-input-error-msg hide"><span class="errorM">This field is required</span>
+                         <a href="#mailError" onClick="$('#mailError li.second').addClass('hide'); $(this).hide();" class="float-right">Return to error message <i class="fal fa-angle-right"></i></a></p>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -444,9 +464,10 @@
                 <div class="col-md-3">
                   <div class="form-group">
                     <label for="zipCodeX">ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" id="zipCodeX"
+                    <input type="text" class="form-control required-form-input" id="zipCodeX" onBlur="if($(this).val() != ''){ $(this).next('p').children('.errorM').addClass('hide'); $('.required-form-input').removeClass('iq-input-error'); $(this).next('p').removeClass('iq-input-error-msg'); $(this).next('p').addClass('help-text');  }"
                             required>
-                     <p class="iq-input-error-msg hide">This field is required</p>
+                     <p class="iq-input-error-msg hide"><span class="errorM">This field is required</span>
+                         <a href="#mailError" onClick="$('#mailError').addClass('hide'); $('#mailErrorFree').removeClass('hide'); $('.errorMsg').removeClass('alert-danger'); $('.errorMsg').addClass('alert-success');  $(this).hide();" class="float-right">Return to error message <i class="fal fa-angle-right"></i></a></p>
                   </div>
                 </div>
               </div>
@@ -454,7 +475,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
+                    <a href="#mailError" id="saveM" class="btn btn-primary btn-lg" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
                     <button
                             class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -2514,7 +2535,7 @@
 $(document).ready(function () {
  
 window.setTimeout(function() {
-    $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+    $(".alert.success").fadeTo(1000, 0).slideUp(1000, function(){
         $(this).addClass('hide'); 
     });
 }, 5000);
