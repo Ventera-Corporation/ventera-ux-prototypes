@@ -110,13 +110,13 @@
   
     <div class="row">
       <div class="col-sm-5 col-md-4 col-lg-3">
-        <nav class="nav flex-column iq-nav" role="navigation">
+        <nav class="nav flex-column iq-nav" role="navigation" style="position: relative">
             <a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab">Basic Information</a> 
             <a class="nav-link disabled" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab">Responsible Staff</a> 
             <a class="nav-link disabled" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab">Parties Involved</a>
             <a class="nav-link disabled" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab">Allegations</a>
             <a class="nav-link disabled" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab">Triage</a>
-            <a href="javascript:void(0)" class="infoTooltip" style="float: right; display: inline-block; width: auto; " data-toggle="tooltip" data-placement="top" title="To initiate a survey, triage must be marked as complete">&nbsp;</a><a class="nav-link disabled surveyTab" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" title="To initiate a survey, triage must be marked as complete">Survey</a>
+            <a href="javascript:void(0)" class="infoTooltip survey hide" style="position: absolute; bottom: 11.35rem; left: 4rem; " data-toggle="tooltip" data-placement="top" title="To initiate a survey, triage must be marked as complete">&nbsp;</a><a class="nav-link disabled surveyTab" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" title="To initiate a survey, triage must be marked as complete">Survey</a>
             <a class="nav-link disabled" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab">Letters</a>
             <a class="nav-link disabled" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab">Notes</a>
             <a class="nav-link disabled" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab">Attachments</a> 
@@ -242,7 +242,7 @@
                 
                 
                 <div class="iq-button-wrapper">
-                <a href="#" class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active');  $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide'); $('.nav.iq-nav .nav-link').removeClass('disabled'); $('#newVal').val('1'); $('.iq-page-header .breadcrumb-item.current').html('Complaint 12763'); $('.iq-page-header-content h1').html('Complaint 12763'); $('.iq-summary-bar').removeClass('hide'); $('.nav.iq-nav .nav-link.surveyTab').addClass('disabled'); ">Save</a>
+                <a href="#" class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active');  $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide'); $('.nav.iq-nav .nav-link').removeClass('disabled'); $('#newVal').val('1'); $('.iq-page-header .breadcrumb-item.current').html('Complaint 12763'); $('.iq-page-header-content h1').html('Complaint 12763'); $('.iq-summary-bar').removeClass('hide'); $('.nav.iq-nav .nav-link.surveyTab').addClass('disabled'); $('.infoTooltip.survey').removeClass('hide'); ">Save</a>
                 <button class="btn btn-link" onClick="if($('#newVal').val() == 0){
                       window.location = 'provider-profile.html';                  
                     } else {('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); }">Cancel</button>
@@ -1764,194 +1764,131 @@
                 <p class="info-text"><span class="partyCount">1 Party</span> Involved</p>
                 
 <div class="accordion-wrapper addedParty">
-<div class="iq-accordion anon hide">
-    <div class="card ">
-      <div class="card-header d-flex">
-        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP1" type="button" onclick="$(this).toggleClass('expanded');">
-          <span>Anonymous Party<br><small>Complainant</small></span>
-        </button>
-        <div class="iq-accordion-actions d-flex align-items-center">
-          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
-            Delete
-          </button>
-          
-        </div>
-      </div>
-      <div id="aP1" class="collapse">
-        <div class="card-body">
-           <p class="iq-not-available">Not applicable</p>
-        </div>
-      </div>
-    </div>
-</div>
-<div class="iq-accordion complainant hide">
-    <div class="card ">
-      <div class="card-header d-flex">
-        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP2" type="button" onclick="$(this).toggleClass('expanded');">
-          <span>Desrocher, Annette<br><small>Complainant: Confidential, Primary</small></span>
-        </button>
-        <div class="iq-accordion-actions d-flex align-items-center">
-          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
-            Delete
-          </button>
-          <button type="button" class="btn btn-outline-primary" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editComplainant').addClass('active'); ">Edit</button>
-        </div>
-      </div>
-      <div id="aP2" class="collapse">
-        <div class="card-body">
-          <div class="iq-list">
-            <div class="row">
-              <div class="col-md-4"><label>Relationship to Person Affected</label></div>
-              <div class="col-md-8"><p>Family</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Address</label></div>
-              <div class="col-md-8"><p>2024 Upper Lake Dr<br>Reston, VA 20191</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Work Phone</label></div>
-              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Home Phone</label></div>
-              <div class="col-md-8"><p>(571) 333-9833</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Mobile Phone</label></div>
-              <div class="col-md-8"><p>(571) 333-9833</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Email</label></div>
-              <div class="col-md-8"><p>adrocher@gmail.com</p></div>
+     <div class="iq-accordion otherParty hide">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP5" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>Crow, Lucinda<br><small>Other Party: Possible Witness</small></span>
+            </button>
+            <div class="iq-accordion-actions d-flex align-items-center">
+              <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+                Delete
+              </button>
+              <button type="button" class="btn btn-link" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editOtherParty').addClass('active'); ">Edit</button>
             </div>
           </div>
-          
-        </div>
-      </div>
-    </div>
-</div>   
-<div class="iq-accordion perp hide">
-    <div class="card ">
-      <div class="card-header d-flex">
-        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP3" type="button" onclick="$(this).toggleClass('expanded');">
-          <span>MacMahon, Joel<br><small>Alleged Perpetrator</small></span>
-        </button>
-        <div class="iq-accordion-actions d-flex align-items-center">
-          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
-            Delete
-          </button>
-          <button type="button" class="btn btn-outline-primary" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editPerp').addClass('active'); ">Edit</button>
-        </div>
-      </div>
-      <div id="aP3" class="collapse">
-        <div class="card-body">
-           <div class="iq-list">
-            <div class="row">
-              <div class="col-md-4"><label>Role</label></div>
-              <div class="col-md-8"><p>Staff Member</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>License Number</label></div>
-              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
-            </div> 
-            <div class="row">
-              <div class="col-md-4"><label>Title</label></div>
-              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
-            </div>    
-            <div class="row">
-              <div class="col-md-4"><label>Address</label></div>
-              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Work Phone</label></div>
-              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Home Phone</label></div>
-              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Fax</label></div>
-              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Email</label></div>
-              <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
-            </div>
+          <div id="aP5" class="collapse">
+            <div class="card-body">
+                <div class="iq-list">
+                    <div class="row">
+                      <div class="col-md-4"><label>Address</label></div>
+                      <div class="col-md-8"><p>2446 Ridgehampton Ct<br>Reston, VA 20191</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Work Phone</label></div>
+                      <div class="col-md-8"><p>(703) 234-4567 Ext. 123</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Alternative Phone</label></div>
+                      <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Fax</label></div>
+                      <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Email</label></div>
+                      <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                    </div>
 
-        </div>
-                 
-        </div>
-      </div>
-    </div>
-</div> 
-<div class="iq-accordion affected hide">
-    <div class="card ">
-      <div class="card-header d-flex">
-        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP4" type="button" onclick="$(this).toggleClass('expanded');">
-          <span>Hugo, Victoria<br><small>Person Affected: Confidential</small></span>
-        </button>
-        <div class="iq-accordion-actions d-flex align-items-center">
-          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
-            Delete
-          </button>
-          <button type="button" class="btn btn-outline-primary" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editAffected').addClass('active'); ">Edit</button>
-        </div>
-      </div>
-      <div id="aP4" class="collapse">
-        <div class="card-body">
-           <div class="iq-list">
-            <div class="row">
-              <div class="col-md-4"><label>Gender</label></div>
-              <div class="col-md-8"><p>Female</p></div>
+                </div>
+
             </div>
-            <div class="row">
-              <div class="col-md-4"><label>Date of Birth</label></div>
-              <div class="col-md-8"><p>06/23/1970</p></div>
-            </div> 
-            <div class="row">
-              <div class="col-md-4"><label>Admission Date</label></div>
-              <div class="col-md-8"><p>10/01/2019</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"><label>Discharge Date</label></div>
-              <div class="col-md-8"><p>10/03/2019</p></div>
-            </div>
-            <div class="row">
-              <div class="col-md-12"><label>Summary of Complaint</label><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-            </div> 
           </div>
-          
         </div>
-      </div>
-    </div>
-</div> 
-<div class="iq-accordion otherParty hide">
-    <div class="card ">
-      <div class="card-header d-flex">
-        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP5" type="button" onclick="$(this).toggleClass('expanded');">
-          <span>Crow, Lucinda<br><small>Other Party: Possible Witness</small></span>
-        </button>
-        <div class="iq-accordion-actions d-flex align-items-center">
-          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
-            Delete
-          </button>
-          <button type="button" class="btn btn-outline-primary" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editOtherParty').addClass('active'); ">Edit</button>
+    </div>    
+    
+       
+     
+    <div class="iq-accordion affected hide">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP4" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>Hugo, Victoria<br><small>Person Affected: Confidential</small></span>
+            </button>
+            <div class="iq-accordion-actions d-flex align-items-center">
+              <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+                Delete
+              </button>
+              <button type="button" class="btn btn-link" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editAffected').addClass('active'); ">Edit</button>
+            </div>
+          </div>
+          <div id="aP4" class="collapse">
+            <div class="card-body">
+               <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4"><label>Gender</label></div>
+                  <div class="col-md-8"><p>Female</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Date of Birth</label></div>
+                  <div class="col-md-8"><p>06/23/1970</p></div>
+                </div> 
+                <div class="row">
+                  <div class="col-md-4"><label>Admission Date</label></div>
+                  <div class="col-md-8"><p>10/01/2019</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Discharge Date</label></div>
+                  <div class="col-md-8"><p>10/03/2019</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12"><label>Summary of Complaint</label><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                </div> 
+              </div>
+
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="aP5" class="collapse">
-        <div class="card-body">
-            <div class="iq-list">
+    </div> 
+    <div class="iq-accordion perp hide">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP3" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>MacMahon, Joel<br><small>Alleged Perpetrator</small></span>
+            </button>
+            <div class="iq-accordion-actions d-flex align-items-center">
+              <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+                Delete
+              </button>
+              <button type="button" class="btn btn-link" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editPerp').addClass('active'); ">Edit</button>
+            </div>
+          </div>
+          <div id="aP3" class="collapse">
+            <div class="card-body">
+               <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4"><label>Role</label></div>
+                  <div class="col-md-8"><p>Staff Member</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>License Number</label></div>
+                  <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                </div> 
+                <div class="row">
+                  <div class="col-md-4"><label>Title</label></div>
+                  <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                </div>    
                 <div class="row">
                   <div class="col-md-4"><label>Address</label></div>
-                  <div class="col-md-8"><p>2446 Ridgehampton Ct<br>Reston, VA 20191</p></div>
+                  <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
                 </div>
                 <div class="row">
                   <div class="col-md-4"><label>Work Phone</label></div>
-                  <div class="col-md-8"><p>(703) 234-4567 Ext. 123</p></div>
+                  <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4"><label>Alternative Phone</label></div>
+                  <div class="col-md-4"><label>Home Phone</label></div>
                   <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
                 </div>
                 <div class="row">
@@ -1962,13 +1899,79 @@
                   <div class="col-md-4"><label>Email</label></div>
                   <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
                 </div>
-                
+
             </div>
-          
+
+            </div>
+          </div>
         </div>
-      </div>
     </div>
-</div> 
+    <div class="iq-accordion complainant hide">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP2" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>Desrocher, Annette<br><small>Complainant: Confidential, Primary</small></span>
+            </button>
+            <div class="iq-accordion-actions d-flex align-items-center">
+              <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+                Delete
+              </button>
+              <button type="button" class="btn btn-link" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editComplainant').addClass('active'); ">Edit</button>
+            </div>
+          </div>
+          <div id="aP2" class="collapse">
+            <div class="card-body">
+              <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4"><label>Relationship to Person Affected</label></div>
+                  <div class="col-md-8"><p>Family</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Address</label></div>
+                  <div class="col-md-8"><p>2024 Upper Lake Dr<br>Reston, VA 20191</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Work Phone</label></div>
+                  <div class="col-md-8"><p class="iq-not-available">Not available</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Home Phone</label></div>
+                  <div class="col-md-8"><p>(571) 333-9833</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Mobile Phone</label></div>
+                  <div class="col-md-8"><p>(571) 333-9833</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"><label>Email</label></div>
+                  <div class="col-md-8"><p>adrocher@gmail.com</p></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+<div class="iq-accordion anon hide">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#aP1" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>Anonymous Party<br><small>Complainant</small></span>
+            </button>
+            <div class="iq-accordion-actions d-flex align-items-center">
+              <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+                Delete
+              </button>
+
+            </div>
+          </div>
+          <div id="aP1" class="collapse">
+            <div class="card-body">
+               <p class="iq-not-available">Not applicable</p>
+            </div>
+          </div>
+        </div>
+    </div>
 </div><!-- end accordion -->
                 
 <div class="table-wrapper">  <table class="table table-striped addedParty hide">
@@ -2125,7 +2128,7 @@
                 
               </div>
             </div>
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view.partyType').addClass('active'); $('#tab3 .read-view').removeClass('active');">Add Allegation</button>  
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab4 .edit-view.addAllegation').addClass('active'); $('#tab4 .read-view').removeClass('active');">Add Allegation</button>  
                 </div>                
                 <p class="info-text"><span class="allegationCount">1</span> Allegation<span class="allePostCount hide">s</span></p>
                 
@@ -2138,10 +2141,10 @@
          
         </button>
         <div class="iq-accordion-actions d-flex align-items-center">
-          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
             Delete
           </button>
-          <button type="button" class="btn btn-outline-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .edit-view.editAllegationA').addClass('active'); ">Edit</button>
+          <button type="button" class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .edit-view.editAllegationA').addClass('active'); ">Edit</button>
         </div>
       </div>
       <div id="alle1" class="collapse">
@@ -2290,13 +2293,82 @@
                        
                     </div>
                 </div>
-                <div class="col-md-12"><div class="surveyDate hide mt-5">
+                <div class="col-md-12">
+                    <div class="surveyDate hide mt-5">
                     <h3>Survey Due Date</h3>
                     <p class="nijm">Based on the priority, no federal survey is required.</p>
-        
-                    
+                        
+                        <div class="form-group">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.calDueDate').toggleClass('hide');">Enter due date manually</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.calDueDate').toggleClass('hide'); ">Enter calculated due date</button>
+                </div></div>
+                <div class="iq-conditional-content calDueDate">
+                    <div class="form-group">
+            <label>Survey Due Date
+                <input type="date" id="surveyDueDateInput">
+                <span class="help-text">MM/DD/YYYY</span>
+            </label>
+        </div>
+                </div>
+                <div class="iq-conditional-content calDueDate hide">
+                   <div class="row">
+                       <div class="col-md-5">
+
+        <fieldset>
+        <legend>Calculate From </legend>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="dio1" name="dio" checked class="custom-control-input">
+          <label class="custom-control-label" for="dio1"> Intake Start Date (10/04/2019) </label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="dio2" name="dio" disabled class="custom-control-input">
+          <label class="custom-control-label" for="dio2"> Triage Completion Date (Not Available) </label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="dio3" name="dio" disabled class="custom-control-input">
+          <label class="custom-control-label" for="dio3"> RO Approval Date (Not Available) </label>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>Calculate Based On </legend>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="calBased1" name="calBased" checked class="custom-control-input">
+          <label class="custom-control-label" for="calBased1"> Calendar Days </label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="calBased2" name="calBased" class="custom-control-input">
+          <label class="custom-control-label" for="calBased2"> Business Days </label>
+        </div>
+        </fieldset>
+        <p><label>Days to Investigate</label>
+            <input type="number" value="45" style="width: 10rem;">
+            <span class="help-text">Can be reduced to meet state requirements or for other considerations</span>
+        </p>
+        <p><label>Calculated Survey Due Date</label>
+            <input type="text" readonly value="10/30/2019">
+        </p>
+              
+                      </div>
+
+                    </div> 
+                </div>
+                 
+                        
+                <!--<fieldset>
+                <legend>Survey Due Date</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="surveyDueDateEntry1"  name="surveyDueDateEntry" class="custom-control-input" onchange="if(this.checked) {  }">
+                  <label class="custom-control-label" for="surveyDueDateEntry1"> Enter manually </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="surveyDueDateEntry2" name="surveyDueDateEntry" class="custom-control-input" onchange="if(this.checked) { }">
+                  <label class="custom-control-label" for="surveyDueDateEntry2"> Enter calcuated due date </label>
+                </div>
+                </fieldset>-->
+     <!--                 
 <div class="row">
-    <div class="col-md-7">
+  <div class="col-md-7">
         <label>&nbsp;</label>
     <div class="iq-accordion showhide">
     <div class="card no-border">
@@ -2350,16 +2422,12 @@
         </div>
       </div>
     </div>
-  </div>      
+  </div>  
+    <div class="col-md-3"></div> 
     <div class="col-md-3">
-        <div class="form-group">
-            <label>Survey Due Date
-                <input type="date" id="surveyDueDateInput">
-                <span class="help-text">MM/DD/YYYY</span>
-            </label>
-        </div>
+        
     </div>             
-</div>
+</div>-->
             
             
                         </div></div>
@@ -4470,23 +4538,23 @@ function sortParties(){
         console.log(partyCount);
         
         if($('#anonCount').val() == '1'){                                                   console.log('anonymous');                                            
-            $('.edit-view').removeClass('active');                                       $('.read-view').addClass('active');
-            $('.addedParty .anon').removeClass('hide'); 
+            $('#tab3 .edit-view').removeClass('active');                                       $('.read-view').addClass('active');
+            $('#tab3 .addedParty .anon').removeClass('hide'); 
             $('#anon2').click();                                                                 
         } else {
             console.log('not anonymous');   
-            $('.edit-view').removeClass('active');
+            $('#tab3 .edit-view').removeClass('active');
             if($('#involveType1').prop('checked') == true ){
-               $('.edit-view.complainant').addClass('active');         
+               $('#tab3 .edit-view.complainant').addClass('active');         
             }                                                               
             if($('#involveType2').prop('checked') == true ){
-               $('.edit-view.perp').addClass('active');         
+               $('#tab3 .edit-view.perp').addClass('active');         
             }   
             if($('#involveType3').prop('checked') == true ){
-               $('.edit-view.affected').addClass('active');         
+               $('#tab3 .edit-view.affected').addClass('active');         
             }   
             if($('#involveType4').prop('checked') == true ){
-               $('.edit-view.otherParty').addClass('active');         
+               $('#tab3 .edit-view.otherParty').addClass('active');         
             }                                                                           
         }                                                                      
     }
