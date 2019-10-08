@@ -1,0 +1,64 @@
+/* Components Sidebar Menu */
+
+#menu-toggle {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 9999;
+  display: block;
+}
+
+#iq-proto-wrapper {
+  padding-left: 210px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+  #iq-proto-wrapper.toggled {
+    padding-left: 0;
+  }
+
+    #iq-proto-wrapper.toggled #iq-proto-sidebar-wrapper {
+      width: 0;
+    }
+
+#iq-proto-sidebar-wrapper {
+  z-index: 8888;
+  position: fixed;
+  overflow-x: hidden;
+  left: 210px;
+  width: 210px;
+  overflow-y: auto;
+  margin-left: -210px;
+  background-color: #112E51;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  height: 100%;
+  color: #fff;
+}
+
+  #iq-proto-sidebar-wrapper .list-group {
+    margin-top: 4.5rem;
+  }
+
+    #iq-proto-sidebar-wrapper .list-group .list-group-item {
+      background-color: transparent;
+      border: 0;
+      margin: 0 1rem;
+      padding: 0.5rem;
+    }
+
+  #iq-proto-sidebar-wrapper a {
+    color: #fff;
+    opacity: .8;
+    text-decoration: none;
+    font-weight: 300;
+  }
+
+    #iq-proto-sidebar-wrapper a:hover {
+      opacity: 1;
+    }
