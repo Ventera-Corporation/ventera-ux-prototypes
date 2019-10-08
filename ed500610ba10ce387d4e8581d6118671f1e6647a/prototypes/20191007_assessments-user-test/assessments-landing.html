@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="">
+
+  <title>Assessments</title>
+
+  <link rel="stylesheet"
+        href="../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet"
+        href="../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet"
+        href="assessments.css">
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav>
+            <a href="assessments-landing.html">
+              <img src="../../../src/assets/images/logo-iqies.svg"
+                class="iq-logo" alt="Logo iQIES Color" />
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="iq-page-header-wrapper">
+      <div class="container">
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col d-flex flex-column justify-content-between">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="../../index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    Assessments
+                  </li>
+                </ol>
+              </nav>
+              <div class="iq-page-header-content">
+                <h1>Assessments</h1>
+                <div class="iq-page-header-description">
+                  Current and accurate patient information is vital to quality
+                  healthcare.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col">
+          <div class="iq-accordion">
+            <div class="card no-border" id="iq-heading-show-hide">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label"
+                  data-target="#iq-collapse-show-hide"
+                  onclick="toggleArrow('iq-heading-show-hide')"
+                  data-toggle="collapse" type="button" aria-expanded="false"
+                  aria-controls="iq-collapse-show-hide">
+                  <svg class="iq-icon">
+                    <path fill="none" stroke="#0071bc" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-miterlimit="10"
+                      d="M.5 16.5l8-8-8-8"></path>
+                  </svg><span>Change Provider</span>
+                </button>
+              </div>
+              <div id="iq-collapse-show-hide" class="collapse"
+                aria-labelledby="iq-heading-show-hide">
+                <div class="card-body px-0">
+                  <p>Select a provider to manage their patient assessments.</p>
+                  <p>3 Providers</p>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class="sortable">Provider</th>
+                        <th class="sortable">Address</th>
+                        <th class="sortable">Facility ID</th>
+                        <th class="sortable">Branch ID</th>
+                        <th class="sortable">CCN</th>
+                        <td></td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Riverbend Rehabilitation Hospital</td>
+                        <td>
+                          <address>123 South Street, PO Box 124 Tampa Bay, FL
+                            55555</address>
+                        </td>
+                        <td>000123456789</td>
+                        <td>16Q5000001</td>
+                        <td>098171</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Oakwood Homecare</td>
+                        <td>
+                          <address>342 South Fake Street, Tampa Bay, FL 55555
+                          </address>
+                        </td>
+                        <td>000123456789</td>
+                        <td>16Q5000002</td>
+                        <td>927492</td>
+                        <td><a href="">Select</a></td>
+                      </tr>
+                      <tr>
+                        <td>Willow Homecare</td>
+                        <td>
+                          <address>7039 South Street, Tampa Bay, FL 55555
+                          </address>
+                        </td>
+                        <td>000123456789</td>
+                        <td>16Q5000003</td>
+                        <td>694724</td>
+                        <td><a href="">Select</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col">
+          <h2>RIVERBEND REHABILITATION HOSPTIAL</h2>
+          <div class="iq-button-wrapper">
+            <button class="btn btn-primary btn-lg">Find Patient</button>
+            <a href="add-patient.html" class="btn btn-outline-primary btn-lg">
+              Add Patient
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Admitted Patients</h3>
+          <p>3 Patients</p>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="sortable">First Name</th>
+                <th class="sortable">Last Name</th>
+                <th class="sortable">Date of Birth</th>
+                <th class="sortable">Admission Date</th>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Richard</td>
+                <td>Lewis</td>
+                <td>11/19/1987</td>
+                <td>07/01/2019</td>
+                <td><a href="patient.html">View</a></td>
+              </tr>
+              <tr>
+                <td>Jane</td>
+                <td>Anderson</td>
+                <td>05/13/1966</td>
+                <td>06/19/2018</td>
+                <td><a href="">View</a></td>
+              </tr>
+              <tr>
+                <td>Harold</td>
+                <td>Hanson</td>
+                <td>09/22/1987</td>
+                <td>02/09/2018</td>
+                <td><a href="">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/">
+                    <img
+                      src="../../../src/assets/images/logo-iqies-reversed.svg"
+                      class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg"
+                    class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="/help">Help</a><span>
+                  (800)
+                  339-9313
+                </span><a href="mailto:help@qtso.com">Email Us</a><a
+                  href="https://qtso.cms.gov/" target="_blank"
+                  rel="noopener noreferrer">
+                  QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                    class="iq-external-link-icon" alt="">
+                </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                  target="_blank" rel="noopener noreferrer">
+                  Medicare <img
+                    src="../../../src/assets/images/icon-link-external.svg"
+                    class="iq-external-link-icon" alt="">
+                </a><a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="https://www.medicare.gov/about-us/plain-writing"
+                    target="_blank" rel="noopener noreferrer">
+                    Plain Writing <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt="">
+                  </a><a
+                    href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                    target="_blank" rel="noopener noreferrer">
+                    Freedom of
+                    Information Act <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt="">
+                  </a><a
+                    href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                    target="_blank" rel="noopener noreferrer">
+                    No Fear Act <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt="">
+                  </a><a href="https://get.adobe.com/reader/" target="_blank"
+                    rel="noopener noreferrer">
+                    Adobe Acrobat <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg"
+            class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript"
+    src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+  </script>
+  <script type="text/javascript"
+    src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript"
+    src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="../../../src/assets/js/scripts.js">
+  </script>
+</body>
+
+</html>
