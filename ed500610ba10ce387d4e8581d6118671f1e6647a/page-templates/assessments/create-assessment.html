@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="">
+
+  <title>Create an Assessment</title>
+
+  <link rel="stylesheet"
+        href="../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet"
+        href="../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet"
+        href="assessments.css">
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav>
+            <a href="assessments-landing.html">
+              <img src="../../../src/assets/images/logo-iqies.svg"
+                   class="iq-logo" alt="Logo iQIES Color" />
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="iq-page-header-wrapper inverted mb-5">
+      <div class="container">
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col d-flex flex-column justify-content-between">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="../../index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="assessments-landing.html">Assessments</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="patient-profile.html">Patient</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    Create an Assessment
+                  </li>
+                </ol>
+              </nav>
+              <div class="iq-page-header-content">
+                <h1>Create an Assessment</h1>
+                <h3><a href="patient-profile.html">Eugene Abbott</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a href="patient-profile.html" class="btn btn-link iq-proto-back-link">&lt; Return to Patient Profile</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="iq-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="assessmentReason">Reason for Assessment (A0250) <span class="iq-asterisk">*</span></label>
+            <select class="form-control" id="a0250" aria-label="assessmentReason" onchange="toggleSelectContent('a0250', 'a0220Content', 'admission')">
+              <option value="" selected></option>
+              <option value="admission">Admission</option>
+              <option value="discharge">Discharge</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="iq-conditional-content mb-4" id="a0220Content">
+            <div class="form-group">
+              <label for="a0220">Admission Date (A0220)</label>
+              <input type="date" class="form-control" id="a0220" aria-label="a0220" />
+              <small class="form-text text-muted">MM/DD/YYYY</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="iq-button-wrapper">
+        <a href="admission-assessment.html" class="btn btn-primary">
+          Next
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/">
+                    <img src="../../../src/assets/images/logo-iqies-reversed.svg"
+                         class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg"
+                           class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="/help">Help</a><span>
+                  (800)
+                  339-9313
+                </span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank"
+                                                                     rel="noopener noreferrer">
+                  QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                            class="iq-external-link-icon" alt="">
+                </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                       target="_blank" rel="noopener noreferrer">
+                  Medicare <img src="../../../src/assets/images/icon-link-external.svg"
+                                class="iq-external-link-icon" alt="">
+                </a><a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="https://www.medicare.gov/about-us/plain-writing"
+                     target="_blank" rel="noopener noreferrer">
+                    Plain Writing <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon" alt="">
+                  </a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                         target="_blank" rel="noopener noreferrer">
+                    Freedom of
+                    Information Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                         class="iq-external-link-icon" alt="">
+                  </a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                         target="_blank" rel="noopener noreferrer">
+                    No Fear Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                     class="iq-external-link-icon" alt="">
+                  </a><a href="https://get.adobe.com/reader/" target="_blank"
+                         rel="noopener noreferrer">
+                    Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg"
+               class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+  </script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="../../../src/assets/js/scripts.js">
+  </script>
+</body>
+
+</html>
