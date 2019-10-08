@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nav>
+            <a href="index.html">
+              <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo"
+                   alt="Logo iQIES Color" />
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+
+
+    <div class="iqies-login-hero">
+      <div class="container">
+        <div class="row iqies-login-main">
+          <div class="col-md-8">
+            <div class="row align-items-center iqies-login-welcome">
+              <div class="col">
+                <h1>Welcome to iQIES</h1>
+                <p>Accessibility and connectivity are essential for health care professionals.</p>
+              </div>
+            </div>
+            <div class="row d-none d-md-flex">
+              <div class="col">
+                <button aria-label="down" id="down" class="btn btn-link iqies-home-down">
+                  <span class="sr-only">Down</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 d-flex align-items-center login-screen-inner">
+            <form>
+              <h1>Log In</h1>
+              <p>Enter your user ID and password to log in.</p>
+              <div class="form-group">
+                <label id="username-label" for="username" class="">
+                  User ID
+                  <span class="iqies-asterisk"> *</span>
+                </label>
+                <input id="username" name="username" class="form-control" aria-required="true" autocapitalize="none" type="text" value="" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label id="password-label" for="password" class="">
+                  Password
+                  <span class="iqies-asterisk"> *</span>
+                </label>
+                <input id="password" name="password" class="form-control" aria-required="true" autocapitalize="none" type="password" value="" autocomplete="off">
+              </div>
+              <p>
+                <a href="#">
+                  Need help logging in?
+                  <span class="iqies-img-right">
+                    <img src="../../../src/assets/images/icon-redirect.1e13f9d2.svg" alt="Icon Link External">
+                  </span>
+                </a>
+              </p>
+              <p>
+                <a href="#">
+                  Create an Account
+                  <span class="iqies-img-right">
+                    <img src="../../../src/assets/images/icon-redirect.1e13f9d2.svg" alt="Icon Link External">
+                  </span>
+                </a>
+              </p>
+              <div class="iqies-button-wrapper">
+                <a href="dashboard-one.html" class="btn btn-primary">Log In</a>
+              </div>
+              <p>HCQIS Access Roles and Profile (HARP) is a secure identity management portal provided by the Centers for Medicare &amp; Medicaid Services (CMS).</p>
+              <p>For security, account registration and credential management are processed through HARP.</p>
+              <p>
+                <a href="#">
+                  <!-- <span class="iqies-img-left">
+                    <img class="iqies-icon iqies-icon-left" src="../../../src/assets/images/icon-download.87d99f8c.svg" alt="Icon Link Download">
+                  </span> -->
+                  Video: How to Create an Account
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/">
+                    <img src="../../../src/assets/images/logo-iqies-reversed.svg"
+                         class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg"
+                           class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="#">Help</a>
+                <span>
+                  (800)
+                  339-9313
+                </span>
+                <a href="#">Email Us</a><a href="#">
+                  QTSO <img src="../../../src/assets/images/icon-link-external.svg"
+                            class="iq-external-link-icon">
+                </a>
+                <a href="#">
+                  Medicare <img src="../../../src/assets/images/icon-link-external.svg"
+                                class="iq-external-link-icon">
+                </a>
+                <a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="#">
+                    Plain Writing <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon">
+                  </a><a href="#">
+                    Freedom of
+                    Information Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                         class="iq-external-link-icon">
+                  </a>
+                  <a href="#">
+                    No Fear Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                     class="iq-external-link-icon">
+                  </a><a href="#">
+                    Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg"
+               class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+  </script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="dashboard.js">
+  </script>
+</body>
+
+</html>

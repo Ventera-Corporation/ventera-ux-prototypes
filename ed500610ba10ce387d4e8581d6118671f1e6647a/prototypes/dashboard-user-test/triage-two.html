@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+  <div style="position: fixed; top: 20px; right: 20px;z-index: 999;">
+    <div class="toast toast-info fade" role="alert" aria-live="assertive"
+         aria-atomic="true">
+      <div class="toast-header">
+        <p class="mr-auto">Complaint Survey Approved</p>
+        <button type="button" class="ml-2 close" data-dismiss="toast"
+                aria-label="Close">
+          <span aria-hidden="true">
+            <svg class="iq-icon-right iq-icon" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path fill="#212121"
+                    d="M8.7153,8,15.8536.8616A.5048.5048,0,0,0,15.14.1478L8.0014,7.2861.8631.1478A.5048.5048,0,1,0,.1492.8616L7.2876,8,.1492,15.1383a.5048.5048,0,1,0,.7139.7138L8.0014,8.7138,15.14,15.8521a.5048.5048,0,0,0,.7139-.7138Z">
+              </path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Provider: Good Samaritan</br>
+        CCN:010056</br>
+        Survey Due Date: 08/20/2019</br>
+        Complaint 274937
+      </div>
+    </div>
+  </div>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex">
+          <nav>
+            <a href="dashboard-two.html">
+              <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo"
+                   alt="Logo iQIES Color" />
+            </a>
+            <a href="#">
+              Providers <img src="../../../src/assets/images/icon-arrow-down.svg"
+                             class="iq-icon">
+            </a>
+            <a href="#">
+              Reports <img src="../../../src/assets/images/icon-arrow-down.svg"
+                           class="iq-icon">
+            </a>
+          </nav>
+          <div class="nav-icons ml-auto d-flex">
+            <div class="dropdown">
+              <button class="dropdown-toggle" data-toggle="dropdown"
+                      id="dropdownMenu2" data-offset="100,32">
+                <img src="../../../src/assets/images/icon-bell-disabled.svg" />
+              </button>
+              <div class="dropdown-menu dropdown-menu-right"
+                   aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">
+                  <p>
+                    <span class="font-weight-bold">
+                      Complaint Survey
+                      Approved
+                    </span><br>
+                    Provider: Good Samaritan<br>
+                    CCN: 100056<br>
+                    Survey Due Date: 08/20/2019<br>
+                    Complaint 274937
+                  </p>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">
+                  <p>
+                    2567 Due to Provider in 2 days<br>
+                    Provider: Johns Hopkins Bayview Medical Center<br>
+                    CCN: FL010034<br>
+                    Received Date: 7/24/19<br>
+                    Survey 9A82-H1
+                  </p>
+                </a>
+              </div>
+            </div>
+            <a href="#">
+              <img src="../../../src/assets/images/icon-profile-demo.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="iq-page-header-wrapper inverted">
+      <div class="container">
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col d-flex flex-column justify-content-between">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="dashboard-two.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#">Providers</a></li>
+                  <li class="breadcrumb-item"><a href="#">CCN 100586</a></li>
+                  <li class="breadcrumb-item">Complaint 83947</li>
+                </ol>
+              </nav>
+              <div class="iq-page-header-content">
+                <h1>Complaint 83947</h1>
+                <div class="iq-page-header-details">
+                  <a href="#">
+                    Quality Home
+                    Health, Inc.
+                  </a><span class="iq-page-header-details-spacer">-</span><span>
+                    Home
+                    Health Agency
+                  </span><span class="iq-page-header-details-spacer">-</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-lg-3 iq-page-header-contact">
+              <address>
+                <div>667 Bent Ridge Lane</div>
+                <div>Suite A</div>
+                <div>Hollywood, FL 60010</div>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="iq-summary-bar">
+        <div class="container">
+          <div class="row ">
+            <div class="col d-flex align-items-center">
+              <div class="iq-summary-bar-data" data-index="0">
+                <p>Status</p>
+                <p>Triage/Prioritizaton</p>
+              </div>
+              <div class="iq-summary-bar-data" data-index="1">
+                <p>Priority</p>
+                <p class="font-italic">Not Available</p>
+              </div>
+              <div class="iq-summary-bar-data" data-index="2">
+                <p>Intake Type</p>
+                <p>Complaint</p>
+              </div>
+              <div class="iq-summary-bar-data" data-index="3">
+                <p>Primary Complainant</p>
+                <p>Joe Smith</p>
+              </div>
+              <div class="iq-summary-bar-data" data-index="4">
+                <p>Intake Start Date</p>
+                <p>07/19/2019</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-md-4 col-lg-3">
+          <nav class="nav flex-column iq-nav" role="navigation">
+            <a class="nav-link" href="triage-one.html">
+              Basic
+              Information
+            </a>
+            <a class="nav-link" href="#">Notes</a>
+            <a class="nav-link" href="#">Responsible Staff</a>
+            <a class="nav-link" href="#">Parties Involved</a>
+            <a class="nav-link" href="#">Allegations</a>
+            <a class="nav-link active" href="triage-two.html">Triage</a>
+            <a class="nav-link disabled" href="#">Survey</a>
+            <a class="nav-link" href="#">Attachments</a>
+          </nav>
+        </div>
+        <div class="col-sm-7 col-md-8 col-lg-9">
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1" role="tabpanel"
+                 aria-labelledby="tab1Tab">
+              <h2>Triage</h2>
+              <p>
+                Indicate the priority of this intake and if additional actions
+                are required.
+              </p>
+              <h3>Priority</h3>
+              <section>
+                <fieldset>
+                  <legend>
+                    Priority Level <span style="color:red;">*</span>
+                  </legend>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-1" name="example-name"
+                           class="custom-control-input" value="value">
+                    <label class="custom-control-label" for="radio-button-1">
+                      Immediate Jeopardy
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-2" name="example-name"
+                           class="custom-control-input" value="value">
+                    <label class="custom-control-label" for="radio-button-2">
+                      Non-Immediate Jeopardy-High
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-3" name="example-name"
+                           class="custom-control-input" value="value">
+                    <label class="custom-control-label" for="radio-button-3">
+                      Non-Immediate Jeopardy-Medium
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-4" name="example-name"
+                           class="custom-control-input" value="value">
+                    <label class="custom-control-label" for="radio-button-4">
+                      Non-Immediate Jeopardy-Low
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-5" name="example-name"
+                           class="custom-control-input" value="value">
+                    <label class="custom-control-label" for="radio-button-5">
+                      Not Applicable
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+              <section class="row">
+                <div class="form-group col-md-6">
+                  <label for="exampleSelect">Not Applicable Reason</label>
+                  <select id="exampleSelect" class="custom-select">
+                    <option>-- Select One --</option>
+                    <option value="customValueOne">
+                      Not a federally certified
+                      provider
+                    </option>
+                    <option value="customValueTwo">Not in jurisdiction</option>
+                    <option value="customValueThree">
+                      Occurred too far in the
+                      past
+                    </option>
+                    <option value="customValueThree">Duplicate intake</option>
+                    <option value="customValueThree">
+                      Previously investigated
+                    </option>
+                    <option value="customValueThree">Other</option>
+                  </select>
+                </div>
+              </section>
+              <h3>Referral</h3>
+              <section>
+                <fieldset>
+                  <legend>Referral Level</legend>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-6"
+                           name="example-name-two" class="custom-control-input"
+                           value="value">
+                    <label class="custom-control-label" for="radio-button-6">
+                      Refer Immediately
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-7"
+                           name="example-name-two" class="custom-control-input"
+                           value="value">
+                    <label class="custom-control-label" for="radio-button-7">
+                      Refer
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-8"
+                           name="example-name-two" class="custom-control-input"
+                           value="value">
+                    <label class="custom-control-label" for="radio-button-8">
+                      No Referral
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+              <h3>Survey</h3>
+              <section>
+                <fieldset>
+                  <legend>Action Required</legend>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-9"
+                           name="example-name-three" class="custom-control-input"
+                           value="value">
+                    <label class="custom-control-label" for="radio-button-9">
+                      Survey
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-10"
+                           name="example-name-three" class="custom-control-input"
+                           value="value">
+                    <label class="custom-control-label" for="radio-button-10">
+                      Offsite Investigation/Administrative Review
+                    </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="radio-button-11"
+                           name="example-name-three" class="custom-control-input"
+                           value="value">
+                    <label class="custom-control-label" for="radio-button-11">
+                      No Investigation
+                    </label>
+                  </div>
+                </fieldset>
+              </section>
+              <h3>Triage Completion</h3>
+              <p>
+                Triage must be marked as complete to initiate a survey, close
+                this intake, or for any additional actions.
+              </p>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" id="checkbox-button-1"
+                       name="example-name" class="custom-control-input"
+                       value="value">
+                <label class="custom-control-label" for="checkbox-button-1">
+                  Triage Complete
+                </label>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <div class="form-group">
+                    <label for="id">
+                      Triage Complete Date <span style="color:red;">*</span>
+                    </label><input type="text"
+                                   class="form-control" id="id" aria-describedby="help-id"
+                                   value="">
+                  </div>
+                </div>
+                <div class="form-group col-6">
+                  <div class="form-group">
+                    <label for="id">
+                      Time <span style="color:red;">*</span>
+                    </label><input type="text"
+                                   class="form-control" id="id" aria-describedby="help-id"
+                                   value="">
+                  </div>
+                </div>
+              </div>
+
+
+              <a href="dashboard-two.html" class="btn btn-primary">
+                Save
+                Section
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/">
+                    <img src="../../../src/assets/images/logo-iqies-reversed.svg"
+                         class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg"
+                           class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="#">Help</a>
+                <span>
+                  (800)
+                  339-9313
+                </span>
+                <a href="#">Email Us</a><a href="#">
+                  QTSO <img src="../../../src/assets/images/icon-link-external.svg"
+                            class="iq-external-link-icon">
+                </a>
+                <a href="#">
+                  Medicare <img src="../../../src/assets/images/icon-link-external.svg"
+                                class="iq-external-link-icon">
+                </a>
+                <a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="#">
+                    Plain Writing <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon">
+                  </a><a href="#">
+                    Freedom of
+                    Information Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                         class="iq-external-link-icon">
+                  </a>
+                  <a href="#">
+                    No Fear Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                     class="iq-external-link-icon">
+                  </a><a href="#">
+                    Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg"
+               class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+  </script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript">
+    const toast = $(".toast");
+    const toastButton = $(".toast-header button").on("click", function () {
+      toast.hide();
+    })
+    setTimeout(function () {
+      toast.addClass("show");
+      $(".dropdown-toggle img").attr('src',
+        '../../src/assets/images/icon-bell-notification.svg');
+    }, 5000);
+    setTimeout(function () {
+      toast.fadeOut();
+    }, 15000);
+
+  </script>
+</body>
+
+</html>
