@@ -7,12 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="">
 
-  <title>Access Request Form 2</title>
+  <title>Patient Profile</title>
 
   <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
+        href="../../../src/assets/prototype-styles/design-system.css">
   <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/prototype.css">
+        href="../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet"
+        href="assessments.css">
 </head>
 
 <body>
@@ -21,15 +23,10 @@
       <div class="row">
         <div class="col">
           <nav>
-            <div class="col-md-9">
-              <a href="../../index.html">
-                <img src="../../../src/assets/images/logo-iqies.svg"
-                  class="iq-logo" alt="Logo iQIES Color" />
-              </a>
-            </div>
-            <div class="text-right col-md-3">
-              <button class="btn btn-outline-primary">MENU</button>
-            </div>
+            <a href="assessments-landing.html">
+              <img src="../../../src/assets/images/logo-iqies.svg"
+                class="iq-logo" alt="Logo iQIES Color" />
+            </a>
           </nav>
         </div>
       </div>
@@ -37,10 +34,9 @@
   </header>
 
   <main>
-
-    <div class="iq-page-header-wrapper">
-      <div class="container mt-5">
-        <span class="iq-page-header">
+    <div class="iq-page-header-wrapper inverted mb-5">
+      <div class="container">
+        <div class="iq-page-header">
           <div class="row">
             <div class="col d-flex flex-column justify-content-between">
               <nav aria-label="breadcrumb">
@@ -49,115 +45,87 @@
                     <a href="../../index.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
-                    Access Request Form
+                    <a href="assessments-landing.html">Assessments</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    Patient
                   </li>
                 </ol>
               </nav>
+              <div class="iq-page-header-content">
+                <h1>Eugene Abbott</h1>
+              </div>
             </div>
           </div>
-        </span>
-      </div>
-    </div>
-
-    <div class="container mt-4">
-      <div class="row no-gutters">
-        <div class="col-lg-8 col-md-10">
-          <ol class="iq-step-indicator-group">
-            <li class="iq-step-indicator iq-step-indicator-complete">
-              <h2>1 <span class="iq-step-indicator-line"></span></h2>
-              <p>User Category</p>
-            </li>
-            <li class="iq-step-indicator iq-step-indicator-active">
-              <h2>2 <span class="iq-step-indicator-line"></span></h2>
-              <p>User Role</p>
-            </li>
-            <li class="iq-step-indicator iq-step-indicator-pending">
-              <h2>3 <span class="iq-step-indicator-line"></span></h2>
-              <p>Organizations</p>
-            </li>
-          </ol>
         </div>
       </div>
     </div>
 
     <div class="container">
       <div class="row">
-        <div class="col"> 
-              <div class="iq-page-header-content">
-                <h3 class="mb-2 iq-label">STEP 2</h3>
-                <h1 class="mb-3">Select a User Role</h1>
-              </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mb-4">
-      <div class="row no-gutters">
-        <div class="col-lg-8 col-md-10">
-          <p class="lead">
-            Select the category of your organization to begin the role request process.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col col-lg-8 col-md-10 lead">
-          <section>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-1" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-1">
-                Assessment Submitter
-              </label>
-              <p>Upload patient assessments, generate and view reports.</p>
-            </div>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-2" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-2">
-                Provider Administrator
-              </label>
-              <p>Create and manage patient profiles, create and manage assessments, generate and view reports.</p>
-            </div>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-3" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-3">
-                Assessment Coordinator
-              </label>
-              <p>Create and manage patient profiles, create and manage assessments, generate and view reports.</p>
-            </div>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-4" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-4">
-                Assessment Viewer
-              </label>
-              <p>View patient profiles, view assessments, generate and view reports.</p>
-            </div>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-5" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-5">
-                Provider Security Official
-              </label>
-              <p>iQIES user account approvals.</p>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="container">
-      <div class="row mb-5">
         <div class="col">
+          <h2>Patient Information</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <p class="iq-label">Social Security Number</p>
+          <p class="iq-not-available">Not available</p>
+        </div>
+        <div class="col-md-4">
+          <p class="iq-label">Date of Birth</p>
+          <p>01/01/1940</p>
+        </div>
+        <div class="col-md-4">
+          <p class="iq-label">Medicare ID</p>
+          <p class="iq-not-available">Not available</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <p class="iq-label">Medicaid ID</p>
+          <p class="iq-not-available">Not available</p>
+        </div>
+        <div class="col-md-4">
+          <p class="iq-label">Race/Ethnicity</p>
+          <ul>
+            <li>American Indian or Alaska Native</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <p class="iq-label">Gender</p>
+          <p>Male</p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col">
+          <h2>Assessments</h2>
           <div class="iq-button-wrapper">
-            <a class="btn btn-primary btn-lg" href="global-access-request-form-3.html">Next</a>
-            <a class="btn btn-link btn-lg" href="global-access-request-form-1.html">Previous</a>
+            <a href="create-assessment.html" class="btn btn-primary">
+              Create Assessment
+            </a>
           </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="sortable">Type</th>
+                <th class="sortable">Created By</th>
+                <th class="sortable">Admission Date</th>
+                <th class="sortable">State</th>
+                <th class="sortable">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Admission</td>
+                <td>John Doe</td>
+                <td>10/02/2019</td>
+                <td>Original</td>
+                <td>Accepted</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

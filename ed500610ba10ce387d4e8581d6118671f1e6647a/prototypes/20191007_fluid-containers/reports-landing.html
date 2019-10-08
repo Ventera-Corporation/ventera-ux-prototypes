@@ -7,12 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="">
 
-  <title>Access Request Form 2</title>
+  <title>Reports</title>
 
   <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
+        href="../../../src/assets/prototype-styles/design-system.css">
   <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/prototype.css">
+        href="../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet"
+        href="fluid-containers.css">
 </head>
 
 <body>
@@ -21,15 +23,10 @@
       <div class="row">
         <div class="col">
           <nav>
-            <div class="col-md-9">
-              <a href="../../index.html">
-                <img src="../../../src/assets/images/logo-iqies.svg"
-                  class="iq-logo" alt="Logo iQIES Color" />
-              </a>
-            </div>
-            <div class="text-right col-md-3">
-              <button class="btn btn-outline-primary">MENU</button>
-            </div>
+            <a href="../../index.html">
+              <img src="../../../src/assets/images/logo-iqies.svg"
+                class="iq-logo" alt="Logo iQIES Color" />
+            </a>
           </nav>
         </div>
       </div>
@@ -37,10 +34,9 @@
   </header>
 
   <main>
-
     <div class="iq-page-header-wrapper">
-      <div class="container mt-5">
-        <span class="iq-page-header">
+      <div class="container-fluid">
+        <div class="iq-page-header">
           <div class="row">
             <div class="col d-flex flex-column justify-content-between">
               <nav aria-label="breadcrumb">
@@ -49,122 +45,81 @@
                     <a href="../../index.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
-                    Access Request Form
+                    Reports
                   </li>
                 </ol>
               </nav>
+              <div class="iq-page-header-content">
+                <h1>Reports</h1>
+                <div class="iq-page-header-description">
+                  Current and accurate reporting is vital to quality
+                  healthcare. Access past reports and frequent report types.
+                </div>
+              </div>
             </div>
           </div>
-        </span>
-      </div>
-    </div>
-
-    <div class="container mt-4">
-      <div class="row no-gutters">
-        <div class="col-lg-8 col-md-10">
-          <ol class="iq-step-indicator-group">
-            <li class="iq-step-indicator iq-step-indicator-complete">
-              <h2>1 <span class="iq-step-indicator-line"></span></h2>
-              <p>User Category</p>
-            </li>
-            <li class="iq-step-indicator iq-step-indicator-active">
-              <h2>2 <span class="iq-step-indicator-line"></span></h2>
-              <p>User Role</p>
-            </li>
-            <li class="iq-step-indicator iq-step-indicator-pending">
-              <h2>3 <span class="iq-step-indicator-line"></span></h2>
-              <p>Organizations</p>
-            </li>
-          </ol>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col"> 
-              <div class="iq-page-header-content">
-                <h3 class="mb-2 iq-label">STEP 2</h3>
-                <h1 class="mb-3">Select a User Role</h1>
-              </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mb-4">
-      <div class="row no-gutters">
-        <div class="col-lg-8 col-md-10">
-          <p class="lead">
-            Select the category of your organization to begin the role request process.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col col-lg-8 col-md-10 lead">
-          <section>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-1" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-1">
-                Assessment Submitter
-              </label>
-              <p>Upload patient assessments, generate and view reports.</p>
-            </div>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-2" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-2">
-                Provider Administrator
-              </label>
-              <p>Create and manage patient profiles, create and manage assessments, generate and view reports.</p>
-            </div>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-3" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-3">
-                Assessment Coordinator
-              </label>
-              <p>Create and manage patient profiles, create and manage assessments, generate and view reports.</p>
-            </div>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-4" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-4">
-                Assessment Viewer
-              </label>
-              <p>View patient profiles, view assessments, generate and view reports.</p>
-            </div>
-            <div class="custom-control custom-radio mb-4">
-              <input type="radio" id="radio-button-5" name="example-name"
-                class="custom-control-input" value="value">
-              <label class="custom-control-label iq-label" for="radio-button-5">
-                Provider Security Official
-              </label>
-              <p>iQIES user account approvals.</p>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="container">
+    <div class="container-fluid">
       <div class="row mb-5">
         <div class="col">
           <div class="iq-button-wrapper">
-            <a class="btn btn-primary btn-lg" href="global-access-request-form-3.html">Next</a>
-            <a class="btn btn-link btn-lg" href="global-access-request-form-1.html">Previous</a>
+            <button class="btn btn-primary btn-lg">Find Report Type</button>
+            <button class="btn btn-outline-primary btn-lg">
+              View My Reports
+            </button>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Frequently Run Report Types</h3>
+          <p>4 Report Types</p>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="sortable">Report Type</th>
+                <th class="sortable">Category</th>
+                <th class="sortable">Last Run Date</th>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>LTCH Review and Correct Report</td>
+                <td>Quality Reporting Program</td>
+                <td>05/23/2019 1:06 PM</td>
+                <td><a href="">Run Report</a></td>
+              </tr>
+              <tr>
+                <td>LTCH Review and Correct Report</td>
+                <td>Quality Reporting Program</td>
+                <td>05/23/2019 1:06 PM</td>
+                <td><a href="">Run Report</a></td>
+              </tr>
+              <tr>
+                <td>LTCH Review and Correct Report</td>
+                <td>Quality Reporting Program</td>
+                <td>05/23/2019 1:06 PM</td>
+                <td><a href="">Run Report</a></td>
+              </tr>
+              <tr>
+                <td>LTCH Review and Correct Report</td>
+                <td>Quality Reporting Program</td>
+                <td>05/23/2019 1:06 PM</td>
+                <td><a href="">Run Report</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-lg-10">
           <div class="iq-footer-content">

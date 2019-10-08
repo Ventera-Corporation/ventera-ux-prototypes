@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="">
+
+  <title>Admission Assessment</title>
+
+  <link rel="stylesheet"
+        href="../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet"
+        href="../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet"
+        href="assessments.css">
+  <link rel="stylesheet"
+        href="fluid-containers.css">
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav>
+            <a href="../../index.html">
+              <img src="../../../src/assets/images/logo-iqies.svg"
+                   class="iq-logo" alt="Logo iQIES Color" />
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="iq-page-header-wrapper inverted mb-5">
+      <div class="container-fluid">
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col d-flex flex-column justify-content-between">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="../../index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="assessments-landing.html">Assessments</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="patient-profile.html">Patient</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    Assessment
+                  </li>
+                </ol>
+              </nav>
+              <div class="iq-page-header-content">
+                <h1>Admission Assessment</h1>
+                <h3><a href="patient-profile.html">Eugene Abbott</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <a href="patient-profile.html" class="btn btn-link iq-proto-back-link">&lt; Return to Patient Profile</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5 col-md-4 col-lg-3">
+          <nav class="nav flex-column iq-nav" role="navigation">
+            <a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">
+              <div class="nav-link-heading">Section A</div>
+              Administrative Information
+            </a>
+            <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">
+              <div class="nav-link-heading">Section F</div>
+              Preferences
+            </a>
+            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">
+              <div class="nav-link-heading">Section I</div>
+              Active Diagnoses
+            </a>
+            <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">
+              <div class="nav-link-heading">Section J</div>
+              Health Conditions
+            </a>
+            <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">
+              <div class="nav-link-heading">Section N</div>
+              Medications
+            </a>
+            <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">
+              <div class="nav-link-heading">Section Z</div>
+              Record Administration
+            </a>
+          </nav>
+        </div>
+        <div class="col-sm-7 col-md-8 col-lg-9">
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1" role="tabpanel" aria-labelledby="tab1Tab">
+              <h2>Section A: Administrative Information</h2>
+              <p class="iq-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+              <section>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="siteofService">Site of Service at Admission (A0205) <span class="iq-asterisk">*</span></label>
+                      <select class="form-control" id="siteofService" aria-label="siteofService">
+                        <option value="" selected></option>
+                        <option value="1">1 - Hospice in patient's home/residence</option>
+                        <option value="2">2 - Hospice in Assisted Living facility</option>
+                        <option value="3">3 - Hospice provided in Nursing Long Term Care (LTC) or Non-Skilled Nursing Facility (NF)</option>
+                        <option value="4">4 - Hospice provided in a Skilled Nursing Facility (SNF)</option>
+                        <option value="5">5 - Hospice provided in Inpatient Hospital</option>
+                        <option value="6">6 - Hospice provided in Inpatient Hospice Facility</option>
+                        <option value="7">7 - Hospice provided in Long Term Care Hospital (LTCH)</option>
+                        <option value="8">8 - Hospice in Inpatient Psychiatric Facility</option>
+                        <option value="9">9 - Hospice provided in a place not otherwise specified (NOS)</option>
+                        <option value="10">10 - Hospice home care provided in a hospice facility</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="dateAssessmentInitiated">Date Initial Nursing Assessment Initiated (A0245) <span class="iq-asterisk">*</span></label>
+                      <input type="date" class="form-control" id="dateAssessmentInitiated" aria-label="dateAssessmentInitiated">
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Legal Name of Patient (A0500)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="firstName">First <span class="iq-asterisk">*</span></label>
+                      <input type="text" class="form-control" id="firstName" aria-label="firstName">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label for="middleInitial">Middle Initial</label>
+                      <input type="text" class="form-control" id="middleInitial" aria-label="middleInitial">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="lastName">Last <span class="iq-asterisk">*</span></label>
+                      <input type="text" class="form-control" id="lastName" aria-label="lastName">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label for="suffix">Suffix</label>
+                      <input type="text" class="form-control" id="suffix" aria-label="suffix">
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="zipCode">Patient ZIP Code (A0550) <span class="iq-asterisk">*</span></label>
+                      <input type="text" class="form-control" id="zipCode" aria-label="zipCode">
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Social Security and Medicare Numbers (A0600)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="ssn">Social Security Number <span class="iq-asterisk">*</span></label>
+                      <input type="text" class="form-control" id="ssn" aria-label="ssn">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="medicareNumber">Medicare Number <span class="iq-asterisk">*</span></label>
+                      <input type="text" class="form-control" id="medicareNumber" aria-label="medicareNumber">
+                      <small class="form-text">Or comparable railroad insurance number.</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="medicaidNumber">Medicaid Number (A0700) <span class="iq-asterisk">*</span></label>
+                      <input type="text" class="form-control" id="medicaidNumber" aria-label="medicaidNumber">
+                      <small class="form-text">Entering "+" if pending or "N" if not a Medicaid recipient are acceptable.</small>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Gender (A0800) <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="male" name="gender" class="custom-control-input" value="1">
+                        <label class="custom-control-label" for="male">
+                          1 - Male
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="female" name="gender" class="custom-control-input" value="2">
+                        <label class="custom-control-label" for="female">
+                          2 - Female
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Birthdate (A0900) <span class="iq-asterisk">*</span></h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-row iq-date-of-birth">
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <label for="month">Month</label><input type="text" class="form-control" id="month" aria-describedby="help-id" value="">
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <label for="day">Day</label><input type="text" class="form-control" id="day" aria-describedby="help-id" value="">
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="form-group">
+                          <label for="year">Year</label><input type="text" class="form-control" id="year" aria-describedby="help-id" value="">
+                        </div>
+                      </div>
+                    </div>
+                    <small class="form-text">Enter two digits for day and month and four digits for year.</small>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Race/Ethnicity (A1000) <span class="iq-asterisk">*</span></legend>
+                      <p class="form-text">Check all that apply.</p>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1000-a" name="a1000" class="custom-control-input" value="a">
+                        <label class="custom-control-label" for="a1000-a">
+                          A - American Indian or Alaska Native
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1000-b" name="a1000" class="custom-control-input" value="b">
+                        <label class="custom-control-label" for="a1000-b">
+                          B - Asian
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1000-c" name="a1000" class="custom-control-input" value="c">
+                        <label class="custom-control-label" for="a1000-c">
+                          C - Black or African American
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1000-d" name="a1000" class="custom-control-input" value="d">
+                        <label class="custom-control-label" for="a1000-d">
+                          D - Hispanic or Latino
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1000-e" name="a1000" class="custom-control-input" value="e">
+                        <label class="custom-control-label" for="a1000-e">
+                          E - Native Hawaiin or Other Pacific Islander
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1000-f" name="a1000" class="custom-control-input" value="f">
+                        <label class="custom-control-label" for="a1000-f">
+                          F - White
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Payer Information (A1400) <span class="iq-asterisk">*</span></legend>
+                      <p class="form-text">Check all that apply.</p>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-a" name="a1400" class="custom-control-input" value="a">
+                        <label class="custom-control-label" for="a1400-a">
+                          A - Medicare (traditional fee-for-service)
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-b" name="a1400" class="custom-control-input" value="b">
+                        <label class="custom-control-label" for="a1400-b">
+                          B - Medicare (managed care/Part C/Medicare Advantage)
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-c" name="a1400" class="custom-control-input" value="c">
+                        <label class="custom-control-label" for="a1400-c">
+                          C - Medicaid (traditional fee-for-service)
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-d" name="a1400" class="custom-control-input" value="d">
+                        <label class="custom-control-label" for="a1400-d">
+                          D - Medicaid (managed care)
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-g" name="a1400" class="custom-control-input" value="g">
+                        <label class="custom-control-label" for="a1400-g">
+                          G - Other government (e.g., TRICARE, VA, etc.)
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-h" name="a1400" class="custom-control-input" value="h">
+                        <label class="custom-control-label" for="a1400-h">
+                          H - Private Insurance/Medigap
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-i" name="a1400" class="custom-control-input" value="i">
+                        <label class="custom-control-label" for="a1400-i">
+                          I - Private managed care
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-j" name="a1400" class="custom-control-input" value="j">
+                        <label class="custom-control-label" for="a1400-j">
+                          J - Self-pay
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-k" name="a1400" class="custom-control-input" value="k">
+                        <label class="custom-control-label" for="a1400-k">
+                          K - No payor source
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-x" name="a1400" class="custom-control-input" value="x">
+                        <label class="custom-control-label" for="a1400-x">
+                          X - Unknown
+                        </label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="a1400-y" name="a1400" class="custom-control-input" value="y">
+                        <label class="custom-control-label" for="a1400-y">
+                          Y - Other
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="admittedFrom">Admitted From (A1802) <span class="iq-asterisk">*</span></label>
+                      <select class="form-control" id="admittedFrom" aria-label="admittedFrom">
+                        <option value="" selected></option>
+                        <option value="1">1- Community residential setting (e.g., private home/apt.,board/care,assisted living, group home, adult foster care)</option>
+                        <option value="2">2 - Long-term care facility</option>
+                        <option value="3">3 - Skilled Nursing Facility (SNF)</option>
+                        <option value="4">4 - Hospital emergency department</option>
+                        <option value="5">5 - Short-stay acute hospital</option>
+                        <option value="6">6 - Long-term care hospital (LTCH)</option>
+                        <option value="7">7 - Inpatient rehabilitation facility or unit (IRF)</option>
+                        <option value="8">8 - Psychiatric hospital or unit</option>
+                        <option value="9">9 - ID/DD Facility</option>
+                        <option value="10">10 - Hospice</option>
+                        <option value="99">99 - None of the above</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <button class="btn btn-primary" onclick="goToNextTab('tab1', 'tab2')">Save and Continue</button>
+            </div>
+            <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2Tab">
+              <h2>Section F: Preferences</h2>
+              <p class="iq-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>CPR Preference (F2000)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was the patient/responsible partyasked about preference regarding the use of cardiopulmonary resuscitation (CPR)? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2000a-0" name="f2000a" class="custom-control-input" value="0" onchange="toggleRadioContent('f2000a', 'f2000Content', '1', '2')">
+                        <label class="custom-control-label" for="f2000a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2000a-1" name="f2000a" class="custom-control-input" value="1" onchange="toggleRadioContent('f2000a', 'f2000Content', '1', '2')">
+                        <label class="custom-control-label" for="f2000a-1">
+                          1 - Yes, and discussion occurred
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2000a-2" name="f2000a" class="custom-control-input" value="2" onchange="toggleRadioContent('f2000a', 'f2000Content', '1', '2')">
+                        <label class="custom-control-label" for="f2000a-2">
+                          2 - Yes, but the patient/responsible party refused to discuss
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="f2000Content">
+                      <div class="form-group">
+                        <label for="f2000b">Date the patient/responsible party was first asked about preference regarding the use of CPR</label>
+                        <input type="date" class="form-control" id="f2000b" aria-label="f2000b" />
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Other Life-Sustaining Treatment Preferences (F2100)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was the patient/responsible partyasked about preferences regarding life-sustaining treatments other than CPR? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2100a-0" name="f2100a" class="custom-control-input" value="0" onchange="toggleRadioContent('f2100a', 'f2100Content', '1', '2')">
+                        <label class="custom-control-label" for="f2100a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2100a-1" name="f2100a" class="custom-control-input" value="1" onchange="toggleRadioContent('f2100a', 'f2100Content', '1', '2')">
+                        <label class="custom-control-label" for="f2100a-1">
+                          1 - Yes, and discussion occurred
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2100a-2" name="f2100a" class="custom-control-input" value="2" onchange="toggleRadioContent('f2100a', 'f2100Content', '1', '2')">
+                        <label class="custom-control-label" for="f2100a-2">
+                          2 - Yes, but the patient/responsible party refused to discuss
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="f2100Content">
+                      <div class="form-group">
+                        <label for="f2100b">Date the patient/responsible party was first asked about preferences regarding life-sustaining treatments other than CPR</label>
+                        <input type="date" class="form-control" id="f2100b" aria-label="f2100b" />
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Hospitalization Preference (F2200)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was the patient/responsible party asked about preference regarding hospitalization? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2200a-0" name="f2200a" class="custom-control-input" value="0" onchange="toggleRadioContent('f2200a', 'f2200Content', '1', '2')">
+                        <label class="custom-control-label" for="f2200a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2200a-1" name="f2200a" class="custom-control-input" value="1" onchange="toggleRadioContent('f2200a', 'f2200Content', '1', '2')">
+                        <label class="custom-control-label" for="f2200a-1">
+                          1 - Yes, and discussion occurred
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2200a-2" name="f2200a" class="custom-control-input" value="2" onchange="toggleRadioContent('f2200a', 'f2200Content', '1', '2')">
+                        <label class="custom-control-label" for="f2200a-2">
+                          2 - Yes, but the patient/responsible party refused to discuss
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="iq-conditional-content" id="f2200Content">
+                        <label for="f2200b">Date the patient/responsible party was first asked about preference regarding hospitalization</label>
+                        <input type="date" class="form-control" id="f2200b" aria-label="f2200b" />
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Spiritual/Existential Concerns (F3000)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was the patientand/or caregiverasked about spiritual/existential concerns? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f3000a-0" name="f3000a" class="custom-control-input" value="0" onchange="toggleRadioContent('f3000a', 'f3000Content', '1', '2')">
+                        <label class="custom-control-label" for="f3000a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f3000a-1" name="f3000a" class="custom-control-input" value="1" onchange="toggleRadioContent('f3000a', 'f3000Content', '1', '2')">
+                        <label class="custom-control-label" for="f3000a-1">
+                          1 - Yes, and discussion occurred
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f3000a-2" name="f3000a" class="custom-control-input" value="2" onchange="toggleRadioContent('f3000a', 'f3000Content', '1', '2')">
+                        <label class="custom-control-label" for="f3000a-2">
+                          2 - Yes, but the patient/responsible party refused to discuss
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="f3000Content">
+                      <div class="form-group">
+                        <label for="f3000b">Date the patient and/or caregiver was first asked about spiritual/existential concerns</label>
+                        <input type="date" class="form-control" id="f3000b" aria-label="f3000b" />
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <button class="btn btn-primary" onclick="goToNextTab('tab2', 'tab3')">Save and Continue</button>
+            </div>
+            <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3Tab">
+              <h2>Section I: Active Diagnoses</h2>
+              <p class="iq-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Principal Diagnosis (I0010) <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="i0010-1" name="i0010" class="custom-control-input" value="1">
+                        <label class="custom-control-label" for="i0010-1">
+                          1 - Cancer
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="i0010-2" name="i0010" class="custom-control-input" value="2">
+                        <label class="custom-control-label" for="i0010-2">
+                          2 - Dementia/Alzheimer's
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="i0010-99" name="i0010" class="custom-control-input" value="99">
+                        <label class="custom-control-label" for="i0010-99">
+                          99 - None of the above
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </section>
+              <button class="btn btn-primary" onclick="goToNextTab('tab3', 'tab4')">Save and Continue</button>
+            </div>
+            <div class="tab-pane" id="tab4" role="tabpanel" aria-labelledby="tab4Tab">
+              <h2>Section J: Health Conditions</h2>
+              <p class="iq-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Pain Screening (J0900)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was the patient screened for pain? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j0900a-0" name="j0900a" class="custom-control-input" value="0" onchange="toggleRadioContent('j0900a', 'j0900Content', '1')">
+                        <label class="custom-control-label" for="j0900a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j0900a-1" name="j0900a" class="custom-control-input" value="1" onchange="toggleRadioContent('j0900a', 'j0900Content', '1')">
+                        <label class="custom-control-label" for="j0900a-1">
+                          1 - Yes
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="j0900Content">
+                      <div class="form-group">
+                        <label for="j0900b">Date of first screening for pain</label>
+                        <input type="date" class="form-control" id="j0900b" aria-label="j0900b">
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+
+                      <fieldset>
+                        <legend>The patient’s pain severity  was <span class="iq-asterisk">*</span></legend>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900c-0" name="j0900c" class="custom-control-input" value="0">
+                          <label class="custom-control-label" for="j0900c-0">
+                            0 - None
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900c-1" name="j0900c" class="custom-control-input" value="1">
+                          <label class="custom-control-label" for="j0900c-1">
+                            1 - Mild
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900c-2" name="j0900c" class="custom-control-input" value="2">
+                          <label class="custom-control-label" for="j0900c-2">
+                            2 - Moderate
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900c-3" name="j0900c" class="custom-control-input" value="3">
+                          <label class="custom-control-label" for="j0900c-3">
+                            3 - Severe
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900c-9" name="j0900c" class="custom-control-input" value="9">
+                          <label class="custom-control-label" for="j0900c-9">
+                            9 - Pain not rated
+                          </label>
+                        </div>
+                      </fieldset>
+
+                      <fieldset>
+                        <legend>Type of standardized pain tool used <span class="iq-asterisk">*</span></legend>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900d-1" name="j0900d" class="custom-control-input" value="1">
+                          <label class="custom-control-label" for="j0900d-1">
+                            1 - Numeric
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900d-2" name="j0900d" class="custom-control-input" value="2">
+                          <label class="custom-control-label" for="j0900d-2">
+                            2 - Verbal descriptor
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900d-3" name="j0900d" class="custom-control-input" value="3">
+                          <label class="custom-control-label" for="j0900d-3">
+                            3 - Patient visual
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900d-4" name="j0900d" class="custom-control-input" value="4">
+                          <label class="custom-control-label" for="j0900d-4">
+                            4 - Staff observation
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900d-9" name="j0900d" class="custom-control-input" value="9">
+                          <label class="custom-control-label" for="j0900d-9">
+                            9 - No standardized tool used
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Pain Active Problem (J0905)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Is pain an active problem for the patient? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j0905-0" name="j0905" class="custom-control-input" value="0" onchange="toggleRadioContent('j0905', 'j0910aContent', '1')">
+                        <label class="custom-control-label" for="j0905-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j0905-1" name="j0905" class="custom-control-input" value="1" onchange="toggleRadioContent('j0905', 'j0910aContent', '1')">
+                        <label class="custom-control-label" for="j0905-1">
+                          1 - Yes
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content mb-4" id="j0910aContent">
+                      <h3>Comprehensive Pain Assessment (J0910)</h3>
+                      <fieldset>
+                        <legend>Was a comprehensive pain assessment done? <span class="iq-asterisk">*</span></legend>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0910a-0" name="j0910a" class="custom-control-input" value="0" onchange="toggleRadioContent('j0910a', 'j0910Content', '1')">
+                          <label class="custom-control-label" for="j0910a-0">
+                            0 - No
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0910a-1" name="j0910a" class="custom-control-input" value="1" onchange="toggleRadioContent('j0910a', 'j0910Content', '1')">
+                          <label class="custom-control-label" for="j0910a-1">
+                            1 - Yes
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="j0910Content">
+                      <div class="form-group">
+                        <label for="j0910b">Date of comprehensive pain assessment</label>
+                        <input type="date" class="form-control" id="j0910b" aria-label="j0910b">
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+
+                      <fieldset>
+                        <legend>Comprehensive pain assessment included <span class="iq-asterisk">*</span></legend>
+                        <p class="form-text">Check all that apply.</p>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j0910c-1" name="j0910c" class="custom-control-input" value="1">
+                          <label class="custom-control-label" for="j0910c-1">
+                            1 - Location
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j0910c-2" name="j0910c" class="custom-control-input" value="2">
+                          <label class="custom-control-label" for="j0910c-2">
+                            2 - Severity
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j0910c-3" name="j0910c" class="custom-control-input" value="3">
+                          <label class="custom-control-label" for="j0910c-3">
+                            3 - Character
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j0910c-4" name="j0910c" class="custom-control-input" value="4">
+                          <label class="custom-control-label" for="j0910c-4">
+                            4 - Duration
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j0910c-5" name="j0910c" class="custom-control-input" value="5">
+                          <label class="custom-control-label" for="j0910c-5">
+                            5 - Frequency
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j0910c-6" name="j0910c" class="custom-control-input" value="6">
+                          <label class="custom-control-label" for="j0910c-6">
+                            6 - What relieves/worsens pain
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j0910c-7" name="j0910c" class="custom-control-input" value="7">
+                          <label class="custom-control-label" for="j0910c-7">
+                            7 - Effect on function or quality of life
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j0910c-9" name="j0910c" class="custom-control-input" value="9">
+                          <label class="custom-control-label" for="j0910c-9">
+                            9 - None of the above
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Screening for Shortness of Breath (J2030)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was the patient screened for shortness of breath? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j2030a-0" name="j2030a" class="custom-control-input" value="0" onchange="toggleRadioContent('j2030a', 'j2030Content', '1')">
+                        <label class="custom-control-label" for="j2030a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j2030a-1" name="j2030a" class="custom-control-input" value="1" onchange="toggleRadioContent('j2030a', 'j2030Content', '1')">
+                        <label class="custom-control-label" for="j2030a-1">
+                          1 - Yes
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content mb-4" id="j2030Content">
+                      <div class="form-group">
+                        <label for="j2030b">Date of first screening for shortness of breath</label>
+                        <input type="date" class="form-control" id="j2030b" aria-label="j2030b">
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+
+                      <fieldset>
+                        <legend>Did the screening indicate the patient had shortness of breath? <span class="iq-asterisk">*</span></legend>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j2030c-0" name="j2030c" class="custom-control-input" value="0" onchange="toggleRadioContent('j2030c', 'j2040aContent', '1')">
+                          <label class="custom-control-label" for="j2030c-0">
+                            0 - No
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j2030c-1" name="j2030c" class="custom-control-input" value="1" onchange="toggleRadioContent('j2030c', 'j2040aContent', '1')">
+                          <label class="custom-control-label" for="j2030c-1">
+                            1 - Yes
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content mb-4" id="j2040aContent">
+                      <h3>Treatment for Shortness of Breath (J2040)</h3>
+                      <fieldset>
+                        <legend>Was treatment for shortness of breath initiated? <span class="iq-asterisk">*</span></legend>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j2040a-0" name="j2040a" class="custom-control-input" value="0" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
+                          <label class="custom-control-label" for="j2040a-0">
+                            0 - No
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j2040a-1" name="j2040a" class="custom-control-input" value="1" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
+                          <label class="custom-control-label" for="j2040a-1">
+                            1 - No, patient declined treatment
+                          </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j2040a-2" name="j2040a" class="custom-control-input" value="2" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
+                          <label class="custom-control-label" for="j2040a-2">
+                            2 - Yes
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="j2040Content">
+                      <div class="form-group">
+                        <label for="j2040b">Type(s) of treatment for shortness of breath initiated</label>
+                        <input type="date" class="form-control" id="j2040b" aria-label="j2040b">
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+                      <fieldset>
+                        <legend>Comprehensive pain assessment included <span class="iq-asterisk">*</span></legend>
+                        <p class="form-text">Check all that apply.</p>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j2040c-1" name="j2040c" class="custom-control-input" value="1">
+                          <label class="custom-control-label" for="j2040c-1">
+                            1 - Opiods
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j2040c-2" name="j2040c" class="custom-control-input" value="2">
+                          <label class="custom-control-label" for="j2040c-2">
+                            2 - Other medication
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j2040c-3" name="j2040c" class="custom-control-input" value="3">
+                          <label class="custom-control-label" for="j2040c-3">
+                            3 - Oxygen
+                          </label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="j2040c-4" name="j2040c" class="custom-control-input" value="4">
+                          <label class="custom-control-label" for="j2040c-4">
+                            4 - Non-medication
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <button class="btn btn-primary" onclick="goToNextTab('tab4', 'tab5')">Save and Continue</button>
+            </div>
+            <div class="tab-pane" id="tab5" role="tabpanel" aria-labelledby="tab5Tab">
+              <h2>Section N: Medications</h2>
+              <p class="iq-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Scheduled Opioid (N0500)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was a scheduled opioid initiated or continued? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0500a-0" name="n0500a" class="custom-control-input" value="0" onchange="toggleRadioContent('n0500a', 'n0500Content', '1')">
+                        <label class="custom-control-label" for="n0500a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0500a-1" name="n0500a" class="custom-control-input" value="1" onchange="toggleRadioContent('n0500a', 'n0500Content', '1')">
+                        <label class="custom-control-label" for="n0500a-1">
+                          1 - Yes
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="n0500Content">
+                      <div class="form-group">
+                        <label for="n0500b">Date scheduled opioid initiated or continued</label>
+                        <input type="date" class="form-control" id="n0500b" aria-label="n0500b">
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>PRN Opioid (N0510)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was a PRN opioid initiated or continued? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0510a-0" name="n0510a" class="custom-control-input" value="0" onchange="toggleRadioContent('n0510a', 'n0510Content', '1')">
+                        <label class="custom-control-label" for="n0510a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0510a-1" name="n0510a" class="custom-control-input" value="1" onchange="toggleRadioContent('n0510a', 'n0510Content', '1')">
+                        <label class="custom-control-label" for="n0510a-1">
+                          1 - Yes
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="n0510Content">
+                      <div class="form-group">
+                        <label for="n0510b">Date PRN opioid initiated or continued</label>
+                        <input type="date" class="form-control" id="n0510b" aria-label="n0510b">
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Bowel Regimen (N0520)</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <fieldset>
+                      <legend>Was a bowel regimen initiated or continued? <span class="iq-asterisk">*</span></legend>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0520a-0" name="n0520a" class="custom-control-input" value="0">
+                        <label class="custom-control-label" for="n0520a-0">
+                          0 - No
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0520a-1" name="n0520a" class="custom-control-input" value="1" onchange="toggleRadioContent('n0520a', 'n0520Content', '2')">
+                        <label class="custom-control-label" for="n0520a-1">
+                          1 - No, but there is documentation of why a bowel regimen was not initiated or continued
+                        </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0520a-2" name="n0520a" class="custom-control-input" value="2" onchange="toggleRadioContent('n0520a', 'n0520Content', '2')">
+                        <label class="custom-control-label" for="n0520a-2">
+                          2 - Yes
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="iq-conditional-content" id="n0520Content">
+                      <div class="form-group">
+                        <label for="n0520b">Date bowel regimen initiated or continued</label>
+                        <input type="date" class="form-control" id="n0520b" aria-label="n0520b">
+                        <small class="form-text text-muted">MM/DD/YYYY</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <button class="btn btn-primary" onclick="goToNextTab('tab5', 'tab6')">Save and Continue</button>
+            </div>
+            <div class="tab-pane" id="tab6" role="tabpanel" aria-labelledby="tab6Tab">
+              <h2>Section Z: Record Administration</h2>
+              <p class="iq-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+              <section>
+                <div class="row">
+                  <div class="col">
+                    <h3>Signature(s) of Person(s) Completing the Record (Z0400)</h3>
+                    <p>I certify that the accompanying information accurately reflects patient assessment information for this patient and that I collected or coordinated collection of this information on the dates specified. To the best of my knowledge, this information was collected in accordance with applicable Medicare and Medicaid requirements. I understand that reporting this information is used as a basis for payment from federal funds. I further understand that failure to report such information maylead to a 2 percentage point reduction in the Fiscal Year payment determination. I also certify that I am authorized to submit this information by this provideron its behalf.</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="z0500a">Signature <span class="iq-asterisk">*</span></label>
+                      <input type="text" class="form-control" id="z0500a" aria-label="z0500a">
+                      <small class="form-text text-muted">Entering your name here serves as your electronic signature.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="z0500b">Date <span class="iq-asterisk">*</span></label>
+                      <input type="date" class="form-control" id="z0500b" aria-label="z0500b">
+                      <small class="form-text text-muted">MM/DD/YYYY</small>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <a class="btn btn-primary" href="patient-profile.html">Submit Assessment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/">
+                    <img src="../../../src/assets/images/logo-iqies-reversed.svg"
+                         class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg"
+                           class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="/help">Help</a><span>
+                  (800)
+                  339-9313
+                </span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank"
+                                                                     rel="noopener noreferrer">
+                  QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                            class="iq-external-link-icon" alt="">
+                </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                       target="_blank" rel="noopener noreferrer">
+                  Medicare <img src="../../../src/assets/images/icon-link-external.svg"
+                                class="iq-external-link-icon" alt="">
+                </a><a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="https://www.medicare.gov/about-us/plain-writing"
+                     target="_blank" rel="noopener noreferrer">
+                    Plain Writing <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon" alt="">
+                  </a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                         target="_blank" rel="noopener noreferrer">
+                    Freedom of
+                    Information Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                         class="iq-external-link-icon" alt="">
+                  </a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                         target="_blank" rel="noopener noreferrer">
+                    No Fear Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                     class="iq-external-link-icon" alt="">
+                  </a><a href="https://get.adobe.com/reader/" target="_blank"
+                         rel="noopener noreferrer">
+                    Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg"
+               class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+  </script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="../../../src/assets/js/scripts.js">
+  </script>
+</body>
+
+</html>
