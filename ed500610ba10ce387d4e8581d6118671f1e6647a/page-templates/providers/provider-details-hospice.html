@@ -121,9 +121,9 @@
                   </ul>
           </div>
         </div>
-        <div class="alert alert-danger attachmentError hide" role="alert">
+        <div class="alert alert-warning attachmentError hide" role="alert">
             <div class="alert-content">
-                 Unable to save. Please select a file for attachment.
+                  Please select a file for attachment.
             </div>
         </div>
         <div class="tab-content">
@@ -1520,28 +1520,19 @@ T1</p>
                       
                  <fieldset>
                 <legend>Building Status</legend>
-                
-                <div class="iq-btn-group buildingStatus">
-                    <button class="btn btn-outline-dark active" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide'); ">Active</button> 
-                    <button class="btn btn-outline-dark" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');   $('.stateRS').removeClass('hide'); ">State Licensed Only</button>
-                    <button class="btn btn-outline-dark" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').removeClass('hide'); $('.lsc-fi').addClass('hide');  $('.stateRS').addClass('hide');  ">Closed</button>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="buildingStatus1" checked name="buildingStatus" class="custom-control-input"  onchange="if(this.checked){$('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide');} ">
+                  <label class="custom-control-label" for="buildingStatus1"> Active </label>
                 </div>
-                <!--<div class="custom-control custom-radio">
-                  <input type="radio" id="bws1" checked name="bws" class="custom-control-input" value="value"
-                     onChange="$('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide');">
-                  <label class="custom-control-label" for="bws1"> Active </label>
-                </div><div class="custom-control custom-radio">
-                  <input type="radio" id="bws2" name="bws" class="custom-control-input" value="value"
-                     onChange="$('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');">
-                  <label class="custom-control-label" for="bws2"> Licensed Only </label>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="buildingStatus2" name="buildingStatus" class="custom-control-input" onChange="if(this.checked){  $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide'); $('.stateRS').removeClass('hide');}">
+                  <label class="custom-control-label" for="buildingStatus2"> State Licensed Only </label>
                 </div>
-                          <div class="custom-control custom-radio">
-                  <input type="radio" id="bws3" name="bws" class="custom-control-input" value="value"
-                     onChange="$('.bwsclosed').removeClass('hide'); $('.lsc-fi').removeClass('hide');">
-                  <label class="custom-control-label" for="bws3"> Closed </label>
-                </div>-->
-                     
-                          
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="buildingStatus3" name="buildingStatus" class="custom-control-input" onChange="if(this.checked){$('.bwsclosed').removeClass('hide'); $('.lsc-fi').addClass('hide');  $('.stateRS').addClass('hide');}">
+                  <label class="custom-control-label" for="buildingStatus3"> Closed </label>
+                </div>
+                    
                   </fieldset>
                     
                     <div class="iq-conditional-content" style="margin-top: .5rem;">
@@ -1727,27 +1718,19 @@ Barrington, IL 60010</span>
                       
                  <fieldset>
                 <legend>Building Status <span class="iq-asterisk" title="Required field">*</span></legend>
-                
-                <div class="iq-btn-group buildingStatus">
-                    <button class="btn btn-outline-dark active" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide'); ">Active</button> 
-                    <button class="btn btn-outline-dark" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');   $('.stateRS').removeClass('hide'); ">State Licensed Only</button>
-                    <button class="btn btn-outline-dark" onClick="$(this).parent('.buildingStatus').children('.btn').removeClass('active'); $(this).addClass('active'); $('.bwsclosed').removeClass('hide'); $('.lsc-fi').addClass('hide');  $('.stateRS').addClass('hide');  ">Closed</button>
+                 <div class="custom-control custom-radio">
+                  <input type="radio" id="buildingStatus1nb" checked name="buildingStatusnb" class="custom-control-input"  onchange="if(this.checked){$('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide');} ">
+                  <label class="custom-control-label" for="buildingStatus1nb"> Active </label>
                 </div>
-                <!--<div class="custom-control custom-radio">
-                  <input type="radio" id="bws1" checked name="bws" class="custom-control-input" value="value"
-                     onChange="$('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide');">
-                  <label class="custom-control-label" for="bws1"> Active </label>
-                </div><div class="custom-control custom-radio">
-                  <input type="radio" id="bws2" name="bws" class="custom-control-input" value="value"
-                     onChange="$('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide');">
-                  <label class="custom-control-label" for="bws2"> Licensed Only </label>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="buildingStatus2nb" name="buildingStatusnb" class="custom-control-input" onChange="if(this.checked){  $('.bwsclosed').addClass('hide'); $('.lsc-fi').addClass('hide'); $('.stateRS').removeClass('hide');}">
+                  <label class="custom-control-label" for="buildingStatus2nb"> State Licensed Only </label>
                 </div>
-                          <div class="custom-control custom-radio">
-                  <input type="radio" id="bws3" name="bws" class="custom-control-input" value="value"
-                     onChange="$('.bwsclosed').removeClass('hide'); $('.lsc-fi').removeClass('hide');">
-                  <label class="custom-control-label" for="bws3"> Closed </label>
-                </div>-->
-                     
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="buildingStatus3nb" name="buildingStatusnb" class="custom-control-input" onChange="if(this.checked){$('.bwsclosed').removeClass('hide'); $('.lsc-fi').addClass('hide');  $('.stateRS').addClass('hide');}">
+                  <label class="custom-control-label" for="buildingStatus3nb"> Closed </label>
+                </div>
+    
                           
                   </fieldset>
                     
@@ -1889,11 +1872,11 @@ Barrington, IL 60010</span>
                      onChange="$('.bclosed').addClass('hide');">
                   <label class="custom-control-label" for="locS-1"> Open</label>
                 </div>
-                    <div class="custom-control custom-radio">
+                    <!--<div class="custom-control custom-radio">
                   <input type="radio" id="locS-2" name="locS" class="custom-control-input" value="value"
                      onChange="$('.bclosed').removeClass('hide');">
                   <label class="custom-control-label" for="locS-2"> Closed</label>
-                    </div>
+                    </div>-->
                           
                     </fieldset>
                 </div>
