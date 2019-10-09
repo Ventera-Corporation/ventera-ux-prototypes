@@ -189,7 +189,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="ssn">Social Security Number <span class="iq-asterisk">*</span></label>
+                      <label for="ssn">Social Security Number</label>
                       <input type="text" class="form-control" id="ssn" aria-label="ssn">
                     </div>
                   </div>
@@ -197,7 +197,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="medicareNumber">Medicare Number <span class="iq-asterisk">*</span></label>
+                      <label for="medicareNumber">Medicare Number</label>
                       <input type="text" class="form-control" id="medicareNumber" aria-label="medicareNumber">
                       <small class="form-text">Or comparable railroad insurance number.</small>
                     </div>
@@ -206,7 +206,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="medicaidNumber">Medicaid Number (A0700) <span class="iq-asterisk">*</span></label>
+                      <label for="medicaidNumber">Medicaid Number (A0700)</label>
                       <input type="text" class="form-control" id="medicaidNumber" aria-label="medicaidNumber">
                       <small class="form-text">Entering "+" if pending or "N" if not a Medicaid recipient are acceptable.</small>
                     </div>
@@ -416,13 +416,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>CPR Preference (F2000)</h3>
+                    <h3>CPR Preference</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patient/responsible partyasked about preference regarding the use of cardiopulmonary resuscitation (CPR)? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patient/responsible partyasked about preference regarding the use of cardiopulmonary resuscitation (CPR)? (F2000A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="f2000a-0" name="f2000a" class="custom-control-input" value="0" onchange="toggleRadioContent('f2000a', 'f2000Content', '1', '2')">
                         <label class="custom-control-label" for="f2000a-0">
@@ -441,6 +441,12 @@
                           2 - Yes, but the patient/responsible party refused to discuss
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2000a-na" name="f2000a" class="custom-control-input" value="na" onchange="toggleRadioContent('f2000a', 'f2000Content', '1', '2')">
+                        <label class="custom-control-label" for="f2000a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -448,7 +454,7 @@
                   <div class="col-md-6">
                     <div class="iq-conditional-content" id="f2000Content">
                       <div class="form-group">
-                        <label for="f2000b">Date the patient/responsible party was first asked about preference regarding the use of CPR <span class="iq-asterisk">*</span></label>
+                        <label for="f2000b">Date the patient/responsible party was first asked about preference regarding the use of CPR (F2000B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="f2000b" aria-label="f2000b" />
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
@@ -459,13 +465,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Other Life-Sustaining Treatment Preferences (F2100)</h3>
+                    <h3>Other Life-Sustaining Treatment Preferences</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patient/responsible partyasked about preferences regarding life-sustaining treatments other than CPR? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patient/responsible partyasked about preferences regarding life-sustaining treatments other than CPR? (F2100A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="f2100a-0" name="f2100a" class="custom-control-input" value="0" onchange="toggleRadioContent('f2100a', 'f2100Content', '1', '2')">
                         <label class="custom-control-label" for="f2100a-0">
@@ -484,6 +490,12 @@
                           2 - Yes, but the patient/responsible party refused to discuss
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2100a-na" name="f2100a" class="custom-control-input" value="na" onchange="toggleRadioContent('f2100a', 'f2100Content', '1', '2')">
+                        <label class="custom-control-label" for="f2100a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -491,7 +503,7 @@
                   <div class="col-md-6">
                     <div class="iq-conditional-content" id="f2100Content">
                       <div class="form-group">
-                        <label for="f2100b">Date the patient/responsible party was first asked about preferences regarding life-sustaining treatments other than CPR <span class="iq-asterisk">*</span></label>
+                        <label for="f2100b">Date the patient/responsible party was first asked about preferences regarding life-sustaining treatments other than CPR (F2100B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="f2100b" aria-label="f2100b" />
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
@@ -502,13 +514,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Hospitalization Preference (F2200)</h3>
+                    <h3>Hospitalization Preference</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patient/responsible party asked about preference regarding hospitalization? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patient/responsible party asked about preference regarding hospitalization? (F2200A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="f2200a-0" name="f2200a" class="custom-control-input" value="0" onchange="toggleRadioContent('f2200a', 'f2200Content', '1', '2')">
                         <label class="custom-control-label" for="f2200a-0">
@@ -527,6 +539,12 @@
                           2 - Yes, but the patient/responsible party refused to discuss
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f2200a-na" name="f2200a" class="custom-control-input" value="na" onchange="toggleRadioContent('f2200a', 'f2200Content', '1', '2')">
+                        <label class="custom-control-label" for="f2200a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -534,7 +552,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <div class="iq-conditional-content" id="f2200Content">
-                        <label for="f2200b">Date the patient/responsible party was first asked about preference regarding hospitalization <span class="iq-asterisk">*</span></label>
+                        <label for="f2200b">Date the patient/responsible party was first asked about preference regarding hospitalization (F2200B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="f2200b" aria-label="f2200b" />
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
@@ -545,13 +563,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Spiritual/Existential Concerns (F3000)</h3>
+                    <h3>Spiritual/Existential Concerns</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patientand/or caregiverasked about spiritual/existential concerns? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patientand/or caregiverasked about spiritual/existential concerns? (F3000A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="f3000a-0" name="f3000a" class="custom-control-input" value="0" onchange="toggleRadioContent('f3000a', 'f3000Content', '1', '2')">
                         <label class="custom-control-label" for="f3000a-0">
@@ -570,6 +588,12 @@
                           2 - Yes, but the patient/responsible party refused to discuss
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="f3000a-na" name="f3000a" class="custom-control-input" value="na" onchange="toggleRadioContent('f3000a', 'f3000Content', '1', '2')">
+                        <label class="custom-control-label" for="f3000a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -577,7 +601,7 @@
                   <div class="col-md-6">
                     <div class="iq-conditional-content" id="f3000Content">
                       <div class="form-group">
-                        <label for="f3000b">Date the patient and/or caregiver was first asked about spiritual/existential concerns <span class="iq-asterisk">*</span></label>
+                        <label for="f3000b">Date the patient and/or caregiver was first asked about spiritual/existential concerns (F3000B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="f3000b" aria-label="f3000b" />
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
@@ -625,13 +649,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Pain Screening (J0900)</h3>
+                    <h3>Pain Screening</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patient screened for pain? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patient screened for pain? (J0900A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="j0900a-0" name="j0900a" class="custom-control-input" value="0" onchange="toggleRadioContent('j0900a', 'j0900Content', '1')">
                         <label class="custom-control-label" for="j0900a-0">
@@ -644,6 +668,12 @@
                           1 - Yes
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j0900a-na" name="j0900a" class="custom-control-input" value="na" onchange="toggleRadioContent('j0900a', 'j0900Content', '1')">
+                        <label class="custom-control-label" for="j0900a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -651,13 +681,13 @@
                   <div class="col-md-6">
                     <div class="iq-conditional-content" id="j0900Content">
                       <div class="form-group">
-                        <label for="j0900b">Date of first screening for pain <span class="iq-asterisk">*</span></label>
+                        <label for="j0900b">Date of first screening for pain (J0900B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="j0900b" aria-label="j0900b">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
 
                       <fieldset>
-                        <legend>The patient’s pain severity  was <span class="iq-asterisk">*</span></legend>
+                        <legend>The patient’s pain severity was (J0900C) <span class="iq-asterisk">*</span></legend>
                         <div class="custom-control custom-radio">
                           <input type="radio" id="j0900c-0" name="j0900c" class="custom-control-input" value="0">
                           <label class="custom-control-label" for="j0900c-0">
@@ -688,10 +718,16 @@
                             9 - Pain not rated
                           </label>
                         </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900c-na" name="j0900c" class="custom-control-input" value="na">
+                          <label class="custom-control-label" for="j0900c-na">
+                            Not assessed/no information
+                          </label>
+                        </div>
                       </fieldset>
 
                       <fieldset>
-                        <legend>Type of standardized pain tool used <span class="iq-asterisk">*</span></legend>
+                        <legend>Type of standardized pain tool used (J0900D) <span class="iq-asterisk">*</span></legend>
                         <div class="custom-control custom-radio">
                           <input type="radio" id="j0900d-1" name="j0900d" class="custom-control-input" value="1">
                           <label class="custom-control-label" for="j0900d-1">
@@ -722,6 +758,12 @@
                             9 - No standardized tool used
                           </label>
                         </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0900d-na" name="j0900d" class="custom-control-input" value="na">
+                          <label class="custom-control-label" for="j0900d-na">
+                            Not assessed/no information
+                          </label>
+                        </div>
                       </fieldset>
                     </div>
                   </div>
@@ -730,13 +772,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Pain Active Problem (J0905)</h3>
+                    <h3>Pain Active Problem</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Is pain an active problem for the patient? <span class="iq-asterisk">*</span></legend>
+                      <legend>Is pain an active problem for the patient? (J0905A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="j0905-0" name="j0905" class="custom-control-input" value="0" onchange="toggleRadioContent('j0905', 'j0910aContent', '1')">
                         <label class="custom-control-label" for="j0905-0">
@@ -749,15 +791,21 @@
                           1 - Yes
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j0905-na" name="j0905" class="custom-control-input" value="na" onchange="toggleRadioContent('j0905', 'j0910aContent', '1')">
+                        <label class="custom-control-label" for="j0905-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="iq-conditional-content mb-4" id="j0910aContent">
-                      <h3>Comprehensive Pain Assessment (J0910)</h3>
+                    <div class="iq-conditional-content" id="j0910aContent">
+                      <h3>Comprehensive Pain Assessment</h3>
                       <fieldset>
-                        <legend>Was a comprehensive pain assessment done? <span class="iq-asterisk">*</span></legend>
+                        <legend>Was a comprehensive pain assessment done? (J0910A) <span class="iq-asterisk">*</span></legend>
                         <div class="custom-control custom-radio">
                           <input type="radio" id="j0910a-0" name="j0910a" class="custom-control-input" value="0" onchange="toggleRadioContent('j0910a', 'j0910Content', '1')">
                           <label class="custom-control-label" for="j0910a-0">
@@ -770,71 +818,81 @@
                             1 - Yes
                           </label>
                         </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="j0910a-na" name="j0910a" class="custom-control-input" value="na" onchange="toggleRadioContent('j0910a', 'j0910Content', '1')">
+                          <label class="custom-control-label" for="j0910a-na">
+                            Not assessed/no information
+                          </label>
+                        </div>
                       </fieldset>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="iq-conditional-content" id="j0910Content">
-                      <div class="form-group">
-                        <label for="j0910b">Date of comprehensive pain assessment <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="j0910b" aria-label="j0910b">
-                        <small class="form-text text-muted">MM/DD/YYYY</small>
-                      </div>
 
-                      <fieldset>
-                        <legend>Comprehensive pain assessment included <span class="iq-asterisk">*</span></legend>
-                        <p class="form-text">Check all that apply.</p>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j0910c-1" name="j0910c" class="custom-control-input" value="1">
-                          <label class="custom-control-label" for="j0910c-1">
-                            1 - Location
-                          </label>
+                      <div class="iq-nested-conditional-content" id="j0910Content">
+                        <hr />
+                        <div class="form-group">
+                          <label for="j0910b">Date of comprehensive pain assessment (J0910B) <span class="iq-asterisk">*</span></label>
+                          <input type="date" class="form-control" id="j0910b" aria-label="j0910b">
+                          <small class="form-text text-muted">MM/DD/YYYY</small>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j0910c-2" name="j0910c" class="custom-control-input" value="2">
-                          <label class="custom-control-label" for="j0910c-2">
-                            2 - Severity
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j0910c-3" name="j0910c" class="custom-control-input" value="3">
-                          <label class="custom-control-label" for="j0910c-3">
-                            3 - Character
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j0910c-4" name="j0910c" class="custom-control-input" value="4">
-                          <label class="custom-control-label" for="j0910c-4">
-                            4 - Duration
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j0910c-5" name="j0910c" class="custom-control-input" value="5">
-                          <label class="custom-control-label" for="j0910c-5">
-                            5 - Frequency
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j0910c-6" name="j0910c" class="custom-control-input" value="6">
-                          <label class="custom-control-label" for="j0910c-6">
-                            6 - What relieves/worsens pain
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j0910c-7" name="j0910c" class="custom-control-input" value="7">
-                          <label class="custom-control-label" for="j0910c-7">
-                            7 - Effect on function or quality of life
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j0910c-9" name="j0910c" class="custom-control-input" value="9">
-                          <label class="custom-control-label" for="j0910c-9">
-                            9 - None of the above
-                          </label>
-                        </div>
-                      </fieldset>
+
+                        <fieldset>
+                          <legend>Comprehensive pain assessment included (J0910C) <span class="iq-asterisk">*</span></legend>
+                          <p class="form-text">Check all that apply.</p>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-1" name="j0910c" class="custom-control-input" value="1">
+                            <label class="custom-control-label" for="j0910c-1">
+                              1 - Location
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-2" name="j0910c" class="custom-control-input" value="2">
+                            <label class="custom-control-label" for="j0910c-2">
+                              2 - Severity
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-3" name="j0910c" class="custom-control-input" value="3">
+                            <label class="custom-control-label" for="j0910c-3">
+                              3 - Character
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-4" name="j0910c" class="custom-control-input" value="4">
+                            <label class="custom-control-label" for="j0910c-4">
+                              4 - Duration
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-5" name="j0910c" class="custom-control-input" value="5">
+                            <label class="custom-control-label" for="j0910c-5">
+                              5 - Frequency
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-6" name="j0910c" class="custom-control-input" value="6">
+                            <label class="custom-control-label" for="j0910c-6">
+                              6 - What relieves/worsens pain
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-7" name="j0910c" class="custom-control-input" value="7">
+                            <label class="custom-control-label" for="j0910c-7">
+                              7 - Effect on function or quality of life
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-9" name="j0910c" class="custom-control-input" value="9">
+                            <label class="custom-control-label" for="j0910c-9">
+                              9 - None of the above
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j0910c-na" name="j0910c" class="custom-control-input" value="na">
+                            <label class="custom-control-label" for="j0910c-na">
+                              Not assessed/no information
+                            </label>
+                          </div>
+                        </fieldset>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -842,13 +900,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Screening for Shortness of Breath (J2030)</h3>
+                    <h3>Screening for Shortness of Breath</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patient screened for shortness of breath? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patient screened for shortness of breath? (J2030A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="j2030a-0" name="j2030a" class="custom-control-input" value="0" onchange="toggleRadioContent('j2030a', 'j2030Content', '1')">
                         <label class="custom-control-label" for="j2030a-0">
@@ -861,20 +919,26 @@
                           1 - Yes
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="j2030a-na" name="j2030a" class="custom-control-input" value="na" onchange="toggleRadioContent('j2030a', 'j2030Content', '1')">
+                        <label class="custom-control-label" for="j2030a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="iq-conditional-content mb-4" id="j2030Content">
+                    <div class="iq-conditional-content" id="j2030Content">
                       <div class="form-group">
-                        <label for="j2030b">Date of first screening for shortness of breath <span class="iq-asterisk">*</span></label>
+                        <label for="j2030b">Date of first screening for shortness of breath (J2030B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="j2030b" aria-label="j2030b">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
 
                       <fieldset>
-                        <legend>Did the screening indicate the patient had shortness of breath? <span class="iq-asterisk">*</span></legend>
+                        <legend>Did the screening indicate the patient had shortness of breath? (J2030C) <span class="iq-asterisk">*</span></legend>
                         <div class="custom-control custom-radio">
                           <input type="radio" id="j2030c-0" name="j2030c" class="custom-control-input" value="0" onchange="toggleRadioContent('j2030c', 'j2040aContent', '1')">
                           <label class="custom-control-label" for="j2030c-0">
@@ -887,74 +951,88 @@
                             1 - Yes
                           </label>
                         </div>
-                      </fieldset>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="iq-conditional-content mb-4" id="j2040aContent">
-                      <h3>Treatment for Shortness of Breath (J2040)</h3>
-                      <fieldset>
-                        <legend>Was treatment for shortness of breath initiated? <span class="iq-asterisk">*</span></legend>
                         <div class="custom-control custom-radio">
-                          <input type="radio" id="j2040a-0" name="j2040a" class="custom-control-input" value="0" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
-                          <label class="custom-control-label" for="j2040a-0">
-                            0 - No
-                          </label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="j2040a-1" name="j2040a" class="custom-control-input" value="1" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
-                          <label class="custom-control-label" for="j2040a-1">
-                            1 - No, patient declined treatment
-                          </label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="j2040a-2" name="j2040a" class="custom-control-input" value="2" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
-                          <label class="custom-control-label" for="j2040a-2">
-                            2 - Yes
+                          <input type="radio" id="j2030c-na" name="j2030c" class="custom-control-input" value="na" onchange="toggleRadioContent('j2030c', 'j2040aContent', '1')">
+                          <label class="custom-control-label" for="j2030c-na">
+                            Not assessed/no information
                           </label>
                         </div>
                       </fieldset>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="iq-conditional-content" id="j2040Content">
-                      <div class="form-group">
-                        <label for="j2040b">Type(s) of treatment for shortness of breath initiated <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="j2040b" aria-label="j2040b">
-                        <small class="form-text text-muted">MM/DD/YYYY</small>
+
+                      <div class="iq-nested-conditional-content" id="j2040aContent">
+                        <hr/>
+                        <h3>Treatment for Shortness of Breath</h3>
+                        <fieldset>
+                          <legend>Was treatment for shortness of breath initiated? (J2040A) <span class="iq-asterisk">*</span></legend>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="j2040a-0" name="j2040a" class="custom-control-input" value="0" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
+                            <label class="custom-control-label" for="j2040a-0">
+                              0 - No
+                            </label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="j2040a-1" name="j2040a" class="custom-control-input" value="1" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
+                            <label class="custom-control-label" for="j2040a-1">
+                              1 - No, patient declined treatment
+                            </label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="j2040a-2" name="j2040a" class="custom-control-input" value="2" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
+                            <label class="custom-control-label" for="j2040a-2">
+                              2 - Yes
+                            </label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="j2040a-na" name="j2040a" class="custom-control-input" value="na" onchange="toggleRadioContent('j2040a', 'j2040Content', '2')">
+                            <label class="custom-control-label" for="j2040a-na">
+                              Not assessed/no information
+                            </label>
+                          </div>
+                        </fieldset>
                       </div>
-                      <fieldset>
-                        <legend>Comprehensive pain assessment included <span class="iq-asterisk">*</span></legend>
-                        <p class="form-text">Check all that apply.</p>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j2040c-1" name="j2040c" class="custom-control-input" value="1">
-                          <label class="custom-control-label" for="j2040c-1">
-                            1 - Opiods
-                          </label>
+
+                      <div class="iq-nested-conditional-content" id="j2040Content">
+                        <hr/>
+                        <div class="form-group">
+                          <label for="j2040b">Type(s) of treatment for shortness of breath initiated (J2040B) <span class="iq-asterisk">*</span></label>
+                          <input type="date" class="form-control" id="j2040b" aria-label="j2040b">
+                          <small class="form-text text-muted">MM/DD/YYYY</small>
                         </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j2040c-2" name="j2040c" class="custom-control-input" value="2">
-                          <label class="custom-control-label" for="j2040c-2">
-                            2 - Other medication
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j2040c-3" name="j2040c" class="custom-control-input" value="3">
-                          <label class="custom-control-label" for="j2040c-3">
-                            3 - Oxygen
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input type="checkbox" id="j2040c-4" name="j2040c" class="custom-control-input" value="4">
-                          <label class="custom-control-label" for="j2040c-4">
-                            4 - Non-medication
-                          </label>
-                        </div>
-                      </fieldset>
+                        <fieldset>
+                          <legend>Comprehensive pain assessment included (J2040C) <span class="iq-asterisk">*</span></legend>
+                          <p class="form-text">Check all that apply.</p>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j2040c-1" name="j2040c" class="custom-control-input" value="1">
+                            <label class="custom-control-label" for="j2040c-1">
+                              1 - Opiods
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j2040c-2" name="j2040c" class="custom-control-input" value="2">
+                            <label class="custom-control-label" for="j2040c-2">
+                              2 - Other medication
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j2040c-3" name="j2040c" class="custom-control-input" value="3">
+                            <label class="custom-control-label" for="j2040c-3">
+                              3 - Oxygen
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j2040c-4" name="j2040c" class="custom-control-input" value="4">
+                            <label class="custom-control-label" for="j2040c-4">
+                              4 - Non-medication
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="j2040c-na" name="j2040c" class="custom-control-input" value="na">
+                            <label class="custom-control-label" for="j2040c-na">
+                              Not assessed/no information
+                            </label>
+                          </div>
+                        </fieldset>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -967,13 +1045,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Scheduled Opioid (N0500)</h3>
+                    <h3>Scheduled Opioid</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was a scheduled opioid initiated or continued? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was a scheduled opioid initiated or continued? (N0500A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="n0500a-0" name="n0500a" class="custom-control-input" value="0" onchange="toggleRadioContent('n0500a', 'n0500Content', '1')">
                         <label class="custom-control-label" for="n0500a-0">
@@ -986,6 +1064,12 @@
                           1 - Yes
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0500a-na" name="n0500a" class="custom-control-input" value="na" onchange="toggleRadioContent('n0500a', 'n0500Content', '1')">
+                        <label class="custom-control-label" for="n0500a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -993,7 +1077,7 @@
                   <div class="col-md-6">
                     <div class="iq-conditional-content" id="n0500Content">
                       <div class="form-group">
-                        <label for="n0500b">Date scheduled opioid initiated or continued <span class="iq-asterisk">*</span></label>
+                        <label for="n0500b">Date scheduled opioid initiated or continued (N0500B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="n0500b" aria-label="n0500b">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
@@ -1004,13 +1088,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>PRN Opioid (N0510)</h3>
+                    <h3>PRN Opioid</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was a PRN opioid initiated or continued? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was a PRN opioid initiated or continued? (N0510A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="n0510a-0" name="n0510a" class="custom-control-input" value="0" onchange="toggleRadioContent('n0510a', 'n0510Content', '1')">
                         <label class="custom-control-label" for="n0510a-0">
@@ -1023,6 +1107,12 @@
                           1 - Yes
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0510a-na" name="n0510a" class="custom-control-input" value="na" onchange="toggleRadioContent('n0510a', 'n0510Content', '1')">
+                        <label class="custom-control-label" for="n0510a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -1030,7 +1120,7 @@
                   <div class="col-md-6">
                     <div class="iq-conditional-content" id="n0510Content">
                       <div class="form-group">
-                        <label for="n0510b">Date PRN opioid initiated or continued <span class="iq-asterisk">*</span></label>
+                        <label for="n0510b">Date PRN opioid initiated or continued (N0510B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="n0510b" aria-label="n0510b">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
@@ -1041,13 +1131,13 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Bowel Regimen (N0520)</h3>
+                    <h3>Bowel Regimen</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was a bowel regimen initiated or continued? <span class="iq-asterisk">*</span></legend>
+                      <legend>Was a bowel regimen initiated or continued? (N0520A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="n0520a-0" name="n0520a" class="custom-control-input" value="0">
                         <label class="custom-control-label" for="n0520a-0">
@@ -1066,6 +1156,12 @@
                           2 - Yes
                         </label>
                       </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="n0520a-na" name="n0520a" class="custom-control-input" value="na" onchange="toggleRadioContent('n0520a', 'n0520Content', '2')">
+                        <label class="custom-control-label" for="n0520a-na">
+                          Not assessed/no information
+                        </label>
+                      </div>
                     </fieldset>
                   </div>
                 </div>
@@ -1073,7 +1169,7 @@
                   <div class="col-md-6">
                     <div class="iq-conditional-content" id="n0520Content">
                       <div class="form-group">
-                        <label for="n0520b">Date bowel regimen initiated or continued <span class="iq-asterisk">*</span></label>
+                        <label for="n0520b">Date bowel regimen initiated or continued (N0520B) <span class="iq-asterisk">*</span></label>
                         <input type="date" class="form-control" id="n0520b" aria-label="n0520b">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
@@ -1089,19 +1185,19 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Signature(s) of Person(s) Completing the Record (Z0400)</h3>
+                    <h3>Signature(s) of Person(s) Completing the Record</h3>
                     <p>I certify that the accompanying information accurately reflects patient assessment information for this patient and that I collected or coordinated collection of this information on the dates specified. To the best of my knowledge, this information was collected in accordance with applicable Medicare and Medicaid requirements. I understand that reporting this information is used as a basis for payment from federal funds. I further understand that failure to report such information maylead to a 2 percentage point reduction in the Fiscal Year payment determination. I also certify that I am authorized to submit this information by this provideron its behalf.</p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="z0500a">Signature <span class="iq-asterisk">*</span></label>
+                      <label for="z0500a">Signature (Z0500A)</label>
                       <input type="text" class="form-control" id="z0500a" aria-label="z0500a">
                       <small class="form-text text-muted">Entering your name here serves as your electronic signature.</small>
                     </div>
                     <div class="form-group">
-                      <label for="z0500b">Date <span class="iq-asterisk">*</span></label>
+                      <label for="z0500b">Date (Z0500B)</label>
                       <input type="date" class="form-control" id="z0500b" aria-label="z0500b">
                       <small class="form-text text-muted">MM/DD/YYYY</small>
                     </div>
