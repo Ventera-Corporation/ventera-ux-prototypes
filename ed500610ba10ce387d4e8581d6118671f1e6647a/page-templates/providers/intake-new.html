@@ -154,6 +154,12 @@
                   <ul><li><a href="#intakeType">Intake Type</a> is required</li></ul>
           </div>
         </div>
+        <div class="alert alert-danger noteError hide" role="alert">
+          <div class="alert-content">
+                 Unable to save. Please correct the errors below.
+                  <ul><li><a href="#note1">Note</a> is required</li></ul>
+          </div>
+        </div>
         <div class="alert alert-warning fileAttachmentError hide" role="alert">
           <div class="alert-content">
                  Please select a file to attach. 
@@ -601,6 +607,7 @@
                   <input type="radio" id="involveType4" name="involveType" class="custom-control-input" onChange="if( $(this).prop('checked') ){ $('.involveTypeForm').addClass('hide'); }">
                   <label class="custom-control-label" for="involveType4"> Other Party </label>
                 </div>
+                <p class="iq-input-error-msg hide">This field is required</p>
                 </fieldset>
                 
                 <div class="involveTypeForm hide">
@@ -1327,28 +1334,35 @@
                 </div>
                         </fieldset>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <p><label>Date of Birth</label>
                         <input type="date">
                         <span class="help-text">MM/DD/YYYY</span>
                         </p>
                     </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <p><label>Admission Date</label>
                         <input type="date">
                         <span class="help-text">MM/DD/YYYY</span>
                         </p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <p><label>Discharge Date</label>
                         <input type="date">
                         <span class="help-text">MM/DD/YYYY</span>
                         </p>
                     </div>
+                    <div class="col-md-6">
+                        <p><label>Location </label>
+                        <select><option>Select one</option>
+                        <option>BrightHope - Tranquility</option>
+                        <option>BrightHope - Tranquility 1 B </option>
+                        <option>BrightHope - Tranquility Floor 3</option></select></p>
+                    </div>
+                    <div class="col-md-3"><p><label>Room</label><input type="text"></p></div>
                     <div class="col-md-12">
                     <div class="form-group">
-                        <div class="text-right"><label class="float-left mt-2">Summary of Complaint</label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
+                        <div class="text-right"><label class="float-left mt-2">Admitting Diagnosis</label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
                 <div class="editTextDiv"></div>
                 <!--<p class="help-text mb-5">Limit to 500 characters</p>-->
                     </div>
@@ -1406,28 +1420,35 @@
                 </div>
                         </fieldset>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <p><label>Date of Birth</label>
                         <input type="date" value="1970-06-23">
                         <span class="help-text">MM/DD/YYYY</span>
                         </p>
                     </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <p><label>Admission Date</label>
                         <input type="date" value="2019-10-01">
                         <span class="help-text">MM/DD/YYYY</span>
                         </p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <p><label>Discharge Date</label>
                         <input type="date" value="2019-10-03">
                         <span class="help-text">MM/DD/YYYY</span>
                         </p>
                     </div>
+                    <div class="col-md-6">
+                            <p><label>Building </label>
+                            <select><option>Select one</option>
+                            <option selected>BrightHope - Tranquility</option>
+                        <option>BrightHope - Tranquility 1 B </option>
+                        <option>BrightHope - Tranquility Floor 3</option></select></p>
+                     </div>
+                     <div class="col-md-3"><p><label>Room</label><input type="text"></p></div>
                     <div class="col-md-12">
                     <div class="form-group">
-                        <div class="text-right"><label class="float-left mt-2">Summary of Complaint</label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
+                        <div class="text-right"><label class="float-left mt-2">Admitting Diagnosis</label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
                 <div class="editTextDiv">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                 <!--<p class="help-text mb-5">Limit to 500 characters</p>-->
                     </div>
@@ -1846,6 +1867,7 @@
                   <div class="col-md-4"><label>Date of Birth</label></div>
                   <div class="col-md-8"><p>06/23/1970</p></div>
                 </div> 
+                
                 <div class="row">
                   <div class="col-md-4"><label>Admission Date</label></div>
                   <div class="col-md-8"><p>10/01/2019</p></div>
@@ -1854,8 +1876,12 @@
                   <div class="col-md-4"><label>Discharge Date</label></div>
                   <div class="col-md-8"><p>10/03/2019</p></div>
                 </div>
+                   <div class="row">
+              <div class="col-md-4"><label>Location and Room</label></div>
+              <div class="col-md-8"><p>BrightHope &mdash; Tranquility</p></div>
+            </div>
                 <div class="row">
-                  <div class="col-md-12"><label>Summary of Complaint</label><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                  <div class="col-md-12"><label>Admitting Diagnosis</label><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
                 </div> 
               </div>
 
@@ -1979,7 +2005,7 @@
           </div>
           <div id="aP1" class="collapse">
             <div class="card-body">
-               <p class="iq-not-available">Not applicable</p>
+               <p class="iq-not-available">No information provided</p>
             </div>
           </div>
         </div>
@@ -2089,10 +2115,14 @@
                     </div>
                     <div class="col-md-6">
                         <p><label>Person Affected</label>
-                        <select><option>Select one</option><option>Lucinda O</option></select>
+                        <select><option>Select one</option><option>Hugo, Victoria</option></select>
                         </p>
                     </div>
                     <div class="col-md-6"></div>
+                   
+                            
+                       
+                  
                     <div class="col-md-6">
                         <p><label>Shift</label>
                         <input type="text">
@@ -2129,7 +2159,94 @@
                     <button class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
-                          
+            <!-- edit allegation -->
+            <section class="edit-view editAllegation">
+                <h2>Edit Allegation</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                      <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><label>Category</label>
+                        <select><option>Select one</option>
+                            <option value="12">Accidents</option>
+                            <option value="25">Administration/Personnel</option>
+                            <option value="8">Admission, Transfer &amp; Discharge Rights</option><option value="9">Death - General</option><option value="13">Dental Services</option><option value="14">Dietary Services</option><option value="19">Educational Services</option><option value="29">Falsification of Records/Reports</option><option value="34">Fatality/Transfusion Fatality</option><option value="26">Fraud/False Billing</option><option value="23">Infection Control</option><option value="4">Injury of Unknown Origin</option><option value="3">Misappropriation of Property</option><option value="15">Nursing Services</option><option value="36">Other</option><option value="20">Other Services</option><option value="16">Pharmaceutical Services</option><option value="22">Physical Environment</option><option value="17">Physician Services</option><option value="31">Quality Control</option><option value="11">Quality of Care/Treatment</option><option value="10">Quality of Life</option><option value="18">Rehabilitation Services</option><option value="1">Resident/Patient/Client Abuse</option><option value="24">Resident/Patient/Client Assessment</option><option value="2" selected>Resident/Patient/Client Neglect</option><option value="7">Resident/Patient/Client Rights</option><option value="5">Restraints/Seclusion - Death</option><option value="6">Restraints/Seclusion - General</option><option value="35">State Licensure</option><option value="38">State Monitoring</option><option value="30">Unqualified Personnel</option></select>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="subcat hide"><label>Subcategory</label>
+                        <input type="text">
+                      </p>
+                    </div>
+                    <div class="col-md-12">
+                       
+                        <fieldset>
+                <legend>Seriousness</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="seriousness1E" checked name="seriousnessE" class="custom-control-input">
+                  <label class="custom-control-label" for="seriousness1E"> Minor</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="seriousness2E" name="seriousnessE" class="custom-control-input">
+                  <label class="custom-control-label" for="seriousness2E"> Moderate</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="seriousness3E" name="seriousnessE" class="custom-control-input">
+                  <label class="custom-control-label" for="seriousness3E"> Critical </label>
+                </div>
+                </fieldset>
+                       
+                    </div>
+                    <div class="col-md-6">
+                        <p><label>Person Affected</label>
+                        <select><option>Select one</option><option selected>Hugo, Victoria</option></select>
+                        </p>
+                    </div>
+                    <div class="col-md-6"></div>
+                   
+                           
+                       
+                  
+                    <div class="col-md-6">
+                        <p><label>Shift</label>
+                        <input type="text" value="Day">
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                <div class="form-group">
+                    <label>Date
+                    <input type="date" value="2019-10-02">
+                    <span class="help-text">MM/DD/YYYY</span></label>
+                </div>
+            </div>
+                    <div class="col-md-3">
+                <div class="form-group">
+                    <label>Time
+                    <input type="time" value="10:04">
+                    <span class="help-text">HH:MM</span></label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="text-right"><label class="float-left mt-2">Allegation Details <span class="iq-asterisk">*</span></label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
+                <div class="editTextDiv">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</div>
+                <!--<p class="help-text mb-5">Limit to 500 characters</p>-->
+                    </div>
+                    </div>
+                </div>  
+                <div class="iq-button-wrapper">
+                    <a href="#mainContent" class="btn btn-primary" onClick="
+     $('#tab4 .edit-view').removeClass('active'); 
+     $('#tab4 .read-view').addClass('active'); 
+     $('.alert.successMsg').removeClass('hide'); 
+     $('.addedAllegation .allegationA').removeClass('hide');">Save</a>
+                    <button class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').addClass('active');  ">Cancel</button>
+                  </div>
+            </section>
             <!-- read view -->
             <section class="read-view">
                 <div class="row tabTitle">
@@ -2156,7 +2273,7 @@
           <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
             Delete
           </button>
-          <button type="button" class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .edit-view.editAllegationA').addClass('active'); ">Edit</button>
+          <button type="button" class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .edit-view.editAllegation').addClass('active'); ">Edit</button>
         </div>
       </div>
       <div id="alle1" class="collapse">
@@ -2185,8 +2302,7 @@
             </section>
     
           </div>
-          <div class="tab-pane " id="tab5" role="tabpanel"
-                    aria-labelledby="tab5Tab">
+          <div class="tab-pane " id="tab5" role="tabpanel" aria-labelledby="tab5Tab">
               <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Triage</h2>
@@ -2196,6 +2312,7 @@
               </div>
             </div>
             <section class="edit-view active">
+                <p>Indicate the priority of this intake and if additional actions are required.</p>
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -2205,7 +2322,7 @@
                 <div class="col-md-12">
                     <h3>Priority</h3>
                     <fieldset>
-                <legend>Priority Level</legend>
+                <legend>Priority Level <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="priority1" name="priority" class="custom-control-input">
                   <label class="custom-control-label" for="priority1"> Immediate Jeopardy </label>
@@ -2309,7 +2426,7 @@
                     <p class="nijm">Based on the priority, no federal survey is required.</p>
                     
                 <fieldset>
-                <legend>Survey Due Date</legend>
+                <legend>Entry Method</legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="ox1" name="ox" class="custom-control-input" onchange="if(this.checked){$('.calDueDate.calculated').removeClass('hide'); $('.calDueDate.manual').addClass('hide'); }">
                   <label class="custom-control-label" for="ox1"> Enter calculated date</label>
@@ -2320,12 +2437,13 @@
                 </div>
                 <br>
                 <div class="iq-conditional-content hide manual calDueDate">
-                    <div class="form-group">
+                    <div class="row"><div class="col-md-4"><div class="form-group">
             <label>Survey Due Date
                 <input type="date" id="surveyDueDateInput">
                 <span class="help-text">MM/DD/YYYY</span>
             </label>
-        </div>
+        </div></div></div>
+                    
                 </div>
                 <div class="iq-conditional-content hide calculated calDueDate">
                    <div class="row">
@@ -2374,73 +2492,7 @@
                   
                 </div></div>
               </div> 
-                 
-                        
-             
-     <!--                 
-<div class="row">
-  <div class="col-md-7">
-        <label>&nbsp;</label>
-    <div class="iq-accordion showhide">
-    <div class="card no-border">
-      <div class="card-header d-flex">
-        <button id="calDueDateButton" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#calDueDate" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-          <span>Calculate Due Date</span><span class="hide">Calculate Due Date</span>
-        </button>
-      </div>
-      <div id="calDueDate" class="collapse">
-        <div class="card-body border">
-
-              <fieldset>
-        <legend>Calculate From </legend>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="dio1" name="dio" checked class="custom-control-input">
-          <label class="custom-control-label" for="dio1"> Intake Start Date (10/04/2019) </label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="dio2" name="dio" disabled class="custom-control-input">
-          <label class="custom-control-label" for="dio2"> Triage Completion Date (Not Available) </label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="dio3" name="dio" disabled class="custom-control-input">
-          <label class="custom-control-label" for="dio3"> RO Approval Date (Not Available) </label>
-        </div>
-        </fieldset>
-        <fieldset>
-        <legend>Calculate Based On </legend>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="calBased1" name="calBased" checked class="custom-control-input">
-          <label class="custom-control-label" for="calBased1"> Calendar Days </label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input type="radio" id="calBased2" name="calBased" class="custom-control-input">
-          <label class="custom-control-label" for="calBased2"> Business Days </label>
-        </div>
-        </fieldset>
-        <p><label>Days to Investigate</label>
-            <input type="number" value="45" style="width: 10rem;">
-            <span class="help-text">Can be reduced to meet state requirements or for other considerations</span>
-        </p>
-        <p><label>Calculated Survey Due Date</label>
-            10/30/2019
-        </p>
               <div class="iq-button-wrapper">
-                  <button class="btn btn-outline-primary" onclick="$('#calDueDateButton').click(); $('#surveyDueDateInput').val('2019-10-30'); ">Accept Date</button>
-                  <button class="btn btn-link" onclick="$('#calDueDateButton').click();">Cancel</button>
-              </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>  
-    <div class="col-md-3"></div> 
-    <div class="col-md-3">
-        
-    </div>             
-</div>-->
-              
-                  <div class="iq-button-wrapper">
                     <button class="btn btn-primary" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
                     <button class="btn btn-link" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active');  $('#tab5 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -2473,7 +2525,9 @@
                         <label>Referral Agencies</label>
                       </div>
                       <div class="col-md-8">
-                        <p>Adult Protection Services / Elder Care</p>
+                        <ul><li>Adult Protection Services / Elder Care</li>
+                            <li>Other</li>  
+                        </ul>
                       </div>
                     </div>
                 </div>
@@ -2495,7 +2549,7 @@
                         <label>Triage Complete Date/Time</label>
                       </div>
                       <div class="col-md-8">
-                        <p class="iq-not-available">Not available</p>
+                        <p>10/10/2019 11:10 AM </p>
                       </div>
                     </div>
                 </div>
@@ -2513,13 +2567,11 @@
               
             </section>
           </div>   
-          <div class="tab-pane " id="tab6" role="tabpanel"
-                    aria-labelledby="tab6Tab">
-            
+          <div class="tab-pane " id="tab6" role="tabpanel" aria-labelledby="tab6Tab">
             <section class="edit-view active firstTime">
             <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Add Branch</h2>
+                <h2>Add Survey</h2>
               </div>
               <div class="col-md-2">
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .edit-view').addClass('active'); $('#tab6 .read-view').removeClass('active'); $(this).addClass('hide');  $('.alert.successMsg').addClass('hide');">Edit</button>-->
@@ -2660,7 +2712,7 @@
               <section class="read-view">
                   <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Additional Branch Addresses</h2> <p class="iq-page-header-description">Manage and add additional branches for the provider.</p>
+                <h2>Survey</h2> <p class="iq-page-header-description">Manage and add additional branches for the provider.</p>
                 <p><button class="btn btn-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.firstTime').addClass('active');">Add Branch</button></p>
               </div>
               <div class="col-md-2">
@@ -2831,14 +2883,10 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab7" role="tabpanel"
-                    aria-labelledby="tab7Tab">
-            
-                
-              
-            <section class="edit-view newContact active">
+          <div class="tab-pane " id="tab7" aria-labelledby="tab7Tab">
+            <section class="edit-view newLetter active">
               <div class="row">
-                <div class="col-md-12"><h2>Add Contact</h2>
+                <div class="col-md-12"><h2>Add Letter</h2>
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                     <div class="row">
                         <div class="col-md-6"><p><label>Contact Name
@@ -2886,14 +2934,14 @@
             <section class="read-view">
                   <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Additional Contacts</h2> <p class="iq-page-header-description">Manage and add additional contacts for the provider.</p>
-                <p><button class="btn btn-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.firstTime').addClass('active');">Add Contact</button></p>
+                <h2>Letters</h2> <p class="iq-page-header-description">Add and manage letters for this intake.</p>
+                <p><button class="btn btn-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.firstTime').addClass('active');">Add Letter</button></p>
               </div>
               <div class="col-md-2">
                 
               </div>
             </div>
-                  <p class="info-text"><span class="baCount">1</span> Additional Contacts</p>
+                  <p class="info-text"><span class="baCount">1</span> Letter</p>
               <div class="iqies-list-row">
                 <div class="iqies-list-row-header">
                   <div class="row">
@@ -2978,1317 +3026,99 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab8" role="tabpanel"
-                    aria-labelledby="tab8Tab">
-            <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Medicare Administrative Contractor (MAC) Information</h2>
-               
-              </div>
-              <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab8 .edit-view').addClass('active'); $('#tab8 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
-              </div>
-            </div>
-            <section class="edit-view active">
+          <div class="tab-pane " id="tab8" role="tabpanel" aria-labelledby="tab8Tab">
+            <!-- add note -->
+            <section class="edit-view addNote active">
+             <h2>Add Note</h2>
               <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
           
-              
-              <p>
-                <label for="mac">MAC Company Name and Workload ID <span class="iq-asterisk" title="Required field">*</span></label>
-                <select class="form-control" onChange="switch(this.options[this.selectedIndex].value){
-                    case 'ngs': $('#ngsDetails').removeClass('hide'); break;
-                    case 'wps': $('#wpsDetails').removeClass('hide'); break;
-                }"><option disabled selected>Select one</option><option value="ngs">National Government Services, Inc. - 06001</option><option value="wps">Wisconsin Physicians Service Government Health Administrators - HHSM-500-2012-M0005Z</option></select>
-              </p>
-                
-              <div class="iq-conditional-content hide" id="ngsDetails">
-                <div class="row">
-                  <div class="col-md-5">
-                     <p><label>MAC Company Name</label>
-                       National Government Serivices, Inc.
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Workload ID</label>
-                      06001
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Jurisdiction</label>
-                      J6
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Phone</label>
-                        (855) 834-5545
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Email</label>
-                       <a href="mailto:admin@ngsmedicare.com">admin@ngsmedicare.com</a>
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Address</label>
-                       667 Bent Ridge Lane, Suite 1000<br>
-                         Lorton, VA 60010<br>
-                         Fairfax County
-                      </p>
-                  </div>
-                </div>
-              </div>
-                
-              <div class="iq-conditional-content hide" id="wpsDetails">
-                <div class="row">
-                  <div class="col-md-5">
-                     <p><label>MAC Company Name</label>
-                       Wisconsin Physicians Service Government Health Administrators
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Workload ID</label>
-                      HHSM-500-2012-M0005Z
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Jurisdiction</label>
-                      J5, J8
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Phone</label>
-                        (888) 111-2222
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Email</label>
-                       <a href="mailto:admin@wpsmedicare.com">admin@wpsmedicare.com</a>
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Address</label>
-                       P.O. Bo 8550<br>
-                         Madison, WI 53708-8550
-                      </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab8 .tabTitle .btn').removeClass('hide');">Save</button>
-                <button
-                            class="btn btn-link" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active');  $('#tab8 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-              </div>
-            </section>
-            <section class="read-view">
-              <div class="row">
-                  <div class="col-md-5">
-                     <p><label>MAC Company Name</label>
-                       National Government Serivices, Inc.
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Workload ID</label>
-                      06001
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Jurisdiction</label>
-                      J6
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Phone</label>
-                        (855) 834-5545
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Email</label>
-                       <a href="mailto:admin@ngsmedicare.com">admin@ngsmedicare.com</a>
-                      </p>
-                  </div>
-                  <div class="col-md-5">
-                     <p><label>Address</label>
-                       667 Bent Ridge Lane, Suite 1000<br>
-                         Lorton, VA 60010<br>
-                         Fairfax County
-                      </p>
-                  </div>
-                </div>
-            </section>
-          </div>
-          <div class="tab-pane " id="tab9" role="tabpanel"
-                    aria-labelledby="tab9Tab">
-           
-            <section class="edit-view addCites active">
-                 <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Add Citations</h2>
-                <p>Expand the tag to view the regulation text and interpretive guidelines. </p>
-              </div>
-              
-            </div>
-              <div class="row">
-                <div class="col-md-6">
-      <label class="sr-only" for="citeSearch">Search</label>
-      <div class="input-group">
-        <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
-        $('.searchButton').click();
-    }" >
-          <div class="input-group-postpend">
-         <button type="submit" class="btn btn-outline-primary searchButton" onClick="if($('#citeSearch').val().indexOf('s') > -1 && $('#citeSearch').val().indexOf('m') > -1){ $('#tab3 .staffMembers tbody tr').addClass('hide'); $('#tab3 .staffMembers tbody tr.sm').removeClass('hide'); $('#tab3 .staffMembers .info-text').toggleClass('hide'); }">Search</button>
-        </div>
-      </div><div class="input-group-help-text help-text">Search by keyword, tag title, or number</div>
-      
-    </div>
-                
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="iq-accordion showhide">
-            <div class="card no-border">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iq-collapse-show-hide3" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                  <span>Show Filters</span><span class="hide">Hide Filters</span>
-                </button>
-              </div>
-              <div id="iq-collapse-show-hide3" class="collapse">
-                <div class="card-body px-0">
-                  <fieldset>
-                <legend>Filter by</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter1" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter1">Emergency Preparedness (FED - E - 1.01)</label> 
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter2" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter2">HOME HEALTH AGENCIES (FED - G - 11.01)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter3" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter3">Citation title and number only</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter4" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter4">Regulation text only</label>
-                </div>
-                    <div class="iq-button-wrapper" style="margin-bottom: -2rem;">
-                      <button class="btn btn-outline-primary btn">Apply</button>
-                        <button class="btn btn-link">Reset</button>
-                      </div>
-              </fieldset>
-                </div>
-              </div>
-            </div>
-          </div>
-                </div>
-              </div>
-               
-              <div class="row mt-4 staffMembers">
-                <div class="col-md-12">
-               
-                  
-                  
-                   
-                <nav class="nav nav-horizontal">
-              <a class="nav-link active" href="#h-tab-1">1-10 of 235 Citations<span class="info-text hide">Filtered Results: 2 Found</span></a>
-              <a class="nav-link" href="#h-tab-2">0 Citations Added</a>
-            </nav>
-            <div class="tab-content">
-                <div class="tab-pane active" id="h-tab-1">
-                    <div class="accordion-wrapper">
-                    <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite1content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0000 - Initial Comments</span>
-                </button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite1content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                    <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite2content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0100 - General Requirements - Other</span>
-                </button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite2content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                    <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite3content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0111 - Building Rehabilitation</span></button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite3content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                    <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0112 - Sprinkler Requirements for Major Rehabilitation</span></button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite4content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                    <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite5content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0131 - Multiple Occupancies</span></button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite5content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                    <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite10content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0132 - Multiple Occupancies - Contiguous Non-Health</span>
-                </button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite10content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                   <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite6content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0133 - Multiple Occupancies - Construction Type</span></button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite6content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                   <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite7content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0161 - Building Construction Type and Height</span></button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite7content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                    <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite8content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0162 - Roofing Systems Involving Combustibles</span></button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite8content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                   <div class="iq-accordion secondary data-focus">
-            <div class="card">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite9content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0163 - Interior Non-Bearing Wall Construction</span></button>
-                <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary">
-                    Add
-                  </button>
-                </div>
-              </div>
-              <div id="cite9content" class="collapse ">
-                <div class="card-body">
-                  
-                    <p><label class="iq-label">Lorem Ipsum</label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, voluptate a unde eaque assumenda illum! Maiores aliquid reprehenderit eaque, ex explicabo laborum rem, error, placeat voluptas impedit maxime dicta corporis!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-                    </div>
-                    <nav aria-label="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" aria-label="First" type="button">First</button></li><li class="page-item disabled"><button class="page-link previous" aria-label="Previous" type="button">Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link next" aria-label="Next" type="button">Next</button></li><li class="page-item"><button type="button" class="page-link last" aria-label="Last">Last</button></li></ul></nav>
-                </div> 
-                <div class="tab-pane" id="h-tab-2">
-                   
-                  
-                </div>
-            </div>
-                    
-                    
-                    
-                </div>
-                
-              </div>
-<br>
-              <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#tab3 .edit-view').removeClass('active');  $('#tab3 .read-view.all').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
-                <button
-                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-              </div>
-            </section>
-            <section class="read-view all">
-                 <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Citations and POC</h2>
-                
-              </div>
-              <div class="col-md-2">
-                <!--<button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>-->
-              </div>
-            </div>
-                <div class="row"><div class="col-md-12">
-                 <h3>Plan of Correction (POC)</h3>
-                <p>The Plan of Correction can be added once citations have been locked and the Statement of Deficiencies has been sent.</p>
-              
-                <hr>
-                <h3>Citations</h3>
-                <p class="iq-page-header-description">Add and manage citations for this survey. All citation writing must be marked as complete to lock citations.</p>
-                <div class="iq-button-wrapper">
-                <button class="btn btn-outline-primary">Add Citations</button> <button class="btn btn-outline-primary"><i class="fas fa-lock-alt"></i> Lock Citations</button>
-                </div>
-                </div></div>
-              
-            <div class="row">
-                <div class="col">
-                  <div class="iq-accordion showhide">
-            <div class="card no-border">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#viewCitesFilterContent" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                  <span>Show Filter</span><span class="hide">Hide Filter</span>
-                </button>
-              </div>
-              <div id="viewCitesFilterContent" class="collapse">
-                <div class="card-body px-0">
-                    <div class="row">
-                    <div class="col-md-6">
-                      <fieldset>
-                <legend>Immediate Jeopardy</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter1v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter1v">Associated with an immediate jeopardy</label> 
-                </div>
-                  </fieldset>     
-                
-                <fieldset>
-                    <legend>Federal Regulation Sets</legend>    
-                    <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter2v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter2v">Emergency Preparedness (FED - E - 01.01)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter3v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter3v">LSC 2012 Health Existing (FED - K - 01.01)</label>
-                </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Survey Cateogory</legend> 
-                    <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter4v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter4v">Recertification</label>
-                </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Buildings</legend>    
-                    <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter5v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter5v">01 - RES UNIT - FREESTANDING 9 BEDS</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter6v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter6v">B1 - RES UNIT - FREESTANDING 8 BEDROOM STRUCTURE ON THE WEST SIDE OF NORTHWEST FRANKLIN ST</label>
-                </div>
-                </fieldset>
-                    </div>
-                    <div class="col-md-6">
-                    <fieldset>
-                <legend>Status</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter7v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter7v">Writing Pending</label> 
-                </div>
-                        <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter8v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter8v">Writing in Progress</label> 
-                </div>
-                        <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter9v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter9v">Ready for Merge</label> 
-                </div>
-                        <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter10v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter10v">Writing Complete</label> 
-                </div>
-                        <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter11v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter11v">Corrected</label> 
-                </div>
-                  </fieldset>
-                        <fieldset><legend>Tag Type</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter12v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter12v">Memo</label> 
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter13v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter13v">Condition</label> 
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter14v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter14v">Status</label> 
-                </div>
-                        
-                        </fieldset>
-                    </div>
-                    </div>
-                
-                    <div class="iq-button-wrapper" style="margin-bottom: -2rem;">
-                      <button class="btn btn-outline-primary btn">Apply</button>
-                      </div>
-             
-                </div>
-              </div>
-            </div>
-          </div>
-                </div>
-              </div>
-                
-              <p class="info-text mt-4"><span class="aoCount">2</span> Citations</p>
-              <div class="iqies-list-row iniComment">
-                <div class="iqies-list-row-header">
-                  <div class="row">
-                    <div class="col-md-8">
-                      <h4><a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active');  $('#tab3 .edit-view.cite0').addClass('active');">0000 - Initial Comments</a></h4>
-                    </div>
-                    <div class="col-md-4 text-right iq-button-col">
-                      <button class="btn btn-outline-primary float-right" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .read-view.editIniComment').addClass('active');">Edit</button>
-                        <button class="btn btn-link float-right">Delete</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="iq-list">
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Status</p></div>
-                      <div class="col-md-8"><p>Writing Pending</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
-                      <div class="col-md-8"><p>09/04/2019</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Authors</p></div>
-                      <div class="col-md-8"><p>Jane Smith</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Tag Type</p></div>
-                      <div class="col-md-8"><p>Standard</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Regulation Set</p></div>
-                      <div class="col-md-8"><p>LSC 20120 Health Existing (FED - K - 03.03)</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Survey Category</p></div>
-                      <div class="col-md-8"><p>Initial Certification</p></div>
-                    </div>
-                </div>
-              </div>
-               <div class="iqies-list-row iniComment">
-                <div class="iqies-list-row-header">
-                  <div class="row">
-                    <div class="col-md-8">
-                      <h4><a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active');  $('#tab3 .read-view.cite224').addClass('active');">0224 - Horizontal Sliding Doors</a></h4>
-                    </div>
-                    <div class="col-md-4 text-right iq-button-col">
-                      <button class="btn btn-outline-primary float-right" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .edit-view.cite224').addClass('active');">Edit</button>
-                        <button class="btn btn-link float-right">Delete</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="iq-list">
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Status</p></div>
-                      <div class="col-md-8"><p>Writing in Progress</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Last Updated</p></div>
-                      <div class="col-md-8"><p>09/04/2019</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Authors</p></div>
-                      <div class="col-md-8"><p>Jane Smith</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Tag Type</p></div>
-                      <div class="col-md-8"><p>Element</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Regulation Set</p></div>
-                      <div class="col-md-8"><p>LSC 20120 Health Existing (FED - K - 03.03)</p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4"><p class="iq-label">Survey Category</p></div>
-                      <div class="col-md-8"><p>Initial Certification</p></div>
-                    </div>
-                </div>
-              </div>
-            </section>
-            <section class="edit-view cite224">
-                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
-              <h2>Edit Citation 0224</h2>
-                <p>Horizontal Sliding Doors - NFPA 101</p>
-                <div class="row mb-5">
-                <div class="col">
-                  <div class="iq-accordion showhide">
-            <div class="card no-border">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeSource" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                  <span>Show Regulation Text and Interpretive Guidelines</span><span class="hide">Hide Regulation Text and Interpretive Guidelines</span>
-                </button>
-              </div>
-              <div id="citeSource" class="collapse">
-                <div class="card-body px-0">
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-                </div>
-              </div>
-                
-                <h3>Citation Overview</h3>
-                <fieldset>
-                <legend>Buildings <span class="iq-asterisk" title="Required field">*</span></legend>
-                    <p>Only buildings assigned to the current regulation set will appear in this list.</p>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeB1" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeB1">01 - RES UNIT - FREESTANDING 9 BEDS - Active</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeB2" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeB2">B1 - RES UNIT - FREESTANDING 8 BEDROOM STRUCTURE ON THE WEST SIDE OF NORTHWEST FRANKLIN ST - Active</label>
-                </div>
-              </fieldset>
-                
-                <h3>Survey Category</h3>
-                 <fieldset>
-                <legend>Federal Categories</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFC1" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFC1">H - Life Safety Code</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFC2" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFC2">I - Recertification</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFC3" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFC3">Complaints</label>
-                </div>
-              </fieldset>
-                
-              <div class="iq-conditional-content pl-4">
-                <fieldset>
-                <legend>Substantiated Allegations</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeSA1" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeSA1">Admission, Transfer, &amp; Discharge Rights - <a href="#">Complaint 9864</a></label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeSA2" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeSA2">Death - General - <a href="#">Complaint 9864</a></label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeSA3" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeSA3">Dental Services - <a href="#">Complaint 9864</a></label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeSA4" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeSA4">Dietary Services - <a href="#">Complaint 9864</a></label>
-                </div>
-              </fieldset>
-                </div>
-                
-                <h3>Deficient Practice Statement</h3>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeDPS" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeDPS">Associated with an immediate jeopardy</label>
-                </div>
-                <button class="btn btn-link" data-toggle="modal" data-target="#shortcuts">View keyboard short cuts</button>
+              <div class="form-group" id="note1">
+                        <div class="text-right"><label class="float-left mt-2">Note <span class="iq-asterisk">*</span></label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
                 <div class="editTextDiv"></div>
-                <p class="help-text mb-5">Limit to 500 characters</p>
+                <p class="iq-input-error-msg hide">This field is required</p>
+                <!--<p class="help-text mb-5">Limit to 500 characters</p>-->
+                    </div>
+              
+              <div class="iq-button-wrapper">
+                <button class="btn btn-primary" onClick="if( $('#tab8 .edit-view.addNote .editTextDiv .fr-element.fr-view p').html() == '<br>'){ $('#note1 .iq-input-error-msg').removeClass('hide'); $('.alert.noteError').removeClass('hide'); } else { if( $('#tab8 .noteCount').html() == '1 Note' && $(this).next('button').hasClass('hide')){ $(this).next('button').removeClass('hide'); } else { $('#tab8 .noteCount').html('2 Notes'); $('#tab8 .jsNote').removeClass('hide'); }; $('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#note1 .iq-input-error-msg').addClass('hide'); $('.alert.noteError').addClass('hide'); }">Save</button>
+                <button class="btn btn-link hide" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('#note1 .iq-input-error-msg').addClass('hide'); $('.alert.noteError').addClass('hide'); ">Cancel</button>
                 
-                <h3>Citation Text</h3>
-                <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
-                <button class="btn btn-link" data-toggle="toast" data-target="#shortcutsToast">View keyboard short cuts</button>
-                <div class="editTextDiv"></div><p class="help-text mb-5">Limit to 500 characters</p>
-                
-                <div class="toast alert-info fade show" id="shortcutsToast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0; top: 30%; ">
-  <div class="toast-header">
-    <strong class="mr-auto">Heading</strong>
-    <small>11 mins ago</small>
-    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="toast-body">
-    Hello, world! This is an info toast message.
-  </div>
-</div>
-                
-                <div class="iq-button-wrapper">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeWC" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeWC">Writing Complete</label>
-                </div>
-                </div>
-                <h3>Attachments</h3>
-                <p class="mb-0">Add and manage attachments for this citation.</p>
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
-                <p class="iq-not-available">No attachments have been added</p>
-                <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
-                <button
-                            class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.cite224').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
               </div>
             </section>
-            <section class="read-view cite224">
-                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
-               <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Citation 0224</h2>
-                <p>Horizontal Sliding Doors - NFPA 101</p>
-              </div>
-              <div class="col-md-2">
-                <button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view.cite224').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
-              </div>
-            </div>
-                
-                <div class="row mb-5">
-                <div class="col">
-                  <div class="iq-accordion showhide">
-            <div class="card no-border">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeSource2" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                  <span>Show Regulation Text and Interpretive Guidelines</span><span class="hide">Hide Regulation Text and Interpretive Guidelines</span>
-                </button>
-              </div>
-              <div id="citeSource2" class="collapse">
-                <div class="card-body px-0">
-                  lorem ipsum
+            <!-- edit note -->
+            <section class="edit-view editNote">
+             <h2>Edit Note</h2>
+              <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+          
+              <div class="form-group">
+                        <div class="text-right"><label class="float-left mt-2">Note <span class="iq-asterisk">*</span></label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Opens in a new window">View keyboard short cuts</a></div>
+                <div class="editTextDiv">
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
                 </div>
-              </div>
-            </div>
-          </div>
-                </div>
-              </div>
-                
-                <h3>Citation Overview</h3>
-               <div class="iq-list">
-                <div class="row">
-                  <div class="col-md-4">
-                    <p class="iq-label">Buildings</p>
-                  </div>
-                  <div class="col-md-8">
-                    <p>01 - RES UNIT - FREESTANDING 9 BEDS - Active</p>
-                  </div>
-                </div>
-               <div class="row">
-                  <div class="col-md-4">
-                    <p class="iq-label">Survey Category</p>
-                  </div>
-                  <div class="col-md-8">
-                    <ul><li>H - Life Safety Code</li>
-                      <li>Complaints</li></ul>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <p class="iq-label">Substantiated Allegations</p>
-                  </div>
-                  <div class="col-md-8">
-                    <ul><li>Admission, Transfer, &amp; Discharge Rights - <a href="#">Complaint 9864</a></li>
-                     </ul>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <p class="iq-label">Deficient Practice Statement</p>
-                  </div>
-                  <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-                </div>
-                
-                <h3>Citation Text</h3>
-                <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
-                <p><button class="btn btn-outline-primary">Merge Citation Text</button></p>
-                <div class="table-wrapper mb-5">  <table class="table table-striped">
-  <thead>
-    <tr><th scope="col" class="sortable"><span>Order</span></th> 
-      <th scope="col" class="sortable ascending"><span>Name</span></th>
-        
-      <th scope="col" class="sortable"><span>Last Updated</span></th>
-      <th scope="col" class="sortable"><span>Status</span></th>
- <th scope="col">&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><div class="btn-group-vertical">
-              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-up"></i></button>
-              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
-          </div></td>
-      <td scope="row"><p>Smith, James</p></td>
-      <td><p>08/27/2019 2:04 PM</p></td>
-      <td><p>Writing in Progress</p></td>
-        <td><a href="#">Delete</a> | <a href="#">Edit</a></td>
-    </tr>
-    <tr>
-      <td><div class="btn-group-vertical">
-              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
-              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
-          </div></td>
-      <td scope="row"><p>Thomas, Jane</p></td>
-      <td><p>08/27/2019 1:43 PM</p></td>
-      <td><p>Writing in Progress</p></td>
-        <td><a href="#">View</a></td>
-    </tr>
-    <tr>
-      <td><div class="btn-group-vertical">
-              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
-              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-down"></i></button>
-          </div></td>
-      <td scope="row"><p>Chae, Matthew</p></td>
-      <td><p>08/30/2019 10:21 AM</p></td>
-      <td><p>Writing in Progress</p></td>
-        <td><a href="#">View</a></td>
-    </tr>
-    
-  </tbody>
-</table></div>
-                
-                <h3>Attachments</h3>
-                <p class="mb-0">Add and manage attachments for this citation.</p>
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
-                <p class="iq-not-available">No attachments have been added</p>
-                
-                <div class="iq-button-wrapper">
-                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
-              </div>
-            </section>             
-          </div>  
-          <div class="tab-pane " id="tab11" role="tabpanel"
-                    aria-labelledby="tab11Tab">
-            <section class="edit-view newAdmin active">
-              <div class="row">
-                <div class="col-md-12"><h2>Add Administrator</h2>
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                    
-                <div class="row">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="form-group">
-                                <label id="salutationId-label" for="salutationId" class="">Salutation</label>
-                                <select id="salutationId" name="salutationId" class="form-control" aria-describedby="salutationId" label="Salutation"><option value="">Select one</option><option value="5">Dr.</option><option value="4">Miss</option><option value="2">Mr.</option><option value="3">Mrs.</option><option value="1">Ms.</option></select>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="form-group">
-                                <label id="firstName-label" for="firstName" class="">First Name</label>
-                                <input id="firstName" name="firstName" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-1">
-                            <div class="form-group">
-                                <label id="middleInitial-label" for="middleInitial" class="">MI</label>
-                                <input id="middleInitial" name="middleInitial" class="form-control" maxlength="1" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="form-group">
-                                <label id="lastName-label" for="lastName" class="">Last Name</label>
-                                <input id="lastName" name="lastName" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                  </div>
-
-                <div class="row">
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="phoneNumber-label" for="phoneNumber" class="">Phone</label>
-                                <input id="phoneNumber" name="phoneNumber" class="form-control" maxlength="10" autocapitalize="none" type="tel" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="faxNumber-label" for="faxNumber" class="">Fax</label>
-                                <input id="faxNumber" name="faxNumber" class="form-control" maxlength="10" autocapitalize="none" type="tel" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="email-label" for="email" class="">Email</label>
-                                <input id="email" name="email" class="form-control" autocapitalize="none" type="email" value="">
-                            </div>
-                        </div>
-                  </div>
-
-                <fieldset><!--<legend><h3>Address</h3></legend>-->
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="addressLine1-label" for="addressLine1" class="">Address Line 1</label>
-                                <input id="addressLine1" name="addressLine1" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="addressLine2-label" for="addressLine2" class="">Address Line 2</label>
-                                <input id="addressLine2" name="addressLine2" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="city-label" for="cityAdmin" class="">City</label>
-                                <input id="cityAdmin" name="city" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <div class="form-group">
-                                <label id="state-label" for="stateAdmin" class="">State</label>
-                                <select id="stateAdmin" name="state" class="form-control" aria-describedby="state" label="State"><option value="">Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="52">American Samoa</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="53">Guam</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="56">Marshall Islands</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="55">Micronesia</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="54">Northern Mariana Islands</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="57">Palau</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="10">Virgin Islands</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <div class="form-group">
-                                <label id="zip-label" for="zip" class="">ZIP Code</label>
-                                <input id="zip" name="zip" class="form-control" maxlength="5" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
+                <!--<p class="help-text mb-5">Limit to 500 characters</p>-->
                     </div>
-                </fieldset>
-
-                <fieldset><legend><h3>Administrator Details</h3></legend>    
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <fieldset class="">
-                                    <legend id="isPrimary-legend" class="iqies-legend-heading-no-error"></legend>
-                                    <div class="custom-control custom-checkbox">
-                                        <input id="isPrimary" type="checkbox" name="isPrimary" class="custom-control-input">
-                                        <label id="isPrimary-label-id" nesting="isPrimary-label-id" for="isPrimary" class="custom-control-label"><span class="">Primary Administrator</span></label>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="administratorTypeId-label" for="administratorTypeId" class="">Administrator Type</label>
-                                <select id="administratorTypeId" name="administratorTypeId" class="form-control" aria-describedby="administratorTypeId administratorTypeId-help" label="Administrator Type" help="Role held by the administrator"><option value="">Select one</option><option value="1">Administrator</option><option value="5">Assessment Coordinator</option><option value="2">Assistant Administrator</option><option value="4">Director of Nursing</option><option value="3">Medical Director</option></select>
-                                <div id="administratorTypeId-help" class="form-text">
-                                    Role held by the administrator
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="licenseNumber-label" for="licenseNumber" class="">License Number</label>
-                                <input id="licenseNumber" name="licenseNumber" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="licenseExpirationDate-label" for="licenseExpirationDate" class="">License Expiration Date</label>
-                                <div class="DayPickerInput">
-                                    <input placeholder="" id="licenseExpirationDate" aria-describedby="licenseExpirationDate-help" name="licenseExpirationDate" class="form-control" value="">
-                                </div>
-                                <div aria-label="M M/D D/Y Y Y Y" id="licenseExpirationDate-help" class="form-text">MM/DD/YYYY</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="startDate-label" for="startDate" class="">Start Date</label>
-                                <div class="DayPickerInput">
-                                    <input placeholder="" id="startDate" aria-describedby="startDate-help" name="startDate" class="form-control" value="">
-                                </div>
-                                <div aria-label="M M/D D/Y Y Y Y" id="startDate-help" class="form-text">MM/DD/YYYY</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="endDate-label" for="endDate" class="">End Date</label>
-                                <div class="DayPickerInput">
-                                    <input placeholder="" id="endDate" aria-describedby="endDate-help" name="endDate" class="form-control" value="">
-                                </div>
-                                <div aria-label="M M/D D/Y Y Y Y" id="endDate-help" class="form-text">MM/DD/YYYY</div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </fieldset>
-                 <div class="row">
-                    <div class="col">
-                      <div class="iq-button-wrapper">
-                        <button class="btn btn-primary" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
-                        <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                      </div>
-                    </div>
-                  </div>
-                 
-                </div>
+              
+              <div class="iq-button-wrapper">
+                <button class="btn btn-primary" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide');">Save</button>
+                <button class="btn btn-link" onClick="$('#tab8 .edit-view').removeClass('active'); $('#tab8 .read-view').addClass('active'); ">Cancel</button>
+                
               </div>
             </section>
             <section class="read-view">
-                  <div class="row tabTitle">
+                <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Administrators</h2> 
-                <p><button class="btn btn-primary" onclick="$('#tab9 .read-view').removeClass('active'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .edit-view.newAdmin').addClass('active');">Add Administrator</button></p>
+                <h2>Notes</h2>
+                <p class="iq-page-header-description">Add and manage the notes for this intake.</p>
               </div>
               <div class="col-md-2">
                 
               </div>
             </div>
-                  <p class="info-text"><span class="baCount">1</span> Administrators</p>
-              <div class="iqies-list-row">
+            <div class="iq-button-wrapper">
+                <button class="btn btn-outline-primary" onClick="$('#tab8 .edit-view.addNote').addClass('active'); $('#tab8 .read-view').removeClass('active'); ">Add Note</button>  
+            </div>
+               <p class="info-text"><span class="noteCount">1 Note</span></p>
+                  
+            <div class="iqies-list-row">
+              
+                 <div class="iqies-list-row-header jsNote hide">
+                  <div class="row">
+                    <div class="col-md-9">
+                      <h3>Jeffery Sullivan<br><small class="bottom">10/11/2019 3:12 PM</small></h3>
+                    </div>
+                    <div class="col-md-3">
+                      <button class="btn btn-link" data-toggle="modal" data-target="#confirmNoteDeletion">Delete</button> | 
+                      <button class="btn btn-link" onclick="$('#tab8 .read-view').removeClass('active'); $('#tab8 .edit-view.editNoteJS').addClass('active');">Edit</button>
+                    </div>
+                  </div>
+                </div>   
+                <div class="row jsNote hide">
+                    <div class="col-md-12">
+                        <p>Etiam tempor orci eu lobortis elementum nibh tellus molestie. Neque egestas congue quisque egestas. Egestas integer eget aliquet nibh praesent tristique. Vulputate mi sit amet mauris. Sodales neque sodales ut etiam sit. Dignissim suspendisse in est ante in. Volutpat commodo sed egestas egestas. Felis donec et odio pellentesque diam. Pharetra vel turpis nunc eget lorem dolor sed viverra. Porta nibh venenatis cras sed felis eget. Aliquam ultrices sagittis orci a. Dignissim diam quis enim lobortis. Aliquet porttitor lacus luctus accumsan. Dignissim convallis aenean et tortor at risus viverra adipiscing at.</p>
+                    </div>
+                </div>  
                 <div class="iqies-list-row-header">
                   <div class="row">
-                    <div class="col-md-10">
-                      <h3>Mr. Edward P. Munch<small class="bottom">Primary Administrator</small></h3>
+                    <div class="col-md-9">
+                      <h3>Jonathan Flake<br><small class="bottom">10/10/2019 11:03 AM</small></h3>
                     </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onclick="$('#tab9 .read-view').removeClass('active'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .edit-view.editEdward').addClass('active');">Edit</button>
+                    <div class="col-md-3">
+                      <button class="btn btn-link" data-toggle="modal" data-target="#confirmNoteDeletion">Delete</button> | 
+                      <button class="btn btn-link" onclick="$('#tab8 .read-view').removeClass('active'); $('#tab8 .edit-view.editNote').addClass('active');">Edit</button>
                     </div>
                   </div>
-                </div>
-                      
+                </div>   
                 <div class="row">
-                    <div class="col-md-5">
-                          <p><label>Administrator Type</label>
-                          Assessment Coordinator</p>
+                    <div class="col-md-12">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
                     </div>
-                    <div class="col-md-5">
-                          <p><label>License Number</label>
-                          3413253515</p>
-                    </div>
-                    <div class="col-md-5">
-                          <p><label>License Expiration Date</label>
-                          01/31/2022</p>
-                      </div>
-                    <div class="col-md-5">
-                          <p><label>Start - End Date</label>
-                          07/30/2019 - 07/29/2020</p>
-                    </div>
-                    
-                    
-                    
-                    <div class="col-md-5">
-                          <p><label>Phone</label>
-                          (703) 123-1111</p>
-                      </div>
-                    <div class="col-md-5">
-                          <p><label>Fax</label>
-                          (703) 123-3333</p>
-                      </div>
-                    <div class="col-md-5">
-                          <p><label>Email</label>
-                          edward.munch@hha.org</p>
-                      </div>
-                    <div class="col-md-5">
-                          <p><label>Address</label>
-                          123 Reston Parkway, Suite 101<br>
-                          Reston, VA 20191<br>
-                          <!--<span class="iqies-not-available">County not available</span>--></p>
-                      </div>
-                    
-                  </div>
-                      
-                
-                
                 </div>
-           </section>
-           <section class="edit-view editEdward">
-              <h2>Edit Administrator</h2>
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                      
-                <div class="row">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="form-group">
-                                <label id="salutationId-labelEE" for="salutationIdEE" class="">Salutation</label>
-                                <select id="salutationIdEE" name="salutationIdEE" class="form-control" aria-describedby="salutationIdEE" label="Salutation"><option value="">Select one</option><option value="5">Dr.</option><option value="4">Miss</option><option value="2">Mr.</option><option value="3">Mrs.</option><option value="1">Ms.</option></select>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="form-group">
-                                <label id="firstName-labelEE" for="firstNameEE" class="">First Name</label>
-                                <input id="firstNameEE" name="firstNameEE" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-1">
-                            <div class="form-group">
-                                <label id="middleInitial-labelEE" for="middleInitialEE" class="">MI</label>
-                                <input id="middleInitialEE" name="middleInitialEE" class="form-control" maxlength="1" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="form-group">
-                                <label id="lastName-labelEE" for="lastNameEE" class="">Last Name</label>
-                                <input id="lastNameEE" name="lastNameEE" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                  </div>
-
-                <div class="row">
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="phoneNumber-labelEE" for="phoneNumberEE" class="">Phone</label>
-                                <input id="phoneNumberEE" name="phoneNumberEE" class="form-control" maxlength="10" autocapitalize="none" type="tel" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="faxNumber-labelEE" for="faxNumberEE" class="">Fax</label>
-                                <input id="faxNumberEE" name="faxNumberEE" class="form-control" maxlength="10" autocapitalize="none" type="tel" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="email-labelEE" for="emailEE" class="">Email</label>
-                                <input id="emailEE" name="emailEE" class="form-control" autocapitalize="none" type="email" value="">
-                            </div>
-                        </div>
-                  </div>
-
-                <fieldset><!--<legend><h3>Address</h3></legend>-->
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="addressLine1-labelEE" for="addressLine1EE" class="">Address Line 1</label>
-                                <input id="addressLine1EE" name="addressLine1EE" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="addressLine2-labelEE" for="addressLine2EE" class="">Address Line 2</label>
-                                <input id="addressLine2EE" name="addressLine2EE" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="city-labelEE" for="cityAdminEE" class="">City</label>
-                                <input id="cityAdminEE" name="cityEE" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <div class="form-group">
-                                <label id="state-labelEE" for="stateAdminEE" class="">State</label>
-                                <select id="stateAdminEE" name="state" class="form-control" aria-describedby="state" label="State"><option value="">Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="52">American Samoa</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="53">Guam</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="56">Marshall Islands</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="55">Micronesia</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="54">Northern Mariana Islands</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="57">Palau</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="10">Virgin Islands</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <div class="form-group">
-                                <label id="zip-labelEE" for="zipEE" class="">ZIP Code</label>
-                                <input id="zipEE" name="zipEE" class="form-control" maxlength="5" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <fieldset><legend><h3>Administrator Details</h3></legend>    
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <fieldset class="">
-                                    <legend id="isPrimary-legendEE" class="iqies-legend-heading-no-error"></legend>
-                                    <div class="custom-control custom-checkbox">
-                                        <input id="isPrimaryEE" type="checkbox" name="isPrimaryEE" class="custom-control-input">
-                                        <label id="isPrimary-label-idEE" nesting="isPrimary-label-idEE" for="isPrimaryEE" class="custom-control-label"><span class="">Primary Administrator</span></label>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="administratorTypeId-labelEE" for="administratorTypeIdEE" class="">Administrator Type</label>
-                                <select id="administratorTypeIdEE" name="administratorTypeIdEE" class="form-control" aria-describedby="administratorTypeId administratorTypeId-help" label="Administrator Type" help="Role held by the administrator"><option value="">Select one</option><option value="1">Administrator</option><option value="5">Assessment Coordinator</option><option value="2">Assistant Administrator</option><option value="4">Director of Nursing</option><option value="3">Medical Director</option></select>
-                                <div id="administratorTypeId-helpEE" class="form-text">
-                                    Role held by the administrator
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label id="licenseNumber-labelEE" for="licenseNumberEE" class="">License Number</label>
-                                <input id="licenseNumberEE" name="licenseNumberEE" class="form-control" autocapitalize="none" type="text" value="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="licenseExpirationDate-labelEE" for="licenseExpirationDateEE" class="">License Expiration Date</label>
-                                <div class="DayPickerInput">
-                                    <input placeholder="" id="licenseExpirationDateEE" aria-describedby="licenseExpirationDate-helpEE" name="licenseExpirationDateEE" class="form-control" value="">
-                                </div>
-                                <div aria-label="M M/D D/Y Y Y Y" id="licenseExpirationDate-helpEE" class="form-text">MM/DD/YYYY</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="startDate-labelEE" for="startDateEE" class="">Start Date</label>
-                                <div class="DayPickerInput">
-                                    <input placeholder="" id="startDateEE" aria-describedby="startDate-helpEE" name="startDate" class="form-control" value="">
-                                </div>
-                                <div aria-label="M M/D D/Y Y Y Y" id="startDate-helpEE" class="form-text">MM/DD/YYYY</div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group">
-                                <label id="endDate-labelEE" for="endDate" class="">End Date</label>
-                                <div class="DayPickerInput">
-                                    <input placeholder="" id="endDateEE" aria-describedby="endDate-helpEE" name="endDateEE" class="form-control" value="">
-                                </div>
-                                <div aria-label="M M/D D/Y Y Y Y" id="endDate-helpEE" class="form-text">MM/DD/YYYY</div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </fieldset>
-                 
-                    <div class="row">
-                <div class="col">
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab9 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button class="btn btn-link" onClick="$('#tab9 .edit-view').removeClass('active'); $('#tab9 .read-view').addClass('active');  $('#tab9 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                  </div>
-                </div>
-              </div>
-                </div>
-              </div>
+            </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab10" role="tabpanel"
-                    aria-labelledby="tab10Tab">
+          <div class="tab-pane " id="tab9" role="tabpanel" aria-labelledby="tab9Tab">
             <h2>Attachments</h2>
-              <p>Add and manage attachments for this provider.</p>
+              <p>Add and manage attachments for this intake.</p>
               <div class="row"><div class="col-lg-3 col-md-6"><p>
                   <label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload" name="file" class="form-control-file" onClick="$('#fileDetails').removeClass('hide');">Select File</label></p></div>
               </div>
@@ -4364,6 +3194,48 @@
       <div class="modal-body">
           
         <p>Please confirm you want to delete this involved party.</p>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal" >Delete</button>
+          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="confirmAllegationDeletion" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h4 class="modal-title">Delete Allegation</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+        <p>Please confirm you want to delete this allegation.</p>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal" >Delete</button>
+          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="confirmNoteDeletion" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h4 class="modal-title">Delete Note</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+        <p>Please confirm you want to delete this note.</p>
       </div>
       <div class="modal-footer">
         
@@ -4519,7 +3391,7 @@ $(function () {
         
 $(document).ready(function () {
     window.setTimeout(function() {
-        $(".alert-success").fadeTo(5000, 0).slideUp(5000, function(){
+        $(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
             $(this).addClass('hide'); 
         });
     }, 5000);
@@ -4535,16 +3407,19 @@ function sortParties(){
     if( $('#involveTypeCount').val() == '0' ){   
         console.log('no radio selected');                                                              
         $('.involveTypeCountError').removeClass('hide'); 
+        $('#involvement .iq-input-error-msg').removeClass('hide');
     } else { 
         console.log('radio selected');                                                                    
         $('.involveTypeCountError').addClass('hide'); 
-        $('.involveTypeForm').addClass('hide');  
+        $('.involveTypeForm').addClass('hide'); 
+         $('#involvement .iq-input-error-msg').addClass('hide');
         
         $('.partyCount').html(++partyCount);
         console.log(partyCount);
         
-        if($('#anonCount').val() == '1'){                                                   console.log('anonymous');                                            
-            $('#tab3 .edit-view').removeClass('active');                                       $('.read-view').addClass('active');
+        if($('#anonCount').val() == '1'){ 
+            console.log('anonymous');                                            
+            $('#tab3 .edit-view').removeClass('active'); $('.read-view').addClass('active');
             $('#tab3 .addedParty .anon').removeClass('hide'); 
             $('#anon2').click();                                                                 
         } else {
