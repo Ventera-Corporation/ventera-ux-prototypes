@@ -103,6 +103,8 @@ fieldset { margin-bottom: 1.5rem; }
 p.info-text { margin-bottom: 1rem; }
 .custom-control-label::before { border-width: 1px; }
 
+fieldset legend h3 { margin-bottom: 0; }
+
 .iq-conditional-content { margin-top: -1rem; margin-bottom: 2rem; padding-bottom: 0; }
 
 /* HELP TEXT */
@@ -191,7 +193,7 @@ label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616
 .modal-body .close { position: absolute; top: 2rem; right: 1.5rem; margin-left: 1rem; font-size: 2.5rem !important; font-weight: 100; line-height: 1rem; }
 
 /* CARD STRIPED LIST */
-.iq-list { margin-bottom: 2rem; padding: 1rem; }
+.iq-list { margin-bottom: 2rem; padding: 0; }
 .iq-list p, iq-list label { margin-bottom: 0; }
 .iq-list ul { list-style-position: inside; padding-left: 0;}
 .iq-list ul li, .iq-list ol li { padding: 0; }
