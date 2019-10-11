@@ -285,9 +285,12 @@ table.table-striped { border: 0; overflow: auto; width: 100%;}
 }
 .table tbody td.currency, .table thead th.currency { text-align: right; }
 .table tbody td.count, .table thead th.count { text-align: right; }
+.table tbody td .custom-control { margin-bottom: 0; }
 table.table-striped p { margin-bottom: 0; }
 table.table-striped .iqies-list-button-group { margin: -.5rem 0; white-space: nowrap; color: #aeb0b5; text-align: right !important; }
 table.table-striped .iqies-list-button-group a { margin: auto .5rem;}
+
+
 
 .pagination { margin: -1rem 0 2rem; }
 .page-item .page-link.previous:before { font-family: "Font Awesome 5 Pro"; font-weight: 100; font-size: 1.25rem; vertical-align: middle; margin-right: .5rem; content: '\f053'; }
@@ -410,4 +413,51 @@ a.return-link:before { font-family: "Font Awesome 5 Pro"; font-weight: 100; marg
 }
 .iq-stepper li.active div {
     background-color: #0071BC; 
+}
+
+/* PROTOTYPE MENU */
+#iq-proto-wrapper {
+    padding-left: 210px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#menu-toggle {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 9999;
+    display: block;
+}
+#iq-proto-sidebar-wrapper .list-group {
+    margin-top: 4.5rem;
+}
+#iq-proto-sidebar-wrapper {
+    z-index: 8888;
+    position: fixed;
+    overflow-x: hidden;
+    left: 210px;
+    width: 210px;
+    overflow-y: auto;
+    margin-left: -210px;
+    background-color: #112E51;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    height: 100%;
+    color: #fff;
+}
+#iq-proto-sidebar-wrapper .list-group .list-group-item {
+    background-color: transparent;
+    border: 0;
+    margin: 0 1rem;
+    padding: 0.5rem;
+}
+#iq-proto-sidebar-wrapper a {
+    color: #fff;
+    opacity: .8;
+    text-decoration: none;
+    font-weight: 300;
 }

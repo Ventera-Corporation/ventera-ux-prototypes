@@ -166,6 +166,7 @@
           </div>
         </div>
         <div class="tab-content">
+          <!-- basic info -->
           <div class="tab-pane active" id="tab1" role="tabpanel"
                     aria-labelledby="tab1Tab">
             <section class="edit-view active">
@@ -334,6 +335,7 @@
             
             </section>  
           </div>
+          <!-- responsible staff -->
           <div class="tab-pane " id="tab2" role="tabpanel" aria-labelledby="tab2Tab">
             <section class="edit-view">
                 <div class="row tabTitle">
@@ -359,7 +361,7 @@
   <div class="toast-header">
     <strong class="mr-auto">UI Note</strong>
     <small></small>
-    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
+    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -574,6 +576,7 @@
                 </div>
             </section>
           </div>
+          <!-- parties involved -->
           <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3Tab">
             <!-- party type -->
             <section class="edit-view active partyType">
@@ -2070,6 +2073,7 @@
                 </div>
             </section>
           </div>
+          <!-- allegation -->
           <div class="tab-pane " id="tab4" role="tabpanel" aria-labelledby="tab4Tab">
             <!-- new allegation -->  
             <section class="edit-view addAllegation active">
@@ -2302,6 +2306,7 @@
             </section>
     
           </div>
+          <!-- triage -->
           <div class="tab-pane " id="tab5" role="tabpanel" aria-labelledby="tab5Tab">
               <div class="row tabTitle">
               <div class="col-md-10">
@@ -2566,7 +2571,8 @@
                 </div>
               
             </section>
-          </div>   
+          </div>  
+          <!-- survey -->
           <div class="tab-pane " id="tab6" role="tabpanel" aria-labelledby="tab6Tab">
             <section class="edit-view active firstTime">
             <div class="row tabTitle">
@@ -2883,6 +2889,7 @@
               </div>
             </section>
           </div>
+          <!-- letters -->
           <div class="tab-pane " id="tab7" aria-labelledby="tab7Tab">
             <section class="edit-view newLetter active">
               <div class="row">
@@ -3026,6 +3033,7 @@
               </div>
             </section>
           </div>
+          <!-- note -->
           <div class="tab-pane " id="tab8" role="tabpanel" aria-labelledby="tab8Tab">
             <!-- add note -->
             <section class="edit-view addNote active">
@@ -3078,82 +3086,155 @@
                 <button class="btn btn-outline-primary" onClick="$('#tab8 .edit-view.addNote').addClass('active'); $('#tab8 .read-view').removeClass('active'); ">Add Note</button>  
             </div>
                <p class="info-text"><span class="noteCount">1 Note</span></p>
-                  
-            <div class="iqies-list-row">
-              
-                 <div class="iqies-list-row-header jsNote hide">
-                  <div class="row">
-                    <div class="col-md-9">
-                      <h3>Jeffery Sullivan<br><small class="bottom">10/11/2019 3:12 PM</small></h3>
-                    </div>
-                    <div class="col-md-3">
-                      <button class="btn btn-link" data-toggle="modal" data-target="#confirmNoteDeletion">Delete</button> | 
-                      <button class="btn btn-link" onclick="$('#tab8 .read-view').removeClass('active'); $('#tab8 .edit-view.editNoteJS').addClass('active');">Edit</button>
-                    </div>
-                  </div>
-                </div>   
-                <div class="row jsNote hide">
-                    <div class="col-md-12">
-                        <p>Etiam tempor orci eu lobortis elementum nibh tellus molestie. Neque egestas congue quisque egestas. Egestas integer eget aliquet nibh praesent tristique. Vulputate mi sit amet mauris. Sodales neque sodales ut etiam sit. Dignissim suspendisse in est ante in. Volutpat commodo sed egestas egestas. Felis donec et odio pellentesque diam. Pharetra vel turpis nunc eget lorem dolor sed viverra. Porta nibh venenatis cras sed felis eget. Aliquam ultrices sagittis orci a. Dignissim diam quis enim lobortis. Aliquet porttitor lacus luctus accumsan. Dignissim convallis aenean et tortor at risus viverra adipiscing at.</p>
-                    </div>
-                </div>  
-                <div class="iqies-list-row-header">
-                  <div class="row">
-                    <div class="col-md-9">
-                      <h3>Jonathan Flake<br><small class="bottom">10/10/2019 11:03 AM</small></h3>
-                    </div>
-                    <div class="col-md-3">
-                      <button class="btn btn-link" data-toggle="modal" data-target="#confirmNoteDeletion">Delete</button> | 
-                      <button class="btn btn-link" onclick="$('#tab8 .read-view').removeClass('active'); $('#tab8 .edit-view.editNote').addClass('active');">Edit</button>
-                    </div>
-                  </div>
-                </div>   
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-                    </div>
+         <div class="accordion-wrapper">
+        <div class="iq-accordion jsNote hide">
+            <div class="card ">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions expanded"
+                  data-toggle="collapse" data-target="#noteAdded2" type="button" onclick="$(this).toggleClass('expanded');">
+                  <span>Jane Freeman<br><small>10/11/2019 3:12 PM</small></span>
+                </button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button class="btn btn-link" onclick="$('#tab8 .read-view').removeClass('active'); $('#tab8 .edit-view.editNote').addClass('active');">Edit</button>|
+                  <button class="btn btn-link" data-toggle="modal" data-target="#confirmNoteDeletion">Delete</button>
                 </div>
+              </div>
+              <div id="noteAdded2" class="collapse show">
+                <div class="card-body">
+                  <p>Etiam tempor orci eu lobortis elementum nibh tellus molestie. Neque egestas congue quisque egestas. Egestas integer eget aliquet nibh praesent tristique. Vulputate mi sit amet mauris. Sodales neque sodales ut etiam sit. Dignissim suspendisse in est ante in. Volutpat commodo sed egestas egestas. Felis donec et odio pellentesque diam. Pharetra vel turpis nunc eget lorem dolor sed viverra. Porta nibh venenatis cras sed felis eget. Aliquam ultrices sagittis orci a. Dignissim diam quis enim lobortis. Aliquet porttitor lacus luctus accumsan. Dignissim convallis aenean et tortor at risus viverra adipiscing at.</p>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="iq-accordion">
+            <div class="card ">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions expanded"
+                  data-toggle="collapse" data-target="#noteAdded1" type="button" onclick="$(this).toggleClass('expanded');">
+                  <span>Jeffery Sullivan<br><small>10/10/2019 11:03 AM</small></span>
+                </button>
+                <div class="iq-accordion-actions d-flex align-items-center">
+                  <button class="btn btn-link" onclick="$('#tab8 .read-view').removeClass('active'); $('#tab8 .edit-view.editNoteJS').addClass('active');">Edit</button><span>|</span>
+                <button class="btn btn-link" data-toggle="modal" data-target="#confirmNoteDeletion">Delete</button>
+                </div>
+              </div>
+              <div id="noteAdded1" class="collapse show">
+                <div class="card-body">
+                   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+             </div>  <!-- end wrapper --> 
+            
+            
+            
+               
             </section>
           </div>
+          <!-- attachments -->
           <div class="tab-pane " id="tab9" role="tabpanel" aria-labelledby="tab9Tab">
-            <h2>Attachments</h2>
-              <p>Add and manage attachments for this intake.</p>
-              <div class="row"><div class="col-lg-3 col-md-6"><p>
-                  <label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUPload" name="file" class="form-control-file" onClick="$('#fileDetails').removeClass('hide');">Select File</label></p></div>
-              </div>
-              
-              <p class="help-text">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
-              <br>
-              <div class="file-attachment-card">
-                <div class="row">
-                    
-                    <div class="col-sm-10"><h3><i class="far fa-paperclip"></i> LetterSent060119.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
-                </div>
-                <div class="row">
-                   
-                    <div class="col-sm-12 file-description"><p><label>File Description</label>
-                        Lorem ipsum dolor sit amet</p>
-           
-                    </div>
-                </div>
-              </div>
+              <section class="edit-view addAttachment active">
+                  <h2>Add Attachment</h2>
+                  <div id="attachmentControl"><p><label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUpload" name="file" class="form-control-file" onClick="$('#fileDetails').removeClass('hide'); $('#attachmentControl').addClass('hide'); $('.alert.fileAttachmentError').addClass('hide'); ">Select File</label></p>
+                  <p class="help-text">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p></div>
               <div class="file-attachment-card hide" id="fileDetails">
                 <div class="row">
                     
                     <div class="col-sm-10"><h3><i class="far fa-paperclip"></i> File Name.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
+                    <div class="col-sm-2 text-right"><a href="#" onClick="$('#fileDetails').addClass('hide'); $('#attachmentControl').removeClass('hide');">Remove</a></div>
                 </div>
                 <div class="row">
                    
                     <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
-                        <input type="text" class="form-control file-description-text">
+                        <textarea class="form-control file-description-text"></textarea>
                         </label><span class="fdt"></span></p>
-           <p><button class="btn btn-primary" onClick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('Not available'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button></p>
+           
                     </div>
                 </div>
+                 
               </div>
+                  <div class="iq-button-wrapper"><button class="btn btn-primary" onClick="if( $('#fileDetails').hasClass('hide') ){  
+                    $('.alert.fileAttachmentError').removeClass('hide'); 
+                } else {  
+                    $('#tab9 .edit-view').removeClass('active'); 
+                    $('#tab9 .read-view').addClass('active'); 
+                    if($('#attachedCount').val() == 0 ){ 
+                      $('#tab9 .newAttachmentRow1').removeClass('hide'); 
+                      $('#attachedCount').val('1'); 
+                    } else {
+                      $('#tab9 .newAttachmentRow2').removeClass('hide');
+                    }
+                    if($('.file-description-text').val()) { 
+                        $('.file-description .fdt').html($('.file-description-text').val());
+                    } else { 
+                        $('.file-description .fdt').html('Not available'); 
+                        $('.file-description .fdt').addClass('iq-not-available');
+                    } 
+                    $('.file-description-text').addClass('hide');
+                    $('.alert.attachmentError').addClass('hide'); 
+                    $('#fileDetails').addClass('hide'); 
+                    $('#attachmentControl').removeClass('hide');
+                    $(this).next('button').removeClass('hide');
+                }">Save</button> <button class="btn btn-link hide" onClick="$('#tab9 .edit-view').removeClass('active'); 
+                    $('#tab9 .read-view').addClass('active'); $('.alert.attachmentError').addClass('hide'); $('#attachmentControl').removeClass('hide'); $('#fileDetails').addClass('hide'); ">Cancel</button></div>
+                  <input type="hidden" value="0" id="attachedCount">
+              </section>
+              <section class="read-view">
+              
+              
+            <h2>Attachments</h2>
+              <p class="iq-page-header-description">Add and manage attachments for this intake.</p>
+              <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab9 .read-view').removeClass('active'); $('#tab9 .edit-view').removeClass('active'); $('#tab9 .edit-view.addAttachment').addClass('active');">Add Attachment</button>
+              
+              </div>
+               <div class="table-wrapper">  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="sortable descending" style="width: 15rem;"><span>Attached File</span></th>
+      <th scope="col" class="sortable"><span>Uploaded</span></th>
+      <th scope="col"><span>Description</span></th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="newAttachmentRow2 hide">
+      <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
+      <td><p>09/20/2019</p></td>
+        <td><p class="desText">Lorem ipsum dolor sit amet</p><p class="desText hide"><textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea></p></td>
+      
+    <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+    <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
+  </div>
+          </div></td>
+    </tr>
+    <tr class="newAttachmentRow1 hide">
+      <td><p><i class="far fa-paperclip"></i> <a href="#">LetterSent060119.pdf</a></p></td>
+      
+      <td><p>05/08/2019</p></td><td><p class="desText">This is the description of the file that is long and wraps to multiple lines</p>
+        <p class="desText hide"><textarea rows="5" class="form-control">This is the description of the file that is long and wraps to multiple lines</textarea></p></td>
+      <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+    <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
+  </div>
+          </div></td>
+    </tr>
+  </tbody>
+</table></div>
+              
+              </section>
+              
+              
+        
                 
           </div>
         </div>
