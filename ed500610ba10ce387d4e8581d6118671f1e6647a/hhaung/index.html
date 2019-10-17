@@ -1,17 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="">
 
-  <title>iQIES Pattern Library</title>
+  <title>iQIES Pattern Library -- Matched to Sketch Design Kit </title>
 
   <link rel="stylesheet"
     href="../../src/assets/prototype-styles/design-system.css">
-  <link rel="stylesheet" href="../../src/assets/prototype-styles/prototype.css">
-    <link rel="stylesheet" href="../../src/assets/prototype-styles/hha.css">
-
+   <link rel="stylesheet" href="../../src/assets/prototype-styles/prototype.css">
 </head>
 
 <body>
@@ -40,42 +38,107 @@
       <div class="iqies-page-content">
         <div class="row mb-4">
           <div class="col">
-            <div class="card iq-card"> </div>
+            <div class="card iq-card">
+              <div class="card-body">
+                <h2>Component Patterns</h2>
+                <p class="lead">Patterns used throughout the system.</p>
+                <p><a href="patterns.html">Component patterns</a></p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row mb-4">
           <div class="col">
             <div class="card iq-card">
               <div class="card-body">
-                <h2>Pages</h2>
-                
-                <p><a href="patterns.html">Patterns</a></p>
-                
-                <h3>Providers</h3>
+                <h2>Page Templates</h2>
+                <p class="lead">Frequently used page templates.</p>
                   
+                <h3>Global</h3>
                 <ul>
-                    <li><a href="../page-templates/providers/providers-landing.html">Providers landing page</a></li>  
-                    <li><a href="../page-templates/providers/find-a-provider.html">Find a Provider -- Current</a></li>  
-                    <li><a href="../page-templates/providers/provider-details.html">Provider Details Home Health Agencies</a></li>
-                    <li><a href="../page-templates/providers/provider-details-hospice.html">Provider Details -- Hospice</a></li>  
-                    <li><a href="../page-templates/providers/provider-profile.html">Provider Profile</a>
-                         <ul>
-                            <li><a href="../page-templates/providers/provider-profile-blank.html">Provider Profile - No Surveys/Intakes/Enforcements</a></li>
-                         </ul>
-                    </li>
+                <li><a href="../page-templates/global/global-landing.html">Global Landing</a></li>
+                    <li><a href="../page-templates/global/global-access-request-form-1.html">Global Access Request Form</a></li>
+                    <li><a href="../page-templates/global/global-user-profile.html">Global User Profile</a></li>
+                </ul>
+
+                <h3>Providers</h3>               
+                <ul>
+                  <li>
+                    <a href="../page-templates/providers/providers-landing.html">Providers landing page</a>     
+                  </li>  
+                  <li>
+                    <a href="../page-templates/providers/find-a-provider.html">Find a Provider</a>   
+                  </li>  
+                  <li>
+                    <a href="../page-templates/providers/provider-details.html">Provider Details - Home Health Agency</a>
+                  </li>
+                  <li>
+                    <a href="../page-templates/providers/provider-details-hospice.html">Provider Details - Hospice</a>
+                  </li>           
+                  <li><a href="../page-templates/providers/provider-profile.html">Provider Profile</a>
+                      <ul>
+                          <li><a href="../page-templates/providers/provider-profile-blank.html">Provider Profile - No Surveys/Intakes/Enforcements</a></li>                           
+                      </ul>
+                  </li>      
                 </ul>
                 
-                <h3>Enforcement</h3>
-                <p><a href="../page-templates/enforcement/enforcement.html">Enforcement Details</a></p>
+                <h4>Enforcement</h4>
+                <ul>
+                  <li>
+                    <a href="../page-templates/enforcement/enforcement.html">Enforcement Details</a>
+                  </li>
+                </ul>
                   
-                <h3>Survey</h3>
-                
-                <p><a href="../page-templates/providers/survey-brighthope.html">Survey Details</a></p>
-                
+                <h4>Survey</h4>
+                <ul>
+                  <li><a href="../page-templates/providers/survey.html">Survey Details - Home Health Agency</a></li>
+                  <li><a href="../page-templates/providers/survey-brighthope.html">Survey Details - Hospice</a></li>
+                </ul>
+                  
+                <h4>Intakes</h4>
+                <ul>
+                  <li><a href="../page-templates/providers/intake-new.html">New Intake - Hospice</a></li>
+                  
+                </ul>
+                  
+
                 <h3>Assessments</h3>
-                <p><a href="../page-templates/assessments/assessments-landing.html">Assessments landing page</a></p>
-                
-               
+                <ul>
+                  <li>
+                    <a href="../page-templates/assessments/assessments-landing.html">
+                      Assessments landing page
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../page-templates/assessments/add-patient.html">
+                      Add Patient
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../page-templates/assessments/patient-profile.html">
+                      Patient Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../page-templates/assessments/create-assessment.html">
+                      Create Assessment
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../page-templates/assessments/admission-assessment.html">
+                      Admission Assessment
+                    </a>
+                  </li>
+                </ul>
+
+                <h3>Reports</h3>
+                <ul>
+                  <li>
+                    <a href="../page-templates/reports/reports-landing.html">
+                      Reports landing page
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -87,17 +150,44 @@
                 <h2>Prototypes</h2>
                 <p class="lead">Clickable prototypes for user testing.</p>
 
-                <h3>Providers</h3>
-                <p><a href="../page-templates/providers/providers-landing.html">Start here and follow the trail</a><br>
-                  <ol style="font-size: .875rem"><li>Click find a provider</li>
-                      <li>Click search</li>
-                      <li>Click "A Better Way" or view</li>
-                      <li>Click 19A3-H1 or view (first survey)</li>
-                      </ol>
-                  </p>
-                
+                <h3>Fluid containers exploration (10/07/2019)</h3>
+                <ul>
+                  <li><a href="../prototypes/20191007_fluid-containers/admission-assessment.html">Admission Assessment</a></li>
+                  <li><a href="../prototypes/20191007_fluid-containers/provider-profile.html">Provider Profile</a></li>
+                  <li><a href="../prototypes/20191007_fluid-containers/patient-profile.html">Patient Profile</a></li>
+                  <li><a href="../prototypes/20191007_fluid-containers/add-patient.html">Add Patient</a></li>
+                  <li><a href="../prototypes/20191007_fluid-containers/reports-landing.html">Reports landing</a></li>
+                  <li><a href="../prototypes/20191007_fluid-containers/access-request-form-1.html">Access Request Form</a></li>
+                </ul>
 
-                
+
+                <h3>Admission Assessments - Hospice user test (10/07/2019)</h3>
+                <p><a href="../prototypes/20191007_assessments-user-test/assessments-landing.html">Admissions landing</a></p>
+                <ol class="iq-proto-instructions">
+                  <li>Click 'Add Patient'</li>
+                  <li>Fill out form and 'Add Patient'</li>
+                  <li>Click 'Create Assessment'</li>
+                  <li>Select 'Admission' and click 'Next'</li>
+                  <li>Fill out the form and 'Save and Continue'</li>
+                  <li>Click 'Submit Assessment'</li>
+                </ol>
+
+                <h3>Provider search</h3>
+                <p><a href="../page-templates/providers/providers-landing.html">Provider landing</a></p>
+                <ol class="iq-proto-instructions">
+                  <li>Click find a provider</li>
+                  <li>Click search</li>
+                  <li>Click "A Better Way" or view</li>
+                  <li>Click 19A3-H1 or view (first survey)</li>
+                </ol>
+
+                <h3>Dashboard user test</h3>
+                <p><a href="../prototypes/dashboard-user-test/index.html">iQIES login</a></p>
+                <ol class="iq-proto-instructions">
+                  <li>Click 'Log in'</li>
+                  <li>Click on a provider name</li>
+                </ol>
+
               </div>
             </div>
           </div>
