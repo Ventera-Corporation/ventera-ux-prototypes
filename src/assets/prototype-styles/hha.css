@@ -119,7 +119,7 @@ fieldset legend h3 { margin-bottom: 0; }
 
 /* FORM ERROR HANDLING */
 label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616b; }
-.iq-input-error, input.iq-input-error  { border: 1px solid #e31c3d; }
+.iq-input-error, input.iq-input-error, input.form-control.iq-input-error  { border: 1px solid #e31c3d; }
 .iq-input-error-msg { color: #cd2026; font-size: .8125rem; margin-top: .5rem; font-weight: normal;}
 .iq-input-error-msg::before, .iq-input-info-msg::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; line-height: 1.5rem; }
 .iq-input-error-msg a { text-decoration: none; }
@@ -139,8 +139,8 @@ label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616
     position: absolute;
     top: 0;
 }
-.file-attachment-card { padding: 2rem 2rem 0 2rem; background-color: #f8f8f8; margin-bottom: 1rem;}
-.file-attachment-card h3 { font-size: 1.25rem; margin-bottom: 2rem; }
+.file-attachment-card { padding: 1.5rem 2rem 0 2rem; background-color: #f8f8f8; margin-bottom: 1rem;}
+.file-attachment-card h3 { font-size: 1.25rem; margin-bottom: 1rem; }
 .file-attachment-card h3 i, .file-attachment-card h3 span { margin-right: .5rem; }
 .file-attachment-card .file-description { padding-left: 3rem; }
 
@@ -235,7 +235,8 @@ label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616
 .iq-accordion.tertiary { margin-bottom: 1rem;}
 
 /* action buttons */
-.iq-accordion .card-header .iq-accordion-actions button, .iq-accordion .card-header .iq-accordion-actions .btn { padding: 0.438rem 1rem; margin-left: 1rem; }
+div.iq-accordion-actions { color: #d8d8d8; font-weight: normal; font-size: 1rem; }
+.iq-accordion .card-header .iq-accordion-actions button, .iq-accordion .card-header .iq-accordion-actions .btn { padding: 0.438rem 1rem; margin-left: 0; }
 
 /* show/hide link */
 .iq-accordion.showhide .card-header:hover { background-color: transparent; }
@@ -294,6 +295,7 @@ table.table-striped .iqies-list-button-group a { margin: auto .5rem;}
 
 
 .pagination { margin: -1rem 0 2rem; }
+.page-item .page-link { padding: .5625rem 1.2rem;}
 .page-item .page-link.previous:before { font-family: "Font Awesome 5 Pro"; font-weight: 100; font-size: 1.25rem; vertical-align: middle; margin-right: .5rem; content: '\f053'; }
 .page-item .page-link.first:before { font-family: "Font Awesome 5 Pro"; font-weight: 100; font-size: 1.25rem; vertical-align: middle;  margin-right: .5rem; content: '\f323'; }
 .page-item .page-link.last:after { font-family: "Font Awesome 5 Pro"; font-weight: 100; font-size: 1.25rem; vertical-align: middle;  margin-left: .5rem; content: '\f324'; }
@@ -329,12 +331,13 @@ div.alert { margin-bottom: 2rem;}
 .toast-header .close { font-size: 2rem !important; font-weight: 100; line-height: 1rem;}
 
 /* TOAST */
+.toast { background-color: white; max-width: 350px; }
 .toast-header  strong::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; margin-top: .0625rem;  }
 .toast-header { background-color: transparent; }
 .toast-header strong { font-size: 1rem; }
 
 .toast-header small { margin-bottom: 0; }
-.toast-body { font-size: 1rem; }
+.toast-body { font-size: 1rem; padding-left: 2.5rem;  }
 
 
 /* LOCATIONS AND BUILDINGS STATUS */
