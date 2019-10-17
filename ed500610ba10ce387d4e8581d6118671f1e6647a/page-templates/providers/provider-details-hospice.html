@@ -57,7 +57,7 @@
                   </div>
                   <div class="col-md-5 col-lg-3 iq-page-header-contact">
                     <address>
-                       667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010<br><i class="far fa-phone-office"></i> (888) 888-8888<br>
+                       667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010<br><i class="fas fa-phone-alt"></i> (888) 888-8888<br>
                         <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="fas fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
                     </address>
                   </div>
@@ -236,7 +236,7 @@
                   <div class="form-group">
                     <label for="state">State <span class="iq-asterisk">*</span></label>
                     <select class="form-control" id="state" onChange="if(this.options[this.selectedIndex].value != ''){ $('.stateDependent').prop('disabled',false);}">
-                      <option value=""></option>
+                      <option value="">Select one</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -410,7 +410,7 @@
                   <div class="form-group">
                     <label for="state">State</label>
                     <select class="form-control" id="stateM">
-                      <option value=""></option>
+                      <option value="">Select one</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -613,7 +613,7 @@
                   <div class="form-group">
                     <label>State</label>
                     <select class="form-control">
-                      <option value=""></option>
+                      <option value="">Select one</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -1935,7 +1935,7 @@ Barrington, IL 60010</span>
                   <div class="form-group">
                     <label>State</label>
                     <select class="form-control">
-                      <option value=""></option>
+                      <option value="">Select one</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -2126,7 +2126,14 @@ Barrington, IL 60010</span>
                     <div class="row">
                         <div class="col md-12">
                             <h3>Buildings</h3>
-                            <p><button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('primary');">Add Building</button></p>
+                            <div class="iq-button-wrapper"><!--<a href="#" class="btn btn-link dropdown-toggle float-right mr-0" id="buildingLegend1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View Color Key</a><div class="dropdown-menu p-3" aria-labelledby="buildingLegend1">
+                                <em class="fas fa-square status-blue"></em> Active with effective Date<br>
+                                <em class="fas fa-square status-white"></em> Active - No effective date<br>
+                                <em class="fas fa-square status-lime"></em> State Licensed Only<br>
+                                <em class="fas fa-square status-gray"></em> Closed
+                            </div>-->
+                                <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('primary');">Add Building</button> </div>
+                            
         <div class="iq-accordion">
             <div class="card">
               <div class="card-header d-flex">
@@ -2903,7 +2910,7 @@ Barrington, IL 60010</span>
                     <label>State</label>
                       Illinois
                     <!--<select class="form-control" disabled>
-                      <option value=""></option>
+                      <option value="">Select one</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -3093,7 +3100,7 @@ Barrington, IL 60010</span>
                   <div class="form-group">
                     <label>State</label>
                     <select class="form-control">
-                      <option value=""></option>
+                      <option value="">Select one</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>

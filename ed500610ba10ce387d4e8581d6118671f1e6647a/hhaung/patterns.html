@@ -487,51 +487,51 @@
                    <h3>Toasts</h3>
 <div class="toast alert-info fade show" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    <strong class="mr-auto">Heading</strong>
+    <strong class="mr-auto">Info Toast Message</strong>
     <small>11 mins ago</small>
     <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="toast-body">
-    Hello, world! This is an info toast message.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </div>
 </div>
 <div class="toast alert-success fade show" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    <strong class="mr-auto">Heading</strong>
+    <strong class="mr-auto">Success Toast Message</strong>
     <small>Just now</small>
     <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="toast-body">
-    Hello, world! This is a success toast message.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </div>
 </div>
 <div class="toast alert-warning fade show" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    <strong class="mr-auto">Heading</strong>
+    <strong class="mr-auto">Warning Toast Message</strong>
     <small>2 seconds ago</small>
     <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="toast-body">
-    Hello, world! This is a warning toast message.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </div>
 </div>
                    
 <div class="toast alert-danger fade show" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
-    <strong class="mr-auto">Heading</strong>
+    <strong class="mr-auto">Error Toast Messge</strong>
     <small>11 mins ago</small>
     <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="toast-body">
-    Hello, world! This is an error toast message.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   </div>
 </div>
                </article>
@@ -747,7 +747,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Field Label
-                    <input type="text" class="iq-input-error">
+                    <input type="text" class="iq-input-error form-control">
                     <span class="iq-input-error-msg">Error message</span><span class="help-text">Hint/Help copy</span></label>
                 </div>
             </div>
@@ -847,7 +847,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="input-group">
+                <div class="input-group mb-0">
                     <div class="form-group">
                     <label>Month
                     <input type="number" min="1" max="12">
@@ -863,8 +863,8 @@
                     <input type="number" min="1" max="12">
                     </label>
                 </div>
-                    <span class="help-text">MM/DD/YYYY</span>
-                </div>
+                    
+                </div><div class="help-text" style="margin-top: -.25rem;">MM/DD/YYYY</div>
                 
                  
             </div>
@@ -997,8 +997,26 @@
                 <div class="row">
                     <div class="col-sm-12 file-description">
                         <p><label>File Description
-                            <textarea class="form-control file-description-text"></textarea>
-                        </label></p>
+                            <textarea class="form-control file-description-text" maxlength="256"></textarea>
+                        </label>
+                        <span class="help-text">Characters: 0/256</span>
+                        </p>
+                    </div>
+                </div>
+              </div>
+        
+        <div class="file-attachment-card">
+                <div class="row">
+                    <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> File Name.pdf</h3></div>
+                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 file-description">
+                        <p><label>File Description
+                            <textarea class="form-control file-description-text" rows="4" maxlength="256">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru</textarea>
+                        </label>
+                        <span class="iq-input-error-msg">Characters: 368/256</span>
+                        </p>
                     </div>
                 </div>
               </div>
@@ -1049,7 +1067,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#iq-collapse1" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span>Accordion</span>
+                  <span>Accordion Title</span>
                 </button>
               </div>
               <div id="iq-collapse1" class="collapse">
@@ -1069,7 +1087,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions expanded"
                   data-toggle="collapse" data-target="#iq-collapse2" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span>Accordion</span>
+                  <span>Accordion Title</span>
                 </button>
               </div>
               <div id="iq-collapse2" class="collapse show">
@@ -1092,12 +1110,12 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#iq-collapse3" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span>Accordion</span>
+                  <span>Accordion Title</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-link">
                     Button
-                  </button>
+                  </button> | 
                   <a href="#" class="btn btn-link">Link</a>
                 </div>
               </div>
@@ -1148,9 +1166,9 @@
                   <span><label>Heading</label>Data One</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-link">
+                  <!--<button type="button" class="btn btn-link">
                     Button
-                  </button>
+                  </button>-->
                   <button type="button" class="btn btn-outline-primary">
                     Button
                   </button>
@@ -1201,8 +1219,8 @@
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-link">
                     Button
-                  </button>
-                  <button type="button" class="btn btn-outline-primary">
+                  </button> | 
+                  <button type="button" class="btn btn-link">
                     Button
                   </button>
                 </div>
@@ -1273,25 +1291,35 @@
         <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col" class="sortable descending"><span>Branch</span></th>
-      <th scope="col" class="sortable"><span>Status</span></th>
-      <th scope="col" class="sortable"><span>Opened</span></th>
-      <th scope="col" class="sortable"><span>Closed</span></th>
+      <th scope="col" class="sortable descending"><span>Column Heading</span></th>
+      <th scope="col" class="sortable"><span>Heading 2</span></th>
+      <th scope="col" class="sortable currency"><span>Currency</span></th>
+      <th scope="col" class="sortable"><span>Heading 4</span></th>
       <th scope="col">&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td scope="row"><h4>BrightHope North<br>
-        <small>Branch Office<br>
-          ID 12Q3456002</small></h4>
-          123 Temporary Road, Suite 100<br>Reston, VA 20190</td>
-      <td>Open</td>
-      <td>8/15/2019</td>
+      <td scope="row">Tabular data one</td>
+      <td>Tabular data two</td>
+      <td class="currency"> $1.00</td>
       <td><p class="iq-not-available">Not Applicable</p></td>
-      <td class="iqies-list-button-group"><a href="#">Delete</a> | <a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a></td>
+      <td class="iqies-list-button-group"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
     </tr>
-    
+    <tr>
+      <td scope="row">Tabular data one</td>
+      <td>Tabular data two</td>
+      <td class="currency"> $100.00</td>
+      <td><p class="iq-not-available">Not Applicable</p></td>
+      <td class="iqies-list-button-group"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
+    </tr>
+    <tr>
+      <td scope="row">Tabular data one</td>
+      <td>Tabular data two</td>
+      <td class="currency"> $10.00</td>
+      <td><p class="iq-not-available">Not Applicable</p></td>
+      <td class="iqies-list-button-group"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
+    </tr>
     
   </tbody>
 </table>
@@ -1662,8 +1690,8 @@
                     <address>
 667 Bent Ridge Lane, Suite 1000<br>
 Barrington, IL 60010<br>
-<em class="fas fa-phone-rotary"></em> (888) 888-8888<br>
-<a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="fas fa-link"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
+<em class="fas fa-phone-alt"></em> (888) 888-8888<br>
+<a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
                     </address>
                   </div>
                 </div>
@@ -1723,8 +1751,8 @@ Barrington, IL 60010<br>
                     <address>
 1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>
 Barrington, IL 60010<br>
-<em class="fas fa-phone-rotary"></em> (888) 888-8888<br>
-<a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="fas fa-link"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
+<em class="fas fa-phone-alt"></em> (888) 888-8888<br>
+<a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
                     </address>
                   </div>
                 </div>
@@ -1788,8 +1816,8 @@ Barrington, IL 60010<br>
                     <address>
 667 Bent Ridge Lane, Suite 1000<br>
 Barrington, IL 60010<br>
-<em class="fas fa-phone-rotary"></em> (888) 888-8888<br>
-<a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="fas fa-link"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
+<em class="fas fa-phone-alt"></em> (888) 888-8888<br>
+<a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
                     </address>
                   </div>
                 </div>
@@ -1861,7 +1889,7 @@ Barrington, IL 60010<br>
                   </div>
                   <div class="col-md-5 col-lg-4 iq-page-header-contact">
                     <address>
-                       1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br><i class="fas fa-phone-rotary"></i> (888) 888-8888<br>
+                       1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br><i class="fas fa-phone-alt"></i> (888) 888-8888<br>
                         <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="fas fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
                     </address>
                   </div>
@@ -1938,8 +1966,8 @@ Barrington, IL 60010<br>
                     <address>
 667 Bent Ridge Lane, Suite 1000<br>
 Barrington, IL 60010<br>
-<em class="fas fa-phone-rotary"></em> (888) 888-8888<br>
-<a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="fas fa-link"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
+<em class="fas fa-phone-alt"></em> (888) 888-8888<br>
+<a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
                     </address>
                   </div>
                 </div>
@@ -2011,7 +2039,7 @@ Barrington, IL 60010<br>
                   </div>
                   <div class="col-md-5 col-lg-4 iq-page-header-contact">
                     <address>
-                       1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br><i class="fas fa-phone-rotary"></i> (888) 888-8888<br>
+                       1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br><i class="fas fa-phone-alt"></i> (888) 888-8888<br>
                         <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="fas fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
                     </address>
                   </div>
