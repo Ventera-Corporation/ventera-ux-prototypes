@@ -43,7 +43,6 @@
           <li class="list-group-item typo hide"><a href="#typoDisplay">Display</a></li>
           <li class="list-group-item typo hide"><a href="#typoHeading">Heading</a></li>
           <li class="list-group-item typo hide"><a href="#typoParagraph">Paragraph</a></li>
-          <li class="list-group-item typo hide"><a href="#typoList">List</a></li>
           <li class="list-group-item typo hide"><a href="#typoOther">Other</a></li>
           <li class="list-group-title"><a href="#alerts" class="has-subnav" onClick="$(this).toggleClass('expanded'); $(this).parent('li').siblings('.alert').toggleClass('hide');">Alerts &amp; Toasts</a></li>
         <li class="list-group-item alert hide"><a href="#alertInfo">Info Alert</a></li>
@@ -57,7 +56,7 @@
            <li class="list-group-item button hide"><a href="#buttonLink">Link Button</a></li>
            <li class="list-group-item button hide"><a href="#buttonDropdown">Dropdown Button</a></li>
            <li class="list-group-item button hide"><a href="#buttonGroup">Button Group</a></li>
-          <li class="list-group-item button hide"><a href="#aLink">Link</a></li>
+          <li class="list-group-item button hide"><a href="#aLink">Links</a></li>
            <li class="list-group-title"><a href="#formElements" class="has-subnav" onClick="$(this).toggleClass('expanded'); $(this).parent('li').siblings('.form').toggleClass('hide');">Form Elements</a></li>
         <li class="list-group-item form hide"><a href="#formInput">Input Fields</a></li>
           <li class="list-group-item form hide"><a href="#formView">View State</a></li>
@@ -96,10 +95,11 @@
           <li class="list-group-item modals hide"><a href="#modal2">Modal without Title</a></li>
            <li class="list-group-title"><a href="#misc" class="has-subnav" onClick="$(this).toggleClass('expanded'); $(this).parent('li').siblings('.misc').toggleClass('hide');">Miscellaneous</a></li>
           <li class="list-group-item misc hide"><a href="#card">Card</a></li> 
-          <li class="list-group-item misc hide"><a href="#step">Stepper</a></li> 
-          <li class="list-group-item misc hide"><a href="#tag">Tag</a></li> 
-        <li class="list-group-item misc hide"><a href="#tooltipSection">Tooltip</a></li> 
+           <li class="list-group-item misc hide"><a href="#typoList">List</a></li>
           <li class="list-group-item misc hide"><a href="#spinner">Spinner</a></li> 
+          <li class="list-group-item misc hide"><a href="#step">Stepper</a></li>
+         <li class="list-group-item misc hide"><a href="#tag">Tag</a></li> 
+        <li class="list-group-item misc hide"><a href="#tooltipSection">Tooltip</a></li> 
        
       </ul>
       <ul class="list-group">
@@ -304,25 +304,7 @@
                   </div>
                   
               </article>
-              <article id="typoList">
-                  <h3>List</h3>
-                  <div class="row">
-                      <div class="col-md-3">
-                          <label>Unordered List</label>
-                          <ul><li>Item 1</li>
-                          <li>Item 2</li>
-                          <li>Item 3</li></ul>
-                         
-                      </div>
-                      <div class="col-md-3">
-                       <label>Ordered List</label>
-                          <ol><li>Item 1</li>
-                          <li>Item 2</li>
-                          <li>Item 3</li>
-                          </ol>
-                      </div>
-                  </div>
-              </article>
+              
               <article id="typoOther">
                   <h3>Other</h3>
                   <div class="row">
@@ -545,12 +527,12 @@
                   <p>Hover and focus over the buttons see the hover and focus styles.</p>
                   <div class="row">
                       <div class="col-sm-3 col-md-3">
-                          <p><button class="btn btn-lg btn-primary">Large</button></p>
+                          <!--<p><button class="btn btn-lg btn-primary">Large</button></p>-->
                           <p> <button class="btn btn-primary">Regular</button></p>
                           <p> <button class="btn btn-sm btn-primary">Small</button></p>
                       </div>
                       <div class="col-sm-3 col-md-2">
-                           <p><button class="btn btn-lg btn-primary" disabled>Disabled</button></p>
+                        <!--<p><button class="btn btn-lg btn-primary" disabled>Disabled</button></p>-->
                           <p> <button class="btn btn-primary" disabled>Disabled</button></p>
                             <p><button class="btn btn-sm btn-primary" disabled>Disabled</button></p>
                       </div>
@@ -577,13 +559,13 @@
                   <h3>Secondary Button</h3>
                   <div class="row">
                       <div class="col-sm-3 col-md-3">
-                          <p><button class="btn btn-lg btn-outline-primary">Large</button></p>
+                          <!--<p><button class="btn btn-lg btn-outline-primary">Large</button></p>-->
                           <p> <button class="btn btn-outline-primary">Regular</button></p>
                           <p> <button class="btn btn-sm btn-outline-primary">Small</button></p>
                           
                       </div>
                       <div class="col-sm-3 col-md-2">
-                           <p><button class="btn btn-lg btn-outline-primary" disabled>Disabled</button></p>
+                           <!--<p><button class="btn btn-lg btn-outline-primary" disabled>Disabled</button></p>-->
                           <p> <button class="btn btn-outline-primary" disabled>Disabled</button></p>
                           <p><button class="btn btn-sm btn-outline-primary" disabled>Disabled</button></p>
                       </div>
@@ -608,14 +590,14 @@
                   <h3>Link Button</h3>
                   <div class="row">
                       <div class="col-sm-3 col-md-3">
-                          <p><button class="btn btn-lg btn-link">Large</button></p>
+                          <!--<p><button class="btn btn-lg btn-link">Large</button></p>-->
                            <p> <button class="btn btn-link">Regular</button></p>
                           <p> <button class="btn btn-sm btn-link">Default Small</button></p>
                           
                           
                       </div>
                       <div class="col-sm-3 col-md-2">
-                          <p><button class="btn btn-lg btn-link" disabled>Disabled</button></p>
+                         <!-- <p><button class="btn btn-lg btn-link" disabled>Disabled</button></p> -->
                           <p> <button class="btn btn-link" disabled>Disabled</button></p>
                           <p><button class="btn btn-sm btn-link" disabled>Disabled</button></p>
                       </div>
@@ -635,7 +617,7 @@
                     <div class="row">
                         <div class="col-md-4">
                         <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button"
+                <button class="btn btn-outline-primary dropdown-toggle" type="button"
                   id="dropdownMenuButton" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
                   Dropdown Menu Button
@@ -686,7 +668,7 @@
                   
                 </article>
                 <article id="aLink">
-                  <h3>Link</h3>
+                  <h3>Links</h3>
                   <div class="row">
                       <div class="col-md-3">
                           <p><a href="#">Link</a></p>
@@ -852,19 +834,22 @@
                     <label>Month
                     <input type="number" min="1" max="12">
                     </label>
+                    <span class="help-text">MM</span>
                      </div>
                    <div class="form-group">
                     <label>Day
                     <input type="number" min="1" max="12">
                     </label>
+                       <span class="help-text">DD</span>
                 </div>
                     <div class="form-group">
                     <label>Year
                     <input type="number" min="1" max="12">
                     </label>
+                        <span class="help-text">YYYY</span>
                 </div>
                     
-                </div><div class="help-text" style="margin-top: -.25rem;">MM/DD/YYYY</div>
+                </div>
                 
                  
             </div>
@@ -1344,6 +1329,34 @@
               <div class="col-md-8"><p><span class="iqies-not-available">Not available</span></p></div>
             </div>
         </div> 
+        
+        <div class="row">
+            <div class="col-md-8">
+              <h4>Striped List Group with Action</h4>
+            </div>
+            <div class="col-md-4 iq-list-buttons">
+              <button class="btn btn-outline-primary">Edit</button>
+              <button class="btn btn-link">Delete</button>
+            </div>
+        </div>
+        <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4"><label>Phone</label></div>
+              <div class="col-md-8"><p>(703) 123-1234 Ext. 123</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Fax</label></div>
+              <div class="col-md-8"><p>(703) 123-3333</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Email</label></div>
+              <div class="col-md-8"><p>mary.carriger@hha.org</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Website</label></div>
+              <div class="col-md-8"><p><span class="iqies-not-available">Not available</span></p></div>
+            </div>
+        </div> 
     </article>
     
 </section>
@@ -1546,11 +1559,12 @@
     </article>
     <article id="globalNav">
         <h3>Global Navigation Bar</h3>
+        <header>
         <div class="iq-global-nav">
             <div class="container">
               <div class="row">
                 <div class="col">
-                  <nav><a href="/"><img src="../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+                  <nav><a href="#"><img src="../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
                     <div class="dropdown d-sm-none d-lg-inline-block active">
                         <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Providers  <i class="fal fa-chevron-down"></i></a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -1590,6 +1604,7 @@
               </div>
             </div>
           </div>
+        </header>
     </article>
 </section>
 <section id="headerFooter">
@@ -1597,7 +1612,8 @@
     <article id="headerTop">
         <h3>Top Banner</h3>
          <header>
-            <div class="container-fluid">
+           
+            <div class="container-fluid p-4">
               <div class="row">
                 <div class="col">
                   <nav>
@@ -1622,6 +1638,7 @@
                 </div>
               </div>
             </div>
+           
           </header>
      </article>
     <article id="headerWhite">
@@ -1737,12 +1754,12 @@ Barrington, IL 60010<br>
                           <a href="providers-landing.html">Providers</a>
                         </li>
                         <li class="breadcrumb-item">
-                          <span title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip">Intermediate Care Facilities for Individuals with Intellectual Disability</span>
+                          <span class="has-tooltip" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip">Intermediate Care Facilities for Individuals with Intellectual Disability</span>
                         </li>
                       </ol>
                     </nav>
                     <div class="iq-page-header-content">
-                      <h1 title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip">Intermediate Care Facilities for Individuals with Intellectual Disability</h1>
+                      <h1 class="has-tooltip" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip">Intermediate Care Facilities for Individuals with Intellectual Disability</h1>
                       <div class="iq-page-header-details">
                         <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->CCN 123456 - Hospice - Deemed</div>
                     </div>
@@ -1874,7 +1891,7 @@ Barrington, IL 60010<br>
                           <a href="providers-landing.html">Providers</a>
                         </li>
                         <li class="breadcrumb-item">
-                          <a href="provider-profile-blank.html" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip" data-placement="top">Intermediate Care Facilities for Individuals with Intellectual Disability</a>
+                          <a href="provider-profile-blank.html" class="has-tooltip" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip" data-placement="top">Intermediate Care Facilities for Individuals with Intellectual Disability</a>
                         </li>
                         <li class="breadcrumb-item">
                           Survey FFB-H1
@@ -1884,7 +1901,7 @@ Barrington, IL 60010<br>
                     <div class="iq-page-header-content">
                       <h1>Survey FFB-H1</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip" data-placement="top">Intermediate Care Facilities for Individuals with Intellectual Disability</a> - IQIES 123456 - Hospice - Deemed</div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html" class="has-tooltip" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip" data-placement="top">Intermediate Care Facilities for Individuals with Intellectual Disability</a> - IQIES 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-4 iq-page-header-contact">
@@ -2285,7 +2302,8 @@ Barrington, IL 60010<br>
 </section>
 
 <section id="misc">
-    <h2>Miscellaneous</h2>  
+    <h2>Miscellaneous</h2> 
+    
     <article id="card">
     <h3>Card</h3>          
     <div class="card iq-card">
@@ -2302,6 +2320,35 @@ Barrington, IL 60010<br>
                 </div>
               </div>
 </article>
+    <article id="typoList">
+                  <h3>List</h3>
+                  <div class="row">
+                      <div class="col-md-3">
+                          <label>Bulleted List</label>
+                          <ul><li>Item 1</li>
+                          <li>Item 2</li>
+                          <li>Item 3</li></ul>
+                         
+                      </div>
+                      <div class="col-md-3">
+                       <label>Numbered List</label>
+                          <ol><li>Item 1</li>
+                          <li>Item 2</li>
+                          <li>Item 3</li>
+                          </ol>
+                      </div>
+                  </div>
+              </article>
+    <article id="spinner">
+        <h3>Spinner</h3>
+        <div class="spinner-border text-primary" role="status">
+  <span class="sr-only">Loading...</span>
+</div><br><br>
+        <button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button>
+    </article>
     <article id="step">
         <h3>Stepper</h3>
          <div class="row">
@@ -2327,21 +2374,12 @@ Barrington, IL 60010<br>
     </article>
      <article id="tooltipSection">
         <h3>Tooltip</h3>
-       <ul><li> <a href="#" data-toggle="tooltip" title="Lorem ipsum dolor sit amet">I have a tooltip</a></li>
+       <ul><li> <span class="has-tooltip" data-toggle="tooltip" title="Lorem ipsum dolor sit amet">I have a tooltip</span></li>
         <li> <span>Item</span> <a href="#" data-toggle="tooltip" title="Here is info you need" class="infoTooltip"></a></li></ul>
          
          
     </article>
-    <article id="spinner">
-        <h3>Spinner</h3>
-        <div class="spinner-border text-primary" role="status">
-  <span class="sr-only">Loading...</span>
-</div><br><br>
-        <button class="btn btn-primary" type="button" disabled>
-  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-  Loading...
-</button>
-    </article>
+    
 </section>
 
       </div>
@@ -2357,7 +2395,9 @@ Barrington, IL 60010<br>
   <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
   <script>
 $(function () {
-   var editor = new FroalaEditor('div.editTextDiv', { charCounterMax: 500}); 
+   var editor = new FroalaEditor('div.editTextDiv', { 
+       //charCounterMax: 500
+   }); 
   $('[data-toggle="tooltip"]').tooltip();
 })
     $( function() {
