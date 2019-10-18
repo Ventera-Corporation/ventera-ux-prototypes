@@ -340,7 +340,7 @@
                   </div>
                   <div class="row">
                       <div class="col-md-6">
-                          <legend>Legend - 16</legend>
+                          <fieldset><legend>Legend - 16</legend></fieldset>
                       </div>
                       <div class="col-md-6">
                           <p>
@@ -1139,10 +1139,10 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#iq-collapse4" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span class="flex-fill"><label>Heading 1</label>Data One</span>
-                  <span class="flex-fill"><label>Heading 2</label>Data Two</span>
-                  <span class="flex-fill"><label>Heading 3</label>Data Three</span>
-                  <span class="flex-fill"><label>Heading 4</label>Data Four</span>
+                  <span class="flex-fill"><span class="iq-label">Heading 1</span>Data One</span>
+                  <span class="flex-fill"><span class="iq-label">Heading 2</span>Data Two</span>
+                  <span class="flex-fill"><span class="iq-label">Heading 3</span>Data Three</span>
+                  <span class="flex-fill"><span class="iq-label">Heading 4</span>Data Four</span>
                 </button>
                 
               </div>
@@ -1163,7 +1163,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#iq-collapse5" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span><label>Heading</label>Data One</span>
+                  <span><span class="iq-description">Heading</span>Data One</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <!--<button type="button" class="btn btn-link">
@@ -1300,21 +1300,21 @@
   </thead>
   <tbody>
     <tr>
-      <td scope="row">Tabular data one</td>
+      <td>Tabular data one</td>
       <td>Tabular data two</td>
       <td class="currency"> $1.00</td>
       <td><p class="iq-not-available">Not Applicable</p></td>
       <td class="iqies-list-button-group"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
     </tr>
     <tr>
-      <td scope="row">Tabular data one</td>
+      <td>Tabular data one</td>
       <td>Tabular data two</td>
       <td class="currency"> $100.00</td>
       <td><p class="iq-not-available">Not Applicable</p></td>
       <td class="iqies-list-button-group"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
     </tr>
     <tr>
-      <td scope="row">Tabular data one</td>
+      <td>Tabular data one</td>
       <td>Tabular data two</td>
       <td class="currency"> $10.00</td>
       <td><p class="iq-not-available">Not Applicable</p></td>
@@ -1416,7 +1416,7 @@
         <h3>Left Navigation</h3>
         <div class="row">
             <div class="col-sm-5 col-md-4 col-lg-3">
-              <nav class="nav flex-column iq-nav" role="navigation">
+              <nav class="nav flex-column iq-nav" role="tablist">
                 <a class="nav-link" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab">Tab 1</a>
                 <a class="nav-link active" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab">Tab 2</a>    
                 <a class="nav-link" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab">Tab 3</a>
@@ -1448,12 +1448,12 @@
         <h3>Left Navigation with Sub Nav</h3>
         <div class="row">
             <div class="col-sm-5 col-md-4 col-lg-3">
-               <nav class="nav flex-column iq-nav" role="navigation">
-                   <a class="nav-link" id="tab1Tabs" href="#tab1s" data-toggle="tab" role="tab">Tab 1</a>
-                   <a class="nav-link active flex-grow-1" id="tab2Tabs" href="#tab2s" data-toggle="tab" role="tab">Tab 2 <span class="has-subnav expanded float-right" onClick="$(this).toggleClass('expanded'); $(this).parent('a').siblings('.iq-subnav').toggleClass('hide fade');">&nbsp;</span></a>
+               <nav class="nav flex-column iq-nav" role="tablist">
+                   <a class="nav-link" id="tab1Tabs" href="#tab1s" data-toggle="tab" role="tab" onClick="$(this).siblings('.has-subnav').removeClass('expanded'); $(this).siblings('.iq-subnav').addClass('hide fade');  ">Tab 1</a>
+                   <a class="nav-link active flex-grow-1 has-subnav" id="tab2Tabs" href="#tab2s" data-toggle="tab" role="tab"  onClick="if($(this).hasClass('expanded')) { } else { $(this).addClass('expanded'); $(this).siblings('.iq-subnav').removeClass('hide fade'); }">Tab 2</a>
                    <a class="nav-link iq-subnav tab2subnav" id="tab2-1Tabs" href="#tab2-1s" data-toggle="tab" role="tab">Tab 2-1</a>
                    <a class="nav-link iq-subnav tab2subnav" id="tab2-2Tabs" href="#tab2-2s" data-toggle="tab" role="tab">Tab 2-2</a>
-                   <a class="nav-link" id="tab3Tabs" href="#tab3s" data-toggle="tab" role="tab">Tab 3</a>
+                   <a class="nav-link" id="tab3Tabs" href="#tab3s" data-toggle="tab" role="tab" onClick="$(this).siblings('.has-subnav').removeClass('expanded'); $(this).siblings('.iq-subnav').addClass('hide fade');  ">Tab 3</a>
                 </nav>
             </div>
             <div class="col-sm-7 col-md-8 col-lg-9">
@@ -1492,7 +1492,7 @@
         <h3>Left Navigation with Heading</h3>
         <div class="row">
             <div class="col-sm-5 col-md-4 col-lg-3">
-               <nav class="nav flex-column iq-nav" role="navigation">
+               <nav class="nav flex-column iq-nav" role="tablist">
                    <a class="nav-link active" id="tab1TabH" href="#tab1H" data-toggle="tab" role="tab">Section A<br>Detailed Section Title</a>
                    <a class="nav-link" id="tab2TabH" href="#tab2H" data-toggle="tab" role="tab">Section B<br>Detailed Section Title</a>
                 </nav>
@@ -1517,7 +1517,7 @@
         <h3>Left Navigation with Heading and Status</h3>
         <div class="row">
             <div class="col-sm-5 col-md-4 col-lg-3">
-               <nav class="nav flex-column iq-nav" role="navigation">
+               <nav class="nav flex-column iq-nav" role="tablist">
                    <a class="nav-link active success" id="tab1TabHS" href="#tab1HS" data-toggle="tab" role="tab">Section A<br>Detailed Section Title<br><small>Complete</small></a>
                    <a class="nav-link danger" id="tab2TabHS" href="#tab2HS" data-toggle="tab" role="tab">Section B<br>Detailed Section Title<br><small>Errors</small></a>
                    <a class="nav-link disabled dark" id="tab3TabHS" href="#tab3HS" data-toggle="tab" role="tab">Section B<br>Detailed Section Title<br><small>Not Applicable</small></a>
@@ -1596,7 +1596,7 @@
     <h2>Header &amp; Footer</h2>          
     <article id="headerTop">
         <h3>Top Banner</h3>
-         <header role="banner">
+         <header>
             <div class="container-fluid">
               <div class="row">
                 <div class="col">
@@ -1607,7 +1607,7 @@
                     </a>
                       
                       <div class="dropdown nav-item ml-lg-auto ml-sm-0"><button
-                        id="navbarDropdown5" role="button" data-toggle="dropdown" class="btn btn-outline-primary">
+                        id="navbarDropdown5" data-toggle="dropdown" class="btn btn-outline-primary">
                         Menu
                       </button>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown5"><a class="dropdown-item" href="#">My
@@ -2348,14 +2348,13 @@ Barrington, IL 60010<br>
     </main>
   </div>
 
-  <script type="text/javascript" src="../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="../../src/assets/third-party/popper/popper.min.js"></script>
-  <script type="text/javascript" src="../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
-  
-  <script type="text/javascript" src="../../src/assets/js/scripts.js"></script>
+  <script src="../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <script src="../../src/assets/js/scripts.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
   <script>
 $(function () {
    var editor = new FroalaEditor('div.editTextDiv', { charCounterMax: 500}); 
