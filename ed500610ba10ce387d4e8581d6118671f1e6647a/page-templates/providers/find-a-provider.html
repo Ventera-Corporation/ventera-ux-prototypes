@@ -18,52 +18,24 @@
 
 <body>
   <header>
-   <div class="iq-global-nav">
-            <div class="container-fluid">
+           
+            <div class="container-fluid p-4">
               <div class="row">
                 <div class="col">
-                  <nav><a href="/"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
-                    <div class="dropdown d-sm-none d-lg-inline-block active">
-                        <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Providers  <i class="fal fa-chevron-down"></i></a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Manage AO Providers</a> 
-                          <a class="dropdown-item" href="#">Find a Provider</a>
-                          <a class="dropdown-item" href="#">Add a Provider</a>
-                      </div>
-                    </div><a href="javascript:void(0)" class="iq-assessments-link">Assessments</a>
-                    <div class="dropdown d-sm-none d-lg-inline-block">
-                        <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
-                        role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="#">Reports Main</a>
-                        <a class="dropdown-item" href="#">Find a Report Type</a>
-                        <a class="dropdown-item" href="#">My Reports</a>
-                      </div>
-                    </div>
-                    <div class="dropdown d-sm-none d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
-                        role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                          <a class="dropdown-item" href="#">Letters</a>
-                          <a class="dropdown-item" href="#">State Customizations</a>
-                      </div>
-                    </div>
-                    <div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
-                        id="navbarDropdown4" role="button" data-toggle="dropdown">
-                        <p>DF</p>
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
-                          Profile</a>
-                        <a class="dropdown-item" href="#">Help</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                      </div>
-                    </div>
+                  <nav>
+                    <a href="./">
+                      <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo">
+                    </a>
+                      
+                      <button class="btn btn-outline-primary" id="menuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENU</button><nav class="iqies-menu dropdown-menu" ari-labelledby="menuDropdown" style="min-width: 12.5rem;"><ul class="list-group list-group-flush"><a class="list-group-item list-group-item-action iqies-section-header active" href="#">iQIES Home</a><a class="list-group-item list-group-item-action iqies-section-header " href="../users/my-profile.html">My Profile</a><a class="list-group-item list-group-item-action iqies-section-header " href="../providers/providers-landing.html">Providers</a><a class="list-group-item list-group-item-action " href="../providers/find-a-provider.html">Find a Provider</a><a class="list-group-item list-group-item-action " href="../providers/add-a-provider.html">Add a Provider</a><a class="list-group-item list-group-item-action iqies-section-header " href="../reports/reports-landing.html">Reports</a><a class="list-group-item list-group-item-action " href="../reports/find-a-report.html">Find a Report Type</a><a class="list-group-item list-group-item-action " href="../reports/my-reports.html">My Reports</a><a class="list-group-item list-group-item-action " href="../reports/report-activity.html">Report Activity</a><a class="list-group-item list-group-item-action iqies-section-header " href="../admin/index.html">Administration</a><a class="list-group-item list-group-item-action iqies-section-header " href="../help/">Help</a><a class="list-group-item list-group-item-action iqies-section-header" href="../logout.html">Logout</a></ul></nav>
                   </nav>
+                    
+                    
                 </div>
               </div>
             </div>
-  </div>
-      
-  </header>
+           
+          </header>
 
   <main>
     <div class="iq-page-header-wrapper mb-0">
@@ -149,7 +121,7 @@
                       <label>State Facility ID<input class="form-control" type="text" value=""></label>
                   </div>
               </div>-->
-              <div class="col col-md-3">
+              <div class="col col-md-4">
                   <div class="form-group">
                       <label>State
                       <input class="form-control" type="text" value="" id="states" placeholder="Type to search and enter">
@@ -178,18 +150,18 @@
           </p>
           <div class="row hide" id="advancedOps">
               
-              <div class="col col-md-3">
+              <div class="col col-md-4">
                   <div class="form-group">
                       <label>License Number<input class="form-control" type="text" value=""></label>
                   </div>
               </div>
-              <div class="col col-md-3">
+              <div class="col col-md-6">
                   <div class="form-group">
                       <label>Federal Certification Status
                       <input type="text" class="form-control" value="" placeholder="Type to search and enter" id="certsStatus"></label>
                   </div>
               </div>
-              <div class="col col-md-3">
+              <div class="col col-md-4">
                   <div class="form-group">
                       <label>Address Type</label>
                       <select class="form-control">
@@ -198,12 +170,12 @@
                       </select>
                   </div>
               </div>
-              <div class="col col-md-3">
+              <div class="col col-md-6">
                   <div class="form-group">
                       <label>Address<input class="form-control" type="text" value=""></label>
                   </div>
               </div>
-              <div class="col col-md-3">
+              <div class="col col-md-4">
                   <div class="form-group">
                       <label>City<input class="form-control" type="text" value=""></label>
                   </div>
@@ -220,6 +192,7 @@
                       <label>ZIP Code<input class="form-control" type="text" value=""></label>
                   </div>
               </div>
+              <div class="col col-md-6">&nbsp;</div>
               <div class="col col-md-6">
                   <div class="form-group">
                       <label>CMS Region
@@ -254,18 +227,19 @@
         <p class="iq-no-results">There are no selected criteria.</p></section>-->
           <div class="row">
               <div class="col">
-                  <div class="iqies-button-wrapper iqies-margin-bottom">
-                      <button id="viewProviderSearchResults" type="submit" class="btn btn-primary" onClick="$('#searchResults').removeClass('hide');">Search</button> <button class="btn btn-link">Reset</button>
+                  <div class="iqies-margin-bottom">
+                      <a href="#searchResults" id="viewProviderSearchResults" class="btn btn-primary" onClick="$('#searchResults').removeClass('hide');">Search</a> <button class="btn btn-link">Reset</button>
                   </div>
               </div>
           </div>
        
-          <div id="searchResults" class="hide">
+          <div id="searchResults" class="hide mt-4">
+              <h2>Search Results</h2>
               <p>1 - 10
       of 274 Providers</p>
         <table class="table table-striped" datatable="true"><caption class="sr-only">Provider Search Results</caption><thead><tr><th tabindex="0" scope="col" class="ascending sortable"><span class="">Provider</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Provider Type</span></th><th tabindex="0" scope="col" class="sortable"><span class="">CCN</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Legal Business Name</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Federal Certification Status</span></th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody><tr><td><p class="iqies-label-responsive">Provider</p><a href="/providers/69294">ABC Test Provider</a><address class="iqies-example text-capitalize">  123 Main Street <br>    Test City, WY  11111 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p>1111111111</p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>ABC Test Provider</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Terminated</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/69294">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p><a href="/providers/70270">abdc</a><address class="iqies-example text-capitalize">  123 <br>    12414, WY  12314 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>abdc</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Pending Certification</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/70270">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p><a href="provider-profile.html">A Better Way</a>
           <address class="iqies-example">
-          667 Bent Ridge Lane,<br>Suite 1000<br>Lorton, VA 60010
+          667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010
           </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p>
             <p>123456</p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>A Better Way</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Certified</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="provider-profile.html">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p><a href="/providers/1150763">ACCESS HOME CARE</a><address class="iqies-example text-capitalize">  625 SOUTH WASHINGTON, SUITE B <br>    AFTON, WY  83110 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p>537073</p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>ACCESS HOME CARE</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Terminated</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/1150763">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
                 <a href="/providers/24496">Acme Hospice</a>
@@ -282,13 +256,13 @@
                                 <a href="/providers/36193">Blackerman Home Care</a>
                               <address class="iqies-example text-capitalize">  B Street <br>    Dubtown, ND  55555 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p>
                                 <p>Blackerman HHA</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p></p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/36193">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
-                                    <a href="provider-profile-blank.html">BrightHope</a>
+                                    <a href="provider-profile.html">BrightHope</a>
                                     <address class="iqies-example text-capitalize">
                                     667 Bent Ridge Lane<br>
                                     Barrington, IL 60010
                                   </address></td><td><p class="iqies-label-responsive">Provider Type</p>
                                       <p>Hospice</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p>
-                                        <p>BrightHope</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p></p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="provider-profile-blank.html">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
+                                        <p>BrightHope</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p></p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="provider-profile.html">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
                                             <a href="/providers/36195">Carrington</a>
                                           <address class="iqies-example text-capitalize">  B Street <br>    Dubtown, ND  55555 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>Test API created Provider</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p></p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/36195">View</a></div></td></tr></tbody></table>
               <nav aria-label="Results Data Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link d-none d-md-block" aria-label="First" type="button"><img id="first" alt="first" src="../../../src/assets/images/icon-arrow-left-double.svg" aria-hidden="true"><span class="d-none d-lg-inline">First</span></button></li><li class="page-item disabled"><button class="page-link" aria-label="Previous" type="button"><img id="previous" alt="previous" src="../../../src/assets/images/icon-left-caret-primary.svg" aria-hidden="true"><span class="d-none d-lg-inline">Previous</span></button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li><li class="page-item"><button class="page-link" aria-label="Next" type="button"><span class="d-none d-lg-inline">Next</span><img id="next" alt="next" src="../../../src/assets/images/icon-right-caret-primary.svg" aria-hidden="true"></button></li><li class="page-item"><button type="button" class="page-link d-none d-md-block" aria-label="Last"><span class="d-none d-lg-inline">Last</span><img id="last" alt="last" src="../../../src/assets/images/icon-arrow-right-double.svg" aria-hidden="true"></button></li></ul></nav>
