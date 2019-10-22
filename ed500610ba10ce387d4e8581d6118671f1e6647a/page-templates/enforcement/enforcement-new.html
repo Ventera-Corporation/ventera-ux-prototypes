@@ -1607,11 +1607,11 @@
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                     <div class="row">
                         <div class="col-md-8"><p><label>Letter Name <span class="iq-asterisk">*</span>
-                            <input type="text" value="LetterName ABC">
+                            <input type="text" value="Federal Letter - Notice of Imposition">
                             </label></p>
                         </div>
                         <div class="col-md-8"><p><label>Letter Description
-                            <input type="text" value="Lorem ipsum dolor sit amet">
+                            <input type="text" value="This letter is sent to the provider to inform them of the intent to impose a sanction on the provider">
                             </label></p>
                         </div>
                         <div class="col-md-8">
@@ -1635,7 +1635,7 @@
               </fieldset>
                         </div>
                         <div class="col-md-8"><p><label>Letter Category
-                            <textarea wrap="soft" id="letterCategoriesE">Other</textarea>
+                            <textarea wrap="soft" id="letterCategoriesE">Send 256, POC/Allegation Acceptable, POV/Allegation Not Acceptable</textarea>
                       <span class="help-text">Type to search and select one or more</span>
                             </label></p>
                         </div>
@@ -1656,7 +1656,7 @@
             </section>
             <section class="edit-view letter1">
                 <div class="iq-button-wrapper"><a href="#" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); " class="return-link">Return to Letter</a></div>
-                <h2>Letter: LetterName ABC</h2>
+                <h2>Letter: Federal Letter - Notice of Imposition</h2>
               <div class="row">
                   <div class="col-md-12">
                   
@@ -1672,7 +1672,7 @@
                 <div class="iq-list">
                 <div class="row">
                   <div class="col-md-4"><label>Description</label></div>
-                  <div class="col-md-8"><p>Lorem ipsum dolor sit amet</p></div>
+                  <div class="col-md-8"><p>This letter is sent to the provider to inform them of the intent to impose a sanction on the provider</p></div>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
@@ -1692,20 +1692,81 @@
                 </div>
                      <div class="row">
                   <div class="col-md-4"><label>Letter Category</label></div>
-                  <div class="col-md-8"><p>Other</p></div>
+                  <div class="col-md-8"><ul><li>Send 256</li><li>POC/Allegation Acceptable</li><li>POV/Allegation Not Acceptable</li></ul></div>
                 </div>
                 </div>
                       
-                      <fieldset><legend class="iq-form-group-title">Attachments</legend>   
+                      <fieldset id="letter1Attachments"><legend class="iq-form-group-title">Attachments</legend>   
                 
                 <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.addAttachment').addClass('active');">Add Attachment</button></div>
                 <p class="iq-not-available">No attachments have been added.</p>
+                          
+<table class="table table-striped hide">
+  <thead>
+    <tr>
+      <th class="sortable" style="width: 15rem;"><span>Attached File</span></th>
+      <th><span>Description</span></th>
+        <th class="sortable descending"><span>Uploaded</span></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p><i class="far fa-paperclip"></i> <a href="#">LetterAttachment.doc</a></p></td>
+      
+      <td><p>05/08/2019</p></td><td><p class="desText">This is the first letter sent to the provider</p>
+        <p class="desText hide"><textarea rows="5" class="form-control">This is the first letter sent to the provider</textarea></p></td>
+      <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+    <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
+  </div>
+          </div></td>
+    </tr>
+    <tr class="newAttachmentRow hide">
+      <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
+      <td><p>09/20/2019</p></td>
+        <td><p class="desText">Lorem ipsum dolor sit amet</p><p class="desText hide"><textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea></p></td>
+      
+    <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+    <button class="dropdown-item">Download</button>
+    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+    <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
+  </div>
+          </div></td>
+    </tr>
+  </tbody>
+</table>
              </fieldset>
+                      <fieldset id="letter1Recipients"><legend class="iq-form-group-title">Recipients</legend>
                       
-                      <h3>Recipients</h3>
                      
                             <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.addRecipient').addClass('active');">Add Recipient</button></div>
                         <p class="iq-not-available">No recipients have been added.</p>
+                      <table class="table table-striped hide">
+  <thead>
+    <tr>
+      <th class="sortable descending"><span>Recipient Name</span></th>
+      <th class="sortable"><span>Date Sent</span></th>
+      <th class="sortable currency"><span>Sender</span></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jim Hopper</td>
+      <td>10/03/2019 3:04 PM</td>
+
+      <td>Eric Sinclair</td>
+      <td class="iqies-list-button-group"><a href="#" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active');">View</a> | <a href="#" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editLetter1').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+                      </fieldset>
               </div>
                     </div>
      
@@ -1732,7 +1793,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><p><a href="#" data-toggle="tooltip" title="View Details">LetterName ABC</a></p></td>
+      <td><p><a href="#" data-toggle="tooltip" title="View Details">Federal Letter - Notice of Imposition</a></p></td>
       
       <td><p>09/08/2019 4:03 PM</p></td><td>Draft</td>
       <td><div class="iqies-list-button-group">
@@ -1749,54 +1810,69 @@
   </tbody>
 </table>
               </section>
-           <section class="edit-view editMary">
-              <h2>Edit Additional Contact</h2>
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                    <div class="row">
-                        <div class="col-md-6"><p><label>Contact Name
-                            <input type="text" class="form-control" value="Mary Carriger">
-                            </label></p>
-                        </div>
-                        <div class="col-md-6"><p><label>Contact Type
-                            <input type="text" class="form-control" value="Emergency Contact">
-                            </label></p>
-                        </div>
-                        <div class="col-md-6">
-                           <div class="row">
-                        <div class="col-md-8"> <p><label>Phone<input type="tel" class="form-control" value="(703) 123-1234"></label></p>
-                             </div>
-                               <div class="col-md-4"><p><label>Ext<input type="text" size="4" class="form-control"></label></p></div>
-                          </div>
-                            
-                        </div>
-                        <div class="col-md-6"><p><label>Fax
-                            <input type="tel" class="form-control" value="(703) 123-33333">
-                            </label></p>
-                        </div>
-                        <div class="col-md-6"><p><label>Email
-                            <input type="email" class="form-control" value="mary.carriger@hha.org">
-                            </label></p>
-                        </div>
-                        <div class="col-md-6"><p><label>Website
-                            <input type="url" class="form-control">
-                            </label></p>
-                        </div>
-                        
+            <section class="edit-view addAttachment">
+                  <h2>Add Attachment</h2>
+                  <div id="letter1FileAttachment">
+                  <p class="mb-2"><label for="fileUploadLetter1" class="btn btn-outline-primary iqies-file-input-label" onclick="$('#fileDetailsLetter1').removeClass('hide'); $('#letter1FileAttachment').addClass('hide'); $('.alert.fileAttachmentError').addClass('hide'); "><input type="file" id="fileUploadLetter1" name="file" class="form-control-file">Select File</label></p>
+                  <p class="help-text">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p></div>
+              <div class="file-attachment-card hide" id="fileDetailsLetter1">
+                <div class="row">
+                    <div class="col-sm-10"><h3><i class="far fa-paperclip" aria-hidden="true"></i> LetterAttachment.doc</h3></div>
+                    <div class="col-sm-2 text-right"><a href="#" onClick="$('#fileDetailsLetter1').addClass('hide'); $('#letter1FileAttachment').removeClass('hide');">Remove</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 file-description">
+                        <p><label>File Description
+                        <textarea class="file-description-text">This is the first letter sent to the provider</textarea>
+                        </label><span class="fdt"></span></p>
                     </div>
-                    <div class="row">
-                <div class="col">
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                  </div>
                 </div>
               </div>
-                </div>
+              
+              <div class="iq-button-wrapper">
+                <a href="#letter1Attachments" class="btn btn-primary" onClick="if( $('#fileDetailsLetter1').hasClass('hide') ){  
+                    $('.alert.fileAttachmentError').removeClass('hide'); 
+                } else {  
+                    $('#tab7 .edit-view').removeClass('active'); 
+                    $('#tab7 .edit-view.letter1').addClass('active'); 
+                    $('#tab7 #letter1Attachments .table-striped').removeClass('hide');
+                    $('#tab7 #letter1Attachments .iq-not-available').addClass('hide');
+                    $('#fileDetailsLetter1').addClass('hide'); $('#letter1FileAttachment').removeClass('hide');
+                    //$('#tab7 .newAttachmentRow').removeClass('hide'); 
+                    if($('.file-description-text').val()) { 
+                        $('.file-description .fdt').html($('.file-description-text').val());
+                    } else { 
+                        $('.file-description .fdt').html('Not available'); 
+                        $('.file-description .fdt').addClass('iq-not-available');
+                    } 
+                    $('.file-description-text').addClass('hide'); 
+                    $('.alert.fileAttachmentError').addClass('hide'); 
+                }">Save</a>
+                <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); 
+                    $('#tab7 .edit-view.letter1').addClass('active');">Cancel</button>
               </div>
-            </section>
+                
+              </section>
+            <section class="edit-view addRecipient">
+                  <h2>Add Recipient</h2>
+                  
+             
+              
+              <div class="iq-button-wrapper">
+                <a href="#letter1Recipients" class="btn btn-primary" onClick="if( $('#fileDetailsLetter1').hasClass('hide') ){  
+                    $('.alert.fileAttachmentError').removeClass('hide'); 
+                } else {  
+                    $('#tab7 .edit-view').removeClass('active'); 
+                    $('#tab7 .edit-view.letter1').addClass('active'); 
+                    $('#tab7 #letter1Recipients .table-striped').removeClass('hide');
+                    $('#tab7 #letter1Recipients .iq-not-available').addClass('hide');
+        
+                    $('.alert.attachmentError').addClass('hide'); 
+                }">Save</a>
+                <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); };">Cancel</button>
+              </div>
+                
+              </section>
           </div>
           <!-- note -->
           <div class="tab-pane " id="tab8" role="tabpanel" aria-labelledby="tab8Tab">
