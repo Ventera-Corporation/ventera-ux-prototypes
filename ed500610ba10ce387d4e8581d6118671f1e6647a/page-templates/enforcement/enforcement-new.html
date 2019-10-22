@@ -80,9 +80,9 @@
                       
                       <p>Open - Active</p>
                     </div>
-                    <div class="iq-summary-bar-data" data-index="2">
-                      <p>Enforcement Type</p>
-                      <p>Federal</p>
+                   <div class="iq-summary-bar-data" data-index="5">
+                      <p>Starting Survey</p>
+                      <p><a href="../providers/survey-brighthope.html">501-H1</a> (10/31/2019)</p>
                     </div>
                     <div class="iq-summary-bar-data" data-index="3">
                       <p>Cycle Start Date</p>
@@ -92,10 +92,7 @@
                       <p>Transferred to RO</p>
                        <p class="iq-not-available">Not available</p>
                     </div>
-                    <div class="iq-summary-bar-data" data-index="5">
-                      <p>Starting Survey</p>
-                      <p><a href="survey.html">501-H1</a> (10/31/2019)</p>
-                    </div>
+                    
                     <div class="iq-summary-bar-data" data-index="6">
                       <p>Termination Date</p>
                       <p class="iq-not-available">Not available</p>
@@ -180,6 +177,11 @@
                  Please select a file to attach. 
           </div>
         </div>
+        <div class="alert alert-danger letterRecipientError hide" role="alert">
+          <div class="alert-content">
+                 Unable to save. Please complete at least one field to save. 
+          </div>
+        </div> 
         <div class="tab-content">
           <!-- basic info -->
           <div class="tab-pane active" id="tab1" role="tabpanel"
@@ -315,7 +317,7 @@
                     <label>Added Surveys</label>
                   </div>
                   <div class="col-md-8">
-                    <ul><li><a href="../providers/survey.html">501-H1</a> - Starting Survey</li></ul>
+                    <ul><li><a href="../providers/survey-brighthope.html">501-H1</a> - Starting Survey</li></ul>
                   </div>
                 </div>
                 <div class="row">
@@ -649,10 +651,10 @@
                 <div class="involveTypeForm hide">
                 <div class="row">
                     <div class="col-md-4">
-                <p><label>Reason Not in Effect <span class="iq-asterisk">*</span></label>
+                <div class="form-group"><label>Reason Not in Effect <span class="iq-asterisk">*</span></label>
                 <select><option value="0" disabled selected>Select one</option><option value="1">State changed its recommendation</option><option value="2">State changed its own decision</option><option value="3">RO did not accept state’s recommendation</option><option value="4">RO changed its own decision</option><option value="5">Compliance prior to effective date</option><option value="6">IDR removed associated level of noncompliance</option><option value="7">Adjudicated hearing decision</option><option value="8">Hearing settlement</option><option value="9">Voluntary termination prior to effective date</option><option value="10">IJ Abated, Condition Not Met</option></select>
-                   <p class="iq-input-error-msg hide">This field is required</p>
-                </p>
+                   <p class="iq-input-error-msg hide">This field is required</p></div>
+                
                     </div>
                     
                     </div>
@@ -1592,7 +1594,7 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide'); $(this).sibling('button').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide'); $(this).siblings('button').removeClass('hide');">Save</button>
                     <button
                             class="btn btn-link hide" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -1602,6 +1604,7 @@
               </div>
             </section>
             <section class="edit-view editLetter">
+                
               <div class="row">
                 <div class="col-md-12"><h2>Edit Letter: Overview</h2>
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -1855,19 +1858,329 @@
               </section>
             <section class="edit-view addRecipient">
                   <h2>Add Recipient</h2>
-                  
-             
+                 <p class="iqies-required-text">All fields are optional. Complete at least one field to save.</p>
+            <div class="row">
+                <div class="col-md-4">
+                   <p><label>First Name</label><input type="text"></p>
+                </div>
+                <div class="col-md-6">
+                   <p><label>Last Name</label><input type="text"></p>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address Line 1</label>
+                    <input type="text">
+                      <span class="help-text">Number and street name or PO box</span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address Line 2</label>
+                    <input type="text">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input type="text">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>State</label>
+                    <select>
+                      <option value="">Select one</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL">Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>ZIP Code</label>
+                    <input type="text">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Email
+                            <input type="email"></label>
+                    </div>
+                </div>
+            </div><br>
+                <h3>Letter Information</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                   <p><label>Date Sent</label><input type="date"><span class="help-text">MM/DD/YYYY</span></p>
+                </div><div class="col-md-6"></div>
+                <div class="col-md-6">
+                   <p><label>Sender</label><input type="text"></p>
+                </div><div class="col-md-6"></div>
+                <div class="col-md-6">
+                   <p><label>Method</label><select><option>Select one</option><option>Email</option><option>Fax</option><option>Certified</option><option>Other</option></select></p>
+                </div><div class="col-md-6"></div>
+                 <div class="col-md-6">
+                   <p><label>Tracking ID</label><input type="text"></p>
+                </div><div class="col-md-6"></div>
+                 <div class="col-md-6">
+                   <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="letter1ReceiptAcknowledged" class="custom-control-input">
+                   <label class="custom-control-label" for="letter1ReceiptAcknowledged"> Receipt acknowledged</label>
+                </div>
+                </div><div class="col-md-6"></div>
+                </div>
               
               <div class="iq-button-wrapper">
-                <a href="#letter1Recipients" class="btn btn-primary" onClick="if( $('#fileDetailsLetter1').hasClass('hide') ){  
-                    $('.alert.fileAttachmentError').removeClass('hide'); 
+                <a href="#" class="btn btn-primary" onClick="
+                var $empty = 0;
+                $('.edit-view.addRecipient input[type=text]').each(function() { if($(this).val() != '') $empty = 1;  });
+                if( $empty == 0 ){  
+                    $('.alert.letterRecipientError').removeClass('hide'); 
                 } else {  
                     $('#tab7 .edit-view').removeClass('active'); 
                     $('#tab7 .edit-view.letter1').addClass('active'); 
                     $('#tab7 #letter1Recipients .table-striped').removeClass('hide');
                     $('#tab7 #letter1Recipients .iq-not-available').addClass('hide');
         
-                    $('.alert.attachmentError').addClass('hide'); 
+                    $('.alert.letterRecipientError').addClass('hide'); 
+                }">Save</a>
+                <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); };">Cancel</button>
+              </div>
+                
+              </section>
+            <section class="edit-view recipient1">
+                <div class="iq-button-wrapper"><a href="#" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('#tab7 .edit-view.letter1').removeClass('active'); " class="return-link">Return to Letter</a></div>
+                <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Letter: Recipient Information</h2>
+               
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editRecipient1').addClass('active');"></button>
+              </div>
+            </div>
+        <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4"><label>Recipient Name</label></div>
+              <div class="col-md-8"><p>John Smith</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Recipient Email</label></div>
+              <div class="col-md-8"><p>mary.carriger@hha.org</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Recipient Address</label></div>
+              <div class="col-md-8"><p>111 Test Road, Test City, VA 20190</p></div>
+            </div>
+        </div> 
+            <br>
+                <h3>Letter Information</h3>
+               <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4"><label>Date Sent</label></div>
+              <div class="col-md-8"><p>10/20/2019</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Method</label></div>
+              <div class="col-md-8"><p>Fax</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Sender Name</label></div>
+              <div class="col-md-8"><p>Freeman, Jane</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Tracking ID</label></div>
+              <div class="col-md-8"><p>123</p></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Receipt Acknowledged</label></div>
+              <div class="col-md-8"><p>Yes</p></div>
+            </div>
+        </div>  
+              
+              
+                
+              </section>
+            <section class="edit-view editRecipient1">
+                  <h2>Edit Recipient</h2>
+                 <p class="iqies-required-text">All fields are optional. Complete at least one field to save.</p>
+            <div class="row">
+                <div class="col-md-4">
+                   <p><label>First Name</label><input type="text" value="John"></p>
+                </div>
+                <div class="col-md-6">
+                   <p><label>Last Name</label><input type="text" value="Smith"></p>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address Line 1</label>
+                    <input type="text" value="111 Test Road">
+                      <span class="help-text">Number and street name or PO box</span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Address Line 2</label>
+                    <input type="text">
+                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input type="text" value="Test City">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>State</label>
+                    <select>
+                      <option value="">Select one</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL">Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA" selected>Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>ZIP Code</label>
+                    <input type="text" value="20190">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Email
+                            <input type="email" value="jsmith@test.org"></label>
+                    </div>
+                </div>
+            </div><br>
+                <h3>Letter Information</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                   <p><label>Date Sent</label><input type="date" value="2019-10-20"><span class="help-text">MM/DD/YYYY</span></p>
+                </div><div class="col-md-6"></div>
+                <div class="col-md-6">
+                   <p><label>Sender</label><input type="text" value="Freeman, Jane"></p>
+                </div><div class="col-md-6"></div>
+                <div class="col-md-6">
+                   <p><label>Method</label><select><option>Select one</option><option>Email</option><option selected>Fax</option><option>Certified</option><option>Other</option></select></p>
+                </div><div class="col-md-6"></div>
+                 <div class="col-md-6">
+                   <p><label>Tracking ID</label><input type="text" value="123"></p>
+                </div><div class="col-md-6"></div>
+                 <div class="col-md-6">
+                   <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="letter1ReceiptAcknowledgedE" class="custom-control-input" checked>
+                   <label class="custom-control-label" for="letter1ReceiptAcknowledgedE"> Receipt acknowledged</label>
+                </div>
+                </div><div class="col-md-6"></div>
+                </div>
+              
+              <div class="iq-button-wrapper">
+                <a href="#" class="btn btn-primary" onClick="
+               
+                    $('#tab7 .edit-view').removeClass('active'); 
+                    $('#tab7 .edit-view.letter1').addClass('active');
+                    $('.alert.successMsg').removeClass('hide');
                 }">Save</a>
                 <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); };">Cancel</button>
               </div>
@@ -2047,8 +2360,8 @@
         <td><p class="desText">Lorem ipsum dolor sit amet</p><p class="desText hide"><textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea></p></td>
       
     <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
-          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+          <a href="#" class="btn btn-link dropdown-toggle" id="newARmenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="newARmenu1">
     <button class="dropdown-item">Download</button>
     <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
     <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
@@ -2061,8 +2374,8 @@
       <td><p>05/08/2019</p></td><td><p class="desText">This is the description of the file that is long and wraps to multiple lines</p>
         <p class="desText hide"><textarea rows="5" class="form-control">This is the description of the file that is long and wraps to multiple lines</textarea></p></td>
       <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
-          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+          <a href="#" class="btn btn-link dropdown-toggle" id="newARmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="newARmenu">
     <button class="dropdown-item">Download</button>
     <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
     <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
