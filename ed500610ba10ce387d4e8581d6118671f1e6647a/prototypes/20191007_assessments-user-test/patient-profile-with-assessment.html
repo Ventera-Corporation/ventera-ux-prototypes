@@ -42,7 +42,7 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <a href="../../index.html">Home</a>
+                    <a href="assessments-landing.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
                     <a href="assessments-landing.html">Assessments</a>
@@ -70,31 +70,29 @@
       <div class="row">
         <div class="col-md-4">
           <p class="iq-label">Social Security Number</p>
-          <p class="iq-not-available">Not available</p>
+          <p>930481563</p>
         </div>
         <div class="col-md-4">
           <p class="iq-label">Date of Birth</p>
-          <p>01/01/1940</p>
+          <p>03/24/1934</p>
         </div>
         <div class="col-md-4">
-          <p class="iq-label">Medicare ID</p>
+          <p class="iq-label">Medicare Number</p>
           <p class="iq-not-available">Not available</p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4">
-          <p class="iq-label">Medicaid ID</p>
+          <p class="iq-label">Medicaid Number</p>
           <p class="iq-not-available">Not available</p>
         </div>
         <div class="col-md-4">
           <p class="iq-label">Race/Ethnicity</p>
-          <ul>
-            <li>American Indian or Alaska Native</li>
-          </ul>
+          <p>White</p>
         </div>
         <div class="col-md-4">
           <p class="iq-label">Gender</p>
-          <p>Male</p>
+          <p>Female</p>
         </div>
       </div>
       <hr />
@@ -114,6 +112,7 @@
                 <th class="sortable">Admission Date</th>
                 <th class="sortable">State</th>
                 <th class="sortable">Status</th>
+                <th class="sortable"></th>
               </tr>
             </thead>
             <tbody>
@@ -123,6 +122,19 @@
                 <td>10/02/2019</td>
                 <td>Original</td>
                 <td>Accepted</td>
+                <td class="text-right">
+                  <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="assessmentMoreBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      More
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="assessmentMoreBtn">
+                      <a class="dropdown-item" href="#">View</a>
+                      <a class="dropdown-item" href="#">Print</a>
+                      <a class="dropdown-item" href="#">Modify</a>
+                      <a class="dropdown-item" href="#">Inactivate</a>
+                    </div>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
