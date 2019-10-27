@@ -42,7 +42,7 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                    <a href="../../index.html">Home</a>
+                    <a href="assessments-landing.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
                     <a href="assessments-landing.html">Assessments</a>
@@ -57,7 +57,7 @@
               </nav>
               <div class="iq-page-header-content">
                 <h1>Admission Assessment</h1>
-                <h3><a href="patient-profile.html">Eugene Abbott</a></h3>
+                <h3><a href="patient-profile.html">Emily Robinson</a></h3>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="firstName">First <span class="iq-asterisk">*</span></label>
-                      <input type="text" class="form-control" id="firstName" aria-label="firstName">
+                      <input type="text" class="form-control" id="firstName" aria-label="firstName" value="Emily">
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -159,7 +159,7 @@
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="lastName">Last <span class="iq-asterisk">*</span></label>
-                      <input type="text" class="form-control" id="lastName" aria-label="lastName">
+                      <input type="text" class="form-control" id="lastName" aria-label="lastName" value="Robinson">
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -183,21 +183,21 @@
               <section>
                 <div class="row">
                   <div class="col">
-                    <h3>Social Security and Medicare Numbers (A0600)</h3>
+                    <h3>Social Security and Medicare Numbers</h3>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="ssn">Social Security Number</label>
-                      <input type="text" class="form-control" id="ssn" aria-label="ssn">
+                      <label for="ssn">Social Security Number (A0600A)</label>
+                      <input type="text" class="form-control" id="ssn" aria-label="ssn" value="930481563">
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="medicareNumber">Medicare Number</label>
+                      <label for="medicareNumber">Medicare Number (A0600B)</label>
                       <input type="text" class="form-control" id="medicareNumber" aria-label="medicareNumber">
                       <small class="form-text">Or comparable railroad insurance number.</small>
                     </div>
@@ -225,7 +225,7 @@
                         </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="female" name="gender" class="custom-control-input" value="2">
+                        <input type="radio" id="female" name="gender" class="custom-control-input" value="2" checked>
                         <label class="custom-control-label" for="female">
                           2 - Female
                         </label>
@@ -245,17 +245,17 @@
                     <div class="form-row iq-date-of-birth">
                       <div class="col-auto">
                         <div class="form-group">
-                          <label for="month">Month</label><input type="text" class="form-control" id="month" aria-describedby="help-id" value="">
+                          <label for="month">Month</label><input type="text" class="form-control" id="month" aria-describedby="help-id" value="03">
                         </div>
                       </div>
                       <div class="col-auto">
                         <div class="form-group">
-                          <label for="day">Day</label><input type="text" class="form-control" id="day" aria-describedby="help-id" value="">
+                          <label for="day">Day</label><input type="text" class="form-control" id="day" aria-describedby="help-id" value="24">
                         </div>
                       </div>
                       <div class="col-auto">
                         <div class="form-group">
-                          <label for="year">Year</label><input type="text" class="form-control" id="year" aria-describedby="help-id" value="">
+                          <label for="year">Year</label><input type="text" class="form-control" id="year" aria-describedby="help-id" value="1934">
                         </div>
                       </div>
                     </div>
@@ -300,7 +300,7 @@
                         </label>
                       </div>
                       <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="a1000-f" name="a1000" class="custom-control-input" value="f">
+                        <input type="checkbox" id="a1000-f" name="a1000" class="custom-control-input" value="f" checked>
                         <label class="custom-control-label" for="a1000-f">
                           F - White
                         </label>
@@ -422,7 +422,7 @@
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patient/responsible partyasked about preference regarding the use of cardiopulmonary resuscitation (CPR)? (F2000A) <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patient/responsible party asked about preference regarding the use of cardiopulmonary resuscitation (CPR)? (F2000A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="f2000a-0" name="f2000a" class="custom-control-input" value="0" onchange="toggleRadioContent('f2000a', 'f2000Content', '1', '2')">
                         <label class="custom-control-label" for="f2000a-0">
@@ -569,7 +569,7 @@
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patientand/or caregiverasked about spiritual/existential concerns? (F3000A) <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patientand/or caregiver asked about spiritual/existential concerns? (F3000A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="f3000a-0" name="f3000a" class="custom-control-input" value="0" onchange="toggleRadioContent('f3000a', 'f3000Content', '1', '2')">
                         <label class="custom-control-label" for="f3000a-0">
@@ -619,20 +619,20 @@
                   <div class="col">
                     <fieldset>
                       <legend>Principal Diagnosis (I0010) <span class="iq-asterisk">*</span></legend>
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="i0010-1" name="i0010" class="custom-control-input" value="1">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="i0010-1" name="i0010" class="custom-control-input" value="1">
                         <label class="custom-control-label" for="i0010-1">
                           1 - Cancer
                         </label>
                       </div>
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="i0010-2" name="i0010" class="custom-control-input" value="2">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="i0010-2" name="i0010" class="custom-control-input" value="2">
                         <label class="custom-control-label" for="i0010-2">
                           2 - Dementia/Alzheimer's
                         </label>
                       </div>
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="i0010-99" name="i0010" class="custom-control-input" value="99">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="i0010-99" name="i0010" class="custom-control-input" value="99">
                         <label class="custom-control-label" for="i0010-99">
                           99 - None of the above
                         </label>
