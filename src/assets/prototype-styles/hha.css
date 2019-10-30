@@ -106,7 +106,7 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .form-control {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 input:not([type=checkbox]):not([type=radio]):disabled, select:disabled, textarea:disabled, .form-control:disabled { background-color: #d6d7d9; border: 1px solid #AEB0B5; opacity: 1;}
-input[type=text]:read-only { border: 0; background-color: #f1f1f1;  }
+input[type=text]:read-only, input[type=date]:read-only { border: 0; background-color: #f1f1f1;  }
 .input-group > .form-control { width: 1% !important; }
 .iqies-required-text { font-size: .875rem; margin-bottom: 2rem; }
 fieldset { margin-bottom: 1.5rem; }
@@ -487,3 +487,5 @@ a.return-link:before { font-family: "Font Awesome 5 Pro"; font-weight: 100; marg
     text-decoration: none;
     font-weight: 300;
 }
+
+div.divider { border-left: 1px solid #d8d8d8; margin-left: 0rem; padding-left: 2rem;  }
