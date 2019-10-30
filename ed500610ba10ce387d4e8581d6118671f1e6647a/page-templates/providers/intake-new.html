@@ -16,15 +16,24 @@
 
 <body>
 <header>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <nav> <a href="/index.html"> <img src="../../../src/assets/images/logo-iqies.svg"
-                class="iq-logo" alt="Logo iQIES Color" /> </a> </nav>
-      </div>
-    </div>
-  </div>
-</header>
+           
+            <div class="container-fluid p-4">
+              <div class="row">
+                <div class="col">
+                  <nav>
+                    <a href="./">
+                      <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo">
+                    </a>
+                      
+                      <button class="btn btn-outline-primary" id="menuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENU</button><nav class="iqies-menu dropdown-menu" ari-labelledby="menuDropdown" style="min-width: 12.5rem;"><ul class="list-group list-group-flush"><a class="list-group-item list-group-item-action iqies-section-header active" href="#">iQIES Home</a><a class="list-group-item list-group-item-action iqies-section-header " href="../users/my-profile.html">My Profile</a><a class="list-group-item list-group-item-action iqies-section-header " href="../providers/providers-landing.html">Providers</a><a class="list-group-item list-group-item-action " href="../providers/find-a-provider.html">Find a Provider</a><a class="list-group-item list-group-item-action " href="../providers/add-a-provider.html">Add a Provider</a><a class="list-group-item list-group-item-action iqies-section-header " href="../reports/reports-landing.html">Reports</a><a class="list-group-item list-group-item-action " href="../reports/find-a-report.html">Find a Report Type</a><a class="list-group-item list-group-item-action " href="../reports/my-reports.html">My Reports</a><a class="list-group-item list-group-item-action " href="../reports/report-activity.html">Report Activity</a><a class="list-group-item list-group-item-action iqies-section-header " href="../admin/index.html">Administration</a><a class="list-group-item list-group-item-action iqies-section-header " href="../help/">Help</a><a class="list-group-item list-group-item-action iqies-section-header" href="../logout.html">Logout</a></ul></nav>
+                  </nav>
+                    
+                    
+                </div>
+              </div>
+            </div>
+           
+          </header>
 <main>
 <div class="iq-page-header-wrapper inverted">
             <div class="container">
@@ -2443,26 +2452,13 @@
                     <h3>Survey Due Date</h3>
                     <p class="nijm">Based on the priority, no federal survey is required.</p>
                     
-                <fieldset>
-                <legend>Entry Method</legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="ox1" name="ox" class="custom-control-input" onchange="if(this.checked){$('.calDueDate.calculated').removeClass('hide'); $('.calDueDate.manual').addClass('hide'); }">
+               
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="ox1" class="custom-control-input" onchange="if(this.checked){$('.calDueDate.calculated').removeClass('hide'); } else { $('.calDueDate.calculated').addClass('hide'); }"> <!-- $('#surveyDueDateInput').prop('readonly',true); -->
                   <label class="custom-control-label" for="ox1"> Enter calculated date</label>
                 </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="ox2" name="ox" class="custom-control-input" onchange="if(this.checked){$('.calDueDate.calculated').addClass('hide'); $('.calDueDate.manual').removeClass('hide'); }">
-                  <label class="custom-control-label" for="ox2"> Enter manually </label>
-                </div>
+                
                 <br>
-                <div class="iq-conditional-content hide manual calDueDate">
-                    <div class="row"><div class="col-md-4"><div class="form-group">
-            <label>Survey Due Date
-                <input type="date" id="surveyDueDateInput">
-                <span class="help-text">MM/DD/YYYY</span>
-            </label>
-        </div></div></div>
-                    
-                </div>
                 <div class="iq-conditional-content hide calculated calDueDate">
                    <div class="row">
                        <div class="col-md-5">
@@ -2497,15 +2493,26 @@
             <input type="number" value="45" style="width: 10rem;">
             <span class="help-text">Can be reduced to meet state requirements or for other considerations</span>
         </p>
-        <p><label>Calculated Survey Due Date</label>
+        <p><label>Calculated Date</label>
             <input type="text" readonly value="10/30/2019">
         </p>
+                           <p><button class="btn btn-outline-primary" onclick="$('#surveyDueDateInput').val('2019-10-30')">Accept Date</button></p>
               
                       </div>
 
                     </div> 
+                </div>    
+                <div class="manual calDueDate">
+                    <div class="row"><div class="col-md-4"><div class="form-group">
+            <label>Survey Due Date
+                <input type="date" id="surveyDueDateInput">
+                <span class="help-text">MM/DD/YYYY</span>
+            </label>
+        </div></div></div>
+                    
                 </div>
-                </fieldset>    
+                
+          
                        
                   
                 </div></div>
