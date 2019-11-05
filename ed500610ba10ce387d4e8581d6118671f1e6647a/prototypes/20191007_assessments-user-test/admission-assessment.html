@@ -107,6 +107,16 @@
               <p class="iq-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
               <section>
                 <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="npi">NPI (A0100A)</label>
+                      <input type="text" class="form-control" id="npi" aria-label="npi">
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="siteofService">Site of Service at Admission (A0205) <span class="iq-asterisk">*</span></label>
@@ -132,7 +142,7 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="dateAssessmentInitiated">Date Initial Nursing Assessment Initiated (A0245) <span class="iq-asterisk">*</span></label>
-                      <input type="date" class="form-control" id="dateAssessmentInitiated" aria-label="dateAssessmentInitiated">
+                      <input type="date" class="form-control" id="dateAssessmentInitiated" aria-label="dateAssessmentInitiated" placeholder="MM/DD/YYYY">
                     </div>
                   </div>
                 </div>
@@ -146,26 +156,14 @@
                 <div class="row">
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="firstName">First <span class="iq-asterisk">*</span></label>
-                      <input type="text" class="form-control" id="firstName" aria-label="firstName" value="Emily">
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <label for="middleInitial">Middle Initial</label>
-                      <input type="text" class="form-control" id="middleInitial" aria-label="middleInitial">
+                      <label for="firstName">First Name <span class="iq-asterisk">*</span></label>
+                      <p>Emily</p>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="lastName">Last <span class="iq-asterisk">*</span></label>
-                      <input type="text" class="form-control" id="lastName" aria-label="lastName" value="Robinson">
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <label for="suffix">Suffix</label>
-                      <input type="text" class="form-control" id="suffix" aria-label="suffix">
+                      <label for="lastName">Last Name <span class="iq-asterisk">*</span></label>
+                      <p>Robinson</p>
                     </div>
                   </div>
                 </div>
@@ -190,7 +188,7 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="ssn">Social Security Number (A0600A)</label>
-                      <input type="text" class="form-control" id="ssn" aria-label="ssn" value="930481563">
+                      <p>930481563</p>
                     </div>
                   </div>
                 </div>
@@ -242,24 +240,7 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                    <div class="form-row iq-date-of-birth">
-                      <div class="col-auto">
-                        <div class="form-group">
-                          <label for="month">Month</label><input type="text" class="form-control" id="month" aria-describedby="help-id" value="03">
-                        </div>
-                      </div>
-                      <div class="col-auto">
-                        <div class="form-group">
-                          <label for="day">Day</label><input type="text" class="form-control" id="day" aria-describedby="help-id" value="24">
-                        </div>
-                      </div>
-                      <div class="col-auto">
-                        <div class="form-group">
-                          <label for="year">Year</label><input type="text" class="form-control" id="year" aria-describedby="help-id" value="1934">
-                        </div>
-                      </div>
-                    </div>
-                    <small class="form-text">Enter two digits for day and month and four digits for year.</small>
+                    <p>03/24/1934</p>
                   </div>
                 </div>
               </section>
@@ -455,7 +436,7 @@
                     <div class="iq-conditional-content" id="f2000Content">
                       <div class="form-group">
                         <label for="f2000b">Date the patient/responsible party was first asked about preference regarding the use of CPR (F2000B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="f2000b" aria-label="f2000b" />
+                        <input type="date" class="form-control" id="f2000b" aria-label="f2000b" placeholder="MM/DD/YYYY" />
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
                     </div>
@@ -471,7 +452,7 @@
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patient/responsible partyasked about preferences regarding life-sustaining treatments other than CPR? (F2100A) <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patient/responsible party asked about preferences regarding life-sustaining treatments other than CPR? (F2100A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="f2100a-0" name="f2100a" class="custom-control-input" value="0" onchange="toggleRadioContent('f2100a', 'f2100Content', '1', '2')">
                         <label class="custom-control-label" for="f2100a-0">
@@ -504,7 +485,7 @@
                     <div class="iq-conditional-content" id="f2100Content">
                       <div class="form-group">
                         <label for="f2100b">Date the patient/responsible party was first asked about preferences regarding life-sustaining treatments other than CPR (F2100B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="f2100b" aria-label="f2100b" />
+                        <input type="date" class="form-control" id="f2100b" aria-label="f2100b" placeholder="MM/DD/YYYY" />
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
                     </div>
@@ -553,7 +534,7 @@
                     <div class="form-group">
                       <div class="iq-conditional-content" id="f2200Content">
                         <label for="f2200b">Date the patient/responsible party was first asked about preference regarding hospitalization (F2200B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="f2200b" aria-label="f2200b" />
+                        <input type="date" class="form-control" id="f2200b" aria-label="f2200b" placeholder="MM/DD/YYYY" />
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
                     </div>
@@ -569,7 +550,7 @@
                 <div class="row">
                   <div class="col">
                     <fieldset>
-                      <legend>Was the patientand/or caregiver asked about spiritual/existential concerns? (F3000A) <span class="iq-asterisk">*</span></legend>
+                      <legend>Was the patient and/or caregiver asked about spiritual/existential concerns? (F3000A) <span class="iq-asterisk">*</span></legend>
                       <div class="custom-control custom-radio">
                         <input type="radio" id="f3000a-0" name="f3000a" class="custom-control-input" value="0" onchange="toggleRadioContent('f3000a', 'f3000Content', '1', '2')">
                         <label class="custom-control-label" for="f3000a-0">
@@ -602,7 +583,7 @@
                     <div class="iq-conditional-content" id="f3000Content">
                       <div class="form-group">
                         <label for="f3000b">Date the patient and/or caregiver was first asked about spiritual/existential concerns (F3000B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="f3000b" aria-label="f3000b" />
+                        <input type="date" class="form-control" id="f3000b" aria-label="f3000b" placeholder="MM/DD/YYYY" />
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
                     </div>
@@ -682,7 +663,7 @@
                     <div class="iq-conditional-content" id="j0900Content">
                       <div class="form-group">
                         <label for="j0900b">Date of first screening for pain (J0900B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="j0900b" aria-label="j0900b">
+                        <input type="date" class="form-control" id="j0900b" aria-label="j0900b" placeholder="MM/DD/YYYY">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
 
@@ -830,7 +811,7 @@
                         <hr />
                         <div class="form-group">
                           <label for="j0910b">Date of comprehensive pain assessment (J0910B) <span class="iq-asterisk">*</span></label>
-                          <input type="date" class="form-control" id="j0910b" aria-label="j0910b">
+                          <input type="date" class="form-control" id="j0910b" aria-label="j0910b" placeholder="MM/DD/YYYY">
                           <small class="form-text text-muted">MM/DD/YYYY</small>
                         </div>
 
@@ -933,7 +914,7 @@
                     <div class="iq-conditional-content" id="j2030Content">
                       <div class="form-group">
                         <label for="j2030b">Date of first screening for shortness of breath (J2030B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="j2030b" aria-label="j2030b">
+                        <input type="date" class="form-control" id="j2030b" aria-label="j2030b" placeholder="MM/DD/YYYY">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
 
@@ -995,7 +976,7 @@
                         <hr/>
                         <div class="form-group">
                           <label for="j2040b">Type(s) of treatment for shortness of breath initiated (J2040B) <span class="iq-asterisk">*</span></label>
-                          <input type="date" class="form-control" id="j2040b" aria-label="j2040b">
+                          <input type="date" class="form-control" id="j2040b" aria-label="j2040b" placeholder="MM/DD/YYYY">
                           <small class="form-text text-muted">MM/DD/YYYY</small>
                         </div>
                         <fieldset>
@@ -1078,7 +1059,7 @@
                     <div class="iq-conditional-content" id="n0500Content">
                       <div class="form-group">
                         <label for="n0500b">Date scheduled opioid initiated or continued (N0500B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="n0500b" aria-label="n0500b">
+                        <input type="date" class="form-control" id="n0500b" aria-label="n0500b" placeholder="MM/DD/YYYY">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
                     </div>
@@ -1121,7 +1102,7 @@
                     <div class="iq-conditional-content" id="n0510Content">
                       <div class="form-group">
                         <label for="n0510b">Date PRN opioid initiated or continued (N0510B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="n0510b" aria-label="n0510b">
+                        <input type="date" class="form-control" id="n0510b" aria-label="n0510b" placeholder="MM/DD/YYYY">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
                     </div>
@@ -1170,7 +1151,7 @@
                     <div class="iq-conditional-content" id="n0520Content">
                       <div class="form-group">
                         <label for="n0520b">Date bowel regimen initiated or continued (N0520B) <span class="iq-asterisk">*</span></label>
-                        <input type="date" class="form-control" id="n0520b" aria-label="n0520b">
+                        <input type="date" class="form-control" id="n0520b" aria-label="n0520b" placeholder="MM/DD/YYYY">
                         <small class="form-text text-muted">MM/DD/YYYY</small>
                       </div>
                     </div>
@@ -1198,7 +1179,7 @@
                     </div>
                     <div class="form-group">
                       <label for="z0500b">Date (Z0500B) <span class="iq-asterisk">*</span></label>
-                      <input type="date" class="form-control" id="z0500b" aria-label="z0500b">
+                      <input type="date" class="form-control" id="z0500b" aria-label="z0500b" placeholder="MM/DD/YYYY">
                       <small class="form-text text-muted">MM/DD/YYYY</small>
                     </div>
                   </div>
