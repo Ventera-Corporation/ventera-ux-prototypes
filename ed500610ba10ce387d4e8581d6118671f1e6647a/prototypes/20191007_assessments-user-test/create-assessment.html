@@ -80,7 +80,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <label for="assessmentReason">Reason for Assessment (A0250) <span class="iq-asterisk">*</span></label>
-            <select class="form-control" id="a0250" aria-label="assessmentReason" onchange="toggleSelectContent('a0250', 'a0220Content', 'admission')">
+            <select class="form-control" id="a0250" aria-label="assessmentReason" onchange="toggleSelectContent('a0250', 'a0220Content', 'admission')" placeholder="MM/DD/YYYY">
               <option value="" selected></option>
               <option value="admission">Admission</option>
               <option value="discharge">Discharge</option>
@@ -93,7 +93,7 @@
           <div class="iq-conditional-content mb-4" id="a0220Content">
             <div class="form-group">
               <label for="a0220">Admission Date (A0220)</label>
-              <input type="date" class="form-control" id="a0220" aria-label="a0220" />
+              <input type="date" class="form-control" id="a0220" aria-label="a0220" placeholder="MM/DD/YYYY" />
               <small class="form-text text-muted">MM/DD/YYYY</small>
             </div>
           </div>
