@@ -84,7 +84,28 @@
         $('.searchButton').click();
     }" >
           <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="if($('#inlineFormInputGroup').val().indexOf('s') > -1 && $('#inlineFormInputGroup').val().indexOf('m') > -1){ $('#tab2 .staffMembers tbody tr').addClass('hide'); $('#tab2 .staffMembers tbody tr.sm').removeClass('hide'); $('#tab2 .staffMembers .info-text').toggleClass('hide'); }">Search</button>
+         <button type="submit" class="btn btn-primary searchButton" onClick="
+if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
+    $('#providerSearchResults tbody tr').addClass('hide'); 
+    $('#providerSearchResults tbody tr.bright').removeClass('hide');
+    $('#providerSearchResults .info-text').html('Search Results: 1 Provider');
+    $('#providerSearchResults nav').addClass('hide'); 
+    $('#noResults').addClass('hide');                                                                          
+} else if ( $('#inlineFormInputGroup').val().indexOf('g') > -1 ){ 
+    $('#providerSearchResults tbody tr').addClass('hide'); 
+    $('#providerSearchResults tbody tr.good').removeClass('hide'); 
+    $('#providerSearchResults .info-text').html('Search Results: 2 Providers'); 
+    $('#providerSearchResults nav').addClass('hide'); 
+    $('#noResults').addClass('hide'); 
+} else if ( $('#inlineFormInputGroup').val().indexOf('z') > -1 ) { 
+    $('#providerSearchResults').addClass('hide'); 
+    $('#noResults').removeClass('hide'); 
+} else { 
+    $('#providerSearchResults').removeClass('hide'); 
+    $('#providerSearchResults tbody tr').removeClass('hide'); 
+    $('#noResults').addClass('hide'); 
+    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide'); }">Search</button>
         </div>
       </div><div class="input-group-help-text help-text">Search by provider name, CCN, or state facility ID</div>
                     </div> 
@@ -103,122 +124,91 @@
               </div>
               <div id="iq-collapse-show-hide" class="collapse">
                 <div class="card-body px-0">
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <br>
-          <h5>Advanced Search Criteria (1)</h5>
-          <div class="form-group"><div class="badge badge-pill">
-        <span>Virginia </span><button type="button" class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button></div></div>
-          <p class="info-text"><span class="baCount">1-10</span> of 112 Providers</p>
-        
-          <div class="table-wrapper">
-    <table class="table table-striped">
-  <thead>
-    <tr>
-      <th class="sortable ascending" style="width: 15rem;"><span>Provider</span></th>
-      <th class="sortable"><span>Provider Type</span></th>
-      <th><span>CCN</span></th>
-        <th><span>Status</span></th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p><i class="far fa-paperclip"></i> <a href="#">LetterSent060119.pdf</a></p></td>
-      
-      <td><p>05/08/2019</p></td><td><p class="desText">This is the description of the file that is long and wraps to multiple lines</p>
-        <p class="desText hide"><textarea rows="5" class="form-control">This is the description of the file that is long and wraps to multiple lines</textarea></p></td>
-      <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
-          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-    <button class="dropdown-item">Download</button>
-    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
-    <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
-  </div>
-          </div></td>
-    </tr>
-    <tr class="newAttachmentRow hide">
-      <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
-      <td><p>09/20/2019</p></td>
-        <td><p class="desText">Lorem ipsum dolor sit amet</p><p class="desText hide"><textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea></p></td>
-      
-    <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
-          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-    <button class="dropdown-item">Download</button>
-    <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
-    <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
-  </div>
-          </div></td>
-    </tr>
-  </tbody>
-</table></div>
-    <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" aria-label="First" type="button">First</button></li><li class="page-item disabled"><button class="page-link previous" aria-label="Previous" type="button">Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link next" aria-label="Next" type="button">Next</button></li><li class="page-item"><button type="button" class="page-link last" aria-label="Last">Last</button></li></ul></nav>
-        
-        <div class="row hide">
-              <div class="col-md-4">
-                  <div class="form-group">
-                      <label>Provider Name
-                      <input class="form-control" type="text" value=""></label>
-                  </div>
-              </div>
-              <!--<div class="col-md-6">
-                  <div class="form-group">
-                      <label>Business Name
-                      <select class="form-control" label="Business Name"><option value="businessName">Doing Business As Name</option><option value="legalName">Legal Business Name</option><option value="both">Either</option></select></label>
-                  </div>
-              </div>-->
-              <div class="col-md-4">
+                  <div class="row">
+            <div class="col-md-5">
                   <div class="form-group">
                       <label>Provider Types
                          <input id="providerTypes" class="form-control" type="text" placeholder="Type to search and enter" onChange="if($(this).val() != ''){ $('.subtypesGroup').removeClass('hide')}">
                       </label>
                   </div>
               </div>
-              <!--<div class="col col-md-6">
+            <div class="col col-md-5">
                   <div class="form-group hide subtypesGroup">
                       <label>Provider Subtypes
                           <input id="subtypes" class="form-control" type="text" placeholder="Type to search and enter">
                       </label>
-                    
                   </div>
               </div>
-              <div class="col col-md-3">
+            <div class="col col-md-5">
                   <div class="form-group">
-                      <label>iQIES ID<input class="form-control" type="text" value=""></label>
+                      <label>Deemed Status</label>
+                <div class="btn-group" role="group" aria-label="Button Group for Deemed Status">
+                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');  $('.deemedDates').addClass('hide');">Both</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').removeClass('hide');">Deemed</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').addClass('hide');">Non-Deemed</button>
+                </div>
                   </div>
-              </div>-->
-              <div class="col col-md-3">
+            </div>
+            <div class="col-md-7">
+                <div class="row hide deemedDates">
+                <div class="col-sm-5">
                   <div class="form-group">
-                      <label>CCN/CLIA ID<input class="form-control" type="text" value=""></label>
-                  </div>
-              </div>
-              <!--<div class="col col-md-3">
-                  <div class="form-group">
-                      <label>State Facility ID<input class="form-control" type="text" value=""></label>
-                  </div>
-              </div>-->
-              <div class="col col-md-4">
-                  <div class="form-group">
-                      <label>State
-                      <input class="form-control" type="text" value="" id="states" placeholder="Type to search and enter">
+                      <label>Deemed - Start Date
+                          <input placeholder="" class="form-control" type="date" value="">
                       </label>
+                      <span class="form-text">MM/DD/YYYY</span>
                   </div>
               </div>
-              <div class="col col-md-3">
+              <div class="col-sm-5">
+                  <div class="form-group">
+                      <label>Deemed - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
+                      <span class="form-text">MM/DD/YYYY</span>
+                  </div>
+              </div>
+                </div>
+            </div>
+            <div class="col col-md-5">
+                  <div class="form-group">
+                      <label>Federal Certification Status
+                      <input type="text" class="form-control" value="" placeholder="Type to search and enter" id="certsStatus"></label>
+                  </div>
+            </div><div class="col col-md-5"></div>
+            <div class="col col-md-5">
+                  <div class="form-group">
+                      <label>License Number<input class="form-control" type="text" value=""></label>
+                  </div>
+            </div><div class="col col-md-5"></div>
+            <div class="col col-md-5">
+              <div class="form-group">
+                  <label>Street Address<input class="form-control" type="text" value=""></label>
+              </div>
+            </div><div class="col col-md-5"></div>
+            <div class="col col-md-5">
+              <div class="form-group">
+                  <label>City<input class="form-control" type="text" value=""></label>
+              </div>
+            </div>
+            <div class="col col-md-3">
+              <div class="form-group">
+                  <label>State
+                  <input class="form-control" type="text" value="Illinois" id="states" placeholder="Type to search and enter">
+                  </label>
+              </div>
+            </div>
+            <div class="col col-md-2">
+              <div class="form-group">
+                  <label>ZIP Code<input class="form-control" type="text" value=""></label>
+              </div>
+            </div>
+            <div class="col col-md-5">
                   <div class="form-group">
                       <label>Management Unit
-                      <select class="form-control" disabled><option></option></select>
+                      <select class="form-control"><option></option></select>
                       </label>
                       <p class="help-text">State must be selected</p>
                   </div>
               </div>
-              <div class="col col-md-3">
+            <div class="col col-md-5">
                   <div class="form-group">
                       <label>Work Unit
                        <select class="form-control" disabled><option></option></select>
@@ -226,20 +216,142 @@
                       <p class="help-text">Management unit must be selected</p>
                   </div>
               </div>
+            <div class="col col-md-5">
+                  <div class="form-group">
+                      <label>CMS Region
+                      <input class="form-control" type="text" value="" id="cmsregion" placeholder="Type to search and enter">
+                      </label>
+                  </div>
+              </div>
           </div>
+                  <div class="row">
+                      <div class="col">
+                          <div class="iqies-margin-bottom">
+                              <a href="#providerSearchResults" id="viewProviderSearchResults" class="btn btn-primary" onClick="">Search</a> <button class="btn btn-link">Reset</button>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <h5>Advanced Search Criteria (1)</h5>
+          <div class="form-group"><div class="badge badge-pill">
+        <span>Illinois </span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div></div>
+    <section id="providerSearchResults">
+          <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10</span> of 112 Providers</p>
+        
+          <div class="table-wrapper" >
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="sortable ascending" style="width: 15rem;"><span>Provider</span></th>
+      <th class="sortable"><span>Provider Type</span></th>
+      <th class="sortable"><span>CCN</span></th>
+      <th class="sortable"><span>Status</span></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
+      <td>Home Health Agency</td>
+      <td>368130</td>
+      <td>Certified</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="bright">
+      <td><a href="provider-profile.html">BrightHope</a><br>
+      667 Bent Ridge Lane, Suite 1000<br>
+      Barrington, IL 60010</td>
+      <td>Hospice</td>
+      <td>123456</td>
+      <td>Pending Certification</td>
+      <td><div class="iqies-list-button-group"><a href="provider-profile.html" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr>
+      <td><a href="#">Encompass Health Braintree Hospital of Braintree</a><br>
+        250 Pond Street<br>
+        Braintree, IL 63222</td>
+      <td>Hospital</td>
+      <td>223027</td>
+      <td>Certified</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr>
+      <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
+        2401 Avenue J, Suite 240<br>
+        Arlington, IL 63225</td>
+      <td>Home Health Agency</td>
+      <td>677863</td>
+      <td>Certified</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="good">
+      <td><a href="#">Good Neighbor HHC of Baxter</a><br>
+        14387 Edgewood Drive<br>
+        Baxter, IL 63231</td>
+      <td>Home Health Agency</td>
+      <td>247269</td>
+      <td>Certified</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="good">
+      <td><a href="#">Good Samaritan Home Health of Brainerd</a><br>
+        804 Wright Street<br>
+        Brainerd, IL 63227</td>
+      <td>Home Health Agency</td>
+      <td>248032</td>
+      <td>Certified</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr>
+      <td><a href="#">Grainger Co Health Dept</a><br>
+        PO Box 27 Main Street<br>
+        Rutledge, IL 63222</td>
+      <td>Home Health Agency</td>
+      <td>447064</td>
+      <td>Certified</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr>
+      <td><a href="#">Highsmith Rainey Memorial Hospital</a><br>
+      150 Robeson Street, 4th Floor<br>
+      Fayetteville, IL 63222</td>
+      <td>Hospital</td>
+      <td>342014</td>
+      <td>Certified</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr>
+      <td><a href="#">Laguna Rainbow Home Care</a><br>
+        State Road 23 South<br>
+        Casa Blanca, IL 63222</td>
+      <td>Home Health Agency</td>
+      <td>327144</td>
+      <td>Certified</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr>
+      <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
+      PO Box 236<br>
+      New Laguna, IL 63222</td>
+      <td>Home Health Agency</td>
+      <td>327046</td>
+      <td>Pending</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+  </tbody>
+</table></div>
+   <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item"><button  class="page-link">3</button></li><li class="page-item"><button class="page-link">4</button></li><li class="page-item"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item"><button class="page-link last">Last</button></li></ul></nav>
+        </section>
+        
+        <p class="iq-no-results" id="noResults" role="status">There are no providers for this search.</p>
           <div class="row hide" id="advancedOps">
               
-              <div class="col col-md-4">
-                  <div class="form-group">
-                      <label>License Number<input class="form-control" type="text" value=""></label>
-                  </div>
-              </div>
-              <div class="col col-md-6">
-                  <div class="form-group">
-                      <label>Federal Certification Status
-                      <input type="text" class="form-control" value="" placeholder="Type to search and enter" id="certsStatus"></label>
-                  </div>
-              </div>
               <div class="col col-md-4">
                   <div class="form-group">
                       <label>Address Type</label>
@@ -249,103 +361,24 @@
                       </select>
                   </div>
               </div>
-              <div class="col col-md-6">
-                  <div class="form-group">
-                      <label>Address<input class="form-control" type="text" value=""></label>
-                  </div>
-              </div>
-              <div class="col col-md-4">
-                  <div class="form-group">
-                      <label>City<input class="form-control" type="text" value=""></label>
-                  </div>
-              </div>
-              <!--<div class="col col-md-3">
-                  <div class="form-group">
-                      <label>State
-                      <input class="form-control" type="text" value="" id="states" placeholder="Type to search and enter">
-                      </label>
-                  </div>
-              </div>-->
-              <div class="col col-md-2">
-                  <div class="form-group">
-                      <label>ZIP Code<input class="form-control" type="text" value=""></label>
-                  </div>
-              </div>
+            
               <div class="col col-md-6">&nbsp;</div>
-              <div class="col col-md-6">
-                  <div class="form-group">
-                      <label>CMS Region
-                      <input class="form-control" type="text" value="" id="cmsregion" placeholder="Type to search and enter">
-                      </label>
-                  </div>
-              </div>
+             
               <div class="col col-md-6">&nbsp;</div>
               <div class="col-md-3">
                     <div class="form-group">
                         <fieldset class=""><legend id="deemedStatus-legend" class="iqies-legend-heading-no-error">Deemed Status</legend><div class="custom-control custom-radio"><input id="deemedStatus-" type="radio" name="deemedStatus" class="custom-control-input" value="" checked=""><label id="deemedStatus-label-" nesting="deemedStatus-label-" for="deemedStatus-" class="custom-control-label">Both</label></div><div class="custom-control custom-radio"><input id="deemedStatus-true" type="radio" name="deemedStatus" class="custom-control-input" value="true"><label id="deemedStatus-label-true" nesting="deemedStatus-label-true" for="deemedStatus-true" class="custom-control-label">Deemed</label></div><div class="custom-control custom-radio"><input id="deemedStatus-false" type="radio" name="deemedStatus" class="custom-control-input" value="false"><label id="deemedStatus-label-false" nesting="deemedStatus-label-false" for="deemedStatus-false" class="custom-control-label">Non-Deemed</label></div></fieldset>
                   </div>
               </div>
-              <div class="col-sm-6 col-md-3">
-                  <div class="form-group">
-                      <label>Deemed Date - Start Date
-                          <input placeholder="" class="form-control" type="date" value="">
-                      </label>
-                      <span class="form-text">MM/DD/YYYY</span>
-                  </div>
-              </div>
-              <div class="col-sm-6 col-md-3">
-                  <div class="form-group">
-                      <label>Deemed Date - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
-                      <span class="form-text">MM/DD/YYYY</span>
-                  </div>
-              </div>
+              
           </div>
          
        <!-- <section>
           <h4>Selected Criteria (0)</h4>
-        <p class="iq-no-results">There are no selected criteria.</p></section>-->
-          <div class="row hide">
-              <div class="col">
-                  <div class="iqies-margin-bottom">
-                      <a href="#searchResults" id="viewProviderSearchResults" class="btn btn-primary" onClick="$('#searchResults').removeClass('hide');">Search</a> <button class="btn btn-link">Reset</button>
-                  </div>
-              </div>
-          </div>
+        </section>-->
+         
        
-          <div id="searchResults" class="hide mt-4">
-              <h2>Search Results</h2>
-              <p>1 - 10
-      of 274 Providers</p>
-        <table class="table table-striped" datatable="true"><caption class="sr-only">Provider Search Results</caption><thead><tr><th tabindex="0" scope="col" class="ascending sortable"><span class="">Provider</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Provider Type</span></th><th tabindex="0" scope="col" class="sortable"><span class="">CCN</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Legal Business Name</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Federal Certification Status</span></th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody><tr><td><p class="iqies-label-responsive">Provider</p><a href="/providers/69294">ABC Test Provider</a><address class="iqies-example text-capitalize">  123 Main Street <br>    Test City, WY  11111 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p>1111111111</p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>ABC Test Provider</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Terminated</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/69294">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p><a href="/providers/70270">abdc</a><address class="iqies-example text-capitalize">  123 <br>    12414, WY  12314 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>abdc</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Pending Certification</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/70270">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p><a href="provider-profile.html">A Better Way</a>
-          <address class="iqies-example">
-          667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010
-          </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p>
-            <p>123456</p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>A Better Way</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Certified</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="provider-profile.html">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p><a href="/providers/1150763">ACCESS HOME CARE</a><address class="iqies-example text-capitalize">  625 SOUTH WASHINGTON, SUITE B <br>    AFTON, WY  83110 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p>537073</p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>ACCESS HOME CARE</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Terminated</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/1150763">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
-                <a href="/providers/24496">Acme Hospice</a>
-              <address class="iqies-example text-capitalize">  205 W Main St <br>    Somerville, CO  08876 </address></td><td><p class="iqies-label-responsive">Provider Type</p>
-                <p>Hospice</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p>
-                  <p>Acme</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p></p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/24496">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
-                      <a href="/providers/24497">Batttersea Home Care</a>
-                    <address class="iqies-example text-capitalize">  205 W Main St <br>    Somerville, WY  08876 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p>erasft</p></td><td><p class="iqies-label-responsive">Legal Business Name</p>
-                      <p>Battersea Home Care</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Certified</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/24497">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
-                          <a href="/providers/36192">BioBright Hospice</a>
-                        <address class="iqies-example text-capitalize">  B Street <br>    Dubtown, ND  55555 </address></td><td><p class="iqies-label-responsive">Provider Type</p>
-                          <p>Hospice</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p>
-                            <p>BioBright Hospice</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p>Pending Certification</p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/36192">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
-                                <a href="/providers/36193">Blackerman Home Care</a>
-                              <address class="iqies-example text-capitalize">  B Street <br>    Dubtown, ND  55555 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p>
-                                <p>Blackerman HHA</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p></p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/36193">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
-                                    <a href="provider-profile.html">BrightHope</a>
-                                    <address class="iqies-example text-capitalize">
-                                    667 Bent Ridge Lane<br>
-                                    Barrington, IL 60010
-                                  </address></td><td><p class="iqies-label-responsive">Provider Type</p>
-                                      <p>Hospice</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p>
-                                        <p>BrightHope</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p></p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="provider-profile.html">View</a></div></td></tr><tr><td><p class="iqies-label-responsive">Provider</p>
-                                            <a href="/providers/36195">Carrington</a>
-                                          <address class="iqies-example text-capitalize">  B Street <br>    Dubtown, ND  55555 </address></td><td><p class="iqies-label-responsive">Provider Type</p><p>Home Health Agencies</p></td><td><p class="iqies-label-responsive">CCN</p><p></p></td><td><p class="iqies-label-responsive">Legal Business Name</p><p>Test API created Provider</p></td><td><p class="iqies-label-responsive">Federal Certification Status</p><p></p></td><td><div class="d-flex justify-content-end iqies-list-button-group"><a href="/providers/36195">View</a></div></td></tr></tbody></table>
-              <nav aria-label="Results Data Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link d-none d-md-block" aria-label="First" type="button"><img id="first" alt="first" src="../../../src/assets/images/icon-arrow-left-double.svg" aria-hidden="true"><span class="d-none d-lg-inline">First</span></button></li><li class="page-item disabled"><button class="page-link" aria-label="Previous" type="button"><img id="previous" alt="previous" src="../../../src/assets/images/icon-left-caret-primary.svg" aria-hidden="true"><span class="d-none d-lg-inline">Previous</span></button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li><li class="page-item"><button class="page-link" aria-label="Next" type="button"><span class="d-none d-lg-inline">Next</span><img id="next" alt="next" src="../../../src/assets/images/icon-right-caret-primary.svg" aria-hidden="true"></button></li><li class="page-item"><button type="button" class="page-link d-none d-md-block" aria-label="Last"><span class="d-none d-lg-inline">Last</span><img id="last" alt="last" src="../../../src/assets/images/icon-arrow-right-double.svg" aria-hidden="true"></button></li></ul></nav>
-            </div>
+          
     </div>
   </main>
 
