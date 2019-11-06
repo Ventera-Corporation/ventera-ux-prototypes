@@ -70,7 +70,7 @@
         <p><label>Provider Type <span class="iq-asterisk">*</span></label>
         <select class="form-control" onChange="$('form').removeClass('hide'); switch(this.options[this.selectedIndex].value){ 
                         case 'cl': $('.col.subType').removeClass('hide');  $('.hospiceOnly').addClass('hide'); $('.legalName').addClass('hide');  break; 
-                        case 'hospice': $('.col.subType').removeClass('hide'); $('.hospiceOnly').removeClass('hide'); $('.legalName').addClass('hide'); break; 
+                        case 'hospice': $('.col.subType').addClass('hide'); $('.hospiceOnly').removeClass('hide'); $('.legalName').addClass('hide'); break; 
                         case 'hha': case 'irf': case 'ltch': case 'nh': $('.col.subType').addClass('hide'); $('.hospiceOnly').addClass('hide'); $('.legalName').removeClass('hide'); break; default: $('form').addClass('hide'); break; }; ">
               <option disabled selected>Select one</option>
               <option value="cl">Clinical Laboratory</option>
@@ -219,7 +219,7 @@
                     <p class="help-text" id="stateRegionHelp">State must be selected</p>
                 </div>
             </div>-->
-            <div class="col-md-6">
+            <!--<div class="col-md-6">
                 <div class="form-group">
                     <label>CMS Region
                     <input class="form-control" type="text" value="5 - Chicago" id="CMSRegions" readonly></label>
@@ -239,7 +239,7 @@
                     <select disabled class="form-control stateDependent"><option>Select one</option><option>xxx</option></select></label>
                     <p class="help-text">Management unit must be selected</p>
                 </div>
-            </div>
+            </div>-->
         </div>
     </fieldset>
     <fieldset><legend class="iq-form-group-title">Mailing Address</legend>

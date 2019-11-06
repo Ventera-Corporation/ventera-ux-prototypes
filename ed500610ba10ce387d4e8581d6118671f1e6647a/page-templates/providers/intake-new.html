@@ -174,6 +174,10 @@
                  Please select a file to attach. 
           </div>
         </div>
+        <div class="alert alert-danger fileDescriptionError hide" role="alert">
+          <div class="alert-content">Unable to save. Please review and correct the following:<ul><li><a href="#fileDescriptionInput" title="Go to error">
+    File Description</a>. You have exceeded the character limit.</li></ul></div>
+        </div>
         <div class="alert alert-danger letterRecipientError hide" role="alert">
           <div class="alert-content">
                  Unable to save. Please complete at least one field to save. 
@@ -3659,20 +3663,23 @@
                 <div class="row">
                     
                     <div class="col-sm-10"><h3><i class="far fa-paperclip"></i> File Name.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#" onClick="$('#fileDetails').addClass('hide'); $('#attachmentControl').removeClass('hide');">Remove</a></div>
+                    <div class="col-sm-2 text-right"><a href="#" onClick="$('#fileDetails').addClass('hide'); $('#attachmentControl').removeClass('hide');" title="Remove attachment: File Name.pdf">Remove</a></div>
                 </div>
                 <div class="row">
                    
                     <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
-                        <textarea class="form-control file-description-text"></textarea>
-                        </label><span class="fdt"></span></p>
+                        <textarea class="form-control file-description-text" id="fileDescriptionInput"></textarea>
+                        </label><span class="fdt">Characters: <span id="charNum">0/256</span></span></p>
            
                     </div>
                 </div>
                  
               </div>
+  
                   <div class="iq-button-wrapper"><button class="btn btn-primary" onClick="if( $('#fileDetails').hasClass('hide') ){  
                     $('.alert.fileAttachmentError').removeClass('hide'); 
+                } else if( $('#fileDescriptionInput').val().length > 256 ){
+                      $('.alert.fileDescriptionError').removeClass('hide'); 
                 } else {  
                     $('#tab9 .edit-view').removeClass('active'); 
                     $('#tab9 .read-view').addClass('active'); 
@@ -3991,6 +3998,19 @@ $(document).ready(function () {
             $(this).addClass('hide'); 
         });
     }, 5000);
+    
+     $('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        });
 });
 
 var partyCount = 0; 

@@ -84,7 +84,28 @@
         $('.searchButton').click();
     }" >
           <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="if($('#inlineFormInputGroup').val().indexOf('b') > -1 ){ $('#providerSearchResults tbody tr').addClass('hide'); $('#providerSearchResults tbody tr.bright').removeClass('hide'); $('#providerSearchResults .info-text').html('Search Results: 1 Provider'); $('#providerSearchResults nav').addClass('hide'); } else if($('#inlineFormInputGroup').val().indexOf('g') > -1){ $('#providerSearchResults tbody tr').addClass('hide'); $('#providerSearchResults tbody tr.good').removeClass('hide'); $('#providerSearchResults .info-text').html('Search Results: 2 Providers');  $('#providerSearchResults nav').addClass('hide'); } else if($('#inlineFormInputGroup').val().indexOf('z') > -1){ $('#providerSearchResults').addClass('hide'); $('#noResults').removeClass('hide');  } else { $('#providerSearchResults').removeClass('hide'); $('#providerSearchResults tbody tr').removeClass('hide'); $('#noResults').addClass('hide'); $('#providerSearchResults .info-text').html('1-10 of 112 Providers');  $('#providerSearchResults nav').removeClass('hide');}">Search</button>
+         <button type="submit" class="btn btn-primary searchButton" onClick="
+if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
+    $('#providerSearchResults tbody tr').addClass('hide'); 
+    $('#providerSearchResults tbody tr.bright').removeClass('hide');
+    $('#providerSearchResults .info-text').html('Search Results: 1 Provider');
+    $('#providerSearchResults nav').addClass('hide'); 
+    $('#noResults').addClass('hide');                                                                          
+} else if ( $('#inlineFormInputGroup').val().indexOf('g') > -1 ){ 
+    $('#providerSearchResults tbody tr').addClass('hide'); 
+    $('#providerSearchResults tbody tr.good').removeClass('hide'); 
+    $('#providerSearchResults .info-text').html('Search Results: 2 Providers'); 
+    $('#providerSearchResults nav').addClass('hide'); 
+    $('#noResults').addClass('hide'); 
+} else if ( $('#inlineFormInputGroup').val().indexOf('z') > -1 ) { 
+    $('#providerSearchResults').addClass('hide'); 
+    $('#noResults').removeClass('hide'); 
+} else { 
+    $('#providerSearchResults').removeClass('hide'); 
+    $('#providerSearchResults tbody tr').removeClass('hide'); 
+    $('#noResults').addClass('hide'); 
+    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide'); }">Search</button>
         </div>
       </div><div class="input-group-help-text help-text">Search by provider name, CCN, or state facility ID</div>
                     </div> 
@@ -170,7 +191,7 @@
             <div class="col col-md-3">
               <div class="form-group">
                   <label>State
-                  <input class="form-control" type="text" value="Virginia" id="states" placeholder="Type to search and enter">
+                  <input class="form-control" type="text" value="Illinois" id="states" placeholder="Type to search and enter">
                   </label>
               </div>
             </div>
@@ -221,7 +242,7 @@
           <span aria-hidden="true">&times;</span>
         </button></div></div>
     <section id="providerSearchResults">
-          <p class="info-text"><span class="baCount">1-10</span> of 112 Providers</p>
+          <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10</span> of 112 Providers</p>
         
           <div class="table-wrapper" >
     <table class="table table-striped">
@@ -328,7 +349,7 @@
    <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item"><button  class="page-link">3</button></li><li class="page-item"><button class="page-link">4</button></li><li class="page-item"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item"><button class="page-link last">Last</button></li></ul></nav>
         </section>
         
-        <p class="iq-no-results" id="noResults">There are no providers for this search.</p>
+        <p class="iq-no-results" id="noResults" role="status">There are no providers for this search.</p>
           <div class="row hide" id="advancedOps">
               
               <div class="col col-md-4">
