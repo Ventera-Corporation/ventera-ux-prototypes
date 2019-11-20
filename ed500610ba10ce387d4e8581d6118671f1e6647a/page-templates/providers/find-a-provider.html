@@ -37,9 +37,9 @@
            
           </header>
 
-  <main>
+  <main class="container-fluid">
     <div class="iq-page-header-wrapper mb-0">
-      <div class="container">
+      <div>
         <div class="iq-page-header">
           <div class="row">
             <div class="col">
@@ -73,7 +73,7 @@
       </div>
     </div>-->
 
-    <div class="container">
+    <div>
          <h1>Providers</h1>
                 <p>Find a provider by name, CCN, state facility ID or add a new provider.</p>
                 
@@ -107,7 +107,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
     $('#providerSearchResults nav').removeClass('hide'); }">Search</button>
         </div>
-      </div><div class="input-group-help-text help-text">Search by provider name, CCN, or state facility ID</div>
+      </div><div class="input-group-help-text help-text">Search by provider name, CCN, iQIES ID or state facility ID</div>
                     </div> 
                     <div class="col-md-6">
                         <div class="divider">
@@ -117,8 +117,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
           <div class="iq-accordion showhide">
             <div class="card no-border">
               <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iq-collapse-show-hide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                <button id="advancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iq-collapse-show-hide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
                   <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
                 </button>
               </div>
@@ -227,7 +226,11 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
                   <div class="row">
                       <div class="col">
                           <div class="iqies-margin-bottom">
-                              <a href="#providerSearchResults" id="viewProviderSearchResults" class="btn btn-primary" onClick="">Search</a> <button class="btn btn-link">Reset</button>
+                              <a href="#providerSearchResults" id="viewProviderSearchResults" class="btn btn-primary" onClick="$('#advancedSearchLink').click(); ">Search</a> <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
+    $('#providerSearchResults tbody tr').removeClass('hide'); 
+    $('#noResults').addClass('hide'); 
+    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide');">Reset</button>
                           </div>
                       </div>
                   </div>
@@ -256,8 +259,9 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     <tr>
       <th class="sortable ascending" style="width: 15rem;"><span>Provider</span></th>
       <th class="sortable"><span>Provider Type</span></th>
-      <th class="sortable"><span>CCN</span></th>
-      <th class="sortable"><span>Status</span></th>
+      <th class="sortable"><span>ID</span></th>
+      <th class="sortable"><span>Certification Status</span></th>
+	  <th class="sortable"><span>Deeming Status</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -265,8 +269,9 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     <tr>
       <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
       <td>Home Health Agency</td>
-      <td>368130</td>
-      <td>Certified</td>
+      <td>CCN 368130</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open" >O</span> Certified</td>
+	  <td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="bright">
@@ -274,8 +279,9 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
       667 Bent Ridge Lane, Suite 1000<br>
       Barrington, IL 60010</td>
       <td>Hospice</td>
-      <td>123456</td>
-      <td>Pending Certification</td>
+      <td>iQIES 123456</td>
+	  
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Pending Certification</td><td>Non-Deemed</td>
       <td><div class="iqies-list-button-group"><a href="provider-profile.html" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -283,8 +289,9 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         250 Pond Street<br>
         Braintree, IL 63222</td>
       <td>Hospital</td>
-      <td>223027</td>
-      <td>Certified</td>
+      <td>CCN 223027<br>SFID 1234</td>
+	  
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td><td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -292,8 +299,9 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         2401 Avenue J, Suite 240<br>
         Arlington, VA 23225</td>
       <td>Home Health Agency</td>
-      <td>677863</td>
-      <td>Certified</td>
+      <td>CCN 677863</td>
+      <td><span class="badge badge-secondary has-tooltip" data-toggle="tooltip" title="Closed">C</span> Terminated</td>
+	  <td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="good">
@@ -302,7 +310,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         Baxter, VA 23231</td>
       <td>Home Health Agency</td>
       <td>247269</td>
-      <td>Certified</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
+	  <td>Non-Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="good">
@@ -311,7 +320,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         Brainerd, IL 63227</td>
       <td>Home Health Agency</td>
       <td>248032</td>
-      <td>Certified</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
+	  <td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -320,7 +330,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         Rutledge, IL 63222</td>
       <td>Home Health Agency</td>
       <td>447064</td>
-      <td>Certified</td>
+      <td><span class="badge badge-secondary has-tooltip" data-toggle="tooltip" title="Closed">C</span> Terminated</td>
+		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -329,7 +340,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
       Fayetteville, IL 63222</td>
       <td>Hospital</td>
       <td>342014</td>
-      <td>Certified</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
+		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -338,7 +350,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         Casa Blanca, IL 63222</td>
       <td>Home Health Agency</td>
       <td>327144</td>
-      <td>Certified</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
+		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -347,7 +360,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
       New Laguna, VA 23222</td>
       <td>Home Health Agency</td>
       <td>327046</td>
-      <td>Pending</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Pending</td>
+		<td>Non-Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
   </tbody>
@@ -469,6 +483,11 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
   <script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+	  $(document).ready(function () {
+   
+ $('[data-toggle="tooltip"]').tooltip(); 
+	  }); 
+	  
   $( function() {
     var availableProviderTypes = [
       "Home Health Agencies",

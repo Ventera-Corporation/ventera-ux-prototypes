@@ -13,7 +13,7 @@ p, .form-group { margin-bottom: 2rem; }
 ul li, ol li { padding: .5rem 0; }
 
 /* GENERAL UTILITIES */
-.container-fluid { padding: 0 1rem; }
+.container-fluid { padding: 0 4rem; }
 .float-right { float: right; }
 .edit-view, .read-view { display: none; }
 .edit-view.active, .read-view.active { display: block; }
@@ -126,6 +126,8 @@ fieldset legend.iq-form-group-title { font-size: 1.5rem; font-weight: 400;}
 /* FROALA TEXT EDITOR */
 .second-toolbar a#logo { float: right; margin-right: .75rem; }
 .second-toolbar span.fr-counter { float: left; }
+.second-toolbar { display: none; }
+.fr-wrapper { border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
 
 /* FORM ERROR HANDLING */
 label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616b; }
@@ -357,6 +359,11 @@ div.alert { margin-bottom: 2rem;}
 .toast-header small { margin-bottom: 0; }
 .toast-body { font-size: 1rem; padding-left: 2.5rem;  }
 
+/* ICON Color */
+.fas.success { color: #2E8540; }
+.fas.danger { color: #CD2026; }
+.fas.warning { color: #FDB81E; }
+.fas.info { color: #02BFE7; }
 
 /* LOCATIONS AND BUILDINGS STATUS */
 i.status-lime, em.status-lime { color: lime;  }
