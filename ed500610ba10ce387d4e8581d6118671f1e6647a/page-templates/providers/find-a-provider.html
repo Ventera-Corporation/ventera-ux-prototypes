@@ -37,9 +37,9 @@
            
           </header>
 
-  <main>
+  <main class="container-fluid">
     <div class="iq-page-header-wrapper mb-0">
-      <div class="container">
+      <div>
         <div class="iq-page-header">
           <div class="row">
             <div class="col">
@@ -73,7 +73,7 @@
       </div>
     </div>-->
 
-    <div class="container">
+    <div>
          <h1>Providers</h1>
                 <p>Find a provider by name, CCN, state facility ID or add a new provider.</p>
                 
@@ -107,7 +107,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
     $('#providerSearchResults nav').removeClass('hide'); }">Search</button>
         </div>
-      </div><div class="input-group-help-text help-text">Search by provider name, CCN, or state facility ID</div>
+      </div><div class="input-group-help-text help-text">Search by provider name, CCN, iQIES ID or state facility ID</div>
                     </div> 
                     <div class="col-md-6">
                         <div class="divider">
@@ -117,8 +117,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
           <div class="iq-accordion showhide">
             <div class="card no-border">
               <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iq-collapse-show-hide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                <button id="advancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iq-collapse-show-hide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
                   <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
                 </button>
               </div>
@@ -144,7 +143,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
                       <label>Deemed Status</label>
                 <div class="btn-group" role="group" aria-label="Button Group for Deemed Status">
                   <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');  $('.deemedDates').addClass('hide');">Both</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').removeClass('hide');">Deemed</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').removeClass('hide'); $('.deemed').prop('style', 'display: inline-block;');">Deemed</button>
                   <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').addClass('hide');">Non-Deemed</button>
                 </div>
                   </div>
@@ -191,7 +190,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
             <div class="col col-md-3">
               <div class="form-group">
                   <label>State
-                  <input class="form-control" type="text" value="Illinois" id="states" placeholder="Type to search and enter">
+                  <input class="form-control" type="text" value="Illinois, Virginia" id="states" placeholder="Type to search and enter">
                   </label>
               </div>
             </div>
@@ -227,7 +226,11 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
                   <div class="row">
                       <div class="col">
                           <div class="iqies-margin-bottom">
-                              <a href="#providerSearchResults" id="viewProviderSearchResults" class="btn btn-primary" onClick="">Search</a> <button class="btn btn-link">Reset</button>
+                              <a href="#providerSearchResults" id="viewProviderSearchResults" class="btn btn-primary" onClick="$('#advancedSearchLink').click(); ">Search</a> <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
+    $('#providerSearchResults tbody tr').removeClass('hide'); 
+    $('#noResults').addClass('hide'); 
+    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide');">Reset</button>
                           </div>
                       </div>
                   </div>
@@ -237,10 +240,16 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
           </div>
           <br>
           <h5>Advanced Search Criteria (1)</h5>
-          <div class="form-group"><div class="badge badge-pill">
+          <div class="form-group"><!--<label class="inline">State: </label>--><div class="badge badge-pill">
         <span>Illinois </span><button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button></div></div>
+        </button></div> <div class="badge badge-pill">
+        <span>Virginia </span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div> <div class="deemed" style="display: none;"><!--<label class="inline ml-2">Deemed Status: </label>--><div class="badge badge-pill ">
+        <span>Deemed</span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+              </button></div></div></div>
     <section id="providerSearchResults">
           <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10</span> of 112 Providers</p>
         
@@ -250,8 +259,9 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     <tr>
       <th class="sortable ascending" style="width: 15rem;"><span>Provider</span></th>
       <th class="sortable"><span>Provider Type</span></th>
-      <th class="sortable"><span>CCN</span></th>
-      <th class="sortable"><span>Status</span></th>
+      <th class="sortable"><span>ID</span></th>
+      <th class="sortable"><span>Certification Status</span></th>
+	  <th class="sortable"><span>Deeming Status</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -259,8 +269,9 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     <tr>
       <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
       <td>Home Health Agency</td>
-      <td>368130</td>
-      <td>Certified</td>
+      <td>CCN 368130</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open" >O</span> Certified</td>
+	  <td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="bright">
@@ -268,8 +279,9 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
       667 Bent Ridge Lane, Suite 1000<br>
       Barrington, IL 60010</td>
       <td>Hospice</td>
-      <td>123456</td>
-      <td>Pending Certification</td>
+      <td>iQIES 123456</td>
+	  
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Pending Certification</td><td>Non-Deemed</td>
       <td><div class="iqies-list-button-group"><a href="provider-profile.html" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -277,26 +289,29 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         250 Pond Street<br>
         Braintree, IL 63222</td>
       <td>Hospital</td>
-      <td>223027</td>
-      <td>Certified</td>
+      <td>CCN 223027<br>SFID 1234</td>
+	  
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td><td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
       <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
         2401 Avenue J, Suite 240<br>
-        Arlington, IL 63225</td>
+        Arlington, VA 23225</td>
       <td>Home Health Agency</td>
-      <td>677863</td>
-      <td>Certified</td>
+      <td>CCN 677863</td>
+      <td><span class="badge badge-secondary has-tooltip" data-toggle="tooltip" title="Closed">C</span> Terminated</td>
+	  <td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="good">
       <td><a href="#">Good Neighbor HHC of Baxter</a><br>
         14387 Edgewood Drive<br>
-        Baxter, IL 63231</td>
+        Baxter, VA 23231</td>
       <td>Home Health Agency</td>
       <td>247269</td>
-      <td>Certified</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
+	  <td>Non-Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="good">
@@ -305,7 +320,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         Brainerd, IL 63227</td>
       <td>Home Health Agency</td>
       <td>248032</td>
-      <td>Certified</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
+	  <td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -314,7 +330,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         Rutledge, IL 63222</td>
       <td>Home Health Agency</td>
       <td>447064</td>
-      <td>Certified</td>
+      <td><span class="badge badge-secondary has-tooltip" data-toggle="tooltip" title="Closed">C</span> Terminated</td>
+		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -323,7 +340,8 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
       Fayetteville, IL 63222</td>
       <td>Hospital</td>
       <td>342014</td>
-      <td>Certified</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
+		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
@@ -332,16 +350,18 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         Casa Blanca, IL 63222</td>
       <td>Home Health Agency</td>
       <td>327144</td>
-      <td>Certified</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
+		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr>
       <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
       PO Box 236<br>
-      New Laguna, IL 63222</td>
+      New Laguna, VA 23222</td>
       <td>Home Health Agency</td>
       <td>327046</td>
-      <td>Pending</td>
+      <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Pending</td>
+		<td>Non-Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
   </tbody>
@@ -367,7 +387,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
               <div class="col col-md-6">&nbsp;</div>
               <div class="col-md-3">
                     <div class="form-group">
-                        <fieldset class=""><legend id="deemedStatus-legend" class="iqies-legend-heading-no-error">Deemed Status</legend><div class="custom-control custom-radio"><input id="deemedStatus-" type="radio" name="deemedStatus" class="custom-control-input" value="" checked=""><label id="deemedStatus-label-" nesting="deemedStatus-label-" for="deemedStatus-" class="custom-control-label">Both</label></div><div class="custom-control custom-radio"><input id="deemedStatus-true" type="radio" name="deemedStatus" class="custom-control-input" value="true"><label id="deemedStatus-label-true" nesting="deemedStatus-label-true" for="deemedStatus-true" class="custom-control-label">Deemed</label></div><div class="custom-control custom-radio"><input id="deemedStatus-false" type="radio" name="deemedStatus" class="custom-control-input" value="false"><label id="deemedStatus-label-false" nesting="deemedStatus-label-false" for="deemedStatus-false" class="custom-control-label">Non-Deemed</label></div></fieldset>
+                        <fieldset class=""><legend id="deemedStatus-legend" class="iqies-legend-heading-no-error">Deemed Status</legend><div class="custom-control custom-radio"><input id="deemedStatus-" type="radio" name="deemedStatus" class="custom-control-input" value="" checked=""><label id="deemedStatus-label-" nesting="deemedStatus-label-" for="deemedStatus-" class="custom-control-label">Both</label></div><div class="custom-control custom-radio"><input id="deemedStatus-true" type="radio" name="deemedStatus" class="custom-control-input" value="true" onChange=""><label id="deemedStatus-label-true" nesting="deemedStatus-label-true" for="deemedStatus-true" class="custom-control-label">Deemed</label></div><div class="custom-control custom-radio"><input id="deemedStatus-false" type="radio" name="deemedStatus" class="custom-control-input" value="false"><label id="deemedStatus-label-false" nesting="deemedStatus-label-false" for="deemedStatus-false" class="custom-control-label">Non-Deemed</label></div></fieldset>
                   </div>
               </div>
               
@@ -463,6 +483,11 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
   <script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+	  $(document).ready(function () {
+   
+ $('[data-toggle="tooltip"]').tooltip(); 
+	  }); 
+	  
   $( function() {
     var availableProviderTypes = [
       "Home Health Agencies",
