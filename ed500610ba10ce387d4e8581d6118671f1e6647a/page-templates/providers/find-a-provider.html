@@ -50,7 +50,7 @@
                   </li>
                   
                   <li class="breadcrumb-item">
-                    Providers
+                    Find a Provider
                   </li>
                 </ol>
               </nav>
@@ -74,45 +74,25 @@
     </div>-->
 
     <div>
-         <h1>Providers</h1>
-                <p>Find a provider by name, CCN, state facility ID or add a new provider.</p>
+         <h1>Find a Provider</h1>
+                <p>Find a provider by name, CCN, state facility ID.</p>
                 
         <div class="row">
                     <div class="col-md-6">
+						<label>Search</label>
                         <div class="input-group">
         <input type="text" class="form-control" id="inlineFormInputGroup" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();
     }" >
           <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="
-if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
-    $('#providerSearchResults tbody tr').addClass('hide'); 
-    $('#providerSearchResults tbody tr.bright').removeClass('hide');
-    $('#providerSearchResults .info-text').html('Search Results: 1 Provider');
-    $('#providerSearchResults nav').addClass('hide'); 
-    $('#noResults').addClass('hide');                                                                          
-} else if ( $('#inlineFormInputGroup').val().indexOf('g') > -1 ){ 
-    $('#providerSearchResults tbody tr').addClass('hide'); 
-    $('#providerSearchResults tbody tr.good').removeClass('hide'); 
-    $('#providerSearchResults .info-text').html('Search Results: 2 Providers'); 
-    $('#providerSearchResults nav').addClass('hide'); 
-    $('#noResults').addClass('hide'); 
-} else if ( $('#inlineFormInputGroup').val().indexOf('z') > -1 ) { 
-    $('#providerSearchResults').addClass('hide'); 
-    $('#noResults').removeClass('hide'); 
-} else { 
-    $('#providerSearchResults').removeClass('hide'); 
-    $('#providerSearchResults tbody tr').removeClass('hide'); 
-    $('#noResults').addClass('hide'); 
-    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
-    $('#providerSearchResults nav').removeClass('hide'); }">Search</button>
+         
         </div>
-      </div><div class="input-group-help-text help-text">Search by provider name, CCN, iQIES ID or state facility ID</div>
+      </div><div class="input-group-help-text help-text">Search by provider name, CCN, or state facility ID</div>
                     </div> 
-                    <div class="col-md-6">
+                   <!-- <div class="col-md-6">
                         <div class="divider">
                         <a href="add-a-provider.html" class="btn btn-outline-primary">Add a Provider</a></div>
-                    </div>
+                    </div>-->
                 </div>
           <div class="iq-accordion showhide">
             <div class="card no-border">
@@ -223,10 +203,38 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
                   </div>
               </div>
           </div>
-                  <div class="row">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+		<div class="row iq-button-wrapper">
                       <div class="col">
                           <div class="iqies-margin-bottom">
-                              <a href="#providerSearchResults" id="viewProviderSearchResults" class="btn btn-primary" onClick="$('#advancedSearchLink').click(); ">Search</a> <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
+                              <a href="#providerSearchResults" id="viewProviderSearchResults" class="btn btn-primary searchButton"
+onClick="$('#advancedSearchLink').click();
+if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
+    $('#providerSearchResults tbody tr').addClass('hide'); 
+    $('#providerSearchResults tbody tr.bright').removeClass('hide');
+    $('#providerSearchResults .info-text').html('Search Results: 1 Provider');
+    $('#providerSearchResults nav').addClass('hide'); 
+    $('#noResults').addClass('hide');                                                                          
+} else if ( $('#inlineFormInputGroup').val().indexOf('g') > -1 ){ 
+    $('#providerSearchResults tbody tr').addClass('hide'); 
+    $('#providerSearchResults tbody tr.good').removeClass('hide'); 
+    $('#providerSearchResults .info-text').html('Search Results: 2 Providers'); 
+    $('#providerSearchResults nav').addClass('hide'); 
+    $('#noResults').addClass('hide'); 
+} else if ( $('#inlineFormInputGroup').val().indexOf('z') > -1 ) { 
+    $('#providerSearchResults').addClass('hide'); 
+    $('#noResults').removeClass('hide'); 
+} else { 
+    $('#providerSearchResults').removeClass('hide'); 
+    $('#providerSearchResults tbody tr').removeClass('hide'); 
+    $('#noResults').addClass('hide'); 
+    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide'); }">Search</a>
+							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
     $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
@@ -234,10 +242,6 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
                           </div>
                       </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <br>
           <h5>Advanced Search Criteria (1)</h5>
           <div class="form-group"><!--<label class="inline">State: </label>--><div class="badge badge-pill">
@@ -309,7 +313,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         14387 Edgewood Drive<br>
         Baxter, VA 23231</td>
       <td>Home Health Agency</td>
-      <td>247269</td>
+      <td>CCN 247269</td>
       <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
 	  <td>Non-Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
@@ -319,7 +323,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         804 Wright Street<br>
         Brainerd, IL 63227</td>
       <td>Home Health Agency</td>
-      <td>248032</td>
+      <td>CCN 248032</td>
       <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
 	  <td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
@@ -329,7 +333,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         PO Box 27 Main Street<br>
         Rutledge, IL 63222</td>
       <td>Home Health Agency</td>
-      <td>447064</td>
+      <td>CCN 447064</td>
       <td><span class="badge badge-secondary has-tooltip" data-toggle="tooltip" title="Closed">C</span> Terminated</td>
 		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
@@ -339,7 +343,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
       150 Robeson Street, 4th Floor<br>
       Fayetteville, IL 63222</td>
       <td>Hospital</td>
-      <td>342014</td>
+      <td>CCN 342014</td>
       <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
 		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
@@ -349,7 +353,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
         State Road 23 South<br>
         Casa Blanca, IL 63222</td>
       <td>Home Health Agency</td>
-      <td>327144</td>
+      <td>CCN 327144</td>
       <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Certified</td>
 		<td>Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
@@ -359,7 +363,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
       PO Box 236<br>
       New Laguna, VA 23222</td>
       <td>Home Health Agency</td>
-      <td>327046</td>
+      <td>iQIES 327046</td>
       <td><span class="badge badge-success has-tooltip" data-toggle="tooltip" title="Open">O</span> Pending</td>
 		<td>Non-Deemed</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
