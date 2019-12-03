@@ -899,16 +899,16 @@
               <fieldset>
                 <legend>Checkbox Group <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="check1" checked class="custom-control-input">
-                   <label class="custom-control-label" for="check1">Option 1 </label>
+                  <input type="checkbox" id="cb1" checked class="custom-control-input">
+                   <label class="custom-control-label" for="cb1">Option 1 </label>
                 </div>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="check2" class="custom-control-input">
-                   <label class="custom-control-label" for="check2">Option 2</label>
+                  <input type="checkbox" id="cb2" class="custom-control-input">
+                   <label class="custom-control-label" for="cb2">Option 2</label>
                 </div>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="check3" disabled class="custom-control-input">
-                   <label class="custom-control-label" for="check3">Option 3 <a href="javascript:void(0)" class="infoTooltip" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">&nbsp;</a></label>
+                  <input type="checkbox" id="cb3" disabled class="custom-control-input">
+                   <label class="custom-control-label" for="cb3">Option 3 <a href="javascript:void(0)" class="infoTooltip" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">&nbsp;</a></label>
                 </div>     
               </fieldset>
             </div>
@@ -1367,7 +1367,7 @@
     <article id="breadcrumb">
         <h3>Breadcrumb</h3>
         <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
         <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
@@ -1563,7 +1563,7 @@
         <h3>Global Navigation Bar</h3>
         <header>
         <div class="iq-global-nav">
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col">
                   <nav><a href="#"><img src="../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
@@ -1614,10 +1614,9 @@
     <article id="headerTop">
         <h3>Top Banner</h3>
          <header>
-           
-            <div class="container-fluid p-4">
-              <div class="row">
-                <div class="col">
+	<div class="container-fluid">
+	  <div class="row iq-page-header">
+		<div class="col">
                   <nav>
                     <a href="./">
                       <img src="../../src/assets/images/logo-iqies.svg"
@@ -1646,7 +1645,7 @@
     <article id="headerWhite">
         <h3>Profile Header - White</h3>
         <div class="iq-page-header-wrapper" style="border: 1px solid #ddd;">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
@@ -1682,7 +1681,7 @@
     <article id="headerProfile">
         <h3>Provider Profile Header</h3>
         <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
@@ -1705,11 +1704,11 @@
                         <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->CCN 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
-                  <div class="col-md-5 col-lg-4 iq-page-header-contact">
+                  <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
                     <address>
 667 Bent Ridge Lane, Suite 1000<br>
 Barrington, IL 60010<br>
-<em class="fas fa-phone-alt"></em> (888) 888-8888<br>
+Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
 <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
                     </address>
                   </div>
@@ -1717,7 +1716,7 @@ Barrington, IL 60010<br>
               </div>
             </div>
             <div class="iq-summary-bar">
-              <div class="container">
+              <div class="container-fluid">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
@@ -1743,7 +1742,7 @@ Barrington, IL 60010<br>
         
         <h4>Provider with Long Name</h4>
         <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
@@ -1766,11 +1765,11 @@ Barrington, IL 60010<br>
                         <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->CCN 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
-                  <div class="col-md-5 col-lg-4 iq-page-header-contact">
+                  <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
                     <address>
 1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>
 Barrington, IL 60010<br>
-<em class="fas fa-phone-alt"></em> (888) 888-8888<br>
+Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
 <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
                     </address>
                   </div>
@@ -1778,7 +1777,7 @@ Barrington, IL 60010<br>
               </div>
             </div>
             <div class="iq-summary-bar">
-              <div class="container">
+              <div class="container-fluid">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
@@ -1805,7 +1804,7 @@ Barrington, IL 60010<br>
     <article id="headerDetail">
         <h3>Survey Header</h3>
         <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
@@ -1831,11 +1830,11 @@ Barrington, IL 60010<br>
                         <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
-                  <div class="col-md-5 col-lg-4 iq-page-header-contact">
+                  <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
                     <address>
 667 Bent Ridge Lane, Suite 1000<br>
 Barrington, IL 60010<br>
-<em class="fas fa-phone-alt"></em> (888) 888-8888<br>
+Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
 <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
                     </address>
                   </div>
@@ -1843,7 +1842,7 @@ Barrington, IL 60010<br>
               </div>
             </div>
             <div class="iq-summary-bar">
-              <div class="container">
+              <div class="container-fluid">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
@@ -1880,7 +1879,7 @@ Barrington, IL 60010<br>
         
         <h4>Provider With Long Name</h4>
         <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
@@ -1906,9 +1905,9 @@ Barrington, IL 60010<br>
                         <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html" class="has-tooltip" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip" data-placement="top">Intermediate Care Facilities for Individuals with Intellectual Disability</a> - IQIES 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
-                  <div class="col-md-5 col-lg-4 iq-page-header-contact">
+                  <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
                     <address>
-                       1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br><i class="fas fa-phone-alt"></i> (888) 888-8888<br>
+                       1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br>Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
                         <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="fas fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
                     </address>
                   </div>
@@ -1916,7 +1915,7 @@ Barrington, IL 60010<br>
               </div>
             </div>
             <div class="iq-summary-bar">
-              <div class="container">
+              <div class="container-fluid">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
@@ -1955,7 +1954,7 @@ Barrington, IL 60010<br>
     <!-- <article id="headerDetail2">
         <h3>Provider Details Header</h3>
         <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
@@ -1981,11 +1980,11 @@ Barrington, IL 60010<br>
                         <a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
-                  <div class="col-md-5 col-lg-4 iq-page-header-contact">
+                  <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
                     <address>
 667 Bent Ridge Lane, Suite 1000<br>
 Barrington, IL 60010<br>
-<em class="fas fa-phone-alt"></em> (888) 888-8888<br>
+Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
 <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
                     </address>
                   </div>
@@ -1993,7 +1992,7 @@ Barrington, IL 60010<br>
               </div>
             </div>
             <div class="iq-summary-bar">
-              <div class="container">
+              <div class="container-fluid">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
@@ -2030,7 +2029,7 @@ Barrington, IL 60010<br>
         
         <h3>Provider With Long Name</h3>
         <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
@@ -2056,9 +2055,9 @@ Barrington, IL 60010<br>
                         <a href="provider-profile-blank.html" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip" data-placement="top">Intermediate Care Facilities for Individuals with Intellectual Disability</a> - IQIES 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
-                  <div class="col-md-5 col-lg-4 iq-page-header-contact">
+                  <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
                     <address>
-                       1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br><i class="fas fa-phone-alt"></i> (888) 888-8888<br>
+                       1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br>Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
                         <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="fas fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
                     </address>
                   </div>
@@ -2066,7 +2065,7 @@ Barrington, IL 60010<br>
               </div>
             </div>
             <div class="iq-summary-bar">
-              <div class="container">
+              <div class="container-fluid">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
@@ -2108,10 +2107,10 @@ Barrington, IL 60010<br>
     <article id="footer">
         <h3>Footer</h3>
         <footer>
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
-                <div class="col-lg-10">
-                  <div class="iq-footer-content">
+                <div class="col-lg-10 col-xl-10">
+        <div class="iq-footer-content">
                     <div class="row">
                       <div class="col">
                         <div class="iq-footer-heading">
@@ -2173,7 +2172,7 @@ Barrington, IL 60010<br>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-2 d-flex align-items-center">
+                <div class="col-lg-2 col-xl-2 d-flex align-items-center">
                   <img src="../../src/assets/images/logo-cms.svg"
                     class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
                 </div>
@@ -2183,7 +2182,7 @@ Barrington, IL 60010<br>
         <br>
         <h4>Short Footer</h4>
         <footer class="short-footer">
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col-lg-10">
                   <div class="iq-footer-content d-flex align-items-center">
@@ -2201,7 +2200,7 @@ Barrington, IL 60010<br>
                     
                   </div>
                 </div>
-                <div class="col-lg-2 d-flex align-items-center">
+                <div class="col-lg-2 col-xl-2 d-flex align-items-center">
                   <img src="../../src/assets/images/logo-cms.svg"
                     class="logo cms-logo d-none d-sm-block" style="height: 4rem" alt="CMS Logo">
                 </div>

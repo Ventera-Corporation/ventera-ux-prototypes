@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Provider Profile</title>
+<title>Readonly 1 | Provider Profile</title>
 <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
@@ -54,7 +54,7 @@
                     <div class="iq-page-header-content">
                       <h1>BrightHope</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->IQIES 123456 - Hospice - Non-Deemed</div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->IQIES 123456 - Hospice - <a href="#">Non-Deemed</a></div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -85,7 +85,7 @@
                       <p>Undetermined</p>
                     </div>
                     <div class="iq-summary-bar-action p-1">
-                      <a href="provider-details-hospice.html" class="btn btn-link">
+                      <a href="provider-details-hospice-readonly.html" class="btn btn-link">
                         View Details
                       </a>
                     </div>
@@ -104,7 +104,11 @@
   
     <div class="row">
       <div class="col-md-12">
-        <div class="alert alert-success providerAddedMsg show" role="alert">
+		<div class="alert alert-warning" role="alert">
+                    <div class="alert-content">You do not have permission to manage this provider's information.</div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  </div>
+        <div class="alert alert-success providerAddedMsg hide" role="alert">
           <div class="alert-content">Provider Added Successfully<br>This hospice is ready for an initial survey. <br><a href="survey-new.html">Add Survey</a></div>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
@@ -129,8 +133,7 @@
       <div class="col-md-12">
           <section>
           <h2>Recent Surveys</h2>
-            
-             <div class="form-group"> <a class="btn btn-outline-primary" href="survey-new.html">Add Survey</a></div>
+           
         <p class="iq-not-available">There are no surveys for this provider.</p>
           
           
@@ -143,7 +146,7 @@
               <a class="btn btn-primary" href="/providers/64606/surveys/create">Add Intake</a>
               <button type="button" disabled="" to="/providers/64606/surveys" class="btn btn-outline-primary">View All Intakes</button>
           </div>-->
-           <p class="iq-not-available">No Intakes can be added until the provider is certified.</p>
+           <p class="iq-not-available">No intakes can be added until the provider is certified.</p>
           </section>
           <section>
           <h2>Recent Enforcements</h2>
@@ -151,7 +154,7 @@
               <a class="btn btn-primary" href="/providers/64606/surveys/create">Add Enforcement</a>
               <button type="button" disabled="" to="/providers/64606/surveys" class="btn btn-outline-primary">View All Enforcements</button>
           </div>-->
-          <p class="iq-not-available">No Enforcements can be added until the provider is certified.</p>
+          <p class="iq-not-available">No enforcements can be added until the provider is certified.</p>
           </section>
         </div>
         

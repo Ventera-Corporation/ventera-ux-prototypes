@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Search | iQIES</title>
+
+  <link rel="stylesheet"
+    href="../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+</head>
+
+<body>
+  <header>
+        <div class="iq-global-nav">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+                    <div class="dropdown d-sm-none d-lg-inline-block active">
+                        <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Manage AO Providers</a> 
+                          <a class="dropdown-item" href="#">Find a Provider</a>
+                          <a class="dropdown-item" href="#">Add a Provider</a>
+                      </div>
+                    </div><a href="javascript:void(0)" class="iq-assessments-link">Assessments</a>
+                    <div class="dropdown d-sm-none d-lg-inline-block">
+                        <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+                        role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="#">Reports Main</a>
+                        <a class="dropdown-item" href="#">Find a Report Type</a>
+                        <a class="dropdown-item" href="#">My Reports</a>
+                      </div>
+                    </div>
+                    <div class="dropdown d-sm-none d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+                        role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                          <a class="dropdown-item" href="#">Letters</a>
+                          <a class="dropdown-item" href="#">State Customizations</a>
+                      </div>
+                    </div>
+                    <div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+                        id="navbarDropdown4" role="button" data-toggle="dropdown">
+                        <p>DF</p>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
+                          Profile</a>
+                        <a class="dropdown-item" href="#">Help</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+  </div>
+</header>
+
+  <main class="container-fluid">
+    <div class="iq-page-header-wrapper mb-0">
+      <div>
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="../global/global-landing-menu.html">Home</a>
+                  </li>
+                  
+                  <li class="breadcrumb-item">
+                  Search</li>
+                </ol>
+              </nav>
+              <div class="iq-page-header-content">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+         <h1>Search</h1>
+         <p>Search for providers, surveys, intakes, or enforcements.</p>
+         
+		<div class="row">
+			<div class="col-md-3 col-lg-2">
+				<label>Type</label>
+				 <select onChange="$('.help-text span').addClass('hide'); $('#advancedSearch-showhide .read-view').removeClass('active'); switch(this.options[this.selectedIndex].value){ 
+					case 'Provider': $('.help-text .provider').removeClass('hide'); $('#advancedSearch-showhide .read-view.provider').addClass('active');  break; 
+				  	case 'Survey': $('.help-text .survey').removeClass('hide'); $('#advancedSearch-showhide .read-view.survey').addClass('active'); break; 
+					case 'Intake': $('.help-text .intake').removeClass('hide'); $('#advancedSearch-showhide .read-view.intake').addClass('active'); break; 
+					case 'Enforcement': $('.help-text .enforcement').removeClass('hide'); $('#advancedSearch-showhide .read-view.enforcement').addClass('active'); break;   
+				}"><option>Provider</option><option>Survey</option><option>Intake</option><option>Enforcement</option></select>
+			</div>
+			<div class="col-md-6 col-lg-7">
+				<label>Keyword</label>
+				<input type="text" class="form-control" id="inlineFormInputGroup" onKeyUp="if (event.keyCode === 13) {
+        $('.searchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text"><span class="provider">Enter provider name, CCN, or state facility ID</span><span class="survey hide">Enter survey ID, provider name, or CCN</span><span class="intake hide">Enter intake ID, provider name, or CCN</span><span class="enforcement hide">Enter enforcement ID, provider name, or CCN</span></div>  
+			</div>
+		</div>
+
+		
+                              
+          <div class="iq-accordion showhide">
+            <div class="card no-border">
+              <div class="card-header d-flex">
+                <button id="advancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#advancedSearch-showhide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
+                </button>
+              </div>
+              <div id="advancedSearch-showhide" class="collapse">
+                <div class="card-body p-0">
+					<br>
+					<div class="provider read-view active">
+						<div class="row">
+							<div class="col-md-5 col-lg-4 col-xl-3">
+								  <div class="form-group">
+									  <label>Provider Type
+										 <input id="providerTypes" class="form-control" type="text" placeholder="All" onChange="if($(this).val() != ''){ $('.subtypesGroup').removeClass('hide')}">
+									  </label>
+								  </div>
+							  </div>
+							<div class="col col-md-5 col-lg-4 col-xl-3">
+								  <div class="form-group">
+									  <label>iQIES ID
+										  <input type="text">
+									  </label>
+								  </div>
+							  </div>
+							<div class="col-md-5 col-lg-4 col-xl-3">
+								  <div class="form-group">
+									  <label>Deemed Status</label>
+									  <!--<div class="btn-group" role="group" aria-label="Button Group for Deemed Status">
+								  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');  $('.deemedDates').addClass('hide'); ">All</button>
+								  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').removeClass('hide'); ">Deemed</button>
+								  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').addClass('hide'); ">Non-Deemed</button>
+								  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').addClass('hide'); ">Suspended</button>
+								</div>-->
+									  <select><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option></select>
+								  </div>
+							</div>
+							<!--<div class="col-md-7">
+								<div class="row hide deemedDates">
+								<div class="col-sm-5">
+								  <div class="form-group">
+									  <label>Deemed - Start Date
+										  <input placeholder="" class="form-control" type="date" value="">
+									  </label>
+									  <span class="form-text">MM/DD/YYYY</span>
+								  </div>
+							  </div>
+							  <div class="col-sm-5">
+								  <div class="form-group">
+									  <label>Deemed - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
+									  <span class="form-text">MM/DD/YYYY</span>
+								  </div>
+							  </div>
+								</div>
+							</div>-->
+            <div class="col-md-5 col-lg-4 col-xl-3">
+                  <div class="form-group">
+                      <label>Federal Certification Status
+                      <input type="text" class="form-control" value="All" placeholder="" id="certsStatus"></label>
+                  </div>
+            </div>
+			<div class="col-md-5 col-lg-4 col-xl-3">
+				<div class="form-group">
+					<fieldset>
+                <legend>Operating Status</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="opStatus1" checked name="opStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="opStatus1"> Both</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="opStatus2" name="opStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="opStatus2"> Open</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="opStatus3" name="opStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="opStatus3"> Closed </label>
+                </div>
+                </fieldset>
+				</div>				
+							</div>
+            <div class="col-md-5 col-lg-4 col-xl-3">
+                  <div class="form-group">
+                      <label>License Number<input class="form-control" type="text" value=""></label>
+                  </div>
+            </div><div class="col col-md-5 col-lg-4 col-xl-3"></div>
+            <div class="col-md-10 col-lg-6 col-xl-4">
+              <div class="form-group">
+                  <label>Street Address<input class="form-control" type="text" value=""></label>
+              </div>
+            </div>
+            <div class="col col-md-5 col-lg-4 col-xl-3">
+              <div class="form-group">
+                  <label>City<input class="form-control" type="text" value=""></label>
+              </div>
+            </div>
+            <div class="col col-md-3 col-lg-3 col-xl-3">
+              <div class="form-group">
+                  <label>State
+                  <input class="form-control" type="text" value="Illinois, Virginia" id="states" placeholder="">
+                  </label>
+              </div>
+            </div>
+            <div class="col col-md-2">
+              <div class="form-group">
+                  <label>ZIP Code<input class="form-control" type="text" value=""></label>
+              </div>
+            </div>
+            <div class="col col-md-5 col-lg-4 col-xl-3">
+                  <div class="form-group">
+                      <label>Management Unit
+                      <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+                      </label>
+                      <p class="help-text">State must be selected</p>
+                  </div>
+              </div>
+            <div class="col col-md-5 col-lg-4 col-xl-3">
+                  <div class="form-group">
+                      <label>Work Unit
+                       <select disabled><option>Select one</option></select>
+                      </label>
+                      <p class="help-text">Management unit must be selected</p>
+                  </div>
+              </div>
+            <div class="col col-md-5 col-lg-4 col-xl-3">
+                  <div class="form-group">
+                      <label>CMS Region
+                      <input class="form-control" type="text" value="" id="cmsregion" placeholder="">
+                      </label>
+                  </div>
+              </div>
+          </div>
+					</div>
+					<div class="survey read-view">
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-2">
+								<div class="form-group">
+								
+									<fieldset>
+                <legend>Survey Status</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="surveyStatus1" checked name="surveyStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="surveyStatus1"> Both </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="surveyStatus2" name="surveyStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="surveyStatus2"> Open</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="surveyStatus3" name="surveyStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="surveyStatus3"> Closed</label>
+                </div>
+                </fieldset>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4 col-xl-3">
+								<div class="form-group">
+									<label>Survey Category</label>
+									<input class="form-control" type="text" value="All" id="surveyCategories" placeholder="">
+								</div>
+							</div>
+						    <div class="col-md-4 col-lg-4 col-xl-3">
+								<div class="form-group">
+									<label>Survey Type</label>
+									<select><option>All</option><option>Health</option><option>Life Safety Code</option><option>xxx</option></select>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Start Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Exit Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Revisit Status</label>
+								<select><option>All</option><option>Not Determined</option><option>Not Required</option><option>Recommended</option><option>Required</option></select>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>POC Status</label>
+								<select><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Staff/Surveyor Name</label>
+								<input type="text">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col col-md-4 col-lg-3 col-xl-3">
+              <div class="form-group">
+                  <label>State
+                  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+                  </label>
+              </div>
+            </div>
+            <div class="col col-md-4 col-lg-3 col-xl-3">
+                  <div class="form-group">
+                      <label>Management Unit
+                      <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+                      </label>
+                      <p class="help-text">State must be selected</p>
+                  </div>
+              </div>
+            <div class="col col-md-4 col-lg-3 col-xl-3">
+                  <div class="form-group">
+                      <label>Work Unit
+                       <select disabled><option>Select one</option></select>
+                      </label>
+                      <p class="help-text">Management unit must be selected</p>
+                  </div>
+              </div>
+							<div class="col-md-10">
+								<div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showSurveyWOEndDate" class="custom-control-input">
+									   <label class="custom-control-label" for="showSurveyWOEndDate">Show only surveys without an exit date</label>
+									</div>   
+								</div>
+								<div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showSurveyWIJ" class="custom-control-input">
+									   <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
+									</div>   
+								</div>
+								<div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showResStaff" class="custom-control-input">
+									   <label class="custom-control-label" for="showResStaff">Show open surveys where I am a responsible staff member</label>
+									</div>   
+								</div>
+							</div>
+							
+							
+						</div><!-- end survey row -->
+								
+					</div>
+					<div class="intake read-view">
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+									<fieldset>
+                <legend>Intake Type</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="intakeType1" checked name="intakeType" class="custom-control-input">
+                  <label class="custom-control-label" for="intakeType1"> Both </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="intakeType2" name="intakeType" class="custom-control-input">
+                  <label class="custom-control-label" for="intakeType2"> Complaint</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="intakeType3" name="intakeType" class="custom-control-input">
+                  <label class="custom-control-label" for="intakeType3"> Incident</label>
+                </div>
+                </fieldset>
+								</div>
+							</div>
+							<div class="col-md-8 col-lg-9">
+								<div class="row">
+									<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+									<label>Intake Status</label>
+									<input class="form-control" type="text" value="All" id="intakeStatus" placeholder="">
+								</div>
+							</div>
+						    <div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+									<label>Triage Priority</label>
+									<input class="form-control" type="text" value="All" id="intakePriority" placeholder="">
+								</div>
+							</div>
+							
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
+								<input type="text">
+								</div>
+							</div>
+							<div class="col-md-10 col-lg-8">
+								<div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="roapproved" class="custom-control-input">
+									   <label class="custom-control-label" for="roapproved">Show only intakes with an investigation approved by an RO</label>
+									</div>   
+								</div>
+							</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Survey Action</label>
+								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Survey Due Date</label>
+								<input type="date">
+										<span class="help-text">MM/DD/YYYY</span>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+									<label>Intake Sub Type</label>
+									<select><option>All</option>
+										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
+										<option>State-only, licensure</option>
+										<option>No State or Federal provider complaince issue invovled</option>
+										<option>Federally required, entity reported</option>
+										<option>State-required, entity reported</option>
+										<option>State-required, may result in Federal non-compliance, entity-reported</option>
+										<option>State-required, all other, entity-reported</option>
+										<option>Reported by other agencies</option>
+										<option>None of the above</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group"><label>Intake Start Date</label>
+								<input type="date">
+								<span class="help-text">MM/DD/YYYY</span></div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group"><label>Incident Receipt Date</label>
+								<input type="date">
+								<span class="help-text">MM/DD/YYYY</span></div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group"><label>RO Approval Date <i class="far fa-info-circle has-tooltip" title="Date the RO approved an investigation for a deemed provider" data-toggle="tooltip"></i></label>
+								<input type="date">
+									<span class="help-text">MM/DD/YYYY</span></div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Responsible Staff Name</label>
+								<input type="text">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<fieldset>
+                <legend>Triage Complete</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="triageComplete1" checked name="triageComplete" class="custom-control-input">
+                  <label class="custom-control-label" for="triageComplete1"> Both </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="triageComplete2" name="triageComplete" class="custom-control-input">
+                  <label class="custom-control-label" for="triageComplete2"> Complete </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="triageComplete3" name="triageComplete" class="custom-control-input">
+                  <label class="custom-control-label" for="triageComplete3"> Incomplete </label>
+                </div>
+                </fieldset>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<label>Triage Complete Date</label>
+								<input type="date">
+								<span class="help-text">MM/DD/YYYY</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col col-md-4 col-lg-3 col-xl-3">
+							  <div class="form-group">
+								  <label>State
+								  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+								  </label>
+							  </div>
+							</div>
+							<div class="col col-md-4 col-lg-3 col-xl-3">
+								  <div class="form-group">
+									  <label>Management Unit
+									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+									  </label>
+									  <p class="help-text">State must be selected</p>
+								  </div>
+							  </div>
+							<div class="col col-md-4 col-lg-3 col-xl-3">
+								  <div class="form-group">
+									  <label>Work Unit
+									   <select disabled><option>Select one</option></select>
+									  </label>
+									  <p class="help-text">Management unit must be selected</p>
+								  </div>
+							  </div>
+					
+							
+						</div><!-- end intake row -->
+					</div>
+					<div class="enforcement read-view">
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-2">
+								<div class="form-group">
+									<fieldset>
+                <legend>Enforcement Type</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="enforcementType1" checked name="enforcementType" class="custom-control-input">
+                  <label class="custom-control-label" for="enforcementType1"> Both </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="enforcementType2" name="enforcementType" class="custom-control-input">
+                  <label class="custom-control-label" for="enforcementType2"> Federal</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="enforcementType3" name="enforcementType" class="custom-control-input">
+                  <label class="custom-control-label" for="enforcementType3"> State</label>
+                </div>
+                </fieldset>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+									<fieldset>
+                <legend>Enforcement Case Status</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="eCaseStatus1" checked name="eCaseStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="eCaseStatus1"> Both </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="eCaseStatus2" name="eCaseStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="eCaseStatus2"> Open</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="eCaseStatus3" name="eCaseStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="eCaseStatus3"> Closed</label>
+                </div>
+                </fieldset>
+								</div>
+							</div>
+	
+						    <div class="col-md-10 col-lg-10">
+								<div class="form-group">
+									<div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="eType3" class="custom-control-input">
+                   <label class="custom-control-label" for="eType3">Show only enforcement cases containing Immediate Jeopardy</label>
+                </div>  
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							
+							<div class="col-md-4 col-lg-3">
+								<div class="form-group">
+								<label>Starting Survey ID</label>
+								<input type="text">
+								</div>
+							</div>
+							
+							<div class="col-md-4 col-lg-3">
+								<div class="form-group">
+								<label>Starting Survey Exit Date</label>
+								<input type="date">
+										<span class="help-text">MM/DD/YYYY</span>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<div class="form-group">
+								<label>Enforcement Start Date</label>
+								<input type="date">
+										<span class="help-text">MM/DD/YYYY</span>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<div class="form-group"><label>Effective Date</label>
+								<input type="date">
+								<span class="help-text">MM/DD/YYYY</span></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3">
+								<div class="form-group"><label>Sanction Type</label>
+									<select><option>All</option>
+										<option>Directed Plan of Correction</option>
+										<option>Temporary Management</option>
+										<option>Directed Inservice Training</option>
+										<option>Civil Monetary Penalty</option>
+										<option>CMS-Approved Alternative or Additional State Remedy</option>
+										<option>Suspension of Payment for New Admissions</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="col-md-4 col-lg-3">
+								<div class="form-group"><label>Hearing/Settlement Status</label>
+								<input type="text" />
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3">
+								<label>CMP Payment Status</label>
+								<input type="text">
+							</div>
+			
+							<div class="col-md-4 col-lg-3">
+								<div class="form-group">
+								<label>Responsible Staff Name</label>
+								<input type="text">
+								</div>
+							</div>
+							
+						</div><!-- end intake row -->
+					</div>
+					
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+		<div class="row iq-button-wrapper">
+                      <div class="col">
+                          <div>
+                              <a href="#searchArea" id="viewProviderSearchResults" class="btn btn-primary searchButton"
+onClick="if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
+    $('#providerSearchResults tbody tr').addClass('hide'); 
+    $('#providerSearchResults tbody tr.bright').removeClass('hide');
+    $('#providerSearchResults .info-text').html('Search Results: 1 Provider');
+    $('#providerSearchResults nav').addClass('hide'); 
+    $('#noResults').addClass('hide');                                                                          
+} else if ( $('#inlineFormInputGroup').val().indexOf('g') > -1 ){ 
+    $('#providerSearchResults tbody tr').addClass('hide'); 
+    $('#providerSearchResults tbody tr.good').removeClass('hide'); 
+    $('#providerSearchResults .info-text').html('Search Results: 2 Providers'); 
+    $('#providerSearchResults nav').addClass('hide'); 
+    $('#noResults').addClass('hide'); 
+} else if ( $('#inlineFormInputGroup').val().indexOf('z') > -1 ) { 
+    $('#providerSearchResults').addClass('hide'); 
+    $('#noResults').removeClass('hide'); 
+} else { 
+    $('#providerSearchResults').removeClass('hide'); 
+    $('#providerSearchResults tbody tr').removeClass('hide'); 
+    $('#noResults').addClass('hide'); 
+    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide'); }
+if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); $('.criteriaCount').html('(3)');  $('#advancedSearchLink').click(); };">Search</a>
+							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
+    $('#providerSearchResults tbody tr').removeClass('hide'); 
+    $('#noResults').addClass('hide'); 
+    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide');">Reset</button>
+                          </div>
+                      </div>
+                  </div>
+		<section id="SearchArea">
+          <br>  
+          <strong>Advanced Search Criteria <span class="criteriaCount">(2)</span></strong>
+		<ul class="iq-inline-list searchCriteria"><li><label class="inline">State: </label>
+			<div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('.searchCriteria li').addClass('hide'); $('.searchCriteria li.none').removeClass('hide'); $('.table tr.il').removeClass('hide'); $('.criteriaCount').html(''); $(this).parent('.badge').hide();"><span aria-hidden="true">&times;</span></button></div>
+			<div class="badge badge-pill"><span>Virginia </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.va').addClass('hide'); $('.criteriaCount').html('(1)');"><span aria-hidden="true">&times;</span></button></div>
+			</li>
+			<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
+        <span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.deemed').addClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		   <li class="none hide"><span class="iq-not-available">No criteria selected.</span></li>
+		</ul>
+  <section id="providerSearchResults">
+          <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10</span> of 112 Providers</p>
+        
+          <div class="table-wrapper" >
+    <table class="table table-striped responsive">
+  <thead>
+    <tr>
+      <th class="sortable ascending" style="width: 15rem;"><span>Provider</span></th>
+      <th class="sortable"><span>Provider Type</span></th>
+      <th class="sortable" style="width: 8rem"><span>ID</span></th>
+      <th class="sortable"><span>Operating Status</span></th>
+      <th class="sortable"><span>Certification Status</span></th>
+	  <th class="sortable"><span>Deeming Status</span></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="deemed il">
+      <td style="min-width: 15rem;"><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
+      <td>Home Health Agency</td>
+      <td style="min-width: 9rem">CCN 368130</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="bright il">
+      <td><a href="provider-profile.html">BrightHope</a><br>
+      667 Bent Ridge Lane, Suite 1000<br>
+      Barrington, IL 60010</td>
+      <td>Hospice</td>
+      <td>iQIES 123456</td>
+      <td>Open</td>
+	  
+      <td>Pending Certification</td><td>Non-Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="provider-profile.html" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="deemed il">
+      <td><a href="#">Encompass Health Braintree Hospital of Braintree</a><br>
+        250 Pond Street<br>
+        Braintree, IL 63222</td>
+      <td>Hospital</td>
+      <td>CCN 223027<br>SFID 1234</td>
+      <td>Open</td>
+	  
+      <td>Certified</td><td>Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="deemed va">
+      <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
+        2401 Avenue J, Suite 240<br>
+        Arlington, VA 23225</td>
+      <td>Home Health Agency</td>
+      <td>CCN 677863</td>
+      <td>Closed</td>
+      <td>Terminated</td>
+	  <td>Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="good va">
+      <td><a href="#">Good Neighbor HHC of Baxter</a><br>
+        14387 Edgewood Drive<br>
+        Baxter, VA 23231</td>
+      <td>Home Health Agency</td>
+      <td>CCN 247269</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Non-Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="good suspended il">
+      <td><a href="#">Good Samaritan Home Health of Brainerd</a><br>
+        804 Wright Street<br>
+        Brainerd, IL 63227</td>
+      <td>Home Health Agency</td>
+      <td>CCN 248032</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Suspended</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="deemed il">
+      <td><a href="#">Grainger Co Health Dept</a><br>
+        PO Box 27 Main Street<br>
+        Rutledge, IL 63222</td>
+      <td>Home Health Agency</td>
+      <td>CCN 447064</td>
+      <td>Closed</td>
+      <td>Terminated</td>
+		<td>Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="deemed il">
+      <td><a href="#">Highsmith Rainey Memorial Hospital</a><br>
+      150 Robeson Street, 4th Floor<br>
+      Fayetteville, IL 63222</td>
+      <td>Hospital</td>
+      <td>CCN 342014</td>
+      <td>Open</td>
+      <td>Certified</td>
+		<td>Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="deemed il">
+      <td><a href="#">Laguna Rainbow Home Care</a><br>
+        State Road 23 South<br>
+        Casa Blanca, IL 63222</td>
+      <td>Home Health Agency</td>
+      <td>CCN 327144</td>
+      <td>Open</td>
+      <td>Certified</td>
+		<td>Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="va">
+      <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
+      PO Box 236<br>
+      New Laguna, VA 23222</td>
+      <td>Home Health Agency</td>
+      <td>iQIES 327046</td>
+      <td>Open</td>
+      <td>Pending</td>
+		<td>Non-Deemed</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+  </tbody>
+</table></div>
+   <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item"><button  class="page-link">3</button></li><li class="page-item"><button class="page-link">4</button></li><li class="page-item"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item"><button class="page-link last">Last</button></li></ul></nav>
+        </section>
+	   
+		</section>
+        
+        <p class="iq-no-results hide" id="noResults" role="status">No providers found for this search.</p>
+          <div class="row hide" id="advancedOps">
+              
+              <div class="col col-md-4">
+                  <div class="form-group">
+                      <label>Address Type</label>
+                      <select class="form-control">
+                          <option value="primary">Primary Practice Location</option>
+                          <option value="all">All Locations</option>
+                      </select>
+                  </div>
+              </div>
+            
+              <div class="col col-md-6">&nbsp;</div>
+             
+              <div class="col col-md-6">&nbsp;</div>
+              <div class="col-md-3">
+                    <div class="form-group">
+                        <fieldset class=""><legend id="deemedStatus-legend" class="iqies-legend-heading-no-error">Deemed Status</legend><div class="custom-control custom-radio"><input id="deemedStatus-" type="radio" name="deemedStatus" class="custom-control-input" value="" checked=""><label id="deemedStatus-label-" nesting="deemedStatus-label-" for="deemedStatus-" class="custom-control-label">Both</label></div><div class="custom-control custom-radio"><input id="deemedStatus-true" type="radio" name="deemedStatus" class="custom-control-input" value="true" onChange=""><label id="deemedStatus-label-true" nesting="deemedStatus-label-true" for="deemedStatus-true" class="custom-control-label">Deemed</label></div><div class="custom-control custom-radio"><input id="deemedStatus-false" type="radio" name="deemedStatus" class="custom-control-input" value="false"><label id="deemedStatus-label-false" nesting="deemedStatus-label-false" for="deemedStatus-false" class="custom-control-label">Non-Deemed</label></div></fieldset>
+                  </div>
+              </div>
+              
+          </div>
+         
+       <!-- <section>
+          <h4>Selected Criteria (0)</h4>
+        </section>-->
+          
+    </div>
+  </main>
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-xl-10">
+        <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/">
+                    <img
+                      src="../../../src/assets/images/logo-iqies-reversed.svg"
+                      class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg"
+                    class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="/help">Help</a><span>
+                  (800)
+                  339-9313
+                </span><a href="mailto:help@qtso.com">Email Us</a><a
+                  href="https://qtso.cms.gov/" target="_blank"
+                  rel="noopener noreferrer">
+                  QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                    class="iq-external-link-icon" alt="">
+                </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                  target="_blank" rel="noopener noreferrer">
+                  Medicare <img
+                    src="../../../src/assets/images/icon-link-external.svg"
+                    class="iq-external-link-icon" alt="">
+                </a><a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="https://www.medicare.gov/about-us/plain-writing"
+                    target="_blank" rel="noopener noreferrer">
+                    Plain Writing <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt="">
+                  </a><a
+                    href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                    target="_blank" rel="noopener noreferrer">
+                    Freedom of
+                    Information Act <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt="">
+                  </a><a
+                    href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                    target="_blank" rel="noopener noreferrer">
+                    No Fear Act <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt="">
+                  </a><a href="https://get.adobe.com/reader/" target="_blank"
+                    rel="noopener noreferrer">
+                    Adobe Acrobat <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-xl-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg"
+            class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript" src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+	  $(document).ready(function () {
+   
+ $('[data-toggle="tooltip"]').tooltip(); 
+	  }); 
+	  
+  $( function() {
+    var availableProviderTypes = [
+      "Home Health Agencies",
+      "Hospice",
+      "Clinical Laboratory"
+    ];
+    var availableSubTypes = [
+        ""
+    ];
+	var availableSurveyCategories = [
+        "Initial Certification (Federal)", "Recertification (Federal)", "Complaint (Federal)", "Initial Licensure (State)", "Re-Licensure (State)", "Licensure Complaint (State)"
+    ];
+    var availableCertStatus = [
+        "All", "Not Applicable", "Pending Certification", "Certified", "Terminated", 
+    ];
+	var availableIntakeStatus = [
+        "All", "Triage/Prioritization", "No	Action", "Pending RO Approval", "Pending Investigation", "Under Investigation" 
+    ];
+	var availablePriority = [
+        "All", "Immediate Jeopardy", "Non-IJ High", "Non-IJ Medium", "Non-IJ Low", "Not Applicable" 
+    ];
+    var availableStates = [
+        "All", "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Canada", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "International", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Marshall Islands", "Maryland", "Massachusetts", "Mexico", "Michigan", "Micronesia", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Virgin Islands", "Washington", "West Virginia", "Wisconsin", "Wyoming" 
+    ];
+    var availableRegions = [
+        "All", "1 - Boston", "2 - New York", "3 - Philadelphia", "4 - Atlanta", "5 - Chicago", "6 - Dallas", "7 - Kansas City", "8 - Denver", "9 - San Francisco", "10 - Seattle"
+    ];
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+ 
+    $( "#providerTypes" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableProviderTypes, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+      
+      $( "#subtypes" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableSubTypes, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+	  
+	  $( "#intakePriority" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availablePriority, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+      
+      $( "#certsStatus" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableCertStatus, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+	  
+	  $( "#intakeStatus" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableIntakeStatus, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+	  
+	  $( "#surveyCategories" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableSurveyCategories, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+      
+      $( "#states" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableStates, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+      
+      $( "#cmsregion" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableRegions, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
+      
+  } );
+  </script>
+</body>
+
+</html>
