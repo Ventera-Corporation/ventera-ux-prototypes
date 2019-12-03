@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Find a Provider | iQIES</title>
+  <title>Search 3 | iQIES</title>
 
   <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
@@ -18,23 +18,51 @@
 
 <body>
   <header>
-	<div class="container-fluid">
-	  <div class="row iq-page-header">
-		<div class="col">
-                  <nav>
-                    <a href="./">
-                      <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo">
-                    </a>
-                      
-                      <button class="btn btn-outline-primary" id="menuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENU</button><nav class="iqies-menu dropdown-menu" ari-labelledby="menuDropdown" style="min-width: 12.5rem;"><ul class="list-group list-group-flush"><a class="list-group-item list-group-item-action iqies-section-header active" href="#">iQIES Home</a><a class="list-group-item list-group-item-action iqies-section-header " href="../users/my-profile.html">My Profile</a><a class="list-group-item list-group-item-action iqies-section-header " href="../providers/providers-landing.html">Providers</a><a class="list-group-item list-group-item-action " href="../providers/find-a-provider.html">Find a Provider</a><a class="list-group-item list-group-item-action " href="../providers/add-a-provider.html">Add a Provider</a><a class="list-group-item list-group-item-action iqies-section-header " href="../reports/reports-landing.html">Reports</a><a class="list-group-item list-group-item-action " href="../reports/find-a-report.html">Find a Report Type</a><a class="list-group-item list-group-item-action " href="../reports/my-reports.html">My Reports</a><a class="list-group-item list-group-item-action " href="../reports/report-activity.html">Report Activity</a><a class="list-group-item list-group-item-action iqies-section-header " href="../admin/index.html">Administration</a><a class="list-group-item list-group-item-action iqies-section-header " href="../help/">Help</a><a class="list-group-item list-group-item-action iqies-section-header" href="../logout.html">Logout</a></ul></nav>
+        <div class="iq-global-nav">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+                    <div class="dropdown d-sm-none d-lg-inline-block active">
+                        <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Providers  <i class="fal fa-chevron-down"></i></a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Manage AO Providers</a> 
+                          <a class="dropdown-item" href="#">Find a Provider</a>
+                          <a class="dropdown-item" href="#">Add a Provider</a>
+                      </div>
+                    </div><a href="javascript:void(0)" class="iq-assessments-link">Assessments</a>
+                    <div class="dropdown d-sm-none d-lg-inline-block">
+                        <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+                        role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="#">Reports Main</a>
+                        <a class="dropdown-item" href="#">Find a Report Type</a>
+                        <a class="dropdown-item" href="#">My Reports</a>
+                      </div>
+                    </div>
+                    <div class="dropdown d-sm-none d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+                        role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                          <a class="dropdown-item" href="#">Letters</a>
+                          <a class="dropdown-item" href="#">State Customizations</a>
+                      </div>
+                    </div>
+                    <div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+                        id="navbarDropdown4" role="button" data-toggle="dropdown">
+                        <p>DF</p>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
+                          Profile</a>
+                        <a class="dropdown-item" href="#">Help</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                      </div>
+                    </div>
                   </nav>
-                    
-                    
                 </div>
               </div>
             </div>
-           
-          </header>
+  </div>
+</header>
 
   <main class="container-fluid">
     <div class="iq-page-header-wrapper mb-0">
@@ -49,8 +77,7 @@
                   </li>
                   
                   <li class="breadcrumb-item">
-                    Find a Provider
-                  </li>
+                  Search</li>
                 </ol>
               </nav>
               <div class="iq-page-header-content">
@@ -62,37 +89,26 @@
       </div>
     </div>
 
-   <!-- <div class="container">
-      <div class="row no-gutters">
-        <div class="col-xl-7 col-md-10">
-          <p class="lead">
-            
-          </p>
-        </div>
-      </div>
-    </div>-->
+   
 
     <div>
-         <h1>Find a Provider</h1>
-                <p>Find a provider by name, CCN, state facility ID.</p>
-                
-        <div class="row">
-                    <div class="col-md-6">
-						<label>Search</label>
-                        <div class="input-group">
-        <input type="text" class="form-control" id="inlineFormInputGroup" onKeyUp="if (event.keyCode === 13) {
-        $('.searchButton').click();
-    }" >
-          <div class="input-group-postpend">
+         <h1>Search</h1>
+         <p>Search for providers, surveys, intakes, and enforcements.</p>
          
-        </div>
-      </div><div class="input-group-help-text help-text">Search by provider name, CCN, or state facility ID</div>
-                    </div> 
-                   <!-- <div class="col-md-6">
-                        <div class="divider">
-                        <a href="add-a-provider.html" class="btn btn-outline-primary">Add a Provider</a></div>
-                    </div>-->
-                </div>
+		<div class="row">
+			<div class="col-md-3 col-lg-2">
+				<label>Type</label>
+				 <select><option>Provider</option><option>Survey</option><option>Intake</option><option>Enforcement</option></select>
+			</div>
+			<div class="col-md-6 col-lg-7">
+				<label>Keyword</label>
+				<input type="text" class="form-control" id="inlineFormInputGroup" onKeyUp="if (event.keyCode === 13) {
+        $('.searchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter provider name, CCN, or state facility ID</div>  
+			</div>
+		</div>
+
+		
+                              
           <div class="iq-accordion showhide">
             <div class="card no-border">
               <div class="card-header d-flex">
@@ -125,6 +141,7 @@
                   <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').removeClass('hide'); $('.deemed').prop('style', 'display: inline-block;');">Deemed</button>
                   <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').addClass('hide');">Non-Deemed</button>
                 </div>
+					  
                   </div>
             </div>
             <div class="col-md-7">
@@ -242,14 +259,38 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
                       </div>
                   </div>
           <br>
-          <h5>Advanced Search Criteria (1)</h5>
-          <div class="form-group"><!--<label class="inline">State: </label>--><div class="badge badge-pill">
-        <span>Illinois </span><button type="button" class="close" aria-label="Close">
+          <h5>Advanced Search Criteria (3)</h5>
+		<div class="form-group"><label class="inline">State: </label> <div class="badge badge-pill">
+        <span>Kentucky </span><button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button></div> <div class="badge badge-pill">
-        <span>Virginia </span><button type="button" class="close" aria-label="Close">
+        <span>Tennessee </span><button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button></div> <div class="deemed" style="display: none;"><!--<label class="inline ml-2">Deemed Status: </label>--><div class="badge badge-pill ">
+        </button></div>
+			<div class="badge badge-pill">
+        <span>North Carolina </span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+			<div class="badge badge-pill">
+        <span>South Carolina </span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+			<div class="badge badge-pill">
+        <span>Georgia </span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+			<div class="badge badge-pill">
+        <span>Alabama </span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+			<div class="badge badge-pill">
+        <span>Mississippi </span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div>
+			<div class="badge badge-pill">
+        <span>Florida </span><button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button></div><div class="deemed" style="display: inline-block"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill ">
         <span>Deemed</span><button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
               </button></div></div></div>
@@ -410,8 +451,6 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
        <!-- <section>
           <h4>Selected Criteria (0)</h4>
         </section>-->
-         
-       
           
     </div>
   </main>
