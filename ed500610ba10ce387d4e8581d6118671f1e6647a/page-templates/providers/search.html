@@ -127,9 +127,9 @@
 						<div class="row">
 							<div class="col-md-5 col-lg-4 col-xl-3">
 								  <div class="form-group">
-									  <label>Provider Type
+									  <label>Provider Type </label>
 										 <input id="providerTypes" class="form-control" type="text" placeholder="All" onChange="if($(this).val() != ''){ $('.subtypesGroup').removeClass('hide')}">
-									  </label>
+									 <span class="help-text">Select one or more</span>
 								  </div>
 							  </div>
 							<div class="col col-md-5 col-lg-4 col-xl-3">
@@ -165,8 +165,9 @@
 							</div>-->
             <div class="col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
-                      <label>Federal Certification Status
-                      <input type="text" class="form-control" value="All" placeholder="" id="certsStatus"></label>
+                      <label>Federal Certification Status</label>
+                      <input type="text" class="form-control" value="All" placeholder="" id="certsStatus">
+					  <span class="help-text">Select one or more</span>
                   </div>
             </div>
 			<div class="col-md-5 col-lg-4 col-xl-3">
@@ -213,9 +214,9 @@
             </div>
             <div class="col col-md-3 col-lg-3 col-xl-3">
               <div class="form-group">
-                  <label>State
+                  <label>State</label>
                   <input class="form-control" type="text" value="Illinois, Virginia" id="states" placeholder="">
-                  </label>
+                  <span class="help-text">Select one or more</span>
               </div>
             </div>
             <div class="col col-md-2">
@@ -242,19 +243,24 @@
               </div>
             <div class="col col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
-                      <label>CMS Region
+                      <label>CMS Region</label>
                       <input class="form-control" type="text" value="" id="cmsregion" placeholder="">
-                      </label>
+                      <span class="help-text">Select one or more</span>
                   </div>
               </div>
           </div>
 					</div>
 					<div class="survey read-view">
 						<div class="row">
-							<div class="col-md-4 col-lg-3 col-xl-2">
+							<div class="col-md-4 col-lg-3 col-xl-3">
 								<div class="form-group">
-								
-									<fieldset>
+									<label>Survey Status</label>
+								<div class="btn-group" role="group" aria-label="">
+                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                </div>
+			   <!--<fieldset>
                 <legend>Survey Status</legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="surveyStatus1" checked name="surveyStatus" class="custom-control-input">
@@ -268,13 +274,14 @@
                   <input type="radio" id="surveyStatus3" name="surveyStatus" class="custom-control-input">
                   <label class="custom-control-label" for="surveyStatus3"> Closed</label>
                 </div>
-                </fieldset>
+                </fieldset>-->
 								</div>
 							</div>
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Survey Category</label>
 									<input class="form-control" type="text" value="All" id="surveyCategories" placeholder="">
+									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
 						    <div class="col-md-4 col-lg-4 col-xl-3">
@@ -287,9 +294,9 @@
 						<div class="row">
 							<div class="col col-md-4 col-lg-3 col-xl-3">
               <div class="form-group">
-                  <label>State
+                  <label>State</label>
                   <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
-                  </label>
+                  <span class="help-text">Select one or more</span>
               </div>
             </div>
             <div class="col col-md-4 col-lg-3 col-xl-3">
@@ -333,7 +340,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-lg-6 col-xl-6">
-								<div class="form-group">
+								
 								<label>Start Date Range</label>
 								<div class="row">
 									<div class="col-md-6">
@@ -351,10 +358,10 @@
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 								</div>
-								</div>
+								
 							</div>
 							<div class="col-md-6 col-lg-6 col-xl-6">
-								<div class="form-group">
+								
 								<label>Exit Date Range</label>
 								<div class="row">
 									<div class="col-md-6">
@@ -372,7 +379,7 @@
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>
 								</div>
-								</div>
+							
 							</div>
 						</div>
 						<div class="row">
@@ -390,8 +397,9 @@
 							</div>
 							<div class="col-md-4 col-lg-3 col-xl-3">
 								<div class="form-group">
-								<label>Staff/Surveyor Name</label>
+								<label>Responsible Staff</label>
 								<input type="text">
+								<span class="help-text">Select one or more</span>
 								</div>
 							</div>
 						</div>
@@ -402,7 +410,13 @@
 						<div class="row">
 							<div class="col-md-4 col-lg-3 col-xl-3">
 								<div class="form-group">
-									<fieldset>
+									<label>Intake Type</label>
+									<div class="btn-group" role="group" aria-label="Button Group Example">
+                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complaint</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incident</button>
+                </div>
+									<!--<fieldset>
                 <legend>Intake Type</legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="intakeType1" checked name="intakeType" class="custom-control-input">
@@ -416,7 +430,7 @@
                   <input type="radio" id="intakeType3" name="intakeType" class="custom-control-input">
                   <label class="custom-control-label" for="intakeType3"> Incident</label>
                 </div>
-                </fieldset>
+                </fieldset>-->
 								</div>
 							</div>
 							<div class="col-md-8 col-lg-9">
@@ -425,12 +439,14 @@
 								<div class="form-group">
 									<label>Intake Status</label>
 									<input class="form-control" type="text" value="All" id="intakeStatus" placeholder="">
+									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
 						    <div class="col-md-4 col-lg-3 col-xl-3">
 								<div class="form-group">
 									<label>Triage Priority</label>
 									<input class="form-control" type="text" value="All" id="intakePriority" placeholder="">
+									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
 							
@@ -457,6 +473,7 @@
 							  <div class="form-group">
 								  <label>State
 								  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+								  <span class="help-text">Select one or more</span>
 								  </label>
 							  </div>
 							</div>
@@ -476,7 +493,7 @@
 									  <p class="help-text">Management unit must be selected</p>
 								  </div>
 							  </div>
-					
+							  
 							
 						</div>
 						<div class="row">
@@ -548,16 +565,18 @@
 							</div>
 							
 							
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>Responsible Staff Name</label>
-								<input type="text">
-								</div>
-							</div>
+							
 						</div>
 						<div class="row">
 							<div class="col-md-4 col-lg-3 col-xl-3">
-								<fieldset>
+								<label>Triage Complete</label>
+								<div class="btn-group" role="group" aria-label="Button Group Example">
+                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complete</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incomplete</button>
+                </div>
+								
+								<!--<fieldset>
                 <legend>Triage Complete</legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="triageComplete1" checked name="triageComplete" class="custom-control-input">
@@ -571,10 +590,10 @@
                   <input type="radio" id="triageComplete3" name="triageComplete" class="custom-control-input">
                   <label class="custom-control-label" for="triageComplete3"> Incomplete </label>
                 </div>
-                </fieldset>
+                </fieldset>-->
 							</div>
 							<div class="col-md-6 col-lg-6 col-xl-6">
-								<div class="form-group">
+								
 								<label>Triage Complete Date Range</label>
 								<div class="row">
 									<div class="col-md-6">
@@ -592,6 +611,21 @@
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 								</div>
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Responsible Staff</label>
+								<input type="text">
+								<span class="help-text">Select one or more</span>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Complainant or Person Affected</label>
+								<input type="text">
 								</div>
 							</div>
 						</div>
@@ -599,9 +633,16 @@
 					</div>
 					<div class="enforcement read-view">
 						<div class="row">
-							<div class="col-md-4 col-lg-3 col-xl-2">
+							<div class="col-md-4 col-lg-3 col-xl-3">
 								<div class="form-group">
-									<fieldset>
+									<label>Enforcement Type</label>
+									<div class="btn-group" role="group" aria-label="Button Group Example">
+                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Federal</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">State</button>
+                </div>
+									
+									<!--<fieldset>
                 <legend>Enforcement Type</legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="enforcementType1" checked name="enforcementType" class="custom-control-input">
@@ -615,12 +656,19 @@
                   <input type="radio" id="enforcementType3" name="enforcementType" class="custom-control-input">
                   <label class="custom-control-label" for="enforcementType3"> State</label>
                 </div>
-                </fieldset>
+                </fieldset>-->
 								</div>
 							</div>
 							<div class="col-md-4 col-lg-3 col-xl-3">
 								<div class="form-group">
-									<fieldset>
+									<label>Enforcement Case Status</label>
+									<div class="btn-group" role="group" aria-label="Button Group Example">
+                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                </div>
+									
+									<!--<fieldset>
                 <legend>Enforcement Case Status</legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="eCaseStatus1" checked name="eCaseStatus" class="custom-control-input">
@@ -634,13 +682,14 @@
                   <input type="radio" id="eCaseStatus3" name="eCaseStatus" class="custom-control-input">
                   <label class="custom-control-label" for="eCaseStatus3"> Closed</label>
                 </div>
-                </fieldset>
+                </fieldset>-->
 								</div>
 							</div>
 							<div class="col-md-4 col-lg-3">
 								<div class="form-group">
 								<label>Associated Survey IDs</label>
 								<input type="text">
+								<span class="help-text">Select one or more</span>
 								</div>
 							</div>
 	
@@ -713,7 +762,7 @@
 						
 							<div class="col-md-4 col-lg-3">
 								<div class="form-group"><label>Sanction Type</label>
-									<input type="text">
+									<input type="text" id="sanctionType"><span class="help-text">Select one or more</span>
 								</div>
 							</div>
 							
@@ -724,13 +773,13 @@
 							</div>-->
 							<div class="col-md-4 col-lg-3">
 								<label>CMP Payment Status</label>
-								<input type="text">
+								<input type="text" id="cmpPaymentStatus"><span class="help-text">Select one or more</span>
 							</div>
 			
 							<div class="col-md-4 col-lg-3">
 								<div class="form-group">
-								<label>Responsible Staff Name</label>
-								<input type="text">
+								<label>Responsible Staff</label>
+								<input type="text"><span class="help-text">Select one or more</span>
 								</div>
 							</div>
 							
@@ -796,7 +845,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
         <span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.deemed').addClass('hide');">
           <span aria-hidden="true">&times;</span>
 				</button></div></div></li>
-		   <li class="none hide"><span class="iq-not-available">No criteria selected.</span></li>
+		   <!--<li class="none hide"><span class="iq-not-available">No criteria selected.</span></li>-->
 		</ul>
   <section id="providerSearchResults">
           <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span></p>
