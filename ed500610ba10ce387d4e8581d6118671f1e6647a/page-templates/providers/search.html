@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
      <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -95,11 +97,11 @@
 		<div class="row">
 			<div class="col-md-3 col-lg-2">
 				<label>Type</label>
-				 <select onChange="$('.help-text span').addClass('hide'); $('#advancedSearch-showhide .read-view').removeClass('active'); switch(this.options[this.selectedIndex].value){ 
-					case 'Provider': $('.help-text .provider').removeClass('hide'); $('#advancedSearch-showhide .read-view.provider').addClass('active');  break; 
-				  	case 'Survey': $('.help-text .survey').removeClass('hide'); $('#advancedSearch-showhide .read-view.survey').addClass('active'); break; 
-					case 'Intake': $('.help-text .intake').removeClass('hide'); $('#advancedSearch-showhide .read-view.intake').addClass('active'); break; 
-					case 'Enforcement': $('.help-text .enforcement').removeClass('hide'); $('#advancedSearch-showhide .read-view.enforcement').addClass('active'); break;   
+				 <select onChange="$('.help-text span').addClass('hide'); $('.table-wrapper table').addClass('hide'); $('#advancedSearch-showhide .read-view').removeClass('active'); switch(this.options[this.selectedIndex].value){ 
+					case 'Provider': $('.help-text .provider').removeClass('hide'); $('#advancedSearch-showhide .read-view.provider').addClass('active'); $('#providerTable').removeClass('hide');  break; 
+				  	case 'Survey': $('.help-text .survey').removeClass('hide'); $('#advancedSearch-showhide .read-view.survey').addClass('active'); $('#surveyTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 54 Surveys'); break; 
+					case 'Intake': $('.help-text .intake').removeClass('hide'); $('#advancedSearch-showhide .read-view.intake').addClass('active'); $('#intakeTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 32 Intakes'); break; 
+					case 'Enforcement': $('.help-text .enforcement').removeClass('hide'); $('#advancedSearch-showhide .read-view.enforcement').addClass('active'); $('#enforcementTable').removeClass('hide');  $('.baCount').html('Results: 1-10 of 24 Enforcements');  break;   
 				}"><option>Provider</option><option>Survey</option><option>Intake</option><option>Enforcement</option></select>
 			</div>
 			<div class="col-md-6 col-lg-7">
@@ -140,13 +142,7 @@
 							<div class="col-md-5 col-lg-4 col-xl-3">
 								  <div class="form-group">
 									  <label>Deemed Status</label>
-									  <!--<div class="btn-group" role="group" aria-label="Button Group for Deemed Status">
-								  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');  $('.deemedDates').addClass('hide'); ">All</button>
-								  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').removeClass('hide'); ">Deemed</button>
-								  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').addClass('hide'); ">Non-Deemed</button>
-								  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.deemedDates').addClass('hide'); ">Suspended</button>
-								</div>-->
-									  <select><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option></select>
+									  <select><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
 								  </div>
 							</div>
 							<!--<div class="col-md-7">
@@ -175,7 +171,7 @@
             </div>
 			<div class="col-md-5 col-lg-4 col-xl-3">
 				<div class="form-group">
-					<fieldset>
+					<!--<fieldset>
                 <legend>Operating Status</legend>
                 <div class="custom-control custom-radio">
                   <input type="radio" id="opStatus1" checked name="opStatus" class="custom-control-input">
@@ -189,15 +185,23 @@
                   <input type="radio" id="opStatus3" name="opStatus" class="custom-control-input">
                   <label class="custom-control-label" for="opStatus3"> Closed </label>
                 </div>
-                </fieldset>
+                </fieldset>-->
+					<label>Operating Status</label>
+					<div class="btn-group" role="group" aria-label="Button Group Example">
+                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                </div>
 				</div>				
 							</div>
             <div class="col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>License Number<input class="form-control" type="text" value=""></label>
                   </div>
-            </div><div class="col col-md-5 col-lg-4 col-xl-3"></div>
-            <div class="col-md-10 col-lg-6 col-xl-4">
+            </div>
+						</div>
+						<div class="row">
+            <div class="col-md-10 col-lg-4 col-xl-3">
               <div class="form-group">
                   <label>Street Address<input class="form-control" type="text" value=""></label>
               </div>
@@ -219,6 +223,7 @@
                   <label>ZIP Code<input class="form-control" type="text" value=""></label>
               </div>
             </div>
+						</div><div class="row">
             <div class="col col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>Management Unit
@@ -280,70 +285,6 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6 col-lg-6 col-xl-6">
-								<div class="form-group">
-								<label>Start Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-6 col-xl-6">
-								<div class="form-group">
-								<label>Exit Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>
-								</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>Revisit Status</label>
-								<select><option>All</option><option>Not Determined</option><option>Not Required</option><option>Recommended</option><option>Required</option></select>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>POC Status</label>
-								<select><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>Staff/Surveyor Name</label>
-								<input type="text">
-								</div>
-							</div>
-						</div>
-						<div class="row">
 							<div class="col col-md-4 col-lg-3 col-xl-3">
               <div class="form-group">
                   <label>State
@@ -389,7 +330,72 @@
 							</div>
 							
 							
-						</div><!-- end survey row -->
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Start Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Exit Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<!--<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Revisit Status</label>
+								<select><option>All</option><option>Not Determined</option><option>Not Required</option><option>Recommended</option><option>Required</option></select>
+								</div>
+							</div>-->
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>POC Status</label>
+								<select><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Staff/Surveyor Name</label>
+								<input type="text">
+								</div>
+							</div>
+						</div>
+						<!-- end survey row -->
 								
 					</div>
 					<div class="intake read-view">
@@ -447,84 +453,6 @@
 							
 						</div>
 						<div class="row">
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>Survey Action</label>
-								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>Survey Due Date</label>
-								<input type="date">
-										<span class="help-text">MM/DD/YYYY</span>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-									<label>Intake Sub Type</label>
-									<select><option>All</option>
-										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
-										<option>State-only, licensure</option>
-										<option>No State or Federal provider complaince issue invovled</option>
-										<option>Federally required, entity reported</option>
-										<option>State-required, entity reported</option>
-										<option>State-required, may result in Federal non-compliance, entity-reported</option>
-										<option>State-required, all other, entity-reported</option>
-										<option>Reported by other agencies</option>
-										<option>None of the above</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group"><label>Intake Start Date</label>
-								<input type="date">
-								<span class="help-text">MM/DD/YYYY</span></div>
-							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group"><label>Incident Receipt Date</label>
-								<input type="date">
-								<span class="help-text">MM/DD/YYYY</span></div>
-							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group"><label>RO Approval Date <i class="far fa-info-circle has-tooltip" title="Date the RO approved an investigation for a deemed provider" data-toggle="tooltip"></i></label>
-								<input type="date">
-									<span class="help-text">MM/DD/YYYY</span></div>
-							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>Responsible Staff Name</label>
-								<input type="text">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<fieldset>
-                <legend>Triage Complete</legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="triageComplete1" checked name="triageComplete" class="custom-control-input">
-                  <label class="custom-control-label" for="triageComplete1"> Both </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="triageComplete2" name="triageComplete" class="custom-control-input">
-                  <label class="custom-control-label" for="triageComplete2"> Complete </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="triageComplete3" name="triageComplete" class="custom-control-input">
-                  <label class="custom-control-label" for="triageComplete3"> Incomplete </label>
-                </div>
-                </fieldset>
-							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<label>Triage Complete Date</label>
-								<input type="date">
-								<span class="help-text">MM/DD/YYYY</span>
-							</div>
-						</div>
-						<div class="row">
 							<div class="col col-md-4 col-lg-3 col-xl-3">
 							  <div class="form-group">
 								  <label>State
@@ -550,7 +478,124 @@
 							  </div>
 					
 							
-						</div><!-- end intake row -->
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Survey Action</label>
+								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Survey Due Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+									<label>Intake Sub Type</label>
+									<select><option>All</option>
+										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
+										<option>State-only, licensure</option>
+										<option>No State or Federal provider complaince issue invovled</option>
+										<option>Federally required, entity reported</option>
+										<option>State-required, entity reported</option>
+										<option>State-required, may result in Federal non-compliance, entity-reported</option>
+										<option>State-required, all other, entity-reported</option>
+										<option>Reported by other agencies</option>
+										<option>None of the above</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Incident Receipt Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</div>
+							</div>
+							
+							
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<div class="form-group">
+								<label>Responsible Staff Name</label>
+								<input type="text">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-xl-3">
+								<fieldset>
+                <legend>Triage Complete</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="triageComplete1" checked name="triageComplete" class="custom-control-input">
+                  <label class="custom-control-label" for="triageComplete1"> Both </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="triageComplete2" name="triageComplete" class="custom-control-input">
+                  <label class="custom-control-label" for="triageComplete2"> Complete </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="triageComplete3" name="triageComplete" class="custom-control-input">
+                  <label class="custom-control-label" for="triageComplete3"> Incomplete </label>
+                </div>
+                </fieldset>
+							</div>
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Triage Complete Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</div>
+							</div>
+						</div>
+						<!-- end intake row -->
 					</div>
 					<div class="enforcement read-view">
 						<div class="row">
@@ -592,6 +637,12 @@
                 </fieldset>
 								</div>
 							</div>
+							<div class="col-md-4 col-lg-3">
+								<div class="form-group">
+								<label>Associated Survey IDs</label>
+								<input type="text">
+								</div>
+							</div>
 	
 						    <div class="col-md-10 col-lg-10">
 								<div class="form-group">
@@ -599,57 +650,78 @@
                   <input type="checkbox" id="eType3" class="custom-control-input">
                    <label class="custom-control-label" for="eType3">Show only enforcement cases containing Immediate Jeopardy</label>
                 </div>  
+									<div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="eType4" class="custom-control-input">
+                   <label class="custom-control-label" for="eType4">Show only enforcement cases with recommended sanctions awaiting RO decision</label>
+                </div>  
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							
-							<div class="col-md-4 col-lg-3">
-								<div class="form-group">
-								<label>Starting Survey ID</label>
-								<input type="text">
-								</div>
-							</div>
 							
-							<div class="col-md-4 col-lg-3">
+							
+							<!--<div class="col-md-4 col-lg-3">
 								<div class="form-group">
 								<label>Starting Survey Exit Date</label>
 								<input type="date">
 										<span class="help-text">MM/DD/YYYY</span>
 								</div>
-							</div>
-							<div class="col-md-4 col-lg-3">
-								<div class="form-group">
-								<label>Enforcement Start Date</label>
-								<input type="date">
-										<span class="help-text">MM/DD/YYYY</span>
+							</div>-->
+							<div class="col-md-6 col-lg-6">
+								
+								<label>Enforcement Start Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
 								</div>
+								
 							</div>
-							<div class="col-md-4 col-lg-3">
-								<div class="form-group"><label>Effective Date</label>
-								<input type="date">
-								<span class="help-text">MM/DD/YYYY</span></div>
+							<div class="col-md-6 col-lg-6">
+								
+								<label>Effective Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								
 							</div>
-						</div>
-						<div class="row">
+						
 							<div class="col-md-4 col-lg-3">
 								<div class="form-group"><label>Sanction Type</label>
-									<select><option>All</option>
-										<option>Directed Plan of Correction</option>
-										<option>Temporary Management</option>
-										<option>Directed Inservice Training</option>
-										<option>Civil Monetary Penalty</option>
-										<option>CMS-Approved Alternative or Additional State Remedy</option>
-										<option>Suspension of Payment for New Admissions</option>
-									</select>
+									<input type="text">
 								</div>
 							</div>
 							
-							<div class="col-md-4 col-lg-3">
+							<!--<div class="col-md-4 col-lg-3">
 								<div class="form-group"><label>Hearing/Settlement Status</label>
 								<input type="text" />
 								</div>
-							</div>
+							</div>-->
 							<div class="col-md-4 col-lg-3">
 								<label>CMP Payment Status</label>
 								<input type="text">
@@ -678,13 +750,13 @@
 onClick="if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
     $('#providerSearchResults tbody tr').addClass('hide'); 
     $('#providerSearchResults tbody tr.bright').removeClass('hide');
-    $('#providerSearchResults .info-text').html('Search Results: 1 Provider');
+    $('#providerSearchResults .baCount').html('Results: 1 Provider');
     $('#providerSearchResults nav').addClass('hide'); 
     $('#noResults').addClass('hide');                                                                          
 } else if ( $('#inlineFormInputGroup').val().indexOf('g') > -1 ){ 
     $('#providerSearchResults tbody tr').addClass('hide'); 
     $('#providerSearchResults tbody tr.good').removeClass('hide'); 
-    $('#providerSearchResults .info-text').html('Search Results: 2 Providers'); 
+    $('#providerSearchResults .baCount').html('Results: 2 Providers'); 
     $('#providerSearchResults nav').addClass('hide'); 
     $('#noResults').addClass('hide'); 
 } else if ( $('#inlineFormInputGroup').val().indexOf('z') > -1 ) { 
@@ -694,13 +766,13 @@ onClick="if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     $('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
-    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults .baCount').html('Results: 1-10 of 112 Providers'); 
     $('#providerSearchResults nav').removeClass('hide'); }
 if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); $('.criteriaCount').html('(3)');  $('#advancedSearchLink').click(); };">Search</a>
 							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
-    $('#providerSearchResults .info-text').html('1-10 of 112 Providers'); 
+    $('#providerSearchResults .baCount').html('Results: 1-10 of 112 Providers'); 
     $('#providerSearchResults nav').removeClass('hide');">Reset</button>
                           </div>
                       </div>
@@ -719,10 +791,10 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 		   <li class="none hide"><span class="iq-not-available">No criteria selected.</span></li>
 		</ul>
   <section id="providerSearchResults">
-          <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10</span> of 112 Providers</p>
+          <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span></p>
         
           <div class="table-wrapper" >
-    <table class="table table-striped responsive">
+    <table class="table table-striped responsive" id="providerTable">
   <thead>
     <tr>
       <th class="sortable ascending" style="width: 15rem;"><span>Provider</span></th>
@@ -844,7 +916,94 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
   </tbody>
-</table></div>
+</table>
+	
+	<table class="table table-striped responsive hide" id="surveyTable">
+  <thead>
+    <tr>
+      <th class="sortable ascending" style="width: 9rem;"><span>Survey ID</span></th>
+      <th class="sortable"><span>Type</span></th>
+	  <th class="sortable"><span>Category</span></th>
+      <th class="sortable"><span>Provider Name</span></th>
+      <th class="sortable"><span>Status</span></th>
+	  <th class="sortable" style="width: 9rem;"><span>Exit Date</span></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="">
+      <td style="min-width: 8rem;"><a href="#">19A3-H1</a></td>
+	  <td>Health</td>
+	  <td><ul class="pl-4 m-0"><li class="pt-0">Initial Certification</li></ul></td>
+      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
+      <td style="width: 8rem;">Open</td>
+	  <td style="width: 8rem;">03/01/2020</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    
+  </tbody>
+</table>
+	<table class="table table-striped responsive hide" id="intakeTable">
+  <thead>
+    <tr>
+	  <th class="sortable ascending" style="width: 9rem;"><span>Intake ID</span></th>
+	  <th class="sortable"><span>Status</span></th>
+	  <th class="sortable"><span>Priority</span></th>
+      <th class="sortable"><span>Provider Name</span></th>
+	  <th class="sortable"><span>Allegations</span></th>
+	  <th class="sortable" style="width: 9rem;"><span>Intake Start Date</span></th>
+	  <th class="sortable" style="width: 9rem;"><span>Survey Due Date</span></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="">
+      <td style="min-width: 8rem;"><a href="#">Complaint 12345</a></td>
+	  <td>Under Investigation<br><a href="#">View Survey</a></td>
+	  <td>Non-Immediate Jeopardy-High</td>
+      <td style="min-width: 15rem;"><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
+      <td style="width: 8rem;"><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+          <div class="dropdown-menu" aria-labelledby="allegationList">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li></ul>
+  		  </div>
+	  </td>
+	  <td style="width: 8rem;">01/01/2020</td>
+	  <td style="width: 8rem;">03/01/2020</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    
+  </tbody>
+</table>
+<table class="table table-striped responsive hide" id="enforcementTable">
+  <thead>
+    <tr>
+	  <th class="sortable ascending" style="width: 9rem;"><span>Case ID</span></th>
+	  <th class="sortable"><span>Type</span></th>
+	  <th class="sortable" style="width: 9rem;"><span>Cycle Start Date</span></th>
+	  <th class="sortable"><span>Starting Survey</span></th>
+      <th class="sortable"><span>Provider Name</span></th>
+	  <th class="sortable"><span>Status</span></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="">
+      <td style="min-width: 8rem;"><a href="#">1234</a></td>
+	  <td>Federal</td>
+	  <td style="width: 8rem;">01/01/2020</td>
+	  <td><a href="#">BFF0-H2 <i class="fal fa-external-link"></i></a> (12/01/2019)</td>
+      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
+      <td>Open</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
+    
+  </tbody>
+</table>
+			  
+	  </div>
    <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item"><button  class="page-link">3</button></li><li class="page-item"><button class="page-link">4</button></li><li class="page-item"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item"><button class="page-link last">Last</button></li></ul></nav>
         </section>
 	   
@@ -961,9 +1120,15 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
   <script type="text/javascript" src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
   <script>
 	  $(document).ready(function () {
    
+		  
+   // $('#providerTable').DataTable( {
+	//	responsive: true
+	//} );
+
  $('[data-toggle="tooltip"]').tooltip(); 
 	  }); 
 	  
@@ -980,8 +1145,11 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
         "Initial Certification (Federal)", "Recertification (Federal)", "Complaint (Federal)", "Initial Licensure (State)", "Re-Licensure (State)", "Licensure Complaint (State)"
     ];
     var availableCertStatus = [
-        "All", "Not Applicable", "Pending Certification", "Certified", "Terminated", 
+        "All", "Not Applicable", "Pending Certification", "Certified", "Terminated"
     ];
+	 var availableSanctionTypes = [
+        "Directed Plan of Correction", "Temporary Management", "Directed Inservice Training", "Civil Monetary Penalty", "CMS-Approved Alternative or Additional State Remedy", "Suspension of Payment for New Admissions"
+    ];  
 	var availableIntakeStatus = [
         "All", "Triage/Prioritization", "No	Action", "Pending RO Approval", "Pending Investigation", "Under Investigation" 
     ];
@@ -1256,7 +1424,38 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
           return false;
         }
       });
-      
+	  
+      $( "#sanctionType" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableSanctionTypes, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
   } );
   </script>
 </body>
