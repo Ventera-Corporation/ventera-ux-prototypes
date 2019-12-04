@@ -486,11 +486,25 @@
 								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
 								</div>
 							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
+							<div class="col-md-6 col-lg-6 col-xl-6">
 								<div class="form-group">
-								<label>Survey Due Date</label>
-								<input type="date">
-										<span class="help-text">MM/DD/YYYY</span>
+								<label>Survey Due Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
 								</div>
 							</div>
 						</div>
@@ -511,11 +525,28 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group"><label>Incident Receipt Date</label>
-								<input type="date">
-								<span class="help-text">MM/DD/YYYY</span></div>
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Incident Receipt Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</div>
 							</div>
+							
 							
 							<div class="col-md-4 col-lg-3 col-xl-3">
 								<div class="form-group">
@@ -542,10 +573,26 @@
                 </div>
                 </fieldset>
 							</div>
-							<div class="col-md-4 col-lg-3 col-xl-3">
-								<label>Triage Complete Date</label>
-								<input type="date">
-								<span class="help-text">MM/DD/YYYY</span>
+							<div class="col-md-6 col-lg-6 col-xl-6">
+								<div class="form-group">
+								<label>Triage Complete Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</div>
 							</div>
 						</div>
 						<!-- end intake row -->
@@ -874,12 +921,12 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 	<table class="table table-striped responsive hide" id="surveyTable">
   <thead>
     <tr>
-      <th class="sortable ascending" style="width: 8rem;"><span>Survey ID</span></th>
+      <th class="sortable ascending" style="width: 9rem;"><span>Survey ID</span></th>
       <th class="sortable"><span>Type</span></th>
 	  <th class="sortable"><span>Category</span></th>
       <th class="sortable"><span>Provider Name</span></th>
       <th class="sortable"><span>Status</span></th>
-	  <th class="sortable" style="width: 8rem;"><span>Exit Date</span></th>
+	  <th class="sortable" style="width: 9rem;"><span>Exit Date</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -887,7 +934,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
     <tr class="">
       <td style="min-width: 8rem;"><a href="#">19A3-H1</a></td>
 	  <td>Health</td>
-	  <td>Initial Certification</td>
+	  <td><ul class="pl-4 m-0"><li class="pt-0">Initial Certification</li></ul></td>
       <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
       <td style="width: 8rem;">Open</td>
 	  <td style="width: 8rem;">03/01/2020</td>
@@ -899,13 +946,13 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 	<table class="table table-striped responsive hide" id="intakeTable">
   <thead>
     <tr>
-	  <th class="sortable ascending" style="width: 8rem;"><span>Intake ID</span></th>
+	  <th class="sortable ascending" style="width: 9rem;"><span>Intake ID</span></th>
 	  <th class="sortable"><span>Status</span></th>
 	  <th class="sortable"><span>Priority</span></th>
       <th class="sortable"><span>Provider Name</span></th>
 	  <th class="sortable"><span>Allegations</span></th>
-	  <th class="sortable" style="width: 8rem;"><span>Intake Start Date</span></th>
-	  <th class="sortable" style="width: 8rem;"><span>Survey Due Date</span></th>
+	  <th class="sortable" style="width: 9rem;"><span>Intake Start Date</span></th>
+	  <th class="sortable" style="width: 9rem;"><span>Survey Due Date</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -914,8 +961,15 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td style="min-width: 8rem;"><a href="#">Complaint 12345</a></td>
 	  <td>Under Investigation<br><a href="#">View Survey</a></td>
 	  <td>Non-Immediate Jeopardy-High</td>
-      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
-      <td style="width: 8rem;">1</td>
+      <td style="min-width: 15rem;"><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
+      <td style="width: 8rem;"><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+          <div class="dropdown-menu" aria-labelledby="allegationList">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li></ul>
+  		  </div>
+	  </td>
 	  <td style="width: 8rem;">01/01/2020</td>
 	  <td style="width: 8rem;">03/01/2020</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
@@ -926,9 +980,9 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 <table class="table table-striped responsive hide" id="enforcementTable">
   <thead>
     <tr>
-	  <th class="sortable ascending" style="width: 8rem;"><span>Case ID</span></th>
+	  <th class="sortable ascending" style="width: 9rem;"><span>Case ID</span></th>
 	  <th class="sortable"><span>Type</span></th>
-	  <th class="sortable" style="width: 8rem;"><span>Cycle Start Date</span></th>
+	  <th class="sortable" style="width: 9rem;"><span>Cycle Start Date</span></th>
 	  <th class="sortable"><span>Starting Survey</span></th>
       <th class="sortable"><span>Provider Name</span></th>
 	  <th class="sortable"><span>Status</span></th>

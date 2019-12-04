@@ -291,7 +291,7 @@ div.iq-accordion-actions { color: #d8d8d8; font-weight: normal; font-size: 1rem;
 .table-wrapper { overflow: hidden; width: 100%; }
 table.table-striped { border: 0; overflow: auto; width: 100%;}
 .table th, .table td { border-top: 0; }
-.table thead th { border-bottom: 1px solid #D8D8D8; border-top: 1px solid #D8D8D8; }
+.table thead th { border-bottom: 1px solid #D8D8D8; border-top: 1px solid #D8D8D8; white-space: normal;}
 .table tbody td { border-bottom: 1px solid #F1F1F1; }
 .table tbody td a { text-decoration: none; }
 .table tbody td a:hover { text-decoration: underline; }
@@ -352,7 +352,8 @@ div.alert { margin-bottom: 2rem;}
 }
 .alert-content ul { margin-bottom: 0; padding-left: 3rem; line-height: 1rem; }
 .alert .close, .alert button.close { font-size: 2rem !important; font-weight: 100; line-height: 1rem; }
-.toast-header .close { font-size: 2rem !important; font-weight: 100; line-height: 1rem;}
+.toast-header .close, .dropdown-menu .close { font-size: 2rem !important; font-weight: 100; line-height: 1rem;}
+.dropdown-menu .close { margin-top: .5rem; margin-right: .5rem;}
 
 /* TOAST */
 .toast { background-color: white; max-width: 350px; }
