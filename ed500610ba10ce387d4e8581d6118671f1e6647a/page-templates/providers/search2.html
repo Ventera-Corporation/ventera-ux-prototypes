@@ -747,23 +747,18 @@
                       <div class="col">
                           <div>
                               <a href="#searchArea" id="viewProviderSearchResults" class="btn btn-primary searchButton"
-onClick="$('.keyword').removeClass('hide'); $('.keyword .key').html($('#inlineFormInputGroup').val());
-if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
-	$('#providerSearchResults').removeClass('hide'); 
+onClick="if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
     $('#providerSearchResults tbody tr').addClass('hide'); 
     $('#providerSearchResults tbody tr.bright').removeClass('hide');
     $('#providerSearchResults .baCount').html('Results: 1 Provider');
     $('#providerSearchResults nav').addClass('hide'); 
-    $('#noResults').addClass('hide');  
-	
+    $('#noResults').addClass('hide');                                                                          
 } else if ( $('#inlineFormInputGroup').val().indexOf('g') > -1 ){ 
-	$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').addClass('hide'); 
     $('#providerSearchResults tbody tr.good').removeClass('hide'); 
     $('#providerSearchResults .baCount').html('Results: 2 Providers'); 
     $('#providerSearchResults nav').addClass('hide'); 
     $('#noResults').addClass('hide'); 
-	
 } else if ( $('#inlineFormInputGroup').val().indexOf('z') > -1 ) { 
     $('#providerSearchResults').addClass('hide'); 
     $('#noResults').removeClass('hide'); 
@@ -777,21 +772,18 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
-    $('#providerSearchResults .baCount').html('1-10 of 1400 Providers'); 
-    $('#providerSearchResults nav').removeClass('hide'); $('input').val(''); $('.searchCriteria li > div').addClass('hide');">Reset</button>
+    $('#providerSearchResults .baCount').html('Results: 1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide');">Reset</button>
                           </div>
                       </div>
                   </div>
 		<section id="SearchArea">
           <br>  
-		<ul class="iq-inline-list searchCriteria"><li><div class="state"><label class="inline">State: </label>
+          <strong>Advanced Search Criteria <span class="criteriaCount">(2)</span></strong>
+		<ul class="iq-inline-list searchCriteria"><li><label class="inline">State: </label>
 			<div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('.searchCriteria li').addClass('hide'); $('.searchCriteria li.none').removeClass('hide'); $('.table tr.il').removeClass('hide'); $('.criteriaCount').html(''); $(this).parent('.badge').hide();"><span aria-hidden="true">&times;</span></button></div>
-			<div class="badge badge-pill"><span>Virginia </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.va').addClass('hide'); $('.criteriaCount').html('(1)');"><span aria-hidden="true">&times;</span></button></div></div>
+			<div class="badge badge-pill"><span>Virginia </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.va').addClass('hide'); $('.criteriaCount').html('(1)');"><span aria-hidden="true">&times;</span></button></div>
 			</li>
-			<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
-        <span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); ">
-          <span aria-hidden="true">&times;</span>
-				</button></div></div></li>
 			<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
         <span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.deemed').addClass('hide');">
           <span aria-hidden="true">&times;</span>
