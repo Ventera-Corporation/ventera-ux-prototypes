@@ -11,11 +11,12 @@
   <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
   <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
      <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+	
 </head>
 
 <body>
@@ -784,7 +785,7 @@
                       <div class="col">
                           <div>
                               <a href="#searchArea" id="viewProviderSearchResults" class="btn btn-primary searchButton"
-onClick="$('.keyword').removeClass('hide'); $('.keyword .key').html($('#inlineFormInputGroup').val());
+onClick="if($('#inlineFormInputGroup').val() != ''){ $('.keyword').removeClass('hide'); $('.keyword .key').html($('#inlineFormInputGroup').val());};
 if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) { 
 	$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').addClass('hide'); 
@@ -838,21 +839,23 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
   <section id="providerSearchResults">
           <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span></p>
         
-          <div class="table-wrapper" >
-    <table class="table table-striped responsive" id="providerTable">
+          
+    <table class="display responsive" id="providerTable">
   <thead>
     <tr>
-      <th class="sortable ascending" style="min-width: 15rem;"><span>Provider</span></th>
-      <th class="sortable"><span>Provider Type</span></th>
-      <th class="sortable" style="min-width: 8rem"><span>ID</span></th>
-      <th class="sortable"><span>Operating Status</span></th>
-      <th class="sortable"><span>Certification Status</span></th>
-	  <th class="sortable"><span>Deeming Status</span></th>
+      <th>&nbsp;</th>
+      <th class="ascending" style="min-width: 15rem;"><span>Provider</span></th>
+      <th><span>Provider Type</span></th>
+      <th style="min-width: 8rem"><span>ID</span></th>
+      <th><span>Operating Status</span></th>
+      <th><span>Certification Status</span></th>
+	  <th><span>Deeming Status</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr class="deemed il">
+      <td>&nbsp;</td>
       <td style="min-width: 15rem;"><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
       <td>Home Health Agency</td>
       <td style="min-width: 9rem">CCN 368130</td>
@@ -862,6 +865,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="bright il">
+      <td>&nbsp;</td>
       <td><a href="provider-profile.html">BrightHope</a><br>
       667 Bent Ridge Lane, Suite 1000<br>
       Barrington, IL 60010</td>
@@ -873,6 +877,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="provider-profile.html" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="deemed il">
+      <td>&nbsp;</td>
       <td><a href="#">Encompass Health Braintree Hospital of Braintree</a><br>
         250 Pond Street<br>
         Braintree, IL 63222</td>
@@ -884,6 +889,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="deemed va">
+      <td>&nbsp;</td>
       <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
         2401 Avenue J, Suite 240<br>
         Arlington, VA 23225</td>
@@ -895,6 +901,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="good va">
+      <td>&nbsp;</td>
       <td><a href="#">Good Neighbor HHC of Baxter</a><br>
         14387 Edgewood Drive<br>
         Baxter, VA 23231</td>
@@ -906,6 +913,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="good suspended il">
+      <td>&nbsp;</td>
       <td><a href="#">Good Samaritan Home Health of Brainerd</a><br>
         804 Wright Street<br>
         Brainerd, IL 63227</td>
@@ -917,6 +925,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="deemed il">
+      <td>&nbsp;</td>
       <td><a href="#">Grainger Co Health Dept</a><br>
         PO Box 27 Main Street<br>
         Rutledge, IL 63222</td>
@@ -928,6 +937,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="deemed il">
+      <td>&nbsp;</td>
       <td><a href="#">Highsmith Rainey Memorial Hospital</a><br>
       150 Robeson Street, 4th Floor<br>
       Fayetteville, IL 63222</td>
@@ -939,6 +949,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="deemed il">
+      <td>&nbsp;</td>
       <td><a href="#">Laguna Rainbow Home Care</a><br>
         State Road 23 South<br>
         Casa Blanca, IL 63222</td>
@@ -950,6 +961,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="va">
+      <td>&nbsp;</td>
       <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
       PO Box 236<br>
       New Laguna, VA 23222</td>
@@ -1049,7 +1061,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
   </tbody>
 </table>
 			  
-	  </div>
+	 
    <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item"><button  class="page-link">3</button></li><li class="page-item"><button class="page-link">4</button></li><li class="page-item"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item"><button class="page-link last">Last</button></li></ul></nav>
         </section>
 	   
@@ -1166,7 +1178,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
   <script type="text/javascript" src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <script>
 	  $(document).ready(function () {
    
@@ -1174,6 +1186,28 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
    // $('#providerTable').DataTable( {
 	//	responsive: true
 	//} );
+	var $providerTable = $('#providerTable').DataTable( {
+              //scrollY: 300,
+              paging: false,
+              lengthMenu: false,
+              info: false,
+              searching: false,
+              responsive: {
+				details: { type: 'column'}
+			  },
+              "order": [[ 1, 'asc' ]],
+              columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+                { responsivePriority: 0, targets: 1 },
+                { responsivePriority: 1, targets: -1 },
+                { "orderable": false, "targets": -1 }
+             ]
+                                              
+        } );
+       $('#providerTable tbody').on( 'click', 'tr', function () {
+            //  $(this).toggleClass('selected');
+            //openUrl('priceSummary.php',0);  
+       } );
 
  $('[data-toggle="tooltip"]').tooltip(); 
 	  }); 
@@ -1503,7 +1537,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
         }
       });
   } );
-  </script>
+	</script>
+
 </body>
 
 </html>
