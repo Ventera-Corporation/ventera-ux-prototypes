@@ -380,6 +380,10 @@ table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-colum
     background-color: #0071BC;
     font-weight: 700;
 }
+table.dataTable.dtr-column>tbody>tr.parent td.control:before, table.dataTable.dtr-column>tbody>tr.parent th.control:before {
+content: '-';
+background-color: #112E51;
+}
 
 /* PAGINATION */
 .pagination { margin: -1rem 0 2rem; }
