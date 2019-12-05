@@ -98,7 +98,7 @@
 		<div class="row">
 			<div class="col-md-3 col-lg-2">
 				<label>Type</label>
-				 <select onChange="$('.help-text span').addClass('hide'); $('.table-wrapper table').addClass('hide'); $('#advancedSearch-showhide .read-view').removeClass('active'); switch(this.options[this.selectedIndex].value){ 
+				 <select onChange="$('.help-text span').addClass('hide'); $('table').addClass('hide'); $('#advancedSearch-showhide .read-view').removeClass('active'); switch(this.options[this.selectedIndex].value){ 
 					case 'Provider': $('.help-text .provider').removeClass('hide'); $('#advancedSearch-showhide .read-view.provider').addClass('active'); $('#providerTable').removeClass('hide');  break; 
 				  	case 'Survey': $('.help-text .survey').removeClass('hide'); $('#advancedSearch-showhide .read-view.survey').addClass('active'); $('#surveyTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 54 Surveys'); break; 
 					case 'Intake': $('.help-text .intake').removeClass('hide'); $('#advancedSearch-showhide .read-view.intake').addClass('active'); $('#intakeTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 32 Intakes'); break; 
