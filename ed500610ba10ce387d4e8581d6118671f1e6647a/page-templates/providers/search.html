@@ -100,15 +100,67 @@
 				<label>Type</label>
 				 <select onChange="$('.help-text span').addClass('hide'); $('table').addClass('hide'); $('#advancedSearch-showhide .read-view').removeClass('active'); switch(this.options[this.selectedIndex].value){ 
 					case 'Provider': $('.help-text .provider').removeClass('hide'); $('#advancedSearch-showhide .read-view.provider').addClass('active'); $('#providerTable').removeClass('hide');  break; 
-				  	case 'Survey': $('.help-text .survey').removeClass('hide'); $('#advancedSearch-showhide .read-view.survey').addClass('active'); $('#surveyTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 54 Surveys'); break; 
-					case 'Intake': $('.help-text .intake').removeClass('hide'); $('#advancedSearch-showhide .read-view.intake').addClass('active'); $('#intakeTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 32 Intakes'); break; 
-					case 'Enforcement': $('.help-text .enforcement').removeClass('hide'); $('#advancedSearch-showhide .read-view.enforcement').addClass('active'); $('#enforcementTable').removeClass('hide');  $('.baCount').html('Results: 1-10 of 24 Enforcements');  break;   
+				  	case 'Survey': $('.help-text .survey').removeClass('hide'); $('#advancedSearch-showhide .read-view.survey').addClass('active'); $('#surveyTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 54 Surveys'); $('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 1, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 }
+	 ]
+
+} ); break; 
+					case 'Intake': $('.help-text .intake').removeClass('hide'); $('#advancedSearch-showhide .read-view.intake').addClass('active'); $('#intakeTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 32 Intakes'); 
+$('#intakeTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 1, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 }
+	 ]
+} );
+ break; 
+					case 'Enforcement': $('.help-text .enforcement').removeClass('hide'); $('#advancedSearch-showhide .read-view.enforcement').addClass('active'); $('#enforcementTable').removeClass('hide');  $('.baCount').html('Results: 1-10 of 24 Enforcements'); $('#enforcementTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 1, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 }
+	 ]
+} ); break;   
 				}"><option>Provider</option><option>Survey</option><option>Intake</option><option>Enforcement</option></select>
 			</div>
 			<div class="col-md-6 col-lg-7">
+				<div class="form-group">
 				<label>Keyword</label>
 				<input type="text" class="form-control" id="inlineFormInputGroup" onKeyUp="if (event.keyCode === 13) {
-        $('.searchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text"><span class="provider">Enter provider name, CCN, or state facility ID</span><span class="survey hide">Enter survey ID, provider name, or CCN</span><span class="intake hide">Enter intake ID, provider name, or CCN</span><span class="enforcement hide">Enter enforcement ID, provider name, or CCN</span></div>  
+        $('.searchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text"><span class="provider">Enter provider name, CCN, or state facility ID</span><span class="survey hide">Enter survey ID, provider name, or CCN</span><span class="intake hide">Enter intake ID, provider name, or CCN</span><span class="enforcement hide">Enter enforcement ID, provider name, or CCN</span></div></div>  
 			</div>
 		</div>
 
@@ -190,9 +242,9 @@
                 </fieldset>-->
 					<label>Operating Status</label>
 					<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
                 </div>
 				</div>				
 							</div>
@@ -256,11 +308,13 @@
 							<div class="col-md-5 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Survey Status</label>
-								<div class="btn-group" role="group" aria-label="">
-                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
-                </div>
+									<input type="text" id="surveyStatus">
+									<span class="help-text">Select one or more</span>
+								<!--<div class="btn-group" role="group" aria-label="">
+                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                </div>-->
 			   <!--<fieldset>
                 <legend>Survey Status</legend>
                 <div class="custom-control custom-radio">
@@ -411,9 +465,9 @@
 								<div class="form-group">
 									<label>Intake Type</label>
 									<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complaint</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incident</button>
+                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complaint</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incident</button>
                 </div>
 									<!--<fieldset>
                 <legend>Intake Type</legend>
@@ -562,9 +616,9 @@
 								<div class="form-group">
 								<label>Triage Complete</label>
 								<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complete</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incomplete</button>
+                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complete</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incomplete</button>
                 </div>
 								
 								<!--<fieldset>
@@ -628,9 +682,9 @@
 								<div class="form-group">
 									<label>Enforcement Type</label>
 									<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Federal</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">State</button>
+                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Federal</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">State</button>
                 </div>
 									
 									<!--<fieldset>
@@ -654,9 +708,9 @@
 								<div class="form-group">
 									<label>Enforcement Case Status</label>
 									<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn btn-outline-dark active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
-                  <button type="button" class="btn btn-outline-dark" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
                 </div>
 									
 									<!--<fieldset>
@@ -809,29 +863,30 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     $('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
-    $('#providerSearchResults .baCount').html('Results: 1-10 of 112 Providers'); 
+    $('#providerSearchResults .baCount').html('Results: 1-10 of 97 Providers'); 
     $('#providerSearchResults nav').removeClass('hide'); }
-if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); $('.criteriaCount').html('(3)');  $('#advancedSearchLink').click(); };">Search</a>
+if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); $('#advancedSearchLink').click(); };">Search</a>
 							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
-    $('#providerSearchResults .baCount').html('1-10 of 1400 Providers'); 
-    $('#providerSearchResults nav').removeClass('hide'); $('input').val(''); $('.searchCriteria li > div').addClass('hide');">Reset</button>
+    $('#providerSearchResults .baCount').html('Results: 1-10 of 112 Providers'); 
+    $('#providerSearchResults nav').removeClass('hide'); $('#inlineFormInputGroup').val(''); $('.searchCriteria li > div').addClass('hide'); $('.searchCriteria li > div.state').removeClass('hide');">Reset</button>
                           </div>
                       </div>
                   </div>
 		<section id="SearchArea">
+			<h2 class="sr-only">Selected Search Criteria</h2>
           <br>  
 		<ul class="iq-inline-list searchCriteria"><li><div class="state"><label class="inline">State: </label>
-			<div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('.searchCriteria li').addClass('hide'); $('.searchCriteria li.none').removeClass('hide'); $('.table tr.il').removeClass('hide'); $('.criteriaCount').html(''); $(this).parent('.badge').hide();"><span aria-hidden="true">&times;</span></button></div>
-			<div class="badge badge-pill"><span>Virginia </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.va').addClass('hide'); $('.criteriaCount').html('(1)');"><span aria-hidden="true">&times;</span></button></div></div>
+			<div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('.searchCriteria li').addClass('hide'); $('.table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#providerSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div>
+			<div class="badge badge-pill"><span>Virginia </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.va').addClass('hide');"><span aria-hidden="true">&times;</span></button></div></div>
 			</li>
 			<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
-        <span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); ">
+        <span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#inlineFormInputGroup').val(''); ">
           <span aria-hidden="true">&times;</span>
 				</button></div></div></li>
 			<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
-        <span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.deemed').addClass('hide');">
+        <span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('table.responsive tbody tr').removeClass('hide');">
           <span aria-hidden="true">&times;</span>
 				</button></div></div></li>
 		   <!--<li class="none hide"><span class="iq-not-available">No criteria selected.</span></li>-->
@@ -850,8 +905,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <th><span>Operating Status</span></th>
       <th><span>Certification Status</span></th>
 	  <th><span>Deeming Status</span></th>
-      <th>&nbsp;</th>
-    </tr>
+      </tr>
   </thead>
   <tbody>
     <tr class="deemed il">
@@ -862,8 +916,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Open</td>
       <td>Certified</td>
 	  <td>Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="bright il">
       <td>&nbsp;</td>
       <td><a href="provider-profile.html">BrightHope</a><br>
@@ -874,8 +927,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Open</td>
 	  
       <td>Pending Certification</td><td>Non-Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="provider-profile.html" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">Encompass Health Braintree Hospital of Braintree</a><br>
@@ -886,8 +938,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Open</td>
 	  
       <td>Certified</td><td>Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="deemed va">
       <td>&nbsp;</td>
       <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
@@ -898,8 +949,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Closed</td>
       <td>Terminated</td>
 	  <td>Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="good va">
       <td>&nbsp;</td>
       <td><a href="#">Good Neighbor HHC of Baxter</a><br>
@@ -910,8 +960,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Open</td>
       <td>Certified</td>
 	  <td>Non-Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="good suspended il">
       <td>&nbsp;</td>
       <td><a href="#">Good Samaritan Home Health of Brainerd</a><br>
@@ -922,8 +971,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Open</td>
       <td>Certified</td>
 	  <td>Suspended</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">Grainger Co Health Dept</a><br>
@@ -934,8 +982,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Closed</td>
       <td>Terminated</td>
 		<td>Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">Highsmith Rainey Memorial Hospital</a><br>
@@ -946,8 +993,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Open</td>
       <td>Certified</td>
 		<td>Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">Laguna Rainbow Home Care</a><br>
@@ -958,8 +1004,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Open</td>
       <td>Certified</td>
 		<td>Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
     <tr class="va">
       <td>&nbsp;</td>
       <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
@@ -970,25 +1015,26 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Open</td>
       <td>Pending</td>
 		<td>Non-Deemed</td>
-      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
-    </tr>
+      </tr>
   </tbody>
 </table>
 	
-	<table class="table table-striped responsive hide" id="surveyTable">
+	<table class="display responsive hide" id="surveyTable">
   <thead>
     <tr>
+	  <th></th>
       <th class="sortable ascending" style="min-width: 9rem;"><span>Survey ID</span></th>
-      <th class="sortable"><span>Type</span></th>
-	  <th class="sortable"><span>Category</span></th>
-      <th class="sortable"><span>Provider Name</span></th>
-      <th class="sortable"><span>Status</span></th>
-	  <th class="sortable" style="min-width: 9rem;"><span>Exit Date</span></th>
+      <th><span>Type</span></th>
+	  <th><span>Category</span></th>
+      <th><span>Provider Name</span></th>
+      <th><span>Status</span></th>
+	  <th style="min-width: 9rem;"><span>Exit Date</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr class="">
+	  <td></td>
       <td style="min-width: 8rem;"><a href="#">19A3-H1</a></td>
 	  <td>Health</td>
 	  <td><ul><li>Initial Certification</li></ul></td>
@@ -1000,21 +1046,23 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
     
   </tbody>
 </table>
-	<table class="table table-striped responsive hide" id="intakeTable">
+	<table class="display responsive hide" id="intakeTable">
   <thead>
     <tr>
-	  <th class="sortable ascending" style="min-width: 9rem;"><span>Intake ID</span></th>
-	  <th class="sortable"><span>Status</span></th>
-	  <th class="sortable"><span>Priority</span></th>
-      <th class="sortable"><span>Provider Name</span></th>
-	  <th class="sortable"><span>Allegations</span></th>
-	  <th class="sortable" style="min-width: 9rem;"><span>Intake Start Date</span></th>
-	  <th class="sortable" style="min-width: 9rem;"><span>Survey Due Date</span></th>
+	  <th></th>
+	  <th style="min-width: 9rem;"><span>Intake ID</span></th>
+	  <th><span>Status</span></th>
+	  <th><span>Priority</span></th>
+      <th><span>Provider Name</span></th>
+	  <th><span>Allegations</span></th>
+	  <th style="min-width: 9rem;"><span>Intake Start Date</span></th>
+	  <th style="min-width: 9rem;"><span>Survey Due Date</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr class="">
+	  <td></td>
       <td style="min-width: 8rem;"><a href="#">Complaint 12345</a></td>
 	  <td>Under Investigation<br><a href="#">View Survey</a></td>
 	  <td>Non-Immediate Jeopardy-High</td>
@@ -1035,20 +1083,22 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
     
   </tbody>
 </table>
-<table class="table table-striped responsive hide" id="enforcementTable">
+<table class="display responsive hide" id="enforcementTable">
   <thead>
     <tr>
-	  <th class="sortable ascending" style="min-width: 9rem;"><span>Case ID</span></th>
-	  <th class="sortable"><span>Type</span></th>
-	  <th class="sortable" style="min-width: 9rem;"><span>Cycle Start Date</span></th>
-	  <th class="sortable"><span>Starting Survey</span></th>
-      <th class="sortable"><span>Provider Name</span></th>
-	  <th class="sortable"><span>Status</span></th>
+	  <th></th>
+	  <th style="min-width: 9rem;"><span>Case ID</span></th>
+	  <th><span>Type</span></th>
+	  <th style="min-width: 9rem;"><span>Cycle Start Date</span></th>
+	  <th><span>Starting Survey</span></th>
+      <th><span>Provider Name</span></th>
+	  <th><span>Status</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr class="">
+	  <td></td>
       <td style="min-width: 8rem;"><a href="#">1234</a></td>
 	  <td>Federal</td>
 	  <td style="min-width: 8rem;">01/01/2020</td>
@@ -1180,55 +1230,59 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <script>
+
+	  
+	  
 	  $(document).ready(function () {
-   
-		  
-   // $('#providerTable').DataTable( {
-	//	responsive: true
-	//} );
-	var $providerTable = $('#providerTable').DataTable( {
-              //scrollY: 300,
-              paging: false,
-              lengthMenu: false,
-              info: false,
-              searching: false,
-              responsive: {
-				details: { type: 'column'}
-			  },
-              "order": [[ 1, 'asc' ]],
-              columnDefs: [
-				{ className: 'control', orderable: false, targets: 0 },
-                { responsivePriority: 0, targets: 1 },
-                { responsivePriority: 1, targets: -1 },
-                { "orderable": false, "targets": -1 }
-             ]
-                                              
-        } );
-       $('#providerTable tbody').on( 'click', 'tr', function () {
-            //  $(this).toggleClass('selected');
-            //openUrl('priceSummary.php',0);  
-       } );
+	
+ $( function showProviderTable() {
+		 $('#providerTable').DataTable( {
+		  //scrollY: 300,
+		  paging: false,
+		  lengthMenu: false,
+		  info: false,
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  "order": [[ 1, 'asc' ]],
+		  columnDefs: [
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 }//,
+			//{ responsivePriority: 1, targets: -1 },
+			//{ "orderable": false, "targets": -1 }
+		 ]
+	} ); 
+ });
+
 
  $('[data-toggle="tooltip"]').tooltip(); 
 	  }); 
 	  
   $( function() {
     var availableProviderTypes = [
-      "Home Health Agencies",
+      "All", 
+	  "Home Health Agencies",
       "Hospice",
       "Clinical Laboratory"
     ];
     var availableSubTypes = [
         ""
     ];
+	var availableCMPpaymentstatus = [
+        "All", "None Yet", "Awaiting CMP Payment" ,"Pending Appeal", "Paid/Closed", "Extended Payments", "Overdue CMP", "IDR Removed CMP", "Awaiting Brankruptcy"
+    ];  
+	var availableSurveyStatus = [
+        "All", "New", "Writing in Progress", "Writing Complete", "Revisit Created", "Closed"
+    ];
 	var availableSurveyCategories = [
-        "Initial Certification (Federal)", "Recertification (Federal)", "Complaint (Federal)", "Initial Licensure (State)", "Re-Licensure (State)", "Licensure Complaint (State)"
+        "All", "Initial Certification (Federal)", "Recertification (Federal)", "Complaint (Federal)", "Initial Licensure (State)", "Re-Licensure (State)", "Licensure Complaint (State)"
     ];
     var availableCertStatus = [
         "All", "Not Applicable", "Pending Certification", "Certified", "Terminated"
     ];
 	 var availableSanctionTypes = [
-        "Directed Plan of Correction", "Temporary Management", "Directed Inservice Training", "Civil Monetary Penalty", "CMS-Approved Alternative or Additional State Remedy", "Suspension of Payment for New Admissions"
+        "All", "Directed Plan of Correction", "Temporary Management", "Directed Inservice Training", "Civil Monetary Penalty", "CMS-Approved Alternative or Additional State Remedy", "Suspension of Payment for New Admissions"
     ];  
 	var availableIntakeStatus = [
         "All", "Triage/Prioritization", "No	Action", "Pending RO Approval", "Pending Investigation", "Under Investigation" 
@@ -1280,7 +1334,70 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
           return false;
         }
       });
+	  
+	  $( "#surveyStatus" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableSurveyStatus, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
       
+	  $( "#cmpPaymentStatus" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+          // delegate back to autocomplete, but extract the last term
+          response( $.ui.autocomplete.filter(
+            availableCMPpaymentstatus, extractLast( request.term ) ) );
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          var terms = split( this.value );
+          // remove the current input
+          terms.pop();
+          // add the selected item
+          terms.push( ui.item.value );
+          // add placeholder to get the comma-and-space at the end
+          terms.push( "" );
+          this.value = terms.join( ", " );
+          return false;
+        }
+      });
       $( "#subtypes" )
       // don't navigate away from the field on tab when selecting an item
       .on( "keydown", function( event ) {
