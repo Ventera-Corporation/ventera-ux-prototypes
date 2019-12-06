@@ -11,9 +11,11 @@
   <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
   <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+	<link rel="stylesheet" href="../../prototypes/dashboard-user-test/dashboard.css">
  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
+	
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
      <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 	
@@ -30,7 +32,7 @@
                         <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="#">Manage AO Providers</a> 
-                          <a class="dropdown-item" href="#">Search for a provider, survey, intake, or enforcement</a>
+                          <a class="dropdown-item" href="#">Find a Provider</a>
                           <a class="dropdown-item" href="#">Add a Provider</a>
                       </div>
                     </div><a href="javascript:void(0)" class="iq-assessments-link">Assessments</a>
@@ -66,34 +68,339 @@
             </div>
   </div>
 </header>
-
-  <main class="container-fluid">
-    <div class="iq-page-header-wrapper mb-0">
-      <div>
-        <div class="iq-page-header">
-          <div class="row">
-            <div class="col">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="../global/global-landing-menu.html">Home</a>
-                  </li>
+<main>
+  <div class="iq-page-header-wrapper inverted">
+            <div class="container-fluid">
+              <div class="iq-page-header">
+                <div class="row">
+                  <div class="col d-flex flex-column justify-content-between">
+                    <nav aria-label="breadcrumb" class="hide">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="../global/global-landing-menu.html">Home</a>
+                        </li>
+                        
+                        <li class="breadcrumb-item">
+                          Survey &amp; Certification
+                        </li>
+                      </ol>
+                    </nav>
+                    <div class="iq-page-header-content">
+                      <h1>Survey &amp; Certification</h1>
+                      <div class="iq-page-header-details"></div>
+                    </div>
+                  </div>
                   
-                  <li class="breadcrumb-item">
-                  Search</li>
-                </ol>
-              </nav>
-              <div class="iq-page-header-content">
-               
+                </div>
               </div>
             </div>
+       
+          </div>
+  <div class="container-fluid" id="mainContent">
+	     <nav class="nav nav-horizontal">
+          <a class="nav-link" href="#h-tab-1" data-toggle="tab" role="tab">Surveys</a>
+          <a class="nav-link active" href="#h-tab-2" data-toggle="tab" role="tab">Intakes</a>
+          <a class="nav-link" href="#h-tab-3" data-toggle="tab" role="tab">Enforcements</a>
+		  <div  style="display: inline-block; width: 70%; vertical-align: bottom; margin-bottom: 0; position: relative"><div class="input-group" style="position: absolute; bottom: -1.125rem; width: 20rem; right: 1rem;"><input type="text" class="form-control" placeholder="Search"><a class="btn btn-primary btn-small input-group-append" href="#h-tab-4" data-toggle="tab" role="tab"><i class="fas fa-search"></i></a></div></div>
+        </nav>
+        <div class="tab-content">
+            <div class="tab-pane" id="h-tab-1">
+                <p>Tab 1: Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="tab-pane active" id="h-tab-2">
+				<br>
+               <div class="row">
+        <div class="col">
+          <div class="iq-dashboard-header d-flex">
+            <p>
+              <img src="../../../src/assets/images/icon-circle-check.svg"
+                   class="iq-icon" /> On Time
+            </p>
+            <p>
+              <img src="../../../src/assets/images/icon-circle-clock.svg"
+                   class="iq-icon" /> Due Soon
+            </p>
+            <p>
+              <img src="../../../src/assets/images/icon-circle-alert.svg"
+                   class="iq-icon" /> Past Due
+            </p>
           </div>
         </div>
       </div>
-    </div>
-	  
-    <div>
-         <h1>Search</h1>
+      		   <div class="row">
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Ready for Triage</p>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+
+              <button class="btn btn-tiny btn-outline-primary  dropdown-toggle float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Assign ...</a>
+                <a class="dropdown-item" href="#">Send to ...</a>
+                <a class="dropdown-item" href="#">Watch</a>
+              </div>
+
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  839471
+                </a>
+              </div>
+              <div><a href="triage-one.html">Quality Home Health, Inc.</a></div>
+              <div>CCN - 100586</div>
+              <div>Home Health Agency</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg"
+                     class="iq-icon" /> Intake Date: 07/24/2019
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Pending RO Approval</p>
+
+          <div class="card iq-card dash-card card-success">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  274937
+                </a>
+              </div>
+              <div><a href="triage-one.html">Good Samaritan</a></div>
+              <div>CCN - 100056</div>
+              <div>Hospital</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-check.svg"
+                     class="iq-icon" /> Survey Due Date: 08/20/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-alert">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  892628
+                </a>
+              </div>
+              <div><a href="triage-one.html">Good Health Sunrise</a></div>
+              <div>CCN - 100065</div>
+              <div>Hospice</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-alert.svg"
+                     class="iq-icon" /> Survey Due Date: 07/22/2019
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Ready for Survey</p>
+
+
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Under Investigation</p>
+
+          <!-- <div class="card iq-card dash-card card-warning">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header"><a href="triage-one.html">Complaint
+                  838472</a></div>
+              <div><a href="triage-one.html">Quality Home Health, Inc.</a></div>
+              <div>CCN - 100598</div>
+              <div>Home Health Agency</div>
+              <div>Non-IJ High</div>
+              <div>Survey Status: New</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-clock.svg"
+                  class="iq-icon" /> Survey Due Date: 08/01/2019
+              </div>
+            </div>
+          </div> -->
+
+
+          <div class="card iq-card dash-card card-success">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  4827161
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Caregivers of Pleasant
+                  Grove Inc.
+                </a>
+              </div>
+              <div>CCN - 101634</div>
+              <div>Hospice</div>
+              <div>Non-IJ High</div>
+              <div>
+                Survey Status: Statement of
+                Deficiencies Sent
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-check.svg"
+                     class="iq-icon" /> Survey Due Date: 07/18/2019
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card iq-card dash-card card-warning">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  4827161
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Caregivers of Pleasant
+                  Grove Inc.
+                </a>
+              </div>
+              <div>CCN - 101634</div>
+              <div>Hospice</div>
+              <div>Non-IJ High</div>
+              <div>
+                Survey Status: Statement of
+                Deficiencies Sent
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-clock.svg"
+                     class="iq-icon" /> Survey Due Date: 07/18/2019
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Resolved</p>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  6392734
+                </a>
+              </div>
+              <div><a href="triage-one.html">Oracle Healthcare, Inc.</a></div>
+              <div>CCN - 100134</div>
+              <div>Hospital</div>
+              <div>Non-IJ High</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg"
+                     class="iq-icon" /> Triage Date: 07/18/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg"
+                     class="iq-icon" /> Survey Exit Date: 07/19/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  9382943
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Adventist Rehabilitation Hospital
+                  of Paris
+                </a>
+              </div>
+              <div>CCN - 100034</div>
+              <div>IRF</div>
+              <div>Non-IJ Low</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg"
+                     class="iq-icon" /> Triage Date: 06/15/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg"
+                     class="iq-icon" /> Survey Exit Date: 07/19/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  7362834
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">Medstar Good Samaritan Hospital</a>
+              </div>
+              <div>CCN - 100076</div>
+              <div>Hospital</div>
+              <div>Non-IJ Medium</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg"
+                     class="iq-icon" /> Triage Date: 06/15/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg"
+                     class="iq-icon" /> Survey Exit Date: 07/17/2019
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+            </div>
+            <div class="tab-pane" id="h-tab-3">
+                <p>Tab 3: Lorem ipsum dolor sit amet</p>
+            </div>
+		   <div class="tab-pane" id="h-tab-4">
+                <div>
+         <h2>Search</h2>
          <p>Search for providers, surveys, intakes, or enforcements.</p>
          
 		<div class="row">
@@ -645,13 +952,6 @@ $('#intakeTable').DataTable( {
 								<input type="text">
 								</div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group">
-								<label>Referral Agency</label>
-								<input type="text">
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
 						</div>
 						<!-- end intake row -->
 					</div>
@@ -692,7 +992,21 @@ $('#intakeTable').DataTable( {
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
                 </div>
 									
-									
+									<!--<fieldset>
+                <legend>Enforcement Case Status</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="eCaseStatus1" checked name="eCaseStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="eCaseStatus1"> Both </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="eCaseStatus2" name="eCaseStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="eCaseStatus2"> Open</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="eCaseStatus3" name="eCaseStatus" class="custom-control-input">
+                  <label class="custom-control-label" for="eCaseStatus3"> Closed</label>
+                </div>
+                </fieldset>-->
 								</div>
 							</div>
 							<div class="col-md-6 col-lg-4">
@@ -713,21 +1027,18 @@ $('#intakeTable').DataTable( {
                   <input type="checkbox" id="eType4" class="custom-control-input">
                    <label class="custom-control-label" for="eType4">Show only enforcement cases with recommended sanctions awaiting RO decision</label>
                 </div>  
-									<div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="eType5" class="custom-control-input">
-                   <label class="custom-control-label" for="eType5">Show only enforcement cases containing an appeal</label>
-                </div>  
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-4 col-lg-4">
-								<div class="form-group">
-								<label>Responsible Staff</label>
-								<input type="text"><span class="help-text">Select one or more</span>
-								</div>
-							</div>
 							
+							<!--<div class="col-md-4 col-lg-3">
+								<div class="form-group">
+								<label>Starting Survey Exit Date</label>
+								<input type="date">
+										<span class="help-text">MM/DD/YYYY</span>
+								</div>
+							</div>-->
 							<div class="col-md-10 col-lg-6">
 								
 								<label>Enforcement Start Date Range</label>
@@ -748,13 +1059,6 @@ $('#intakeTable').DataTable( {
 									</div>	
 								</div>
 								
-							</div>
-						</div><div class="row">
-						
-							<div class="col-md-4 col-lg-4">
-								<div class="form-group"><label>Sanction Type</label>
-									<input type="text" id="sanctionType"><span class="help-text">Select one or more</span>
-								</div>
 							</div>
 							<div class="col-md-10 col-lg-6">
 								
@@ -777,8 +1081,13 @@ $('#intakeTable').DataTable( {
 								</div>
 								
 							</div>
-						</div>
-						<div class="row">
+						
+							<div class="col-md-4 col-lg-4">
+								<div class="form-group"><label>Sanction Type</label>
+									<input type="text" id="sanctionType"><span class="help-text">Select one or more</span>
+								</div>
+							</div>
+							
 							<!--<div class="col-md-4 col-lg-3">
 								<div class="form-group"><label>Hearing/Settlement Status</label>
 								<input type="text" />
@@ -788,28 +1097,13 @@ $('#intakeTable').DataTable( {
 								<label>CMP Payment Status</label>
 								<input type="text" id="cmpPaymentStatus"><span class="help-text">Select one or more</span>
 							</div>
-			<div class="col-md-10 col-lg-6">
-								
-								<label>Appeal/Appeal Waiver Due Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
+			
+							<div class="col-md-4 col-lg-4">
+								<div class="form-group">
+								<label>Responsible Staff</label>
+								<input type="text"><span class="help-text">Select one or more</span>
 								</div>
-								
 							</div>
-							
 							
 						</div><!-- end intake row -->
 					</div>
@@ -1125,15 +1419,12 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
               </div>
               
           </div>
-         
-       <!-- <section>
-          <h4>Selected Criteria (0)</h4>
-        </section>-->
-          
-    </div>
-  </main>
-
-  <footer>
+            </div>
+        </div>
+	
+  </div>
+</main>
+ <footer>
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-10 col-xl-10">
@@ -1211,16 +1502,15 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
   <script type="text/javascript" src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../../../src/assets/third-party/popper/popper.min.js"></script>
   <script type="text/javascript" src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+	<script type="text/javascript" src="../../prototypes/dashboard-user-test/dashboard.js"></script>
+  <script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
+ 
   <script>
-
-	  
-	  
 	  $(document).ready(function () {
-	
- $( function showProviderTable() {
+		  $('[data-toggle="tooltip"]').tooltip(); 
+		   
 		 $('#providerTable').DataTable( {
 		  //scrollY: 300,
 		  paging: false,
@@ -1237,14 +1527,9 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 			//{ responsivePriority: 1, targets: -1 },
 			//{ "orderable": false, "targets": -1 }
 		 ]
-	} ); 
- });
-
-
- $('[data-toggle="tooltip"]').tooltip(); 
+	});
 	  }); 
-	  
-  $( function() {
+	  $( function() {
     var availableProviderTypes = [
       "All", 
 	  "Home Health Agencies",
@@ -1639,8 +1924,6 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
         }
       });
   } );
-	</script>
-
-</body>
-
+  </script>
+	</body>
 </html>
