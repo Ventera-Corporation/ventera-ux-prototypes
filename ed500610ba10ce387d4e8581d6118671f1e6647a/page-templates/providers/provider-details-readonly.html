@@ -20,7 +20,7 @@
                 <div class="col">
                   <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
                     <div class="dropdown d-sm-none d-lg-inline-block active">
-                        <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Providers  <i class="fal fa-chevron-down"></i></a>
+                        <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="#">Manage AO Providers</a> 
                           <a class="dropdown-item" href="#">Find a Provider</a>
@@ -68,7 +68,7 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"> <a href="../global/global-landing-menu.html">Home</a> </li>
-                <li class="breadcrumb-item"> <a href="find-a-provider.html">Providers</a> </li>
+                <li class="breadcrumb-item"> <a href="search.html">Survey &amp; Certification</a> </li>
                 <li class="breadcrumb-item"> <a href="provider-profile-blank.html">BrightHope</a> </li>
                 <li class="breadcrumb-item"> Provider Details </li>
               </ol>
@@ -77,7 +77,7 @@
               <h1>Provider Details</h1>
               <div class="iq-page-header-details">
                 <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->
-                <a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Non-Deemed</div>
+                <a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - <a href="#">Non-Deemed</a></div>
             </div>
           </div>
           <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -119,6 +119,10 @@
     </div>
   </div>
   <div class="container-fluid" id="mainContent3">
+	    <div class="alert alert-warning" role="alert">
+                    <div class="alert-content">You do not have permission to manage this provider's information.</div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  </div>
     <!--<div class="row">
       <div class="col">
         <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
@@ -126,9 +130,17 @@
     </div>-->
     <div class="row">
       <div class="col-sm-5 col-md-4 col-lg-3">
-        <nav class="nav flex-column iq-nav"><a class="nav-link active" tabindex="0" id="tab1Tab3" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a>
-          <!--<a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">Mailing Address</a>-->
-          <a class="nav-link" tabindex="0" id="tab6Tab3" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">Locations and Buildings</a> <a class="nav-link" tabindex="0" id="tab5Tab3" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">Operating Details</a> <a class="nav-link" tabindex="0" id="tab9Tab3" href="#tab9" data-toggle="tab" role="tab" aria-controls="tab9" aria-selected="false">Administrators</a> <a class="nav-link" tabindex="0" id="tab7Tab3" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">Additional Contacts</a> <a class="nav-link" tabindex="0" id="tab3Tab3" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">Certification and Licensure</a> <a class="nav-link" tabindex="0" id="tab8Tab3" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">MAC Information</a> <a class="nav-link" tabindex="0" id="tab4Tab3" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">Deeming Information</a> <a class="nav-link" tabindex="0" id="tab10Tab3" href="#tab10" data-toggle="tab" role="tab" aria-controls="tab10" aria-selected="false">Attachments</a></nav>
+        <nav class="nav flex-column iq-nav">
+			<a class="nav-link active" id="tab1Link" href="#basicInfoTab" data-toggle="tab" role="tab">Basic Information</a>
+            <a class="nav-link" id="tab2Link" href="#locationsTab" data-toggle="tab" role="tab">Locations and Buildings</a>
+			<a class="nav-link" id="tab3Link" href="#operatingTab" data-toggle="tab" role="tab">Operating Details</a> 
+			<a class="nav-link" id="tab4Link" href="#adminTab" data-toggle="tab" role="tab">Administrators</a> 
+			<a class="nav-link" id="tab5Link" href="#contactTab" data-toggle="tab" role="tab">Additional Contacts</a> 
+			<a class="nav-link" id="tab6Link" href="#certsTab" data-toggle="tab" role="tab">Certification and Licensure</a> 
+			<a class="nav-link" id="tab7Link" href="#macTab" data-toggle="tab" role="tab">MAC Information</a> 
+			<a class="nav-link" id="tab8Link" href="#deemTab" data-toggle="tab" role="tab">Deeming Information</a> 
+			<a class="nav-link" id="tab9Link" href="#attachmentTab" data-toggle="tab" role="tab">Attachments</a>
+		  </nav>
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="alert alert-success successMsg hide" role="alert">
@@ -151,14 +163,14 @@
           <div class="alert-content"> Please select a file for attachment. </div>
         </div>
         <div class="tab-content">
-          <div class="tab-pane  active" id="tab21" role="tabpanel"
-                    aria-labelledby="tab1Tab">
+          <div class="tab-pane  active" id="basicInfoTab" role="tabpanel"
+                    aria-labelledby="tab1Link">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Basic Information</h2>
               </div>
               <div class="col-md-2 text-right">
-                <button class="btn btn-outline-primary" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
+                
               </div>
             </div>
             <section class="edit-view">
@@ -539,150 +551,8 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab22" role="tabpanel">
-            <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Mailing Address</h2>
-              </div>
-              <div class="col-md-2 text-right">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab2 .edit-view').addClass('active'); $('#tab2 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
-              </div>
-            </div>
-            <section class="edit-view active">
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" id="sameAsFacilityAddressM"
-                            name="sameAsFacilityAddressM"
-                            class="custom-control-input" value="value">
-                    <label class="custom-control-label"
-                            for="sameAsFacilityAddressM"> Same as Primary Location </label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control"
-                            required>
-                    <span class="help-text">Number and street name or PO box</span> </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label>Address Line 2</label>
-                    <input type="text" class="form-control">
-                    <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span> </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input"
-                            required>
-                    <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>State</label>
-                    <select name="select" class="form-control">
-                      <option value="">Select one</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">District Of Columbia</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
-                      <option value="KY">Kentucky</option>
-                      <option value="LA">Louisiana</option>
-                      <option value="ME">Maine</option>
-                      <option value="MD">Maryland</option>
-                      <option value="MA">Massachusetts</option>
-                      <option value="MI">Michigan</option>
-                      <option value="MN">Minnesota</option>
-                      <option value="MS">Mississippi</option>
-                      <option value="MO">Missouri</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NV">Nevada</option>
-                      <option value="NH">New Hampshire</option>
-                      <option value="NJ">New Jersey</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="NY">New York</option>
-                      <option value="NC">North Carolina</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
-                      <option value="OR">Oregon</option>
-                      <option value="PA">Pennsylvania</option>
-                      <option value="RI">Rhode Island</option>
-                      <option value="SC">South Carolina</option>
-                      <option value="SD">South Dakota</option>
-                      <option value="TN">Tennessee</option>
-                      <option value="TX">Texas</option>
-                      <option value="UT">Utah</option>
-                      <option value="VT">Vermont</option>
-                      <option value="VA">Virginia</option>
-                      <option value="WA">Washington</option>
-                      <option value="WV">West Virginia</option>
-                      <option value="WI">Wisconsin</option>
-                      <option value="WY">Wyoming</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>ZIP Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" required>
-                    <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
-                  </div>
-                </div>
-              </div>
-              <div class="iq-button-wrapper"> <a href="#mainContent" class="btn btn-primary" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide');}">Save</a>
-                <button class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-              </div>
-            </section>
-            <section class="read-view">
-              <div class="iq-list">
-                <div class="row">
-                  <div class="col-md-4">
-                    <label>Same as Primary Location</label>
-                  </div>
-                  <div class="col-md-8">
-                    <p>Yes</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <label>Address</label>
-                  </div>
-                  <div class="col-md-8">
-                    <p>123 Temporary Road, Suite 100<br>
-                      Reston, VA 20190</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div class="tab-pane " id="tab23" role="tabpanel"
+		  <!-- certs tab -->
+          <div class="tab-pane" id="certsTab" role="tabpanel"
                     aria-labelledby="tab3Tab">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -1007,8 +877,8 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab24" role="tabpanel"
-                    aria-labelledby="tab4Tab">
+		  <!-- deem tab -->
+          <div class="tab-pane " id="deemTab" role="tabpanel" aria-labelledby="tab8Link">
             <section class="edit-view deemInfo">
               <div class="row tabTitle">
                 <div class="col-md-10">
@@ -1061,7 +931,7 @@
                   <p class="iqies-tab-description">Regional office approval is required for a provider to be deemed.</p>
                 </div>
                 <div class="col-md-2 text-right">
-                  <button class="btn btn-outline-primary" onClick="$('#tab4 .edit-view.deemInfo').addClass('active'); $('#tab4 .read-view').removeClass('active'); ">Edit</button>
+                  
                 </div>
               </div>
               <div class="iq-list">
@@ -1087,7 +957,7 @@
               <h3>Accrediting Organizations</h3>
               <p>Add and manage accreditation organizations and status.</p>
               <div class="iqies-button-wrapper">
-                <button type="button" class="btn btn-outline-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.addNew').addClass('active');">Add Accrediting Organization</button>
+                
               </div>
               <p class="info-text"><span class="aoCount">2</span> Accrediting Organizations</p>
               <div class="iqies-list-row TJC">
@@ -1097,7 +967,7 @@
                       <h4>The Joint Commission (TJC)</h4>
                     </div>
                     <div class="col-md-2 text-right">
-                      <button class="btn btn-outline-primary" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .read-view.editTJC').addClass('active');">Edit</button>
+                      
                     </div>
                   </div>
                 </div>
@@ -1151,7 +1021,7 @@
                       <h4>Accreditation Commission for Health Care (ACHC)</h4>
                     </div>
                     <div class="col-md-2 text-right">
-                      <button class="btn btn-outline-primary">Edit</button>
+                      
                     </div>
                   </div>
                 </div>
@@ -1335,17 +1205,16 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab25" role="tabpanel"
-                    aria-labelledby="tab5Tab">
+          <div class="tab-pane " id="operatingTab" role="tabpanel" aria-labelledby="tab3Link">
             <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Operating Details</h2>
               </div>
               <div class="col-md-2 text-right">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab5 .edit-view').addClass('active'); $('#tab5 .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
+               
               </div>
             </div>
-            <section class="edit-view active">
+            <section class="edit-view">
               <div class="row">
                 <div class="col-md-12">
                   <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -1428,7 +1297,7 @@
                 </div>
               </div>
             </section>
-            <section class="read-view">
+            <section class="read-view active">
               <div class="iq-list">
                 <div class="row">
                   <div class="col-md-4">
@@ -1465,8 +1334,7 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="tab26" role="tabpanel"
-                    aria-labelledby="tab6Tab">
+          <div class="tab-pane " id="locationsTab" role="tabpanel" aria-labelledby="tab2Link">
             <!-- edit building or wing -->
             <section class="edit-view building1">
               <div class="row tabTitle">
@@ -2089,8 +1957,7 @@
                   <h2>Locations and Buildings</h2>
                   <p class="iq-page-header-description">Add and manage locations and buildings for this provider.</p>
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.firstTime').addClass('active');">Add Location</button>
-                    <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active');">Add Building</button>
+                    
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
                     <input type="checkbox" id="showBonly"
@@ -2112,7 +1979,7 @@
                   data-toggle="collapse" data-target="#site1" type="button" onclick="$(this).toggleClass('expanded');"> <span>BrightHope<br>
                         <small class="bottom">Primary Location | 4 Buildings</small></span> </button>
                       <div class="iq-accordion-actions d-flex align-items-center">
-                        <button type="button" class="btn btn-link" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editPrimary').addClass('active');"> Edit </button>
+                        
                       </div>
                     </div>
                     <div id="site1" class="collapse show">
@@ -2178,7 +2045,7 @@
                                 <em class="fas fa-square status-lime"></em> State Licensed Only<br>
                                 <em class="fas fa-square status-gray"></em> Closed
                             </div>-->
-                              <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('primary');">Add Building</button>
+                              
                             </div>
                             <div class="iq-accordion">
                               <div class="card">
@@ -2187,8 +2054,7 @@
                   data-toggle="collapse" data-target="#s1b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility<br>
                                     <small class="bottom">T1 | Building | <em class="fas fa-square status-blue"></em> Active | Effective 10/25/2000</small></span></button>
                                   <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
-                                    <button type="button" class="btn btn-link" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.building1').addClass('active');"> Edit </button>
+                                    
                                   </div>
                                 </div>
                                 <div id="s1b1" class="collapse">
@@ -2314,8 +2180,7 @@
                   data-toggle="collapse" data-target="#s1b3" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility 1B<br>
                                     <small class="bottom">T2 | Apartment Unit | <em class="fas fa-square status-lime"></em> Licensed Only | Effective 05/21/2014</small></span></button>
                                   <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
-                                    <button type="button" class="btn btn-link"> Edit </button>
+                                    
                                   </div>
                                 </div>
                                 <div id="s1b3" class="collapse">
@@ -2333,8 +2198,7 @@
                   data-toggle="collapse" data-target="#s1b4" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility Floor 3<br>
                                     <small class="bottom">T3 | Floor | <em class="fas fa-square status-white"></em> Active  |<span class="iq-not-available">No effective date</span></small></span></button>
                                   <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
-                                    <button type="button" class="btn btn-link">Edit</button>
+                                    
                                   </div>
                                 </div>
                                 <div id="s1b4" class="collapse">
@@ -2352,8 +2216,7 @@
                   data-toggle="collapse" data-target="#s1b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>Solarium<br>
                                     <small class="bottom">S1 | Wing | <em class="fas fa-square status-gray"></em> Closed 03/16/2012</small></span></button>
                                   <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
-                                    <button type="button" class="btn btn-link"> Edit </button>
+                                   
                                   </div>
                                 </div>
                                 <div id="s1b2" class="collapse">
@@ -2372,7 +2235,7 @@
                               <legend class="iq-form-group-title">Attachments</legend>
                               <p class="iq-page-header-description" style="margin-top: -1rem">Add and manage attachments for this provider's location.</p>
                               <div class="iq-button-wrapper">
-                                <button class="btn btn-outline-primary" onClick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.addAttachment').addClass('active');">Add Attachment</button>
+                                
                               </div>
                               <div class="table-wrapper">
                                 <table class="table table-striped">
@@ -2392,17 +2255,7 @@
                                         <p class="desText hide">
                                           <textarea name="textarea" rows="5" class="form-control">This is the description of the file that is long and wraps to multiple lines</textarea>
                                         </p></td>
-                                      <td><div class="iqies-list-button-group"><span class="saveCancel hide">
-                                        <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button>
-                                        |
-                                        <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button>
-                                        </span> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                                          <button class="dropdown-item">Download</button>
-                                          <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
-                                          <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
-                                        </div>
-                                      </div></td>
+                                      <td><div class="iqies-list-button-group"> <a href="#" class="btn btn-link">Download</a></div></td>
                                     </tr>
                                     <tr class="newAttachmentRow hide">
                                       <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
@@ -2411,17 +2264,7 @@
                                         <p class="desText hide">
                                           <textarea name="textarea" rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea>
                                         </p></td>
-                                      <td><div class="iqies-list-button-group"><span class="saveCancel hide">
-                                        <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button>
-                                        |
-                                        <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button>
-                                        </span> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                                          <button class="dropdown-item">Download</button>
-                                          <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
-                                          <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
-                                        </div>
-                                      </div></td>
+                                      <td><div class="iqies-list-button-group"> <a href="#" class="btn btn-link">Download</a></div></td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -2440,8 +2283,8 @@
                   data-toggle="collapse" data-target="#site2" type="button" onclick="$(this).toggleClass('expanded');"> <span>BrightHope South<br>
                         <small class="bottom">Branch Office | ID 002 | Opened 01/21/1999 | 2 Buildings</small></span></button>
                       <div class="iq-accordion-actions align-items-center">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmLocationDeletion">Delete</button>
-                        <a href="#" class="btn btn-link" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editBranch1').addClass('active');">Edit</a> </div>
+                       
+                         </div>
                     </div>
                     <div id="site2" class="collapse">
                       <div class="iq-list" style="margin-top: -1rem;">
@@ -2501,9 +2344,7 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                            <p>
-                              <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('branch1');">Add Building</button>
-                            </p>
+                            
                             <div class="iq-accordion">
                               <div class="card">
                                 <div class="card-header d-flex">
@@ -2511,8 +2352,7 @@
                   data-toggle="collapse" data-target="#s2b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Morrison<br>
                                     <small class="bottom">M1 | Building | <em class="fas fa-square status-blue"></em> Active | Effective 03/12/2012</small></span></button>
                                   <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
-                                    <button type="button" class="btn btn-link"> Edit </button>
+                                    
                                   </div>
                                 </div>
                                 <div id="s2b1" class="collapse">
@@ -2530,8 +2370,7 @@
                   data-toggle="collapse" data-target="#s2b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>3rd Floor<br>
                                     <small class="bottom">M2 | Floor | <em class="fas fa-square status-gray"></em> Closed 09/02/2018</small></span></button>
                                   <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
-                                    <button type="button" class="btn btn-link"> Edit </button>
+                                    
                                   </div>
                                 </div>
                                 <div id="s2b2" class="collapse">
@@ -2550,7 +2389,7 @@
                               <legend class="iq-form-group-title">Attachments</legend>
                               <p class="iq-page-header-description" style="margin-top: -1rem">Add and manage attachments for this provider's location.</p>
                               <div class="iq-button-wrapper">
-                                <button class="btn btn-outline-primary" onClick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.addAttachment').addClass('active');">Add Attachment</button>
+                                
                               </div>
                               <div class="table-wrapper">
                                 <table class="table table-striped">
@@ -2570,17 +2409,7 @@
                                         <p class="desText hide">
                                           <textarea name="textarea" rows="3" class="form-control">This is the photo of the building from the front</textarea>
                                         </p></td>
-                                      <td><div class="iqies-list-button-group"><span class="saveCancel hide">
-                                        <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button>
-                                        |
-                                        <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button>
-                                        </span> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <button class="dropdown-item">Download</button>
-                                          <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
-                                          <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
-                                        </div>
-                                      </div></td>
+                                      <td><div class="iqies-list-button-group"> <a href="#" class="btn btn-link">Download</a></div></td>
                                     </tr>
                                     <tr class="newAttachmentRow hide">
                                       <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
@@ -2622,8 +2451,7 @@
                   data-toggle="collapse" data-target="#site3" type="button" onclick="$(this).toggleClass('expanded');"> <span>BrightHope North<br>
                         <small class="bottom">Sibling Affliate | ID 001 | Closed 02/12/2003</small></span></button>
                       <div class="iq-accordion-actions">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmLocationDeletion">Delete</button>
-                        <button type="button" class="btn btn-link" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint3').addClass('active');"> Edit </button>
+                       
                       </div>
                     </div>
                     <div id="site3" class="collapse">
@@ -2657,7 +2485,7 @@
                           <div class="col md-12">
                             <h3>Buildings</h3>
                             <div class="iq-button-wrapper">
-                              <button class="btn btn-outline-primary">Add Building</button>
+                              
                             </div>
                             <p class="iq-not-available">No buildings have been added.</p>
                           </div>
@@ -2668,7 +2496,7 @@
                               <legend class="iq-form-group-title">Attachments</legend>
                               <p class="iq-page-header-description" style="margin-top: -1rem">Add and manage attachments for this provider's location.</p>
                               <div class="iq-button-wrapper">
-                                <button class="btn btn-outline-primary" onClick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.addAttachment').addClass('active');">Add Attachment</button>
+                                
                               </div>
                               <p class="iq-not-available">No attachments have been added.</p>
                             </fieldset>

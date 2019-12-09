@@ -110,7 +110,7 @@
 	  responsive: {
 		details: { type: 'column'}
 	  },
-	  'order': [[ 1, 'asc' ]],
+	  'order': [[ 6, 'asc' ]],
 	  columnDefs: [
 		{ className: 'control', orderable: false, targets: 0 },
 		{ responsivePriority: 0, targets: 1 },
@@ -129,7 +129,7 @@ $('#intakeTable').DataTable( {
 	  responsive: {
 		details: { type: 'column'}
 	  },
-	  'order': [[ 1, 'asc' ]],
+	  'order': [[ 6, 'asc' ]],
 	  columnDefs: [
 		{ className: 'control', orderable: false, targets: 0 },
 		{ responsivePriority: 0, targets: 1 },
@@ -147,7 +147,7 @@ $('#intakeTable').DataTable( {
 	  responsive: {
 		details: { type: 'column'}
 	  },
-	  'order': [[ 1, 'asc' ]],
+	  'order': [[ 3, 'asc' ]],
 	  columnDefs: [
 		{ className: 'control', orderable: false, targets: 0 },
 		{ responsivePriority: 0, targets: 1 },
@@ -396,7 +396,7 @@ $('#intakeTable').DataTable( {
 						</div>
 						<div class="row">
 							<div class="col-lg-6 col-xl-6">
-								<label>Start Date Range</label>
+								<label>Survey Start Date Range</label>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="input-group">
@@ -416,7 +416,7 @@ $('#intakeTable').DataTable( {
 								
 							</div>
 							<div class="col-lg-6 col-xl-6">
-								<label>Exit Date Range</label>
+								<label>Survey Exit Date Range</label>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="input-group">
@@ -451,7 +451,7 @@ $('#intakeTable').DataTable( {
 							</div>
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
-								<label>Responsible Staff</label>
+								<label>Responsible Staff/Surveyor</label>
 								<input type="text">
 								<span class="help-text">Select one or more</span>
 								</div>
@@ -758,7 +758,7 @@ $('#intakeTable').DataTable( {
 							</div>
 							<div class="col-md-10 col-lg-6">
 								
-								<label>Effective Date Range</label>
+								<label>Sanction Effective Date Range</label>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="input-group">
@@ -811,7 +811,35 @@ $('#intakeTable').DataTable( {
 							</div>
 							
 							
-						</div><!-- end intake row -->
+						</div>
+						<div class="row">
+							<div class="col col-md-4 col-lg-4 col-xl-3">
+							  <div class="form-group">
+								  <label>State
+								  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+								  <span class="help-text">Select one or more</span>
+								  </label>
+							  </div>
+							</div>
+							<div class="col col-md-4 col-lg-4 col-xl-3">
+								  <div class="form-group">
+									  <label>Management Unit
+									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+									  </label>
+									  <p class="help-text">State must be selected</p>
+								  </div>
+							  </div>
+							<div class="col col-md-4 col-lg-4 col-xl-3">
+								  <div class="form-group">
+									  <label>Work Unit
+									   <select disabled><option>Select one</option></select>
+									  </label>
+									  <p class="help-text">Management unit must be selected</p>
+								  </div>
+							  </div>
+							  
+						</div>
+						<!-- end intake row -->
 					</div>
 					
                   
@@ -1074,7 +1102,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 	  <th></th>
 	  <th style="min-width: 9rem;"><span>Case ID</span></th>
 	  <th><span>Type</span></th>
-	  <th style="min-width: 9rem;"><span>Cycle Start Date</span></th>
+	  <th style="min-width: 9rem;"><span>Enforcement Start Date</span></th>
 	  <th><span>Starting Survey</span></th>
       <th><span>Provider Name</span></th>
 	  <th><span>Status</span></th>
