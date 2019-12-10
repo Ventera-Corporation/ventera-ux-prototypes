@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
      <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 	
@@ -182,7 +182,8 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-5 col-lg-4 col-xl-3">
 								  <div class="form-group">
 									  <label>Provider Type </label>
-										 <input id="providerTypes" class="form-control" type="text" placeholder="All" onChange="if($(this).val() != ''){ $('.subtypesGroup').removeClass('hide')}">
+										<!-- <input id="providerTypes" class="form-control" type="text" placeholder="All" onChange="if($(this).val() != ''){ $('.subtypesGroup').removeClass('hide')}">-->
+									  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
 									 <span class="help-text">Select one or more</span>
 								  </div>
 							  </div>
@@ -220,7 +221,10 @@ $('#intakeTable').DataTable( {
             <div class="col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>Federal Certification Status</label>
-                      <input type="text" class="form-control" value="All" placeholder="" id="certsStatus">
+					   <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+						   <option>Not Applicable</option><option>Pending Certification</option><option>Certified</option><option>Terminated</option>
+					  </select>
+                      <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
 					  <span class="help-text">Select one or more</span>
                   </div>
             </div>
@@ -269,7 +273,61 @@ $('#intakeTable').DataTable( {
             <div class="col col-md-3 col-lg-3 col-xl-3">
               <div class="form-group">
                   <label>State</label>
-                  <input class="form-control" type="text" value="Illinois, Virginia" id="states" placeholder="">
+				  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL" selected>Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                   
+				  </select>
+                  <!--<input class="form-control" type="text" value="Illinois" id="states" placeholder="">-->
                   <span class="help-text">Select one or more</span>
               </div>
             </div>
@@ -298,7 +356,13 @@ $('#intakeTable').DataTable( {
             <div class="col col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>CMS Region</label>
-                      <input class="form-control" type="text" value="" id="cmsregion" placeholder="">
+					  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+						  <option>1 - Boston</option><option>2 - New York</option><option>3 - Philadelphia</option>
+						  <option>4 - Atlanta</option><option>5 - Chicago</option><option>6 - Dallas</option>
+						  <option>7 - Kansas City</option><option>8 - Denver</option><option>9 - San Francisco</option>
+						  <option>10 - Seattle</option>
+					  </select>
+                      <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
                       <span class="help-text">Select one or more</span>
                   </div>
               </div>
@@ -309,7 +373,11 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-5 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Survey Status</label>
-									<input type="text" id="surveyStatus">
+									<!--<input type="text" id="surveyStatus">-->
+									<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+									  <option>All</option><option>New</option><option>Writing in Progress</option><option>Writing Complete</option>
+										<option>Revisit Created</option><option>Closed</option>
+								  </select>
 									<span class="help-text">Select one or more</span>
 								<!--<div class="btn-group" role="group" aria-label="">
                   <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
@@ -336,7 +404,15 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Survey Category</label>
-									<input class="form-control" type="text" value="All" id="surveyCategories" placeholder="">
+									<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+										<option>Initial Certification (Federal)</option><option>Recertification (Federal)</option>
+										<option>Complaint (Federal)</option>
+										<option>Initial Licensure (State)</option>
+										<option>Re-Licensure (State)</option>
+										<option>Licensure Complaint (State)</option>
+										
+					  </select>
+									<!--<input class="form-control" type="text" value="" id="surveyCategories" placeholder="">-->
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
@@ -351,7 +427,60 @@ $('#intakeTable').DataTable( {
 							<div class="col col-md-4 col-lg-4 col-xl-3">
               <div class="form-group">
                   <label>State</label>
-                  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+                  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL" selected>Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                   
+				  </select>
                   <span class="help-text">Select one or more</span>
               </div>
             </div>
@@ -452,7 +581,15 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
 								<label>Responsible Staff/Surveyor</label>
-								<input type="text">
+								<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+									<option>Roberta Carr</option>
+									<option>Ellen Datlow</option>
+									<option>Daniel Folsom</option>
+									<option>Daisy Freeman</option>
+									<option>Rebecca Moray</option>
+									<option>Zachary Taggart</option>
+									<option>Tom Vineman</option>
+								</select>
 								<span class="help-text">Select one or more</span>
 								</div>
 							</div>
@@ -476,14 +613,25 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Intake Status</label>
-									<input class="form-control" type="text" value="All" id="intakeStatus" placeholder="">
+									<!--<input class="form-control" type="text" value="" id="intakeStatus" placeholder="">-->
+									<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+										<option>Triage/Prioritization</option>
+										<option>No Action</option>
+										<option>Pending RO Approval</option>
+										<option>Pending Investigation</option>
+										<option>Under Investigation</option>
+									</select>
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
 						    <div class="col-md-6 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Triage Priority</label>
-									<input class="form-control" type="text" value="All" id="intakePriority" placeholder="">
+									<!--<input class="form-control" type="text" value="" id="intakePriority" placeholder="">-->
+									<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+										<option>Immediate Jeopardy</option><option>Non-IJ High</option>
+										<option>Non-IJ Medium</option><option>Non-IJ Low</option><option>Not Applicable</option>
+									</select>
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
@@ -506,7 +654,60 @@ $('#intakeTable').DataTable( {
 							<div class="col col-md-4 col-lg-4 col-xl-3">
 							  <div class="form-group">
 								  <label>State
-								  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+								  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL" selected>Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                   
+				  </select>
 								  <span class="help-text">Select one or more</span>
 								  </label>
 							  </div>
@@ -635,7 +836,15 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
 								<label>Responsible Staff</label>
-								<input type="text">
+								<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+									<option>Roberta Carr</option>
+									<option>Ellen Datlow</option>
+									<option>Daniel Folsom</option>
+									<option>Daisy Freeman</option>
+									<option>Rebecca Moray</option>
+									<option>Zachary Taggart</option>
+									<option>Tom Vineman</option>
+								</select>
 								<span class="help-text">Select one or more</span>
 								</div>
 							</div>
@@ -648,7 +857,14 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<div class="form-group">
 								<label>Referral Agency</label>
-								<input type="text">
+								<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+									<option>Hospital Program - Regional</option>
+									<option>Office of Mental Health</option>
+									<option>Agency C</option>
+									<option>Agency D</option>
+									<option>Agency E</option>
+									<option>Agency F</option>
+									</select>
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
@@ -666,21 +882,7 @@ $('#intakeTable').DataTable( {
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">State</button>
                 </div>
 									
-									<!--<fieldset>
-                <legend>Enforcement Type</legend>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="enforcementType1" checked name="enforcementType" class="custom-control-input">
-                  <label class="custom-control-label" for="enforcementType1"> Both </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="enforcementType2" name="enforcementType" class="custom-control-input">
-                  <label class="custom-control-label" for="enforcementType2"> Federal</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="enforcementType3" name="enforcementType" class="custom-control-input">
-                  <label class="custom-control-label" for="enforcementType3"> State</label>
-                </div>
-                </fieldset>-->
+							
 								</div>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
@@ -698,7 +900,13 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-6 col-lg-4">
 								<div class="form-group">
 								<label>Associated Survey IDs</label>
-								<input type="text">
+								<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+									<option>ID 1234</option>
+									<option>ID 2235</option>
+									<option>ID 3245</option>
+									<option>ID 4234</option>
+									<option>ID 5234</option>
+								</select>
 								<span class="help-text">Select one or more</span>
 								</div>
 							</div>
@@ -724,7 +932,15 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-4 col-lg-4">
 								<div class="form-group">
 								<label>Responsible Staff</label>
-								<input type="text"><span class="help-text">Select one or more</span>
+								<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+									<option>Roberta Carr</option>
+									<option>Ellen Datlow</option>
+									<option>Daniel Folsom</option>
+									<option>Daisy Freeman</option>
+									<option>Rebecca Moray</option>
+									<option>Zachary Taggart</option>
+									<option>Tom Vineman</option>
+								</select><span class="help-text">Select one or more</span>
 								</div>
 							</div>
 							
@@ -753,7 +969,17 @@ $('#intakeTable').DataTable( {
 						
 							<div class="col-md-4 col-lg-4">
 								<div class="form-group"><label>Sanction Type</label>
-									<input type="text" id="sanctionType"><span class="help-text">Select one or more</span>
+									<!--<input type="text" id="sanctionType">-->
+									
+									<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+									<option>Directed Plan of Correction</option>
+									<option>Temporary Management</option>
+									<option>Directed Inservice Training</option>
+									<option>Civil Monetary Penalty</option>
+									<option>CMS-Approved Alternative or Additional State Remedy</option>
+									<option>Suspension of Payment for New Admissions</option>
+								</select>
+									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
 							<div class="col-md-10 col-lg-6">
@@ -786,7 +1012,18 @@ $('#intakeTable').DataTable( {
 							</div>-->
 							<div class="col-md-4 col-lg-4">
 								<label>CMP Payment Status</label>
-								<input type="text" id="cmpPaymentStatus"><span class="help-text">Select one or more</span>
+								<!--<input type="text" id="cmpPaymentStatus">-->
+								<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+									<option>None Yet</option>
+									<option>Awaiting CMP Payment</option>
+									<option>Pending Appeal</option>
+									<option>Paid/Closed</option>
+									<option>Extended Payments</option>
+									<option>Overdue CMP</option>
+									<option>IDR Removed CMP</option>
+									<option>Awaiting Bankruptcy</option>
+								</select>
+								<span class="help-text">Select one or more</span>
 							</div>
 			<div class="col-md-10 col-lg-6">
 								
@@ -816,7 +1053,60 @@ $('#intakeTable').DataTable( {
 							<div class="col col-md-4 col-lg-4 col-xl-3">
 							  <div class="form-group">
 								  <label>State
-								  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+								  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+                      <option value="AL">Alabama</option>
+                      <option value="AK">Alaska</option>
+                      <option value="AZ">Arizona</option>
+                      <option value="AR">Arkansas</option>
+                      <option value="CA">California</option>
+                      <option value="CO">Colorado</option>
+                      <option value="CT">Connecticut</option>
+                      <option value="DE">Delaware</option>
+                      <option value="DC">District Of Columbia</option>
+                      <option value="FL">Florida</option>
+                      <option value="GA">Georgia</option>
+                      <option value="HI">Hawaii</option>
+                      <option value="ID">Idaho</option>
+                      <option value="IL" selected>Illinois</option>
+                      <option value="IN">Indiana</option>
+                      <option value="IA">Iowa</option>
+                      <option value="KS">Kansas</option>
+                      <option value="KY">Kentucky</option>
+                      <option value="LA">Louisiana</option>
+                      <option value="ME">Maine</option>
+                      <option value="MD">Maryland</option>
+                      <option value="MA">Massachusetts</option>
+                      <option value="MI">Michigan</option>
+                      <option value="MN">Minnesota</option>
+                      <option value="MS">Mississippi</option>
+                      <option value="MO">Missouri</option>
+                      <option value="MT">Montana</option>
+                      <option value="NE">Nebraska</option>
+                      <option value="NV">Nevada</option>
+                      <option value="NH">New Hampshire</option>
+                      <option value="NJ">New Jersey</option>
+                      <option value="NM">New Mexico</option>
+                      <option value="NY">New York</option>
+                      <option value="NC">North Carolina</option>
+                      <option value="ND">North Dakota</option>
+                      <option value="OH">Ohio</option>
+                      <option value="OK">Oklahoma</option>
+                      <option value="OR">Oregon</option>
+                      <option value="PA">Pennsylvania</option>
+                      <option value="RI">Rhode Island</option>
+                      <option value="SC">South Carolina</option>
+                      <option value="SD">South Dakota</option>
+                      <option value="TN">Tennessee</option>
+                      <option value="TX">Texas</option>
+                      <option value="UT">Utah</option>
+                      <option value="VT">Vermont</option>
+                      <option value="VA">Virginia</option>
+                      <option value="WA">Washington</option>
+                      <option value="WV">West Virginia</option>
+                      <option value="WI">Wisconsin</option>
+                      <option value="WY">Wyoming</option>
+                   
+				  </select>
 								  <span class="help-text">Select one or more</span>
 								  </label>
 							  </div>
@@ -892,7 +1182,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
           <br>  
 		<ul class="iq-inline-list searchCriteria"><li><div class="state"><label class="inline">State: </label>
 			<div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('.searchCriteria li').addClass('hide'); $('.table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#providerSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div>
-			<div class="badge badge-pill"><span>Virginia </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.va').addClass('hide');"><span aria-hidden="true">&times;</span></button></div></div>
+			</div>
 			</li>
 			<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
         <span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#inlineFormInputGroup').val(''); ">
@@ -952,22 +1242,22 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 	  
       <td>Certified</td><td>Deemed</td>
       </tr>
-    <tr class="deemed va">
+    <tr class="deemed">
       <td>&nbsp;</td>
       <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
         2401 Avenue J, Suite 240<br>
-        Arlington, VA 23225</td>
+        Arlington, IL 63225</td>
       <td>Home Health Agency</td>
       <td>CCN 677863</td>
       <td>Closed</td>
       <td>Terminated</td>
 	  <td>Deemed</td>
       </tr>
-    <tr class="good va">
+    <tr class="good">
       <td>&nbsp;</td>
       <td><a href="#">Good Neighbor HHC of Baxter</a><br>
         14387 Edgewood Drive<br>
-        Baxter, VA 23231</td>
+        Baxter, IL 63231</td>
       <td>Home Health Agency</td>
       <td>CCN 247269</td>
       <td>Open</td>
@@ -1018,11 +1308,11 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Certified</td>
 		<td>Deemed</td>
       </tr>
-    <tr class="va">
+    <tr>
       <td>&nbsp;</td>
       <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
       PO Box 236<br>
-      New Laguna, VA 23222</td>
+      New Laguna, IL 63222</td>
       <td>Home Health Agency</td>
       <td>iQIES 327046</td>
       <td>Open</td>
@@ -1056,7 +1346,17 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 	  <td style="min-width: 8rem;">03/01/2020</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-    
+     <tr class="">
+	  <td></td>
+      <td style="min-width: 8rem;"><a href="#">19A3-H1</a></td>
+	  <td>Health</td>
+	  <td><ul><li>Initial Certification</li>
+		  <li>Complaint</li></ul></td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a></td>
+      <td style="min-width: 8rem;">Open</td>
+	  <td style="min-width: 8rem;">02/27/2020</td>
+      <td><div class="iqies-list-button-group"><a href="survey-brighthope.html" class="btn btn-link">View</a></div></td>
+    </tr>
   </tbody>
 </table>
 	<table class="display responsive hide" id="intakeTable">
@@ -1085,15 +1385,33 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
-			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li>
-			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Minor</small></li></ul>
+			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Moderate</small></li>
+			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Moderate</small></li></ul>
   		  </div>
 	  </td>
 	  <td style="min-width: 8rem;">01/01/2020</td>
 	  <td style="min-width: 8rem;">03/01/2020</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-    
+    <tr class="">
+	  <td></td>
+      <td style="min-width: 8rem;"><a href="#">Incident 3265</a></td>
+	  <td>Under Investigation<br><a href="survey-brighthope.html">View Survey</a></td>
+	  <td>Non-Immediate Jeopardy-Low</td>
+      <td style="min-width: 15rem;"><a href="provider-profile-hospice.html">BrightHope</a></td>
+      <td style="min-width: 8rem;"><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+          <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li>
+			  </ul>
+  		  </div>
+	  </td>
+	  <td style="min-width: 8rem;">02/12/2020</td>
+	  <td style="min-width: 8rem;">03/15/2020</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
   </tbody>
 </table>
 <table class="display responsive hide" id="enforcementTable">
@@ -1115,12 +1433,21 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td style="min-width: 8rem;"><a href="#">1234</a></td>
 	  <td>Federal</td>
 	  <td style="min-width: 8rem;">01/01/2020</td>
-	  <td><a href="#">BFF0-H2 <i class="fal fa-external-link"></i></a> (12/01/2019)</td>
+	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (12/01/2019)</td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a></td>
+      <td>Open</td>
+      <td><div class="iqies-list-button-group"><a href="../enforcement/enforcement.html" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="">
+	  <td></td>
+      <td style="min-width: 8rem;"><a href="#">3245</a></td>
+	  <td>State</td>
+	  <td style="min-width: 8rem;">12/23/2019</td>
+	  <td><a href="#">XYZ0-H1 <i class="fal fa-external-link"></i></a> (11/23/2019)</td>
       <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
       <td>Open</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-    
   </tbody>
 </table>
 			  
@@ -1131,32 +1458,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 		</section>
         
         <p class="iq-no-results hide" id="noResults" role="status">No providers found for this search.</p>
-          <div class="row hide" id="advancedOps">
-              
-              <div class="col col-md-4">
-                  <div class="form-group">
-                      <label>Address Type</label>
-                      <select class="form-control">
-                          <option value="primary">Primary Practice Location</option>
-                          <option value="all">All Locations</option>
-                      </select>
-                  </div>
-              </div>
-            
-              <div class="col col-md-6">&nbsp;</div>
-             
-              <div class="col col-md-6">&nbsp;</div>
-              <div class="col-md-3">
-                    <div class="form-group">
-                        <fieldset class=""><legend id="deemedStatus-legend" class="iqies-legend-heading-no-error">Deemed Status</legend><div class="custom-control custom-radio"><input id="deemedStatus-" type="radio" name="deemedStatus" class="custom-control-input" value="" checked=""><label id="deemedStatus-label-" nesting="deemedStatus-label-" for="deemedStatus-" class="custom-control-label">Both</label></div><div class="custom-control custom-radio"><input id="deemedStatus-true" type="radio" name="deemedStatus" class="custom-control-input" value="true" onChange=""><label id="deemedStatus-label-true" nesting="deemedStatus-label-true" for="deemedStatus-true" class="custom-control-label">Deemed</label></div><div class="custom-control custom-radio"><input id="deemedStatus-false" type="radio" name="deemedStatus" class="custom-control-input" value="false"><label id="deemedStatus-label-false" nesting="deemedStatus-label-false" for="deemedStatus-false" class="custom-control-label">Non-Deemed</label></div></fieldset>
-                  </div>
-              </div>
-              
-          </div>
-         
-       <!-- <section>
-          <h4>Selected Criteria (0)</h4>
-        </section>-->
+        
+  
           
     </div>
   </main>
@@ -1236,17 +1539,21 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
     </div>
   </footer>
 
-  <script type="text/javascript" src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="../../../src/assets/third-party/popper/popper.min.js"></script>
-  <script type="text/javascript" src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
+  <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <script src="../../../src/assets/js/scripts.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
+
   <script>
 
 	  
 	  
 	  $(document).ready(function () {
+		  
+		  
 	
  $( function showProviderTable() {
 		 $('#providerTable').DataTable( {
@@ -1273,6 +1580,9 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 	  }); 
 	  
   $( function() {
+	  
+	   $("select.multiselect").bsMultiSelect();
+
     var availableProviderTypes = [
       "All", 
 	  "Home Health Agencies",
