@@ -220,7 +220,7 @@ $('#intakeTable').DataTable( {
             <div class="col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>Federal Certification Status</label>
-                      <input type="text" class="form-control" value="All" placeholder="" id="certsStatus">
+                      <input type="text" class="form-control" value="" placeholder="" id="certsStatus">
 					  <span class="help-text">Select one or more</span>
                   </div>
             </div>
@@ -269,7 +269,7 @@ $('#intakeTable').DataTable( {
             <div class="col col-md-3 col-lg-3 col-xl-3">
               <div class="form-group">
                   <label>State</label>
-                  <input class="form-control" type="text" value="Illinois, Virginia" id="states" placeholder="">
+                  <input class="form-control" type="text" value="Illinois" id="states" placeholder="">
                   <span class="help-text">Select one or more</span>
               </div>
             </div>
@@ -336,7 +336,7 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Survey Category</label>
-									<input class="form-control" type="text" value="All" id="surveyCategories" placeholder="">
+									<input class="form-control" type="text" value="" id="surveyCategories" placeholder="">
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
@@ -351,7 +351,7 @@ $('#intakeTable').DataTable( {
 							<div class="col col-md-4 col-lg-4 col-xl-3">
               <div class="form-group">
                   <label>State</label>
-                  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+                  <input class="form-control" type="text" value="Illinois" placeholder="">
                   <span class="help-text">Select one or more</span>
               </div>
             </div>
@@ -476,14 +476,14 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Intake Status</label>
-									<input class="form-control" type="text" value="All" id="intakeStatus" placeholder="">
+									<input class="form-control" type="text" value="" id="intakeStatus" placeholder="">
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
 						    <div class="col-md-6 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Triage Priority</label>
-									<input class="form-control" type="text" value="All" id="intakePriority" placeholder="">
+									<input class="form-control" type="text" value="" id="intakePriority" placeholder="">
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
@@ -506,7 +506,7 @@ $('#intakeTable').DataTable( {
 							<div class="col col-md-4 col-lg-4 col-xl-3">
 							  <div class="form-group">
 								  <label>State
-								  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+								  <input class="form-control" type="text" value="Illinois" placeholder="">
 								  <span class="help-text">Select one or more</span>
 								  </label>
 							  </div>
@@ -816,7 +816,7 @@ $('#intakeTable').DataTable( {
 							<div class="col col-md-4 col-lg-4 col-xl-3">
 							  <div class="form-group">
 								  <label>State
-								  <input class="form-control" type="text" value="Illinois, Virginia" placeholder="">
+								  <input class="form-control" type="text" value="Illinois" placeholder="">
 								  <span class="help-text">Select one or more</span>
 								  </label>
 							  </div>
@@ -892,7 +892,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
           <br>  
 		<ul class="iq-inline-list searchCriteria"><li><div class="state"><label class="inline">State: </label>
 			<div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('.searchCriteria li').addClass('hide'); $('.table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#providerSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div>
-			<div class="badge badge-pill"><span>Virginia </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent('.badge').hide(); $('.table tr.va').addClass('hide');"><span aria-hidden="true">&times;</span></button></div></div>
+			</div>
 			</li>
 			<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
         <span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#inlineFormInputGroup').val(''); ">
@@ -952,22 +952,22 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 	  
       <td>Certified</td><td>Deemed</td>
       </tr>
-    <tr class="deemed va">
+    <tr class="deemed">
       <td>&nbsp;</td>
       <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
         2401 Avenue J, Suite 240<br>
-        Arlington, VA 23225</td>
+        Arlington, IL 63225</td>
       <td>Home Health Agency</td>
       <td>CCN 677863</td>
       <td>Closed</td>
       <td>Terminated</td>
 	  <td>Deemed</td>
       </tr>
-    <tr class="good va">
+    <tr class="good">
       <td>&nbsp;</td>
       <td><a href="#">Good Neighbor HHC of Baxter</a><br>
         14387 Edgewood Drive<br>
-        Baxter, VA 23231</td>
+        Baxter, IL 63231</td>
       <td>Home Health Agency</td>
       <td>CCN 247269</td>
       <td>Open</td>
@@ -1018,11 +1018,11 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td>Certified</td>
 		<td>Deemed</td>
       </tr>
-    <tr class="va">
+    <tr>
       <td>&nbsp;</td>
       <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
       PO Box 236<br>
-      New Laguna, VA 23222</td>
+      New Laguna, IL 63222</td>
       <td>Home Health Agency</td>
       <td>iQIES 327046</td>
       <td>Open</td>
@@ -1056,7 +1056,17 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 	  <td style="min-width: 8rem;">03/01/2020</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-    
+     <tr class="">
+	  <td></td>
+      <td style="min-width: 8rem;"><a href="#">19A3-H1</a></td>
+	  <td>Health</td>
+	  <td><ul><li>Initial Certification</li>
+		  <li>Complaint</li></ul></td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a></td>
+      <td style="min-width: 8rem;">Open</td>
+	  <td style="min-width: 8rem;">02/27/2020</td>
+      <td><div class="iqies-list-button-group"><a href="survey-brighthope.html" class="btn btn-link">View</a></div></td>
+    </tr>
   </tbody>
 </table>
 	<table class="display responsive hide" id="intakeTable">
@@ -1085,15 +1095,33 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
-			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li>
-			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Minor</small></li></ul>
+			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Moderate</small></li>
+			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Moderate</small></li></ul>
   		  </div>
 	  </td>
 	  <td style="min-width: 8rem;">01/01/2020</td>
 	  <td style="min-width: 8rem;">03/01/2020</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-    
+    <tr class="">
+	  <td></td>
+      <td style="min-width: 8rem;"><a href="#">Incident 3265</a></td>
+	  <td>Under Investigation<br><a href="survey-brighthope.html">View Survey</a></td>
+	  <td>Non-Immediate Jeopardy-Low</td>
+      <td style="min-width: 15rem;"><a href="provider-profile-hospice.html">BrightHope</a></td>
+      <td style="min-width: 8rem;"><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+          <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li>
+			  </ul>
+  		  </div>
+	  </td>
+	  <td style="min-width: 8rem;">02/12/2020</td>
+	  <td style="min-width: 8rem;">03/15/2020</td>
+      <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
+    </tr>
   </tbody>
 </table>
 <table class="display responsive hide" id="enforcementTable">
@@ -1115,12 +1143,21 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       <td style="min-width: 8rem;"><a href="#">1234</a></td>
 	  <td>Federal</td>
 	  <td style="min-width: 8rem;">01/01/2020</td>
-	  <td><a href="#">BFF0-H2 <i class="fal fa-external-link"></i></a> (12/01/2019)</td>
+	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (12/01/2019)</td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a></td>
+      <td>Open</td>
+      <td><div class="iqies-list-button-group"><a href="../enforcement/enforcement.html" class="btn btn-link">View</a></div></td>
+    </tr>
+    <tr class="">
+	  <td></td>
+      <td style="min-width: 8rem;"><a href="#">3245</a></td>
+	  <td>State</td>
+	  <td style="min-width: 8rem;">12/23/2019</td>
+	  <td><a href="#">XYZ0-H1 <i class="fal fa-external-link"></i></a> (11/23/2019)</td>
       <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
       <td>Open</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-    
   </tbody>
 </table>
 			  
@@ -1131,32 +1168,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
 		</section>
         
         <p class="iq-no-results hide" id="noResults" role="status">No providers found for this search.</p>
-          <div class="row hide" id="advancedOps">
-              
-              <div class="col col-md-4">
-                  <div class="form-group">
-                      <label>Address Type</label>
-                      <select class="form-control">
-                          <option value="primary">Primary Practice Location</option>
-                          <option value="all">All Locations</option>
-                      </select>
-                  </div>
-              </div>
-            
-              <div class="col col-md-6">&nbsp;</div>
-             
-              <div class="col col-md-6">&nbsp;</div>
-              <div class="col-md-3">
-                    <div class="form-group">
-                        <fieldset class=""><legend id="deemedStatus-legend" class="iqies-legend-heading-no-error">Deemed Status</legend><div class="custom-control custom-radio"><input id="deemedStatus-" type="radio" name="deemedStatus" class="custom-control-input" value="" checked=""><label id="deemedStatus-label-" nesting="deemedStatus-label-" for="deemedStatus-" class="custom-control-label">Both</label></div><div class="custom-control custom-radio"><input id="deemedStatus-true" type="radio" name="deemedStatus" class="custom-control-input" value="true" onChange=""><label id="deemedStatus-label-true" nesting="deemedStatus-label-true" for="deemedStatus-true" class="custom-control-label">Deemed</label></div><div class="custom-control custom-radio"><input id="deemedStatus-false" type="radio" name="deemedStatus" class="custom-control-input" value="false"><label id="deemedStatus-label-false" nesting="deemedStatus-label-false" for="deemedStatus-false" class="custom-control-label">Non-Deemed</label></div></fieldset>
-                  </div>
-              </div>
-              
-          </div>
-         
-       <!-- <section>
-          <h4>Selected Criteria (0)</h4>
-        </section>-->
+        
+  
           
     </div>
   </main>
