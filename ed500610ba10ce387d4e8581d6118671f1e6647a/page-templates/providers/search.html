@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Search | iQIES</title>
-
-  <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
-  <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search | iQIES</title>
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
-     <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
-	
 </head>
 
 <body>
@@ -30,8 +24,8 @@
                         <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="#">Manage AO Providers</a> 
-                          <a class="dropdown-item" href="#">Search for a provider, survey, intake, or enforcement</a>
-                          <a class="dropdown-item" href="#">Add a Provider</a>
+                          <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
+                          <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
                       </div>
                     </div><a href="javascript:void(0)" class="iq-assessments-link">Assessments</a>
                     <div class="dropdown d-sm-none d-lg-inline-block">
@@ -197,7 +191,7 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-5 col-lg-4 col-xl-3">
 								  <div class="form-group">
 									  <label>Deemed Status</label>
-									  <select><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
+									  <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
 								  </div>
 							</div>
 							<!--<div class="col-md-7">
@@ -419,7 +413,7 @@ $('#intakeTable').DataTable( {
 						    <div class="col-md-3 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Survey Type</label>
-									<select><option>All</option><option>Health</option><option>Life Safety Code</option><option>xxx</option></select>
+									<select><option>All</option><option>Health</option><option>Life Safety Code</option><option>Clinical Laboratory</option></select>
 								</div>
 							</div>
 						</div>
@@ -1168,16 +1162,19 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     $('#noResults').addClass('hide'); 
     $('#providerSearchResults .baCount').html('Results: 1-10 of 97 Providers'); 
     $('#providerSearchResults nav').removeClass('hide'); }
-if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); $('#advancedSearchLink').click(); };">Search</a>
+console.log($('#deemedStatusSelect option:selected').text());
+if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); $('#advancedSearchLink').click(); };">Search</a>
 							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
     $('#providerSearchResults .baCount').html('Results: 1-10 of 112 Providers'); 
-    $('#providerSearchResults nav').removeClass('hide'); $('#inlineFormInputGroup').val(''); $('.searchCriteria li > div').addClass('hide'); $('.searchCriteria li > div.state').removeClass('hide');">Reset</button>
+    $('#providerSearchResults nav').removeClass('hide'); $('#inlineFormInputGroup').val(''); $('.searchCriteria li > div').addClass('hide'); 
+	$('.searchCriteria li > div.state').removeClass('hide'); 
+	$('#deemedStatusSelect option:first').attr('selected', true);">Reset</button>
                           </div>
                       </div>
                   </div>
-		<section id="SearchArea">
+<section id="SearchArea">
 			<h2 class="sr-only">Selected Search Criteria</h2>
           <br>  
 		<ul class="iq-inline-list searchCriteria"><li><div class="state"><label class="inline">State: </label>
@@ -1198,7 +1195,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
           <p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span></p>
         
           
-    <table class="display responsive" id="providerTable">
+<table class="display responsive" id="providerTable">
   <thead>
     <tr>
       <th>&nbsp;</th>
@@ -1321,8 +1318,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
       </tr>
   </tbody>
 </table>
-	
-	<table class="display responsive hide" id="surveyTable">
+<table class="display responsive hide" id="surveyTable">
   <thead>
     <tr>
 	  <th></th>
@@ -1359,7 +1355,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
     </tr>
   </tbody>
 </table>
-	<table class="display responsive hide" id="intakeTable">
+<table class="display responsive hide" id="intakeTable">
   <thead>
     <tr>
 	  <th></th>
@@ -1418,7 +1414,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
   <thead>
     <tr>
 	  <th></th>
-	  <th style="min-width: 9rem;"><span>Case ID</span></th>
+	  <th style="min-width: 9rem;"><span>Enforcement ID</span></th>
 	  <th><span>Type</span></th>
 	  <th style="min-width: 9rem;"><span>Enforcement Start Date</span></th>
 	  <th><span>Starting Survey</span></th>
@@ -1451,16 +1447,12 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
   </tbody>
 </table>
 			  
-	 
-   <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item"><button  class="page-link">3</button></li><li class="page-item"><button class="page-link">4</button></li><li class="page-item"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item"><button class="page-link last">Last</button></li></ul></nav>
+<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item"><button  class="page-link">3</button></li><li class="page-item"><button class="page-link">4</button></li><li class="page-item"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item"><button class="page-link last">Last</button></li></ul></nav>
         </section>
-	   
-		</section>
+</section> <!-- search area -->
         
         <p class="iq-no-results hide" id="noResults" role="status">No providers found for this search.</p>
-        
-  
-          
+                
     </div>
   </main>
 
@@ -1472,513 +1464,64 @@ if( $('#advancedSearch-showhide').hasClass('show') ){ $('table.responsive tbody 
             <div class="row">
               <div class="col">
                 <div class="iq-footer-heading">
-                  <a href="/">
-                    <img
-                      src="../../../src/assets/images/logo-iqies-reversed.svg"
-                      class="logo iq-logo" alt="Logo iQIES White">
-                  </a><img src="../../../src/assets/images/logo-cms.svg"
-                    class="img-fluid logo cms-logo d-lg-none" alt="">
+                  <a href="/"><img src="../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <a href="/help">Help</a><span>
-                  (800)
-                  339-9313
-                </span><a href="mailto:help@qtso.com">Email Us</a><a
-                  href="https://qtso.cms.gov/" target="_blank"
-                  rel="noopener noreferrer">
-                  QTSO <img src="../../../src/assets/images/logo-cms.svg"
-                    class="iq-external-link-icon" alt="">
-                </a><a href="https://www.cms.gov/Medicare/Medicare.html"
-                  target="_blank" rel="noopener noreferrer">
-                  Medicare <img
-                    src="../../../src/assets/images/icon-link-external.svg"
-                    class="iq-external-link-icon" alt="">
-                </a><a href="/privacy-policy">Privacy Policy</a>
+                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <div class="iq-footer-links">
-                  <a href="https://www.medicare.gov/about-us/plain-writing"
-                    target="_blank" rel="noopener noreferrer">
-                    Plain Writing <img
-                      src="../../../src/assets/images/icon-link-external.svg"
-                      class="iq-external-link-icon" alt="">
-                  </a><a
-                    href="https://www.cms.gov/center/freedom-of-information-act-center.html"
-                    target="_blank" rel="noopener noreferrer">
-                    Freedom of
-                    Information Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
-                      class="iq-external-link-icon" alt="">
-                  </a><a
-                    href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
-                    target="_blank" rel="noopener noreferrer">
-                    No Fear Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
-                      class="iq-external-link-icon" alt="">
-                  </a><a href="https://get.adobe.com/reader/" target="_blank"
-                    rel="noopener noreferrer">
-                    Adobe Acrobat <img
-                      src="../../../src/assets/images/icon-link-external.svg"
-                      class="iq-external-link-icon" alt="">
-                  </a>
+                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-2 col-xl-2 d-flex align-items-center">
-          <img src="../../../src/assets/images/logo-cms.svg"
-            class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+          <img src="../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
         </div>
       </div>
     </div>
   </footer>
 
   <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
-  <script src="../../../src/assets/js/scripts.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <script src="../../hhaung/js/BsMultiSelect.js"></script>
-
+  <script src="../../../src/assets/js/scripts.js"></script>
   <script>
-
-	  
-	  
 	  $(document).ready(function () {
-		  
-		  
-	
- $( function showProviderTable() {
-		 $('#providerTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  "order": [[ 1, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 }//,
-			//{ responsivePriority: 1, targets: -1 },
-			//{ "orderable": false, "targets": -1 }
-		 ]
-	} ); 
- });
-
-
- $('[data-toggle="tooltip"]').tooltip(); 
+		  $('#providerTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 }//,
+				//{ responsivePriority: 1, targets: -1 },
+				//{ "orderable": false, "targets": -1 }
+			 ]
+		  }); 
+		  $('[data-toggle="tooltip"]').tooltip(); 
 	  }); 
 	  
-  $( function() {
-	  
-	   $("select.multiselect").bsMultiSelect();
-
-    var availableProviderTypes = [
-      "All", 
-	  "Home Health Agencies",
-      "Hospice",
-      "Clinical Laboratory"
-    ];
-    var availableSubTypes = [
-        ""
-    ];
-	var availableCMPpaymentstatus = [
-        "All", "None Yet", "Awaiting CMP Payment" ,"Pending Appeal", "Paid/Closed", "Extended Payments", "Overdue CMP", "IDR Removed CMP", "Awaiting Brankruptcy"
-    ];  
-	var availableSurveyStatus = [
-        "All", "New", "Writing in Progress", "Writing Complete", "Revisit Created", "Closed"
-    ];
-	var availableSurveyCategories = [
-        "All", "Initial Certification (Federal)", "Recertification (Federal)", "Complaint (Federal)", "Initial Licensure (State)", "Re-Licensure (State)", "Licensure Complaint (State)"
-    ];
-    var availableCertStatus = [
-        "All", "Not Applicable", "Pending Certification", "Certified", "Terminated"
-    ];
-	 var availableSanctionTypes = [
-        "All", "Directed Plan of Correction", "Temporary Management", "Directed Inservice Training", "Civil Monetary Penalty", "CMS-Approved Alternative or Additional State Remedy", "Suspension of Payment for New Admissions"
-    ];  
-	var availableIntakeStatus = [
-        "All", "Triage/Prioritization", "No	Action", "Pending RO Approval", "Pending Investigation", "Under Investigation" 
-    ];
-	var availablePriority = [
-        "All", "Immediate Jeopardy", "Non-IJ High", "Non-IJ Medium", "Non-IJ Low", "Not Applicable" 
-    ];
-    var availableStates = [
-        "All", "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Canada", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "International", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Marshall Islands", "Maryland", "Massachusetts", "Mexico", "Michigan", "Micronesia", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Palau", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Virgin Islands", "Washington", "West Virginia", "Wisconsin", "Wyoming" 
-    ];
-    var availableRegions = [
-        "All", "1 - Boston", "2 - New York", "3 - Philadelphia", "4 - Atlanta", "5 - Chicago", "6 - Dallas", "7 - Kansas City", "8 - Denver", "9 - San Francisco", "10 - Seattle"
-    ];
-    function split( val ) {
-      return val.split( /,\s*/ );
-    }
-    function extractLast( term ) {
-      return split( term ).pop();
-    }
- 
-    $( "#providerTypes" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableProviderTypes, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-	  
-	  $( "#surveyStatus" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableSurveyStatus, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-      
-	  $( "#cmpPaymentStatus" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableCMPpaymentstatus, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-      $( "#subtypes" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableSubTypes, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-	  
-	  $( "#intakePriority" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availablePriority, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-      
-      $( "#certsStatus" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableCertStatus, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-	  
-	  $( "#intakeStatus" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableIntakeStatus, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-	  
-	  $( "#surveyCategories" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableSurveyCategories, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-      
-      $( "#states" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableStates, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-      
-      $( "#cmsregion" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableRegions, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-	  
-      $( "#sanctionType" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableSanctionTypes, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-  } );
-	</script>
-
+	  $( function() {
+		   $("select.multiselect").bsMultiSelect();
+	  } );
+</script>
 </body>
-
 </html>
