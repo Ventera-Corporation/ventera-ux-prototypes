@@ -72,7 +72,6 @@
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
 						<!-- TemplateBeginEditable name="breadcrumb" -->
-
                         <li class="breadcrumb-item">
                           <a href="../global/global-landing-menu.html">Home</a>
                         </li>
@@ -135,12 +134,7 @@
           </div>
 	  
    <div class="container-fluid" id="mainContent">
-    <!--<div class="row">
-      <div class="col">
-        <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
-      </div>
-    </div>-->
-	  	<!-- TemplateBeginEditable name="pageLevelErrors" -->	
+	  <!-- TemplateBeginEditable name="pageLevelErrors" -->	
 	  <div class="alert alert-warning hide" role="alert">
 		<div class="alert-content">You do not have permission to manage this provider's information.</div>
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -163,23 +157,39 @@
         </div> 
 	   <!-- TemplateEndEditable -->
 	   <!-- TemplateBeginEditable name="mainContent" -->
-
-         <section>
+       <section>
           <h2>Recent Surveys</h2>
-            <table class="table table-striped" datatable="true">
-                <caption class="sr-only">Provider Surveys</caption><thead><tr><th>Survey ID</th><th>Survey Type</th><th>Survey Category</th><th>Exit Date</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody><tr><td><a href="survey-brighthope.html">19A3-H1</a></td><td>Health</td><td>Recertification</td><td></td><td>New</td><td class="iqies-list-button-group"><a class="btn btn-link" href="survey.html">View</a></td></tr><tr><td><a href="#">1084-H1</a></td><td>Health</td><td>Writing complete</td><td class="iqies-list-button-group"><a class="btn btn-link" href="#">View</a></td></tr><tr><td><a href="#">1085-H1</a></td><td>Health</td><td>Complaint</td><td>08/13/2019</td><td>Closed</td><td class="iqies-list-button-group"><a class="btn btn-link" href="#">View</a></td></tr></tbody></table>
-			<div class="iq-button-wrapper text-right" style="margin-top: -1rem;"> <a href="survey-all.html" class="btn btn-link">View All Surveys (3)</a></div>        
+          <table class="display responsive survey">
+              <thead>
+				 <tr>
+                  <th>&nbsp;</th><th><span>Survey ID</span></th><th><span>Survey Type</span></th><th><span>Survey Category</span></th><th><span>Exit Date</span></th><th><span>Status</span></th><th><span class="sr-only">Actions</span></th></tr></thead>
+			  <tbody><tr>
+				  <td>&nbsp;</td>
+			       <td><a href="survey-brighthope.html">19A3-H1</a></td>
+				  <td>Health</td>
+				  <td>Recertification</td>
+				  <td>10/12/2019</td><td>New</td><td class="iqies-list-button-group"><a class="btn btn-link" href="survey.html">View</a></td></tr>
+				  <tr>
+				    <td>&nbsp;</td>
+			      <td><a href="#">1084-H1</a></td><td>Health</td><td>Writing complete</td><td>10/10/2019</td><td>New</td><td class="iqies-list-button-group"><a class="btn btn-link" href="#">View</a></td></tr><tr>
+				      <td>&nbsp;</td>
+	          <td><a href="#">1085-H1</a></td><td>Health</td><td>Complaint</td><td>08/13/2019</td><td>Closed</td><td class="iqies-list-button-group"><a class="btn btn-link" href="#">View</a></td></tr></tbody>
+		  </table>
+		  <div class="iq-button-wrapper text-right" style="margin-top: -1rem;"> <a href="survey-all.html" class="btn btn-link">View All Surveys (3)</a></div>        
     	</section>
         <section class="hide">
         <h2>Recent Intakes</h2>
-		<table class="table table-striped" datatable="true"><caption class="sr-only">Intakes</caption><thead><tr><th tabindex="0" scope="col" class="sortable"><span class="">Intake ID</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Status</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Priority</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Allegations</span></th><th tabindex="0" scope="col" class="descending sortable"><span class="">Intake Start Date</span></th><th tabindex="0" scope="col" class="sortable"><span class="">Survey Due Date</span></th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody><tr><td><p class="iqies-label-responsive">Intake ID</p><a href="complaint.html">Complaint 12634</a></td><td><p class="iqies-label-responsive">Status</p>Under Investigation<br><a href="survey-brighthope.html">View Survey</a></td><td><p class="iqies-label-responsive">Priority</p><p>Non-Immediate Jeopardy-High</p></td><td><p class="iqies-label-responsive">Allegations</p><p>1</p></td><td><p class="iqies-label-responsive">Intake Start Date</p><p>08/08/2019</p></td><td><p class="iqies-label-responsive">Due Date</p><p>10/11/2019</p></td><td><div class="justify-content-end iqies-list-button-group"><a class="btn btn-link" href="/providers/64606/intakes/12634">View</a></div></td></tr></tbody></table>
+		<table class="display responsive intake">
+		<thead><tr><th></th><th><span>Intake ID</span></th><th><span>Status</span></th><th><span>Priority</span></th><th><span>Allegations</span></th><th><span>Intake Start Date</span></th><th><span>Survey Due Date</span></th><th><span class="sr-only">Actions</span></th></tr></thead>
+		<tbody><tr><td></td><td><a href="complaint.html">Complaint 12634</a></td><td>Under Investigation<br><a href="survey-brighthope.html">View Survey</a></td><td>Non-Immediate Jeopardy-High</td><td>1</td><td>08/08/2019</td><td>10/11/2019</td><td class="iqies-list-button-group"><a class="btn btn-link" href="provider-profile.html">View</a></td></tr></tbody></table>
         </section>
         <section>
           <h2>Recent Enforcements</h2>   
-          <table class="table table-striped responsive">
+          <table class="display responsive enforcement">
   <thead>
     <tr>
-	  <th style="min-width: 9rem;"><span>Case ID</span></th>
+      <th>&nbsp;</th>
+	  <th style="min-width: 9rem;"><span>Enforcement ID</span></th>
 	  <th><span>Type</span></th>
 	  <th style="min-width: 9rem;"><span>Enforcement Start Date</span></th>
 	  <th><span>Starting Survey</span></th>
@@ -188,7 +198,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="">
+    <tr>
+      <td>&nbsp;</td>
 	  <td style="min-width: 8rem;"><a href="#">1234</a></td>
 	  <td>Federal</td>
 	  <td style="min-width: 8rem;">01/01/2020</td>
@@ -196,18 +207,12 @@
       <td>Open</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-    
   </tbody>
 </table>
-			   <div class="iq-button-wrapper text-right" style="margin-top: -1rem;"> <a href="enforcement-all.html" class="btn btn-link">View All Enforcements (1)</a></div>
+	<div class="iq-button-wrapper text-right" style="margin-top: -1rem;"> <a href="enforcement-all.html" class="btn btn-link">View All Enforcements (1)</a></div>
          </section>
-        </div>
-        
-      
-    </div>
-  </div>
-	
-    <!-- TemplateEndEditable -->
+   	   <!-- TemplateEndEditable -->
+	</div>
   </main>
 
   <footer>
@@ -247,12 +252,15 @@
   <script src="../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <script src="../../ventera-ux-prototypes/ed500610ba10ce387d4e8581d6118671f1e6647a/hhaung/js/BsMultiSelect.js"></script>
   <script src="../src/assets/js/scripts.js"></script>
-  <script>
+   <!-- TemplateBeginEditable name="footerScripts" --><script>
+	
 	  $( function() {
-		   $('table').DataTable( {
+		  $('table.responsive').DataTable( {
 			  //scrollY: 300,
 			  paging: false,
 			  lengthMenu: false,
@@ -264,14 +272,17 @@
 			  "order": [[ 1, 'asc' ]],
 			  columnDefs: [
 				{ className: 'control', orderable: false, targets: 0 },
-				{ responsivePriority: 0, targets: 1 }//,
-				//{ responsivePriority: 1, targets: -1 },
-				//{ "orderable": false, "targets": -1 }
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
 			 ]
 		  }); 
+		  
 		  $('[data-toggle="tooltip"]').tooltip(); 
-		   $("select.multiselect").bsMultiSelect();
+		  $("select.multiselect").bsMultiSelect();
+		   var editor = new FroalaEditor('div.editTextDiv'); 
 	  } );
-</script>
+	   
+</script><!-- TemplateEndEditable -->
 </body>
 </html>
