@@ -8,9 +8,13 @@
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<!-- styles needed for data tables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<!-- to match design system definition -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
 <!-- InstanceBeginEditable name="head" -->
 
@@ -1194,7 +1198,12 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     $('#providerSearchResults .baCount').html('Results: 1-10 of 97 Providers'); 
     $('#providerSearchResults nav').removeClass('hide'); }
 console.log($('#deemedStatusSelect option:selected').text());
-if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); }; $('#advancedSearchLink').click(); ">Search</a>
+if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ 
+		 $('table.responsive tbody tr').addClass('hide'); 
+		 $('table.responsive tbody tr.deemed').removeClass('hide'); 
+		 $('.searchCriteria .deemed').removeClass('hide'); 
+}; 
+if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').click(); } else {  } ">Search</a>
 							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
@@ -1551,9 +1560,12 @@ if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ $('table.resp
   <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include datatables for responsive table -->
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <!-- to include multi-select dropdown selector -->
   <script src="../../hhaung/js/BsMultiSelect.js"></script>
   <script src="../../../src/assets/js/scripts.js"></script>
   <!-- InstanceBeginEditable name="footerScripts" -->
