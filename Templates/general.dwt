@@ -8,9 +8,13 @@
 <!-- TemplateEndEditable -->
 <link rel="stylesheet" href="../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../src/assets/prototype-styles/prototype.css">
+<!-- styles needed for data tables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<!-- to match design system definition -->
 <link rel="stylesheet" href="../src/assets/prototype-styles/hha.css">
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
@@ -99,6 +103,7 @@
 	  </div>
   	  <div class="alert alert-success successMsg hide" role="alert">
 	  	<div class="alert-content">Changes saved successfully</div>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 	  </div>
 	  <div class="alert alert-danger errorMsg hide" role="alert">
           <div class="alert-content"><div class="row">
@@ -162,9 +167,12 @@
   <script src="../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include datatables for responsive table -->
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <!-- to include multi-select dropdown selector -->
   <script src="../../ventera-ux-prototypes/ed500610ba10ce387d4e8581d6118671f1e6647a/hhaung/js/BsMultiSelect.js"></script>
   <script src="../src/assets/js/scripts.js"></script>
   <!-- TemplateBeginEditable name="footerScripts" -->
@@ -186,11 +194,29 @@
 				{ responsivePriority: 1, targets: -1 },
 				{ "orderable": false, "targets": -1 }
 			 ]
-		  }); 
+		  }); // to get all responsive tables sorted by order. be sure to trigger by ID if each table has diffrent sort column
 		  
-		  $('[data-toggle="tooltip"]').tooltip(); 
-		  $("select.multiselect").bsMultiSelect();
-		   var editor = new FroalaEditor('div.editTextDiv'); 
+		  $('[data-toggle="tooltip"]').tooltip(); // to include tooltip
+		  $("select.multiselect").bsMultiSelect(); // to include multi-select dropdown selector
+		   var editor = new FroalaEditor('div.editTextDiv'); //to include text editor
+		  window.setTimeout(function() {
+				$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+					$(this).addClass('hide'); 
+				});
+			}, 5000); //to get save messages to disppear on its own 
+    
+     $('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        }); // to include character limit. Make sure you have the ID replaced with your own textarea ID OR use a class name if multiple
 	  });
 </script>
 	<!-- TemplateEndEditable -->
