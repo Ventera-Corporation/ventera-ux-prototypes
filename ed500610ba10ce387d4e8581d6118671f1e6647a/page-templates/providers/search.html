@@ -100,6 +100,7 @@
 	  </div>
   	  <div class="alert alert-success successMsg hide" role="alert">
 	  	<div class="alert-content">Changes saved successfully</div>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 	  </div>
 	  <div class="alert alert-danger errorMsg hide" role="alert">
           <div class="alert-content"><div class="row">
@@ -1162,7 +1163,7 @@ $('#intakeTable').DataTable( {
               </div>
             </div>
           </div>
-		<div class="row iq-button-wrapper">
+		<div class="row iq-button-wrapper mr-0" style="position: relative">
                       <div class="col">
                           <div>
                               <a href="#searchArea" id="viewProviderSearchResults" class="btn btn-primary searchButton"
@@ -1193,7 +1194,7 @@ if( $('#inlineFormInputGroup').val().indexOf('b') > -1 ) {
     $('#providerSearchResults .baCount').html('Results: 1-10 of 97 Providers'); 
     $('#providerSearchResults nav').removeClass('hide'); }
 console.log($('#deemedStatusSelect option:selected').text());
-if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); $('#advancedSearchLink').click(); };">Search</a>
+if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ $('table.responsive tbody tr').addClass('hide'); $('table.responsive tbody tr.deemed').removeClass('hide'); $('.searchCriteria .deemed').removeClass('hide'); }; $('#advancedSearchLink').click(); ">Search</a>
 							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
@@ -1201,12 +1202,37 @@ if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ $('table.resp
     $('#providerSearchResults nav').removeClass('hide'); $('#inlineFormInputGroup').val(''); $('.searchCriteria li > div').addClass('hide'); 
 	$('.searchCriteria li > div.state').removeClass('hide'); 
 	$('#deemedStatusSelect option:first').attr('selected', true);">Reset</button>
+							  <button class="btn btn-outline-primary float-right mr-0" style="position: absolute; right: -1rem;" data-toggle="modal" data-target="#confirmSearchSettings">Save Search Settings</button>
+							  <div class="modal fade" id="confirmSearchSettings" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Confirm Save</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+              <p>The selected advanced search criteria will be saved as search settings for current and future sessions.
+                </p>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide');">Save</button>
+              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+  </div>
                           </div>
                       </div>
                   </div>
 <section id="SearchArea">
 			<h2 class="sr-only">Selected Search Criteria</h2>
           <br>  
+	<div class="float-right">
+	<button class="btn btn-outline-primary" data-tooltip data-toggle="tooltip" title="Print"><i class="far fa-print"></i></button>
+		<button class="btn btn-outline-primary" data-tooltip data-toggle="tooltip" title="Download"><i class="far fa-download"></i></button>
+	</div>
 		<ul class="iq-inline-list searchCriteria"><li><div class="state"><label class="inline">State: </label>
 			<div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('.searchCriteria li').addClass('hide'); $('.table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#providerSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div>
 			</div>
@@ -1552,6 +1578,24 @@ if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ $('table.resp
 		  }); 
 		  $('[data-toggle="tooltip"]').tooltip(); 
 		  $("select.multiselect").bsMultiSelect();
+		  window.setTimeout(function() {
+				$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+					$(this).addClass('hide'); 
+				});
+			}, 5000);
+    
+     $('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        });
 	  });
 	
 	
