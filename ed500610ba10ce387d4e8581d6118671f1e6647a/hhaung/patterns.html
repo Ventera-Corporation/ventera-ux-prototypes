@@ -19,13 +19,13 @@
 <body>
 
   <main>
-	<div class="container-fluid" id="mainContent">
-      <button id="menu-toggle" class="btn btn-sm btn-primary">
+	<div class="container-fluid" id="mainContent" >
+      <button id="menu-toggle" class="btn btn-sm btn-primary d-none d-sm-block">
     <span class="iq-proto-menu-hamburger d-none">Show Menu</span>
     <span class="iq-proto-menu-close">Hide Menu</span>
   </button>
   <div id="iq-proto-wrapper">
-    <div id="iq-proto-sidebar-wrapper">
+    <div id="iq-proto-sidebar-wrapper" class="d-none d-sm-block">
       <button class="btn btn-sm btn-primary" onclick="$('#iq-proto-sidebar-wrapper .has-subnav').toggleClass('expanded'); $('#iq-proto-sidebar-wrapper .list-group-item').toggleClass('hide');" style="position: relative; top: 0; left: .5rem;">Expand/Collapse All</button>
       <ul class="list-group">
         <li class="list-group-title"><a href="#color" class="has-subnav" onClick="$(this).toggleClass('expanded'); $(this).parent('li').siblings('.color').toggleClass('hide');">Color Palette</a></li>
@@ -644,18 +644,39 @@
           <h3>Button Group</h3>
           
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-9 col-lg-8">
+				<div class="form-group">
               <div class="btn-group" role="group" aria-label="Button Group Example">
-                <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Left</button>
+                <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Left Name</button>
+                <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Middle Name</button>
+				  
+                <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Right Name</button>
+                </div>
+              </div>
+				
+				<div class="form-group">
+              <div class="btn-group" role="group" aria-label="Button Group Example">
+                <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Left Name</button>
                 <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Middle</button>
+				  
                 <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Right</button>
                 </div>
-              
               </div>
-            <div class="col-md-3"><div class="btn-group-vertical">
+				<div class="form-group">
+              <div class="btn-group" role="group" aria-label="Button Group Example">
+                <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">ABC</button>
+                <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">EFG</button>
+				  
+                <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">IJK</button>
+				  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">MNO</button>
+                </div>
+              </div>
+              </div>
+            <div class="col-md-3 col-lg-4">
+				<div class="form-group"><div class="btn-group-vertical">
               <button class="btn btn-outline-primary"><i class="fal fa-chevron-up" aria-hidden="true"></i></button>
               <button class="btn btn-outline-primary"><i class="fal fa-chevron-down" aria-hidden="true"></i></button>
-              </div></div>
+              </div></div></div>
             </div>
           
           
