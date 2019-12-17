@@ -127,7 +127,7 @@
          
 		<div class="row">
 			<div class="col-md-3 col-lg-2">
-				<label>Type</label>
+				<div class="form-group"><label>Type</label>
 				 <select onChange="$('.help-text span').addClass('hide'); $('table').addClass('hide'); $('#advancedSearch-showhide .read-view').removeClass('active'); switch(this.options[this.selectedIndex].value){ 
 					case 'Provider': $('.help-text .provider').removeClass('hide'); $('#advancedSearch-showhide .read-view.provider').addClass('active'); $('#providerTable').removeClass('hide');  break; 
 				  	case 'Survey': $('.help-text .survey').removeClass('hide'); $('#advancedSearch-showhide .read-view.survey').addClass('active'); $('#surveyTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 54 Surveys'); $('#surveyTable').DataTable( {
@@ -184,7 +184,7 @@ $('#intakeTable').DataTable( {
 		{ 'orderable': false, 'targets': -1 }
 	 ]
 } ); break;   
-				}"><option>Provider</option><option>Survey</option><option>Intake</option><option>Enforcement</option></select>
+				}"><option>Provider</option><option>Survey</option><option>Intake</option><option>Enforcement</option></select></div>
 			</div>
 			<div class="col-md-6 col-lg-7">
 				<div class="form-group">
@@ -216,7 +216,7 @@ $('#intakeTable').DataTable( {
 									 <span class="help-text">Select one or more</span>
 								  </div>
 							  </div>
-							<div class="col col-md-5 col-lg-4 col-xl-3">
+							<div class="col-md-5 col-lg-4 col-xl-3">
 								  <div class="form-group">
 									  <label>iQIES ID
 										  <input type="text">
@@ -294,12 +294,12 @@ $('#intakeTable').DataTable( {
                   <label>Street Address<input class="form-control" type="text" value=""></label>
               </div>
             </div>
-            <div class="col col-md-5 col-lg-4 col-xl-3">
+            <div class="col-md-5 col-lg-4 col-xl-3">
               <div class="form-group">
                   <label>City<input class="form-control" type="text" value=""></label>
               </div>
             </div>
-            <div class="col col-md-3 col-lg-3 col-xl-3">
+            <div class="col-md-3 col-lg-3 col-xl-3">
               <div class="form-group">
                   <label>State</label>
 				  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
@@ -360,13 +360,13 @@ $('#intakeTable').DataTable( {
                   <span class="help-text">Select one or more</span>
               </div>
             </div>
-            <div class="col col-md-2">
+            <div class="col-md-2">
               <div class="form-group">
                   <label>ZIP Code<input class="form-control" type="text" value=""></label>
               </div>
             </div>
 						</div><div class="row">
-            <div class="col col-md-5 col-lg-4 col-xl-3">
+            <div class="col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>Management Unit
                       <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
@@ -374,7 +374,7 @@ $('#intakeTable').DataTable( {
                       <p class="help-text">State must be selected</p>
                   </div>
               </div>
-            <div class="col col-md-5 col-lg-4 col-xl-3">
+            <div class="col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>Work Unit
                        <select disabled><option>Select one</option></select>
@@ -382,7 +382,7 @@ $('#intakeTable').DataTable( {
                       <p class="help-text">Management unit must be selected</p>
                   </div>
               </div>
-            <div class="col col-md-5 col-lg-4 col-xl-3">
+            <div class="col-md-5 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>CMS Region</label>
 					  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
@@ -453,7 +453,7 @@ $('#intakeTable').DataTable( {
 							</div>
 						</div>
 						<div class="row">
-							<div class="col col-md-4 col-lg-4 col-xl-3">
+							<div class="col-md-4 col-lg-4 col-xl-3">
               <div class="form-group">
                   <label>State</label>
                   <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
@@ -513,7 +513,7 @@ $('#intakeTable').DataTable( {
                   <span class="help-text">Select one or more</span>
               </div>
             </div>
-            <div class="col col-md-4 col-lg-4 col-xl-3">
+            <div class="col-md-4 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>Management Unit
                       <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
@@ -521,7 +521,7 @@ $('#intakeTable').DataTable( {
                       <p class="help-text">State must be selected</p>
                   </div>
               </div>
-            <div class="col col-md-4 col-lg-4 col-xl-3">
+            <div class="col-md-4 col-lg-4 col-xl-3">
                   <div class="form-group">
                       <label>Work Unit
                        <select disabled><option>Select one</option></select>
@@ -554,27 +554,29 @@ $('#intakeTable').DataTable( {
 						</div>
 						<div class="row">
 							<div class="col-lg-6 col-xl-6">
-								<label>Survey Start Date Range</label>
+								<fieldset><legend>Survey Start Date Range</legend>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="input-group">
 											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
+											<input type="date" class="form-control start-from-date">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 									<div class="col-md-6">
 										<div class="input-group">
 											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
+											<input type="date" class="form-control start-to-date">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 								</div>
+									
+								</fieldset>
 								
 							</div>
 							<div class="col-lg-6 col-xl-6">
-								<label>Survey Exit Date Range</label>
+								<fieldset><legend>Survey Exit Date Range</legend>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="input-group">
@@ -591,7 +593,7 @@ $('#intakeTable').DataTable( {
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>
 								</div>
-							
+								</fieldset>
 							</div>
 						</div>
 						<div class="row">
@@ -680,7 +682,7 @@ $('#intakeTable').DataTable( {
 							</div>
 						</div>
 						<div class="row">
-							<div class="col col-md-4 col-lg-4 col-xl-3">
+							<div class="col-md-4 col-lg-4 col-xl-3">
 							  <div class="form-group">
 								  <label>State
 								  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
@@ -741,7 +743,7 @@ $('#intakeTable').DataTable( {
 								  </label>
 							  </div>
 							</div>
-							<div class="col col-md-4 col-lg-4 col-xl-3">
+							<div class="col-md-4 col-lg-4 col-xl-3">
 								  <div class="form-group">
 									  <label>Management Unit
 									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
@@ -749,7 +751,7 @@ $('#intakeTable').DataTable( {
 									  <p class="help-text">State must be selected</p>
 								  </div>
 							  </div>
-							<div class="col col-md-4 col-lg-4 col-xl-3">
+							<div class="col-md-4 col-lg-4 col-xl-3">
 								  <div class="form-group">
 									  <label>Work Unit
 									   <select disabled><option>Select one</option></select>
@@ -1079,7 +1081,7 @@ $('#intakeTable').DataTable( {
 							
 						</div>
 						<div class="row">
-							<div class="col col-md-4 col-lg-4 col-xl-3">
+							<div class="col-md-4 col-lg-4 col-xl-3">
 							  <div class="form-group">
 								  <label>State
 								  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
@@ -1140,7 +1142,7 @@ $('#intakeTable').DataTable( {
 								  </label>
 							  </div>
 							</div>
-							<div class="col col-md-4 col-lg-4 col-xl-3">
+							<div class="col-md-4 col-lg-4 col-xl-3">
 								  <div class="form-group">
 									  <label>Management Unit
 									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
@@ -1148,7 +1150,7 @@ $('#intakeTable').DataTable( {
 									  <p class="help-text">State must be selected</p>
 								  </div>
 							  </div>
-							<div class="col col-md-4 col-lg-4 col-xl-3">
+							<div class="col-md-4 col-lg-4 col-xl-3">
 								  <div class="form-group">
 									  <label>Work Unit
 									   <select disabled><option>Select one</option></select>
@@ -1211,7 +1213,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
     $('#providerSearchResults nav').removeClass('hide'); $('#inlineFormInputGroup').val(''); $('.searchCriteria li > div').addClass('hide'); 
 	$('.searchCriteria li > div.state').removeClass('hide'); 
 	$('#deemedStatusSelect option:first').attr('selected', true);">Reset</button>
-							  <button class="btn btn-outline-primary float-right mr-0" style="position: absolute; right: -1rem;" data-toggle="modal" data-target="#confirmSearchSettings">Save Search Settings</button>
+							 
 							  <div class="modal fade" id="confirmSearchSettings" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
           <div class="modal-content">
@@ -1239,8 +1241,15 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
 			<h2 class="sr-only">Selected Search Criteria</h2>
           <br>  
 	<div class="float-right">
-	<button class="btn btn-outline-primary" data-tooltip data-toggle="tooltip" title="Print"><i class="far fa-print"></i></button>
-		<button class="btn btn-outline-primary" data-tooltip data-toggle="tooltip" title="Download"><i class="far fa-download"></i></button>
+	<!--<button class="btn btn-outline-primary" data-tooltip data-toggle="tooltip" title="Print"><i class="far fa-print"></i></button>-->
+		<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
+              <div class="dropdown-menu" aria-labelledby="exportLink">
+				<p class="dropdown-header mt-2">Export results as:</p>
+                <button class="dropdown-item">PDF</button>
+                <button class="dropdown-item">Excel</button>
+                <button class="dropdown-item">CSV</button>
+                </div>
+              
 	</div>
 		<ul class="iq-inline-list searchCriteria"><li><div class="state"><label class="inline">State: </label>
 			<div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('.searchCriteria li').addClass('hide'); $('.table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#providerSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div>
@@ -1264,7 +1273,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
   <thead>
     <tr>
       <th>&nbsp;</th>
-      <th class="ascending" style="min-width: 15rem;"><span>Provider</span></th>
+      <th class="ascending" style="min-width: 12rem;"><span>Provider</span></th>
       <th><span>Provider Type</span></th>
       <th style="min-width: 8rem"><span>ID</span></th>
       <th><span>Operating Status</span></th>
@@ -1275,7 +1284,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
   <tbody>
     <tr class="deemed il">
       <td>&nbsp;</td>
-      <td style="min-width: 15rem;"><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
+      <td style="min-width: 12rem;"><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
       <td>Home Health Agency</td>
       <td style="min-width: 9rem">CCN 368130</td>
       <td>Open</td>
@@ -1512,7 +1521,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
   </tbody>
 </table>
 			  
-<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item"><button  class="page-link">3</button></li><li class="page-item"><button class="page-link">4</button></li><li class="page-item"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item"><button class="page-link last">Last</button></li></ul></nav>
+<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled d-none d-sm-block"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button class="page-link">2</button></li><li class="page-item d-none d-sm-block"><button  class="page-link">3</button></li><li class="page-item d-none d-sm-block"><button class="page-link">4</button></li><li class="page-item d-none d-sm-block"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item d-none d-sm-block"><button class="page-link last">Last</button></li></ul></nav>
         </section>
 </section> <!-- search area -->
         

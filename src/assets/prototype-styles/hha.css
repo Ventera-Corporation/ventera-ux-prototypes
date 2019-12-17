@@ -15,7 +15,10 @@ ul.iq-inline-list { list-style: none; margin-left: 0; padding-left: 0;  }
 ul.iq-inline-list li { display: inline-block; margin-right: .5rem; list-style: none; margin-left: 0; padding-left: 0; }
 
 /* GENERAL UTILITIES */
-.container-fluid { padding: 0 4rem; }
+.container-fluid { padding: 0 4rem;}
+@media (max-width: 768px) {
+	.container-fluid { padding: 0 .5rem; }
+}
 .float-right { float: right; }
 .edit-view, .read-view { display: none; }
 .edit-view.active, .read-view.active { display: block; }
@@ -538,6 +541,11 @@ a.return-link:before { font-family: "Font Awesome 5 Pro"; font-weight: 100; marg
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+@media (max-width: 768px) { 
+	#iq-proto-wrapper {
+    padding-left: 0;
+	}
 }
 #menu-toggle {
     position: fixed;
