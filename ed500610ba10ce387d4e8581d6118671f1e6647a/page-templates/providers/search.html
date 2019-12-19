@@ -190,7 +190,7 @@ $('#intakeTable').DataTable( {
 				<div class="form-group">
 				<label>Keyword</label>
 				<input type="text" class="form-control" id="inlineFormInputGroup" onKeyUp="if (event.keyCode === 13) {
-        $('.searchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text"><span class="provider">Enter provider name, CCN, or state facility ID</span><span class="survey hide">Enter survey ID, provider name, or CCN</span><span class="intake hide">Enter intake ID, provider name, or CCN</span><span class="enforcement hide">Enter enforcement ID, provider name, or CCN</span></div></div>  
+        $('.searchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text"><span class="provider">Enter provider name, CCN, or State Facility ID (FACID)</span><span class="survey hide">Enter survey ID, provider name, or CCN</span><span class="intake hide">Enter intake ID, provider name, or CCN</span><span class="enforcement hide">Enter enforcement ID, provider name, or CCN</span></div></div>  
 			</div>
 		</div>
 
@@ -542,12 +542,12 @@ $('#intakeTable').DataTable( {
 									   <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
 									</div>   
 								</div>
-								<div class="form-group">
+								<!--<div class="form-group">
 									<div class="custom-control custom-checkbox">
 									  <input type="checkbox" id="showResStaff" class="custom-control-input">
 									   <label class="custom-control-label" for="showResStaff">Show open surveys where I am a responsible staff member</label>
 									</div>   
-								</div>
+								</div>-->
 							</div>
 							
 							
@@ -666,21 +666,24 @@ $('#intakeTable').DataTable( {
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group">
-								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
-								<input type="text">
-								</div>
-							</div>
 							<div class="col-md-12 col-lg-12">
 								<div class="form-group">
 									<div class="custom-control custom-checkbox">
 									  <input type="checkbox" id="roapproved" class="custom-control-input">
 									   <label class="custom-control-label" for="roapproved">Show only intakes with an investigation approved by an RO</label>
 									</div>   
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="roapproved" class="custom-control-input">
+									   <label class="custom-control-label" for="roapproved">Show only open intakes approved by an RO</label>
+									</div> 
 								</div>
 							</div>
-						</div>
+					  </div>
+					 
+						
+						  
+						
+						
 						<div class="row">
 							<div class="col-md-4 col-lg-4 col-xl-3">
 							  <div class="form-group">
@@ -762,6 +765,35 @@ $('#intakeTable').DataTable( {
 							  
 						</div>
 						<div class="row">
+							<div class="col-md-6 col-lg-4 col-xl-3">
+								<div class="form-group">
+								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
+								<input type="text">
+								</div>
+							</div>
+							<div class="col-md-8 col-lg-8 col-xl-6">
+								
+								<label>Incident Receipt Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								
+							</div>
+						</div>
+						<div class="row">
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
 								<label>Survey Action</label>
@@ -808,8 +840,7 @@ $('#intakeTable').DataTable( {
 								</div>
 							</div>
 							<div class="col-md-8 col-lg-8 col-xl-6">
-								
-								<label>Incident Receipt Date Range</label>
+						  <label>RO Approval Date Range</label>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="input-group">
@@ -826,9 +857,7 @@ $('#intakeTable').DataTable( {
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 								</div>
-								
-							</div>
-						
+						  </div>
 						</div>
 						<div class="row">
 							<div class="col-md-12 col-lg-4 col-xl-3">
@@ -919,11 +948,21 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<div class="form-group">
 									<label>Enforcement Case Status</label>
-									<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
-                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
-                </div>
+									<select><option>All</option>
+									<optgroup label="Home Health Agency">
+										<option>Open - Active</option>
+										<option>Open - CMP Collection</option>
+										<option>Open - Under Appeal</option>
+										<option>Closed</option>
+										</optgroup>
+									<optgroup label="Hospice">
+										<option>Open - Active</option>
+										<option>Closed</option>
+										<option>Closed - Public Notice Published</option>
+										</optgroup>
+									
+										
+									</select>
 									
 									
 								</div>
@@ -1308,7 +1347,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
         250 Pond Street<br>
         Braintree, IL 63222</td>
       <td>Hospital</td>
-      <td>CCN 223027<br>SFID 1234</td>
+      <td>CCN 223027<br>
+        FACID IL1234112233</td>
       <td>Open</td>
 	  
       <td>Certified</td><td>Deemed</td>
@@ -1330,7 +1370,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
         14387 Edgewood Drive<br>
         Baxter, IL 63231</td>
       <td>Home Health Agency</td>
-      <td>CCN 247269</td>
+      <td>CCN 247269<br>
+        FACID IL5321112233445566</td>
       <td>Open</td>
       <td>Certified</td>
 	  <td>Non-Deemed</td>
@@ -1341,7 +1382,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
         804 Wright Street<br>
         Brainerd, IL 63227</td>
       <td>Home Health Agency</td>
-      <td>CCN 248032</td>
+      <td>CCN 248032<br>
+        FACID IL764211223344</td>
       <td>Open</td>
       <td>Certified</td>
 	  <td>Suspended</td>
@@ -1363,7 +1405,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
       150 Robeson Street, 4th Floor<br>
       Fayetteville, IL 63222</td>
       <td>Hospital</td>
-      <td>CCN 342014</td>
+      <td>CCN 342014<br>
+        FACID IL85321122334<br></td>
       <td>Open</td>
       <td>Certified</td>
 		<td>Deemed</td>
@@ -1374,7 +1417,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
         State Road 23 South<br>
         Casa Blanca, IL 63222</td>
       <td>Home Health Agency</td>
-      <td>CCN 327144</td>
+      <td>CCN 327144<br>
+        FACID IL9621112233<br></td>
       <td>Open</td>
       <td>Certified</td>
 		<td>Deemed</td>
@@ -1385,7 +1429,8 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
       PO Box 236<br>
       New Laguna, IL 63222</td>
       <td>Home Health Agency</td>
-      <td>iQIES 327046</td>
+      <td>iQIES 327046<br>
+        FACID IL1199112556677<br></td>
       <td>Open</td>
       <td>Pending</td>
 		<td>Non-Deemed</td>
@@ -1396,35 +1441,62 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
   <thead>
     <tr>
 	  <th></th>
-      <th class="sortable ascending" style="min-width: 9rem;"><span>Survey ID</span></th>
-      <th><span>Type</span></th>
+      <th class="sortable ascending"><span>Survey ID</span></th>
+      
 	  <th><span>Category</span></th>
-      <th><span>Provider Name</span></th>
+      <th><span>Provider</span></th>
       <th><span>Status</span></th>
-	  <th style="min-width: 9rem;"><span>Exit Date</span></th>
+	  <th><span>Exit Date</span></th>
+	  <th><span>Citations</span></th>
+	  <th><span>Type</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
     <tr class="">
 	  <td></td>
-      <td style="min-width: 8rem;"><a href="#">19A3-H1</a></td>
-	  <td>Health</td>
+      <td><a href="#">19A3-H1</a></td>
+	  
 	  <td><ul><li>Initial Certification</li></ul></td>
-      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
-      <td style="min-width: 8rem;">Open</td>
-	  <td style="min-width: 8rem;">03/01/2020</td>
+      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>CCN 368130</td>
+      <td>Open</td>
+	  <td>03/01/2020</td>
+	  <td>
+		  <a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
+          <div class="dropdown-menu text-content" aria-labelledby="citationList1">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  <ul>
+				  <li>G0 - Initial Comments <small>[Memo]</small></li>
+				 <li>G1014 - Interventions and Patient Response <small>[Element]</small></li></ul>
+  		  </div></li>
+	  </td>
+	  <td>Health</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
      <tr class="">
 	  <td></td>
       <td style="min-width: 8rem;"><a href="#">19A3-H1</a></td>
-	  <td>Health</td>
+	 
 	  <td><ul><li>Initial Certification</li>
 		  <li>Complaint</li></ul></td>
-      <td><a href="provider-profile-hospice.html">BrightHope</a></td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
       <td style="min-width: 8rem;">Open</td>
 	  <td style="min-width: 8rem;">02/27/2020</td>
+	  <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
+          <div class="dropdown-menu text-content" aria-labelledby="allegationList">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			   <ul>
+				   <li>G1008 Clinical Records <small>[Condition]</small> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></li>
+		  <li>G0 - Initial Comments <small>[Memo]</small></li>
+				   <li>G1014 - Interventions and Patient Response <small>[Element]</small></li>
+			  </ul>
+			  
+  		  </div></td>
+	  <td>Health</td>
       <td><div class="iqies-list-button-group"><a href="survey-brighthope.html" class="btn btn-link">View</a></div></td>
     </tr>
   </tbody>
@@ -1436,10 +1508,10 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
 	  <th style="min-width: 9rem;"><span>Intake ID</span></th>
 	  <th><span>Status</span></th>
 	  <th><span>Priority</span></th>
-      <th><span>Provider Name</span></th>
+      <th><span>Provider</span></th>
 	  <th><span>Allegations</span></th>
-	  <th style="min-width: 9rem;"><span>Intake Start Date</span></th>
-	  <th style="min-width: 9rem;"><span>Survey Due Date</span></th>
+	  <th style="min-width: 9rem;"><span>Intake Start</span></th>
+	  <th style="min-width: 9rem;"><span>Survey Due</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -1449,7 +1521,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
       <td style="min-width: 8rem;"><a href="#">Complaint 12345</a></td>
 	  <td>Under Investigation<br><a href="#">View Survey</a></td>
 	  <td>Non-Immediate Jeopardy-High</td>
-      <td style="min-width: 15rem;"><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
+      <td style="min-width: 15rem;"><a href="#">Good Neighbor HHC of Baxter</a><br>CCN 247269 | FACID IL5321112233445566</td>
       <td style="min-width: 8rem;"><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
           <div class="dropdown-menu text-content" aria-labelledby="allegationList">
 			  <button type="button" class="close" aria-label="Close">
@@ -1468,7 +1540,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
       <td style="min-width: 8rem;"><a href="#">Incident 3265</a></td>
 	  <td>Under Investigation<br><a href="survey-brighthope.html">View Survey</a></td>
 	  <td>Non-Immediate Jeopardy-Low</td>
-      <td style="min-width: 15rem;"><a href="provider-profile-hospice.html">BrightHope</a></td>
+      <td style="min-width: 15rem;"><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
       <td style="min-width: 8rem;"><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
           <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
 			  <button type="button" class="close" aria-label="Close">
@@ -1489,11 +1561,12 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
     <tr>
 	  <th></th>
 	  <th style="min-width: 9rem;"><span>Enforcement ID</span></th>
-	  <th><span>Type</span></th>
-	  <th style="min-width: 9rem;"><span>Enforcement Start Date</span></th>
+	  <th style="min-width: 9rem;"><span>Enforcement Start</span></th>
 	  <th><span>Starting Survey</span></th>
-      <th><span>Provider Name</span></th>
-	  <th><span>Status</span></th>
+	  <th><span>Sanctions</span></th>
+		<th><span>Case Status</span></th>
+      <th><span>Provider</span></th>
+	  <th><span>Type</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -1501,21 +1574,46 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
     <tr class="">
 	  <td></td>
       <td style="min-width: 8rem;"><a href="#">1234</a></td>
-	  <td>Federal</td>
 	  <td style="min-width: 8rem;">01/01/2020</td>
-	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (12/01/2019)</td>
-      <td><a href="provider-profile-hospice.html">BrightHope</a></td>
-      <td>Open</td>
+	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (12/01/2019) <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
+	  <td><a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+          <div class="dropdown-menu text-content" aria-labelledby="sanctionList">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			   <ul>
+				  
+		  <li>Termination at 23 days - IJ <small>[Recommended]</small> </li>
+				   
+			  </ul>
+			  
+  		  </div></td>
+	  <td>Open - Active</td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
+	  <td>Federal</td>
       <td><div class="iqies-list-button-group"><a href="../enforcement/enforcement.html" class="btn btn-link">View</a></div></td>
     </tr>
     <tr class="">
 	  <td></td>
       <td style="min-width: 8rem;"><a href="#">3245</a></td>
-	  <td>State</td>
 	  <td style="min-width: 8rem;">12/23/2019</td>
 	  <td><a href="#">XYZ0-H1 <i class="fal fa-external-link"></i></a> (11/23/2019)</td>
-      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
-      <td>Open</td>
+	   <td><a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
+          <div class="dropdown-menu text-content" aria-labelledby="sanctionList2">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			   <ul>
+				   <li>Civil Monetary Penalty <small>[Yes]</small> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span></li>
+		  <li>Directed Plan of Correction <small>[Yes]</small></li>
+				   
+			  </ul>
+			  
+  		  </div></td>
+		<td>Open - Under Appeal</td>
+      <td><a href="#">Laguna Rainbow Home Care</a><br>CCN 327144 | FACID IL9621112233</td>
+      
+		<td>State</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
   </tbody>
