@@ -18,6 +18,11 @@ ul.iq-inline-list li { display: inline-block; margin-right: .5rem; list-style: n
 .container-fluid { padding: 0 4rem;}
 @media (max-width: 768px) {
 	.container-fluid { padding: 0 .5rem; }
+	.hide-for-medium { display: none; }
+}
+@media (max-width: 414px) {
+	.container-fluid { padding: 0 .5rem; }
+	.hide-for-small { display: none; }
 }
 .float-right { float: right; }
 .edit-view, .read-view { display: none; }
@@ -603,3 +608,4 @@ label.inline { font-weight: normal; font-size: .845rem; display: inline-block; c
 .dashboardcode-bsmultiselect .dropdown-menu .px-2.text-primary.bg-light { background-color: #f1f1f1 !important; color: #212121 !important;  }
 .dashboardcode-bsmultiselect ul.form-control li:last-child { padding: 0; }
 .dashboardcode-bsmultiselect ul.form-control li > input { margin-bottom: 0; height: 2rem !important; }
+
