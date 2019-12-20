@@ -144,9 +144,12 @@
 		{ className: 'control', orderable: false, targets: 0 },
 		{ responsivePriority: 0, targets: 1 },
 		{ responsivePriority: 1, targets: -1 },
-		{ 'orderable': false, 'targets': -1 }
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 2 },
+		{ 'visible': false, 'targets': 3 },
+		{ 'visible': false, 'targets': 4 },
+		{ 'visible': false, 'targets': 5 }
 	 ]
-
 } ); break; 
 					case 'Intake': $('.help-text .intake').removeClass('hide'); $('#advancedSearch-showhide .read-view.intake').addClass('active'); $('#intakeTable').removeClass('hide'); $('.baCount').html('Results: 1-10 of 32 Intakes'); 
 $('#intakeTable').DataTable( {
@@ -538,7 +541,7 @@ $('#intakeTable').DataTable( {
 								</div>
 								<div class="form-group">
 									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSurveyWIJ" class="custom-control-input">
+									  <input type="checkbox" id="showSurveyWIJ"  class="custom-control-input">
 									   <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
 									</div>   
 								</div>
@@ -558,15 +561,15 @@ $('#intakeTable').DataTable( {
 								<div class="row">
 									<div class="col-md-6">
 										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control start-from-date">
+											<label class="input-group-text input-group-prepend" for="ssdr-from">From</label>
+											<input type="date" class="form-control" id="ssdr-from">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 									<div class="col-md-6">
 										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control start-to-date">
+											<label class="input-group-text input-group-prepend" for="ssdr-to">To</label>
+											<input type="date" class="form-control" id="ssdr-to">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
@@ -581,14 +584,14 @@ $('#intakeTable').DataTable( {
 									<div class="col-md-6">
 										<div class="input-group">
 											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
+											<input type="date" class="form-control" id="sedr-from">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 									<div class="col-md-6">
 										<div class="input-group">
 											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control">
+											<input type="date" class="form-control" id="sedr-to">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>
@@ -606,13 +609,13 @@ $('#intakeTable').DataTable( {
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
 								<label>POC Status</label>
-								<select><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
+								<select id="pocStatus"><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
 								</div>
 							</div>
 							<div class="col-md-4 col-lg-4 col-xl-3">
 								<div class="form-group">
 								<label>Responsible Staff/Surveyor</label>
-								<select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+								<select multiple="multiple" style="display: none;" class="multiselect" id="surveyStaff"><option>All</option>
 									<option>Roberta Carr</option>
 									<option>Ellen Datlow</option>
 									<option>Daniel Folsom</option>
@@ -673,8 +676,8 @@ $('#intakeTable').DataTable( {
 									   <label class="custom-control-label" for="roapproved">Show only intakes with an investigation approved by an RO</label>
 									</div>   
 									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="roapproved" class="custom-control-input">
-									   <label class="custom-control-label" for="roapproved">Show only open intakes approved by an RO</label>
+									  <input type="checkbox" id="roapproved2" class="custom-control-input">
+									   <label class="custom-control-label" for="roapproved2">Show only open intakes approved by an RO</label>
 									</div> 
 								</div>
 							</div>
@@ -1244,7 +1247,226 @@ if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){
 		 $('table.responsive tbody tr.deemed').removeClass('hide'); 
 		 $('.searchCriteria .deemed').removeClass('hide'); 
 }; 
-if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').click(); } else {  } ">Search</a>
+if( $('#showSurveyWIJ').prop('checked') == true ) { $('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.ij').removeClass('hide'); $('.searchCriteria .ij').removeClass('hide');   } else { $('#surveyTable tbody tr').removeClass('hide'); $('.searchCriteria .ij').addClass('hide'); }
+if( $('#sedr-from').val() && $('#sedr-to').val() ){ $('.searchCriteria .surveyExit').removeClass('hide'); $('.searchCriteria .surveyExit .badge > span').html( $('#sedr-from').val() + ' &mdash; ' + $('#sedr-to').val() ); } else if($('#sedr-from').val() && $('#sedr-to').val() == ''){ $('.searchCriteria .surveyExit').removeClass('hide'); $('.searchCriteria .surveyExit .badge > span').html( $('#sedr-from').val() ); } else if($('#sedr-to').val() && $('#sedr-from').val() == ''){ $('.searchCriteria .surveyExit').removeClass('hide'); $('.searchCriteria .surveyExit .badge > span').html( $('#sedr-to').val() ); }; 
+console.log( $('#pocStatus option:selected').text() );
+console.log( $('#ssdr-from').val() ); 
+console.log( $('#ssdr-to').val() ); 
+console.log( $('#surveyStaff option:selected').text() );
+if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() == '') { 
+	console.log('pending only');
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 6, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 3 },
+		{ 'visible': false, 'targets': 4 },
+		{ 'visible': false, 'targets': 5 }
+	  ]
+	} );
+	$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
+	$('.searchCriteria .poc').removeClass('hide');
+	$('.searchCriteria .surveyStart').addClass('hide');
+	$('.searchCriteria .reStaff').addClass('hide');
+} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() == '' ) { 
+	console.log('survey start date range only');
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 6, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 2 },
+		{ 'visible': false, 'targets': 4 },
+		{ 'visible': false, 'targets': 5 }
+	  ]
+	} );
+	$('.searchCriteria .poc').addClass('hide');
+	$('.searchCriteria .surveyStart').removeClass('hide');
+	$('.searchCriteria .reStaff').addClass('hide');
+} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() ) { 
+	console.log('survey staff only');
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 6, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 2 },
+		{ 'visible': false, 'targets': 3 },
+		{ 'visible': false, 'targets': 5 }
+	  ]
+	} );
+	$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
+	$('.searchCriteria .poc').addClass('hide');
+	$('.searchCriteria .surveyStart').addClass('hide');
+	$('.searchCriteria .reStaff').removeClass('hide');
+} else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() == '' ){
+	console.log('pending and survey start');
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 6, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 4 },
+		{ 'visible': false, 'targets': 5 }
+	  ]
+	} );
+	$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
+	$('.searchCriteria .poc').removeClass('hide');
+	$('.searchCriteria .surveyStart').removeClass('hide');
+	$('.searchCriteria .reStaff').addClass('hide');
+}  else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() ){
+	console.log('pending and survey staff');
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 6, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 3 },
+		{ 'visible': false, 'targets': 5 }
+	  ]
+	} );
+	$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
+	$('.searchCriteria .poc').removeClass('hide');
+	$('.searchCriteria .reStaff').removeClass('hide');
+	$('.searchCriteria .surveyStart').addClass('hide');
+}  else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() ){
+	console.log('survey start and staff');
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 6, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 2 },
+		{ 'visible': false, 'targets': 5 }
+	  ]
+	} );
+	$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
+	$('.searchCriteria .surveyStart').removeClass('hide');
+	$('.searchCriteria .reStaff').removeClass('hide');
+	$('.searchCriteria .poc').addClass('hide');
+} else if(  $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() ) {
+	console.log('all');
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 6, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 2 },
+		{ 'visible': false, 'targets': 3 },
+		{ 'visible': false, 'targets': 4 }
+	  ]
+	} );
+	$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
+	$('.searchCriteria .poc').removeClass('hide');
+	$('.searchCriteria .surveyStart').removeClass('hide');
+	$('.searchCriteria .reStaff').removeClass('hide');
+} else {
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+	  //scrollY: 300,
+	  paging: false,
+	  lengthMenu: false,
+	  info: false,
+	  searching: false,
+	  responsive: {
+		details: { type: 'column'}
+	  },
+	  'order': [[ 6, 'asc' ]],
+	  columnDefs: [
+		{ className: 'control', orderable: false, targets: 0 },
+		{ responsivePriority: 0, targets: 1 },
+		{ responsivePriority: 1, targets: -1 },
+		{ 'orderable': false, 'targets': -1 },
+		{ 'visible': false, 'targets': 2 },
+		{ 'visible': false, 'targets': 3 },
+		{ 'visible': false, 'targets': 4 },
+		{ 'visible': false, 'targets': 5 }
+	  ]
+	} );
+	$('#surveyTable tbody tr').removeClass('hide');
+	$('.searchCriteria .poc').addClass('hide');
+	$('.searchCriteria .surveyStart').addClass('hide');
+	$('.searchCriteria .reStaff').addClass('hide');
+};
+if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').click(); }">Search</a>
 							  <button class="btn btn-link" onClick="$('#providerSearchResults').removeClass('hide'); 
     $('#providerSearchResults tbody tr').removeClass('hide'); 
     $('#noResults').addClass('hide'); 
@@ -1300,6 +1522,26 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
 				</button></div></div></li>
 			<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
         <span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('table.responsive tbody tr').removeClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		  <li><div class="ij hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
+        <span>Only surveys with IJ</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.ij').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		<li><div class="surveyExit hide"><label class="inline ml-2">Survey Exit Date Range: </label> <div class="badge badge-pill">
+        <span>03/01/2020</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.surveyExit').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		<li><div class="poc hide"><label class="inline ml-2">POC Status: </label> <div class="badge badge-pill">
+        <span>Pending</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.poc').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		<li><div class="surveyStart hide"><label class="inline ml-2">Survey Start Date Range: </label> <div class="badge badge-pill">
+        <span>01/01/2020 &mdash; 03/31/2020</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.surveyStart').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		<li><div class="reStaff hide"><label class="inline ml-2">Responsible Staff/Surveyor: </label> <div class="badge badge-pill">
+        <span>Roberta Carr</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.reStaff').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');">
           <span aria-hidden="true">&times;</span>
 				</button></div></div></li>
 		   <!--<li class="none hide"><span class="iq-not-available">No criteria selected.</span></li>-->
@@ -1442,23 +1684,30 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
     <tr>
 	  <th></th>
       <th class="sortable ascending"><span>Survey ID</span></th>
-      
+	  <th><span>POC Status</span></th>
+	  <th><span>Survey Start</span></th>
+	  <th><span>Responsible Staff/Surveyor</span></th>
+	  <th><span>Advanced Search Criteria</span></th>
 	  <th><span>Category</span></th>
-      <th><span>Provider</span></th>
       <th><span>Status</span></th>
 	  <th><span>Exit Date</span></th>
 	  <th><span>Citations</span></th>
+	  <th><span>Provider</span></th>
 	  <th><span>Type</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="">
+    <tr class="pendingPOC">
 	  <td></td>
       <td><a href="#">19A3-H1</a></td>
-	  
+	  <td>Pending</td>
+	  <td>01/03/2020</td>
+	  <td>Roberta Carr, Tom Vineman</td>
+	  <td><ul><li><label class="inline">POC Status</label> Pending</li>
+		  <li><label class="inline">Survey Start</label> 01/03/2020</li>
+		  <li><label class="inline">Responsible Staff/Surveyor</label> Roberta Carr, Tom Vineman</li></ul></td>
 	  <td><ul><li>Initial Certification</li></ul></td>
-      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>CCN 368130</td>
       <td>Open</td>
 	  <td>03/01/2020</td>
 	  <td>
@@ -1470,18 +1719,24 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
 			  <ul>
 				  <li>G0 - Initial Comments<br><small>Memo</small></li>
 				 <li>G1014 - Interventions and Patient Response<br><small>Element</small></li></ul>
-  		  </div></li>
+  		  </div>
 	  </td>
+	  <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>CCN 368130</td>
 	  <td>Health</td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-     <tr class="">
+    <tr class="ij">
 	  <td></td>
-      <td style="min-width: 8rem;"><a href="#">19A3-H1</a></td>
-	 
+      <td style="min-width: 8rem;"><a href="#">20A3-H2</a></td>
+	  <td>Pending</td>
+	  <td>12/12/2019</td>
+	  <td>Roberta Carr, Rebecca Moray, Zachary Taggart</td>
+	  <td><ul><li><label class="inline">POC Status</label> Pending</li>
+		  <li><label class="inline">Survey Start</label> 12/12/2019</li>
+		  <li><label class="inline">Responsible Staff/Surveyor</label> Roberta Carr, Rebecca Moray, Zachary Taggart</li></ul></td>
 	  <td><ul><li>Initial Certification</li>
 		  <li>Complaint</li></ul></td>
-      <td><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
+      
       <td style="min-width: 8rem;">Open</td>
 	  <td style="min-width: 8rem;">02/27/2020</td>
 	  <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
@@ -1496,6 +1751,7 @@ if( $('#advancedSearch-showhide').hasClass('show') ) { $('#advancedSearchLink').
 			  </ul>
 			  
   		  </div></td>
+	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
 	  <td>Health</td>
       <td><div class="iqies-list-button-group"><a href="survey-brighthope.html" class="btn btn-link">View</a></div></td>
     </tr>
