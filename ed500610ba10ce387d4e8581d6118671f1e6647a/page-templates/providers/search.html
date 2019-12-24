@@ -489,10 +489,17 @@
 									   <label class="custom-control-label" for="showSurveyWOEndDate">Show only surveys without an exit date</label>
 									</div>   
 								</div>
+								
 								<div class="form-group">
 									<div class="custom-control custom-checkbox">
 									  <input type="checkbox" id="showSurveyWIJ"  class="custom-control-input">
 									   <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
+									</div>   
+								</div>
+								<div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showSOD" class="custom-control-input">
+									   <label class="custom-control-label" for="showSOD">Show open surveys with an overdue Statement of Deficiency</label>
 									</div>   
 								</div>
 								<!--<div class="form-group">
@@ -948,6 +955,14 @@
                   <input type="checkbox" id="eType5" class="custom-control-input">
                    <label class="custom-control-label" for="eType5">Show only enforcement cases containing an appeal</label>
                 </div>  
+									<div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="cmp" class="custom-control-input">
+                   <label class="custom-control-label" for="cmp">Show only enforcement cases with an outstanding CMP</label>
+                </div>  
+									<div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="appealDue" class="custom-control-input">
+                   <label class="custom-control-label" for="appealDue">Show only enforcement cases with past appeal waiver due date</label>
+                </div>  
 								</div>
 							</div>
 						</div>
@@ -1247,6 +1262,18 @@ onClick="goSearch();">Search</a>
         <span>Providers nearing recertification</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.recertP').addClass('hide');  $('#providerTable tbody tr').removeClass('hide');">
           <span aria-hidden="true">&times;</span>
 				</button></div></div></li>
+		<li><div class="sod hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
+        <span>Open surveys with overdue Statement of Deficiency</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.sod').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		<li><div class="cmp hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
+        <span>Enforcements with outstanding CMP</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.cmp').addClass('hide');  $('#enforcementTable tbody tr').removeClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		<li><div class="appealDue hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
+        <span>Enforcements with past appeal waiver due date</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.appealDue').addClass('hide');  $('#enforcementTable tbody tr').removeClass('hide');">
+          <span aria-hidden="true">&times;</span>
+				</button></div></div></li>
 		   <!--<li class="none hide"><span class="iq-not-available">No criteria selected.</span></li>-->
 		</ul>
   <section id="providerSearchResults">
@@ -1412,13 +1439,14 @@ onClick="goSearch();">Search</a>
 	  <th><span>POC Status</span></th>
 	  <th><span>Survey Start</span></th>
 	  <th><span>Responsible Staff/Surveyor</span></th>
-	  <th><span>Advanced Search Criteria</span></th>
+	  <th><span>SOD Due</span></th>
 	  <th><span>Category</span></th>
       <th><span>Status</span></th>
 	  <th><span>Exit Date</span></th>
 	  <th><span>Citations</span></th>
 	  <th><span>Provider</span></th>
 	  <th><span>Type</span></th>
+	  <th><span>Advanced Search Criteria</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -1429,9 +1457,7 @@ onClick="goSearch();">Search</a>
 	  <td>Pending</td>
 	  <td>01/03/2020</td>
 	  <td>Roberta Carr, Tom Vineman</td>
-	  <td><ul><li><label class="inline">POC Status</label> Pending</li>
-		  <li><label class="inline">Survey Start</label> 01/03/2020</li>
-		  <li><label class="inline">Responsible Staff/Surveyor</label> Roberta Carr, Tom Vineman</li></ul></td>
+	  <td>02/12/2020</td>
 	  <td><ul><li>Initial Certification</li></ul></td>
       <td>Open</td>
 	  <td>03/01/2020</td>
@@ -1448,20 +1474,20 @@ onClick="goSearch();">Search</a>
 	  </td>
 	  <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>CCN 368130</td>
 	  <td>Health</td>
+	  <td><ul><li><label class="inline">POC Status</label> Pending</li>
+		  <li><label class="inline">Survey Start</label> 01/03/2020</li>
+		  <li><label class="inline">Responsible Staff/Surveyor</label> Roberta Carr, Tom Vineman</li></ul></td>
       <td><div class="iqies-list-button-group"><a href="#" class="btn btn-link">View</a></div></td>
     </tr>
-    <tr class="ij">
+    <tr class="ij sod">
 	  <td></td>
       <td style="min-width: 8rem;"><a href="#">20A3-H2</a></td>
 	  <td>Pending</td>
 	  <td>12/12/2019</td>
 	  <td>Roberta Carr, Rebecca Moray, Zachary Taggart</td>
-	  <td><ul><li><label class="inline">POC Status</label> Pending</li>
-		  <li><label class="inline">Survey Start</label> 12/12/2019</li>
-		  <li><label class="inline">Responsible Staff/Surveyor</label> Roberta Carr, Rebecca Moray, Zachary Taggart</li></ul></td>
+	  <td>12/07/2019</td>
 	  <td><ul><li>Initial Certification</li>
 		  <li>Complaint</li></ul></td>
-      
       <td style="min-width: 8rem;">Open</td>
 	  <td style="min-width: 8rem;">02/27/2020</td>
 	  <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
@@ -1478,6 +1504,9 @@ onClick="goSearch();">Search</a>
   		  </div></td>
 	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
 	  <td>Health</td>
+	  <td><ul><li><label class="inline">POC Status</label> Pending</li>
+		  <li><label class="inline">Survey Start</label> 12/12/2019</li>
+		  <li><label class="inline">Responsible Staff/Surveyor</label> Roberta Carr, Rebecca Moray, Zachary Taggart</li></ul></td>
       <td><div class="iqies-list-button-group"><a href="survey-brighthope.html" class="btn btn-link">View</a></div></td>
     </tr>
   </tbody>
@@ -1545,14 +1574,16 @@ onClick="goSearch();">Search</a>
 	  <th style="min-width: 9rem;"><span>Enforcement Start</span></th>
 	  <th><span>Starting Survey</span></th>
 	  <th><span>Sanctions</span></th>
-		<th><span>Case Status</span></th>
+	  <th><span>CMP Amount Due</span></th>
+	  <th><span>Appeal/Appeal Waiver Due</span></th>
+	  <th><span>Case Status</span></th>
       <th><span>Provider</span></th>
 	  <th><span>Type</span></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
   <tbody>
-    <tr class="">
+    <tr class="appealDue">
 	  <td></td>
       <td style="min-width: 8rem;"><a href="#">1234</a></td>
 	  <td style="min-width: 8rem;">01/01/2020</td>
@@ -1569,12 +1600,14 @@ onClick="goSearch();">Search</a>
 			  </ul>
 			  
   		  </div></td>
+	  <td class="currency"><p class="iq-not-available">Not Applicable</p></td>
+	  <td>11/20/2019</td>
 	  <td>Open - Active</td>
       <td><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
 	  <td>Federal</td>
       <td><div class="iqies-list-button-group"><a href="../enforcement/enforcement.html" class="btn btn-link">View</a></div></td>
     </tr>
-    <tr class="">
+    <tr class="cmp">
 	  <td></td>
       <td style="min-width: 8rem;"><a href="#">3245</a></td>
 	  <td style="min-width: 8rem;">12/23/2019</td>
@@ -1591,6 +1624,8 @@ onClick="goSearch();">Search</a>
 			  </ul>
 			  
   		  </div></td>
+	  <td class="currency">$100,000</td>
+	  <td>04/01/2020</td>
 		<td>Open - Under Appeal</td>
       <td><a href="#">Laguna Rainbow Home Care</a><br>CCN 327144 | FACID IL9621112233</td>
       
@@ -1713,6 +1748,7 @@ function changeSearch(ele){
 			$('#advancedSearch-showhide .read-view.survey').addClass('active'); 
 			$('#surveyTable').removeClass('hide'); 
 			$('.baCount').html('Results: 1-10 of 54 Surveys'); 
+			$('#surveyTable').DataTable().destroy();
 			$('#surveyTable').DataTable( {
 				  //scrollY: 300,
 				  paging: false,
@@ -1722,7 +1758,7 @@ function changeSearch(ele){
 				  responsive: {
 					details: { type: 'column'}
 				  },
-				  'order': [[ 6, 'asc' ]],
+				  'order': [[ 8, 'asc' ]],
 				  columnDefs: [
 					{ className: 'control', orderable: false, targets: 0 },
 					{ responsivePriority: 0, targets: 1 },
@@ -1731,7 +1767,8 @@ function changeSearch(ele){
 					{ 'visible': false, 'targets': 2 },
 					{ 'visible': false, 'targets': 3 },
 					{ 'visible': false, 'targets': 4 },
-					{ 'visible': false, 'targets': 5 }
+					{ 'visible': false, 'targets': 5 },
+					{ 'visible': false, 'targets': 12 }  
 				 ]
 			} ); 
 			break;
@@ -1740,6 +1777,7 @@ function changeSearch(ele){
 			$('#advancedSearch-showhide .read-view.intake').addClass('active'); 
 			$('#intakeTable').removeClass('hide'); 
 			$('.baCount').html('Results: 1-10 of 32 Intakes'); 
+			$('#intakeTable').DataTable().destroy();
 			$('#intakeTable').DataTable( {
 				  //scrollY: 300,
 				  paging: false,
@@ -1763,6 +1801,7 @@ function changeSearch(ele){
 			$('#advancedSearch-showhide .read-view.enforcement').addClass('active'); 
 			$('#enforcementTable').removeClass('hide'); 
 			$('.baCount').html('Results: 1-10 of 24 Enforcements'); 
+			$('#enforcementTable').DataTable().destroy();
 			$('#enforcementTable').DataTable( {
 				  //scrollY: 300,
 				  paging: false,
@@ -1772,12 +1811,14 @@ function changeSearch(ele){
 				  responsive: {
 					details: { type: 'column'}
 				  },
-				  'order': [[ 3, 'asc' ]],
+				  'order': [[ 2, 'asc' ]],
 				  columnDefs: [
 					{ className: 'control', orderable: false, targets: 0 },
 					{ responsivePriority: 0, targets: 1 },
 					{ responsivePriority: 1, targets: -1 },
-					{ 'orderable': false, 'targets': -1 }
+					{ 'orderable': false, 'targets': -1 },
+					{ 'visible': false, 'targets': 5 },
+					{ 'visible': false, 'targets': 6 }
 				 ]
 			} ); 
 			break;   
@@ -1853,7 +1894,7 @@ function goSearch(){
 		  responsive: {
 			details: { type: 'column'}
 		  },
-		  'order': [[ 6, 'asc' ]],
+		  'order': [[ 8, 'asc' ]],
 		  columnDefs: [
 			{ className: 'control', orderable: false, targets: 0 },
 			{ responsivePriority: 0, targets: 1 },
@@ -1861,7 +1902,8 @@ function goSearch(){
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 3 },
 			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 5 }
+			{ 'visible': false, 'targets': 5 }, 
+			{ 'visible': false, 'targets': 12 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
@@ -1880,7 +1922,7 @@ function goSearch(){
 		  responsive: {
 			details: { type: 'column'}
 		  },
-		  'order': [[ 6, 'asc' ]],
+		  'order': [[ 8, 'asc' ]],
 		  columnDefs: [
 			{ className: 'control', orderable: false, targets: 0 },
 			{ responsivePriority: 0, targets: 1 },
@@ -1888,7 +1930,8 @@ function goSearch(){
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 2 },
 			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 5 }
+			{ 'visible': false, 'targets': 5 },
+			{ 'visible': false, 'targets': 12 }
 		  ]
 		} );
 		$('.searchCriteria .poc').addClass('hide');
@@ -1906,7 +1949,7 @@ function goSearch(){
 		  responsive: {
 			details: { type: 'column'}
 		  },
-		  'order': [[ 6, 'asc' ]],
+		  'order': [[ 8, 'asc' ]],
 		  columnDefs: [
 			{ className: 'control', orderable: false, targets: 0 },
 			{ responsivePriority: 0, targets: 1 },
@@ -1914,7 +1957,8 @@ function goSearch(){
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 2 },
 			{ 'visible': false, 'targets': 3 },
-			{ 'visible': false, 'targets': 5 }
+			{ 'visible': false, 'targets': 5 },
+			{ 'visible': false, 'targets': 12 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
@@ -1933,14 +1977,15 @@ function goSearch(){
 		  responsive: {
 			details: { type: 'column'}
 		  },
-		  'order': [[ 6, 'asc' ]],
+		  'order': [[ 8, 'asc' ]],
 		  columnDefs: [
 			{ className: 'control', orderable: false, targets: 0 },
 			{ responsivePriority: 0, targets: 1 },
 			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 5 }
+			{ 'visible': false, 'targets': 5 },
+			{ 'visible': false, 'targets': 12 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
@@ -1959,14 +2004,15 @@ function goSearch(){
 		  responsive: {
 			details: { type: 'column'}
 		  },
-		  'order': [[ 6, 'asc' ]],
+		  'order': [[ 8, 'asc' ]],
 		  columnDefs: [
 			{ className: 'control', orderable: false, targets: 0 },
 			{ responsivePriority: 0, targets: 1 },
 			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 3 },
-			{ 'visible': false, 'targets': 5 }
+			{ 'visible': false, 'targets': 5 },
+			{ 'visible': false, 'targets': 12 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
@@ -1985,14 +2031,15 @@ function goSearch(){
 		  responsive: {
 			details: { type: 'column'}
 		  },
-		  'order': [[ 6, 'asc' ]],
+		  'order': [[ 8, 'asc' ]],
 		  columnDefs: [
 			{ className: 'control', orderable: false, targets: 0 },
 			{ responsivePriority: 0, targets: 1 },
 			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 2 },
-			{ 'visible': false, 'targets': 5 }
+			{ 'visible': false, 'targets': 5 },
+			{ 'visible': false, 'targets': 12 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
@@ -2011,7 +2058,7 @@ function goSearch(){
 		  responsive: {
 			details: { type: 'column'}
 		  },
-		  'order': [[ 6, 'asc' ]],
+		  'order': [[ 8, 'asc' ]],
 		  columnDefs: [
 			{ className: 'control', orderable: false, targets: 0 },
 			{ responsivePriority: 0, targets: 1 },
@@ -2019,7 +2066,8 @@ function goSearch(){
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 2 },
 			{ 'visible': false, 'targets': 3 },
-			{ 'visible': false, 'targets': 4 }
+			{ 'visible': false, 'targets': 4 },
+			{ 'visible': false, 'targets': 5 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
@@ -2037,7 +2085,7 @@ function goSearch(){
 		  responsive: {
 			details: { type: 'column'}
 		  },
-		  'order': [[ 6, 'asc' ]],
+		  'order': [[ 8, 'asc' ]],
 		  columnDefs: [
 			{ className: 'control', orderable: false, targets: 0 },
 			{ responsivePriority: 0, targets: 1 },
@@ -2046,7 +2094,8 @@ function goSearch(){
 			{ 'visible': false, 'targets': 2 },
 			{ 'visible': false, 'targets': 3 },
 			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 5 }
+			{ 'visible': false, 'targets': 5 },
+			{ 'visible': false, 'targets': 12 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').removeClass('hide');
@@ -2054,7 +2103,8 @@ function goSearch(){
 		$('.searchCriteria .surveyStart').addClass('hide');
 		$('.searchCriteria .reStaff').addClass('hide');
 	};
-	if( $('#showrecertP').attr('checked', true) ) { 
+	if( $('#showrecertP').prop('checked') == true ) { 
+		console.log('resertP checked');
 		$('#providerTable').DataTable().destroy(); 			
 		$('#providerTable').DataTable( {
 			  //scrollY: 300,
@@ -2076,6 +2126,84 @@ function goSearch(){
 		$('#providerTable tbody tr').addClass('hide'); 
 		$('#providerTable tbody tr.recert').removeClass('hide');
 		$('.searchCriteria .recertP').removeClass('hide');
+	}
+	if( $('#showSOD').prop('checked') == true ) { 
+		console.log('sod checked');
+		$('#surveyTable').DataTable().destroy();
+		$('#surveyTable').DataTable( {
+		  //scrollY: 300,
+		  paging: false,
+		  lengthMenu: false,
+		  info: false,
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 8, 'asc' ]],
+		  columnDefs: [
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
+			{ 'orderable': false, 'targets': -1 },
+			{ 'visible': false, 'targets': 2 },
+			{ 'visible': false, 'targets': 3 },
+			{ 'visible': false, 'targets': 4 },
+			{ 'visible': false, 'targets': 12 }
+		  ]
+		} );
+		$('#surveyTable tbody tr').addClass('hide'); 
+		$('#surveyTable tbody tr.sod').removeClass('hide');
+		$('.searchCriteria .sod').removeClass('hide');
+	}
+	if( $('#cmp').prop('checked') == true ) { 
+		console.log('cmp checked');
+		$('#enforcementTable').DataTable().destroy();
+		$('#enforcementTable').DataTable( {
+		  //scrollY: 300,
+		  paging: false,
+		  lengthMenu: false,
+		  info: false,
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 2, 'asc' ]],
+		  columnDefs: [
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
+			{ 'orderable': false, 'targets': -1 },
+			{ 'visible': false, 'targets': 6 }
+		  ]
+		} );
+		$('#enforcementTable tbody tr').addClass('hide'); 
+		$('#enforcementTable tbody tr.cmp').removeClass('hide');
+		$('.searchCriteria .cmp').removeClass('hide');
+	}
+	if( $('#appealDue').prop('checked') == true ) { 
+		console.log('appeal due date checked');
+		$('#enforcementTable').DataTable().destroy();
+		$('#enforcementTable').DataTable( {
+		  //scrollY: 300,
+		  paging: false,
+		  lengthMenu: false,
+		  info: false,
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 2, 'asc' ]],
+		  columnDefs: [
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
+			{ 'orderable': false, 'targets': -1 },
+			{ 'visible': false, 'targets': 5 }
+		  ]
+		} );
+		$('#enforcementTable tbody tr').addClass('hide'); 
+		$('#enforcementTable tbody tr.appealDue').removeClass('hide');
+		$('.searchCriteria .appealDue').removeClass('hide');
 	}
 	if( $('#advancedSearch-showhide').hasClass('show') ) { 
 		$('#advancedSearchLink').click();
