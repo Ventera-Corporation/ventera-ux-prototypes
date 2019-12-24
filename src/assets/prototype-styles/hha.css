@@ -12,7 +12,7 @@ p, .form-group { margin-bottom: 2rem; }
 /* LISTS */
 ul li, ol li { padding: .5rem 0; }
 ul.iq-inline-list { list-style: none; margin-left: 0; padding-left: 0;  }
-ul.iq-inline-list li { display: inline-block; margin-right: .5rem; list-style: none; margin-left: 0; padding-left: 0; }
+ul.iq-inline-list li { display: inline-block; margin-right: 0; list-style: none; margin-left: 0; padding-left: 0; }
 
 /* GENERAL UTILITIES */
 .container-fluid { padding: 0 4rem;}
@@ -121,6 +121,7 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .form-control {
 }
 input:not([type=checkbox]):not([type=radio]):disabled, select:disabled, textarea:disabled, .form-control:disabled { background-color: #d6d7d9; border: 1px solid #AEB0B5; opacity: 1;}
 input[type=text]:read-only, input[type=date]:read-only { border: 0; background-color: #f1f1f1;  }
+input[type=text]:read-only:focus, input[type=date]:read-only:focus, textarea:read-only:focus { outline: none; }
 .input-group > .form-control { width: 1% !important; }
 .iqies-required-text { font-size: .875rem; margin-bottom: 2rem; }
 fieldset { margin-bottom: 1.5rem; }
