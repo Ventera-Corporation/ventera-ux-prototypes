@@ -12,8 +12,10 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
 <!-- to include fontsome icons professional version -->
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<link rel="stylesheet" href="../../prototypes/dashboard-user-test/dashboard.css">
 <!-- to match design system definition -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+
 </head>
 
 <body>
@@ -72,7 +74,7 @@
   </header>
 
   <main>
-	<!-- breadcrumb and header -->
+	<!-- breadcrumb and header 
     <div class="iq-page-header-wrapper mb-0">
       <div class="container-fluid">
         <div class="iq-page-header">
@@ -92,7 +94,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 	<div class="container-fluid" id="mainContent">
 <div class="alert alert-warning hide" role="alert">
 	  <div class="alert-content">You do not have permission to manage this provider's information.</div>
@@ -114,13 +116,299 @@
                   </ul>
               </div></div>
           </div>
-        </div> 
-      <h1>Title</h1>
+      </div> 
+		<nav class="nav nav-horizontal">
+        <a class="nav-link" href="#h-tab-1" data-toggle="tab" role="tab">Surveys</a>
+        <a class="nav-link active" href="#h-tab-2" data-toggle="tab" role="tab">Intakes</a>
+        <a class="nav-link" href="#h-tab-3" data-toggle="tab" role="tab">Enforcements</a>
+	    <a class="nav-link float-right" href="#h-tab-4" data-toggle="tab" role="tab">Search</a>
+        </nav>
+      <div class="tab-content">
+        <div class="tab-pane" id="h-tab-1">
+          <p>Tab 1: Lorem ipsum dolor sit amet</p>
+          </div>
+        <div class="tab-pane active" id="h-tab-2">
+        <div class="row">
+        <div class="col">
+          <div class="iq-dashboard-header d-flex">
+            <p>
+              <img src="../../../src/assets/images/icon-circle-check.svg" class="iq-icon"> On Time
+            </p>
+            <p>
+              <img src="../../../src/assets/images/icon-circle-clock.svg" class="iq-icon"> Due Soon
+            </p>
+            <p>
+              <img src="../../../src/assets/images/icon-circle-alert.svg" class="iq-icon"> Past Due
+            </p>
+          </div>
+        </div>
+      </div>
 		<div class="row">
-			<div class="col-md-12">
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Ready for Triage</p>
 
-			</div>  
-		</div>
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+
+              <button class="btn btn-tiny btn-outline-primary  dropdown-toggle float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Assign ...</a>
+                <a class="dropdown-item" href="#">Send to ...</a>
+                <a class="dropdown-item" href="#">Watch</a>
+              </div>
+
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  839471
+                </a>
+              </div>
+              <div><a href="triage-one.html">Quality Home Health, Inc.</a></div>
+              <div>CCN - 100586</div>
+              <div>Home Health Agency</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Intake Date: 07/24/2019
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Pending RO Approval</p>
+
+          <div class="card iq-card dash-card card-success">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  274937
+                </a>
+              </div>
+              <div><a href="triage-one.html">Good Samaritan</a></div>
+              <div>CCN - 100056</div>
+              <div>Hospital</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-check.svg" class="iq-icon"> Survey Due Date: 08/20/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-alert">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  892628
+                </a>
+              </div>
+              <div><a href="triage-one.html">Good Health Sunrise</a></div>
+              <div>CCN - 100065</div>
+              <div>Hospice</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-alert.svg" class="iq-icon"> Survey Due Date: 07/22/2019
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Ready for Survey</p>
+
+
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Under Investigation</p>
+
+          <!-- <div class="card iq-card dash-card card-warning">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header"><a href="triage-one.html">Complaint
+                  838472</a></div>
+              <div><a href="triage-one.html">Quality Home Health, Inc.</a></div>
+              <div>CCN - 100598</div>
+              <div>Home Health Agency</div>
+              <div>Non-IJ High</div>
+              <div>Survey Status: New</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-clock.svg"
+                  class="iq-icon" /> Survey Due Date: 08/01/2019
+              </div>
+            </div>
+          </div> -->
+
+
+          <div class="card iq-card dash-card card-success">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  4827161
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Caregivers of Pleasant
+                  Grove Inc.
+                </a>
+              </div>
+              <div>CCN - 101634</div>
+              <div>Hospice</div>
+              <div>Non-IJ High</div>
+              <div>
+                Survey Status: Statement of
+                Deficiencies Sent
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-check.svg" class="iq-icon"> Survey Due Date: 07/18/2019
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card iq-card dash-card card-warning">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  4827161
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Caregivers of Pleasant
+                  Grove Inc.
+                </a>
+              </div>
+              <div>CCN - 101634</div>
+              <div>Hospice</div>
+              <div>Non-IJ High</div>
+              <div>
+                Survey Status: Statement of
+                Deficiencies Sent
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-clock.svg" class="iq-icon"> Survey Due Date: 07/18/2019
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Resolved</p>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  6392734
+                </a>
+              </div>
+              <div><a href="triage-one.html">Oracle Healthcare, Inc.</a></div>
+              <div>CCN - 100134</div>
+              <div>Hospital</div>
+              <div>Non-IJ High</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Triage Date: 07/18/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Survey Exit Date: 07/19/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  9382943
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Adventist Rehabilitation Hospital
+                  of Paris
+                </a>
+              </div>
+              <div>CCN - 100034</div>
+              <div>IRF</div>
+              <div>Non-IJ Low</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Triage Date: 06/15/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Survey Exit Date: 07/19/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  7362834
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">Medstar Good Samaritan Hospital</a>
+              </div>
+              <div>CCN - 100076</div>
+              <div>Hospital</div>
+              <div>Non-IJ Medium</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Triage Date: 06/15/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Survey Exit Date: 07/17/2019
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+          </div>
+        <div class="tab-pane" id="h-tab-3">
+          <p>Tab 3: Lorem ipsum dolor sit amet</p>
+          </div>
+		  <div class="tab-pane" id="h-tab-4">
+          <p>Tab 4: Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+
+     
 		</div>
   </main>
    
