@@ -191,12 +191,28 @@ label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616
 #iq-proto-sidebar-wrapper .list-group-title a { font-weight: bold; }
 
 
-/* HORIZONTAL TAB */
+
+
+/* HORIZONTAL TAB
 .nav.nav-horizontal { border-bottom: 1px solid #D6D7D9; margin-bottom: 1rem; }
 .nav.nav-horizontal:not(.nav-tabs) .nav-link { border-bottom: 0; color: #0A71B9; padding: 1rem 2rem; }
-.nav.nav-horizontal:not(.nav-tabs) .nav-link.active, .nav.nav-horizontal .nav-link.active { border-bottom: 4px solid #0071bc; padding-left: 2rem; border-left: 0; color: #202020; }
+.nav.nav-horizontal:not(.nav-tabs) .nav-link.active, .nav.nav-horizontal .nav-link.active { border-bottom: 4px solid #0071bc; padding-left: 2rem; border-left: 0; color: #212121; } */
 
+/* HORIZONTAL TAB PARENT */
+.nav.nav-horizontal { border-bottom: 1px solid #D6D7D9; margin-bottom: .75rem; }
+.nav.nav-horizontal:not(.nav-tabs) .nav-link { color: #212121 !important; padding: 1rem 2rem; border: 1px solid #d6d7d9; border-bottom: 0; border-top-left-radius: .25rem; border-top-right-radius: .25rem; margin-right: .25rem; background-color: #f1f1f1;    }
+.nav.nav-horizontal:not(.nav-tabs) .nav-link.active, .nav.nav-horizontal .nav-link.active { border: 1px solid #D6d7d9; border-bottom: 0;  padding-left: 2rem;  color: #212121; margin-bottom: -0.0625rem; border-top-left-radius: .25rem; border-top-right-radius: .25rem; border-top: 3px solid #0071bc; background-color: #fff;  }
+.nav.nav-horizontal .nav-link:first-child { margin-left: 1rem; }
+
+/* HORIZONTAL CHILD/SUB TAB */
+.nav.nav-horizontal.child-tab { margin-bottom: 2rem; border-bottom: 1px solid #D6D7D9; }
+.nav.nav-horizontal.child-tab:not(.nav-tabs) .nav-link { color: #212121 !important; padding: .5rem 1.5rem; margin-bottom: .75rem; margin-right: .25rem; border: 0; background-color: transparent; }
+.nav.nav-horizontal.child-tab:not(.nav-tabs) .nav-link.active, .nav.nav-horizontal.child-tab .nav-link.active { border-bottom: 0; padding-left: 1.5rem; border-left: 0; color: #212121; background-color: #f1f1f1; border-radius: .25rem;  }
+.nav.nav-horizontal.child-tab .nav-link:first-child { margin-left: 0rem; }
 .tab-content { margin-bottom: 2rem; }
+
+
+
 
 /* LIST ROW */
 .iqies-list-row {

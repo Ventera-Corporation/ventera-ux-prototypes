@@ -124,7 +124,7 @@
 
       <h1>Search</h1>
          
-	  <nav class="nav nav-horizontal">
+	  <nav class="nav nav-horizontal parent-tab" style="margin-bottom: 2rem;">
         <a class="nav-link active" href="#providers" data-toggle="tab" role="tab" onClick="drawProviderTable();">Providers</a>
         <a class="nav-link" href="#surveys" data-toggle="tab" role="tab" onClick="drawSurveyTable(); ">Surveys</a>
         <a class="nav-link" href="#intakes" data-toggle="tab" role="tab" onClick="drawIntakeTable(); ">Intakes</a>
@@ -1796,14 +1796,14 @@
   <!-- InstanceBeginEditable name="footerScripts" -->
 <script>
 	  $(document).ready(function () {
-		  $('[data-toggle="tooltip"]').tooltip(); 
-		  $("select.multiselect").bsMultiSelect();
-		  window.setTimeout(function() {
-				$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
-					$(this).addClass('hide'); 
-				});
-			}, 5000);
-    	  $('#fileDescriptionInput').keyup(function () {
+	    $('[data-toggle="tooltip"]').tooltip(); 
+	    $("select.multiselect").bsMultiSelect();
+	    window.setTimeout(function() {
+			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+				$(this).addClass('hide'); 
+			});
+		}, 5000);
+    	$('#fileDescriptionInput').keyup(function () {
           var max = 256;
           var char = 0; 
           var len = $(this).val().length;
@@ -1815,14 +1815,7 @@
             $('#charNum').html(len + '/256.');
           }
         });
-		drawProviderTable();  
-		
-		
-	  });
-function drawProviderTable(){
-		$('#providers .baCount').html('Results: 1-10 of 112 Providers'); 
-		$('#providerTable').DataTable().destroy();
-		$('#providerTable').DataTable( {
+		window.onload = $('#providerTable').DataTable( {
 			  //scrollY: 300,
 			  paging: false,
 			  lengthMenu: false,
@@ -1841,11 +1834,29 @@ function drawProviderTable(){
 				{ 'visible': false, 'targets': 3 }
 			 ]
 		  }); 
-	}
-		function drawSurveyTable(){
-			$('#surveys .baCount').html('Results: 2 Surveys'); 
-			$('#surveyTable').DataTable().destroy();
-			$('#surveyTable').DataTable( {
+		window.onload = $('#surveyTable').DataTable( {
+						  //scrollY: 300,
+						  paging: false,
+						  lengthMenu: false,
+						  info: false,
+						  searching: false,
+						  responsive: {
+							details: { type: 'column'}
+						  },
+						  'order': [[ 8, 'asc' ]],
+						  columnDefs: [
+							{ className: 'control', orderable: false, targets: 0 },
+							{ responsivePriority: 0, targets: 1 },
+							{ responsivePriority: 1, targets: -1 },
+							{ 'orderable': false, 'targets': -1 },
+							{ 'visible': false, 'targets': 2 },
+							{ 'visible': false, 'targets': 3 },
+							{ 'visible': false, 'targets': 4 },
+							{ 'visible': false, 'targets': 5 },
+							{ 'visible': false, 'targets': 12 }  
+						 ]
+}); 
+		window.onload = $('#intakeTable').DataTable( {
 					  //scrollY: 300,
 					  paging: false,
 					  lengthMenu: false,
@@ -1854,65 +1865,128 @@ function drawProviderTable(){
 					  responsive: {
 						details: { type: 'column'}
 					  },
-					  'order': [[ 8, 'asc' ]],
+					  'order': [[ 6, 'asc' ]],
 					  columnDefs: [
 						{ className: 'control', orderable: false, targets: 0 },
 						{ responsivePriority: 0, targets: 1 },
 						{ responsivePriority: 1, targets: -1 },
-						{ 'orderable': false, 'targets': -1 },
-						{ 'visible': false, 'targets': 2 },
-						{ 'visible': false, 'targets': 3 },
-						{ 'visible': false, 'targets': 4 },
-						{ 'visible': false, 'targets': 5 },
-						{ 'visible': false, 'targets': 12 }  
+						{ 'orderable': false, 'targets': -1 }
 					 ]
-				} ); 
-
-		}
-		function drawIntakeTable(){
-			$('#intakes .baCount').html('Results: 2 Intakes'); 
-			$('#intakeTable').DataTable().destroy();
-			$('#intakeTable').DataTable( {
-				  //scrollY: 300,
-				  paging: false,
-				  lengthMenu: false,
-				  info: false,
-				  searching: false,
-				  responsive: {
-					details: { type: 'column'}
-				  },
-				  'order': [[ 6, 'asc' ]],
-				  columnDefs: [
-					{ className: 'control', orderable: false, targets: 0 },
-					{ responsivePriority: 0, targets: 1 },
-					{ responsivePriority: 1, targets: -1 },
-					{ 'orderable': false, 'targets': -1 }
-				 ]
-			} );
-		}
-		function drawEnforcementTable(){
-			$('#enforcements .baCount').html('Results: 2 Enforcements'); 
-			$('#enforcementTable').DataTable().destroy();
-			$('#enforcementTable').DataTable( {
-				  //scrollY: 300,
-				  paging: false,
-				  lengthMenu: false,
-				  info: false,
-				  searching: false,
-				  responsive: {
-					details: { type: 'column'}
-				  },
-				  'order': [[ 2, 'asc' ]],
-				  columnDefs: [
-					{ className: 'control', orderable: false, targets: 0 },
-					{ responsivePriority: 0, targets: 1 },
-					{ responsivePriority: 1, targets: -1 },
-					{ 'orderable': false, 'targets': -1 },
-					{ 'visible': false, 'targets': 5 },
-					{ 'visible': false, 'targets': 6 }
-				 ]
-			} ); 
- }	
+});
+		window.onload = $('#enforcementTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  'order': [[ 2, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
+				{ 'orderable': false, 'targets': -1 },
+				{ 'visible': false, 'targets': 5 },
+				{ 'visible': false, 'targets': 6 }
+			 ]
+	}); 
+		
+	  });
+function drawProviderTable(){
+	$('#providers .baCount').html('Results: 1-10 of 112 Providers'); 
+	$('#providerTable').DataTable().destroy();
+	$('#providerTable').DataTable( {
+		  //scrollY: 300,
+		  paging: false,
+		  lengthMenu: false,
+		  info: false,
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  "order": [[ 1, 'asc' ]],
+		  columnDefs: [
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			//{ responsivePriority: 1, targets: -1 },
+			//{ "orderable": false, "targets": -1 }
+			{ 'visible': false, 'targets': 2 },
+			{ 'visible': false, 'targets': 3 }
+		 ]
+	  }); 
+}
+function drawSurveyTable(){
+	$('#surveys .baCount').html('Results: 2 Surveys'); 
+	$('#surveyTable').DataTable().destroy();
+	$('#surveyTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  'order': [[ 8, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
+				{ 'orderable': false, 'targets': -1 },
+				{ 'visible': false, 'targets': 2 },
+				{ 'visible': false, 'targets': 3 },
+				{ 'visible': false, 'targets': 4 },
+				{ 'visible': false, 'targets': 5 },
+				{ 'visible': false, 'targets': 12 }  
+			 ]
+		} ); 
+}
+function drawIntakeTable(){
+	$('#intakes .baCount').html('Results: 2 Intakes'); 
+	$('#intakeTable').DataTable().destroy();
+	$('#intakeTable').DataTable( {
+		  //scrollY: 300,
+		  paging: false,
+		  lengthMenu: false,
+		  info: false,
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
+		  columnDefs: [
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
+			{ 'orderable': false, 'targets': -1 }
+		 ]
+	});
+}
+function drawEnforcementTable(){
+	$('#enforcements .baCount').html('Results: 2 Enforcements'); 
+	$('#enforcementTable').DataTable().destroy();
+	$('#enforcementTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  'order': [[ 2, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
+				{ 'orderable': false, 'targets': -1 },
+				{ 'visible': false, 'targets': 5 },
+				{ 'visible': false, 'targets': 6 }
+			 ]
+	}); 
+}	
 function goSearchProvider(){
 	if($('#pSearchInput').val() != ''){ 
 		$('.keyword').removeClass('hide'); 
