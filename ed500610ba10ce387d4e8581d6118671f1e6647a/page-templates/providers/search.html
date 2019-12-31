@@ -540,7 +540,7 @@
         	<p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
 		</div>
         <div class="tab-pane" id="surveys">
-         
+        
 		  <div class="form-group">
 				<label>Search for Surveys</label>
 				<input type="text" class="form-control" id="sSearchInput" onKeyUp="if (event.keyCode === 13) {
@@ -1815,7 +1815,7 @@
             $('#charNum').html(len + '/256.');
           }
         });
-		window.onload = $('#providerTable').DataTable( {
+		$('#providerTable').DataTable( {
 			  //scrollY: 300,
 			  paging: false,
 			  lengthMenu: false,
@@ -1834,7 +1834,8 @@
 				{ 'visible': false, 'targets': 3 }
 			 ]
 		  }); 
-		window.onload = $('#surveyTable').DataTable( {
+		$('#surveyTable').DataTable( {
+			              
 						  //scrollY: 300,
 						  paging: false,
 						  lengthMenu: false,
@@ -1855,8 +1856,8 @@
 							{ 'visible': false, 'targets': 5 },
 							{ 'visible': false, 'targets': 12 }  
 						 ]
-}); 
-		window.onload = $('#intakeTable').DataTable( {
+}); console.log('s');
+		$('#intakeTable').DataTable( {
 					  //scrollY: 300,
 					  paging: false,
 					  lengthMenu: false,
@@ -1873,7 +1874,7 @@
 						{ 'orderable': false, 'targets': -1 }
 					 ]
 });
-		window.onload = $('#enforcementTable').DataTable( {
+		$('#enforcementTable').DataTable( {
 			  //scrollY: 300,
 			  paging: false,
 			  lengthMenu: false,
@@ -1941,7 +1942,7 @@ function drawSurveyTable(){
 				{ 'visible': false, 'targets': 5 },
 				{ 'visible': false, 'targets': 12 }  
 			 ]
-		} ); 
+		} );
 }
 function drawIntakeTable(){
 	$('#intakes .baCount').html('Results: 2 Intakes'); 
