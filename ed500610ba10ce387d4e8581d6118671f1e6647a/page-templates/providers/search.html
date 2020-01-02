@@ -2022,6 +2022,25 @@ function goSearchProvider(){
 		$('#providers table.responsive tbody tr').addClass('hide'); 
 		$('#providers table.responsive tbody tr.deemed').removeClass('hide'); 
 		$('#providers .searchCriteria .deemed').removeClass('hide'); 
+		$('#providerTable').DataTable().destroy(); 			
+		$('#providerTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ 'visible': false, 'targets': 2 },
+				{ 'visible': false, 'targets': 3 },
+				{ className: 'search-col', targets: 8 }
+			 ]
+		  }); 
 	}; 
 	if( $('#showrecertP').prop('checked') == true ) { 
 		console.log('resertP checked');
