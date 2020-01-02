@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard | iQIES</title>
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<link rel="stylesheet" href="../../prototypes/dashboard-user-test/dashboard.css">
+<!-- to match design system definition -->
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+
+</head>
+
+<body>
+  <header>
+	<div class="iq-global-nav">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col">
+			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+				  </div>
+				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					<a class="dropdown-item" href="#">Reports Main</a>
+					<a class="dropdown-item" href="#">Find a Report Type</a>
+					<a class="dropdown-item" href="#">My Reports</a>
+				  </div>
+				</div>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+					  <a class="dropdown-item" href="#">Letters</a>
+					  <a class="dropdown-item" href="#">State Customizations</a>
+				  </div>
+				</div>
+				<div class="dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#" id="navbarDropdown4"
+					role="button" data-toggle="dropdown"><i class="fal fa-bell fa-lg"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+					  <a class="dropdown-item" href="#">Warning 1</a>
+					  <a class="dropdown-item" href="#">Warning 2</a>
+				  </div>
+				</div>
+				<div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+					id="navbarDropdown5" role="button" data-toggle="dropdown">
+					<p>DF</p>
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown5"><a class="dropdown-item" href="#">My
+					  Profile</a>
+					<a class="dropdown-item" href="#">Help</a>
+					<a class="dropdown-item" href="#">Logout</a>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+  </div>
+  </header>
+
+  <main>
+	<!-- breadcrumb and header 
+    <div class="iq-page-header-wrapper mb-0">
+      <div class="container-fluid">
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+<li class="breadcrumb-item">
+                  <a href="../../../global/global-landing-menu.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                  Search</li>
+				</ol>
+              </nav>
+              <div class="iq-page-header-content"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+	<div class="container-fluid" id="mainContent">
+<div class="alert alert-warning hide" role="alert">
+	  <div class="alert-content">You do not have permission to manage this provider's information.</div>
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	  </div>
+  	  <div class="alert alert-success successMsg hide" role="alert">
+	  	<div class="alert-content">Changes saved successfully</div>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	  </div>
+	  <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 <p> Unable to save. Please review and correct the following:</p> 
+                  <ul>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                  </ul>
+              </div></div>
+          </div>
+      </div> 
+		
+		<nav class="nav nav-horizontal parent-tab" style="margin-top: 2rem;">
+        <a class="nav-link" href="#h-tab-1" data-toggle="tab" role="tab">Surveys</a>
+        <a class="nav-link active" href="#h-tab-2" data-toggle="tab" role="tab">Intakes</a>
+        <a class="nav-link" href="#h-tab-3" data-toggle="tab" role="tab">Enforcements</a>
+	    <a class="nav-link float-right" href="#h-tab-4" data-toggle="tab" role="tab">Search</a>
+        </nav>
+		
+      <div class="tab-content">
+        <div class="tab-pane" id="h-tab-1">
+          <p>Tab 1: Lorem ipsum dolor sit amet</p>
+          </div>
+        <div class="tab-pane active" id="h-tab-2">
+        <div class="row">
+        <div class="col">
+          <div class="iq-dashboard-header d-flex">
+            <p>
+              <img src="../../../src/assets/images/icon-circle-check.svg" class="iq-icon"> On Time
+            </p>
+            <p>
+              <img src="../../../src/assets/images/icon-circle-clock.svg" class="iq-icon"> Due Soon
+            </p>
+            <p>
+              <img src="../../../src/assets/images/icon-circle-alert.svg" class="iq-icon"> Past Due
+            </p>
+          </div>
+        </div>
+      </div>
+		<div class="row">
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Ready for Triage</p>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+
+              <button class="btn btn-tiny btn-outline-primary  dropdown-toggle float-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Assign ...</a>
+                <a class="dropdown-item" href="#">Send to ...</a>
+                <a class="dropdown-item" href="#">Watch</a>
+              </div>
+
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  839471
+                </a>
+              </div>
+              <div><a href="triage-one.html">Quality Home Health, Inc.</a></div>
+              <div>CCN - 100586</div>
+              <div>Home Health Agency</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Intake Date: 07/24/2019
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Pending RO Approval</p>
+
+          <div class="card iq-card dash-card card-success">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  274937
+                </a>
+              </div>
+              <div><a href="triage-one.html">Good Samaritan</a></div>
+              <div>CCN - 100056</div>
+              <div>Hospital</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-check.svg" class="iq-icon"> Survey Due Date: 08/20/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-alert">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  892628
+                </a>
+              </div>
+              <div><a href="triage-one.html">Good Health Sunrise</a></div>
+              <div>CCN - 100065</div>
+              <div>Hospice</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-alert.svg" class="iq-icon"> Survey Due Date: 07/22/2019
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Ready for Survey</p>
+
+
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Under Investigation</p>
+
+          <!-- <div class="card iq-card dash-card card-warning">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon" />
+              </button>
+              <div class="dash-card-header"><a href="triage-one.html">Complaint
+                  838472</a></div>
+              <div><a href="triage-one.html">Quality Home Health, Inc.</a></div>
+              <div>CCN - 100598</div>
+              <div>Home Health Agency</div>
+              <div>Non-IJ High</div>
+              <div>Survey Status: New</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-clock.svg"
+                  class="iq-icon" /> Survey Due Date: 08/01/2019
+              </div>
+            </div>
+          </div> -->
+
+
+          <div class="card iq-card dash-card card-success">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  4827161
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Caregivers of Pleasant
+                  Grove Inc.
+                </a>
+              </div>
+              <div>CCN - 101634</div>
+              <div>Hospice</div>
+              <div>Non-IJ High</div>
+              <div>
+                Survey Status: Statement of
+                Deficiencies Sent
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-check.svg" class="iq-icon"> Survey Due Date: 07/18/2019
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card iq-card dash-card card-warning">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  4827161
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Caregivers of Pleasant
+                  Grove Inc.
+                </a>
+              </div>
+              <div>CCN - 101634</div>
+              <div>Hospice</div>
+              <div>Non-IJ High</div>
+              <div>
+                Survey Status: Statement of
+                Deficiencies Sent
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-clock.svg" class="iq-icon"> Survey Due Date: 07/18/2019
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm iq-kanban-lane">
+          <p class="iq-kanban-lane-heading">Resolved</p>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  6392734
+                </a>
+              </div>
+              <div><a href="triage-one.html">Oracle Healthcare, Inc.</a></div>
+              <div>CCN - 100134</div>
+              <div>Hospital</div>
+              <div>Non-IJ High</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Triage Date: 07/18/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Survey Exit Date: 07/19/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  9382943
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">
+                  Adventist Rehabilitation Hospital
+                  of Paris
+                </a>
+              </div>
+              <div>CCN - 100034</div>
+              <div>IRF</div>
+              <div>Non-IJ Low</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Triage Date: 06/15/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Survey Exit Date: 07/19/2019
+              </div>
+            </div>
+          </div>
+
+          <div class="card iq-card dash-card card-default">
+            <div class="card-body">
+              <button class="btn btn-tiny btn-outline-primary float-right">
+                <img src="../../../src/assets/images/elipse.svg" class="iq-icon">
+              </button>
+              <div class="dash-card-header">
+                <a href="triage-one.html">
+                  Complaint
+                  7362834
+                </a>
+              </div>
+              <div>
+                <a href="triage-one.html">Medstar Good Samaritan Hospital</a>
+              </div>
+              <div>CCN - 100076</div>
+              <div>Hospital</div>
+              <div>Non-IJ Medium</div>
+              <div>Survey Status: Closed</div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Triage Date: 06/15/2019
+              </div>
+              <div>
+                <img src="../../../src/assets/images/icon-circle-empty.svg" class="iq-icon"> Survey Exit Date: 07/17/2019
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+          </div>
+        <div class="tab-pane" id="h-tab-3">
+          <p>Tab 3: Lorem ipsum dolor sit amet</p>
+          </div>
+		  <div class="tab-pane" id="h-tab-4">
+          <nav class="nav nav-horizontal child-tab">
+        <a class="nav-link active" href="#h-tab-1" data-toggle="tab" role="tab">Providers</a>
+		<a class="nav-link" href="#h-tab-1" data-toggle="tab" role="tab">Surveys</a>
+        <a class="nav-link" href="#h-tab-2" data-toggle="tab" role="tab">Intakes</a>
+        <a class="nav-link" href="#h-tab-3" data-toggle="tab" role="tab">Enforcements</a>
+	
+        </nav>
+			  <div class="tab-pane active" id="providers">
+			<div class="form-group">
+				<label>Search for Providers</label>
+				<input type="text" class="form-control" id="pSearchInput" onKeyUp="if (event.keyCode === 13) {
+        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter provider name, CCN, or State Facility ID (FACID)</div></div>
+			<div class="iq-accordion showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button id="pAdvancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#pAdvancedSearch-showhide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+					  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
+					</button>
+				  </div>
+				  <div id="pAdvancedSearch-showhide" class="collapse">
+					<div class="card-body p-0">
+						<br>
+						<div class="provider">
+							<div class="row">
+								<div class="col-md-5 col-lg-4 col-xl-3">
+									  <div class="form-group notState">
+										  <label>Provider Type </label>
+										  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
+										 <span class="help-text">Select one or more</span>
+									  </div>
+								  </div>
+								<div class="col-md-5 col-lg-4 col-xl-3">
+									  <div class="form-group">
+										  <label>iQIES ID
+											  <input type="text">
+										  </label>
+									  </div>
+								  </div>
+								<div class="col-md-5 col-lg-4 col-xl-3">
+									  <div class="form-group">
+										  <label>Deemed Status</label>
+										  <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
+									  </div>
+								</div>
+								<!--<div class="col-md-7">
+									<div class="row hide deemedDates">
+									<div class="col-sm-5">
+									  <div class="form-group">
+										  <label>Deemed - Start Date
+											  <input placeholder="" class="form-control" type="date" value="">
+										  </label>
+										  <span class="form-text">MM/DD/YYYY</span>
+									  </div>
+								  </div>
+								  <div class="col-sm-5">
+									  <div class="form-group">
+										  <label>Deemed - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
+										  <span class="form-text">MM/DD/YYYY</span>
+									  </div>
+								  </div>
+									</div>
+								</div>-->
+				<div class="col-md-5 col-lg-4 col-xl-3">
+					  <div class="form-group notState">
+						  <label>Federal Certification Status</label>
+						   <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+							   <option>Not Applicable</option><option>Pending Certification</option><option>Certified</option><option>Terminated</option>
+						  </select>
+						  <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
+						  <span class="help-text">Select one or more</span>
+					  </div>
+				</div>
+				<div class="col-md-5 col-lg-4 col-xl-3">
+					<div class="form-group">
+						<!--<fieldset>
+					<legend>Operating Status</legend>
+					<div class="custom-control custom-radio">
+					  <input type="radio" id="opStatus1" checked name="opStatus" class="custom-control-input">
+					  <label class="custom-control-label" for="opStatus1"> Both</label>
+					</div>
+					<div class="custom-control custom-radio">
+					  <input type="radio" id="opStatus2" name="opStatus" class="custom-control-input">
+					  <label class="custom-control-label" for="opStatus2"> Open</label>
+					</div>
+					<div class="custom-control custom-radio">
+					  <input type="radio" id="opStatus3" name="opStatus" class="custom-control-input">
+					  <label class="custom-control-label" for="opStatus3"> Closed </label>
+					</div>
+					</fieldset>-->
+						<label>Operating Status</label>
+						<div class="btn-group" role="group" aria-label="Button Group Example">
+					  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+					  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+					  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+					</div>
+					</div>				
+								</div>
+				<div class="col-md-5 col-lg-4 col-xl-3">
+					  <div class="form-group">
+						  <label>License Number<input class="form-control" type="text" value=""></label>
+					  </div>
+				</div>
+				 <div class="col-md-10 col-lg-8 col-xl-6">
+					  <div class="form-group">
+						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
+						  <div class="custom-control custom-checkbox">
+							  <input type="checkbox" id="showrecertP" class="custom-control-input">
+							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
+							</div>
+					  </div>
+				</div>
+							</div>
+							<div class="row">
+				<div class="col-md-10 col-lg-4 col-xl-3">
+				  <div class="form-group">
+					  <label>Street Address<input class="form-control" type="text" value=""></label>
+				  </div>
+				</div>
+				<div class="col-md-5 col-lg-4 col-xl-3">
+				  <div class="form-group">
+					  <label>City<input class="form-control" type="text" value=""></label>
+				  </div>
+				</div>
+				<div class="col-md-3 col-lg-3 col-xl-3">
+				  <div class="form-group">
+					  <label>State</label>
+					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
+						  <option value="AL">Alabama</option>
+						  <option value="AK">Alaska</option>
+						  <option value="AZ">Arizona</option>
+						  <option value="AR">Arkansas</option>
+						  <option value="CA">California</option>
+						  <option value="CO">Colorado</option>
+						  <option value="CT">Connecticut</option>
+						  <option value="DE">Delaware</option>
+						  <option value="DC">District Of Columbia</option>
+						  <option value="FL">Florida</option>
+						  <option value="GA">Georgia</option>
+						  <option value="HI">Hawaii</option>
+						  <option value="ID">Idaho</option>
+						  <option value="IL" selected>Illinois</option>
+						  <option value="IN">Indiana</option>
+						  <option value="IA">Iowa</option>
+						  <option value="KS">Kansas</option>
+						  <option value="KY">Kentucky</option>
+						  <option value="LA">Louisiana</option>
+						  <option value="ME">Maine</option>
+						  <option value="MD">Maryland</option>
+						  <option value="MA">Massachusetts</option>
+						  <option value="MI">Michigan</option>
+						  <option value="MN">Minnesota</option>
+						  <option value="MS">Mississippi</option>
+						  <option value="MO">Missouri</option>
+						  <option value="MT">Montana</option>
+						  <option value="NE">Nebraska</option>
+						  <option value="NV">Nevada</option>
+						  <option value="NH">New Hampshire</option>
+						  <option value="NJ">New Jersey</option>
+						  <option value="NM">New Mexico</option>
+						  <option value="NY">New York</option>
+						  <option value="NC">North Carolina</option>
+						  <option value="ND">North Dakota</option>
+						  <option value="OH">Ohio</option>
+						  <option value="OK">Oklahoma</option>
+						  <option value="OR">Oregon</option>
+						  <option value="PA">Pennsylvania</option>
+						  <option value="RI">Rhode Island</option>
+						  <option value="SC">South Carolina</option>
+						  <option value="SD">South Dakota</option>
+						  <option value="TN">Tennessee</option>
+						  <option value="TX">Texas</option>
+						  <option value="UT">Utah</option>
+						  <option value="VT">Vermont</option>
+						  <option value="VA">Virginia</option>
+						  <option value="WA">Washington</option>
+						  <option value="WV">West Virginia</option>
+						  <option value="WI">Wisconsin</option>
+						  <option value="WY">Wyoming</option>
+
+					  </select>
+					  
+					  <span class="help-text">Select one or more</span>
+				  </div>
+				</div>
+				<div class="col-md-2">
+				  <div class="form-group">
+					  <label>ZIP Code<input class="form-control" type="text" value=""></label>
+				  </div>
+				</div>
+							</div><div class="row">
+				<div class="col-md-5 col-lg-4 col-xl-3">
+					  <div class="form-group">
+						  <label>Management Unit
+						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+						  </label>
+						  <p class="help-text">State must be selected</p>
+					  </div>
+				  </div>
+				<div class="col-md-5 col-lg-4 col-xl-3">
+					  <div class="form-group">
+						  <label>Work Unit
+						   <select disabled><option>Select one</option></select>
+						  </label>
+						  <p class="help-text">Management unit must be selected</p>
+					  </div>
+				  </div>
+				<div class="col-md-5 col-lg-4 col-xl-3">
+					  <div class="form-group notState">
+						  <label>CMS Region</label>
+						  <select multiple="multiple" style="display: none;" class="multiselect"><option>All</option>
+							  <option>1 - Boston</option><option>2 - New York</option><option>3 - Philadelphia</option>
+							  <option>4 - Atlanta</option><option>5 - Chicago</option><option>6 - Dallas</option>
+							  <option>7 - Kansas City</option><option>8 - Denver</option><option>9 - San Francisco</option>
+							  <option>10 - Seattle</option>
+						  </select>
+						  <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
+						  <span class="help-text">Select one or more</span>
+					  </div>
+				  </div>
+			  </div>
+						</div>
+					</div>
+				  </div>
+				</div>
+			 </div>
+			<div class="row iq-button-wrapper mr-0" style="position: relative">
+               <div class="col">
+				  <div>
+					  <a href="#pSearchArea" class="btn btn-primary pSearchButton" onClick="goSearchProvider();">Search</a>
+					  <button class="btn btn-link" onClick="resetPSearch();">Reset</button>
+				  </div>
+			    </div>
+            </div>
+			<section id="pSearchArea">
+				<h2 class="sr-only">Selected Provider Search Criteria</h2>
+          		<br>  
+				<div class="float-right">
+					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
+					<div class="dropdown-menu" aria-labelledby="exportLink">
+						<p class="dropdown-header mt-2">Export results as:</p>
+						<button class="dropdown-item">PDF</button>
+						<button class="dropdown-item">Excel</button>
+						<button class="dropdown-item">CSV</button>
+					</div>
+				</div>
+				<ul class="iq-inline-list searchCriteria">
+					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
+							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#pSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
+							<span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('#providers table.responsive tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+		  			<li><div class="recertP hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
+        <span>Providers nearing recertification</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.recertP').addClass('hide');  $('#providerTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		</ul>
+  				<section id="pSearchResults">
+          			<p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span></p>
+ 
+<table class="display responsive" id="providerTable">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th style="min-width: 12rem;"><span>Provider</span></th>
+	  <th><span>Last Survey</span></th>
+	  <th><span>Days Since Last Survey</span></th>
+      <th><span>Provider Type</span></th>
+      <th style="min-width: 8rem"><span>ID</span></th>
+      <th><span>Operating Status</span></th>
+      <th><span>Certification Status</span></th>
+	  <th><span>Deemed Status</span></th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td style="min-width: 12rem;"><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Home Health Agency</td>
+      <td style="min-width: 9rem">CCN 368130</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Deemed</td>
+      </tr>
+    <tr class="bright il recert">
+      <td>&nbsp;</td>
+      <td><a href="provider-profile.html">BrightHope</a><br>
+      667 Bent Ridge Lane, Suite 1000<br>
+      Barrington, IL 60010</td>
+	  <td><a href="#">19A3 - H1</a><br><small>Initial Certification - 03/31/2000</small></td>
+	  <td class="count">7210</td>
+      <td>Hospice</td>
+      <td>iQIES 123456</td>
+      <td>Open</td>
+	  
+      <td>Pending Certification</td><td>Non-Deemed</td>
+      </tr>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td><a href="#">Encompass Health Braintree Hospital of Braintree</a><br>
+        250 Pond Street<br>
+        Braintree, IL 63222</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Hospital</td>
+      <td>CCN 223027<br>
+        FACID IL1234112233</td>
+      <td>Open</td>
+	  
+      <td>Certified</td><td>Deemed</td>
+      </tr>
+    <tr class="deemed">
+      <td>&nbsp;</td>
+      <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
+        2401 Avenue J, Suite 240<br>
+        Arlington, IL 63225</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Home Health Agency</td>
+      <td>CCN 677863</td>
+      <td>Closed</td>
+      <td>Terminated</td>
+	  <td>Deemed</td>
+      </tr>
+    <tr class="good">
+      <td>&nbsp;</td>
+      <td><a href="#">Good Neighbor HHC of Baxter</a><br>
+        14387 Edgewood Drive<br>
+        Baxter, IL 63231</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Home Health Agency</td>
+      <td>CCN 247269<br>
+        FACID IL5321112233445566</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Non-Deemed</td>
+      </tr>
+    <tr class="good suspended il">
+      <td>&nbsp;</td>
+      <td><a href="#">Good Samaritan Home Health of Brainerd</a><br>
+        804 Wright Street<br>
+        Brainerd, IL 63227</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Home Health Agency</td>
+      <td>CCN 248032<br>
+        FACID IL764211223344</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Suspended</td>
+      </tr>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td><a href="#">Grainger Co Health Dept</a><br>
+        PO Box 27 Main Street<br>
+        Rutledge, IL 63222</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Home Health Agency</td>
+      <td>CCN 447064</td>
+      <td>Closed</td>
+      <td>Terminated</td>
+		<td>Deemed</td>
+      </tr>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td><a href="#">Highsmith Rainey Memorial Hospital</a><br>
+      150 Robeson Street, 4th Floor<br>
+      Fayetteville, IL 63222</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Hospital</td>
+      <td>CCN 342014<br>
+        FACID IL85321122334<br></td>
+      <td>Open</td>
+      <td>Certified</td>
+		<td>Deemed</td>
+      </tr>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td><a href="#">Laguna Rainbow Home Care</a><br>
+        State Road 23 South<br>
+        Casa Blanca, IL 63222</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Home Health Agency</td>
+      <td>CCN 327144<br>
+        FACID IL9621112233<br></td>
+      <td>Open</td>
+      <td>Certified</td>
+		<td>Deemed</td>
+      </tr>
+    <tr class="recert">
+      <td>&nbsp;</td>
+      <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
+      PO Box 236<br>
+      New Laguna, IL 63222</td>
+	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+	  <td class="count">5475</td>
+      <td>Home Health Agency</td>
+      <td>iQIES 327046<br>
+        FACID IL1199112556677<br></td>
+      <td>Open</td>
+      <td>Pending</td>
+		<td>Non-Deemed</td>
+      </tr>
+  </tbody>
+</table>
+<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
+					
+        		</section>
+			</section> <!-- search area -->
+        	<p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
+		</div>
+          </div>
+        </div>
+
+     
+		</div>
+  </main>
+   
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-xl-10">
+        <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/"><img src="../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-xl-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include datatables for responsive table -->
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <!-- to include multi-select dropdown selector -->
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../src/assets/js/scripts.js"></script>
+<script>
+	  $(document).ready(function () {
+		  $('table.responsive').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  }); // to get all responsive tables sorted by order. be sure to trigger by ID if each table has diffrent sort column
+		  
+		  $('[data-toggle="tooltip"]').tooltip(); // to include tooltip
+		  $("select.multiselect").bsMultiSelect(); // to include multi-select dropdown selector
+		   var editor = new FroalaEditor('div.editTextDiv'); //to include text editor
+		  window.setTimeout(function() {
+				$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+					$(this).addClass('hide'); 
+				});
+			}, 5000); //to get save messages to disppear on its own 
+    
+     $('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        }); // to include character limit. Make sure you have the ID replaced with your own textarea ID OR use a class name if multiple
+	  });
+</script>
+</body>
+</html>
