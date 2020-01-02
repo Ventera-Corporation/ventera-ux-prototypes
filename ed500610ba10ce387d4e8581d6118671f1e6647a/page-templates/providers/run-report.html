@@ -289,7 +289,7 @@
           			
  <nav class="nav nav-horizontal">
         <a class="nav-link active" href="#results" data-toggle="tab" role="tab"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount info-text">Results: 1-10 of 112 Providers</span></a>
-        <a class="nav-link" href="#added" data-toggle="tab" role="tab">0 Providers Added</a>
+        <a class="nav-link addedTab" href="#added" data-toggle="tab" role="tab">0 Providers Added</a>
        
         </nav>
      
@@ -329,7 +329,7 @@
       <td>Open</td>
 	  
       <td>Pending Certification</td><td>Non-Deemed</td>
-      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); $() }">Add</button></td>
+      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }; $('#added table').removeClass('hide'); $('#added p.iq-not-available').addClass('hide'); $('a.addedTab').html('1 Provider Added'); ">Add</button></td>
       </tr>
     <tr class="deemed il">
       <td>&nbsp;</td>
@@ -466,7 +466,7 @@
       <td>Open</td>
 	  
       <td>Certified</td><td>Deemed</td>
-      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Remove</button></td>
       </tr>
     
   </tbody>
