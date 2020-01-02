@@ -329,7 +329,7 @@
       <td>Open</td>
 	  
       <td>Pending Certification</td><td>Non-Deemed</td>
-      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }; $('#added table').removeClass('hide'); $('#added p.iq-not-available').addClass('hide'); $('a.addedTab').html('1 Provider Added'); ">Add</button></td>
+      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); $('#added table').removeClass('hide'); $('#added p.iq-not-available').addClass('hide'); $('a.addedTab').html('1 Provider Added'); } else { $(this).html('Add'); $('#added table').addClass('hide'); $('#added p.iq-not-available').removeClass('hide'); $('a.addedTab').html('0 Provider Added'); };  ">Add</button></td>
       </tr>
     <tr class="deemed il">
       <td>&nbsp;</td>
@@ -438,7 +438,7 @@
 <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
           </div>
         <div class="tab-pane" id="added">
-			<p class="iq-not-available">No providers added</p>
+			<p class="iq-not-available"><br>No providers added</p>
          <table class="display table striped responsive hide" id="providerTableAdded">
   <thead>
     <tr>
@@ -455,18 +455,17 @@
   <tbody>
    
     
-    <tr class="deemed il">
+   <tr class="bright il recert">
       <td>&nbsp;</td>
-      <td>Encompass Health Braintree Hospital of Braintree<br>
-        250 Pond Street<br>
-        Braintree, IL 63222</td>
-	  <td>Hospital</td>
-      <td>CCN 223027<br>
-        FACID IL1234112233</td>
+      <td>BrightHope<br>
+        667 Bent Ridge Lane, Suite 1000<br>
+        Barrington, IL 60010</td>
+	  <td>Hospice</td>
+      <td>iQIES 123456</td>
       <td>Open</td>
 	  
-      <td>Certified</td><td>Deemed</td>
-      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Remove</button></td>
+      <td>Pending Certification</td><td>Non-Deemed</td>
+      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); $('#added table').removeClass('hide'); $('#added p.iq-not-available').addClass('hide'); $('a.addedTab').html('1 Provider Added');  } else { $(this).html('Add'); $('#added table').addClass('hide'); $('#added p.iq-not-available').removeClass('hide'); $('a.addedTab').html('0 Provider Added'); };  ">Remove</button></td>
       </tr>
     
   </tbody>
