@@ -286,9 +286,16 @@
 		</ul>-->
   				<section id="pSearchResults">
 					<h2>Select Providers (Up to 25)</h2>
-          			<p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span></p>
- 
-<table class="display responsive" id="providerTable">
+          			
+ <nav class="nav nav-horizontal">
+        <a class="nav-link active" href="#results" data-toggle="tab" role="tab"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount info-text">Results: 1-10 of 112 Providers</span></a>
+        <a class="nav-link" href="#added" data-toggle="tab" role="tab">0 Providers Added</a>
+       
+        </nav>
+     
+      <div class="tab-content">
+        <div class="tab-pane active" id="results">
+          <table class="display responsive" id="providerTable">
   <thead>
     <tr>
       <th>&nbsp;</th>
@@ -429,6 +436,45 @@
   </tbody>
 </table>
 <nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
+          </div>
+        <div class="tab-pane" id="added">
+			<p class="iq-not-available">No providers added</p>
+         <table class="display table striped responsive hide" id="providerTableAdded">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th style="min-width: 12rem;"><span>Provider</span></th>
+	  <th><span>Provider Type</span></th>
+      <th style="min-width: 8rem"><span>ID</span></th>
+      <th><span>Operating Status</span></th>
+      <th><span>Certification Status</span></th>
+	  <th><span>Deemed Status</span></th>
+	  <th>Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+   
+    
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td>Encompass Health Braintree Hospital of Braintree<br>
+        250 Pond Street<br>
+        Braintree, IL 63222</td>
+	  <td>Hospital</td>
+      <td>CCN 223027<br>
+        FACID IL1234112233</td>
+      <td>Open</td>
+	  
+      <td>Certified</td><td>Deemed</td>
+      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    
+  </tbody>
+</table>
+          </div>
+       
+        </div>
+
 					
         		</section>
 				
@@ -444,7 +490,7 @@
 				  <div>
 					  <a href="#" class="btn btn-primary" onClick="">Run Report</a>
 					  <button class="btn btn-outline-primary" data-toggle="modal" data-target="#scheduleR">Schedule Report Run</button>
-					  <button class="btn btn-outline-primary">Save Criteria</button>
+					  <button class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmSave">Save Criteria</button>
 					  
 					  <br>
 					 
@@ -642,8 +688,9 @@
 			</div>
 			<div class="row">
 			<div class="col">
-				<label>Criteria Name</label>
-				<input type="text">	
+				<label>Name of Scheduled Report Run</label>
+				<input type="text">
+				
 			</div>
 			</div>
 		</div>  
@@ -651,7 +698,7 @@
 			  </div>
               </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide');">Schedule</button>
+              <a href="#" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide');">Schedule</a>
               <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
               </div>
             </div>
@@ -671,7 +718,32 @@
               <p>Please confirm you want to delete this saved criteria: XXXX</p>
               </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide'); $('#savedCriteria option[value=opt1]').remove();">Delete</button>
+              <a href="#" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide'); $('#savedCriteria option[value=opt1]').remove();">Delete</a>
+              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+  </div>
+	<div class="modal fade" id="confirmSave" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Save Search Criteria</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+              <div class="row">
+			<div class="col">
+				<label>Name of Search Criteria to be Saved</label>
+				<input type="text">
+				
+			</div>
+			</div>
+              </div>
+            <div class="modal-footer">
+              <a href="#" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide');">Save</a>
               <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
               </div>
             </div>
