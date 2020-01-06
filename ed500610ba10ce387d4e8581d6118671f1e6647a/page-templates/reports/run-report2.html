@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/general.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Run HHA Review and Correct Report | iQIES</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<!-- to match design system definition -->
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+  <header>
+	<div class="iq-global-nav">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col">
+			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+				  </div>
+				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					<a class="dropdown-item" href="#">Reports Main</a>
+					<a class="dropdown-item" href="#">Find a Report Type</a>
+					<a class="dropdown-item" href="#">My Reports</a>
+				  </div>
+				</div>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+					  <a class="dropdown-item" href="#">Letters</a>
+					  <a class="dropdown-item" href="#">State Customizations</a>
+				  </div>
+				</div>
+				<div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+					id="navbarDropdown4" role="button" data-toggle="dropdown">
+					<p>DF</p>
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
+					  Profile</a>
+					<a class="dropdown-item" href="#">Help</a>
+					<a class="dropdown-item" href="#">Logout</a>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+  </div>
+  </header>
+
+  <main>
+	<!-- breadcrumb and header -->
+    <div class="iq-page-header-wrapper mb-0">
+      <div class="container-fluid">
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+				<!-- InstanceBeginEditable name="breadcrumb" -->
+                  <li class="breadcrumb-item">
+                    <a href="../../../global/global-landing-menu.html">Home</a>
+                  </li>
+				  <li class="breadcrumb-item">
+                    <a href="reports-landing.html">Reports</a>
+					</li>
+                  <li class="breadcrumb-item">
+                  Run Report - HHA Review and Correct Report</li>
+				<!-- InstanceEndEditable -->
+                </ol>
+              </nav>
+              <div class="iq-page-header-content">
+               <!-- InstanceBeginEditable name="headerRight" -->
+			   <!-- InstanceEndEditable -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="container-fluid" id="mainContent">
+	  <!-- InstanceBeginEditable name="pageLevelErrors" -->	
+	  <div class="alert alert-warning hide" role="alert" tabindex="0">
+		<div class="alert-content">You do not have permission to manage this provider's information.</div>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	  </div>
+  	  <div class="alert alert-success successMsg hide" role="alert" tabindex="0">
+	  	<div class="alert-content">Changes saved successfully</div>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	  </div>
+	  <div class="alert alert-danger errorMsg hide" role="alert" tabindex="0">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 <p> Unable to save. Please review and correct the following:</p> 
+                  <ul>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                  </ul>
+              </div></div>
+          </div>
+        </div> 
+	   <!-- InstanceEndEditable -->
+	  <!-- InstanceBeginEditable name="mainContent" -->		  
+
+      <h1>Run Report - HHA Review and Correct Report</h1>
+      <p>The HHA Review and Correct Report will allow providers to review their QM data to identify if there are any corrections or changes needed to the data prior to the quarter's data submission deadline. The report will provide a breakdown by measure and by quarter, of the HHA's assessment-based QM data for four rolling quarters. The report also identifies whether each quarter's data correction period is open or closed as of the report run date. The report output will also provide patient-level data in a CSV format the user can access via the user's My Reports page.</p>
+	  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+         
+     
+	<div class="row">
+		<div class="col-md-5 col-lg-4 col-xl-3">
+			<div class="form-group">
+				<label>Apply Saved Criteria</label>
+				<select id="savedCriteria" onChange="if(this.selectedIndex != 0){ $('.deleteC').removeClass('hide'); } else { $('.deleteC').addClass('hide'); }"><option>Select one</option><option value="opt1">XXXX</option></select> 
+			</div>
+		</div>
+		<div class="col-md-2 col-lg-2 col-xl-2">
+			<label>&nbsp;</label>
+			<button class="btn btn-outline-primary hide deleteC" onClick="$(this).addClass('hide'); $('#savedCriteria').prop('selectedIndex', 0).change(); " data-toggle="modal" data-target="#confirmDelete">Delete Criteria</button>
+		</div>
+	</div>
+		<hr>
+		<h2>Report Criteria</h2>
+		<fieldset><legend class="iq-form-group-title">Date Range</legend>
+	  <div class="row">
+		<div class="col-md-5 col-lg-4 col-xl-3">
+		  <div class="form-group">
+			  <label>Date Range</label>
+			  <select><option>Select one</option><option>Q4 2018 - Q3 2019</option><option>Q1 2019 - Q4 2019</option></select>
+			 
+		  </div>
+		</div>
+		  
+		</div>	</fieldset>
+	  <fieldset><legend class="iq-form-group-title">Providers</legend>
+	  <p>Search for providers and add up to 25 providers for each report run.</p>
+		<div class="row">
+		<div class="col-md-5 col-lg-4 col-xl-3">
+			<div class="form-group">
+					  <label>State <span class="iq-asterisk">*</span></label>
+					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
+						  <option value="AL">Alabama</option>
+						  <option value="AK">Alaska</option>
+						  <option value="AZ">Arizona</option>
+						  <option value="AR">Arkansas</option>
+						  <option value="CA">California</option>
+						  <option value="CO">Colorado</option>
+						  <option value="CT">Connecticut</option>
+						  <option value="DE">Delaware</option>
+						  <option value="DC">District Of Columbia</option>
+						  <option value="FL">Florida</option>
+						  <option value="GA">Georgia</option>
+						  <option value="HI">Hawaii</option>
+						  <option value="ID">Idaho</option>
+						  <option value="IL" selected>Illinois</option>
+						  <option value="IN">Indiana</option>
+						  <option value="IA">Iowa</option>
+						  <option value="KS">Kansas</option>
+						  <option value="KY">Kentucky</option>
+						  <option value="LA">Louisiana</option>
+						  <option value="ME">Maine</option>
+						  <option value="MD">Maryland</option>
+						  <option value="MA">Massachusetts</option>
+						  <option value="MI">Michigan</option>
+						  <option value="MN">Minnesota</option>
+						  <option value="MS">Mississippi</option>
+						  <option value="MO">Missouri</option>
+						  <option value="MT">Montana</option>
+						  <option value="NE">Nebraska</option>
+						  <option value="NV">Nevada</option>
+						  <option value="NH">New Hampshire</option>
+						  <option value="NJ">New Jersey</option>
+						  <option value="NM">New Mexico</option>
+						  <option value="NY">New York</option>
+						  <option value="NC">North Carolina</option>
+						  <option value="ND">North Dakota</option>
+						  <option value="OH">Ohio</option>
+						  <option value="OK">Oklahoma</option>
+						  <option value="OR">Oregon</option>
+						  <option value="PA">Pennsylvania</option>
+						  <option value="RI">Rhode Island</option>
+						  <option value="SC">South Carolina</option>
+						  <option value="SD">South Dakota</option>
+						  <option value="TN">Tennessee</option>
+						  <option value="TX">Texas</option>
+						  <option value="UT">Utah</option>
+						  <option value="VT">Vermont</option>
+						  <option value="VA">Virginia</option>
+						  <option value="WA">Washington</option>
+						  <option value="WV">West Virginia</option>
+						  <option value="WI">Wisconsin</option>
+						  <option value="WY">Wyoming</option>
+
+					  </select>
+					  
+					  <span class="help-text">Select one or more</span>
+				  </div>
+		</div>
+		<div class="col-md-10 col-lg-8 col-xl-6">
+			<div class="form-group">
+				<label>Keyword</label>
+				<input type="text" class="form-control" id="pSearchInput" onKeyUp="if (event.keyCode === 13) {
+        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter at least 3 characters to search by provider name, CCN, or State Facility ID (FACID)</div></div>
+		</div>
+	  </div>
+		  <div class="row mr-0" style="position: relative">
+               <div class="col">
+				  <div>
+					  <a href="#pSearchArea" class="btn btn-outline-primary pSearchButton" onClick="$('.startMsg').addClass('hide'); $('#pSearchArea').removeClass('hide'); drawProviderTable()">Search</a>
+				  </div>
+				  
+			    </div>
+            </div>
+	
+					<br>
+		    <p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
+		    <p class="iq-not-available startMsg" role="status">No providers added. </p>
+			<section id="pSearchArea" class="hide">
+  				<section id="pSearchResults">
+					<h4>Select Providers (Up to 25)</h4>
+<nav class="nav nav-horizontal">
+        <a class="nav-link active" href="#results" data-toggle="tab" role="tab"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount info-text">Results: 1-10 of 112 Providers</span></a>
+        <a class="nav-link addedTab" href="#added" data-toggle="tab" role="tab">0 Providers Added</a>
+       
+        </nav>
+<div class="tab-content">
+        <div class="tab-pane active" id="results">
+          <table class="display responsive" id="providerTable">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th style="min-width: 12rem;"><span>Provider</span></th>
+	  <th><span>Provider Type</span></th>
+      <th style="min-width: 8rem"><span>ID</span></th>
+      <th><span>Operating Status</span></th>
+      <th><span>Certification Status</span></th>
+	  <th><span>Deemed Status</span></th>
+	  <th>Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td style="min-width: 12rem;">A&amp;L Home Care and Training Center, LLC<br>6129 County Road, #107<br>Proctorville, IL 63222</td>
+	  <td>Home Health Agency</td>
+      <td style="min-width: 9rem">CCN 368130</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Deemed</td>
+	  <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    <tr class="bright il recert">
+      <td>&nbsp;</td>
+      <td>BrightHope<br>
+        667 Bent Ridge Lane, Suite 1000<br>
+        Barrington, IL 60010</td>
+	  <td>Hospice</td>
+      <td>iQIES 123456</td>
+      <td>Open</td>
+	  
+      <td>Pending Certification</td><td>Non-Deemed</td>
+      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); $('#added table').removeClass('hide'); $('#added p.iq-not-available').addClass('hide'); $('a.addedTab').html('1 Provider Added'); } else { $(this).html('Add'); $('#added table').addClass('hide'); $('#added p.iq-not-available').removeClass('hide'); $('a.addedTab').html('0 Provider Added'); };  ">Add</button></td>
+      </tr>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td>Encompass Health Braintree Hospital of Braintree<br>
+        250 Pond Street<br>
+        Braintree, IL 63222</td>
+	  <td>Hospital</td>
+      <td>CCN 223027<br>
+        FACID IL1234112233</td>
+      <td>Open</td>
+	  
+      <td>Certified</td><td>Deemed</td>
+      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    <tr class="deemed">
+      <td>&nbsp;</td>
+      <td>Florence Health Care Services &amp; Training Center<br>
+        2401 Avenue J, Suite 240<br>
+        Arlington, IL 63225</td>
+	  <td>Home Health Agency</td>
+      <td>CCN 677863</td>
+      <td>Closed</td>
+      <td>Terminated</td>
+	  <td>Deemed</td>
+	  <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    <tr class="good">
+      <td>&nbsp;</td>
+      <td>Good Neighbor HHC of Baxter<br>
+        14387 Edgewood Drive<br>
+        Baxter, IL 63231</td>
+	  <td>Home Health Agency</td>
+      <td>CCN 247269<br>
+        FACID IL5321112233445566</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Non-Deemed</td>
+	  <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    <tr class="good suspended il">
+      <td>&nbsp;</td>
+      <td>Good Samaritan Home Health of Brainerd<br>
+        804 Wright Street<br>
+        Brainerd, IL 63227</td>
+	  <td>Home Health Agency</td>
+      <td>CCN 248032<br>
+        FACID IL764211223344</td>
+      <td>Open</td>
+      <td>Certified</td>
+	  <td>Suspended</td>
+	  <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td>Grainger Co Health Dept<br>
+        PO Box 27 Main Street<br>
+        Rutledge, IL 63222</td>
+	  <td>Home Health Agency</td>
+      <td>CCN 447064</td>
+      <td>Closed</td>
+      <td>Terminated</td>
+		<td>Deemed</td>
+		<td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td>Highsmith Rainey Memorial Hospital<br>
+        150 Robeson Street, 4th Floor<br>
+        Fayetteville, IL 63222</td>
+	  <td>Hospital</td>
+      <td>CCN 342014<br>
+        FACID IL85321122334<br></td>
+      <td>Open</td>
+      <td>Certified</td>
+		<td>Deemed</td>
+		<td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    <tr class="deemed il">
+      <td>&nbsp;</td>
+      <td>Laguna Rainbow Home Care<br>
+        State Road 23 South<br>
+        Casa Blanca, IL 63222</td>
+	  <td>Home Health Agency</td>
+      <td>CCN 327144<br>
+        FACID IL9621112233<br></td>
+      <td>Open</td>
+      <td>Certified</td>
+		<td>Deemed</td>
+		<td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+    <tr class="recert">
+      <td>&nbsp;</td>
+      <td>Laguna Rainbow Home Health Agency<br>
+        PO Box 236<br>
+        New Laguna, IL 63222</td>
+	  <td>Home Health Agency</td>
+      <td>iQIES 327046<br>
+        FACID IL1199112556677<br></td>
+      <td>Open</td>
+      <td>Pending</td>
+		<td>Non-Deemed</td>
+		<td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); } else { $(this).html('Add'); }">Add</button></td>
+      </tr>
+  </tbody>
+</table>
+<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
+          </div>
+        <div class="tab-pane" id="added">
+			<p class="iq-not-available"><br>No providers added</p>
+         <table class="display table striped responsive hide" id="providerTableAdded">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th style="min-width: 12rem;"><span>Provider</span></th>
+	  <th><span>Provider Type</span></th>
+      <th style="min-width: 8rem"><span>ID</span></th>
+      <th><span>Operating Status</span></th>
+      <th><span>Certification Status</span></th>
+	  <th><span>Deemed Status</span></th>
+	  <th>Actions</th>
+      </tr>
+  </thead>
+  <tbody>
+   
+    
+   <tr class="bright il recert">
+      <td>&nbsp;</td>
+      <td>BrightHope<br>
+        667 Bent Ridge Lane, Suite 1000<br>
+        Barrington, IL 60010</td>
+	  <td>Hospice</td>
+      <td>iQIES 123456</td>
+      <td>Open</td>
+	  
+      <td>Pending Certification</td><td>Non-Deemed</td>
+      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); $('#added table').removeClass('hide'); $('#added p.iq-not-available').addClass('hide'); $('a.addedTab').html('1 Provider Added');  } else { $(this).html('Add'); $('#added table').addClass('hide'); $('#added p.iq-not-available').removeClass('hide'); $('a.addedTab').html('0 Provider Added'); };  ">Remove</button></td>
+      </tr>
+    
+  </tbody>
+</table>
+          </div>
+       
+        </div>
+
+        		</section>
+			</section> <!-- search area -->	
+		</fieldset>
+		<fieldset><legend class="iq-form-group-title">Other Criteria</legend>
+		<div class="row">
+			<div class="col-md-6 col-lg-4">
+				<div class="form-group">
+					<label>Quality Measures <span class="iq-asterisk">*</span></label>
+					 <select multiple="multiple" style="display: none;" class="multiselect"><option>All Measures</option>
+						<option>Application of Percent of Long-Term Care Hospital Patients with an Admission and Discharge Functional Assessment and a Care Plan That Addresses Function (NQF #2631)</option>
+						<option>Application of Percent of Residents Experiencing One or More Falls with Major Injury (NQF #0674)</option>
+						<option>Changes in Skin Integrity Post-Acute Care: Pressure Ulcer/Injury</option>
+						<option>Depression Assessment Conducted (NQF #0518)</option>
+						<option>Diabetic Foot Care and Patient Education Implemented during All Episodes of Care (NQF #0519)</option>
+						<option>Drug Education on All Medications Provided to Patient/Caregiver during All Episodes of Care</option>
+						<option>Improvement in Ambulation/Locomotion (NQF #0167)</option>
+						<option>Improvement in Bathing (NQF #0174)</option>
+						<option>Improvement in Bed Transferring (NQF #0175)</option>
+						<option>Improvement in Dyspnea</option>
+						<option>Improvement in Management of Oral Medications (NQF #0176)</option>
+						<option>Improvement in Pain Interfering with Activity (NQF #0177)</option>
+						<option>Improvement in Status of Surgical Wounds (NQF #0178)</option>
+						<option>Influenza Immunization Received for Current Flu Season</option>
+						<option>Influenza_Contraindicated</option>
+						<option>Influenza_Refused</option>
+						<option>Multifactor Fall Risk Assessment Conducted for All Patients who Can Ambulate (NQF #0537)</option>
+						<option>Percent of Patients with Drug Regimen Review Conducted with Follow-Up for Identified Issues</option>
+						<option>Pneumococcal Polysaccharide Vaccine Ever Received</option>
+						<option>Pressure Ulcers</option>
+						<option>Timely Initiation of Care (NQF #0526)</option>
+					</select>
+					<span class="help-text">Select one or more</span>
+					
+				</div>
+			</div>	
+			<div class="col-md-6 col-lg-4">
+				<div class="form-group">
+					<label>Status <span class="iq-asterisk">*</span></label>
+					 <select multiple="multiple" style="display: none;" class="multiselect"><option>All Statuses</option>
+						<option>Triggered</option>
+						<option>Not Triggered</option>
+						<option>Exclusion</option>
+						<option>Dash</option>
+					</select>
+					<span class="help-text">Select one or more</span>
+				</div>
+			</div>	
+			<div class="col-md-12 col-lg-8">
+				<div class="form-group">
+					<label>Data Correction Period as of Report Run Date <span class="iq-asterisk">*</span></label>
+					<select><option>Select one</option>
+						<option>Both</option>
+						<option>Open</option>
+						<option>Closed</option>
+					</select>
+				</div>
+			</div>	
+		</div>
+		</fieldset>
+
+		<br>
+	  		<hr>
+	  		<div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb1" class="custom-control-input" onChange="$('.primaryButton').toggleClass('hide'); if(this.checked){$('.scheduleReportDiv').removeClass('hide');  } else {$('.scheduleReportDiv').addClass('hide'); }">
+              <label class="custom-control-label" for="cb1">Schedule Report Run </label>
+            </div>
+	   <p>Schedule the report to run one or many instances in the future.</p>
+	  		<div class="scheduleReportDiv hide">
+             
+			
+			  <div class="row">
+				<div class="col-md-4">
+		  <div class="form-group">
+			  <label>Repeat <span class="iq-asterisk">*</span></label>
+			  <select onChange="switch(this.options[this.selectedIndex].value){ case 'never': $('#runDate').addClass('hide'); $('#runDay').addClass('hide'); $('#runMonth').addClass('hide'); $('#runQuarter').addClass('hide'); $('#runYear').addClass('hide'); break; case 'weekly': $('#runDate').addClass('hide'); $('#runDay').removeClass('hide'); $('#runMonth').addClass('hide'); $('#runQuarter').addClass('hide'); $('#runYear').addClass('hide'); break; case 'monthly': $('#runDate').addClass('hide'); $('#runDay').addClass('hide'); $('#runMonth').removeClass('hide'); $('#runQuarter').addClass('hide'); $('#runYear').addClass('hide'); break; case 'quarterly': $('#runDate').addClass('hide'); $('#runDay').addClass('hide'); $('#runMonth').addClass('hide'); $('#runQuarter').removeClass('hide'); $('#runYear').addClass('hide'); break; case 'annually': $('#runDate').addClass('hide'); $('#runDay').addClass('hide'); $('#runMonth').addClass('hide'); $('#runQuarter').addClass('hide'); $('#runYear').removeClass('hide'); break; }">
+				  <option value="never">Never</option>
+				  <option value="weekly">Weekly</option>
+				  <option value="monthly">Monthly</option>
+				  <option value="quarterly">Quarterly</option>
+				  <option value="annually">Annually</option></select>
+			 
+		  </div>
+		</div>
+				</div>
+				<div class="row">
+		<div class="col-md-12">
+			<div class="row" id="runDate">
+			<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Run Date <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" class="form-control runDate" type="date" value="">
+				  <span class="form-text">MM/DD/YYYY</span>
+			  </div>
+		  </div>
+		  <div class="col-md-4">
+			  <div class="form-group">
+				  <label>Run Time <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" type="time"  class="form-control runTime" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
+				  <span class="form-text">HH:MM </span>
+			  </div>
+		  </div>
+			</div>
+			<div id="runDay" class="hide">
+			<div class="row">
+			<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Day <span class="iq-asterisk">*</span></label>
+				  <select><option>Select one</option><option>Every Monday</option>
+				  <option>Every Tuesday</option>
+				  <option>Every Wednesday</option>
+				  <option>Every Thursday</option>
+				  <option>Every Friday</option>
+				  <option>Every Saturday</option>
+				  <option>Every Sunday</option>
+				  </select>
+			  </div>
+		  </div>
+		  <div class="col-md-4">
+			  <div class="form-group">
+				  <label>Run Time <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" type="time"  class="form-control runTime" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
+				  <span class="form-text">HH:MM </span>
+			  </div>
+		  </div>
+			</div>
+			<div class="row">
+			<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Begin Date <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" class="form-control begin" type="date" value="">
+				  <span class="form-text">MM/DD/YYYY</span>
+			  </div>
+		  </div>
+		  <div class="col-md-4">
+			  <div class="form-group">
+				  <label>End Date</label>
+				  <input placeholder="" type="time"  class="form-control end" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
+				  <span class="form-text">MM/DD/YYYY </span>
+			  </div>
+		  </div>
+			</div>
+			</div>
+			<div id="runMonth" class="hide">
+			<div class="row">
+			<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Day <span class="iq-asterisk">*</span></label>
+				  <select><option value="">Select one</option><option value="1">1st of the month</option><option value="2">2nd of the month</option><option value="3">3rd of the month</option><option value="4">4th of the month</option><option value="5">5th of the month</option><option value="6">6th of the month</option><option value="7">7th of the month</option><option value="8">8th of the month</option><option value="9">9th of the month</option><option value="10">10th of the month</option><option value="11">11th of the month</option><option value="12">12th of the month</option><option value="13">13th of the month</option><option value="14">14th of the month</option><option value="15">15th of the month</option><option value="16">16th of the month</option><option value="17">17th of the month</option><option value="18">18th of the month</option><option value="19">19th of the month</option><option value="20">20th of the month</option><option value="21">21st of the month</option><option value="22">22nd of the month</option><option value="23">23rd of the month</option><option value="24">24th of the month</option><option value="25">25th of the month</option><option value="26">26th of the month</option><option value="27">27th of the month</option><option value="28">28th of the month</option><option value="29">29th of the month</option><option value="30">30th of the month</option><option value="31">31st of the month</option></select>
+			  </div>
+		  </div>
+		  <div class="col-md-4">
+			  <div class="form-group">
+				  <label>Run Time <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" type="time"  class="form-control runTime" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
+				  <span class="form-text">HH:MM </span>
+			  </div>
+		  </div>
+			</div>
+			<div class="row">
+			<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Begin Date <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" class="form-control begin" type="date" value="">
+				  <span class="form-text">MM/DD/YYYY</span>
+			  </div>
+		  </div>
+		  <div class="col-md-4">
+			  <div class="form-group">
+				  <label>End Date</label>
+				  <input placeholder="" type="time"  class="form-control end" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
+				  <span class="form-text">MM/DD/YYYY </span>
+			  </div>
+		  </div>
+			</div>
+			</div>
+			<div id="runQuarter" class="hide">
+			<div class="row">
+			<div class="col">
+			  <div class="form-group">This report will be scheduled to run on January 1, April 1, July 1, and October 1 at 12:00 AM.</div>
+		  </div>
+			</div>
+			<div class="row">
+			<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Begin Date <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" class="form-control begin" type="date" value="">
+				  <span class="form-text">MM/DD/YYYY</span>
+			  </div>
+		  </div>
+		  <div class="col-md-4">
+			  <div class="form-group">
+				  <label>End Date</label>
+				  <input placeholder="" type="time"  class="form-control end" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
+				  <span class="form-text">MM/DD/YYYY </span>
+			  </div>
+		  </div>
+			</div>
+			</div>
+			<div id="runYear" class="hide">
+			<div class="row">
+				<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Month <span class="iq-asterisk">*</span></label>
+				 <select><option value="">Select one</option><option value="0">January</option><option value="1">February</option><option value="2">March</option><option value="3">April</option><option value="4">May</option><option value="5">June</option><option value="6">July</option><option value="7">August</option><option value="8">September</option><option value="9">October</option><option value="10">November</option><option value="11">December</option></select>
+			  </div>
+		  </div>
+			<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Day <span class="iq-asterisk">*</span></label>
+				  <select><option value="">Select one</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+			  </div>
+		  </div>
+		  <div class="col-md-4">
+			  <div class="form-group">
+				  <label>Run Time <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" type="time"  class="form-control runTime" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
+				  <span class="form-text">HH:MM </span>
+			  </div>
+		  </div>
+			</div>
+			<div class="row">
+			<div class="col-md-4">
+			  <div class="form-group">
+				  <label>Begin Date <span class="iq-asterisk">*</span></label>
+				  <input placeholder="" class="form-control begin" type="date" value="">
+				  <span class="form-text">MM/DD/YYYY</span>
+			  </div>
+		  </div>
+		  <div class="col-md-4">
+			  <div class="form-group">
+				  <label>End Date</label>
+				  <input placeholder="" type="time"  class="form-control end" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
+				  <span class="form-text">MM/DD/YYYY </span>
+			  </div>
+		  </div>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-lg-10 form-group">
+				<label>Report Name <span class="iq-asterisk">*</span></label>
+				<input type="text">
+				<span class="help-text">Enter a name for your scheduled report to save it to My Reports.</span>
+			</div>
+			</div>
+		</div>  
+			
+			  </div>
+              </div>
+
+	  		<div class="row mr-0" style="position: relative">
+               <div class="col">
+				  <div class="iq-button-wrapper">
+					  <a href="report.html" class="btn btn-primary primaryButton">Run Report</a>
+					  <a href="report-landing.html#h-tab-2" class="btn btn-primary primaryButton hide">Schedule</a>
+					  <button class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmSave">Save Report Criteria</button>
+					  <button class="btn btn-link" onClick="resetPSearch();">Reset</button>
+					   
+				  </div>
+				  
+			    </div>
+            </div>
+        	
+		 <a href="#" class="return-link">Return to Find a Report Type</a>
+		   
+         
+
+		
+    <div class="modal fade" id="confirmDelete" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Delete Saved Criteria</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+              <p>Please confirm you want to delete this saved criteria: XXXX</p>
+              </div>
+            <div class="modal-footer">
+              <a href="#mainContent" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide'); $('#savedCriteria option[value=opt1]').remove();  window.scrollTo(0, 0); ">Delete</a>
+              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+  </div>
+	<div class="modal fade" id="confirmSave" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Save Search Criteria</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+              <div class="row">
+			<div class="col">
+				<label>Name of Search Criteria to be Saved</label>
+				<input type="text">
+				<span class="help-text">A descriptive name that can help you remember the search criteria used</span>
+			</div>
+			</div>
+              </div>
+            <div class="modal-footer">
+              <a href="#mainContent" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide');  window.scrollTo(0, 0); ">Save</a>
+              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+  </div>
+		<!-- InstanceEndEditable -->
+	</div>
+  </main>
+   
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-xl-10">
+        <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/"><img src="../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-xl-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include datatables for responsive table -->
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <!-- to include multi-select dropdown selector -->
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../src/assets/js/scripts.js"></script>
+  <!-- InstanceBeginEditable name="footerScripts" -->
+<script>
+	  $(document).ready(function () {
+	    $('[data-toggle="tooltip"]').tooltip(); 
+	    $("select.multiselect").bsMultiSelect();
+	    window.setTimeout(function() {
+			$(".alert-success").fadeTo(8000, 0).slideUp(800, function(){
+				$(this).addClass('hide'); 
+			});
+		}, 5000);
+    	$('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        });
+		
+	  });
+
+
+</script>
+	<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

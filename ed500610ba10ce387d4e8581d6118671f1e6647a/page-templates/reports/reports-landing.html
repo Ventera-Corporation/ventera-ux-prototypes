@@ -1,206 +1,266 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="en"><!-- InstanceBegin template="/Templates/general.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="">
-
-  <title>Reports</title>
-
-  <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
-  <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/prototype.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Reports | iQIES</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<!-- to match design system definition -->
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
 </head>
 
 <body>
   <header>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <nav>
-            <a href="../../index.html">
-              <img src="../../../src/assets/images/logo-iqies.svg"
-                class="iq-logo" alt="Logo iQIES Color" />
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
+	<div class="iq-global-nav">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col">
+			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+				  </div>
+				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					<a class="dropdown-item" href="#">Reports Main</a>
+					<a class="dropdown-item" href="#">Find a Report Type</a>
+					<a class="dropdown-item" href="#">My Reports</a>
+				  </div>
+				</div>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+					  <a class="dropdown-item" href="#">Letters</a>
+					  <a class="dropdown-item" href="#">State Customizations</a>
+				  </div>
+				</div>
+				<div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+					id="navbarDropdown4" role="button" data-toggle="dropdown">
+					<p>DF</p>
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
+					  Profile</a>
+					<a class="dropdown-item" href="#">Help</a>
+					<a class="dropdown-item" href="#">Logout</a>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+  </div>
   </header>
 
   <main>
-    <div class="iq-page-header-wrapper">
-      <div class="container">
+	<!-- breadcrumb and header -->
+    <div class="iq-page-header-wrapper mb-0">
+      <div class="container-fluid">
         <div class="iq-page-header">
           <div class="row">
-            <div class="col d-flex flex-column justify-content-between">
+            <div class="col">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
+				<!-- InstanceBeginEditable name="breadcrumb" -->
                   <li class="breadcrumb-item">
-                    <a href="../../index.html">Home</a>
+                    <a href="../../../global/global-landing-menu.html">Home</a>
                   </li>
+				  
                   <li class="breadcrumb-item">
-                    Reports
-                  </li>
+                  Reports</li>
+				<!-- InstanceEndEditable -->
                 </ol>
               </nav>
               <div class="iq-page-header-content">
-                <h1>Reports</h1>
-                <div class="iq-page-header-description">
-                  Current and accurate reporting is vital to quality
-                  healthcare. Access past reports and frequent report types.
-                </div>
+               <!-- InstanceBeginEditable name="headerRight" -->
+			   <!-- InstanceEndEditable -->
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col">
-          <div class="iq-button-wrapper">
-            <button class="btn btn-primary btn-lg">Find Report Type</button>
-            <button class="btn btn-outline-primary btn-lg">
-              View My Reports
-            </button>
+	<div class="container-fluid" id="mainContent">
+	  <!-- InstanceBeginEditable name="pageLevelErrors" -->	
+	  <div class="alert alert-warning hide" role="alert">
+		<div class="alert-content">You do not have permission to manage this provider's information.</div>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	  </div>
+  	  <div class="alert alert-success successMsg hide" role="alert">
+	  	<div class="alert-content">Changes saved successfully</div>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	  </div>
+	  <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 <p> Unable to save. Please review and correct the following:</p> 
+                  <ul>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                  </ul>
+              </div></div>
+          </div>
+        </div> 
+	   <!-- InstanceEndEditable -->
+	  <!-- InstanceBeginEditable name="mainContent" -->	
+		<h1>Reports</h1>
+		<p>Current and accurate reporting is vital to quality healthcare. Access past reports and frequent report types.</p>
+		
+		<nav class="nav nav-horizontal">
+        <a class="nav-link active" href="#h-tab-1" data-toggle="tab" role="tab">Frequently Run Reports</a>
+     	<a class="nav-link" href="#h-tab-2" data-toggle="tab" role="tab">Scheduled Reports</a>
+        <a class="nav-link" href="#h-tab-3" data-toggle="tab" role="tab">All Reports</a>
+			<a class="nav-link" href="#h-tab-4" data-toggle="tab" role="tab">Report Activity Log</a>
+        </nav>
+      
+      <div class="tab-content">
+        <div class="tab-pane active" id="h-tab-1">
+		<p class="info-text">2 Frequently Run Reports</p>
+          <table class="table table-striped">
+			  <caption class="sr-only">Frequently Run Reports</caption>
+			  <thead><tr><th scope="col" class=""><span>Report Type</span></th><th scope="col" class=""><span>Category</span></th><th scope="col" class=""><span>Last Run Date</span></th><th scope="col" class=""><span>Actions</span></th></tr></thead>
+			  <tbody><tr><td><a href="report.html">HHA Activity Report</a></td>
+				 <td>Provider</td><td>01/06/2020 11:06 AM</td>
+				  <td class="text-right"><a class="btn btn-link" href="run-report.html">Run Report</a></td></tr>
+				 <tr><td><a href="run-report2.html">HHA Error Summary by Agency</a></td><td>Provider</td>
+					 <td>01/06/2020 11:15 AM</td><td class="text-right"><a class="btn btn-link" href="run-report2.html">Run Report</a></td></tr></tbody></table>
+          </div>
+        <div class="tab-pane" id="h-tab-2">
+          <p class="info-text">3 Scheduled Reports</p>
+			<table class="table table-striped" datatable="true"><caption class="sr-only">Scheduled Reports</caption><thead><tr><th tabindex="0" scope="col" class="ascending sortable"><span>Name</span></th><th tabindex="0" scope="col" class="sortable"><span>Category </span></th><th tabindex="0" scope="col" class="sortable"><span>Next Run Date</span></th><th tabindex="0" scope="col" class="sortable"><span>Status</span></th><th scope="col" class=""><span>Actions</span></th></tr></thead><tbody><tr><td><p class="iqies-label-responsive">Name</p><p>mondy weeky</p></td><td><p class="iqies-label-responsive">Category</p><p>1</p></td><td><p class="iqies-label-responsive">Next Run Date</p><p class="no-word-break">12/31/2019&nbsp;&nbsp;12:00 AM</p></td><td><p class="iqies-label-responsive">status</p><p class="no-word-break">Scheduled every Monday</p></td><td><div class="d-flex justify-content-end iqies-button-list-group"><a href="/reports/scheduledreport/867/345">Edit</a></div></td></tr><tr><td><p class="iqies-label-responsive">Name</p><p>test1 report</p></td><td><p class="iqies-label-responsive">Category</p><p>1</p></td><td><p class="iqies-label-responsive">Next Run Date</p><p class="no-word-break">12/17/2019&nbsp;&nbsp;12:00 AM</p></td><td><p class="iqies-label-responsive">status</p><p class="no-word-break">Scheduled every Monday</p></td><td><div class="d-flex justify-content-end iqies-button-list-group"><a href="/reports/scheduledreport/827/324">Edit</a></div></td></tr><tr><td><p class="iqies-label-responsive">Name</p><p>xxx</p></td><td><p class="iqies-label-responsive">Category</p><p>2</p></td><td><p class="iqies-label-responsive">Next Run Date</p><p class="no-word-break">01/07/2020&nbsp;&nbsp;12:00 AM</p></td><td><p class="iqies-label-responsive">status</p><p class="no-word-break">Scheduled on 01/07/2020 12:00 AM</p></td><td><div class="d-flex justify-content-end iqies-button-list-group"><a href="/reports/scheduledreport/868/347">Edit</a></div></td></tr></tbody></table>
+          </div>
+        <div class="tab-pane" id="h-tab-3">
+			<p class="info-text">7 Reports</p>
+         <table class="table table-striped" datatable="true"><caption class="sr-only">Report Type Search Results</caption><thead><tr><th tabindex="0" scope="col" class="ascending sortable"><span>Report Type</span></th><th scope="col" class=""><span>Actions</span></th></tr></thead><tbody><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">HHA Activity Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/21">HHA Activity Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The HHA Activity Report displays a list of accepted assessments and inactivation requests submitted by or on behalf the selected agency during the user specified period.</p></div></div></td><td><a class="btn btn-link" aria-label="Click to run report for HHA Activity Report" href="/reports/filter/0/21">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">HHA Discharge Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/20">HHA Discharge Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The HHA Discharges report provides information about the patients discharged from the selected agency during the specified period.</p></div></div></td><td><a class="btn btn-link" aria-label="Click to run report for HHA Discharge Report" href="/reports/filter/0/20">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">HHA Error Summary by Agency</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/34">HHA Error Summary by Agency</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The HHA Error Summary by Agency report summarizes the errors encountered in submissions by the selected agency during a specified period.</p></div></div></td><td><a class="btn btn-link" aria-label="Click to run report for HHA Error Summary by Agency" href="/reports/filter/0/34">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">HHA Review and Correct Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/103">HHA Review and Correct Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The HHA Review and Correct report will allow providers to review their QM data to identify if there are any corrections or changes needed to the data prior to the quarter's data submission deadline.  The report will provide a breakdown by measure and by quarter, of the HHA's assessment-based QM data for four rolling quarters.  The report also identifies whether each quarter's data correction period is open or closed as of the report run date.  The report output will also provide patient-level data in a CSV format the user can access via the user's My Reports page. </p></div></div></td><td><a class="btn btn-link" aria-label="Click to run report for HHA Review and Correct Report" href="/reports/filter/0/103">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">OASIS Agency Final Validation</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/30">OASIS Agency Final Validation</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The OASIS Agency Final Validation report contains detailed information regarding all records for the agency contained in the submission file.  This includes the number of test records that passed and failed, records that were accepted or rejected, as well as warning and fatal errors for the record.</p></div></div></td><td><a class="btn btn-link" aria-label="Click to run report for OASIS Agency Final Validation" href="/reports/filter/0/30">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">OASIS Error Detail Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/23">OASIS Error Detail Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The OASIS Error Detail Report displays assessment information and error details for user selected error numbers and submission date within the requested date range where selected errors were encountered in successful submissions made by or on behalf of the selected agency.</p></div></div></td><td><a class="btn btn-link" aria-label="Click to run report for OASIS Error Detail Report" href="/reports/filter/0/23">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">Provider History Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/100">Provider History Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>This report lists the deficiencies cited on up to four of the provider's most recent surveys and up to three years of recent complaint surveys.</p></div></div></td><td><a class="btn btn-link" aria-label="Click to run report for Provider History Report" href="/reports/filter/0/100">Run Report</a></td></tr></tbody></table>
+          </div>
+		  <div class="tab-pane" id="h-tab-4">
+			  <p class="info-text">4 Log Entries</p>
+          <table class="table table-striped" datatable="true"><caption class="sr-only">Report Logs</caption><thead><tr><th tabindex="0" scope="col" class="sortable"><span>Name</span></th><th tabindex="0" scope="col" class="sortable"><span>Category </span></th><th tabindex="0" scope="col" class="descending sortable"><span>Run Date</span></th><th tabindex="0" scope="col" class="sortable"><span>Status</span></th></tr></thead><tbody><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">01/02/2020&nbsp;&nbsp;3:39 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">01/02/2020&nbsp;&nbsp;3:32 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Error Summary by Agency</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">12/18/2019&nbsp;&nbsp;1:52 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">12/18/2019&nbsp;&nbsp;1:00 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr></tbody></table>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h3>Frequently Run Report Types</h3>
-          <p>4 Report Types</p>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th class="sortable">Report Type</th>
-                <th class="sortable">Category</th>
-                <th class="sortable">Last Run Date</th>
-                <td></td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>LTCH Review and Correct Report</td>
-                <td>Quality Reporting Program</td>
-                <td>05/23/2019 1:06 PM</td>
-                <td><a href="">Run Report</a></td>
-              </tr>
-              <tr>
-                <td>LTCH Review and Correct Report</td>
-                <td>Quality Reporting Program</td>
-                <td>05/23/2019 1:06 PM</td>
-                <td><a href="">Run Report</a></td>
-              </tr>
-              <tr>
-                <td>LTCH Review and Correct Report</td>
-                <td>Quality Reporting Program</td>
-                <td>05/23/2019 1:06 PM</td>
-                <td><a href="">Run Report</a></td>
-              </tr>
-              <tr>
-                <td>LTCH Review and Correct Report</td>
-                <td>Quality Reporting Program</td>
-                <td>05/23/2019 1:06 PM</td>
-                <td><a href="">Run Report</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+		
+		<!--<div class="row">
+			<div class="col-md-12 text-center">
+<div class="spinner-border text-primary fa-lg" style="height: 4rem; width: 4rem; " role="status">
+        
+  </div>
+				<br><small>Loading Report...</small>
+			</div>
+		</div>  -->
+		<!-- InstanceEndEditable -->
+	</div>
   </main>
-
+   
   <footer>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-10">
-          <div class="iq-footer-content">
+        <div class="col-lg-10 col-xl-10">
+        <div class="iq-footer-content">
             <div class="row">
               <div class="col">
                 <div class="iq-footer-heading">
-                  <a href="/">
-                    <img
-                      src="../../../src/assets/images/logo-iqies-reversed.svg"
-                      class="logo iq-logo" alt="Logo iQIES White">
-                  </a><img src="../../../src/assets/images/logo-cms.svg"
-                    class="img-fluid logo cms-logo d-lg-none" alt="">
+                  <a href="/"><img src="../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <a href="/help">Help</a><span>
-                  (800)
-                  339-9313
-                </span><a href="mailto:help@qtso.com">Email Us</a><a
-                  href="https://qtso.cms.gov/" target="_blank"
-                  rel="noopener noreferrer">
-                  QTSO <img src="../../../src/assets/images/logo-cms.svg"
-                    class="iq-external-link-icon" alt="">
-                </a><a href="https://www.cms.gov/Medicare/Medicare.html"
-                  target="_blank" rel="noopener noreferrer">
-                  Medicare <img
-                    src="../../../src/assets/images/icon-link-external.svg"
-                    class="iq-external-link-icon" alt="">
-                </a><a href="/privacy-policy">Privacy Policy</a>
+                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <div class="iq-footer-links">
-                  <a href="https://www.medicare.gov/about-us/plain-writing"
-                    target="_blank" rel="noopener noreferrer">
-                    Plain Writing <img
-                      src="../../../src/assets/images/icon-link-external.svg"
-                      class="iq-external-link-icon" alt="">
-                  </a><a
-                    href="https://www.cms.gov/center/freedom-of-information-act-center.html"
-                    target="_blank" rel="noopener noreferrer">
-                    Freedom of
-                    Information Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
-                      class="iq-external-link-icon" alt="">
-                  </a><a
-                    href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
-                    target="_blank" rel="noopener noreferrer">
-                    No Fear Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
-                      class="iq-external-link-icon" alt="">
-                  </a><a href="https://get.adobe.com/reader/" target="_blank"
-                    rel="noopener noreferrer">
-                    Adobe Acrobat <img
-                      src="../../../src/assets/images/icon-link-external.svg"
-                      class="iq-external-link-icon" alt="">
-                  </a>
+                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-2 d-flex align-items-center">
-          <img src="../../../src/assets/images/logo-cms.svg"
-            class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        <div class="col-lg-2 col-xl-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
         </div>
       </div>
     </div>
   </footer>
 
-  <script type="text/javascript"
-    src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
-  </script>
-  <script type="text/javascript"
-    src="../../../src/assets/third-party/popper/popper.min.js"></script>
-  <script type="text/javascript"
-    src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
-  </script>
-  <script type="text/javascript" src="../../../src/assets/js/scripts.js">
-  </script>
+  <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include datatables for responsive table -->
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <!-- to include multi-select dropdown selector -->
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../src/assets/js/scripts.js"></script>
+  <!-- InstanceBeginEditable name="footerScripts" -->
+  <script src="../../hhaung/js/jquery.stickytabs.js"></script>
+  <script>
+	  $(document).ready(function () {
+		  $('.nav-horizontal').stickyTabs();
+		  $('table.responsive').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  }); // to get all responsive tables sorted by order. be sure to trigger by ID if each table has diffrent sort column
+		  
+		  $('[data-toggle="tooltip"]').tooltip(); // to include tooltip
+		  $("select.multiselect").bsMultiSelect(); // to include multi-select dropdown selector
+		   var editor = new FroalaEditor('div.editTextDiv'); //to include text editor
+		  window.setTimeout(function() {
+				$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+					$(this).addClass('hide'); 
+				});
+			}, 5000); //to get save messages to disppear on its own 
+    
+     $('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        }); // to include character limit. Make sure you have the ID replaced with your own textarea ID OR use a class name if multiple
+	  });
+	 
+</script>
+	<!-- InstanceEndEditable -->
 </body>
-
-</html>
+<!-- InstanceEnd --></html>

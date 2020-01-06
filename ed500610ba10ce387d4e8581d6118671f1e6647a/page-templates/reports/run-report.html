@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Run Report | iQIES</title>
+<title>Run HHA Activity Report | iQIES</title>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
@@ -83,11 +83,9 @@
                     <a href="../../../global/global-landing-menu.html">Home</a>
                   </li>
 				  <li class="breadcrumb-item">
-                    <a href="#">Reports</a>
+                    <a href="reports-landing.html">Reports</a>
                   </li>
-				  <li class="breadcrumb-item">
-                    <a href="#">Find a Report Type</a>
-                  </li>
+				  
                   <li class="breadcrumb-item">
                   Run Report - HHA Activity Report</li>
 				<!-- InstanceEndEditable -->
@@ -145,9 +143,9 @@
 			<button class="btn btn-outline-primary hide deleteC" onClick="$(this).addClass('hide'); $('#savedCriteria').prop('selectedIndex', 0).change(); " data-toggle="modal" data-target="#confirmDelete">Delete Criteria</button>
 		</div>
 	</div>
-		<hr style="margin-bottom: 2rem;">
-		<h2>Search for Providers</h2>
-		<p>Search for providers and add up to 25 providers for each report run.</p>
+		<hr>
+		<h2>Report Criteria</h2>
+		<fieldset><legend class="iq-form-group-title">Date Range</legend>
 	  <div class="row">
 		<div class="col-md-5 col-lg-4 col-xl-3">
 		  <div class="form-group">
@@ -175,11 +173,13 @@
 			</div>
 								
 		</div>  
-		</div>
+		</div>	</fieldset>
+	  <fieldset><legend class="iq-form-group-title">Providers</legend>
+	  <p>Search for providers and add up to 25 providers for each report run.</p>
 		<div class="row">
 		<div class="col-md-5 col-lg-4 col-xl-3">
 			<div class="form-group">
-					  <label>State</label>
+					  <label>State <span class="iq-asterisk">*</span></label>
 					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
 						  <option value="AL">Alabama</option>
 						  <option value="AK">Alaska</option>
@@ -242,29 +242,22 @@
 			<div class="form-group">
 				<label>Keyword</label>
 				<input type="text" class="form-control" id="pSearchInput" onKeyUp="if (event.keyCode === 13) {
-        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter provider name, CCN, or State Facility ID (FACID)</div></div>
+        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter at least 3 characters to search by provider name, CCN, or State Facility ID (FACID)</div></div>
 		</div>
 	  </div>
-						
-					
-			<div class="row iq-button-wrapper mr-0" style="position: relative">
+		  <div class="row mr-0" style="position: relative">
                <div class="col">
 				  <div>
-					  <a href="#pSearchArea" class="btn btn-primary pSearchButton" onClick="$('.startMsg').addClass('hide'); $('#pSearchArea').removeClass('hide'); drawProviderTable()">Search</a>
-					  <button class="btn btn-link" onClick="resetPSearch();">Reset</button>
-					  
-					 
-					  <br>
-					 
-					  
+					  <a href="#pSearchArea" class="btn btn-outline-primary pSearchButton" onClick="$('.startMsg').addClass('hide'); $('#pSearchArea').removeClass('hide'); drawProviderTable()">Search</a>
 				  </div>
 				  
 			    </div>
             </div>
-		    
+<br>	
+		    <p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
+		    <p class="iq-not-available startMsg" role="status">No providers added. </p>
 			<section id="pSearchArea" class="hide">
-				<h2 class="sr-only">Selected Provider Search Criteria</h2>
-          		<br>  
+				
 				<!--<div class="float-right">
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
 					<div class="dropdown-menu" aria-labelledby="exportLink">
@@ -285,7 +278,7 @@
 				</button></div></div></li>
 		</ul>-->
   				<section id="pSearchResults">
-					<h2>Select Providers (Up to 25)</h2>
+					<h4>Select Providers (Up to 25)</h4>
           			
  <nav class="nav nav-horizontal">
         <a class="nav-link active" href="#results" data-toggle="tab" role="tab"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount info-text">Results: 1-10 of 112 Providers</span></a>
@@ -477,47 +470,22 @@
 					
         		</section>
 				
-				<br><br>
 				
 				
-				<!--<div class="custom-control custom-checkbox">
-              <input type="checkbox" id="cb1" checked class="custom-control-input">
+		
+			</section>
+		  	</fieldset>
+				<!-- search area -->		
+		<br>
+	  		<hr>
+	  		<div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb1" class="custom-control-input" onChange="$('.primaryButton').toggleClass('hide'); if(this.checked){$('.scheduleReportDiv').removeClass('hide');  } else {$('.scheduleReportDiv').addClass('hide'); }">
               <label class="custom-control-label" for="cb1">Schedule Report Run </label>
-              </div>-->
-				<div class="row iq-button-wrapper mr-0" style="position: relative">
-               <div class="col">
-				  <div>
-					  <a href="report.html" class="btn btn-primary">Run Report</a>
-					  <a href="#" class="btn btn-outline-primary" data-toggle="modal" data-target="#scheduleR" onClick="$(window).scrollTop(0); ">Schedule Report Run</a>
-					  <button class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmSave">Save Search Criteria</button>
-					  
-					  <br>
-					 
-					  
-				  </div>
-				  
-			    </div>
             </div>
-			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
-		    <p class="iq-not-available startMsg" role="status">No providers added. </p>
-		 <a href="#" class="return-link">Return to Find a Report Type</a>
-		   
-         
-<div class="modal fade" id="scheduleR" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" style="font-weight: bold">Schedule Report Run</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <div class="modal-body">
-              <p>Schedule the report to run one or many instances in the future.</p>
-				<br>
-				<p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p><br>
-         
+	   <p>Schedule the report to run one or many instances in the future.</p>
+	  		<div class="scheduleReportDiv hide">
+             
+			
 			  <div class="row">
 				<div class="col-md-4">
 		  <div class="form-group">
@@ -686,23 +654,35 @@
 			</div>
 			</div>
 			<div class="row">
-			<div class="col">
+			<div class="col-lg-10 form-group">
 				<label>Report Name <span class="iq-asterisk">*</span></label>
 				<input type="text">
 				<span class="help-text">Enter a name for your scheduled report to save it to My Reports.</span>
 			</div>
 			</div>
+			
 		</div>  
 			
 			  </div>
               </div>
-            <div class="modal-footer">
-              <a href="#" class="btn btn-primary" data-dismiss="modal" onClick="$(window).scrollTop(0); $('.alert-success.successMsg').focus(); $('.alert-success.successMsg').removeClass('hide'); ">Schedule</a>
-              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
-              </div>
+	  <br>
+	  		<div class="row mr-0" style="position: relative">
+               <div class="col">
+				  <div class="iq-button-wrapper">
+					  <a href="report.html" class="btn btn-primary primaryButton">Run Report</a>
+					  <a href="reports-landing.html#h-tab-2" class="btn btn-primary primaryButton hide">Schedule</a>
+					  <button class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmSave">Save Report Criteria</button>
+					  <button class="btn btn-link" onClick="resetPSearch();">Reset</button>
+					   
+				  </div>
+				  
+			    </div>
             </div>
-          </div>
-  </div>
+        	
+		 <a href="#" class="return-link">Return to Find a Report Type</a>
+		   
+         
+
 		
     <div class="modal fade" id="confirmDelete" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -819,688 +799,8 @@
             $('#charNum').html(len + '/256.');
           }
         });
-		$('#providerTable').DataTable( {
-			  //scrollY: 300,
-			  paging: false,
-			  lengthMenu: false,
-			  info: false,
-			  searching: false,
-			  responsive: {
-				details: { type: 'column'}
-			  },
-			  "order": [[ 1, 'asc' ]],
-			  columnDefs: [
-				{ className: 'control', orderable: false, targets: 0 },
-				{ responsivePriority: 0, targets: 1 },
-				{ responsivePriority: 1, targets: -1 },
-				{ "orderable": false, "targets": -1 },
-				{ 'visible': false, 'targets': 4 },
-				{ 'visible': false, 'targets': 6 }
-			 ]
-		  }); 
-		$('#surveyTable').DataTable( {
-			              
-						  //scrollY: 300,
-						  paging: false,
-						  lengthMenu: false,
-						  info: false,
-						  searching: false,
-						  responsive: {
-							details: { type: 'column'}
-						  },
-						  'order': [[ 8, 'asc' ]],
-						  columnDefs: [
-							{ className: 'control', orderable: false, targets: 0 },
-							{ responsivePriority: 0, targets: 1 },
-							{ responsivePriority: 1, targets: -1 },
-							{ 'orderable': false, 'targets': -1 },
-							{ 'visible': false, 'targets': 2 },
-							{ 'visible': false, 'targets': 3 },
-							{ 'visible': false, 'targets': 4 },
-							{ 'visible': false, 'targets': 5 },
-							{ 'visible': false, 'targets': 12 }  
-						 ]
-}); console.log('s');
-		$('#intakeTable').DataTable( {
-					  //scrollY: 300,
-					  paging: false,
-					  lengthMenu: false,
-					  info: false,
-					  searching: false,
-					  responsive: {
-						details: { type: 'column'}
-					  },
-					  'order': [[ 6, 'asc' ]],
-					  columnDefs: [
-						{ className: 'control', orderable: false, targets: 0 },
-						{ responsivePriority: 0, targets: 1 },
-						{ responsivePriority: 1, targets: -1 },
-						{ 'orderable': false, 'targets': -1 }
-					 ]
-});
-		$('#enforcementTable').DataTable( {
-			  //scrollY: 300,
-			  paging: false,
-			  lengthMenu: false,
-			  info: false,
-			  searching: false,
-			  responsive: {
-				details: { type: 'column'}
-			  },
-			  'order': [[ 2, 'asc' ]],
-			  columnDefs: [
-				{ className: 'control', orderable: false, targets: 0 },
-				{ responsivePriority: 0, targets: 1 },
-				{ responsivePriority: 1, targets: -1 },
-				{ 'orderable': false, 'targets': -1 },
-				{ 'visible': false, 'targets': 5 },
-				{ 'visible': false, 'targets': 6 }
-			 ]
-	}); 
-		
 	  });
-function drawProviderTable(){
-	$('#providers .baCount').html('Results: 1-10 of 112 Providers'); 
-	$('#providerTable').DataTable().destroy();
-	$('#providerTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  "order": [[ 1, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ "orderable": false, "targets": -1 },
-			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 6 }
-		 ]
-	  }); 
-}
-function drawSurveyTable(){
-	$('#surveys .baCount').html('Results: 2 Surveys'); 
-	$('#surveyTable').DataTable().destroy();
-	$('#surveyTable').DataTable( {
-			  //scrollY: 300,
-			  paging: false,
-			  lengthMenu: false,
-			  info: false,
-			  searching: false,
-			  responsive: {
-				details: { type: 'column'}
-			  },
-			  'order': [[ 8, 'asc' ]],
-			  columnDefs: [
-				{ className: 'control', orderable: false, targets: 0 },
-				{ responsivePriority: 0, targets: 1 },
-				{ responsivePriority: 1, targets: -1 },
-				{ 'orderable': false, 'targets': -1 },
-				{ 'visible': false, 'targets': 2 },
-				{ 'visible': false, 'targets': 3 },
-				{ 'visible': false, 'targets': 4 },
-				{ 'visible': false, 'targets': 5 },
-				{ 'visible': false, 'targets': 12 }  
-			 ]
-		} );
-}
-function drawIntakeTable(){
-	$('#intakes .baCount').html('Results: 2 Intakes'); 
-	$('#intakeTable').DataTable().destroy();
-	$('#intakeTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 6, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 }
-		 ]
-	});
-}
-function drawEnforcementTable(){
-	$('#enforcements .baCount').html('Results: 2 Enforcements'); 
-	$('#enforcementTable').DataTable().destroy();
-	$('#enforcementTable').DataTable( {
-			  //scrollY: 300,
-			  paging: false,
-			  lengthMenu: false,
-			  info: false,
-			  searching: false,
-			  responsive: {
-				details: { type: 'column'}
-			  },
-			  'order': [[ 2, 'asc' ]],
-			  columnDefs: [
-				{ className: 'control', orderable: false, targets: 0 },
-				{ responsivePriority: 0, targets: 1 },
-				{ responsivePriority: 1, targets: -1 },
-				{ 'orderable': false, 'targets': -1 },
-				{ 'visible': false, 'targets': 5 },
-				{ 'visible': false, 'targets': 6 }
-			 ]
-	}); 
-}	
-function goSearchProvider(){
-	if($('#pSearchInput').val() != ''){ 
-		$('.keyword').removeClass('hide'); 
-		$('.keyword .key').html($('#pSearchInput').val());
-	};
-	if( $('#pSearchInput').val().indexOf('b') > -1 ) { 
-		$('#pSearchResults').removeClass('hide'); 
-		$('#pSearchResults tbody tr').addClass('hide'); 
-		$('#pSearchResults tbody tr.bright').removeClass('hide');
-		$('#pSearchResults .baCount').html('Results: 1 Provider');
-		$('#pSearchResults nav').addClass('hide'); 
-		$('#providers .noResults').addClass('hide');  
-	} else if ( $('#pSearchInput').val().indexOf('g') > -1 ){ 
-		$('#pSearchResults').removeClass('hide'); 
-		$('#pSearchResults tbody tr').addClass('hide'); 
-		$('#pSearchResults tbody tr.good').removeClass('hide'); 
-		$('#pSearchResults .baCount').html('Results: 2 Providers'); 
-		$('#pSearchResults nav').addClass('hide'); 
-		$('#providers .noResults').addClass('hide'); 
-	} else if ( $('#pSearchInput').val().indexOf('z') > -1 ) { 
-		$('#pSearchResults').addClass('hide'); 
-		$('#providers .noResults').removeClass('hide'); 
-	} else { 
-		$('#pSearchResults').removeClass('hide'); 
-		$('#pSearchResults tbody tr').removeClass('hide'); 
-		$('#providers .noResults').addClass('hide'); 
-		$('#pSearchResults .baCount').html('Results: 1-10 of 97 Providers'); 
-		$('#pSearchResults nav').removeClass('hide'); 
-	}
-	console.log($('#deemedStatusSelect option:selected').text());
-	if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ 
-		$('#providers table.responsive tbody tr').addClass('hide'); 
-		$('#providers table.responsive tbody tr.deemed').removeClass('hide'); 
-		$('#providers .searchCriteria .deemed').removeClass('hide'); 
-	}; 
-	if( $('#showrecertP').prop('checked') == true ) { 
-		console.log('resertP checked');
-		$('#providerTable').DataTable().destroy(); 			
-		$('#providerTable').DataTable( {
-			  //scrollY: 300,
-			  paging: false,
-			  lengthMenu: false,
-			  info: false,
-			  searching: false,
-			  responsive: {
-				details: { type: 'column'}
-			  },
-			  "order": [[ 1, 'asc' ]],
-			  columnDefs: [
-				{ className: 'control', orderable: false, targets: 0 },
-				{ responsivePriority: 0, targets: 1 },
-				{ className: 'search-col', targets: 2 },
-				{ className: 'search-col', targets: 3 }
-				//{ responsivePriority: 1, targets: -1 },
-				//{ "orderable": false, "targets": -1 }
-			 ]
-		  }); 
-		$('#providerTable tbody tr').addClass('hide'); 
-		$('#providerTable tbody tr.recert').removeClass('hide');
-		$('#providers .searchCriteria .recertP').removeClass('hide');
-	}
-	if( $('#pAdvancedSearch-showhide').hasClass('show') ) { 
-		$('#pAdvancedSearchLink').click();
-	}
-}
-function resetPSearch(){
-	$('#pSearchResults').removeClass('hide'); 
-    $('#providerTable tbody tr').removeClass('hide'); 
-    $('#providers .noResults').addClass('hide'); 
-    $('#pSearchResults .baCount').html('Results: 1-10 of 112 Providers'); 
-    $('#pSearchResults nav').removeClass('hide'); 
-	$('#providers .searchCriteria li > div').addClass('hide'); 
-	$('#providers .searchCriteria li > div.state').removeClass('hide'); 
-	$('#providers input').val('');
-	$('#providers select').prop('selectedIndex', 0).change();
-	
-	$('#providers .form-group.notState .dashboardcode-bsmultiselect li button').click();
-	$('#providers .btn-group button').removeClass('active'); 
-	$('#providers .btn-group button:first-child').addClass('active');
-	$('#providers input[type=checkbox]').prop('checked', false);
-}
-function goSearchSurvey(){
-	if($('#sSearchInput').val() != ''){ 
-		$('.keyword').removeClass('hide'); 
-		$('.keyword .key').html($('#sSearchInput').val());
-	};
-	if( $('#sSearchInput').val().indexOf('b') > -1 ) { 
-		$('#sSearchResults').removeClass('hide'); 
-		$('#sSearchResults tbody tr').addClass('hide'); 
-		$('#sSearchResults tbody tr.bright').removeClass('hide');
-		$('#sSearchResults .baCount').html('Results: 1 Survey');
-		$('#sSearchResults nav').addClass('hide'); 
-		$('#surveys .noResults').addClass('hide');  
-	} else { 
-		$('#sSearchResults').removeClass('hide'); 
-		$('#sSearchResults tbody tr').removeClass('hide'); 
-		$('#surveys .noResults').addClass('hide'); 
-		$('#sSearchResults .baCount').html('Results: 2 Surveys'); 
-		//$('#sSearchResults nav').removeClass('hide'); 
-	}
-	console.log( $('#pocStatus option:selected').text() );
-	console.log( $('#ssdr-from').val() ); 
-	console.log( $('#ssdr-to').val() ); 
-	console.log( $('#surveyStaff option:selected').text() );
-	if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() == '') { 
-		console.log('pending only');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 8, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 3 },
-			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 5 }, 
-			{ 'visible': false, 'targets': 12 },
-			{ className: 'search-col', targets: 2 }
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
-		$('#surveys .searchCriteria .poc').removeClass('hide');
-		$('#surveys .searchCriteria .surveyStart').addClass('hide');
-		$('#surveys .searchCriteria .reStaff').addClass('hide');
-	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() == '' ) { 
-		console.log('survey start date range only');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 8, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 2 },
-			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 5 },
-			{ 'visible': false, 'targets': 12 },
-			{ className: 'search-col', targets: 3 }
-		  ]
-		} );
-		$('#surveys .searchCriteria .poc').addClass('hide');
-		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
-		$('#surveys .searchCriteria .reStaff').addClass('hide');
-	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() != '') { 
-		console.log('survey staff only');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 8, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 2 },
-			{ 'visible': false, 'targets': 3 },
-			{ 'visible': false, 'targets': 5 },
-			{ 'visible': false, 'targets': 12 },
-			{ className: 'search-col', targets: 4 }
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
-		$('#surveys .searchCriteria .poc').addClass('hide');
-		$('#surveys .searchCriteria .surveyStart').addClass('hide');
-		$('#surveys .searchCriteria .reStaff').removeClass('hide');
-	} else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() == '' ){
-		console.log('pending and survey start');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 8, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 5 },
-			{ 'visible': false, 'targets': 12 },
-			{ className: 'search-col', targets: 2 },
-			{ className: 'search-col', targets: 3 }
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
-		$('#surveys .searchCriteria .poc').removeClass('hide');
-		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
-		$('#surveys .searchCriteria .reStaff').addClass('hide');
-	}  else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() != '' ){
-		console.log('pending and survey staff');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 8, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 3 },
-			{ 'visible': false, 'targets': 5 },
-			{ 'visible': false, 'targets': 12 },
-			{ className: 'search-col', targets: 2 },
-			{ className: 'search-col', targets: 4 }
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
-		$('#surveys .searchCriteria .poc').removeClass('hide');
-		$('#surveys .searchCriteria .reStaff').removeClass('hide');
-		$('#surveys .searchCriteria .surveyStart').addClass('hide');
-	}  else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() !='' ){
-		console.log('survey start and staff');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 8, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 2 },
-			{ 'visible': false, 'targets': 5 },
-			{ 'visible': false, 'targets': 12 },
-			{ className: 'search-col', targets: 3 },
-			{ className: 'search-col', targets: 4 }
-			  
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
-		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
-		$('#surveys .searchCriteria .reStaff').removeClass('hide');
-		$('#surveys .searchCriteria .poc').addClass('hide');
-	} else if(  $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() != '' ) {
-		console.log('all');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 8, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 2 },
-			{ 'visible': false, 'targets': 3 },
-			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 5 },
-			{ className: 'search-col', targets: 12 }
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
-		$('#surveys .searchCriteria .poc').removeClass('hide');
-		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
-		$('#surveys .searchCriteria .reStaff').removeClass('hide');
-	} else {
-		drawSurveyTable();
-		$('#surveyTable tbody tr').removeClass('hide');
-		$('#surveys .searchCriteria .poc').addClass('hide');
-		$('#surveys .searchCriteria .surveyStart').addClass('hide');
-		$('#surveys .searchCriteria .reStaff').addClass('hide');
-	};
-	if( $('#showSOD').prop('checked') == true ) { 
-		console.log('sod checked');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 8, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 2 },
-			{ 'visible': false, 'targets': 3 },
-			{ 'visible': false, 'targets': 4 },
-			{ 'visible': false, 'targets': 12 },
-			{ className: 'search-col', targets: 5 }
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); 
-		$('#surveyTable tbody tr.sod').removeClass('hide');
-		$('#surveys .searchCriteria .sod').removeClass('hide');
-	}
-	if( $('#showSurveyWIJ').prop('checked') == true ) { 
-		$('#surveyTable tbody tr').addClass('hide'); 
-		$('#surveyTable tbody tr.ij').removeClass('hide'); 
-		$('#surveys .searchCriteria .ij').removeClass('hide');  
-	}
-	if( $('#sedr-from').val() && $('#sedr-to').val() ){ 
-		$('#surveys .searchCriteria .surveyExit').removeClass('hide'); 
-		$('#surveys .searchCriteria .surveyExit .badge > span').html( $('#sedr-from').val() + ' &mdash; ' + $('#sedr-to').val() ); 
-	} else if ($('#sedr-from').val() && $('#sedr-to').val() == ''){ 
-		$('#surveys .searchCriteria .surveyExit').removeClass('hide'); 
-		$('#surveys .searchCriteria .surveyExit .badge > span').html( $('#sedr-from').val() );
-	} else if ($('#sedr-to').val() && $('#sedr-from').val() == ''){ 
-		$('#surveys .searchCriteria .surveyExit').removeClass('hide'); 
-		$('#surveys .searchCriteria .surveyExit .badge > span').html( $('#sedr-to').val() ); 
-	}; 
-	if( $('#sAdvancedSearch-showhide').hasClass('show') ) { 
-		$('#sAdvancedSearchLink').click();
-	}
-}
-function resetSSearch(){
-	$('#sSearchResults').removeClass('hide'); 
-    $('#surveyTable tbody tr').removeClass('hide'); 
-    $('#surveys .noResults').addClass('hide'); 
-    $('#sSearchResults .baCount').html('Results: 2 Surveys'); 
-    //$('#sSearchResults nav').removeClass('hide'); 
-	$('#surveys .searchCriteria li > div').addClass('hide'); 
-	$('#surveys .searchCriteria li > div.state').removeClass('hide'); 
-	$('#surveys input').val('');
-	$('#surveys select').prop('selectedIndex', 0).change();
-	
-	$('#surveys .form-group.notState .dashboardcode-bsmultiselect li button').click();
-	$('#surveys .btn-group button').removeClass('active'); 
-	$('#surveys .btn-group button:first-child').addClass('active');
-	$('#surveys input[type=checkbox]').prop('checked', false);
-}
-function goSearchIntake(){
-	if($('#iSearchInput').val() != ''){ 
-		$('.keyword').removeClass('hide'); 
-		$('.keyword .key').html($('#iSearchInput').val());
-	};
-	if( $('#iSearchInput').val().indexOf('b') > -1 ) { 
-		$('#iSearchResults').removeClass('hide'); 
-		$('#iSearchResults tbody tr').addClass('hide'); 
-		$('#iSearchResults tbody tr.bright').removeClass('hide');
-		$('#iSearchResults .baCount').html('Results: 1 Intake');
-		$('#iSearchResults nav').addClass('hide'); 
-		$('#intakes .noResults').addClass('hide');  
-	} else { 
-		$('#iSearchResults').removeClass('hide'); 
-		$('#iSearchResults tbody tr').removeClass('hide'); 
-		$('#intakes .noResults').addClass('hide'); 
-		$('#iSearchResults .baCount').html('Results: 2 Intakes'); 
-		//$('#sSearchResults nav').removeClass('hide'); 
-	}
-	
-	if( $('#iAdvancedSearch-showhide').hasClass('show') ) { 
-		$('#iAdvancedSearchLink').click();
-	}
-}
-function resetISearch(){
-	$('#iSearchResults').removeClass('hide'); 
-    $('#intakeTable tbody tr').removeClass('hide'); 
-    $('#intakes .noResults').addClass('hide'); 
-    $('#iSearchResults .baCount').html('Results: 1-10 of 112 Intakes'); 
-    $('#iSearchResults nav').removeClass('hide'); 
-	$('#intakes .searchCriteria li > div').addClass('hide'); 
-	$('#intakes .searchCriteria li > div.state').removeClass('hide'); 
-	$('#intakes input').val('');
-	$('#intakes select').prop('selectedIndex', 0).change();
-	
-	$('#intakes .form-group.notState .dashboardcode-bsmultiselect li button').click();
-	$('#intakes .btn-group button').removeClass('active'); 
-	$('#intakes .btn-group button:first-child').addClass('active');
-	$('#intakes input[type=checkbox]').prop('checked', false);
-}
-function goSearchEnforcement(){
-	if($('#eSearchInput').val() != ''){ 
-		$('.keyword').removeClass('hide'); 
-		$('.keyword .key').html($('#eSearchInput').val());
-	};
-	if( $('#eSearchInput').val().indexOf('b') > -1 ) { 
-		$('#eSearchResults').removeClass('hide'); 
-		$('#eSearchResults tbody tr').addClass('hide'); 
-		$('#eSearchResults tbody tr.bright').removeClass('hide');
-		$('#eSearchResults .baCount').html('Results: 1 Enforcement');
-		$('#eSearchResults nav').addClass('hide'); 
-		$('#enforcements .noResults').addClass('hide');  
-	} else { 
-		$('#eSearchResults').removeClass('hide'); 
-		$('#eSearchResults tbody tr').removeClass('hide'); 
-		$('#enforcements .noResults').addClass('hide'); 
-		$('#eSearchResults .baCount').html('Results: 2 Enforcements'); 
-		//$('#eSearchResults nav').removeClass('hide'); 
-	}
-	if( $('#cmp').prop('checked') == true ) { 
-		console.log('cmp checked');
-		$('#enforcementTable').DataTable().destroy();
-		$('#enforcementTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 2, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 6 },
-			{ className: 'search-col', targets: 5 }
-		  ]
-		} );
-		$('#enforcementTable tbody tr').addClass('hide'); 
-		$('#enforcementTable tbody tr.cmp').removeClass('hide');
-		$('#enforcements .searchCriteria .cmp').removeClass('hide');
-	}
-	if( $('#appealDue').prop('checked') == true ) { 
-		console.log('appeal due date checked');
-		$('#enforcementTable').DataTable().destroy();
-		$('#enforcementTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 2, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 5 },
-			{ className: 'search-col', targets: 6 }
-		  ]
-		} );
-		$('#enforcementTable tbody tr').addClass('hide'); 
-		$('#enforcementTable tbody tr.appealDue').removeClass('hide');
-		$('#enforcements .searchCriteria .appealDue').removeClass('hide');
-	}
-	if( $('#eAdvancedSearch-showhide').hasClass('show') ) { 
-		$('#eAdvancedSearchLink').click();
-	}
-}
-function resetESearch(){
-	$('#eSearchResults').removeClass('hide'); 
-    $('#enforcementTable tbody tr').removeClass('hide'); 
-    $('#enforcements .noResults').addClass('hide'); 
-    $('#eSearchResults .baCount').html('Results: 2 Enforcements'); 
-    $('#eSearchResults nav').removeClass('hide'); 
-	$('#enforcements .searchCriteria li > div').addClass('hide'); 
-	$('#enforcements .searchCriteria li > div.state').removeClass('hide'); 
-	$('#enforcements input').val('');
-	$('#enforcements select').prop('selectedIndex', 0).change();
-	
-	$('#enforcements .form-group.notState .dashboardcode-bsmultiselect li button').click();
-	$('#enforcements .btn-group button').removeClass('active'); 
-	$('#enforcements .btn-group button:first-child').addClass('active');
-	$('#enforcements input[type=checkbox]').prop('checked', false);
-}
+
 
 </script>
 	<!-- InstanceEndEditable -->
