@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- InstanceBeginEditable name="doctitle" -->
-<title>Run Report | iQIES</title>
+<title>Run Report 2 | iQIES</title>
 <!-- InstanceEndEditable -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
@@ -89,7 +89,7 @@
                     <a href="#">Find a Report Type</a>
                   </li>
                   <li class="breadcrumb-item">
-                  Run Report - HHA Activity Report</li>
+                  Run Report - HHA Review and Correct Report</li>
 				<!-- InstanceEndEditable -->
                 </ol>
               </nav>
@@ -128,8 +128,8 @@
 	   <!-- InstanceEndEditable -->
 	  <!-- InstanceBeginEditable name="mainContent" -->		  
 
-      <h1>Run Report - HHA Activity Report</h1>
-      <p>The HHA Activity Report displays a list of accepted assessments and inactivation requests submitted by or on behalf the selected agency during the user specified period.</p>
+      <h1>Run Report - HHA Review and Correct Report</h1>
+      <p>The HHA Review and Correct Report will allow providers to review their QM data to identify if there are any corrections or changes needed to the data prior to the quarter's data submission deadline. The report will provide a breakdown by measure and by quarter, of the HHA's assessment-based QM data for four rolling quarters. The report also identifies whether each quarter's data correction period is open or closed as of the report run date. The report output will also provide patient-level data in a CSV format the user can access via the user's My Reports page.</p>
 	  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
          
      
@@ -152,29 +152,11 @@
 		<div class="col-md-5 col-lg-4 col-xl-3">
 		  <div class="form-group">
 			  <label>Date Range</label>
-			  <select id="dateRangeSelect" onChange="switch(this.options[this.selectedIndex].value){ case 'FiscalYearToDate': $('#dateRange input.begin').val('2019-10-01'); $('#dateRange input.end').val('2019-12-31'); break; case 'MonthToDate': $('#dateRange input.begin').val('2019-12-01'); $('#dateRange input.end').val('2019-12-31'); break; case 'PriorBusinessDay': $('#dateRange input.begin').val('2019-12-30'); $('#dateRange input.end').val('2019-12-30'); break; case 'PriorBusinessWeek': $('#dateRange input.begin').val('2019-12-23'); $('#dateRange input.end').val('2019-12-27'); break; case 'PriorCalendarWeek': $('#dateRange input.begin').val('2019-12-22'); $('#dateRange input.end').val('2019-12-29'); break; case 'PriorFiscalYear': $('#dateRange input.begin').val('2018-10-01'); $('#dateRange input.end').val('2019-08-30'); break; case 'PriorMonth': $('#dateRange input.begin').val('2019-11-01'); $('#dateRange input.end').val('2019-11-30'); break; case 'Prior Quarter': $('#dateRange input.begin').val('2019-07-01'); $('#dateRange input.end').val('2019-09-30'); break; case 'PriorYear': $('#dateRange input.begin').val('2018-01-01'); $('#dateRange input.end').val('2018-12-31'); break; case 'QuarterToDate': $('#dateRange input.begin').val('2019-10-01'); $('#dateRange input.end').val('2019-12-31'); break; case 'Today': $('#dateRange input.begin').val('2019-12-31'); $('#dateRange input.end').val('2019-12-31'); break; case 'WeekToDate': $('#dateRange input.begin').val('2019-12-29'); $('#dateRange input.end').val('2019-12-31'); break; case 'YearToDate': $('#dateRange input.begin').val('2019-01-01'); $('#dateRange input.end').val('2019-12-31'); break; case 'Yesterday': $('#dateRange input.begin').val('2019-12-30'); $('#dateRange input.end').val('2019-12-30'); break; case 'custom': break;   }"><option value="">Select one</option><option value="FiscalYearToDate">Fiscal Year to Date</option><option value="MonthToDate">Month to Date</option><option value="PriorBusinessDay">Prior Business Day</option><option value="PriorBusinessWeek">Prior Business Week</option><option value="PriorCalendarWeek">Prior Calendar Week</option><option value="PriorFiscalYear">Prior Fiscal Year</option><option value="PriorMonth">Prior Month</option><option value="PriorQuarter">Prior Quarter</option><option value="PriorYear">Prior Year</option><option value="QuarterToDate">Quarter to Date</option><option value="Today">Today</option><option value="WeekToDate">Week to Date</option><option value="YearToDate">Year to Date</option><option value="Yesterday">Yesterday</option><option value="custom">Custom</option></select>
+			  <select><option>Select one</option><option>Q4 2018 - Q3 2019</option><option>Q1 2019 - Q4 2019</option></select>
 			 
 		  </div>
 		</div>
-		<div class="col-md-10 col-lg-8 col-xl-6">
-			<div class="row" id="dateRange">
-			<div class="col-md-4">
-			  <div class="form-group">
-				  <label>Begin Date <span class="iq-asterisk">*</span></label>
-				  <input placeholder="" class="form-control begin" type="date" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
-				  <span class="form-text">MM/DD/YYYY</span>
-			  </div>
-		  </div>
-		  <div class="col-md-4">
-			  <div class="form-group">
-				  <label>End Date <span class="iq-asterisk">*</span></label>
-				  <input placeholder="" type="date"  class="form-control end" value="" onBlur="$('#dateRangeSelect').prop('selectedIndex', 15).change();">
-				  <span class="form-text">MM/DD/YYYY</span>
-			  </div>
-		  </div>
-			</div>
-								
-		</div>  
+		  
 		</div>	</fieldset>
 	  <fieldset><legend class="iq-form-group-title">Providers</legend>
 	  <p>Search for providers and add up to 25 providers for each report run.</p>
@@ -255,40 +237,19 @@
 				  
 			    </div>
             </div>
-<br>	
+	
+					<br>
 		    <p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
 		    <p class="iq-not-available startMsg" role="status">No providers added. </p>
 			<section id="pSearchArea" class="hide">
-				
-				<!--<div class="float-right">
-					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
-					<div class="dropdown-menu" aria-labelledby="exportLink">
-						<p class="dropdown-header mt-2">Export results as:</p>
-						<button class="dropdown-item">PDF</button>
-						<button class="dropdown-item">Excel</button>
-						<button class="dropdown-item">CSV</button>
-					</div>
-				</div>
-				<ul class="iq-inline-list searchCriteria">
-					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div></div></li>
-					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
-							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#pSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
-					<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
-							<span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('#providers table.responsive tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
-		  			<li><div class="recertP hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
-        <span>Providers nearing recertification</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.recertP').addClass('hide');  $('#providerTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span>
-				</button></div></div></li>
-		</ul>-->
   				<section id="pSearchResults">
 					<h4>Select Providers (Up to 25)</h4>
-          			
- <nav class="nav nav-horizontal">
+<nav class="nav nav-horizontal">
         <a class="nav-link active" href="#results" data-toggle="tab" role="tab"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount info-text">Results: 1-10 of 112 Providers</span></a>
         <a class="nav-link addedTab" href="#added" data-toggle="tab" role="tab">0 Providers Added</a>
        
         </nav>
-     
-      <div class="tab-content">
+<div class="tab-content">
         <div class="tab-pane active" id="results">
           <table class="display responsive" id="providerTable">
   <thead>
@@ -469,15 +430,66 @@
        
         </div>
 
-					
         		</section>
-				
-				
-				
-		
-			</section>
-		  	</fieldset>
-				<!-- search area -->		
+			</section> <!-- search area -->	
+		</fieldset>
+		<fieldset><legend class="iq-form-group-title">Other Criteria</legend>
+		<div class="row">
+			<div class="col-md-6 col-lg-4">
+				<div class="form-group">
+					<label>Quality Measures <span class="iq-asterisk">*</span></label>
+					 <select multiple="multiple" style="display: none;" class="multiselect"><option>All Measures</option>
+						<option>Application of Percent of Long-Term Care Hospital Patients with an Admission and Discharge Functional Assessment and a Care Plan That Addresses Function (NQF #2631)</option>
+						<option>Application of Percent of Residents Experiencing One or More Falls with Major Injury (NQF #0674)</option>
+						<option>Changes in Skin Integrity Post-Acute Care: Pressure Ulcer/Injury</option>
+						<option>Depression Assessment Conducted (NQF #0518)</option>
+						<option>Diabetic Foot Care and Patient Education Implemented during All Episodes of Care (NQF #0519)</option>
+						<option>Drug Education on All Medications Provided to Patient/Caregiver during All Episodes of Care</option>
+						<option>Improvement in Ambulation/Locomotion (NQF #0167)</option>
+						<option>Improvement in Bathing (NQF #0174)</option>
+						<option>Improvement in Bed Transferring (NQF #0175)</option>
+						<option>Improvement in Dyspnea</option>
+						<option>Improvement in Management of Oral Medications (NQF #0176)</option>
+						<option>Improvement in Pain Interfering with Activity (NQF #0177)</option>
+						<option>Improvement in Status of Surgical Wounds (NQF #0178)</option>
+						<option>Influenza Immunization Received for Current Flu Season</option>
+						<option>Influenza_Contraindicated</option>
+						<option>Influenza_Refused</option>
+						<option>Multifactor Fall Risk Assessment Conducted for All Patients who Can Ambulate (NQF #0537)</option>
+						<option>Percent of Patients with Drug Regimen Review Conducted with Follow-Up for Identified Issues</option>
+						<option>Pneumococcal Polysaccharide Vaccine Ever Received</option>
+						<option>Pressure Ulcers</option>
+						<option>Timely Initiation of Care (NQF #0526)</option>
+					</select>
+					<span class="help-text">Select one or more</span>
+					
+				</div>
+			</div>	
+			<div class="col-md-6 col-lg-4">
+				<div class="form-group">
+					<label>Status <span class="iq-asterisk">*</span></label>
+					 <select multiple="multiple" style="display: none;" class="multiselect"><option>All Statuses</option>
+						<option>Triggered</option>
+						<option>Not Triggered</option>
+						<option>Exclusion</option>
+						<option>Dash</option>
+					</select>
+					<span class="help-text">Select one or more</span>
+				</div>
+			</div>	
+			<div class="col-md-12 col-lg-8">
+				<div class="form-group">
+					<label>Data Correction Period as of Report Run Date <span class="iq-asterisk">*</span></label>
+					<select><option>Select one</option>
+						<option>Both</option>
+						<option>Open</option>
+						<option>Closed</option>
+					</select>
+				</div>
+			</div>	
+		</div>
+		</fieldset>
+
 		<br>
 	  		<hr>
 	  		<div class="custom-control custom-checkbox">
@@ -662,12 +674,11 @@
 				<span class="help-text">Enter a name for your scheduled report to save it to My Reports.</span>
 			</div>
 			</div>
-			
 		</div>  
 			
 			  </div>
               </div>
-	  <br>
+
 	  		<div class="row mr-0" style="position: relative">
                <div class="col">
 				  <div class="iq-button-wrapper">
