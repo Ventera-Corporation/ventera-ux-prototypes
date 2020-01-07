@@ -126,10 +126,11 @@
 		
 		<nav class="nav nav-horizontal">
         <a class="nav-link active" href="#h-tab-1" data-toggle="tab" role="tab">Frequently Run Reports</a>
-     	<a class="nav-link" href="#h-tab-2" data-toggle="tab" role="tab">Scheduled Reports</a>
+     	
         <a class="nav-link" href="#h-tab-3" data-toggle="tab" role="tab">My Reports</a>
+			<a class="nav-link" href="#h-tab-2" data-toggle="tab" role="tab">Scheduled Reports &amp; Activity Log</a>
 		<a class="nav-link" href="#h-tab-4" data-toggle="tab" role="tab">All Reports</a>
-		<a class="nav-link" href="#h-tab-5" data-toggle="tab" role="tab">Report Activity Log</a>
+		
         </nav>
       
       <div class="tab-content">
@@ -146,9 +147,44 @@
 					 <td>01/06/2020 11:15 AM</td><td><a href="run-report2.html">Run Report</a></td></tr></tbody></table>
           </div>
         <div class="tab-pane" id="h-tab-2">
-			<h2>Scheduled Reports</h2>
-          <p class="info-text">3 Scheduled Reports</p>
+			<h2>Scheduled Reports &amp; Activity Log</h2>
+		   <div class="iq-accordion">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#iq-collapse3" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>Scheduled Reports</span>
+              </button>
+            </div>
+          <div id="iq-collapse3" class="collapse">
+            <div class="card-body">
+              <p class="info-text">3 Reports</p>
 			<table class="table table-striped" datatable="true"><caption class="sr-only">Scheduled Reports</caption><thead><tr><th tabindex="0" scope="col" class="ascending sortable"><span>Name</span></th><th tabindex="0" scope="col" class="sortable"><span>Category </span></th><th tabindex="0" scope="col" class="sortable"><span>Next Run Date</span></th><th tabindex="0" scope="col" class="sortable"><span>Status</span></th><th scope="col" class=""><span>Actions</span></th></tr></thead><tbody><tr><td><p class="iqies-label-responsive">Name</p><p>mondy weeky</p></td><td><p class="iqies-label-responsive">Category</p><p>1</p></td><td><p class="iqies-label-responsive">Next Run Date</p><p class="no-word-break">12/31/2019&nbsp;&nbsp;12:00 AM</p></td><td><p class="iqies-label-responsive">status</p><p class="no-word-break">Scheduled every Monday</p></td><td><div><a href="/reports/scheduledreport/867/345">Edit</a></div></td></tr><tr><td><p class="iqies-label-responsive">Name</p><p>test1 report</p></td><td><p class="iqies-label-responsive">Category</p><p>1</p></td><td><p class="iqies-label-responsive">Next Run Date</p><p class="no-word-break">12/17/2019&nbsp;&nbsp;12:00 AM</p></td><td><p class="iqies-label-responsive">status</p><p class="no-word-break">Scheduled every Monday</p></td><td><div><a href="/reports/scheduledreport/827/324">Edit</a></div></td></tr><tr><td><p class="iqies-label-responsive">Name</p><p>xxx</p></td><td><p class="iqies-label-responsive">Category</p><p>2</p></td><td><p class="iqies-label-responsive">Next Run Date</p><p class="no-word-break">01/07/2020&nbsp;&nbsp;12:00 AM</p></td><td><p class="iqies-label-responsive">status</p><p class="no-word-break">Scheduled on 01/07/2020 12:00 AM</p></td><td><div><a href="/reports/scheduledreport/868/347">Edit</a></div></td></tr></tbody></table>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="iq-accordion">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#iq-collapse4" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>Report Activity Log</span>
+              </button>
+            </div>
+          <div id="iq-collapse4" class="collapse">
+            <div class="card-body">
+              <p class="info-text">4 Entries</p>
+          <table class="table table-striped" datatable="true"><caption class="sr-only">Report Logs</caption><thead><tr><th tabindex="0" scope="col" class="sortable"><span>Name</span></th><th tabindex="0" scope="col" class="sortable"><span>Category </span></th><th tabindex="0" scope="col" class="descending sortable"><span>Run Date</span></th><th tabindex="0" scope="col" class="sortable"><span>Status</span></th></tr></thead><tbody><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">01/02/2020&nbsp;&nbsp;3:39 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">01/02/2020&nbsp;&nbsp;3:32 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Error Summary by Agency</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">12/18/2019&nbsp;&nbsp;1:52 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">12/18/2019&nbsp;&nbsp;1:00 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr></tbody></table>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+			
+			
           </div>
 		  <div class="tab-pane" id="h-tab-3">
 			  <h2>My Reports</h2>
@@ -218,11 +254,7 @@
 			<p class="info-text">7 Reports</p>
          <table class="table table-striped" datatable="true"><caption class="sr-only">Report Type Search Results</caption><thead><tr><th tabindex="0" scope="col" class="ascending sortable"><span>Report Type</span></th><th scope="col" class="" style="width: 12rem;"><span>Actions</span></th></tr></thead><tbody><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">HHA Activity Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/21">HHA Activity Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The HHA Activity Report displays a list of accepted assessments and inactivation requests submitted by or on behalf the selected agency during the user specified period.</p></div></div></td><td style="width: 12rem;"><a aria-label="Click to run report for HHA Activity Report" href="/reports/filter/0/21">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">HHA Discharge Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/20">HHA Discharge Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The HHA Discharges report provides information about the patients discharged from the selected agency during the specified period.</p></div></div></td><td><a aria-label="Click to run report for HHA Discharge Report" href="/reports/filter/0/20">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">HHA Error Summary by Agency</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/34">HHA Error Summary by Agency</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The HHA Error Summary by Agency report summarizes the errors encountered in submissions by the selected agency during a specified period.</p></div></div></td><td><a aria-label="Click to run report for HHA Error Summary by Agency" href="/reports/filter/0/34">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">HHA Review and Correct Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/103">HHA Review and Correct Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The HHA Review and Correct report will allow providers to review their QM data to identify if there are any corrections or changes needed to the data prior to the quarter's data submission deadline.  The report will provide a breakdown by measure and by quarter, of the HHA's assessment-based QM data for four rolling quarters.  The report also identifies whether each quarter's data correction period is open or closed as of the report run date.  The report output will also provide patient-level data in a CSV format the user can access via the user's My Reports page. </p></div></div></td><td><a aria-label="Click to run report for HHA Review and Correct Report" href="/reports/filter/0/103">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">OASIS Agency Final Validation</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/30">OASIS Agency Final Validation</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The OASIS Agency Final Validation report contains detailed information regarding all records for the agency contained in the submission file.  This includes the number of test records that passed and failed, records that were accepted or rejected, as well as warning and fatal errors for the record.</p></div></div></td><td><a aria-label="Click to run report for OASIS Agency Final Validation" href="/reports/filter/0/30">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">OASIS Error Detail Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/23">OASIS Error Detail Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>The OASIS Error Detail Report displays assessment information and error details for user selected error numbers and submission date within the requested date range where selected errors were encountered in successful submissions made by or on behalf of the selected agency.</p></div></div></td><td><a aria-label="Click to run report for OASIS Error Detail Report" href="/reports/filter/0/23">Run Report</a></td></tr><tr><td><p class="iqies-label-responsive">Report Type</p><h3 class="sr-only">Provider History Report</h3><a tabindex="-1" aria-hidden="true" href="/reports/filter/0/100">Provider History Report</a><div class="row"><div class="col-12 col-lg-10 col-xl-8"><p>This report lists the deficiencies cited on up to four of the provider's most recent surveys and up to three years of recent complaint surveys.</p></div></div></td><td><a aria-label="Click to run report for Provider History Report" href="/reports/filter/0/100">Run Report</a></td></tr></tbody></table>
           </div>
-		  <div class="tab-pane" id="h-tab-5">
-			  <h2>Report Activity Log</h2>
-			  <p class="info-text">4 Log Entries</p>
-          <table class="table table-striped" datatable="true"><caption class="sr-only">Report Logs</caption><thead><tr><th tabindex="0" scope="col" class="sortable"><span>Name</span></th><th tabindex="0" scope="col" class="sortable"><span>Category </span></th><th tabindex="0" scope="col" class="descending sortable"><span>Run Date</span></th><th tabindex="0" scope="col" class="sortable"><span>Status</span></th></tr></thead><tbody><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">01/02/2020&nbsp;&nbsp;3:39 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">01/02/2020&nbsp;&nbsp;3:32 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Error Summary by Agency</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">12/18/2019&nbsp;&nbsp;1:52 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr><tr class=""><td><p class="iqies-label-responsive">Name</p><p>HHA Activity Report</p></td><td><p class="iqies-label-responsive">Category</p><p>Provider</p></td><td><p class="iqies-label-responsive">Run Date</p><p class="no-word-break">12/18/2019&nbsp;&nbsp;1:00 PM</p></td><td><p class="iqies-label-responsive">Status</p><p class="no-word-break">COMPLETE</p></td><td></td></tr></tbody></table>
-          </div>
+		  
         </div>
 		
 		<!--<div class="row">
