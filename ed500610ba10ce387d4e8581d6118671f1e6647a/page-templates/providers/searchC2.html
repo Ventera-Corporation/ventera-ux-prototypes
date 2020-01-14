@@ -17,7 +17,7 @@
 <!-- to match design system definition -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
 <!-- InstanceBeginEditable name="head" -->
-
+	<style>.dropdown-menu { width: 300px; }</style>
 <!-- InstanceEndEditable -->
 </head>
 
@@ -929,60 +929,47 @@ Proctorville, IL 63222</small></h5>
   				<section id="sSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span></p>
  
-<div class="row" id="surveyTable">
-	<div class="col-lg-6">	
-		<div class="card pendingPOC">
+<div class="row card-deck no-gutters" id="surveyTable">
+	<div class="col-lg-6 pendingPOC">	
+		<div class="card">
 			<div class="card-body">
 				<div class="row">
-					<div class="col-lg-10">
+					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-12">
-<h5 class="card-title"><a href="#">19A3-H1</a></h5>
-<h6 class="card-subtitle mb-2">Health Survey | <i class="fas fa-square info"></i> Writing in Progress | Exit 03/01/2020</h6>
+<h5 class="card-title"><a href="#">19A3-H1</a><br><small>Health Survey | <i class="fas fa-square info"></i> Writing in Progress | Exit 03/01/2020 | Initial Certification
+	</small></h5>
+								
+								
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Provider</dt> <dd><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>CCN 368130</dd>
-								</dl>
+							<div class="col-lg-9">
+							<div class="form-group"><a href="#">A&amp;L Home Care and Training Center, LLC</a><br><small>CCN 368130</small></div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Category</dt> <dd><ul><li>Initial Certification</li></ul></dd>
-								</dl>
-							</div>
-							<div class="col-md-6 col-lg-2 col-xl-2">
-								<dl>
-									<dt>Citations</dt> <dd> <a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
-          <div class="dropdown-menu text-content" aria-labelledby="citationList1">
+							<div class="col-lg-3">
+								<div class="form-group"><a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 Citations</a>
+          <div class="dropdown-menu text-content dropdown-menu-right" aria-labelledby="citationList1">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			  <ul>
 				  <li>G0 - Initial Comments<br><small>Memo</small></li>
 				 <li>G1014 - Interventions and Patient Response<br><small>Element</small></li></ul>
-  		  </div> </dd>
-								</dl>
+									</div></div>
 							</div>
-							<div class="col-md-6 col-lg-2 col-xl-2 pocs hide">
-								<dl>
-									<dt>POC Status</dt> <dd>Pending</dd>
-								</dl>
+							<div class="col-lg-6 pocs hide">
+								<p>POC Status: Pending</p>
 							</div>
 							
-							<div class="col-md-6 col-lg-4 col-xl-3 staff hide">
+							<div class="col-lg-6 staff hide">
 								<dl>
 									<dt>Responsible Staff/Surveyor</dt> <dd><ul><li>Roberta Carr</li><li>Tom Vineman</li></ul></dd>
 								</dl>
 							</div>
-							<div class="col-md-6 col-lg-3 col-xl-2 ss hide">
-								<dl>
-									<dt>Survey Start</dt> <dd>01/03/2020</dd>
-								</dl>
+							<div class="col-lg-6 ss hide">
+								<p>Survey Start: 01/03/2020</p>
 							</div>
-							<div class="col-md-6 col-lg-3 col-xl-2 sod hide">
-								<dl>
-									<dt>SOD Due</dt> <dd>02/12/2020</dd>
-								</dl>
+							<div class="col-lg-6 sod hide">
+								<p>SOD Due: 02/12/2020</p>
 							</div>
 						</div>
 					</div>
@@ -992,31 +979,24 @@ Proctorville, IL 63222</small></h5>
 				</div>
 			</div>
 		</div>
-		<div class="card ij sod">
+	</div>
+	<div class="col-lg-6 ij sod">
+		<div class="card">
 			<div class="card-body">
 				<div class="row">
-					<div class="col-lg-10">
+					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-12">
-<h5 class="card-title"><a href="#">20A3-H2</a></h5>
-<h6 class="card-subtitle mb-2">Health Survey | <i class="fas fa-square success"></i> Writing Complete | Exit 02/27/2020</h6>
+<h5 class="card-title"><a href="#">20A3-H2</a><br><small>Health Survey | <i class="fas fa-square success"></i> Writing Complete | Exit 02/27/2020 | Initial Certification, Complaint</small></h5>
+								
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Provider</dt> <dd><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</dd>
-								</dl>
+							
+							<div class="col-lg-9">
+							<div class="form-group"><a href="provider-profile-hospice.html">BrightHope</a><br><small>IQIES 123456</small></div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Category</dt> <dd><ul><li>Initial Certification</li><li>Complaint</li></ul></dd>
-								</dl>
-							</div>
-							<div class="col-md-6 col-lg-2 col-xl-2">
-								<dl>
-									<dt>Citations</dt> 
-									<dd> 
-										<a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
-          								<div class="dropdown-menu text-content" aria-labelledby="allegationList">
+							<div class="col-lg-3">
+								<div class="form-group"><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 Citations <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
+          								<div class="dropdown-menu text-content dropdown-menu-right" aria-labelledby="allegationList">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
@@ -1026,40 +1006,31 @@ Proctorville, IL 63222</small></h5>
 				   <li>G1014 - Interventions and Patient Response<br><small>Element</small></li>
 			  </ul>
 			  
-  		  </div>
-									</dd>
-								</dl>
+  		  </div></div>
 							</div>
-							<div class="col-md-6 col-lg-2 col-xl-2 pocs hide">
-								<dl>
-									<dt>POC Status</dt> <dd>Accepted</dd>
-								</dl>
+							<div class="col-lg-6 pocs hide">
+								<p>POC Status: Accepted</p>
 							</div>
 							
-							<div class="col-md-6 col-lg-4 col-xl-3 staff hide">
+							<div class="col-lg-6 staff hide">
 								<dl>
 									<dt>Responsible Staff/Surveyor</dt> <dd><ul><li>Roberta Carr</li><li>Rebecca Moray</li><li>Zachary Taggart</li></ul></dd>
 								</dl>
 							</div>
-							<div class="col-md-6 col-lg-3 col-xl-2 ss hide">
-								<dl>
-									<dt>Survey Start</dt> <dd>12/12/2019</dd>
-								</dl>
+							<div class="col-lg-6 ss hide">
+								<p>Survey Start: 12/12/2019</p>
 							</div>
-							<div class="col-md-6 col-lg-3 col-xl-2 sod hide">
-								<dl>
-									<dt>SOD Due</dt> <dd>12/07/2019</dd>
-								</dl>
+							<div class="col-lg-6 sod hide">
+								<p>SOD Due: 12/07/2019</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-2 text-justify">
-						<a href="survey-brighthope.html" class="btn btn-link">Create Revisit</a>
+					<div class="col-lg-6">
+						<a href="survey-brighthope.html" class="btn btn-outline-primary">Create Revisit</a>
 					</div>	
 				</div>
 			</div>
 		</div>
-		
 	</div>
 </div>
 <nav title="Table Pagination" class="hide"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
@@ -1432,36 +1403,27 @@ Proctorville, IL 63222</small></h5>
 		<div class="card">
 			<div class="card-body">
 				<div class="row">
-					<div class="col-lg-10">
+					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-12">
-<h5 class="card-title"><a href="#">Complaint 12345</a></h5>
-<h6 class="card-subtitle mb-2">Under Investigation | Non-Immediate Jeopardy-High<br>Started 01/01/2020 | Survey Due 03/01/2020</h6>
+<h5 class="card-title"><a href="#">Complaint 12345</a><br><small>Under Investigation | Non-Immediate Jeopardy-High | Started 01/01/2020</small></h5>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Provider</dt> <dd><a href="#">Good Neighbor HHC of Baxter</a><br>CCN 247269 | FACID IL5321112233445566</dd>
-								</dl>
+							<div class="col-lg-8">
+								
+								<div class="form-group"><a href="#">Good Neighbor HHC of Baxter</a><br><small>CCN 247269 | FACID IL5321112233445566</small></div><div class="form-group"><a href="survey-brighthope.html" target="_blank">Starting Survey BFF0-H2 <i class="fal fa-external-link"></i></a><br><small>Exit 12/01/2019 | Due 03/01/2020</small></div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Starting Survey</dt> <dd><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (Exit 12/01/2019)</dd>
-								</dl>
-							</div>
-							<div class="col-md-6 col-lg-2 col-xl-2">
-								<dl>
-									<dt>Allegations</dt> 
-									<dd>
-										<a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
-          <div class="dropdown-menu text-content" aria-labelledby="allegationList">
+							
+							<div class="col-lg-4">
+								
+										<div class="form-group"><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 Allegations</a>
+          <div class="dropdown-menu text-content dropdown-menu-right" aria-labelledby="allegationList">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Moderate</small></li>
 			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Moderate</small></li></ul>
-  		  </div>
-           							</dd>
-								</dl>
+											</div></div>
+           							
 							</div>
 							
 							
@@ -1479,36 +1441,27 @@ Proctorville, IL 63222</small></h5>
 		<div class="card">
 			<div class="card-body">
 				<div class="row">
-					<div class="col-lg-10">
+					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-12">
-<h5 class="card-title"><a href="#">Incident 3265</a></h5>
-<h6 class="card-subtitle mb-2">Triage/Prioritization | Not Applicable<br>Started 02/12/2020</h6>
+<h5 class="card-title"><a href="#">Incident 3265</a><br><small>Triage/Prioritization | Not Applicable | Started 02/12/2020</small></h5>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Provider</dt> <dd><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</dd>
-								</dl>
+							<div class="col-lg-8">
+								<div class="form-group"><a href="provider-profile-hospice.html">BrightHope</a><br><small>IQIES 123456</small></div>
+								<div class="form-group"><span class="iq-not-available">Starting survey not applicable</span></div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Starting Survey</dt> <dd><span class="iq-not-available">Not applicable</span></dd>
-								</dl>
-							</div>
-							<div class="col-md-6 col-lg-2 col-xl-2">
-								<dl>
-									<dt>Allegations</dt> 
-									<dd>
-										<a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
-          <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
+							
+							<div class="col-lg-4">
+								
+										<div class="form-group"><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1 Allegation</a>
+          <div class="dropdown-menu text-content dropdown-menu-right" aria-labelledby="allegationList2">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li>
 			  </ul>
   		  </div>
-           							</dd>
-								</dl>
+           							</div>
 							</div>
 							
 							
@@ -1876,49 +1829,36 @@ Proctorville, IL 63222</small></h5>
   				<section id="eSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of enforcements filtered by state: Illinois. </span><span class="baCount">Results: 2 Enforcements</span></p>
 <div class="row" id="enforcementTable">
-	<div class="col-lg-6">	
-		<div class="card appealDue">
+	<div class="col-lg-6 appealDue">	
+		<div class="card">
 			<div class="card-body">
 				<div class="row">
-					<div class="col-lg-10">
+					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-12">
-<h5 class="card-title"><a href="#">1234</a></h5>
-<h6 class="card-subtitle mb-2">Federal | Open - Active | Start 01/01/2020</h6>
+<h5 class="card-title"><a href="#">1234</a><br><small>Federal | Open - Active | Start 01/01/2020</small></h5>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Provider</dt> <dd><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</dd>
-								</dl>
+							<div class="col-lg-8">
+								<div class="form-group"><a href="provider-profile-hospice.html">BrightHope</a><br><small>IQIES 123456</small></div>
+								<div class="form-group"><a href="survey-brighthope.html" target="_blank">Starting Survey BFF0-H2 <i class="fal fa-external-link"></i></a><br><small>Exit 12/01/2019 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></small></div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Starting Survey</dt> <dd><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (Exit 12/01/2019) <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></dd>
-								</dl>
-							</div>
-							<div class="col-md-6 col-lg-2 col-xl-2">
-								<dl>
-									<dt>Sanctions</dt> 
-									<dd>
-										<a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+							<div class="col-lg-4">
+								<div class="form-group"><a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1 Sanction</a>
           <div class="dropdown-menu text-content" aria-labelledby="sanctionList">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			   <ul><li>Termination at 23 days - IJ<br><small>Recommended</small> </li></ul>  
-  		  </div>
-           							</dd>
-								</dl>
+  		  </div></div>
+							
 							</div>
-						  <div class="col-md-6 col-lg-4 col-xl-3 cmp hide">
-								<dl>
-									<dt>CMP Amount Due</dt> <dd><p class="iq-not-available">Not Applicable</p></dd>
-								</dl>
+							
+						  <div class="col-lg-4 cmp hide">
+							  <p>CMP Amount Due: <span class="iq-not-available">Not Applicable</span></p>
 							</div>
-						  <div class="col-md-6 col-lg-4 col-xl-3 waiver hide">
-								<dl>
-									<dt>Appeal/Appeal Waiver Due</dt> <dd>11/20/2019</dd>
-								</dl>
+						  <div class="col-lg-4 waiver hide">
+								<p>Appeal/Appeal Waiver Due: 11/20/2019</p>
+								
 							</div>
 							
 						</div>
@@ -1930,31 +1870,21 @@ Proctorville, IL 63222</small></h5>
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-6">	
-		<div class="card cmp">
+	<div class="col-lg-6 cmp">	
+		<div class="card">
 			<div class="card-body">
 				<div class="row">
-					<div class="col-lg-10">
+					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-12">
-<h5 class="card-title"><a href="#">3245</a></h5>
-<h6 class="card-subtitle mb-2">State | Open - Under Appeal | Start 12/23/2019</h6>
+<h5 class="card-title"><a href="#">3245</a><br><small>State | Open - Under Appeal | Start 12/23/2019</small></h5>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Provider</dt> <dd><a href="#">Laguna Rainbow Home Care</a><br>CCN 327144 | FACID IL9621112233</dd>
-								</dl>
+							<div class="col-lg-8">
+								<div class="form-group"><a href="#">Laguna Rainbow Home Care</a><br><small>CCN 327144 | FACID IL9621112233</small></div>
+								<div class="form-group"><a href="#">Starting SurveyXYZ0-H1 <i class="fal fa-external-link"></i></a><br><small>Exit 11/23/2019</small></div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Starting Survey</dt> <dd><a href="#">XYZ0-H1 <i class="fal fa-external-link"></i></a> (Exit 11/23/2019)</dd>
-								</dl>
-							</div>
-							<div class="col-md-6 col-lg-2 col-xl-2">
-								<dl>
-									<dt>Sanctions</dt> 
-									<dd>
-										<a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
+							<div class="col-lg-4">
+								<div class="form-group"><a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 Sanctions</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
           <div class="dropdown-menu text-content" aria-labelledby="sanctionList2">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -1962,19 +1892,14 @@ Proctorville, IL 63222</small></h5>
 			   <ul>
 				   <li>Civil Monetary Penalty<br><small>Yes</small> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span> </li><li>Directed Plan of Correction<br><small>Yes</small></li>
 			  </ul>			  
-  		  </div>
-           							</dd>
-								</dl>
+  		  </div></div>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3 cmp hide">
-								<dl>
-									<dt>CMP Amount Due</dt> <dd>$100,000</dd>
-								</dl>
+							
+							<div class="col-lg-4 cmp hide">
+								<p>CMP Amount Due: $100,000</p>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3 waiver hide">
-								<dl>
-									<dt>Appeal/Appeal Waiver Due</dt> <dd>04/01/2020</dd>
-								</dl>
+							<div class="col-lg-4 waiver hide">
+								<p>Appeal/Appeal Waiver Due: 04/01/2020</p>
 							</div>
 							
 						</div>
@@ -2115,22 +2040,22 @@ Proctorville, IL 63222</small></h5>
 		$('#providers .noResults').removeClass('hide'); 
 	} else { 
 		$('#pSearchResults').removeClass('hide'); 
-		$('#pSearchResults .card').removeClass('hide'); 
+		$('#pSearchResults .card-deck > div').removeClass('hide'); 
 		$('#providers .noResults').addClass('hide'); 
 		$('#pSearchResults .baCount').html('Results: 1-10 of 97 Providers'); 
 		$('#pSearchResults nav').removeClass('hide'); 
 	}
 	console.log($('#deemedStatusSelect option:selected').text());
 	if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ 
-		$('#pSearchResults .card').addClass('hide'); 
-		$('#pSearchResults .card.deemed').removeClass('hide'); 
+		$('#pSearchResults .card-deck > div').addClass('hide'); 
+		$('#pSearchResults .card-deck .deemed').removeClass('hide'); 
 		$('#providers .searchCriteria .deemed').removeClass('hide'); 
 	}; 
 	if( $('#showrecertP').prop('checked') == true ) { 
 		console.log('resertP checked');
-		$('#providerTable .card').addClass('hide'); 
-		$('#providerTable .card.recert').removeClass('hide');
-		$('#providerTable .card .ls').removeClass('hide');
+		$('#providerTable > div').addClass('hide'); 
+		$('#providerTable .recert').removeClass('hide');
+		$('#providerTable .ls').removeClass('hide');
 		$('#providers .searchCriteria .recertP').removeClass('hide');
 	} else {
 		$('#providerTable .card .ls').addClass('hide');
@@ -2142,7 +2067,7 @@ Proctorville, IL 63222</small></h5>
 }
 	function resetPSearch(){
 		$('#pSearchResults').removeClass('hide'); 
-		$('#providerTable .card').removeClass('hide'); 
+		$('#providerTable > div').removeClass('hide'); 
 		$('#providers .noResults').addClass('hide'); 
 		$('#pSearchResults .baCount').html('Results: 1-10 of 112 Providers'); 
 		$('#pSearchResults nav').removeClass('hide'); 
@@ -2163,14 +2088,14 @@ function goSearchSurvey(){
 	};
 	if( $('#sSearchInput').val().indexOf('b') > -1 ) { 
 		$('#sSearchResults').removeClass('hide'); 
-		$('#sSearchResults .card').addClass('hide'); 
-		$('#sSearchResults .card.bright').removeClass('hide');
+		$('#sSearchResults .card-deck > div').addClass('hide'); 
+		$('#sSearchResults .card-deck .bright').removeClass('hide');
 		$('#sSearchResults .baCount').html('Results: 1 Survey');
 		$('#sSearchResults nav').addClass('hide'); 
 		$('#surveys .noResults').addClass('hide');  
 	} else { 
 		$('#sSearchResults').removeClass('hide'); 
-		$('#sSearchResults .card').removeClass('hide'); 
+		$('#sSearchResults .card-deck > div').removeClass('hide'); 
 		$('#surveys .noResults').addClass('hide'); 
 		$('#sSearchResults .baCount').html('Results: 2 Surveys'); 
 		//$('#sSearchResults nav').removeClass('hide'); 
@@ -2179,82 +2104,82 @@ function goSearchSurvey(){
 	console.log( $('#ssdr-from').val() ); 
 	console.log( $('#ssdr-to').val() ); 
 	console.log( $('#surveyStaff option:selected').text() );
-	if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() == '') { 
+	if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && ( $('#surveyStaff option:selected').text() == '' || $('#surveyStaff option:selected').text() == 'All')  ) { 
 		console.log('pending only');
-		$('#surveyTable .card').addClass('hide'); $('#surveyTable .card.pendingPOC').removeClass('hide');
-		$('#surveyTable .card .pocs').removeClass('hide');
+		$('#surveyTable > div').addClass('hide'); $('#surveyTable .pendingPOC').removeClass('hide');
+		$('#surveyTable .pocs').removeClass('hide');
 		$('#surveys .searchCriteria .poc').removeClass('hide');
 		$('#surveys .searchCriteria .surveyStart').addClass('hide');
 		$('#surveys .searchCriteria .reStaff').addClass('hide');
-	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() == '' ) { 
+	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && ( $('#surveyStaff option:selected').text() == '' || $('#surveyStaff option:selected').text() == 'All' ) )  { 
 		console.log('survey start date range only');
-		$('#surveyTable .card .ss').removeClass('hide');
+		$('#surveyTable .ss').removeClass('hide');
 		$('#surveys .searchCriteria .poc').addClass('hide');
 		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
 		$('#surveys .searchCriteria .reStaff').addClass('hide');
 		// Missing survey start date actual values filled in
-	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() != '') { 
+	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && ( $('#surveyStaff option:selected').text() != '' && $('#surveyStaff option:selected').text() != 'All' ) ) { 
 		console.log('survey staff only');
-		$('#surveyTable .card').addClass('hide'); $('#surveyTable .card.pendingPOC').removeClass('hide');
-		$('#surveyTable .card.pendingPOC .staff').removeClass('hide');
+		$('#surveyTable > div').addClass('hide'); $('#surveyTable .pendingPOC').removeClass('hide');
+		$('#surveyTable .pendingPOC .staff').removeClass('hide');
 		$('#surveys .searchCriteria .poc').addClass('hide');
 		$('#surveys .searchCriteria .surveyStart').addClass('hide');
 		$('#surveys .searchCriteria .reStaff').removeClass('hide');
-	} else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() == '' ){
+	} else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && ( $('#surveyStaff option:selected').text() == '' || $('#surveyStaff option:selected').text() == 'All' ) ){
 		console.log('pending and survey start');
-		$('#surveyTable .card').addClass('hide'); $('#surveyTable .card.pendingPOC').removeClass('hide');
-		$('#surveyTable .card.pendingPOC .staff').removeClass('hide');
+		$('#surveyTable > div').addClass('hide'); $('#surveyTable .pendingPOC').removeClass('hide');
+		$('#surveyTable .pendingPOC .staff').removeClass('hide');
 		$('#surveyTable .card .ss').removeClass('hide');
 		$('#surveys .searchCriteria .poc').removeClass('hide');
 		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
 		$('#surveys .searchCriteria .reStaff').addClass('hide');
-	}  else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() != '' ){
+	}  else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && ( $('#surveyStaff option:selected').text() != '' && $('#surveyStaff option:selected').text() != 'All') ){
 		console.log('pending and survey staff');
-		$('#surveyTable .card').addClass('hide'); $('#surveyTable .card.pendingPOC').removeClass('hide');
-		$('#surveyTable .card.pendingPOC .staff').removeClass('hide');
+		$('#surveyTable > div').addClass('hide'); $('#surveyTable .pendingPOC').removeClass('hide');
+		$('#surveyTable .pendingPOC .staff').removeClass('hide');
 		$('#surveyTable .card .pocs').removeClass('hide');
 		$('#surveys .searchCriteria .poc').removeClass('hide');
 		$('#surveys .searchCriteria .reStaff').removeClass('hide');
 		$('#surveys .searchCriteria .surveyStart').addClass('hide');
-	}  else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() !='' ){
+	}  else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && ( $('#surveyStaff option:selected').text() != '' && $('#surveyStaff option:selected').text() != 'All') ){
 		console.log('survey start and staff');
-		$('#surveyTable .card').addClass('hide'); $('#surveyTable .card.pendingPOC').removeClass('hide');
-		$('#surveyTable .card.pendingPOC .staff').removeClass('hide');
+		$('#surveyTable > div').addClass('hide'); $('#surveyTable .pendingPOC').removeClass('hide');
+		$('#surveyTable .pendingPOC .staff').removeClass('hide');
 		$('#surveyTable .card .ss').removeClass('hide');
 		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
 		$('#surveys .searchCriteria .reStaff').removeClass('hide');
 		$('#surveys .searchCriteria .poc').addClass('hide');
-	} else if(  $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() != '' ) {
+	} else if(  $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && ( $('#surveyStaff option:selected').text() != '' && $('#surveyStaff option:selected').text() != 'All') ) {
 		console.log('all');
-		$('#surveyTable .card').addClass('hide'); $('#surveyTable .card.pendingPOC').removeClass('hide');
-		$('#surveyTable .card.pendingPOC .staff').removeClass('hide');
+		$('#surveyTable > div').addClass('hide'); $('#surveyTable .pendingPOC').removeClass('hide');
+		$('#surveyTable .pendingPOC .staff').removeClass('hide');
 		$('#surveyTable .card .ss').removeClass('hide');
 		$('#surveyTable .card .pocs').removeClass('hide');
 		$('#surveys .searchCriteria .poc').removeClass('hide');
 		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
 		$('#surveys .searchCriteria .reStaff').removeClass('hide');
 	} else {
-		$('#surveyTable .card.pendingPOC .staff').addClass('hide');
+		$('#surveyTable .pendingPOC .staff').addClass('hide');
 		$('#surveyTable .card .pocs').addClass('hide');
 		$('#surveyTable .card .ss').addClass('hide');
 		
-		$('#surveyTable .card').removeClass('hide');
+		$('#surveyTable > div').removeClass('hide');
 		$('#surveys .searchCriteria .poc').addClass('hide');
 		$('#surveys .searchCriteria .surveyStart').addClass('hide');
 		$('#surveys .searchCriteria .reStaff').addClass('hide');
 	};
 	if( $('#showSOD').prop('checked') == true ) { 
 		console.log('sod checked');
-		$('#surveyTable .card').addClass('hide'); 
-		$('#surveyTable .card.sod').removeClass('hide');
+		$('#surveyTable > div').addClass('hide'); 
+		$('#surveyTable .sod').removeClass('hide');
 		$('#surveyTable .card .sod').removeClass('hide');
 		$('#surveys .searchCriteria .sod').removeClass('hide');
 	} else {
 		$('#surveyTable .card .sod').addClass('hide');
 	}
 	if( $('#showSurveyWIJ').prop('checked') == true ) { 
-		$('#surveyTable .card').addClass('hide'); 
-		$('#surveyTable .card.ij').removeClass('hide'); 
+		$('#surveyTable > div').addClass('hide'); 
+		$('#surveyTable .ij').removeClass('hide'); 
 		$('#surveys .searchCriteria .ij').removeClass('hide');  
 	}
 	if( $('#sedr-from').val() && $('#sedr-to').val() ){ 
@@ -2273,7 +2198,7 @@ function goSearchSurvey(){
 }
 function resetSSearch(){
 	$('#sSearchResults').removeClass('hide'); 
-    $('#surveyTable .card').removeClass('hide'); 
+    $('#surveyTable > div').removeClass('hide'); 
     $('#surveys .noResults').addClass('hide'); 
     $('#sSearchResults .baCount').html('Results: 2 Surveys'); 
     //$('#sSearchResults nav').removeClass('hide'); 
@@ -2294,14 +2219,14 @@ function goSearchIntake(){
 	};
 	if( $('#iSearchInput').val().indexOf('b') > -1 ) { 
 		$('#iSearchResults').removeClass('hide'); 
-		$('#iSearchResults .card').addClass('hide'); 
-		$('#iSearchResults .card.bright').removeClass('hide');
+		$('#iSearchResults > div').addClass('hide'); 
+		$('#iSearchResults .bright').removeClass('hide');
 		$('#iSearchResults .baCount').html('Results: 1 Intake');
 		$('#iSearchResults nav').addClass('hide'); 
 		$('#intakes .noResults').addClass('hide');  
 	} else { 
 		$('#iSearchResults').removeClass('hide'); 
-		$('#iSearchResults .card').removeClass('hide'); 
+		$('#iSearchResults > div').removeClass('hide'); 
 		$('#intakes .noResults').addClass('hide'); 
 		$('#iSearchResults .baCount').html('Results: 2 Intakes'); 
 		//$('#sSearchResults nav').removeClass('hide'); 
@@ -2313,10 +2238,10 @@ function goSearchIntake(){
 }
 function resetISearch(){
 	$('#iSearchResults').removeClass('hide'); 
-    $('#intakeTable .card').removeClass('hide'); 
+    $('#intakeTable > div').removeClass('hide'); 
     $('#intakes .noResults').addClass('hide'); 
     $('#iSearchResults .baCount').html('Results: 1-10 of 112 Intakes'); 
-    $('#iSearchResults nav').removeClass('hide'); 
+   // $('#iSearchResults nav').removeClass('hide'); 
 	$('#intakes .searchCriteria li > div').addClass('hide'); 
 	$('#intakes .searchCriteria li > div.state').removeClass('hide'); 
 	$('#intakes input').val('');
@@ -2334,22 +2259,22 @@ function goSearchEnforcement(){
 	};
 	if( $('#eSearchInput').val().indexOf('b') > -1 ) { 
 		$('#eSearchResults').removeClass('hide'); 
-		$('#eSearchResults .card').addClass('hide'); 
-		$('#eSearchResults .card.bright').removeClass('hide');
+		$('#eSearchResults .card-deck > div').addClass('hide'); 
+		$('#eSearchResults .card-deck .bright').removeClass('hide');
 		$('#eSearchResults .baCount').html('Results: 1 Enforcement');
 		$('#eSearchResults nav').addClass('hide'); 
 		$('#enforcements .noResults').addClass('hide');  
 	} else { 
 		$('#eSearchResults').removeClass('hide'); 
-		$('#eSearchResults .card').removeClass('hide'); 
+		$('#eSearchResults .card-deck > div').removeClass('hide'); 
 		$('#enforcements .noResults').addClass('hide'); 
 		$('#eSearchResults .baCount').html('Results: 2 Enforcements'); 
 		//$('#eSearchResults nav').removeClass('hide'); 
 	}
 	if( $('#cmp').prop('checked') == true ) { 
 		console.log('cmp checked');
-		$('#enforcementTable .card').addClass('hide'); 
-		$('#enforcementTable .card.cmp').removeClass('hide');
+		$('#enforcementTable > div').addClass('hide'); 
+		$('#enforcementTable .cmp').removeClass('hide');
 		$('#enforcementTable .card .cmp').removeClass('hide');
 		$('#enforcements .searchCriteria .cmp').removeClass('hide');
 	} else {
@@ -2357,8 +2282,8 @@ function goSearchEnforcement(){
 	}
 	if( $('#appealDue').prop('checked') == true ) { 
 		console.log('appeal due date checked');
-		$('#enforcementTable .card').addClass('hide'); 
-		$('#enforcementTable .card.appealDue').removeClass('hide');
+		$('#enforcementTable > div').addClass('hide'); 
+		$('#enforcementTable .appealDue').removeClass('hide');
 		$('#enforcementTable .card .waiver').removeClass('hide');
 		$('#enforcements .searchCriteria .appealDue').removeClass('hide');
 	} else { $('#enforcementTable .card .waiver').addClass('hide'); }
@@ -2369,10 +2294,10 @@ function goSearchEnforcement(){
 }
 function resetESearch(){
 	$('#eSearchResults').removeClass('hide'); 
-    $('#enforcementTable .card').removeClass('hide'); 
+    $('#enforcementTable > div').removeClass('hide'); 
     $('#enforcements .noResults').addClass('hide'); 
     $('#eSearchResults .baCount').html('Results: 2 Enforcements'); 
-    $('#eSearchResults nav').removeClass('hide'); 
+    //$('#eSearchResults nav').removeClass('hide'); 
 	$('#enforcements .searchCriteria li > div').addClass('hide'); 
 	$('#enforcements .searchCriteria li > div.state').removeClass('hide'); 
 	$('#enforcements input').val('');

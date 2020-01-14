@@ -2087,6 +2087,7 @@ function resetPSearch(){
 	$('#providers .btn-group button').removeClass('active'); 
 	$('#providers .btn-group button:first-child').addClass('active');
 	$('#providers input[type=checkbox]').prop('checked', false);
+	drawProviderTable();
 }
 function goSearchSurvey(){
 	if($('#sSearchInput').val() != ''){ 
@@ -2384,6 +2385,7 @@ function resetSSearch(){
 	$('#surveys .btn-group button').removeClass('active'); 
 	$('#surveys .btn-group button:first-child').addClass('active');
 	$('#surveys input[type=checkbox]').prop('checked', false);
+	drawSurveyTable();
 }
 function goSearchIntake(){
 	if($('#iSearchInput').val() != ''){ 
@@ -2424,6 +2426,7 @@ function resetISearch(){
 	$('#intakes .btn-group button').removeClass('active'); 
 	$('#intakes .btn-group button:first-child').addClass('active');
 	$('#intakes input[type=checkbox]').prop('checked', false);
+	drawIntakeTable();
 }
 function goSearchEnforcement(){
 	if($('#eSearchInput').val() != ''){ 
@@ -2469,7 +2472,7 @@ function goSearchEnforcement(){
 		$('#enforcementTable tbody tr').addClass('hide'); 
 		$('#enforcementTable tbody tr.cmp').removeClass('hide');
 		$('#enforcements .searchCriteria .cmp').removeClass('hide');
-	}
+	} else { $('#enforcements .searchCriteria .cmp').addClass('hide'); }
 	if( $('#appealDue').prop('checked') == true ) { 
 		console.log('appeal due date checked');
 		$('#enforcementTable').DataTable().destroy();
@@ -2495,7 +2498,7 @@ function goSearchEnforcement(){
 		$('#enforcementTable tbody tr').addClass('hide'); 
 		$('#enforcementTable tbody tr.appealDue').removeClass('hide');
 		$('#enforcements .searchCriteria .appealDue').removeClass('hide');
-	}
+	} else { $('#enforcements .searchCriteria .appealDue').addClass('hide'); }
 	if( $('#eAdvancedSearch-showhide').hasClass('show') ) { 
 		$('#eAdvancedSearchLink').click();
 	}
@@ -2515,6 +2518,7 @@ function resetESearch(){
 	$('#enforcements .btn-group button').removeClass('active'); 
 	$('#enforcements .btn-group button:first-child').addClass('active');
 	$('#enforcements input[type=checkbox]').prop('checked', false);
+	drawEnforcementTable();
 }
 
 </script>
