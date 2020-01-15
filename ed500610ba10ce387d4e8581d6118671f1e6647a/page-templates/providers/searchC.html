@@ -123,7 +123,7 @@
 	  <!-- InstanceBeginEditable name="mainContent" -->		  
 
       <h1>Search</h1>
-         
+             
 	  <nav class="nav nav-horizontal parent-tab" style="margin-bottom: 2rem;">
         <a class="nav-link active" href="#providers" data-toggle="tab" role="tab">Providers</a>
         <a class="nav-link" href="#surveys" data-toggle="tab" role="tab">Surveys</a>
@@ -364,13 +364,20 @@
 					<a href="#" class="btn btn-outline-primary dropdown-toggle mr-3" id="sortLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-sort"></i> Sort</a>
 					<div class="dropdown-menu" aria-labelledby="sortLink">
 						<p class="dropdown-header mt-2">Sort results by:</p>
-						<button class="dropdown-item"><i class="far fa-check"></i> Provider Name</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider Type</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Operating Status</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Deemed Status</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> ID</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Certification Status</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Address</button>
+						<button class="dropdown-item"><i class="far fa-check"></i> Provider Name (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider Name (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider Type (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider Type (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Operating Status (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Operating Status (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Deemed Status (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Deemed Status (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> ID (0-9)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> ID (9-0)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Certification Status (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Certification Status (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Address (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Address (Z-A)</button>
 						<!--<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> </button>-->
 					</div>
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
@@ -399,25 +406,25 @@
 				<div class="card deemed">
 					<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10"><div class="row">
+			<div class="col-lg-12"><div class="row">
 			<div class="col-md-6 col-lg-4 col-xl-4">
-			<h5 class="card-title"><a href="#">A&amp;L Home Care and Training Center, LLC</a></h5>
-				<h6 class="card-subtitle mb-2">Home Health Agency | <i class="fas fa-square success"></i> Open | Deemed</h6>
+			<h5 class="card-title"><a href="#">A&amp;L Home Care and Training Center, LLC</a><br><small>6129 County Road, #107<br>
+Proctorville, IL 63222</small></h5>
+				
 			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3">
+			<div class="col-md-6 col-lg-3 col-xl-3">
 			<dl>
-			<dt>ID</dt>
+			
 			<dd>CCN 368130 <span class="badge badge-info">Certified</span></dd>
 				</dl>
 			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3">
-			<dl><dt>Address</dt>
-			<dd>6129 County Road, #107<br>
-Proctorville, IL 63222</dd></dl>
+			<div class="col-md-6 col-lg-5 col-xl-5">
+			<dl>
+			<dd>Home Health Agency | <i class="fas fa-square success"></i> Open | Deemed</dd></dl>
 			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+			<div class="col-md-6 ls hide">
 				<dl><dt>Last Survey</dt>
-			<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd></dl>
+			<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd></dl>
 		</div>
 				
 				</div></div>
@@ -432,25 +439,25 @@ Proctorville, IL 63222</dd></dl>
 					<div class="card bright recert">
   <div class="card-body">
 <div class="row">
-			<div class="col-lg-10"><div class="row">
+			<div class="col-lg-12"><div class="row">
 			<div class="col-md-6 col-lg-4 col-xl-4">
-			<h5 class="card-title"><a href="provider-profile.html">BrightHope</a></h5>
-    <h6 class="card-subtitle mb-2">Hospice | <i class="fas fa-square success"></i> Open | Non-Deemed</h6>
+			<h5 class="card-title"><a href="provider-profile.html">BrightHope</a><br><small>667 Bent Ridge Lane, Suite 1000<br>
+      Barrington, IL 60010</small></h5>
+    <h6 class="card-subtitle mb-2"></h6>
 			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3">
+			<div class="col-md-6 col-lg-3 col-xl-3">
 			<dl>
-			<dt>ID</dt>
+			
 			<dd>iQIES 123456 <span class="badge badge-light">Pending Certification</span></dd>
 				</dl>
 			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3">
-			<dl><dt>Address</dt>
-			<dd>667 Bent Ridge Lane, Suite 1000<br>
-      Barrington, IL 60010</dd></dl>
+			<div class="col-md-6 col-lg-5 col-xl-5">
+			<dl>
+			<dd>Hospice | <i class="fas fa-square success"></i> Open | Non-Deemed</dd></dl>
 			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+			<div class="col-md-6 ls hide">
 				<dl><dt>Last Survey</dt>
-			<dd><a href="#">19A3 - H1</a><br><small>Initial Certification - 03/31/2000</small><br>7210 <small>days since last survey</small></dd></dl>
+			<dd><a href="#">19A3 - H1</a><br><small>Initial Certification - 03/31/2000 | <strong>7210</strong> days since last survey</small></dd></dl>
 		</div>
 				
 				</div></div>
@@ -466,29 +473,28 @@ Proctorville, IL 63222</dd></dl>
 <div class="card deemed">
 	<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Encompass Health Braintree Hospital of Braintree</a></h5>
-<h6 class="card-subtitle mb-2">Hospital | <i class="fas fa-square success"></i> Open | Deemed</h6>
+<h5 class="card-title"><a href="#">Encompass Health Braintree Hospital of Braintree</a><br><small>250 Pond Street<br>
+        Braintree, IL 63222</small></h5>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-3 col-xl-3">
 						<dl>
-							<dt>ID</dt>
-<dd>CCN 223027  | FACID IL1234112233 <span class="badge badge-info">Certified</span></dd>
+							
+<dd>CCN 223027 <span class="badge badge-info">Certified</span><br>FACID IL1234112233 </dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-5 col-xl-5">
 						<dl>
-							<dt>Address</dt>
-<dd>250 Pond Street<br>
-        Braintree, IL 63222</dd>
+							
+<dd>Hospital | <i class="fas fa-square success"></i> Open | Deemed</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+					<div class="col-md-6 ls hide">
 						<dl>
 							<dt>Last Survey</dt>
-<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd>
+<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd>
 						</dl>
 					</div>
 				</div>
@@ -504,29 +510,28 @@ Proctorville, IL 63222</dd></dl>
 <div class="card deemed">
 	<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Florence Health Care Services &amp; Training Center</a></h5>
-    <h6 class="card-subtitle mb-2">Home Health Agency | <i class="fas fa-square dark"></i> Closed | Deemed</h6>
+<h5 class="card-title"><a href="#">Florence Health Care Services &amp; Training Center</a><br><small>2401 Avenue J, Suite 240<br>
+        Arlington, IL 63225</small></h5>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-3 col-xl-3">
 						<dl>
-							<dt>ID</dt>
+							
 <dd>CCN 677863 <span class="badge badge-dark">Terminated</span></dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-5 col-xl-5">
 						<dl>
-							<dt>Address</dt>
-<dd>2401 Avenue J, Suite 240<br>
-        Arlington, IL 63225</dd>
+							
+<dd>Home Health Agency | <i class="fas fa-square dark"></i> Closed | Deemed</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+					<div class="col-md-6 ls hide">
 						<dl>
 							<dt>Last Survey</dt>
-<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd>
+<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd>
 						</dl>
 					</div>
 				</div>
@@ -542,29 +547,28 @@ Proctorville, IL 63222</dd></dl>
 <div class="card good">
 	<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Good Neighbor HHC of Baxter</a></h5>
-<h6 class="card-subtitle mb-2">Home Health Agency | <i class="fas fa-square success"></i> Open | Non-Deemed</h6>
+<h5 class="card-title"><a href="#">Good Neighbor HHC of Baxter</a><br><small>14387 Edgewood Drive<br>
+        Baxter, IL 63231</small></h5>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-3 col-xl-3">
 						<dl>
-							<dt>ID</dt>
-<dd>CCN 247269 | FACID IL5321112233445566 <span class="badge badge-info">Certified</span></dd>
+							
+<dd>CCN 247269 <span class="badge badge-info">Certified</span><br>FACID IL5321112233445566 </dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-5 col-xl-5">
 						<dl>
-							<dt>Address</dt>
-<dd>14387 Edgewood Drive<br>
-        Baxter, IL 63231</dd>
+						
+<dd>Home Health Agency | <i class="fas fa-square success"></i> Open | Non-Deemed</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+					<div class="col-md-6 ls hide">
 						<dl>
 							<dt>Last Survey</dt>
-<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd>
+<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd>
 						</dl>
 					</div>
 				</div>
@@ -580,29 +584,28 @@ Proctorville, IL 63222</dd></dl>
 <div class="card good suspended">
 	<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Good Samaritan Home Health of Brainerd</a></h5>
-<h6 class="card-subtitle mb-2">Home Health Agency | <i class="fas fa-square success"></i> Open | Suspended</h6>
+<h5 class="card-title"><a href="#">Good Samaritan Home Health of Brainerd</a><br><small>804 Wright Street<br>
+        Brainerd, IL 63227</small></h5>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-3 col-xl-3">
 						<dl>
-							<dt>ID</dt>
-<dd>CCN 248032 | FACID IL764211223344 <span class="badge badge-info">Certified</span></dd>
+							
+<dd>CCN 248032  <span class="badge badge-info">Certified</span><br>FACID IL764211223344</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-5 col-xl-5">
 						<dl>
-							<dt>Address</dt>
-<dd>804 Wright Street<br>
-        Brainerd, IL 63227</dd>
+						
+<dd>Home Health Agency | <i class="fas fa-square success"></i> Open | Suspended</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+					<div class="col-md-6 ls hide">
 						<dl>
 							<dt>Last Survey</dt>
-<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd>
+<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd>
 						</dl>
 					</div>
 				</div>
@@ -618,29 +621,28 @@ Proctorville, IL 63222</dd></dl>
 <div class="card deemed terminated">
 	<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Grainger Co Health Dept</a></h5>
-<h6 class="card-subtitle mb-2">Home Health Agency | <i class="fas fa-square dark"></i> Closed | Deemed</h6>
+<h5 class="card-title"><a href="#">Grainger Co Health Dept</a><br><small>PO Box 27 Main Street<br>
+        Rutledge, IL 63222</small></h5>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-3 col-xl-3">
 						<dl>
-							<dt>ID</dt>
+							
 <dd>CCN 447064 <span class="badge badge-dark">Terminated</span></dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-5 col-xl-5">
 						<dl>
-							<dt>Address</dt>
-<dd>PO Box 27 Main Street<br>
-        Rutledge, IL 63222</dd>
+							
+<dd>Home Health Agency | <i class="fas fa-square dark"></i> Closed | Deemed</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+					<div class="col-md-6 ls hide">
 						<dl>
 							<dt>Last Survey</dt>
-<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd>
+<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd>
 						</dl>
 					</div>
 				</div>
@@ -656,29 +658,29 @@ Proctorville, IL 63222</dd></dl>
 <div class="card deemed">
 	<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Highsmith Rainey Memorial Hospital</a></h5>
-<h6 class="card-subtitle mb-2">Hospital | <i class="fas fa-square success"></i> Open | Deemed</h6>
+<h5 class="card-title"><a href="#">Highsmith Rainey Memorial Hospital</a><br><small>150 Robeson Street, 4th Floor<br>
+      Fayetteville, IL 63222</small></h5>
+
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-3 col-xl-3">
 						<dl>
-							<dt>ID</dt>
-<dd>CCN 342014 | FACID IL85321122334 <span class="badge badge-info">Certified</span></dd>
+							
+<dd>CCN 342014 <span class="badge badge-info">Certified</span><br>FACID IL85321122334</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-5 col-xl-5">
 						<dl>
-							<dt>Address</dt>
-<dd>150 Robeson Street, 4th Floor<br>
-      Fayetteville, IL 63222</dd>
+							
+<dd>Hospital | <i class="fas fa-square success"></i> Open | Deemed</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+					<div class="col-md-6 ls hide">
 						<dl>
 							<dt>Last Survey</dt>
-<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd>
+<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd>
 						</dl>
 					</div>
 				</div>
@@ -694,29 +696,28 @@ Proctorville, IL 63222</dd></dl>
 <div class="card deemed">
 	<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Laguna Rainbow Home Care</a></h5>
-<h6 class="card-subtitle mb-2">Home Health Agency | <i class="fas fa-square success"></i> Open | Deemed</h6>
+<h5 class="card-title"><a href="#">Laguna Rainbow Home Care</a><br><small>State Road 23 South<br>
+        Casa Blanca, IL 63222</small></h5>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-3 col-xl-3">
 						<dl>
-							<dt>ID</dt>
-<dd>CCN 327144 | FACID IL9621112233 <span class="badge badge-info">Certified</span></dd>
+							
+<dd>CCN 327144 <span class="badge badge-info">Certified</span><br>FACID IL9621112233</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-5 col-xl-5">
 						<dl>
-							<dt>Address</dt>
-<dd>State Road 23 South<br>
-        Casa Blanca, IL 63222</dd>
+							
+<dd>Home Health Agency | <i class="fas fa-square success"></i> Open | Deemed</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+					<div class="col-md-6 ls hide">
 						<dl>
 							<dt>Last Survey</dt>
-<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd>
+<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd>
 						</dl>
 					</div>
 				</div>
@@ -732,29 +733,28 @@ Proctorville, IL 63222</dd></dl>
 <div class="card recert">
 	<div class="card-body">
 		<div class="row">
-			<div class="col-lg-10">
+			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Laguna Rainbow Home Health Agency</a></h5>
-<h6 class="card-subtitle mb-2">Home Health Agency | <i class="fas fa-square success"></i> Open | Non-Deemed</h6>
+<h5 class="card-title"><a href="#">Laguna Rainbow Home Health Agency</a><br><small>PO Box 236<br>
+      New Laguna, IL 63222</small></h5>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-3 col-xl-3">
 						<dl>
-							<dt>ID</dt>
-<dd>iQIES 327046 | FACID IL1199112556677<span class="badge badge-light">Pending Certification</span></dd>
+						
+<dd>iQIES 327046 <span class="badge badge-light">Pending Certification</span><br>FACID IL1199112556677</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="col-md-6 col-lg-5 col-xl-5">
 						<dl>
-							<dt>Address</dt>
-<dd>PO Box 236<br>
-      New Laguna, IL 63222</dd>
+						
+<dd>Home Health Agency | <i class="fas fa-square success"></i> Open | Non-Deemed</dd>
 						</dl>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3 ls hide">
+					<div class="col-md-6 ls hide">
 						<dl>
 							<dt>Last Survey</dt>
-<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small><br>5475 <small>days since last survey</small></dd>
+<dd><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005 | <strong>5475</strong> days since last survey</small></dd>
 						</dl>
 					</div>
 				</div>
@@ -1030,13 +1030,20 @@ Proctorville, IL 63222</dd></dl>
 					<a href="#" class="btn btn-outline-primary dropdown-toggle mr-3" id="sortLinkS" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-sort"></i> Sort</a>
 					<div class="dropdown-menu" aria-labelledby="sortLinkS">
 						<p class="dropdown-header mt-2">Sort results by:</p>
-						<button class="dropdown-item"><i class="far fa-check"></i> Survey Exit Date</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey ID</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Type</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Status</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Category</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Citations</button>
+						<button class="dropdown-item"><i class="far fa-check"></i> Survey Exit Date (Oldest - Newest)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Exit Date (Newest - Oldest)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey ID (0-9)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey ID (9-0)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Type (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Type (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Status (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Status (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Category (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Category (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Citations (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Citations (Z-A)</button>
 						<!--<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> </button>-->
 					</div>
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLinkS" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
@@ -1075,23 +1082,18 @@ Proctorville, IL 63222</dd></dl>
 				<div class="row">
 					<div class="col-lg-10">
 						<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">19A3-H1</a></h5>
-<h6 class="card-subtitle mb-2">Health Survey | <i class="fas fa-square info"></i> Writing in Progress | Exit 03/01/2020</h6>
+							<div class="col-md-6 col-lg-6 col-xl-7">
+<h5 class="card-title"><a href="#">19A3-H1</a><br><small>Health Survey | <i class="fas fa-square info"></i> Writing in Progress | Exit 03/01/2020 | Initial Certification</small></h5>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Provider</dt> <dd><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>CCN 368130</dd>
+								 <dd><a href="#">A&amp;L Home Care and Training Center, LLC</a><br><small>CCN 368130</small></dd>
 								</dl>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Category</dt> <dd><ul><li>Initial Certification</li></ul></dd>
-								</dl>
-							</div>
+							
 							<div class="col-md-6 col-lg-2 col-xl-2">
 								<dl>
-									<dt>Citations</dt> <dd> <a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
+									<dd> <a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 Citations</a>
           <div class="dropdown-menu text-content" aria-labelledby="citationList1">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -1136,25 +1138,21 @@ Proctorville, IL 63222</dd></dl>
 				<div class="row">
 					<div class="col-lg-10">
 						<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">20A3-H2</a></h5>
-<h6 class="card-subtitle mb-2">Health Survey | <i class="fas fa-square success"></i> Writing Complete | Exit 02/27/2020</h6>
+							<div class="col-md-6 col-lg-6 col-xl-7">
+<h5 class="card-title"><a href="#">20A3-H2</a><br><small>Health Survey | <i class="fas fa-square success"></i> Writing Complete | Exit 02/27/2020 | Initial Certification, Complaint</small></h5>
+
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Provider</dt> <dd><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</dd>
+									<dd><a href="provider-profile-hospice.html">BrightHope</a><br><small>IQIES 123456</small></dd>
 								</dl>
 							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<dl>
-									<dt>Category</dt> <dd><ul><li>Initial Certification</li><li>Complaint</li></ul></dd>
-								</dl>
-							</div>
+							
 							<div class="col-md-6 col-lg-2 col-xl-2">
 								<dl>
-									<dt>Citations</dt> 
+									
 									<dd> 
-										<a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
+										<a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 Citations <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
           								<div class="dropdown-menu text-content" aria-labelledby="allegationList">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -1193,7 +1191,7 @@ Proctorville, IL 63222</dd></dl>
 						</div>
 					</div>
 					<div class="col-lg-2 text-justify">
-						<a href="survey-brighthope.html" class="btn btn-link">Create Revisit</a>
+						<a href="survey-brighthope.html" class="btn btn-outline-primary">Create Revisit</a>
 					</div>	
 				</div>
 			</div>
@@ -1539,14 +1537,22 @@ Proctorville, IL 63222</dd></dl>
 					<a href="#" class="btn btn-outline-primary dropdown-toggle mr-3" id="sortLinkI" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-sort"></i> Sort</a>
 					<div class="dropdown-menu" aria-labelledby="sortLinkI">
 						<p class="dropdown-header mt-2">Sort results by:</p>
-						<button class="dropdown-item"><i class="far fa-check"></i> Intake Start Date</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake ID</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake Type</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake Status</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Triage Priority</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Allegations</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Due Date</button>
+						<button class="dropdown-item"><i class="far fa-check"></i> Intake Start Date (Oldest - Newest)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake Start Date (Newest - Oldest)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake ID (0-9)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake ID (9-0)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake Type (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake Type (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake Status (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Intake Status (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Triage Priority (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Triage Priority (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Allegations (0-9)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Allegations (9-0)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Due Date (Oldest - Newest)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Survey Due Date (Newest - Oldest)</button>
 						<!--<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> </button>-->
 					</div>
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLinkI" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
@@ -1574,24 +1580,24 @@ Proctorville, IL 63222</dd></dl>
 					<div class="col-lg-10">
 						<div class="row">
 							<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Complaint 12345</a></h5>
-<h6 class="card-subtitle mb-2">Under Investigation | Non-Immediate Jeopardy-High<br>Started 01/01/2020 | Survey Due 03/01/2020</h6>
+<h5 class="card-title"><a href="#">Complaint 12345</a><br><small>Under Investigation | Non-Immediate Jeopardy-High | Started 01/01/2020</small></h5>
+
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Provider</dt> <dd><a href="#">Good Neighbor HHC of Baxter</a><br>CCN 247269 | FACID IL5321112233445566</dd>
+									<dd><a href="#">Good Neighbor HHC of Baxter</a><br><small>CCN 247269<br>FACID IL5321112233445566</small></dd>
 								</dl>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Starting Survey</dt> <dd><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (Exit 12/01/2019)</dd>
+									<dt>Starting Survey</dt> <dd><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br><small>Exit 12/01/2019 | Due 03/01/2020</small></dd>
 								</dl>
 							</div>
 							<div class="col-md-6 col-lg-2 col-xl-2">
 								<dl>
-									<dt>Allegations</dt> 
+									
 									<dd>
-										<a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
+										<a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 Allegations</a>
           <div class="dropdown-menu text-content" aria-labelledby="allegationList">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -1621,12 +1627,11 @@ Proctorville, IL 63222</dd></dl>
 					<div class="col-lg-10">
 						<div class="row">
 							<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">Incident 3265</a></h5>
-<h6 class="card-subtitle mb-2">Triage/Prioritization | Not Applicable<br>Started 02/12/2020</h6>
+<h5 class="card-title"><a href="#">Incident 3265</a><br><small>Triage/Prioritization | Not Applicable | Started 02/12/2020</small></h5>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Provider</dt> <dd><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</dd>
+									 <dd><a href="provider-profile-hospice.html">BrightHope</a><br><small>IQIES 123456</small></dd>
 								</dl>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
@@ -1636,9 +1641,9 @@ Proctorville, IL 63222</dd></dl>
 							</div>
 							<div class="col-md-6 col-lg-2 col-xl-2">
 								<dl>
-									<dt>Allegations</dt> 
+								
 									<dd>
-										<a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+										<a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1 Allegation</a>
           <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -1983,14 +1988,20 @@ Proctorville, IL 63222</dd></dl>
 					<a href="#" class="btn btn-outline-primary dropdown-toggle mr-3" id="sortLinkE" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-sort"></i> Sort</a>
 					<div class="dropdown-menu" aria-labelledby="sortLinkE">
 						<p class="dropdown-header mt-2">Sort results by:</p>
-						<button class="dropdown-item"><i class="far fa-check"></i> Enforcement Start Date</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Enforcement ID</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Enforcement Type</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Starting Survey</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Case Status</button>
-						
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider</button>
-						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Sanctions</button>
+						<button class="dropdown-item"><i class="far fa-check"></i> Enforcement Start Date (Newest - Oldest)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Enforcement Start Date (Oldest - Newest)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Enforcement ID (0-9)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Enforcement ID (9-0)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Enforcement Type (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Enforcement Type (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Starting Survey (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Starting Survey (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Case Status (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Case Status (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Provider (Z-A)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Sanctions (A-Z)</button>
+						<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> Sanctions (Z-A)</button>
 						
 						<!--<button class="dropdown-item"><i class="far fa-check" style="color: white;"></i> </button>-->
 					</div>
@@ -2022,24 +2033,23 @@ Proctorville, IL 63222</dd></dl>
 					<div class="col-lg-10">
 						<div class="row">
 							<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">1234</a></h5>
-<h6 class="card-subtitle mb-2">Federal | Open - Active | Start 01/01/2020</h6>
+<h5 class="card-title"><a href="#">1234</a><br><small>Federal | Open - Active | Start 01/01/2020</small></h5>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Provider</dt> <dd><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</dd>
+									 <dd><a href="provider-profile-hospice.html">BrightHope</a><br><small>IQIES 123456</small></dd>
 								</dl>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Starting Survey</dt> <dd><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (Exit 12/01/2019) <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></dd>
+									<dt>Starting Survey</dt> <dd><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br><small>Exit 12/01/2019 | <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></small></dd>
 								</dl>
 							</div>
 							<div class="col-md-6 col-lg-2 col-xl-2">
 								<dl>
-									<dt>Sanctions</dt> 
+									
 									<dd>
-										<a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+										<a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1 Sanction</a>
           <div class="dropdown-menu text-content" aria-labelledby="sanctionList">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -2076,24 +2086,23 @@ Proctorville, IL 63222</dd></dl>
 					<div class="col-lg-10">
 						<div class="row">
 							<div class="col-md-6 col-lg-4 col-xl-4">
-<h5 class="card-title"><a href="#">3245</a></h5>
-<h6 class="card-subtitle mb-2">State | Open - Under Appeal | Start 12/23/2019</h6>
+<h5 class="card-title"><a href="#">3245</a><br><small>State | Open - Under Appeal | Start 12/23/2019</small></h5>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Provider</dt> <dd><a href="#">Laguna Rainbow Home Care</a><br>CCN 327144 | FACID IL9621112233</dd>
+									<dd><a href="#">Laguna Rainbow Home Care</a><br><small>CCN 327144<br>FACID IL9621112233</small></dd>
 								</dl>
 							</div>
 							<div class="col-md-6 col-lg-4 col-xl-3">
 								<dl>
-									<dt>Starting Survey</dt> <dd><a href="#">XYZ0-H1 <i class="fal fa-external-link"></i></a> (Exit 11/23/2019)</dd>
+									<dt>Starting Survey</dt> <dd><a href="#">XYZ0-H1 <i class="fal fa-external-link"></i></a><br><small>Exit 11/23/2019</small></dd>
 								</dl>
 							</div>
 							<div class="col-md-6 col-lg-2 col-xl-2">
 								<dl>
-									<dt>Sanctions</dt> 
+									
 									<dd>
-										<a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
+										<a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 Sanctions</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
           <div class="dropdown-menu text-content" aria-labelledby="sanctionList2">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -2134,6 +2143,7 @@ Proctorville, IL 63222</dd></dl>
         	<p class="iq-no-results hide noResults" role="status">No enforcements found for this search.</p>
           </div>
       </div>                         
+                               
          
 <!--<div class="modal fade" id="confirmSearchSettings" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -2455,7 +2465,7 @@ function resetISearch(){
     $('#intakeTable .card').removeClass('hide'); 
     $('#intakes .noResults').addClass('hide'); 
     $('#iSearchResults .baCount').html('Results: 1-10 of 112 Intakes'); 
-    $('#iSearchResults nav').removeClass('hide'); 
+    //$('#iSearchResults nav').removeClass('hide'); 
 	$('#intakes .searchCriteria li > div').addClass('hide'); 
 	$('#intakes .searchCriteria li > div.state').removeClass('hide'); 
 	$('#intakes input').val('');
@@ -2511,7 +2521,7 @@ function resetESearch(){
     $('#enforcementTable .card').removeClass('hide'); 
     $('#enforcements .noResults').addClass('hide'); 
     $('#eSearchResults .baCount').html('Results: 2 Enforcements'); 
-    $('#eSearchResults nav').removeClass('hide'); 
+    //$('#eSearchResults nav').removeClass('hide'); 
 	$('#enforcements .searchCriteria li > div').addClass('hide'); 
 	$('#enforcements .searchCriteria li > div.state').removeClass('hide'); 
 	$('#enforcements input').val('');
