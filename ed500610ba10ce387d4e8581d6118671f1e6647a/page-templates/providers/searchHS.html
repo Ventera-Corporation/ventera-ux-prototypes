@@ -100,6 +100,18 @@
     </div>
 	<div class="container-fluid" id="mainContent">
 	  <!-- InstanceBeginEditable name="pageLevelErrors" -->	
+		<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
+  <div class="toast-header">
+    <strong class="mr-auto">UI Note</strong>
+    <small></small>
+    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    <a href="index.html" class="return-link">Go back to Index Page</a>
+  </div>
+</div>
 	  <div class="alert alert-warning hide" role="alert">
 		<div class="alert-content">You do not have permission to manage this provider's information.</div>
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -809,10 +821,10 @@
   				<section id="sSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span></p>
  
-<table class="display nowrap" id="surveyTable" style="width:100%">
+<table class="display nowrap" id="surveyTable" style="width: 100%">
   <thead>
     <tr>
-	  <th class="sortable ascending"><span>Survey ID</span></th>
+	  <th><span>Survey ID</span></th>
 	  <th><span>POC Status</span></th>
 	  <th><span>Survey Start</span></th>
 	  <th><span>Responsible Staff/Surveyor</span></th>
@@ -856,15 +868,15 @@
       <td></td>
     </tr>
     <tr class="ij sod">
-	  <td style="min-width: 8rem;"><a href="survey-brighthope.html">FFB-H1</a></td>
+	  <td><a href="survey-brighthope.html">FFB-H1</a></td>
 	  <td>Pending</td>
 	  <td>12/12/2019</td>
 	  <td>Roberta Carr, Rebecca Moray, Zachary Taggart</td>
 	  <td>12/07/2019</td>
 	  <td><ul><li>Initial Certification</li>
 		  <li>Complaint</li></ul></td>
-      <td style="min-width: 8rem;">Open</td>
-	  <td style="min-width: 8rem;">02/27/2020</td>
+      <td>Open</td>
+	  <td>02/27/2020</td>
 	  <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
           <div class="dropdown-menu text-content" aria-labelledby="allegationList">
 			  <button type="button" class="close" aria-label="Close">
@@ -1240,26 +1252,30 @@
   				<section id="iSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span></p>
 
-<table class="display nowrap" id="intakeTable" style="width:100%">
+<table class="display responsive" id="intakeTable" style="width: 100%;">
   <thead>
     <tr>
-	  <th style="min-width: 9rem;"><span>Intake ID</span></th>
+
+	  <th><span>Intake ID</span></th>
 	  <th><span>Status</span></th>
+	  <th><span>Starting Survey</span></th>
 	  <th><span>Priority</span></th>
       <th><span>Provider</span></th>
 	  <th><span>Allegations</span></th>
-	  <th style="min-width: 9rem;"><span>Intake Start</span></th>
-	  <th style="min-width: 9rem;"><span>Survey Due</span></th>
+	  <th><span>Intake Start</span></th>
+	  <th><span>Survey Due</span></th>
    
     </tr>
   </thead>
   <tbody>
     <tr class="">
-	  <td style="min-width: 8rem;"><a href="intake-new2.html">Complaint 12345</a></td>
-	  <td>Under Investigation<br><a href="survey-brighthope.html">View Survey</a></td>
+	 
+      <td><a href="intake-new2.html">Complaint 12345</a></td>
+	  <td>Under Investigation</td>
+	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br>Exit 12/01/2019</td>
 	  <td>Non-Immediate Jeopardy-High</td>
-      <td style="min-width: 15rem;"><a href="provider-profile-blank.html">Good Neighbor HHC of Baxter</a><br>CCN 247269 | FACID IL5321112233445566</td>
-      <td style="min-width: 8rem;"><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
+      <td><a href="#">Good Neighbor HHC of Baxter</a><br>CCN 247269<br>FACID IL5321112233445566</td>
+      <td><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
           <div class="dropdown-menu text-content" aria-labelledby="allegationList">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -1268,16 +1284,18 @@
 			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Moderate</small></li></ul>
   		  </div>
 	  </td>
-	  <td style="min-width: 8rem;">01/01/2020</td>
-	  <td style="min-width: 8rem;">03/01/2020</td>
+	  <td>01/01/2020</td>
+	  <td>03/01/2020</td>
      
     </tr>
     <tr class="">
-	  <td style="min-width: 8rem;"><a href="intake-new.html">Incident 3265</a></td>
-	  <td>Under Investigation<br><a href="survey-brighthope.html">View Survey</a></td>
-	  <td>Non-Immediate Jeopardy-Low</td>
-      <td style="min-width: 15rem;"><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
-      <td style="min-width: 8rem;"><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+	 
+      <td><a href="intake-new.html">Incident 3265</a></td>
+	  <td>Triage/Prioritization</td>
+	  <td><span class="iq-not-available">Not Applicable</span></td>
+	  <td><span class="iq-not-available">Not Applicable</span></td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a><br>IQIES 123456</td>
+      <td><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
           <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
@@ -1286,8 +1304,8 @@
 			  </ul>
   		  </div>
 	  </td>
-	  <td style="min-width: 8rem;">02/12/2020</td>
-	  <td style="min-width: 8rem;">03/15/2020</td>
+	  <td>02/12/2020</td>
+	  <td>03/15/2020</td>
      
     </tr>
   </tbody>
@@ -1634,8 +1652,8 @@
 <table class="display nowrap" id="enforcementTable" style="width:100%">
   <thead>
     <tr>
-	  <th style="min-width: 9rem;"><span>Enforcement ID</span></th>
-	  <th style="min-width: 9rem;"><span>Enforcement Start</span></th>
+	  <th><span>Enforcement ID</span></th>
+	  <th><span>Enforcement Start</span></th>
 	  <th><span>Starting Survey</span></th>
 	  <th><span>Sanctions</span></th>
 	  <th><span>CMP Amount Due</span></th>
@@ -1648,8 +1666,8 @@
   </thead>
   <tbody>
     <tr class="appealDue">
-	  <td style="min-width: 8rem;"><a href="../enforcement/enforcement.html">1234</a></td>
-	  <td style="min-width: 8rem;">01/01/2020</td>
+	  <td><a href="../enforcement/enforcement.html">1234</a></td>
+	  <td>01/01/2020</td>
 	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> (12/01/2019) <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
 	  <td><a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
           <div class="dropdown-menu text-content" aria-labelledby="sanctionList">
@@ -1671,8 +1689,8 @@
      
     </tr>
     <tr class="cmp">
-	  <td style="min-width: 8rem;"><a href="../enforcement/enforcement-new.html">3245</a></td>
-	  <td style="min-width: 8rem;">12/23/2019</td>
+	  <td><a href="../enforcement/enforcement-new.html">3245</a></td>
+	  <td>12/23/2019</td>
 	  <td><a href="survey-brighthope.html">XYZ0-H1 <i class="fal fa-external-link"></i></a> (11/23/2019)</td>
 	   <td><a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
           <div class="dropdown-menu text-content" aria-labelledby="sanctionList2">
