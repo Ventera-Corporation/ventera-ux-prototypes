@@ -133,6 +133,7 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .form-control {
 }
 input:not([type=checkbox]):not([type=radio]):disabled, select:disabled, textarea:disabled, .form-control:disabled { background-color: #d6d7d9; border: 1px solid #AEB0B5; opacity: 1;}
 input[type=text]:read-only, input[type=date]:read-only { border: 0; background-color: #f1f1f1;  }
+input[type=text].read-only-text:read-only { border: 0; background-color: #fff; padding: 0; color: #212121; }
 input[type=text]:read-only:focus, input[type=date]:read-only:focus, textarea:read-only:focus { outline: none; }
 .input-group > .form-control { width: 1% !important; }
 .iqies-required-text { font-size: .875rem; margin-bottom: 2rem; }
