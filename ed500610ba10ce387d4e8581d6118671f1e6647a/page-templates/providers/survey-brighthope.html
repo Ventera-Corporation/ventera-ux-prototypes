@@ -39,20 +39,17 @@
           </header>
 <main>
 <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                          <a href="index.html">Home</a>
+                          <a href="../global/global-landing-menu.html">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                          <a href="providers-landing.html">Providers</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                          <a href="provider-profile-blank.html">BrightHope</a>
+                          <a href="searchC.html#surveys">Search</a>
                         </li>
                         <li class="breadcrumb-item">
                           Survey FFB-H1
@@ -62,7 +59,7 @@
                     <div class="iq-page-header-content">
                       <h1>Survey FFB-H1</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -75,7 +72,7 @@
               </div>
             </div>
             <div class="iq-summary-bar">
-              <div class="container">
+              <div class="container-fluid">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
@@ -110,7 +107,7 @@
             </div>
           </div>
     
-  <div class="container" id="mainContent">
+  <div class="container-fluid" id="mainContent">
     <!--<div class="row">
       <div class="col">
         <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
@@ -126,7 +123,8 @@
           <div class="alert-content"><div class="row">
               <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
               <div class="col-sm-11">
-                 <p> Unable to save. Please review and correct the following:</p> 
+                 <h2>Unable to Save</h2>
+				  <p> Please review and correct the following:</p> 
                   <ul>
                       <li><a href="#address1M">Address 1</a> is required</li>
                       <li><a href="#cityM">City</a> is required</li>
@@ -824,26 +822,29 @@
                   <div class="table-wrapper">  <table class="table table-striped addedStaffMembers">
   <thead>
     <tr>
-      <th scope="col" class="sortable descending"><span>Name</span></th>
+      <th class="sortable">Team Coordinator</th>
+		<th scope="col" class="sortable descending"><span>Name</span></th>
+	  
       <th scope="col" class="sortable"><span>Management Unit</span></th>
       <th scope="col" class="sortable"><span>Work Unit</span></th>
    <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr><td><div class="custom-control custom-radio">
+              <input type="radio" id="cb1" name="cb" checked class="custom-control-input">
+              <label class="custom-control-label" for="cb1"></label>
+              </div></td>
       <td><p>Smith, Adam</p></td>
+	  
       <td><p>OHLS Staff</p></td>
       <td><p>OHLS Staff</p></td>
-      <td><a href="#">Delete</a></td>
+      <td><a href="#" data-toggle="modal" data-target="#noDelete">Delete</a></td>
     </tr>
                       </tbody>
                       </table>
                 </div>
-				  <div class="form-group">
-					<label>Team Coordinator <span class="iq-asterisk">*</span></label>
-					<select style="width: 25rem;"><option>Smith, Adam</option></select>
-				  </div>
+				  
             </section>
           </div>
           <div class="tab-pane " id="tab3" role="tabpanel"
@@ -3168,6 +3169,28 @@
       <div class="modal-footer">
         
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+	
+	<div class="modal" id="noDelete" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Unable to Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         This team member is a team coordinator and cannot be deleted. Reassign another team member as team coordinator. 
+         
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
         
       </div>
     </div>

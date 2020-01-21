@@ -136,7 +136,7 @@
 
       <h1>Search</h1>
              
-	  <nav class="nav nav-horizontal parent-tab" style="margin-bottom: 2rem;">
+	  <nav class="nav nav-horizontal" style="margin-bottom: 2rem;">
         <a class="nav-link active" href="#providers" data-toggle="tab" role="tab">Providers</a>
         <a class="nav-link" href="#surveys" data-toggle="tab" role="tab">Surveys</a>
         <a class="nav-link" href="#intakes" data-toggle="tab" role="tab">Intakes</a>
@@ -2228,8 +2228,10 @@ Proctorville, IL 63222</small></h5>
   <script src="../../hhaung/js/BsMultiSelect.js"></script>
   <script src="../../../src/assets/js/scripts.js"></script>
   <!-- InstanceBeginEditable name="footerScripts" -->
+	 <script src="../../hhaung/js/jquery.stickytabs.js"></script>
 <script>
 	  $(document).ready(function () {
+		$('.nav-horizontal').stickyTabs();
 	    $('[data-toggle="tooltip"]').tooltip(); 
 	    $("select.multiselect").bsMultiSelect();
 	    window.setTimeout(function() {
