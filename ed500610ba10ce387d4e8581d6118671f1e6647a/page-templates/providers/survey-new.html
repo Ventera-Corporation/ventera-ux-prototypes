@@ -5,19 +5,17 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>New Survey</title>
-<link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
-    <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/hha.css">
- 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
-
+<!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<!-- to match design system definition -->
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
 </head>
-
 <body>
 <header>
 	<div class="container-fluid">
@@ -39,20 +37,17 @@
           </header>
 <main>
 <div class="iq-page-header-wrapper inverted">
-            <div class="container">
+            <div class="container-fluid">
               <div class="iq-page-header">
                 <div class="row">
                   <div class="col d-flex flex-column justify-content-between">
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                          <a href="index.html">Home</a>
+                          <a href="../global/global-landing-menu.html">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                          <a href="providers-landing.html">Providers</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                          <a href="provider-profile-blank.html">BrightHope</a>
+                          <a href="searchC.html#surveys">Search</a>
                         </li>
                         <li class="breadcrumb-item">
                           New Survey
@@ -62,7 +57,7 @@
                     <div class="iq-page-header-content">
                       <h1>New Survey</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -75,12 +70,12 @@
               </div>
             </div>
             <div class="iq-summary-bar hide">
-              <div class="container">
+              <div class="container-fluid">
                 <div class="row ">
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
               <p>Survey Status</p>
-                      <p>New</p>
+                      <p>Open - Writing in Progress</p>
                     </div>
                     <div class="iq-summary-bar-data" data-index="2">
                       <p>Survey Category</p>
@@ -110,7 +105,7 @@
             </div>
           </div>
     
-  <div class="container" id="mainContent">
+  <div class="container-fluid" id="mainContent">
     <!--<div class="row">
       <div class="col">
         <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
@@ -126,7 +121,8 @@
           <div class="alert-content"><div class="row">
               <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
               <div class="col-sm-11">
-                 <p> Unable to save. Please review and correct the following:</p> 
+                 <h2>Unable to Save</h2>
+				  <p> Please review and correct the following:</p> 
                   <ul>
                       <li><a href="#address1M">Address 1</a> is required</li>
                       <li><a href="#cityM">City</a> is required</li>
@@ -192,32 +188,27 @@
                   
                   
                 </div>
-            <div class="col-md-6">
+              <div class="col-md-6">
                 <fieldset>
                 <legend>Federal Categories</legend>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="fc1" checked class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="fc1">Initial Certification </label>
+                  <input type="checkbox" id="fc1" checked disabled class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="fc1">Initial Certification <a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="This category is required and cannot be removed"><i class="fal fa-info-circle fa-lg"></i></a></label>
                 </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="fc2" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="fc2">Sample Validation <!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Uncheck all Open Intakes below first."><i class="fal fa-info-circle fa-lg"></i></a>--></label>
-                </div>
+                
               </fieldset>
               </div>
                 <div class="col-md-6">
                 <fieldset>
                 <legend>State Categories</legend>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="sc1" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="sc1">Re-Licensure <!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Description on how to enable"><i class="fal fa-info-circle fa-lg"></i></a>--></label>
+                  <input type="checkbox" id="sc1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="sc1">Initial Licensure <!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Description on how to enable"><i class="fal fa-info-circle fa-lg"></i></a>--></label>
                 </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="sc2" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="sc2">Licensure Complaint <!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Uncheck all Open Intakes below first."><i class="fal fa-info-circle fa-lg"></i></a>--></label>
-                </div>
+                
               </fieldset>
               </div>
+                 
                  
              <!--   <div class="col-md-6">
                 <fieldset>
@@ -824,22 +815,29 @@
                   <div class="table-wrapper">  <table class="table table-striped addedStaffMembers">
   <thead>
     <tr>
-      <th scope="col" class="sortable descending"><span>Name</span></th>
+      <th class="sortable">Team Coordinator</th>
+		<th scope="col" class="sortable descending"><span>Name</span></th>
+	  
       <th scope="col" class="sortable"><span>Management Unit</span></th>
       <th scope="col" class="sortable"><span>Work Unit</span></th>
-   <th scope="col">&nbsp;</th>
+   <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr><td><div class="custom-control custom-radio">
+              <input type="radio" id="cb1" name="cb" checked class="custom-control-input">
+              <label class="custom-control-label" for="cb1"></label>
+              </div></td>
       <td><p>Smith, Adam</p></td>
+	  
       <td><p>OHLS Staff</p></td>
       <td><p>OHLS Staff</p></td>
-      <td><a href="#">Delete</a></td>
+      <td><a href="#" data-toggle="modal" data-target="#noDelete">Delete</a></td>
     </tr>
                       </tbody>
                       </table>
                 </div>
+				  
             </section>
           </div>
           <div class="tab-pane " id="tab3" role="tabpanel"
@@ -3169,6 +3167,28 @@
     </div>
   </div>
 </div>
+	
+	<div class="modal" id="noDelete" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Unable to Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         This team member is a team coordinator and cannot be deleted until the role is reassigned to another team member. 
+         
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 <footer>
   <div class="container">
     <div class="row">
@@ -3219,26 +3239,42 @@
     </div>
   </div>
 </footer>
-<script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script> 
-<script src="../../../src/assets/third-party/popper/popper.min.js"></script> 
-<script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script> 
-<script src="../../../src/assets/js/scripts.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include datatables for responsive table -->
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <!-- to include multi-select dropdown selector -->
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../src/assets/js/scripts.js"></script>
+  <script src="../../hhaung/js/jquery.stickytabs.js"></script>
 <script>
- var editor = new FroalaEditor('div.editTextDiv', { charCounterMax: 500}); 
-
-        
-$(document).ready(function () {
-
- $('[data-toggle="tooltip"]').tooltip(); 
-window.setTimeout(function() {
-    $(".alert-success").fadeTo(4000, 0).slideUp(8000, function(){
-        $(this).addClass('hide'); 
-    });
-}, 5000);
- 
-});
-
+	  $(document).ready(function () {
+		$('.nav-horizontal').stickyTabs();
+	    $('[data-toggle="tooltip"]').tooltip(); 
+	    $("select.multiselect").bsMultiSelect();
+	    window.setTimeout(function() {
+			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+				$(this).addClass('hide'); 
+			});
+		}, 5000);
+    	$('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        });
+		
+	  });
     </script>
 </body>
 </html>

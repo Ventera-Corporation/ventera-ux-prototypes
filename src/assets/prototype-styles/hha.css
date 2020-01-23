@@ -135,6 +135,7 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .form-control {
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 input:not([type=checkbox]):not([type=radio]):disabled, select:disabled, textarea:disabled, .form-control:disabled { background-color: #d6d7d9; border: 1px solid #AEB0B5; opacity: 1;}
+button[aria-disabled=true], input[aria-disabled=true], select[aria-disabled=true] { background-color: #d6d7d9; border: 1px solid #AEB0B5; opacity: 1; cursor: not-allowed }
 input[type=text]:read-only, input[type=date]:read-only { border: 0; background-color: #f1f1f1;  }
 input[type=text].read-only-text:read-only { border: 0; background-color: #fff; padding: 0; color: #212121; }
 input[type=text]:read-only:focus, input[type=date]:read-only:focus, textarea:read-only:focus { outline: none; }
@@ -471,6 +472,7 @@ div.alert { margin-bottom: 2rem;}
 .alert-content ul { margin-bottom: 0; padding-left: 3rem; line-height: 1rem; }
 .alert .close, .alert button.close { font-size: 2rem !important; font-weight: 100; line-height: 1rem; }
 .toast-header .close, .dropdown-menu .close { font-size: 2rem !important; font-weight: 100; line-height: 1rem;}
+.dropdown-menu { height: 41vh; overflow: auto; }
 .dropdown-menu .close { margin-top: 0rem; margin-right: .5rem;}
 .dropdown-menu.text-content { padding: .75rem 0 .5rem .5rem; box-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
 .dropdown-menu ul { margin: 0 2.25rem 0 0; padding-left: 1.25rem;}
