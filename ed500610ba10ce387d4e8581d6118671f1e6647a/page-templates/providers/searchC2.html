@@ -1854,9 +1854,9 @@ Proctorville, IL 63222</small></h5>
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
 							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#eSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="cmp hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
-        <span>Enforcements with outstanding CMP</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.cmp').addClass('hide');  $('#enforcementTable > div').removeClass('hide'); $('#enforcementTable .card .cmp').addClass('hide'); "><span aria-hidden="true">&times;</span></button></div></div></li>
+        <span>Enforcements with outstanding CMP</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.cmp').addClass('hide');  $('#enforcementTable > div').removeClass('hide'); $('#enforcementTable .card .cmp').addClass('hide'); resetESearch() "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="appealDue hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
-        <span>Enforcements with past appeal waiver due date</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.appealDue').addClass('hide');  $('#enforcementTable .card').removeClass('hide');">
+        <span>Enforcements with past appeal waiver due date</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.appealDue').addClass('hide');  $('#enforcementTable > div').removeClass('hide'); $('#enforcementTable .card .waiver').addClass('hide'); resetESearch()">
           <span aria-hidden="true">&times;</span></button></div></div></li>
 		</ul>
   				<section id="eSearchResults">
@@ -1869,7 +1869,7 @@ Proctorville, IL 63222</small></h5>
 					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-12">
-<h5 class="card-title"><a href="../enforcement/enforcement-new.html">1234</a><br><small>Federal | Open - Active | Start 01/01/2020</small></h5>
+<h5 class="card-title"><a href="../enforcement/enforcement-new.html">Enforcement&nbsp; 1234</a><br><small>Federal | Open - Active | Start 01/01/2020</small></h5>
 							</div>
 							<div class="col-lg-8">
 								<div class="form-group"><a href="provider-profile-hospice.html">BrightHope</a><br><small>IQIES 123456</small></div>
@@ -1910,7 +1910,7 @@ Proctorville, IL 63222</small></h5>
 					<div class="col-lg-12">
 						<div class="row">
 							<div class="col-lg-12">
-<h5 class="card-title"><a href="../enforcement/enforcement-new.html">3245</a><br><small>State | Open - Under Appeal | Start 12/23/2019</small></h5>
+<h5 class="card-title"><a href="../enforcement/enforcement-new.html">Enforcement 3245</a><br><small>State | Open - Under Appeal | Start 12/23/2019</small></h5>
 							</div>
 							<div class="col-lg-8">
 								<div class="form-group"><a href="provider-profile-blank.html">Laguna Rainbow Home Care</a><br><small>CCN 327144 | FACID IL9621112233</small></div>
@@ -1923,7 +1923,7 @@ Proctorville, IL 63222</small></h5>
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			   <ul>
-				   <li>Civil Monetary Penalty<br><small>Yes</small> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span> </li><li>Directed Plan of Correction<br><small>Yes</small></li>
+				   <li>Civil Monetary Penalty<br><small>In Effect: Yes</small> | <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span> </li><li>Directed Plan of Correction<br><small>In Effect: Yes</small></li>
 			  </ul>			  
   		  </div></div>
 							</div>
