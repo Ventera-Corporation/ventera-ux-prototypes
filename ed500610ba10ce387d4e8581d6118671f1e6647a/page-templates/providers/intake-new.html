@@ -3194,7 +3194,7 @@
                     <div class="col-sm-12 file-description">
                         <p><label>File Description
                         <textarea class="file-description-text">This is the first letter sent to the provider</textarea>
-                        </label><span class="fdt"></span></p>
+                        </label><span class="fdt help-text"></span></p>
                     </div>
                 </div>
               </div>
@@ -3671,7 +3671,7 @@
                    
                     <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
                         <textarea class="form-control file-description-text" id="fileDescriptionInput"></textarea>
-                        </label><span class="fdt">Characters: <span id="charNum">0/256</span></span></p>
+                        </label><span class="fdt help-text">Limit to 256 characters</span></p>
            
                     </div>
                 </div>
@@ -4012,9 +4012,13 @@ $(document).ready(function () {
           if (len >= max) {
             var char = len - max; 
             $('.fdt').addClass('iq-input-error-msg'); 
-            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+			$('.fdt').html('Character limit exceeded by ' + char );
+            //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
           } else {
-            $('#charNum').html(len + '/256.');
+            //$('#charNum').html(len + '/256.');
+			$('.fdt').removeClass('iq-input-error-msg'); 
+			  
+			$('.fdt').html('Limit to ' + max + ' characters');
           }
         });
 });
