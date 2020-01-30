@@ -395,7 +395,7 @@
 		</ul>
   				<section id="pSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#pSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#pSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
-<table class="display responsive nowrap" id="providerTable" style="width:100%">
+<table class="display responsive" id="providerTable" style="width:100%">
   <thead>
     <tr>
       <th>&nbsp;</th>
@@ -413,21 +413,21 @@
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">A&amp;L Home Care and Training Center, LLC</a></td>
-      <td>CCN 368130</td>
-      <td>Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>CCN&nbsp;368130</td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
-      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>6129 County Road, #107, Proctorville, IL 63222</td>
       </tr>
     <tr class="bright il recert">
       <td>&nbsp;</td>
       <td><a href="provider-profile.html">BrightHope</a></td>
       <td>iQIES 123456</td>
-      <td>Non-Deemed</td>
-      <td>Pending Certification</td>
-      <td>Open</td>
+      <td><span class="badge badge-light">Non-Deemed</span></td>
+      <td><span class="badge badge-light">Pending Certification</span></td>
+      <td class="deemed il"><span class="badge badge-success">Open</span></td>
       <td>Hospice</td>
       <td><a href="#">19A3 - H1</a><small>Initial Certification - 03/31/2000</small></td>
       <td class="deemed il">667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010</td>
@@ -435,11 +435,11 @@
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">Encompass Health Braintree Hospital of Braintree</a></td>
-      <td>CCN 223027<br>
-        FACID IL1234112233</td>
-      <td>Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>CCN&nbsp;223027<br>
+        FACID&nbsp;IL1234112233</td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Hospital</td>
       <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>250 Pond Street, Braintree, IL 63222</td>
@@ -447,10 +447,10 @@
     <tr class="deemed">
       <td>&nbsp;</td>
       <td><a href="#">Florence Health Care Services &amp; Training Center</a></td>
-      <td>CCN 677863</td>
-      <td>Deemed</td>
-      <td>Terminated</td>
-      <td>Closed</td>
+      <td>CCN&nbsp;677863</td>
+      <td class="deemed il"><span class="badge badge-info">Deemed</span></td>
+      <td><span class="badge badge-dark">Terminated</span></td>
+      <td><span class="badge badge-dark">Closed</span></td>
       <td>Home Health Agency</td>
       <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>2401 Avenue J, Suite 240, Arlington, IL 63225</td>
@@ -458,11 +458,11 @@
     <tr class="good">
       <td>&nbsp;</td>
       <td><a href="#">Good Neighbor HHC of Baxter</a></td>
-      <td>CCN 247269<br>
-        FACID IL5321112233445566</td>
-      <td>Non-Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>CCN&nbsp;247269<br>
+        FACID&nbsp;IL5321112233445566</td>
+      <td class="deemed il"><span class="badge badge-info">Deemed</span></td>
+      <td class="deemed il"><span class="badge badge-info">Certified</span></td>
+      <td class="deemed il"><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
       <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>14387 Edgewood Drive, Baxter, IL 63231</td>
@@ -470,11 +470,11 @@
     <tr class="good suspended il">
       <td>&nbsp;</td>
       <td><a href="#">Good Samaritan Home Health of Brainerd</a></td>
-      <td>CCN 248032<br>
-        FACID IL764211223344</td>
-      <td>Suspended</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>CCN&nbsp;248032<br>
+        FACID&nbsp;IL764211223344</td>
+      <td class="bright il recert"><span class="badge badge-warning">Suspended</span></td>
+      <td class="deemed il"><span class="badge badge-info">Certified</span></td>
+      <td class="deemed il"><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
       <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>804 Wright Street, Brainerd, IL 63227</td>
@@ -482,10 +482,10 @@
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">Grainger Co Health Dept</a></td>
-      <td>CCN 447064</td>
-      <td>Deemed</td>
-      <td>Terminated</td>
-      <td>Closed</td>
+      <td>CCN&nbsp;447064</td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td class="deemed"><span class="badge badge-dark">Terminated</span></td>
+      <td class="deemed"><span class="badge badge-dark">Closed</span></td>
       <td>Home Health Agency</td>
       <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>PO Box 27 Main Street, Rutledge, IL 63222</td>
@@ -493,11 +493,11 @@
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">Highsmith Rainey Memorial Hospital</a></td>
-      <td>CCN 342014<br>
-        FACID IL85321122334<br></td>
-      <td>Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>CCN&nbsp;342014<br>
+        FACID&nbsp;IL85321122334<br></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Hospital</td>
       <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>150 Robeson Street, 4th Floor, Fayetteville, IL 63222</td>
@@ -505,11 +505,11 @@
     <tr class="deemed il">
       <td>&nbsp;</td>
       <td><a href="#">Laguna Rainbow Home Care</a></td>
-      <td>CCN 327144<br>
-        FACID IL9621112233<br></td>
-      <td>Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>CCN&nbsp;327144<br>
+        FACID&nbsp;IL9621112233<br></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
       <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>State Road 23 South, Casa Blanca, IL 63222</td>
@@ -518,10 +518,10 @@
       <td>&nbsp;</td>
       <td><a href="#">Laguna Rainbow Home Health Agency</a></td>
       <td>iQIES 327046<br>
-        FACID IL1199112556677<br></td>
-      <td>Non-Deemed</td>
-      <td>Pending</td>
-      <td>Open</td>
+        FACID&nbsp;IL1199112556677<br></td>
+      <td class="bright il recert"><span class="badge badge-light">Non-Deemed</span></td>
+      <td class="bright il recert"><span class="badge badge-light">Pending Certification</span></td>
+      <td class="deemed il"><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
       <td><a href="#">20A3 - H2</a><small>Recertification - 12/31/2005</small></td>
       <td>PO Box 236, New Laguna, IL 63222</td>
@@ -540,7 +540,7 @@
 	<div class="col-lg-10 col-md-9">
 	<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
 	</div>
-					</div>
+				  </div>
 
 					
         		</section>
@@ -868,7 +868,7 @@
   				<section id="sSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
  
-<table class="diplay responsive nowrap" id="surveyTable" style="width: 100%;">
+<table class="diplay responsive" id="surveyTable" style="width: 100%;">
   <thead>
     <tr>
 	  <th></th>
@@ -891,7 +891,7 @@
 	  <td></td>
       <td><a href="#">19A3-H1</a></td>
       <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>
-        CCN 368130</td>
+        CCN&nbsp;368130</td>
       <td>01/28/2020</td>
       <td><ul>
         <li>Initial Certification</li>
@@ -1300,7 +1300,7 @@
   				<section id="iSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
 
-<table class="diplay responsive nowrap" id="intakeTable" style="width: 100%">
+<table class="diplay responsive" id="intakeTable" style="width: 100%">
   <thead>
     <tr>
 	  <th></th>
@@ -1319,8 +1319,8 @@
 	  <td></td>
       <td><a href="intake-new2.html">Complaint 12345</a></td>
       <td><a href="#">Good Neighbor HHC of Baxter</a><br>
-        CCN 247269<br>
-        FACID IL5321112233445566</td>
+        CCN&nbsp;247269<br>
+        FACID&nbsp;IL5321112233445566</td>
       <td>01/01/2020</td>
       <td>Under Investigation</td>
 	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br>Exit 12/01/2019</td>
@@ -1697,7 +1697,7 @@
   				<section id="eSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of enforcements filtered by state: Illinois. </span><span class="baCount">Results: 2 Enforcements</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
 
-<table class="diplay responsive nowrap" id="enforcementTable" style="width: 100%">
+<table class="diplay responsive" id="enforcementTable" style="width: 100%">
   <thead>
     <tr>
 	  <th></th>
@@ -1742,7 +1742,7 @@
 	  <td></td>
       <td><a href="../enforcement/enforcement-new.html">3245</a></td>
       <td><a href="provider-details.html">Laguna Rainbow Home Care</a><br>
-        CCN 327144 | FACID IL9621112233</td>
+        CCN&nbsp;327144 | FACID&nbsp;IL9621112233</td>
 	  <td>12/23/2019</td>
 	  <td><a href="survey-brighthope.html">XYZ0-H1 <i class="fal fa-external-link"></i></a> <br>
 	    Exit 11/23/2019</td>
@@ -1880,6 +1880,7 @@
 			  "order": [[ 1, 'asc' ]],
 			  columnDefs: [
 				{ className: 'control', orderable: false, targets: 0 },
+				{ className: 'none', targets: 8 },
 				{ responsivePriority: 0, targets: 1 },
 				//{ "orderable": false, "targets": -1 }
 				{ 'visible': false, 'targets': 7 }

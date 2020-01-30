@@ -24,6 +24,7 @@
 
   <main>
 	<div class="container-fluid" id="mainContent" >
+     
       <button id="menu-toggle" class="btn btn-sm btn-primary d-none d-sm-block">
     <span class="iq-proto-menu-hamburger d-none">Show Menu</span>
     <span class="iq-proto-menu-close">Hide Menu</span>
@@ -1062,7 +1063,7 @@
             <p><label>File Description
               <textarea class="form-control file-description-text" maxlength="256"></textarea>
               </label>
-              <span class="help-text">Characters: 0/256</span>
+              <span class="help-text">Limit to 256 characters</span>
               </p>
             </div>
           </div>
@@ -1078,7 +1079,7 @@
             <p><label>File Description
 			  <textarea class="form-control file-description-text" id="fileDescriptionInput" rows="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru</textarea>
              
-              </label><span class="fdt iq-input-error-msg">Characters: <span id="charNum">443/256. You have exceeded the character limit by 187 characters.</span></span>
+              </label><span class="fdt help-text iq-input-error-msg">Character limit exceeded by 187</span>
               
               </p>
             </div>
@@ -2509,9 +2510,13 @@ Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
           if (len >= max) {
             var char = len - max; 
             $('.fdt').addClass('iq-input-error-msg'); 
-            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+			$('.fdt').html('Character limit exceeded by ' + char );
+            //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
           } else {
-            $('#charNum').html(len + '/256.');
+            //$('#charNum').html(len + '/256.');
+			$('.fdt').removeClass('iq-input-error-msg'); 
+			  
+			$('.fdt').html('Limit to ' + max + ' characters');
           }
         });
 		$('table.responsive').DataTable( {
