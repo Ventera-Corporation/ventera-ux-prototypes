@@ -4021,9 +4021,11 @@ $(document).ready(function () {
           if (len >= max) {
             var char = len - max; 
             $('.fdt').addClass('iq-input-error-msg'); 
-			$(''fdt).html('Character limit exceeded by ' + char );
+			$('.fdt').html('Character limit exceeded by ' + char );
             //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
           } else {
+			$('.fdt').removeClass('iq-input-error-msg'); 
+			$('.fdt').html('Limit to '+max+ ' characters');
             //$('#charNum').html(len + '/256.');
           }
         });
