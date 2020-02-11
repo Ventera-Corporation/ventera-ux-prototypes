@@ -8,6 +8,7 @@ h3 { font-size: 1.5rem; font-weight: 400;}
 h4 { font-size: 1.25rem; font-weight: 400; }
 h5 { font-size: 1rem; font-weight: 700; }
 p, .form-group { margin-bottom: 2rem; }
+h3.iq-label { font-size: 1rem !important; font-weight: bold; margin-bottom: 1rem; }
 
 /* LISTS */
 ul li, ol li { padding: .5rem 0; }
@@ -37,7 +38,14 @@ small.bottom { font-size: 1rem; font-weight: 400; display: block;}
 small.bottom .iq-not-available { margin-left: 0; }
 .card-header small.bottom { margin-bottom: .5rem; }
 
+.card.dashed { border: 1px dashed #AEB0B5; padding: 1rem; }
+.card.dashed .badge-pill { text-align: left; padding: .35rem 1rem; margin-bottom: .5rem; }
+
+.iq-static-card { position: fixed; top: 30vh;}
+
 .card.iq-card { margin-bottom: 1rem; }
+.card .iq-footer { margin-top: 2rem; }
+.card .iq-footer .btn-full { width: 100%; }
 .iq-nav { margin-bottom: 2rem; }
 
 .card-title { margin-bottom: 2rem;  }
@@ -270,11 +278,14 @@ label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616
 .iq-list-buttons .btn { float: right; margin-left: 1rem; white-space: nowrap; }
 
 /* TAG or BADGE */
-.badge.badge-pill { background-color: #E1F3F8; color: #112E51; font-size: .875rem; vertical-align: middle;}
+.badge.badge-pill { background-color: #E1F3F8; color: #112E51; font-size: .875rem; vertical-align: middle; padding: .35rem .75rem;}
 .badge.badge-pill span { line-height: 1.25rem; vertical-align: middle;}
 .badge.badge-pill:hover, .badge.badge-pill:hover .close { background-color: #112E51; color: white; }
 .badge.badge-pill .close { font-size: 1.25rem; line-height: 1rem; font-weight: 100;  margin-left: .5rem; opacity: .75;  }
 .badge.badge-pill .close:hover { background-color: #112E51; color: #fff; opacity: 1;  }
+.badge.badge-pill.badge-white, .badge.badge-pill.badge-white:hover { background-color: #fff; border: 1px solid #D6D7D9; color: #212121; }
+.badge.badge-pill.badge-warning, .badge.badge-pill.badge-warning:hover { background-color: #FFF1D2; border: 1px solid #FFF1D2; color: #212121; }
+.badge.badge-pill.badge-clear, .badge.badge-pill.badge-clear:hover { background-color: transparent; border: 1px solid transparent; color: #212121; }
 
 /* ACCORDION */
 .accordion-wrapper { margin-bottom: 2rem; }
