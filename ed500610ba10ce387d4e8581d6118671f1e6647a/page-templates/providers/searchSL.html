@@ -387,7 +387,7 @@
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
 							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#pSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
-							<span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('#providers table.responsive tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+							<span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('#providers table.responsive tbody tr').removeClass('hide');  resetPSearch();"><span aria-hidden="true">&times;</span></button></div></div></li>
 		  			<li><div class="recertP hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
         <span>Providers nearing recertification</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.recertP').addClass('hide'); $('#pSearchResults').removeClass('hide'); 
     $('#providerTable tbody tr').removeClass('hide'); $('#providers .noResults').addClass('hide'); $('#pSearchResults .baCount').html('Results: 1-10 of 112 Providers'); $('#pSearchResults nav').removeClass('hide'); $('#providers input[type=checkbox]').prop('checked', false); drawProviderTable();"><span aria-hidden="true">&times;</span>
@@ -1724,7 +1724,7 @@
 	  <th><span>Provider</span></th>
 	  <th><span>Enforcement</span></th>
 	  <th><span>Enforcement Start</span></th>
-	  <th>Survey Exit Date</th>
+	  <th><span>Survey Exit Date</span></th>
 	  <th><span>Starting Survey</span></th>
 	  <th><span>Case Status</span></th>
 	  <th><span>Sanctions</span></th>
