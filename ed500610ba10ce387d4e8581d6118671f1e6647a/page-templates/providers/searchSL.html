@@ -922,7 +922,7 @@
 	  <td></td>
 	  <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>
 	    CCN&nbsp;368130</td>
-      <td>Health<br><a href="#">19A3-H1</a></td>
+      <td><a href="#">19A3-H1</a><br><small>Health</small></td>
       <td><ul>
         <li>Initial Certification</li>
       </ul></td>
@@ -948,7 +948,7 @@
 	  <td></td>
 	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
 	    IQIES 123456</td>
-      <td>Health<br><a href="survey-brighthope.html">FFB-H1</a></td>
+      <td><a href="survey-brighthope.html">FFB-H1</a><br><small>Health</small></td>
       <td><ul>
         <li>Initial Certification</li>
         <li>Complaint</li>
@@ -1319,7 +1319,7 @@
   				<section id="iSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span><span class="expandCollapse hide"> | <a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
 
-<table class="diplay table table-striped" style="width: 100%">
+<table class="display" id="intakeTable" style="width: 100%">
   <thead>
     <tr>
 	 
@@ -1328,17 +1328,17 @@
 	  <th><span>Intake ID</span></th>
 	  <th><span>Priority</span></th>
 	  <th><span>Status</span></th>
-	  <th><span>Survey Due</span></th>
+	  <th><span class="sortable sorting_asc">Survey Due</span></th>
 	  <th><span>Intake Start</span></th>
     </tr>
   </thead>
   <tbody>
     <tr class="">
 	
-	  <td><a href="#">Good Neighbor HHC of Baxter</a><br>
+	  <td><a href="#">Good Neighbor HHC of Baxter</a><!--<br>
         CCN&nbsp;247269<br>
-        FACID&nbsp;IL5321112233445566</td>
-      <td><a href="intake-new2.html">12345 <small>- Complaint </small></a></td>
+        FACID&nbsp;IL5321112233445566--></td>
+      <td><a href="intake-new2.html">12345</a><br><small>Complaint </small></td>
       <td>Non-Immediate Jeopardy-High</td>
       <td>Under Investigation</td>
 	  <td>03/01/2020</td>
@@ -1346,9 +1346,9 @@
     </tr>
     <tr class="">
 	 
-      <td><a href="provider-profile-hospice.html">BrightHope</a><br>
-        IQIES 123456</td>
-	  <td><a href="intake-new.html">3265 <small>- Incident</small></a></td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a><!--<br>
+        IQIES 123456--></td>
+	  <td><a href="intake-new.html">3265</a><br><small>Incident</small></td>
 	  <td><span class="iq-not-available">Not Applicable</span></td>
       <td>Triage/Prioritization</td>
 	  <td>03/15/2020</td>
@@ -1715,7 +1715,7 @@
 	  <td></td>
 	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
 	    IQIES 123456</td>
-      <td>Federal<br><a href="../enforcement/enforcement.html">1234</a></td>
+      <td><a href="../enforcement/enforcement.html">1234</a><br><small>Federal</small></td>
       <td>01/01/2020</td>
       <td>12/01/2019</td>
 	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
@@ -1739,7 +1739,7 @@
 	  <td></td>
 	  <td><a href="provider-details.html">Laguna Rainbow Home Care</a><br>
 	    CCN&nbsp;327144 | FACID&nbsp;IL9621112233</td>
-      <td>State<br><a href="../enforcement/enforcement-new.html">3245</a></td>
+      <td><a href="../enforcement/enforcement-new.html">3245</a><br><small>State</small></td>
       <td>12/23/2019</td>
       <td>11/23/2019</td>
 	  <td><a href="survey-brighthope.html">XYZ0-H1 <i class="fal fa-external-link"></i></a></td>
@@ -1911,14 +1911,14 @@
 					  lengthMenu: false,
 					  info: false,
 					  searching: false,
-					  responsive: {
-						details: { type: 'column'}
-					  },
-					  'order': [[ 3, 'asc' ]],
+					  //responsive: {
+						//details: { type: 'column'}
+					  //},
+					  'order': [[ 4, 'asc' ]],
 					  columnDefs: [
-						{ className: 'control', orderable: false, targets: 0 },
-						{ responsivePriority: 0, targets: 1 },
-						{ responsivePriority: 1, targets: 3 }
+						//{ className: 'control', orderable: false, targets: 0 },
+						//{ responsivePriority: 0, targets: 1 },
+						//{ responsivePriority: 1, targets: 3 }
 						//{ 'orderable': false, 'targets': -1 }
 					 ]
 });
@@ -2019,14 +2019,14 @@ function drawIntakeTable(){
 		  lengthMenu: false,
 		  info: false,
 		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 3, 'asc' ]],
+		  //responsive: {
+		//	details: { type: 'column'}
+		 // },
+		  'order': [[ 4, 'asc' ]],
 		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: 3 }
+		//	{ className: 'control', orderable: false, targets: 0 },
+		//	{ responsivePriority: 0, targets: 1 },
+		//	{ responsivePriority: 1, targets: 3 }
 			//{ 'orderable': false, 'targets': -1 }
 		 ]
 	});
