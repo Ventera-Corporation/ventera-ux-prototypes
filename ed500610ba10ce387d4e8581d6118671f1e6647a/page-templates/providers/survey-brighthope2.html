@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BrightHope Survey</title>
+<title>Citation Shopping Cart | BrightHope Survey</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -96,7 +96,7 @@
                     </div>
                     <!--<div class="iq-summary-bar-action p-1">
                       <a href="provider-details-hh.html" class="btn btn-link">
-                        View Citation
+                        View Details
                       </a>
                     </div>-->
                   </div>
@@ -118,17 +118,21 @@
           <div class="alert-content">Changes saved successfully</div>
         </div>
         <div class="alert alert-danger errorMsg hide" role="alert">
-          <div class="alert-content">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
                  <h2>Unable to Save</h2>
 				  <p> Please review and correct the following:</p> 
                   <ul>
-                      <li>One or more <a href="#citations">Citations</a> must be added to the Citations to Add list.</li>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
                   </ul>
-             
+              </div></div>
           </div>
         </div>
       </div>
-       <div class="col-sm-5 col-md-4 col-lg-3">
+      <div class="col-sm-5 col-md-4 col-lg-3">
         <nav class="nav flex-column iq-nav">
             <a class="nav-link active" tabindex="0" id="basicInfoTab" href="#basicInfoT" data-toggle="tab" role="tab" aria-controls="basicInfoT" aria-selected="false">Basic Information</a> 
             <a class="nav-link" tabindex="0" id="staffTab" href="#staffT" data-toggle="tab" role="tab" aria-controls="staffT" aria-selected="false">Responsible Staff</a> 
@@ -145,7 +149,7 @@
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="tab-content">
-          <div class="tab-pane" id="basicInfoT" role="tabpanel" aria-labelledby="basicInfoTab">
+          <div class="tab-pane active" id="basicInfoT" role="tabpanel" aria-labelledby="basicInfoTab">
             <section class="edit-view active">
                  <div class="row tabTitle">
               <div class="col-sm-10">
@@ -836,12 +840,12 @@
 				  
             </section>
           </div>
-          <div class="tab-pane active" id="citationsT" role="tabpanel" aria-labelledby="citationsTab">
+          <div class="tab-pane " id="citationsT" role="tabpanel" aria-labelledby="citationsTab">
             <section class="edit-view addCites active">
                  <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Add Citations</h2>
-                <p>Find and add citation tags for this survey. </p>
+                <p>Expand the citation tag to view the regulation text and interpretive guidelines. </p>
               </div>
               
             </div>
@@ -857,13 +861,13 @@
                     <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();}" >
         <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="if($('#citeSearch').val().indexOf('s') > -1 && $('#citeSearch').val().indexOf('m') > -1){ $('#tab3 .staffMembers tbody tr').addClass('hide'); $('#tab3 .staffMembers tbody tr.sm').removeClass('hide'); $('#tab3 .staffMembers .info-text').toggleClass('hide'); }">Search</button>
+         <button type="submit" class="btn btn-outline-primary searchButton" onClick="if($('#citeSearch').val().indexOf('s') > -1 && $('#citeSearch').val().indexOf('m') > -1){ $('#tab3 .staffMembers tbody tr').addClass('hide'); $('#tab3 .staffMembers tbody tr.sm').removeClass('hide'); $('#tab3 .staffMembers .info-text').toggleClass('hide'); }">Search</button>
         </div>
       </div>
-                    <div class="input-group-help-text help-text">Search by keyword or citation tag number</div>
+                    <div class="input-group-help-text help-text">Search by <span class="regText hide">tag title and/or number</span><span class="regText">keyword, citation title, or number</span></div>
                 </div>
               </div>
-              <div class="row hide">
+              <div class="row">
                 <div class="col">
                   <div class="iq-accordion showhide">
             <div class="card no-border">
@@ -904,25 +908,29 @@
                 </div>
               </div>
                
-              <div class="row mt-4 citationsList">
-                <div class="col-md-9" id="citations">
-					<br>
-               <h3 class="iq-label">1-10 of 235 Citations <small>from</small> <select style="display: inline-block; width: auto; "><option>All Regulation Sets</option><option>Emergency Preparedness (FED - E - 1.01)</option><option>Home Health Agencies (FED - G - 11.01)</option></select><span class="info-text hide">Filtered Results: 2 Found</span></h3>
+              <div class="row mt-4 staffMembers">
+                <div class="col-md-12">
+               
                   
                   
                    
-      
+                <nav class="nav nav-horizontal">
+              <a class="nav-link active" href="#h-tab-1" role="tab">1-10 of 235 Citations<span class="info-text hide">Filtered Results: 2 Found</span></a>
+              <a class="nav-link" href="#h-tab-2" role="tab">0 Citations Added</a>
+            </nav>
+            <div class="tab-content">
+                <div class="tab-pane active" id="h-tab-1">
                     <div class="accordion-wrapper">
                     <div class="iq-accordion secondary data-focus">
             <div class="card">
               <div class="card-header d-flex">
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-                  data-toggle="collapse" data-target="#cite1content" type="button" onclick="$(this).toggleClass('expanded');" title="Expand to View Citation" role="link">
+                  data-toggle="collapse" data-target="#cite1content" type="button" onclick="$(this).toggleClass('expanded');" title="Expand to view details" role="link">
                     <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0000 - Initial Comments</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary lsc1Button" title="Add this citation: 0000 - Initial Comments" onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc1').removeClass('hide'); $(this).html('Added'); $('.addedCount').removeClass('hide'); $('.addedCount').html('(1)'); $('.card.dashed .iq-not-available').addClass('hide'); $('.errorMsg').addClass('hide'); ">
+                  <button type="button" class="btn btn-outline-primary" title="Add this citation: 0000 - Initial Comments">
                     Add 
                   </button>
                 </div>
@@ -941,7 +949,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite2content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0100 - General Requirements - Other</span>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0100 - General Requirements - Other</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
@@ -963,9 +971,9 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite3content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0111 - Building Rehabilitation</span></button>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0111 - Building Rehabilitation</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary lsc2Button" onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc2').removeClass('hide'); $(this).html('Added'); $('.addedCount').removeClass('hide'); $('.addedCount').html('(2)');  $('.errorMsg').addClass('hide'); ">
+                  <button type="button" class="btn btn-outline-primary">
                     Add
                   </button>
                 </div>
@@ -984,9 +992,9 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0112 - Sprinkler Requirements for Major Rehabilitation</span></button>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0112 - Sprinkler Requirements for Major Rehabilitation</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary" >
+                  <button type="button" class="btn btn-outline-primary">
                     Add
                   </button>
                 </div>
@@ -1005,7 +1013,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite5content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0131 - Multiple Occupancies</span></button>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0131 - Multiple Occupancies</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1026,7 +1034,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite10content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0132 - Multiple Occupancies - Contiguous Non-Health</span>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0132 - Multiple Occupancies - Contiguous Non-Health</span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
@@ -1048,7 +1056,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite6content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0133 - Multiple Occupancies - Construction Type</span></button>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0133 - Multiple Occupancies - Construction Type</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1069,7 +1077,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite7content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0161 - Building Construction Type and Height</span></button>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0161 - Building Construction Type and Height</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1090,7 +1098,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite8content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0162 - Roofing Systems Involving Combustibles</span></button>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0162 - Roofing Systems Involving Combustibles</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1111,7 +1119,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#cite9content" type="button" onclick="$(this).toggleClass('expanded');">
-                    <span><span class="iq-description">LSC 20120 Health Existing (FED - K - 03.03)</span>0163 - Interior Non-Bearing Wall Construction</span></button>
+                    <span><label>LSC 20120 Health Existing (FED - K - 03.03)</label>0163 - Interior Non-Bearing Wall Construction</span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-outline-primary">
                     Add
@@ -1128,33 +1136,20 @@
           </div>
                     </div>
                     <nav aria-label="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" aria-label="First" type="button">First</button></li><li class="page-item disabled"><button class="page-link previous" aria-label="Previous" type="button">Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><button type="button" class="page-link">2</button></li><li class="page-item"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link next" aria-label="Next" type="button">Next</button></li><li class="page-item"><button type="button" class="page-link last" aria-label="Last">Last</button></li></ul></nav>
-               		<!--<p><a href="#saveCitationsButton">Review citations to add and save</a></p> -->
+                </div> 
+                <div class="tab-pane" id="h-tab-2">
                    
+                  
+                </div>
+            </div>
+                    
                     
                     
                 </div>
-                <div class="col-md-3 iq-static-col position-sticky" id="saveCitationsButton">
-				<div class="sticky-top">	
-					<br>
-				<h3 class="iq-label">Citations to Add <span class="addedCount"></span></h3>
-				<div class="card dashed">
-					<p class="iq-not-available">Add one or more citations.</p>
-					<div class="badge badge-pill lsc1 hide">
-        <span>0000 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide');  $('.addedCount').html(''); $('.card.dashed .iq-not-available').removeClass('hide'); $('.lsc1Button').attr('disabled', false); $('.lsc1Button').html('Add'); " data-toggle="tooltip" title="Remove">
-          <span aria-hidden="true">×</span>
-          </button></div>
-					<div class="badge badge-pill lsc2 hide">
-        <span>0111 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('.addedCount').html('(1)'); $('.lsc2Button').attr('disabled', false); $('.lsc2Button').html('Add'); " data-toggle="tooltip" title="Remove">
-          <span aria-hidden="true">×</span>
-          </button></div>
-					<div class="iq-footer">
-					<button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('.successMsg').removeClass('hide'); $('.edit-view').removeClass('active'); $('.read-view.all').addClass('active');  } else { $('.errorMsg').removeClass('hide'); }">Save</button></div>
-				</div>  
-				</div>
-				</div>
+                
               </div>
 <br>
-              <div class="iq-button-wrapper hide">
+              <div class="iq-button-wrapper">
                 <button class="btn btn-primary" onClick="$('#tab3 .edit-view').removeClass('active');  $('#tab3 .read-view.all').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab3 .tabTitle .btn').removeClass('hide');">Save</button>
                 <button
                             class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');  $('#tab3 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
@@ -1163,17 +1158,26 @@
             <section class="read-view all">
                  <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Citations</h2>
-                <p>Add and manage citation tags for this survey.</p>
-				  <p><button class="btn btn-primary" onclick="$('.edit-view').removeClass('active'); $('.edit-view.addCites').addClass('active');">Add Citations</button></p>
+                <h2>Citations and POC</h2>
+                
               </div>
               <div class="col-md-2">
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>-->
               </div>
             </div>
-                
+                <div class="row"><div class="col-md-12">
+                 <h3>Plan of Correction (POC)</h3>
+                <p>The Plan of Correction can be added once citations have been locked and the Statement of Deficiencies has been sent.</p>
               
-            <div class="row hide">
+                <hr>
+                <h3>Citations</h3>
+                <p class="iq-page-header-description">Add and manage citations for this survey. All citation writing must be marked as complete to lock citations.</p>
+                <div class="iq-button-wrapper">
+                <button class="btn btn-outline-primary">Add Citations</button> <button class="btn btn-outline-primary"><i class="fas fa-lock-alt"></i> Lock Citations</button>
+                </div>
+                </div></div>
+              
+            <div class="row">
                 <div class="col">
                   <div class="iq-accordion showhide">
             <div class="card no-border">
@@ -1278,102 +1282,85 @@
                 </div>
               </div>
                 
-              
-				<div class="row">
-					<div class="col-md-4">
-					</div>
-				<div class="col-md-8 text-right"><span class="info-text"><span class="aoCount">2</span> Citations Total</span> | <a href="#" id="citeStatusLink" data-toggle="dropdown"><small>Citation Status Legend</small> <i class="fal fa-info-circle"></i></a><div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="dropdownMenuButtonLink">
-                 <i class="fal fa-circle-notch"></i> Not Started<br>
-						<i class="far fa-circle"></i> In Progress<br>
-						<i class="fas fa-circle"></i> Ready for Review<br>
-						<i class="fas fa-check-circle"></i> Finalized
-                </div></div>
-				</div>
-				<hr>
-				<div class="accordion-wrapper">
-					
-					<h3 class="iq-label">2 Citations from LSC 20120 Health Existing (FED - K - 03.03)</h3>
-					<div class="iq-accordion secondary">
-        <div class="card ">
-			
-          <div class="card-header d-flex">
-            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions collapsed" data-toggle="collapse" data-target="#cite1" type="button" onclick="$(this).toggleClass('expanded');" aria-expanded="false">
-              <span class="flex-fill" style="min-width: 15rem; "><a href="#" style="font-size: 1.125rem;">0000</a><br><small>Initial Comments</small></span>
-              <span class="flex-fill text-left" style="min-width: 7rem; "><span class="badge badge-pill badge-white">Memo</span></span>
-              <span class="flex-fill text-left"><span class="badge badge-pill badge-clear"><i class="far fa-circle"></i>In Progress</span></span>
-              </button>
-			   <div class="iq-accordion-actions d-flex align-items-center">
-              <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink">
-                <button class="dropdown-item">View Citation</button>
-                <button class="dropdown-item">Edit Citation Details</button>
-                
-                </div>
-			  </div>
-             
-            
-            </div>
-          <div id="cite1" class="collapse" style="">
-            <div class="card-body">
-              <p><span class="badge badge-pill">Initial Certfiication</span></p>
-			 <h4>Findings Summary</h4>	
-				<h5>Deficient Practice Statement</h5>
-				<p>Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Ab optio vero alias facilis nemo deleniti
-              odio
-              rerum autem sunt provident. Accusantium aperiam repudiandae
-              mollitia molestiae error iste, quod ab consequuntur?</p>
-				<h4>Evidence</h4>
-				<h5>Jane Smith's Observations<br><small>Submitted on 01/12/2020 10:10 AM EST</small></h5>
-				
-				<p>Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Ab optio vero alias facilis nemo deleniti
-              odio
-              rerum autem sunt provident. Accusantium aperiam repudiandae
-              mollitia molestiae error iste, quod ab consequuntur?</p>
-				<h4>Attachments</h4>
-				<ul class="no-bullet"><li><a href="#"><i class="fas fa-paperclip"></i> File Name.pdf (203 KB)</a></li></ul>
-				
-				<h3>Regulation Text and Interpretive Guidelines</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-					<div class="iq-accordion secondary">
-        <div class="card ">
-			
-          <div class="card-header d-flex">
-            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions collapsed" data-toggle="collapse" data-target="#cite2" type="button" onclick="$(this).toggleClass('expanded');" aria-expanded="false">
-              <span class="flex-fill" style="min-width: 15rem; "><a href="#" style="font-size: 1.125rem;">0111</a><br><small>Building Rehabilitation</small></span>
-              <span class="flex-fill text-left" style="min-width: 7rem; "><span class="badge badge-pill badge-warning">Condition</span></span>
-              <span class="flex-fill text-left"><span class="badge badge-pill badge-clear"><i class="fal fa-circle-notch"></i>Not Started</span></span>
-              </button>
-			   <div class="iq-accordion-actions d-flex align-items-center">
-              <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2">
-               <button class="dropdown-item">View Citation</button>
-                <button class="dropdown-item">Add Citation Details</button>
-                <button class="dropdown-item">Remove</button>
-                </div>
-			  </div>
-           
-            </div>
-          <div id="cite2" class="collapse" style="">
-            <div class="card-body">
-              Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Ab optio vero alias facilis nemo deleniti
-              odio
-              rerum autem sunt provident. Accusantium aperiam repudiandae
-              mollitia molestiae error iste, quod ab consequuntur?
-              </div>
-            </div>
-          </div>
-        </div>
-		
+              <p class="info-text mt-4"><span class="aoCount">2</span> Citations</p>
+              <div class="iqies-list-row iniComment">
+                <div class="iqies-list-row-header">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h4><a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active');  $('#tab3 .edit-view.cite0').addClass('active');">0000 - Initial Comments</a></h4>
                     </div>
-			  	
-         
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .read-view.editIniComment').addClass('active');">Edit</button>
+                        <button class="btn btn-link float-right">Delete</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="iq-list">
+                    <div class="row">
+                      <div class="col-md-4"><label>Status</label></div>
+                      <div class="col-md-8"><p>Writing Pending</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Last Updated</label></div>
+                      <div class="col-md-8"><p>09/04/2019</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Authors</label></div>
+                      <div class="col-md-8"><p>Jane Smith</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Tag Type</label></div>
+                      <div class="col-md-8"><p>Standard</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Regulation Set</label></div>
+                      <div class="col-md-8"><p>LSC 20120 Health Existing (FED - K - 03.03)</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Survey Category</label></div>
+                      <div class="col-md-8"><p>Initial Certification</p></div>
+                    </div>
+                </div>
+              </div>
+               <div class="iqies-list-row iniComment">
+                <div class="iqies-list-row-header">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h4><a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active');  $('#tab3 .read-view.cite224').addClass('active');">0224 - Horizontal Sliding Doors</a></h4>
+                    </div>
+                    <div class="col-md-4 text-right iq-button-col">
+                      <button class="btn btn-outline-primary float-right" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .edit-view.cite224').addClass('active');">Edit</button>
+                        <button class="btn btn-link float-right">Delete</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="iq-list">
+                    <div class="row">
+                      <div class="col-md-4"><label>Status</label></div>
+                      <div class="col-md-8"><p>Writing in Progress</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Last Updated</label></div>
+                      <div class="col-md-8"><p>09/04/2019</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Authors</label></div>
+                      <div class="col-md-8"><p>Jane Smith</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Tag Type</label></div>
+                      <div class="col-md-8"><p>Element</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Regulation Set</label></div>
+                      <div class="col-md-8"><p>LSC 20120 Health Existing (FED - K - 03.03)</p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4"><label>Survey Category</label></div>
+                      <div class="col-md-8"><p>Initial Certification</p></div>
+                    </div>
+                </div>
+              </div>
             </section>
             <section class="edit-view cite224">
                 <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
