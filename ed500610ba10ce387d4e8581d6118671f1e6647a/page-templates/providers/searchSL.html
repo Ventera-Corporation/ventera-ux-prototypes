@@ -1300,7 +1300,7 @@
 			<section id="iSearchArea">
 				<h2 class="sr-only">Selected Intake Search Criteria</h2>
           		<br>  
-				<div class="float-right">
+				<div class="float-right hide">
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLinkI" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
 					<div class="dropdown-menu" aria-labelledby="exportLinkI">
 						<p class="dropdown-header mt-2">Export results as:</p>
@@ -1317,12 +1317,12 @@
         <span>Roberta Carr</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.reStaff').addClass('hide');  $('#intakeTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
 		</ul>
   				<section id="iSearchResults">
-          			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
+          			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span><span class="expandCollapse hide"> | <a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
 
-<table class="diplay responsive" id="intakeTable" style="width: 100%">
+<table class="diplay table table-striped" style="width: 100%">
   <thead>
     <tr>
-	  <th></th>
+	 
 	  
 	  <th><span>Provider</span></th>
 	  <th><span>Intake ID</span></th>
@@ -1330,51 +1330,29 @@
 	  <th><span>Status</span></th>
 	  <th><span>Survey Due</span></th>
 	  <th><span>Intake Start</span></th>
-	  <th><span>Complaint Survey</span></th>
-      <th><span>Allegations</span></th>
     </tr>
   </thead>
   <tbody>
     <tr class="">
-	  <td></td>
+	
 	  <td><a href="#">Good Neighbor HHC of Baxter</a><br>
         CCN&nbsp;247269<br>
         FACID&nbsp;IL5321112233445566</td>
-      <td><a href="intake-new2.html">Complaint 12345</a></td>
+      <td><a href="intake-new2.html">12345 <small>- Complaint </small></a></td>
       <td>Non-Immediate Jeopardy-High</td>
       <td>Under Investigation</td>
 	  <td>03/01/2020</td>
       <td>01/01/2020</td>
-	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br>Exit 12/01/2019</td>
-      <td><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
-          <div class="dropdown-menu text-content" aria-labelledby="allegationList">
-			  <button type="button" class="close" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				</button>
-			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Moderate</small></li>
-			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Moderate</small></li></ul>
-  		  </div>
-	  </td>
     </tr>
     <tr class="">
-	  <td></td>
+	 
       <td><a href="provider-profile-hospice.html">BrightHope</a><br>
         IQIES 123456</td>
-	  <td><a href="intake-new.html">Incident 3265</a></td>
+	  <td><a href="intake-new.html">3265 <small>- Incident</small></a></td>
 	  <td><span class="iq-not-available">Not Applicable</span></td>
       <td>Triage/Prioritization</td>
 	  <td>03/15/2020</td>
 	  <td>02/12/2020</td>
-	  <td><span class="iq-not-available">Not Applicable</span></td>
-      <td><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
-          <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
-			  <button type="button" class="close" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				</button>
-			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li>
-			  </ul>
-  		  </div>
-	  </td>
     </tr>
   </tbody>
 </table>
