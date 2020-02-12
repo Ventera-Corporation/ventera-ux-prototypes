@@ -999,7 +999,7 @@
                   data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
                     <span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E1 - Establishment of the Emergency Program (EP) <span class="badge badge-warning">Condition</span></span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary" >
+                  <button type="button" class="btn btn-outline-primary lsc3Button"  onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc3').removeClass('hide'); $(this).html('Added'); $('.addedCount').removeClass('hide'); $('.addedCount').html('(3)');  $('.errorMsg').addClass('hide'); ">
                     Add
                   </button>
                 </div>
@@ -1431,15 +1431,19 @@
 				<div class="card dashed">
 					<p class="iq-not-available">Add one or more citations.</p>
 					<div class="badge badge-pill lsc1 hide">
-        <span>0000 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide');  $('.addedCount').html(''); $('.card.dashed .iq-not-available').removeClass('hide'); $('.lsc1Button').attr('disabled', false); $('.lsc1Button').html('Add'); " data-toggle="tooltip" title="Remove">
+        <span>E0 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide');  $('.addedCount').html(''); $('.card.dashed .iq-not-available').removeClass('hide'); $('.lsc1Button').attr('disabled', false); $('.lsc1Button').html('Add'); " data-toggle="tooltip" title="Remove">
           <span aria-hidden="true">×</span>
           </button></div>
 					<div class="badge badge-pill lsc2 hide">
-        <span>0111 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('.addedCount').html('(1)'); $('.lsc2Button').attr('disabled', false); $('.lsc2Button').html('Add'); " data-toggle="tooltip" title="Remove">
+        <span>S0 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('.addedCount').html('(1)'); $('.lsc2Button').attr('disabled', false); $('.lsc2Button').html('Add'); " data-toggle="tooltip" title="Remove">
+          <span aria-hidden="true">×</span>
+          </button></div>
+					<div class="badge badge-pill lsc3 hide">
+        <span>E1 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('.addedCount').html('(2)'); $('.lsc3Button').attr('disabled', false); $('.lsc3Button').html('Add'); " data-toggle="tooltip" title="Remove">
           <span aria-hidden="true">×</span>
           </button></div>
 					<div class="iq-footer">
-					<button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('.successMsg').removeClass('hide'); $('.edit-view').removeClass('active'); $('.read-view.all').addClass('active');  } else { $('.errorMsg').removeClass('hide'); }">Save</button></div>
+					<button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('.successMsg').removeClass('hide'); $('.edit-view').removeClass('active');  $('.read-view.all').addClass('active');  } else { $('.errorMsg').removeClass('hide'); }">Save</button></div>
 				</div>  
 				</div>
 				</div>
@@ -1456,7 +1460,7 @@
               <div class="col-md-10">
                 <h2>Citations</h2>
                 <p>Add and manage citation tags for this survey.</p>
-				  <p><button class="btn btn-primary" onclick="$('.edit-view').removeClass('active'); $('.edit-view.addCites').addClass('active');">Add Citations</button></p>
+				  <p><button class="btn btn-primary" onclick="$('.edit-view').removeClass('active'); $('.read-view').removeClass('active'); $('.edit-view.addCites').addClass('active');">Add Citations</button></p>
               </div>
               <div class="col-md-2">
                 <!--<button class="btn btn-outline-primary hide" onClick="$('#tab3 .edit-view').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>-->
