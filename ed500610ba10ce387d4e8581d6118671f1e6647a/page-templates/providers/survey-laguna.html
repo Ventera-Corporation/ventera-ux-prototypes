@@ -122,7 +122,7 @@
                  <h2>Unable to Save</h2>
 				  <p> Please review and correct the following:</p> 
                   <ul>
-                      <li>One or more <a href="#citations">Citations</a> must be added to the Citations to Add list.</li>
+                      <li>Add at least one <a href="#citations">Citation</a>.</li>
                   </ul>
              
           </div>
@@ -907,7 +907,7 @@
               <div class="row mt-4 citationsList">
                 <div class="col-md-9" id="citations">
 					<br>
-               <h3 class="iq-label">1-10 of 490 Citations <small>from</small> <select style="display: inline-block; width: auto; "><option>All Regulation Sets</option><optgroup title="Federal Regulation Sets"><option>Emergency Preparedness (FED - E - 1.01)</option><option>Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup title="State Regulation Sets"><option>IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select><span class="info-text hide">Filtered Results: 2 Found</span></h3>
+               <h3 class="iq-label">1-10 of 490 Citations <small>from</small> <select style="display: inline-block; width: auto; " onChange="selectRegSet()"><option>All Regulation Sets</option><optgroup title="Federal Regulation Sets"><option>Emergency Preparedness (FED - E - 1.01)</option><option>Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup title="State Regulation Sets"><option>IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select><span class="info-text hide">Filtered Results: 2 Found</span></h3>
                   
                   
                    
@@ -1427,9 +1427,9 @@
                 <div class="col-md-3 iq-static-col position-sticky" id="saveCitationsButton">
 				<div class="sticky-top">	
 					<br>
-				<h3 class="iq-label">Citations to Add <span class="addedCount"></span></h3>
+				<h3 class="iq-label">Added Citations<span class="addedCount"></span></h3>
 				<div class="card dashed">
-					<p class="iq-not-available">Add one or more citations.</p>
+					<p class="iq-not-available">No citations have been added.</p>
 					<div class="badge badge-pill lsc1 hide">
         <span>E0 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide');  $('.addedCount').html(''); $('.card.dashed .iq-not-available').removeClass('hide'); $('.lsc1Button').attr('disabled', false); $('.lsc1Button').html('Add'); " data-toggle="tooltip" title="Remove">
           <span aria-hidden="true">×</span>
@@ -3432,6 +3432,9 @@
         });
 		
 	  });
+	 function selectRegSet(){
+		 
+	 }
     </script>
 </body>
 </html>
