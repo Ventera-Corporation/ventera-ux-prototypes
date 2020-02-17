@@ -110,17 +110,13 @@
 		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 	  </div>
 	  <div class="alert alert-danger errorMsg hide" role="alert">
-          <div class="alert-content"><div class="row">
-              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
-              <div class="col-sm-11">
-                 <p> Unable to save. Please review and correct the following:</p> 
+          <div class="alert-content">
+			  <h2>Unable to Search</h2>
+                 <p>Please review and correct the following:</p> 
                   <ul>
-                      <li><a href="#address1M">Address 1</a> is required</li>
-                      <li><a href="#cityM">City</a> is required</li>
-                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                      <li><a href="#stateIntake">State</a> is required</li>
                   </ul>
-              </div></div>
-          </div>
+		  </div>
         </div> 
       <h1>Search</h1>
          
@@ -565,7 +561,7 @@
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
+        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
 		</div>
         <div class="tab-pane" id="surveys">
         
@@ -968,7 +964,7 @@
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No surveys found for this search.</p>
+        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
         </div>
         <div class="tab-pane" id="intakes">
 			<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
@@ -980,7 +976,8 @@
       </button>
     </div>
   <div class="toast-body">
-     <a href="#" onClick="$('.stateMS').toggleClass('hide'); $('.stateNone').toggleClass('hide');">Toggle View for SA</a><br><small>role with access to data only for his/her assigned state. Note the advanced search area and the state search term pill.</small>
+     <p><a href="#" onClick="$('.stateMS').toggleClass('hide'); $('.stateNone').toggleClass('hide');">Toggle View for SA</a> <small>role with access to data only for his/her assigned state. Note the advanced search area and the state search term pill.</small></p>
+	  <p><small>To view what happens when an RO takes out the last state selection, click on X on selected state pill on top of the search results.</small></p>
 	 
 	
     </div>
@@ -1213,8 +1210,8 @@
 								</div>
 							</div>
 							<div class="col-md-4 col-lg-4 col-xl-3">
-							  <div class="form-group stateMS">
-								  <label>State</label>
+							  <div class="form-group stateMS" id="stateIntake">
+								  <label>State <span class="iq-asterisk">*</span></label>
 								  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -1270,6 +1267,7 @@
                    
 				  </select>
 								  <span class="help-text">Select one or more</span>
+								  <span class="iq-input-error-msg hide">At least one state is required</span>
 								  
 							  </div>
 							  <div class="form-group stateNone hide">
@@ -1320,7 +1318,7 @@
 					</div>
 				</div>
 				<ul class="iq-inline-list searchCriteria">
-					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close stateMS" aria-label="Close" onClick="$('#intakes .searchCriteria li').addClass('hide'); $('#intakes .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#iSearchResults .baCount').html('2 Intakes'); "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close stateMS" aria-label="Close" onClick="$('.errorMsg').removeClass('hide'); $('#intakes .searchCriteria li').addClass('hide'); $('#intakes .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#iSearchResults .baCount').addClass('iq-not-available'); $('#iSearchResults .baCount').html('No results found'); $('#intakeTable').addClass('hide'); $('#stateIntake .help-text').addClass('hide'); $('#stateIntake .iq-input-error-msg').removeClass('hide'); $('#stateIntake .dashboardcode-bsmultiselect li button').click();  "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
 							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#iSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="reStaff hide"><label class="inline ml-2">Responsible Staff/Surveyor: </label> <div class="badge badge-pill">
@@ -1371,7 +1369,7 @@
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No intakes found for this search.</p>
+        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
           </div>
 		<div class="tab-pane" id="enforcements">
         
@@ -1778,7 +1776,7 @@
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No enforcements found for this search.</p>
+        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
           </div>
       </div>                         
          
