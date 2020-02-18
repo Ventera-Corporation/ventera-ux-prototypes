@@ -672,3 +672,13 @@ label.inline { font-weight: normal; font-size: .845rem; display: inline-block; c
 .dashboardcode-bsmultiselect ul.form-control li:last-child { padding: 0; }
 .dashboardcode-bsmultiselect ul.form-control li > input { margin-bottom: 0; height: 2rem !important; }
 
+/* STATUSES */
+.iq-status { display: inline-block; margin-right: .5rem; font-size: 1.6rem; vertical-align: middle; height: 1.25rem; text-align: center; margin-bottom: 0;  }
+.iq-status-not-started:before { content: '\f111'; color: transparent; background: url("../images/icon-status-not-started.svg") no-repeat top left; }
+.iq-status-in-progress:before {content: '\f111'; color: transparent; background: url("../images/icon-status-in-progress.svg") no-repeat top left; }
+.iq-status-review:before { content: '\f111'; color: transparent; background: url("../images/icon-status-review.svg") no-repeat top left; }
+.iq-status-finalized:before {content: '\f111'; color: transparent; background: url("../images/icon-status-finalized.svg") no-repeat top left; }
+.iq-status-open:before { content: '\f111'; color: transparent; background: url("../images/icon-status-open.png") no-repeat top left; }
+.iq-status-closed:before { content: '\f111'; color: transparent; background: url("../images/icon-status-closed.png") no-repeat top left; }
+
+
