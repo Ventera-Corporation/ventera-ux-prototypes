@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laguna Survey</title>
+<title>Laguna Survey - Side Save</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -1439,7 +1439,7 @@
         <span>E1 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('.addedCount').html('(2)'); $('.lsc3Button').attr('disabled', false); $('.lsc3Button').html('Add'); " data-toggle="tooltip" title="Remove">
           <span aria-hidden="true">×</span>
           </button></div>
-					<div class="iq-footer" style="width: 25%"><button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('.successMsg').removeClass('hide'); $('#citationsT .edit-view').removeClass('active');  $('#citationsT .read-view.all').addClass('active'); $('#saveCitationsButton .badge.badge-pill').addClass('hide'); $('#saveCitationsButton .addedCount').html(''); $('#saveCitationsButton .addedCount').addClass('hide'); $('#saveCitationsButton .iq-not-available').removeClass('hide');  } else { $('.errorMsg').removeClass('hide'); }">Save</button> <button
+					<div class="iq-footer"><button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('.successMsg').removeClass('hide'); $('#citationsT .edit-view').removeClass('active');  $('#citationsT .read-view.all').addClass('active'); $('#saveCitationsButton .badge.badge-pill').addClass('hide'); $('#saveCitationsButton .addedCount').html(''); $('#saveCitationsButton .addedCount').addClass('hide'); $('#saveCitationsButton .iq-not-available').removeClass('hide');  } else { $('.errorMsg').removeClass('hide'); }">Save</button> <button
                             class="btn btn-link hide cancelButton" onClick="$('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.all').addClass('active');  $('#citationsT .tabTitle .btn').removeClass('hide'); ">Cancel</button></div>
 				</div>  
 				</div>
@@ -3468,6 +3468,7 @@
 		$('.nav-horizontal').stickyTabs();
 	    $('[data-toggle="tooltip"]').tooltip(); 
 	    $("select.multiselect").bsMultiSelect();
+		var editor = new FroalaEditor('div.editTextDiv'); 
 	    window.setTimeout(function() {
 			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
 				$(this).addClass('hide'); 
