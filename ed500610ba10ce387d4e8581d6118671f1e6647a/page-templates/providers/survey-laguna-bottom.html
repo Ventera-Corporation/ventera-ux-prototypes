@@ -905,7 +905,7 @@
               </div>
                
               <div class="row mt-4 citationsList">
-                <div class="col-md-9" id="citations">
+                <div class="col-md-12" id="citations">
 					<br>
 					<div class="row"><div class="col-md-3" style="vertical-align: bottom"><h3 class="iq-label">1-10 of 490 Citations</h3></div><div class="col-md-9 text-right"><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
      
@@ -1421,34 +1421,40 @@
                     
                     
                 </div>
-                <div class="col-md-3 iq-static-col position-sticky" id="saveCitationsButton">
-				<div class="sticky-top">	
-					<br>
-				<h3 class="iq-label">Added Citations<span class="addedCount"></span></h3>
-				<div class="card dashed">
+                <div class="col-md-12 iq-static-col position-fixed" style="z-index: 1000;" id="saveCitationsButton">
+				<div class="fixed-bottom" style="background-color: white; border-top: 2px solid #ddd;" >	
+			
+				
+				<div class="card dashed mb-0">
+					<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-9" style="padding: 0rem 3rem;">
+					<h3 class="iq-label">Added Citations <span class="addedCount"></span></h3>
 					<p class="iq-not-available">No citations have been added.</p>
 					<div class="badge badge-pill lsc1 hide">
-        <span>E0 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide');  $('.addedCount').html(''); $('.card.dashed .iq-not-available').removeClass('hide'); $('.lsc1Button').attr('disabled', false); $('.lsc1Button').html('Add'); " data-toggle="tooltip" title="Remove">
+        <span>E0 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide');  $('#citationsT .addedCount').html(''); $('#citationsT .card.dashed .iq-not-available').removeClass('hide'); $('#citationsT .lsc1Button').attr('disabled', false); $('#citationsT .lsc1Button').html('Add'); " data-toggle="tooltip" title="Remove">
           <span aria-hidden="true">×</span>
           </button></div>
 					<div class="badge badge-pill lsc2 hide">
-        <span>S0 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('.addedCount').html('(1)'); $('.lsc2Button').attr('disabled', false); $('.lsc2Button').html('Add'); " data-toggle="tooltip" title="Remove">
+        <span>S0 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('#citationsT .addedCount').html('(1)'); $('#citationsT .lsc2Button').attr('disabled', false); $('#citationsT .lsc2Button').html('Add'); " data-toggle="tooltip" title="Remove">
           <span aria-hidden="true">×</span>
           </button></div>
 					<div class="badge badge-pill lsc3 hide">
-        <span>E1 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('.addedCount').html('(2)'); $('.lsc3Button').attr('disabled', false); $('.lsc3Button').html('Add'); " data-toggle="tooltip" title="Remove">
+        <span>E1 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('#citationsT .addedCount').html('(2)'); $('#citationsT .lsc3Button').attr('disabled', false); $('#citationsT .lsc3Button').html('Add'); " data-toggle="tooltip" title="Remove">
           <span aria-hidden="true">×</span>
           </button></div>
 					<div class="iq-footer" style="width: 25%"><button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('.successMsg').removeClass('hide'); $('#citationsT .edit-view').removeClass('active');  $('#citationsT .read-view.all').addClass('active'); $('#saveCitationsButton .badge.badge-pill').addClass('hide'); $('#saveCitationsButton .addedCount').html(''); $('#saveCitationsButton .addedCount').addClass('hide'); $('#saveCitationsButton .iq-not-available').removeClass('hide');  } else { $('.errorMsg').removeClass('hide'); }">Save</button> <button
                             class="btn btn-link hide cancelButton" onClick="$('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.all').addClass('active');  $('#citationsT .tabTitle .btn').removeClass('hide'); ">Cancel</button></div>
+					</div></div>
 				</div>  
 				</div>
 				</div>
+				
               </div>
-
+<br><br><br>&nbsp;<br><br><br>
               
             </section>
-             <section class="read-view all">
+            <section class="read-view all">
                  <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Citations</h2>
@@ -1972,7 +1978,134 @@
                             class="btn btn-link" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('.successMsg').removeClass('hide');">Save Draft</button>
               </div>
 				 <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
-            </section>        
+            </section>
+            <section class="read-view cite224">
+                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+               <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Citation 0224</h2>
+                <p>Horizontal Sliding Doors - NFPA 101</p>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view.cite224').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
+              </div>
+            </div>
+                
+                <div class="row mb-5">
+                <div class="col">
+                  <div class="iq-accordion showhide">
+            <div class="card no-border">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeSource2" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Regulation Text and Interpretive Guidelines</span><span class="hide">Hide Regulation Text and Interpretive Guidelines</span>
+                </button>
+              </div>
+              <div id="citeSource2" class="collapse">
+                <div class="card-body px-0">
+                  lorem ipsum
+                </div>
+              </div>
+            </div>
+          </div>
+                </div>
+              </div>
+                
+                <h3>Citation Overview</h3>
+               <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Buildings</label>
+                  </div>
+                  <div class="col-md-8">
+                    <p>01 - RES UNIT - FREESTANDING 9 BEDS - Active</p>
+                  </div>
+                </div>
+               <div class="row">
+                  <div class="col-md-4">
+                    <label>Survey Category</label>
+                  </div>
+                  <div class="col-md-8">
+                    <ul><li>H - Life Safety Code</li>
+                      <li>Complaints</li></ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Substantiated Allegations</label>
+                  </div>
+                  <div class="col-md-8">
+                    <ul><li>Admission, Transfer, &amp; Discharge Rights - <a href="#">Complaint 9864</a></li>
+                     </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Deficient Practice Statement</label>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+                </div>
+                
+                <h3>Citation Text</h3>
+                <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
+                <p><button class="btn btn-outline-primary">Merge Citation Text</button></p>
+                <div class="table-wrapper mb-5">  <table class="table table-striped">
+  <thead>
+    <tr><th scope="col" class="sortable"><span>Order</span></th> 
+      <th scope="col" class="sortable ascending"><span>Name</span></th>
+        
+      <th scope="col" class="sortable"><span>Last Updated</span></th>
+      <th scope="col" class="sortable"><span>Status</span></th>
+ <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
+          </div></td>
+      <td><p>Smith, James</p></td>
+      <td><p>08/27/2019 2:04 PM</p></td>
+      <td><p>Writing in Progress</p></td>
+        <td><a href="#">Delete</a> | <a href="#">Edit</a></td>
+    </tr>
+    <tr>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
+          </div></td>
+      <td><p>Thomas, Jane</p></td>
+      <td><p>08/27/2019 1:43 PM</p></td>
+      <td><p>Writing in Progress</p></td>
+        <td><a href="#">View</a></td>
+    </tr>
+    <tr>
+      <td><div class="btn-group-vertical">
+              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
+              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-down"></i></button>
+          </div></td>
+      <td><p>Chae, Matthew</p></td>
+      <td><p>08/30/2019 10:21 AM</p></td>
+      <td><p>Writing in Progress</p></td>
+        <td><a href="#">View</a></td>
+    </tr>
+    
+  </tbody>
+</table></div>
+                
+                <h3>Attachments</h3>
+                <p class="mb-0">Add and manage attachments for this citation.</p>
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
+                <p class="iq-not-available">No attachments have been added</p>
+                
+                <div class="iq-button-wrapper">
+                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+              </div>
+            </section>             
           </div>
           <div class="tab-pane" id="sodT" role="tabpanel" aria-labelledby="sodTab">
             <section class="edit-view deemInfo">
@@ -3468,6 +3601,7 @@
 		$('.nav-horizontal').stickyTabs();
 	    $('[data-toggle="tooltip"]').tooltip(); 
 	    $("select.multiselect").bsMultiSelect();
+		var editor = new FroalaEditor('div.editTextDiv'); 
 	    window.setTimeout(function() {
 			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
 				$(this).addClass('hide'); 
