@@ -152,10 +152,10 @@
       </div>
        <div class="col-sm-4 col-md-3 col-lg-2">
         <nav class="nav flex-column iq-nav">
-            <a class="nav-link active" tabindex="0" id="basicInfoTab" href="#basicInfoT" data-toggle="tab" role="tab" aria-controls="basicInfoT" aria-selected="false">Basic Information</a> 
+            <a class="nav-link" tabindex="0" id="basicInfoTab" href="#basicInfoT" data-toggle="tab" role="tab" aria-controls="basicInfoT" aria-selected="false">Basic Information</a> 
             <a class="nav-link" tabindex="0" id="staffTab" href="#staffT" data-toggle="tab" role="tab" aria-controls="staffT" aria-selected="false">Responsible Staff</a> 
             <a class="nav-link" tabindex="0" id="surveyTeamTab" href="#surveyTeamT" data-toggle="tab" role="tab" aria-controls="surveyTeamT" aria-selected="false">Survey Team</a>
-            <a class="nav-link" tabindex="0" id="citationsTab" href="#citationsT" data-toggle="tab" role="tab" aria-controls="citationsT" aria-selected="false">Citations</a>
+            <a class="nav-link active" tabindex="0" id="citationsTab" href="#citationsT" data-toggle="tab" role="tab" aria-controls="citationsT" aria-selected="false">Citations</a>
             <a class="nav-link" tabindex="0" id="sodTab" href="#sodT" data-toggle="tab" role="tab" aria-controls="sodT" aria-selected="false">Statement of Deficiencies</a>
             <a class="nav-link" tabindex="0" id="pocTab" href="#pocT" data-toggle="tab" role="tab" aria-controls="pocT" aria-selected="false">Plan of Correction</a>
             <a class="nav-link" tabindex="0" id="timesheetTab" href="#timesheetT" data-toggle="tab" role="tab" aria-controls="timesheetT" aria-selected="false">Timesheet</a>
@@ -1628,7 +1628,7 @@
               <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink">
                 <button class="dropdown-item">Add Citation Details</button>
-                <button class="dropdown-item">Remove</button>
+                <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
                 
                 </div>
 			  </div>
@@ -1691,7 +1691,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2">
                
                 <button class="dropdown-item" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.citeE1').addClass('active'); ">Add Citation Details</button>
-                <button class="dropdown-item">Remove</button>
+                <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
                 </div>
 			  </div>
            
@@ -3493,6 +3493,27 @@
     </div>
   </div>
 </footer>
+<div class="modal fade" id="confirmCitationRemoval" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h4 class="modal-title">Remove Citation</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+        <p>Please confirm you want to remove this citation.</p>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal" >Remove</button>
+          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
