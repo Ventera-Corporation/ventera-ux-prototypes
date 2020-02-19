@@ -18,23 +18,51 @@
 </head>
 <body>
 <header>
-	<div class="container-fluid">
-	  <div class="row iq-page-header">
-		<div class="col">
-                  <nav>
-                    <a href="./">
-                      <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo">
-                    </a>
-                      
-                      <button class="btn btn-outline-primary" id="menuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENU</button><nav class="iqies-menu dropdown-menu" ari-labelledby="menuDropdown" style="min-width: 12.5rem;"><ul class="list-group list-group-flush"><a class="list-group-item list-group-item-action iqies-section-header active" href="#">iQIES Home</a><a class="list-group-item list-group-item-action iqies-section-header " href="../users/my-profile.html">My Profile</a><a class="list-group-item list-group-item-action iqies-section-header " href="../providers/providers-landing.html">Survey and Certification</a><a class="list-group-item list-group-item-action " href="../providers/find-a-provider.html">Find a Provider</a><a class="list-group-item list-group-item-action " href="../providers/add-a-provider.html">Add a Provider</a><a class="list-group-item list-group-item-action iqies-section-header " href="../reports/reports-landing.html">Reports</a><a class="list-group-item list-group-item-action " href="../reports/find-a-report.html">Find a Report Type</a><a class="list-group-item list-group-item-action " href="../reports/my-reports.html">My Reports</a><a class="list-group-item list-group-item-action " href="../reports/report-activity.html">Report Activity</a><a class="list-group-item list-group-item-action iqies-section-header " href="../admin/index.html">Administration</a><a class="list-group-item list-group-item-action iqies-section-header " href="../help/">Help</a><a class="list-group-item list-group-item-action iqies-section-header" href="../logout.html">Logout</a></ul></nav>
-                  </nav>
-                    
-                    
-                </div>
-              </div>
-            </div>
-           
-          </header>
+	<div class="iq-global-nav">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col">
+			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+				  </div>
+				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					<a class="dropdown-item" href="#">Reports Main</a>
+					<a class="dropdown-item" href="#">Find a Report Type</a>
+					<a class="dropdown-item" href="#">My Reports</a>
+				  </div>
+				</div>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+					  <a class="dropdown-item" href="#">Letters</a>
+					  <a class="dropdown-item" href="#">State Customizations</a>
+				  </div>
+				</div>
+				<div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+					id="navbarDropdown4" role="button" data-toggle="dropdown">
+					<p>DF</p>
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
+					  Profile</a>
+					<a class="dropdown-item" href="#">Help</a>
+					<a class="dropdown-item" href="#">Logout</a>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+  </div>
+  </header>
 <main>
 <div class="iq-page-header-wrapper inverted">
             <div class="container-fluid">
@@ -48,6 +76,9 @@
                         </li>
                         <li class="breadcrumb-item">
                           <a href="searchC.html#surveys">Search</a>
+                        </li>
+						<li class="breadcrumb-item">
+                          <a href="provider-profile-laguna.html">Laguna Rainbow Home Health Agency</a>
                         </li>
                         <li class="breadcrumb-item">
                           Survey FFB-L1
@@ -117,16 +148,7 @@
         <div class="alert alert-success successMsg hide" role="alert">
           <div class="alert-content">Changes saved successfully</div>
         </div>
-        <div class="alert alert-danger errorMsg hide" role="alert">
-          <div class="alert-content">
-                 <h2>Unable to Save</h2>
-				  <p> Please review and correct the following:</p> 
-                  <ul>
-                      <li>Add at least one <a href="#citations">Citation</a>.</li>
-                  </ul>
-             
-          </div>
-        </div>
+        
       </div>
        <div class="col-sm-4 col-md-3 col-lg-2">
         <nav class="nav flex-column iq-nav">
@@ -837,6 +859,19 @@
             </section>
           </div>
           <div class="tab-pane active" id="citationsT" role="tabpanel" aria-labelledby="citationsTab">
+			  <div class="alert alert-success successMsg hide" role="alert">
+          <div class="alert-content">Changes saved successfully</div>
+        </div>
+			  <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content">
+                 <h2>Unable to Save</h2>
+				  <p> Please review and correct the following:</p> 
+                  <ul>
+                      <li>Add at least one <a href="#citations">Citation</a>.</li>
+                  </ul>
+             
+          </div>
+        </div>
             <section class="edit-view addCites active">
                  <div class="row tabTitle">
               <div class="col-md-10">
@@ -907,7 +942,7 @@
               <div class="row mt-4 citationsList">
                 <div class="col-md-12" id="citations">
 					<br>
-					<div class="row"><div class="col-md-3" style="vertical-align: bottom"><h3 class="iq-label">1-10 of 490 Citations</h3></div><div class="col-md-9 text-right"><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
+					<div class="row"><div class="col-md-3" style="vertical-align: bottom"><h3 class="iq-label">1-10 of 490 Citations</h3></div><div class="col-md-9 text-right"><label class="sr-only" for="regSetSelect">Selected Regulation Set</label><select style="display: inline-block; width: auto; " id="regSetSelect" class="mb-2" onChange="selectRegSet(this)"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <label for="tagTypeSelect" class="sr-only">Selected Tag Type</label><select id="tagTypeSelect" style="display: inline-block; width: auto" onchange="selectTagType(this)"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
      
                     <div class="accordion-wrapper">
                     <div class="iq-accordion secondary data-focus ER memo">
@@ -919,7 +954,7 @@
                     <span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0 - Initial Comments <span class="badge badge-white">Memo</span></span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary lsc1Button" title="Add this citation: 0000 - Initial Comments" onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc1').removeClass('hide'); $(this).html('Added'); $('.addedCount').removeClass('hide'); $('.addedCount').html('(1)'); $('.card.dashed .iq-not-available').addClass('hide'); $('.errorMsg').addClass('hide'); ">
+                  <button type="button" class="btn btn-outline-primary lsc1Button" title="Add this citation: 0000 - Initial Comments" onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc1').removeClass('hide'); $(this).html('Added'); $('.addedCount').removeClass('hide'); $('.addedCount').html('(1)'); $('.card.dashed .iq-not-available').addClass('hide'); $('#citationsT .errorMsg').addClass('hide'); ">
                     Add 
                   </button>
                 </div>
@@ -971,7 +1006,7 @@
                   data-toggle="collapse" data-target="#cite3content" type="button" onclick="$(this).toggleClass('expanded');">
                     <span><span class="iq-description">IL State Home Health (ST - S - 2 - HHA)</span>S0 - Opening Comments <span class="badge">Licensure</span></span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary lsc2Button" onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc2').removeClass('hide'); $(this).html('Added'); $('.addedCount').removeClass('hide'); $('.addedCount').html('(2)');  $('.card.dashed .iq-not-available').addClass('hide'); $('.errorMsg').addClass('hide'); ">
+                  <button type="button" class="btn btn-outline-primary lsc2Button" onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc2').removeClass('hide'); $(this).html('Added'); $('#citationsT .addedCount').removeClass('hide'); $('#citationsT .addedCount').html('(2)');  $('#citationsT .card.dashed .iq-not-available').addClass('hide'); $('#citationsT .errorMsg').addClass('hide'); ">
                     Add
                   </button>
                 </div>
@@ -996,7 +1031,7 @@
                   data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
                     <span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E1 - Establishment of the Emergency Program (EP) <span class="badge badge-warning">Condition</span></span></button>
                 <div class="iq-accordion-actions d-flex align-items-center">
-                  <button type="button" class="btn btn-outline-primary lsc3Button"  onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc3').removeClass('hide'); $(this).html('Added'); $('.addedCount').removeClass('hide'); $('.addedCount').html('(3)');  $('.card.dashed .iq-not-available').addClass('hide'); $('.errorMsg').addClass('hide'); ">
+                  <button type="button" class="btn btn-outline-primary lsc3Button"  onClick="$(this).attr('disabled', true); $('.card.dashed .badge.lsc3').removeClass('hide'); $(this).html('Added'); $('.addedCount').removeClass('hide'); $('.addedCount').html('(3)');  $('.card.dashed .iq-not-available').addClass('hide'); $('#citationsT .errorMsg').addClass('hide'); ">
                     Add
                   </button>
                 </div>
@@ -1443,7 +1478,8 @@
         <span>E1 </span><button type="button" class="close" aria-label="Close" onClick="$(this).parent().addClass('hide'); $('#citationsT .addedCount').html('(2)'); $('#citationsT .lsc3Button').attr('disabled', false); $('#citationsT .lsc3Button').html('Add'); " data-toggle="tooltip" title="Remove">
           <span aria-hidden="true">×</span>
           </button></div>
-					<div class="iq-footer" style="width: 25%"><button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('.successMsg').removeClass('hide'); $('#citationsT .edit-view').removeClass('active');  $('#citationsT .read-view.all').addClass('active'); $('#saveCitationsButton .badge.badge-pill').addClass('hide'); $('#saveCitationsButton .addedCount').html(''); $('#saveCitationsButton .addedCount').addClass('hide'); $('#saveCitationsButton .iq-not-available').removeClass('hide');  } else { $('.errorMsg').removeClass('hide'); }">Save</button> <button
+						<input type="hidden" value="0" id="addtosurveyteam">
+					<div class="iq-footer"><button class="btn btn-primary" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('#citationsT .successMsg').removeClass('hide'); $('#citationsT .edit-view').removeClass('active');  $('#citationsT .read-view.all').addClass('active'); $('#saveCitationsButton .badge.badge-pill').addClass('hide'); $('#saveCitationsButton .addedCount').html(''); $('#saveCitationsButton .addedCount').addClass('hide'); $('#saveCitationsButton .iq-not-available').removeClass('hide');  } else { $('#citationsT .errorMsg').removeClass('hide'); }">Save</button> <button
                             class="btn btn-link hide cancelButton" onClick="$('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.all').addClass('active');  $('#citationsT .tabTitle .btn').removeClass('hide'); ">Cancel</button></div>
 					</div></div>
 				</div>  
@@ -1451,8 +1487,9 @@
 				</div>
 				
               </div>
-
+<br>
               
+				
             </section>
             <section class="read-view all">
                  <div class="row tabTitle">
@@ -1574,7 +1611,7 @@
 				<div class="row">
 					<div class="col-md-4">
 					</div>
-				<div class="col-md-8 text-right"><span class="info-text"><span class="aoCount">2</span> Citations Total</span> | <a href="#" id="citeStatusLink" data-toggle="dropdown"><small>Citation Status Legend</small> <i class="fal fa-info-circle"></i></a><div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="dropdownMenuButtonLink">
+				<div class="col-md-8 text-right"><span class="info-text"><span class="aoCount">3</span> Citations Total</span> | <a href="#" id="citeStatusLink" data-toggle="dropdown"><small>Citation Status Legend</small> <i class="fal fa-info-circle"></i></a><div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="dropdownMenuButtonLink">
                  <span class="iq-status iq-status-not-started"></span> Not Started<br>
 						<span class="iq-status iq-status-in-progress"></span> In Progress<br>
 						<span class="iq-status iq-status-review"></span> Ready for Review<br>
@@ -1599,7 +1636,7 @@
               <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink">
                 <button class="dropdown-item">Add Citation Details</button>
-                <button class="dropdown-item">Remove</button>
+                <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
                 
                 </div>
 			  </div>
@@ -1662,7 +1699,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2">
                
                 <button class="dropdown-item" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.citeE1').addClass('active'); ">Add Citation Details</button>
-                <button class="dropdown-item">Remove</button>
+                <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
                 </div>
 			  </div>
            
@@ -1781,7 +1818,7 @@
          
             </section>
             <section class="edit-view citeS0">
-                <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+                <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
 				
 				<fieldset class="iq-stepper"><legend>Step 2 of 4: In Progress</legend>
             <ol>
@@ -1840,22 +1877,19 @@
 				<h4 class="mt-4">Attachments</h4>
 				<ul class="no-bullet"><li><a href="#"><i class="fas fa-paperclip"></i> File Name.pdf (203 KB)</a></li></ul>
 				<div class="card dashed text-center">
-						<p class="iq-no-results">Drag files here<br>
-					<small>Or if you prefer...</small></p>
-					<button class="btn btn-outline-primary btn-sm" style="width: auto">Select files from your computer</button>
+						<p class="iq-instruction-text">Drag files here<br>
+					<small>Or, if you prefer...</small></p>
+					<button class="btn btn-outline-primary btn-sm" style="width: auto; margin: 0 auto; ">Select files from your computer</button>
 						</div>
 				
 					</div>
 					<div class="col-md-4">
-					<div class="card">
+					<div class="card iq-color-gray-lighter">
 						
 						<div class="card-body">
 							<h4>Citation Overview</h4>
 							<p><label>Tag Type</label>Licensure</p>
-							<div class="custom-control custom-checkbox mb-4">
-                  <input type="checkbox" id="citeDPS" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeDPS">Associated with an immediate jeopardy (IJ)</label>
-                </div>
+							
 							<p><label>Regulation Set</label>IL State Home Health (ST - S - 2 -HHA)</p>
 							<p><label>Survey Category</label>Initial Certification - Federal, Initial Licensure - State</p>
 						</div>
@@ -1864,14 +1898,15 @@
 				</div>
 	
                 <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('.successMsg').removeClass('hide');">Save and Submit for Review</button>
-                <button
-                            class="btn btn-link" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('.successMsg').removeClass('hide');">Save Draft</button>
+                <button class="btn btn-primary" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('#citationsT .successMsg').removeClass('hide');">Save and Submit for Review</button>
+                <button class="btn btn-outline-primary" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('#citationsT .successMsg').removeClass('hide');">Save Draft</button>
+				 <button class="btn btn-link" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); ">Cancel</button>
+					
               </div>
-				 <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+				<!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
             </section>
 			<section class="edit-view citeE1">
-                <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+                <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
 				
 				<fieldset class="iq-stepper"><legend>Step 2 of 4: In Progress</legend>
             <ol>
@@ -1922,22 +1957,30 @@
 				<h4 class="mt-4">Attachments</h4>
 				
 				<div class="card dashed text-center">
-						<p class="iq-no-results">Drag files here<br>
-					<small>Or if you prefer...</small></p>
-					<button class="btn btn-outline-primary btn-sm" style="width: auto;">Select files from your computer</button>
+						<p class="iq-instruction-text">Drag files here<br>
+					<small>Or, if you prefer...</small></p>
+					<button class="btn btn-outline-primary btn-sm" style="width: auto; margin: 0 auto; ">Select files from your computer</button>
 						</div>
 				
 					</div>
 					<div class="col-md-4">
-					<div class="card">
+					<div class="card iq-color-gray-lighter">
 						
 						<div class="card-body">
 							<h4>Citation Overview</h4>
 							<p><label>Tag Type</label>Licensure</p>
-							<div class="custom-control custom-checkbox mb-4">
-                  <input type="checkbox" id="citeDPS2" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeDPS2">Associated with an immediate jeopardy (IJ)</label>
-                </div>
+							<label>Immediate Jeopardy (IJ)</label>
+							<ul class="iq-inline-list">
+							<li><div class="custom-control custom-radio mb-4">
+                  <input type="radio" id="ijassociated1" name="ijassociated" class="custom-control-input">
+                   <label class="custom-control-label" for="ijassociated1">Yes</label>
+                </div></li>
+								<li><div class="custom-control custom-radio mb-4 ml-4">
+                  <input type="radio" id="ijassociated2" name="ijassociated" class="custom-control-input">
+                   <label class="custom-control-label" for="ijassociated2">No</label>
+                </div></li>
+							</ul>
+							
 							<p><label>Regulation Set</label>Emergency Preparedness (FED - E - 1.01)</p>
 							<p><label>Survey Category</label>Initial Certification - Federal, Initial Licensure - State</p>
 						</div>
@@ -1973,11 +2016,12 @@
                 <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
                 <p class="iq-not-available">No attachments have been added</p>-->
                 <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('.successMsg').removeClass('hide');">Save and Submit for Review</button>
-                <button
-                            class="btn btn-link" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('.successMsg').removeClass('hide');">Save Draft</button>
+                <button class="btn btn-primary" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('#citationsT .successMsg').removeClass('hide');">Save and Submit for Review</button>
+                <button class="btn btn-outline-primary" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); $('#citationsT .successMsg').removeClass('hide');">Save Draft</button>
+				 <button class="btn btn-link" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active'); ">Cancel</button>
+					
               </div>
-				 <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+				<!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
             </section>
             <section class="read-view cite224">
                 <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
@@ -2103,7 +2147,7 @@
                 <p class="iq-not-available">No attachments have been added</p>
                 
                 <div class="iq-button-wrapper">
-                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+                <!--<p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
               </div>
             </section>             
           </div>
@@ -3584,6 +3628,27 @@
     </div>
   </div>
 </footer>
+<div class="modal fade" id="confirmCitationRemoval" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h4 class="modal-title">Remove Citation</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          
+        <p>Please confirm you want to remove this citation.</p>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal" >Remove</button>
+          <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>

@@ -31,6 +31,7 @@ hr { margin-bottom: 2rem; }
 .edit-view.active, .read-view.active { display: block; }
 .hide { display: none !important; }
 .iq-not-available, .iqies-not-available  { color: #5B616B; font-style: italic; }
+.iq-instruction-text { color: #5B616B; line-height: 2rem; margin-bottom: 1rem; }
 .no-info { font-size: 1rem; font-weight: 400; color: #5B616B; }
 
 h2 small.top { font-size: 1rem; font-weight: 400; color: #222; }
@@ -46,6 +47,7 @@ small.bottom .iq-not-available { margin-left: 0; }
 .card.iq-card { margin-bottom: 1rem; }
 .card .iq-footer { margin-top: 2rem; }
 .card .iq-footer .btn-full { width: 100%; }
+.card .iq-footer .btn { margin-bottom: 1rem; min-width: 10rem }
 .iq-nav { margin-bottom: 2rem; }
 
 .card-title { margin-bottom: 2rem;  }
@@ -561,7 +563,7 @@ a.return-link:before { font-family: "Font Awesome 5 Pro"; font-weight: 100; marg
 
 /* BUTTON WRAPPERS */
 .iqies-button-wrapper { margin-bottom: 2rem; padding: 1rem 0; }
-.iq-button-wrapper { padding: 1rem 0; }
+.iq-button-wrapper { padding: 1rem 0; margin: 2rem 0; }
 .iq-button-col .btn { margin-right: 1rem;}
 
 
