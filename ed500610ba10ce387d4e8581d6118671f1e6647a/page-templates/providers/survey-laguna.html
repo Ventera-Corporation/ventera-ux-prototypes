@@ -859,6 +859,18 @@
             </section>
           </div>
           <div class="tab-pane active" id="citationsT" role="tabpanel" aria-labelledby="citationsTab">
+			  <div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: -23rem; right: -2rem; min-height: auto; z-index: 1000; ">
+  <div class="toast-header">
+    <strong class="mr-auto">UI Note</strong>
+    <small></small>
+    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    <a href="citationSearchTest.html" class="return-link">Go back to Index Page</a>
+  </div>
+</div>
 			  <div class="alert alert-success successMsg hide" role="alert">
           <div class="alert-content">Changes saved successfully</div>
         </div>
@@ -1862,7 +1874,8 @@
             <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions collapsed" data-toggle="collapse" data-target="#cite3" type="button" onclick="$(this).toggleClass('expanded');" aria-expanded="false">
               <span style="min-width: 20rem; "><a href="#" style="font-size: 1.125rem;">S0</a><br><small>Opening Comments</small></span>
               <span style="min-width: 10rem; "><span class="badge badge-pill badge-info">Licensure</span></span>
-              <span><span class="iq-status iq-status-in-progress"></span> <small>In Progress</small></span>
+              <span style="min-width: 10rem; "><span class="iq-status iq-status-in-progress"></span> <small>In Progress</small></span>
+			  <span><ul class="m-0 pl-2"><li class="pl-0 pb-0">Allen, Paul</li><li class="pl-0">Carr, Roberta</li></ul></span>
               </button>
 			   <div class="iq-accordion-actions d-flex align-items-center"><a href="#" class="btn btn-link" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.citeS0').addClass('active');">Edit</a></div>
              
@@ -1870,18 +1883,16 @@
             </div>
           <div id="cite3" class="collapse" style="">
             <div class="card-body">
-             <p><label>Survey Category</label>
-				 Initial Licensure - State</p>
-			 
-				
-				<h4>Findings Summary</h4>	
+								<div class="row">
+									<div class="col-md-8">
+									<h4>Summary</h4>	
 				<h5>Deficient Practice Statement</h5>
 				<p>Lorem, ipsum dolor sit amet consectetur
               adipisicing elit. Ab optio vero alias facilis nemo deleniti
               odio
               rerum autem sunt provident. Accusantium aperiam repudiandae
               mollitia molestiae error iste, quod ab consequuntur?</p>
-				<h4>Evidence</h4>
+				<h4>Findings</h4>
 				<h5>Jane Smith's Observations<br><small>Submitted on 01/12/2020 10:10 AM EST</small></h5>
 				
 				<p>Lorem, ipsum dolor sit amet consectetur
@@ -1892,32 +1903,29 @@
 				<h4>Attachments</h4>
 				<ul class="no-bullet"><li><a href="#"><i class="fas fa-paperclip"></i> File Name.pdf (203 KB)</a></li></ul>
 				<hr>
-				<div class="iq-accordion showhide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT3" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span>
-                      </button>
-                    </div>
-                  <div id="citeRT3" class="collapse">
-                    <div class="card-body px-0">
+								<h4>Regulation Text and Interpretive Guidelines</h4>
+				
                       <label>CFR Section</label>
                     <p class="iq-not-available">Not applicable</p>
 					<label>Reguation Text</label>
                     <p>Rules and Regulations utilized for this survey are: Rules and Regulations for Program Administration of Home Health Agencies, Chapter 9, effective 10/15/2001 Rules and Regulations for Licensure of Home Health Agencies, Chapter 10, effective 11/01/2001</p>
 					<label>Interpretive Guidelines</label>
 					<p class="iq-not-available">Not applicable</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-				
-			
-                   
-           
-            
-              </div>
+									</div>
+							
+								<div class="col-md-4">
+					<div class="card iq-color-gray-lighter p-1">
+						
+						<div class="card-body pl-4">
+							<h4>Citation Overview</h4>
+							
+							<p><label>Regulation Set</label>IL State Home Health (ST - S - 2 -HHA)</p>
+							<p><label>Survey Category</label>Initial Licensure - State</p>
+						</div>
+					</div>
+					</div>
+								</div>
+								</div>
             </div>
           </div>
         </div>
@@ -1931,7 +1939,8 @@
             <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions collapsed" data-toggle="collapse" data-target="#cite2" type="button" onclick="$(this).toggleClass('expanded');" aria-expanded="false">
               <span style="min-width: 20rem; "><a href="#" style="font-size: 1.125rem;">G0406</a><br><small>Patient Rights</small></span>
               <span class="text-left" style="min-width: 10rem; "><span class="badge badge-pill badge-warning">Condition</span></span>
-              <span class="text-left"><span class="iq-status iq-status-not-started"></span> <small>Not Started</small></span>
+              <span class="text-left" style="min-width: 10rem; "><span class="iq-status iq-status-not-started"></span> <small>Not Started</small></span>
+			   <span><span class="iq-not-available">No authors</span></span>
               </button>
 			   <div class="iq-accordion-actions d-flex align-items-center">
 				  <!-- <a href="#" class="btn btn-link">Add Details</a> <a href="#" class="btn btn-link">Remove</a>-->
@@ -1946,39 +1955,33 @@
             </div>
           <div id="cite2" class="collapse" style="">
             <div class="card-body">
-				<p><label>Survey Category</label>
-				  Initial Certification - Federal</p>
-				
-				 <h4>Findings Summary</h4>	
-				<h5>Deficient Practice Statement</h5>
-				<p class="iq-not-available">There is no deficient practice statement for this citation.</p>
-				<h4>Evidence</h4>
-				<p class="iq-not-available">There is no evidence for this citation.</p>
-				<h4>Attachments</h4>
-				<p class="iq-not-available">There are no attachments for this citation.</p>
+									<div class="row">
+										<div class="col-md-8">
+											<h4>Summary</h4>	
+				<p class="iq-not-available">No information provided</p>
+				<h4>Findings</h4>
+				<p class="iq-not-available">No information provided</p>
 				<hr>
-				<div class="iq-accordion showhide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT2" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span>
-                      </button>
-                    </div>
-                  <div id="citeRT2" class="collapse">
-                    <div class="card-body px-0">
+				<h4>Reguation Text and Interpretive Guidelines</h4>
                      <label>CFR Section</label>
                     <p>484.5</p>
 					<label>Reguation Text</label>
                     <p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
 					<label>Interpretive Guidelines</label>
 					<p class="iq-not-available">Not applicable</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                  
-                </div>
+										</div>
+										<div class="col-md-4">
+											<div class="card iq-color-gray-lighter p-1">
+												<div class="card-body pl-4">
+													<h4>Citation Overview</h4>
+													<p><label>Immediate Jeopardy (IJ)</label> No</p>
+													<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
+													<p><label>Survey Category</label>Initial Certification - Federal</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
             </div>
           </div>
         </div>
@@ -1989,7 +1992,8 @@
             <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions collapsed" data-toggle="collapse" data-target="#cite1" type="button" onclick="$(this).toggleClass('expanded');" aria-expanded="false">
               <span style="min-width: 20rem; "><a href="#" style="font-size: 1.125rem;">G1008</a><br><small>Clinical Records</small></span>
               <span style="min-width: 10rem; "><span class="badge badge-pill badge-warning">Condition</span></span>
-              <span><span class="iq-status iq-status-not-started"></span> <small>Not Started</small></span>
+              <span style="min-width: 10rem; "><span class="iq-status iq-status-not-started"></span> <small>Not Started</small></span>
+			   <span><span class="iq-not-available">No authors</span></span>
               </button>
 			   <div class="iq-accordion-actions d-flex align-items-center">
               <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
@@ -2004,45 +2008,32 @@
             </div>
           <div id="cite1" class="collapse" style="">
             <div class="card-body">
-              <p><label>Survey Category</label>
-				  Initial Certification - Federal</p>
-			 <h4>Findings Summary</h4>	
-				<h5>Deficient Practice Statement</h5>
-				<p class="iq-not-available">There is no deficient practice statement for this citation.</p>
-				<h4>Evidence</h4>
-				<p class="iq-not-available">There is no evidence for this citation.</p>
-				<h4>Attachments</h4>
-				<p class="iq-not-available">There are no attachments for this citation.</p>
+									<div class="row">
+										<div class="col-md-8">
+											<h4>Summary</h4>	
+				<p class="iq-not-available">No information provided</p>
+				<h4>Findings</h4>
+				<p class="iq-not-available">No information provided</p>
 				<hr>
-				
-				<div class="iq-accordion showhide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT1" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span>
-                      </button>
-                    </div>
-                  <div id="citeRT1" class="collapse">
-                    <div class="card-body px-0">
-                     
-		<label>CFR Section</label>
-		<p>484.110</p>
-		<label>Reguation Text</label>
-		<p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
-		<label>Interpretive Guidelines</label>
-		<p class="iq-not-available">Not applicable</p>
-	
-	
-                      </div>
-                    </div>
-                  </div>
-                </div>
-				
-				
-                    
-            
-              </div>
+				<h4>Reguation Text and Interpretive Guidelines</h4>
+                     <p>484.110</p>
+					<label>Reguation Text</label>
+                    <p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
+					<label>Interpretive Guidelines</label>
+					<p class="iq-not-available">Not applicable</p>
+										</div>
+										<div class="col-md-4">
+											<div class="card iq-color-gray-lighter p-1">
+												<div class="card-body pl-4">
+													<h4>Citation Overview</h4>
+													<p><label>Immediate Jeopardy (IJ)</label> No</p>
+													<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
+													<p><label>Survey Category</label>Initial Certification - Federal</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
             </div>
           </div>
         </div>
@@ -2090,7 +2081,7 @@
                   </div>
                 </div>
 						<hr>
-				<h4>Findings Summary</h4>	
+				<h4>Summary</h4>	
 				<h5>Deficient Practice Statement</h5>
 				
                 <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
@@ -2100,7 +2091,7 @@
               rerum autem sunt provident. Accusantium aperiam repudiandae
               mollitia molestiae error iste, quod ab consequuntur?</div>
 						
-				<h4 class="mt-4">Evidence</h4>
+				<h4 class="mt-4">Findings</h4>
 				<h5>Jane Smith's Observations<br><small>Submitted on 01/12/2020 10:10 AM EST</small></h5>
 				<p>Lorem, ipsum dolor sit amet consectetur
               adipisicing elit. Ab optio vero alias facilis nemo deleniti
@@ -2178,13 +2169,13 @@
                   </div>
                 </div>
 						<hr>
-				<h4>Findings Summary</h4>	
+				<h4>Summary</h4>	
 				<h5>Deficient Practice Statement</h5>
 				
                 <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
                 <div class="editTextDiv"></div>
 						
-				<h4 class="mt-4">Evidence</h4>
+				<h4 class="mt-4">Findings</h4>
 				
 						<h5>My Observations</h5>
 				<button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
@@ -2296,13 +2287,13 @@
                   </div>
                 </div>
 						<hr>
-				<h4>Findings Summary</h4>	
+				<h4>Summary</h4>	
 				<h5>Deficient Practice Statement</h5>
 				
                 <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
                 <div class="editTextDiv"></div>
 						
-				<h4 class="mt-4">Evidence</h4>
+				<h4 class="mt-4">Findings</h4>
 				
 						<h5>My Observations</h5>
 				<button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
