@@ -904,7 +904,7 @@
                     <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();}" >
         <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="switch($('#citeSearch').val().toLowerCase()){ case '': $('#citations .iq-accordion').removeClass('hide'); $('#citations .iq-accordion.allPage2').addClass('hide'); $('#citations .iq-accordion.allPage3').addClass('hide'); $('#citations .iq-accordion.allPage4').addClass('hide'); break; default: $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.'+$('#citeSearch').val()).removeClass('hide'); break;   }">Search</button>
+         <button type="submit" class="btn btn-primary searchButton" onClick="var searchKey = $('#citeSearch').val().toUpperCase(); switch( searchKey.toLowerCase()){ case '': $('#citations .iq-accordion').removeClass('hide'); $('#citations .iq-accordion.allPage2').addClass('hide'); $('#citations .iq-accordion.allPage3').addClass('hide'); $('#citations .iq-accordion.allPage4').addClass('hide'); break; case 'clinical record': case 'record': case 'clinical': $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.CR').removeClass('hide'); break; default: $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.'+$('#citeSearch').val()).removeClass('hide'); break;   }">Search</button>
         </div>
       </div>
                     <div class="input-group-help-text help-text">Search by keyword or citation tag number</div>
@@ -1199,7 +1199,7 @@
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA condition 350 0350 g350 g0350 allPage2 hide">
+		<div class="iq-accordion secondary data-focus HHA condition 350 0350 g350 g0350 allPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
@@ -1502,7 +1502,7 @@
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA condition 1008 g1008 allPage3 hhaPage2 hide">
+		<div class="iq-accordion secondary data-focus HHA condition 1008 g1008 allPage3 hhaPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
@@ -1526,7 +1526,7 @@
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA standard 1010 g1010 allPage3 hhaPage2 hide">
+		<div class="iq-accordion secondary data-focus HHA standard 1010 g1010 allPage3 hhaPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
@@ -1549,7 +1549,7 @@
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA element 1012 g1012 allPage3 hhaPage2 hide">
+		<div class="iq-accordion secondary data-focus HHA element 1012 g1012 allPage3 hhaPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
@@ -1642,7 +1642,7 @@
 		</div>
 		</div>
 		
-		<div class="iq-accordion secondary data-focus HHA element 1020 g1020 allPage4 hhaPage2 hide">
+		<div class="iq-accordion secondary data-focus HHA element 1020 g1020 allPage4 hhaPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
