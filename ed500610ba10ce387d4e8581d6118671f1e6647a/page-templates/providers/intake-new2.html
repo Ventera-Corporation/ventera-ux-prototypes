@@ -1,38 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>New Intake for BrightHope</title>
-<link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
+<title>Laguna New Intake</title>
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<!-- to match design system definition -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
-
 </head>
-
 <body>
 <header>
-	<div class="container-fluid">
-	  <div class="row iq-page-header">
-		<div class="col">
-                  <nav>
-                    <a href="./">
-                      <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo">
-                    </a>
-                      
-                      <button class="btn btn-outline-primary" id="menuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENU</button><nav class="iqies-menu dropdown-menu" ari-labelledby="menuDropdown" style="min-width: 12.5rem;"><ul class="list-group list-group-flush"><a class="list-group-item list-group-item-action iqies-section-header active" href="#">iQIES Home</a><a class="list-group-item list-group-item-action iqies-section-header " href="../users/my-profile.html">My Profile</a><a class="list-group-item list-group-item-action iqies-section-header " href="../providers/providers-landing.html">Survey and Certification</a><a class="list-group-item list-group-item-action " href="../providers/find-a-provider.html">Find a Provider</a><a class="list-group-item list-group-item-action " href="../providers/add-a-provider.html">Add a Provider</a><a class="list-group-item list-group-item-action iqies-section-header " href="../reports/reports-landing.html">Reports</a><a class="list-group-item list-group-item-action " href="../reports/find-a-report.html">Find a Report Type</a><a class="list-group-item list-group-item-action " href="../reports/my-reports.html">My Reports</a><a class="list-group-item list-group-item-action " href="../reports/report-activity.html">Report Activity</a><a class="list-group-item list-group-item-action iqies-section-header " href="../admin/index.html">Administration</a><a class="list-group-item list-group-item-action iqies-section-header " href="../help/">Help</a><a class="list-group-item list-group-item-action iqies-section-header" href="../logout.html">Logout</a></ul></nav>
-                  </nav>
-                    
-                    
-                </div>
-              </div>
-            </div>
-           
-          </header>
+	<div class="iq-global-nav">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col">
+			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+				  </div>
+				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					<a class="dropdown-item" href="#">Reports Main</a>
+					<a class="dropdown-item" href="#">Find a Report Type</a>
+					<a class="dropdown-item" href="#">My Reports</a>
+				  </div>
+				</div>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+					  <a class="dropdown-item" href="#">Letters</a>
+					  <a class="dropdown-item" href="#">State Customizations</a>
+				  </div>
+				</div>
+				<div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+					id="navbarDropdown4" role="button" data-toggle="dropdown">
+					<p>DF</p>
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
+					  Profile</a>
+					<a class="dropdown-item" href="#">Help</a>
+					<a class="dropdown-item" href="#">Logout</a>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+  </div>
+  </header>
 <main>
 <div class="iq-page-header-wrapper inverted">
             <div class="container-fluid">
@@ -42,29 +72,27 @@
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                          <a href="index.html">Home</a>
+                          <a href="../global/global-landing-menu.html">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                          <a href="search.html">Search</a>
+                          <a href="searchC.html#surveys">Search</a>
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="provider-profile-blank.html">BrightHope</a>
+						<li class="breadcrumb-item">
+                          <a href="provider-profile-laguna.html">Laguna Rainbow Home Health Agency</a>
                         </li>
-                        <li class="breadcrumb-item current">
-                          New Intake
-                        </li>
+						  <li class="breadcrumb-item current">New Intake</li>
                       </ol>
                     </nav>
                     <div class="iq-page-header-content">
                       <h1>New Intake</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Non-Deemed</div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-laguna.html">Laguna Rainbow Home Health Agency</a> - CCN 167014 - Home Health Agency - <a href="#">Deemed</a></div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
                     <address>
-                       667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010<br>Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
-                        <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="far fa-link fa-flip-horizontal"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
+                       PO Box 236<br>New Laguna, IL 63222<br>Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
+                        <a href="mailto:admin@laguna.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://laguna.com" target="_blank"><i class="far fa-link fa-flip-horizontal"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
                     </address>
                   </div>
                 </div>
@@ -76,30 +104,35 @@
                   <div class="col d-flex align-items-center">
 <div class="iq-summary-bar-data" data-index="1">
               <p>Intake Status</p>
-                      <p class="hide nijm">Under investigation <a href="survey-brighthope.html">View Survey</a></p>
                       <p>Triage/Prioritization</p>
+					  <p class="hide nijm">Under investigation</p>
                     </div>
                     <div class="iq-summary-bar-data" data-index="2">
-                      <p>Intake Type</p>
-                      <p>Complaint</p>
-                    </div>
-                    
-                      <div class="iq-summary-bar-data" data-index="3">
                       <p>Priority</p>
                       <p class="hide nijm">Non-Immediate Jeopardy-Medium</p>
                       <p class="iq-not-available">No information provided</p>
                     </div>
-                    <div class="iq-summary-bar-data" data-index="4">
+                    <div class="iq-summary-bar-data" data-index="3">
+                      <p>Survey Due Date</p>
+                      <p class="hide nijm">04/30/2020</p>
+					  <p class="iq-not-available">Not applicable</p>
+                    </div>
+                      <div class="iq-summary-bar-data" data-index="4">
                       <p>Intake Start Date</p>
-                      <p>10/11/2019</p>
+                      <p>01/01/2020</p>
                     </div>
                     <div class="iq-summary-bar-data" data-index="5">
+                      <p>Complaint Survey</p>
+                      <p class="hide nijm"><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link" aria-hidden="true"></i></a><br>Exit 12/01/2019</p>
+					   <p class="iq-not-available">Not applicable</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="6">
                       <p>Primary Complainant</p>
                       <p class="iq-not-available">No information provided</p>
                     </div>
                     <!--<div class="iq-summary-bar-action p-1">
                       <a href="provider-details-hh.html" class="btn btn-link">
-                        View Details
+                        View Citation
                       </a>
                     </div>-->
                   </div>
@@ -118,26 +151,26 @@
     <div class="row">
       <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
         <nav class="nav flex-column iq-nav" role="navigation" style="position: relative">
-            <a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab">Basic Information</a> 
-            <a class="nav-link disabled" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab">Responsible Staff</a> 
-            <a class="nav-link disabled" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab">Parties Involved</a>
-            <a class="nav-link disabled" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab">Allegations</a>
-            <a class="nav-link disabled" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab">Triage</a>
-            <a href="javascript:void(0)" class="infoTooltip survey hide" style="position: absolute; bottom: 11.35rem; left: 4rem; " data-toggle="tooltip" data-placement="top" title="To initiate a survey or offsite investigation/administrative review, it must be indicated in the triage. ">&nbsp;</a><a class="nav-link disabled surveyTab" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab">Survey</a>
-            <a class="nav-link disabled" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab">Letters</a>
-            <a class="nav-link disabled" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab">Notes</a>
-            <a class="nav-link disabled" tabindex="0" id="tab9Tab" href="#tab9" data-toggle="tab" role="tab">Attachments</a> 
-            <!--<a class="nav-link" tabindex="0" id="tab8Tab" href="#tab8" data-toggle="tab" role="tab" aria-controls="tab8" aria-selected="false">Attachments</a>-->
+            <a class="nav-link active" tabindex="0" id="basicInfoTL" href="#basicInfoTab" data-toggle="tab" role="tab">Basic Information</a> 
+            <a class="nav-link disabled" tabindex="0" id="staffTL" href="#staffTab" data-toggle="tab" role="tab">Responsible Staff</a> 
+            <a class="nav-link disabled" tabindex="0" id="partiesTL" href="#partiesTab" data-toggle="tab" role="tab">Parties Involved</a>
+            <a class="nav-link disabled" tabindex="0" id="allegationTL" href="#allegationTab" data-toggle="tab" role="tab">Allegations</a>
+            <a class="nav-link disabled" tabindex="0" id="triageTL" href="#triageTab" data-toggle="tab" role="tab">Triage</a>
+            <a href="javascript:void(0)" class="infoTooltip survey hide" style="position: absolute; bottom: 11.35rem; left: 4rem; " data-toggle="tooltip" data-placement="top" title="To initiate a survey or offsite investigation/administrative review, it must be indicated in the triage. ">&nbsp;</a><a class="nav-link disabled surveyTab" tabindex="0" id="surveyTL" href="#surveyTab" data-toggle="tab" role="tab">Survey</a>
+            <a class="nav-link disabled" tabindex="0" id="lettersTL" href="#lettersTab" data-toggle="tab" role="tab">Letters</a>
+            <a class="nav-link disabled" tabindex="0" id="notesTL" href="#notesTab" data-toggle="tab" role="tab">Notes</a>
+            <a class="nav-link disabled" tabindex="0" id="attachmentsTL" href="#attachmentsTab" data-toggle="tab" role="tab">Attachments</a> 
+           
            </nav>
           
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-        <div class="alert alert-success successMsg hide" role="alert">
+          <div class="alert alert-success successMsg hide" role="alert">
           <div class="alert-content">Changes saved successfully</div>
         </div>
         <div class="alert alert-danger errorMsg hide" role="alert">
           <div class="alert-content">
-                 Unable to save. Please review and correct the following:
+                 <h2>Unable to Save</h2>Please review and correct the following:
                   <ul>
                       <li><a href="#address1M">Address 1</a> is required</li>
                       <li><a href="#cityM">City</a> is required</li>
@@ -145,26 +178,15 @@
                   </ul>
           </div>
         </div>
-        <div class="alert alert-danger staffCountError hide" role="alert">
-          <div class="alert-content">
-                 Unable to save. Please select at least 1 staff member to add.
-          </div>
-        </div>
         <div class="alert alert-danger involveTypeCountError hide" role="alert">
           <div class="alert-content">
-                 Unable to save. Please review and correct the following:
+                 <h2>Unable to Save</h2>Please review and correct the following:
                   <ul><li><a href="#involvement">Involvement</a> is required</li></ul>
-          </div>
-        </div>
-        <div class="alert alert-danger intakeTypeError hide" role="alert">
-          <div class="alert-content">
-                 Unable to save. Please review and correct the following:
-                  <ul><li><a href="#intakeType">Intake Type</a> is required</li></ul>
           </div>
         </div>
         <div class="alert alert-danger noteError hide" role="alert">
           <div class="alert-content">
-                 Unable to save. Please review and correct the following:
+                 <h2>Unable to Save</h2>Please review and correct the following:
                   <ul><li><a href="#note1">Note</a> is required</li></ul>
           </div>
         </div>
@@ -174,19 +196,26 @@
           </div>
         </div>
         <div class="alert alert-danger fileDescriptionError hide" role="alert">
-          <div class="alert-content">Unable to save. Please review and correct the following:<ul><li><a href="#fileDescriptionInput" title="Go to error">
+          <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:<ul><li><a href="#fileDescriptionInput" title="Go to error">
     File Description</a>. You have exceeded the character limit.</li></ul></div>
         </div>
         <div class="alert alert-danger letterRecipientError hide" role="alert">
           <div class="alert-content">
-                 Unable to save. Please complete at least one field to save. 
+                 <h2>Unable to Save</h2>Please complete at least one field to save. 
           </div>
         </div> 
+		  <div class="alert alert-danger intakeTypeError hide" role="alert">
+          <div class="alert-content">
+                 <h2>Unable to Save</h2>Please review and correct the following:
+                  <ul><li><a href="#intakeType">Intake Type</a> is required</li></ul>
+          </div>
+        </div>
         <div class="tab-content">
           <!-- basic info -->
-          <div class="tab-pane active" id="tab1" role="tabpanel"
-                    aria-labelledby="tab1Tab">
+          <div class="tab-pane active" id="basicInfoTab" role="tabpanel"  aria-labelledby="basicInfoTL">
+			 
             <section class="edit-view active">
+		
                  <div class="row tabTitle">
               <div class="col-sm-10">
                 <h2>Basic Information</h2>
@@ -259,7 +288,7 @@
                             </label>
                         </p>
                     </div>
-                    <!--<div class="col-md-8">
+                    <div class="col-md-8">
                     <p><label>Sources</label>
                     <textarea wrap="soft" id="intakeSources"></textarea>
                       <span class="help-text">Type to search and select one or more</span>
@@ -269,16 +298,16 @@
                     <div class="form-group">
                         <div class="text-right"><label class="float-left mt-2">Summary of Complaint</label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Open in a new tab or window">Text Editor Keyboard Shortcuts</a></div>
                 <div class="editTextDiv"></div>
-               
+                <!--<p class="help-text mb-5">Limit to 500 characters</p>-->
                     </div>
-                    </div>-->
+                    </div>
                 </div>
                     
                 </div>
                 
                 
                 <div class="iq-button-wrapper">
-                <a href="#" class="btn btn-primary" onClick="console.log( $('#intakeTypeChecked').val() ); if( $('#intakeTypeChecked').val() == '0' ) { $('#intakeType .iq-input-error-msg').removeClass('hide'); $('.alert.intakeTypeError').removeClass('hide'); } else { $('#tab1 .edit-view').removeClass('active');  $('#tab1 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide'); $('.nav.iq-nav .nav-link').removeClass('disabled'); $('#newVal').val('1'); $('.iq-page-header .breadcrumb-item.current').html('Complaint 12763'); $('.iq-page-header-content h1').html('Complaint 12763'); $('.iq-summary-bar').removeClass('hide'); $('.nav.iq-nav .nav-link.surveyTab').addClass('disabled'); $('.infoTooltip.survey').removeClass('hide'); $('#intakeType .iq-input-error-msg').addClass('hide'); $('.alert.intakeTypeError').addClass('hide'); }">Save</a>
+                <a href="#" class="btn btn-primary" onClick="saveIntakeBasicInfo(this);">Save</a>
                 <button class="btn btn-link" onClick="if($('#newVal').val() == 0){
                       window.location = 'provider-profile.html';                  
                     } else {('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); }">Cancel</button>
@@ -330,7 +359,7 @@
                     <p class="iq-not-available">No information provided</p>
                   </div>
                 </div>
-               <!-- <div class="row">
+                <div class="row">
                   <div class="col-md-4">
                     <label>Sources</label>
                   </div>
@@ -345,7 +374,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
                   </div>
-                </div>-->
+                </div>
             </div>
                
           
@@ -353,8 +382,13 @@
             </section>  
           </div>
           <!-- responsible staff -->
-          <div class="tab-pane " id="tab2" role="tabpanel" aria-labelledby="tab2Tab">
+          <div class="tab-pane " id="staffTab" role="tabpanel" aria-labelledby="staffTL">
             <section class="edit-view">
+				<div class="alert alert-danger staffCountError hide" role="alert">
+          <div class="alert-content">
+                 Unable to save. Please select at least 1 staff member to add.
+          </div>
+        </div>
                 <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Add Responsible Staff</h2><p>Find and add the responsible staff for this intake.</p>
@@ -594,7 +628,7 @@
             </section>
           </div>
           <!-- parties involved -->
-          <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3Tab">
+          <div class="tab-pane" id="partiesTab" role="tabpanel" aria-labelledby="partiesTL">
             <!-- party type -->
             <section class="edit-view active partyType">
                 <div class="row tabTitle">
@@ -2099,10 +2133,10 @@
             </section>
           </div>
           <!-- allegation -->
-          <div class="tab-pane " id="tab4" role="tabpanel" aria-labelledby="tab4Tab">
+          <div class="tab-pane" id="allegationTab" role="tabpanel" aria-labelledby="allegationTL">
             <!-- new allegation -->  
             <section class="edit-view addAllegation active">
-                <h2>Add Allegation &amp; Parties Involved</h2>
+                <h2>Add Allegation</h2>
                 <div class="row">
                     <div class="col-md-12">
                       <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
@@ -2123,7 +2157,7 @@
                         <input type="text">
                       </p>
                     </div>
-                    <!--<div class="col-md-12">
+                    <div class="col-md-12">
                        
                         <fieldset>
                 <legend>Seriousness</legend>
@@ -2147,25 +2181,11 @@
                         <select><option>Select one</option><option>Hugo, Victoria</option></select>
                         </p>
                     </div>
-                    <div class="col-md-6"></div>-->
-				</div>
-                    <h3>Parties Involved</h3> 
-				<button class="btn btn-outline-primary dropdown-toggle" type="button"
-                  id="partyMenu" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Add Involved Party
-                </button>
-                <div class="dropdown-menu" aria-labelledby="partyMenu">
-                  <a class="dropdown-item" href="#">Complainant</a>
-                  <a class="dropdown-item" href="#">Alleged Perpetrator</a>
-                  <a class="dropdown-item" href="#">Patient/Resident/Person Affected</a>
-				  <a class="dropdown-item" href="#">Other Party</a>
-                </div><br>
-				<p class="iq-not-available">There are no involved parties added.</p>
-				
-				
-				 <h3>Alleged Occurrences</h3>
-                 <div class="row">
+                    <div class="col-md-6"></div>
+                   
+                            
+                       
+                  
                     <div class="col-md-6">
                         <p><label>Shift</label>
                         <input type="text">
@@ -2185,8 +2205,6 @@
                     <span class="help-text">HH:MM</span></label>
                 </div>
             </div>
-				</div>
-				<div class="row">
             <div class="col-md-12">
                     <div class="form-group">
                         <div class="text-right"><label class="float-left mt-2">Allegation Details <span class="iq-asterisk">*</span></label><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link" target="_blank" title="Open in a new tab or window">Text Editor Keyboard Shortcuts</a></div>
@@ -2348,7 +2366,7 @@
     
           </div>
           <!-- triage -->
-          <div class="tab-pane " id="tab5" role="tabpanel" aria-labelledby="tab5Tab">
+          <div class="tab-pane " id="triageTab" role="tabpanel" aria-labelledby="triageTL">
               <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Triage</h2>
@@ -2420,20 +2438,23 @@
                     <fieldset>
                 <legend>Action Required</legend>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="surveyAction1" name="surveyAction" class="custom-control-input" onchange="if(this.checked) { $('.surveyDate').removeClass('hide'); }">
+                  <input type="radio" id="surveyAction1" name="surveyAction" class="custom-control-input" onchange="if(this.checked) { $('.surveyDate').removeClass('hide'); $('.conditionsList').removeClass('hide'); }">
                   <label class="custom-control-label" for="surveyAction1">  Survey </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="surveyAction2" name="surveyAction" class="custom-control-input" onchange="if(this.checked) { $('.surveyDate').removeClass('hide'); }">
+                  <input type="radio" id="surveyAction2" name="surveyAction" class="custom-control-input" onchange="if(this.checked) { $('.surveyDate').removeClass('hide'); $('.conditionsList').removeClass('hide')}">
                   <label class="custom-control-label" for="surveyAction2"> Offsite Investigation/Administrative Review  </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="surveyAction3" name="surveyAction" class="custom-control-input" onchange="if(this.checked) { $('.surveyDate').addClass('hide'); }">
+                  <input type="radio" id="surveyAction3" name="surveyAction" class="custom-control-input" onchange="if(this.checked) { $('.surveyDate').addClass('hide'); $('.conditionsList').addClass('hide') }">
                   <label class="custom-control-label" for="surveyAction3"> No Investigation </label>
                 </div>
                 </fieldset>
                 
-                       
+                <article class="conditionList hide">  
+					<h3>Conditions of Participation</h3>
+					<button class="btn btn-outline-primary">Add Conditions of Participation</button>
+				</article>  
                 </div>
                 <div class="col-md-12">
                     <h3>Triage Completion</h3>
@@ -2480,7 +2501,7 @@
                 <br>
                 <div class="iq-conditional-content hide calculated calDueDate">
                    <div class="row">
-                       <div class="col-md-5">
+                       <div class="col-md-8">
 
         <fieldset>
         <legend>Calculate From </legend>
@@ -2513,7 +2534,7 @@
             <span class="help-text">Can be reduced to meet state requirements or for other considerations</span>
         </p>
         <p><label>Calculated Date</label>
-            <input type="text" readonly value="10/30/2019">
+            <input type="text" readonly value="10/30/2019" style="width: 10rem;">
         </p>
                            <p><button class="btn btn-outline-primary" onclick="$('#surveyDueDateInput').val('2019-10-30')">Accept Date</button></p>
               
@@ -2612,7 +2633,7 @@
             </section>
           </div>  
           <!-- survey -->
-          <div class="tab-pane " id="tab6" role="tabpanel" aria-labelledby="tab6Tab">
+          <div class="tab-pane " id="surveyTab" role="tabpanel" aria-labelledby="surveyTL">
             <section class="edit-view active firstTime">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -2929,7 +2950,7 @@
             </section>
           </div>
           <!-- letters -->
-          <div class="tab-pane " id="tab7" aria-labelledby="tab7Tab">
+          <div class="tab-pane " id="lettersTab" aria-labelledby="lettersTL">
             <section class="edit-view newLetter active">
               <div class="row">
                 <div class="col-md-12"><h2>Add Letter: Overview</h2>
@@ -3207,7 +3228,7 @@
                     <div class="col-sm-12 file-description">
                         <p><label>File Description
                         <textarea class="file-description-text">This is the first letter sent to the provider</textarea>
-                        </label><span class="fdt"></span></p>
+                        </label><span class="fdt help-text"></span></p>
                     </div>
                 </div>
               </div>
@@ -3568,7 +3589,7 @@
               </section>
           </div>
           <!-- note -->
-          <div class="tab-pane " id="tab8" role="tabpanel" aria-labelledby="tab8Tab">
+          <div class="tab-pane " id="notesTab" role="tabpanel" aria-labelledby="notesTL">
             <!-- add note -->
             <section class="edit-view addNote active">
              <h2>Add Note</h2>
@@ -3627,7 +3648,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions expanded"
                   data-toggle="collapse" data-target="#noteAdded2" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span>Jane Freeman<br><small>10/11/2019 3:12 PM</small></span>
+                  <span><small>Note 2</small><br>Jane Freeman<br><small>10/11/2019 3:12 PM</small></span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button class="btn btn-link" onclick="$('#tab8 .read-view').removeClass('active'); $('#tab8 .edit-view.editNote').addClass('active');">Edit</button>|
@@ -3647,7 +3668,7 @@
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions expanded"
                   data-toggle="collapse" data-target="#noteAdded1" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span>Jeffery Sullivan<br><small>10/10/2019 11:03 AM</small></span>
+                 <span><small>Note 1</small><br>Jeffery Sullivan<br><small>10/10/2019 11:03 AM</small></span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button class="btn btn-link" onclick="$('#tab8 .read-view').removeClass('active'); $('#tab8 .edit-view.editNoteJS').addClass('active');">Edit</button><span>|</span>
@@ -3669,7 +3690,7 @@
             </section>
           </div>
           <!-- attachments -->
-          <div class="tab-pane " id="tab9" role="tabpanel" aria-labelledby="tab9Tab">
+          <div class="tab-pane " id="attachmentTab" role="tabpanel" aria-labelledby="attachmentTL">
               <section class="edit-view addAttachment active">
                   <h2>Add Attachment</h2>
                   <div id="attachmentControl"><p><label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUpload" name="file" class="form-control-file" onClick="$('#fileDetails').removeClass('hide'); $('#attachmentControl').addClass('hide'); $('.alert.fileAttachmentError').addClass('hide'); ">Select File</label></p>
@@ -3684,7 +3705,7 @@
                    
                     <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
                         <textarea class="form-control file-description-text" id="fileDescriptionInput"></textarea>
-                        </label><span class="fdt">Limit to 256 characters</span></p>
+                        </label><span class="fdt help-text">Limit to 256 characters</span></p>
            
                     </div>
                 </div>
@@ -3743,8 +3764,8 @@
         <td><p class="desText">Lorem ipsum dolor sit amet</p><p class="desText hide"><textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea></p></td>
       
     <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
-          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton11" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton11">
     <button class="dropdown-item">Download</button>
     <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
     <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
@@ -3757,8 +3778,8 @@
       <td><p>05/08/2019</p></td><td><p class="desText">This is the description of the file that is long and wraps to multiple lines</p>
         <p class="desText hide"><textarea rows="5" class="form-control">This is the description of the file that is long and wraps to multiple lines</textarea></p></td>
       <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
-          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton41" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton41">
     <button class="dropdown-item">Download</button>
     <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
     <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
@@ -3913,124 +3934,66 @@
     </div>
   </div>
 </footer>
-<script type="text/javascript" src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script> 
-<script type="text/javascript" src="../../../src/assets/third-party/popper/popper.min.js"></script> 
-<script type="text/javascript" src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script> 
-<link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
-<script type="text/javascript" src="../../../src/assets/js/scripts.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include datatables for responsive table -->
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <!-- to include multi-select dropdown selector -->
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../src/assets/js/scripts.js"></script>
+  <script src="../../hhaung/js/jquery.stickytabs.js"></script>
 <script>
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-})
-    $( function() {
-    var availableIntakeSources = [
-        "Accreditation Organization", "Anonymous", "CMS", "Congressional Inquiry", "Coroner", "Current Staff", "Entity Self-Reported", "ESRD Network", "Family", "FDA", "Former Staff", "Friend", "Media", "Medicare Intermediary/Carrier", "Ombudsman", "Other", "Other Health Provider", "Other State Agency", "Physician", "PT Organization", "Quality Improvement Organization", "Resident/Patient/Client", "State Survey Agency"                
-    ];
-    var availableReferralAgencies = [
-        "Accrediting Organization", "Adult Protective Services / Elder Care", "Attorney General's Office", "Department of Justice", "Law Enforcement", "Professional Board", "Veteran Affairs", "Other"
-    ];
-    function split( val ) {
-      return val.split( /,\s*/ );
-    }
-    function extractLast( term ) {
-      return split( term ).pop();
-    }
-    $( "#intakeSources" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableIntakeSources, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-        
-      $( "#referralAgencies" )
-      // don't navigate away from the field on tab when selecting an item
-      .on( "keydown", function( event ) {
-        if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).autocomplete( "instance" ).menu.active ) {
-          event.preventDefault();
-        }
-      })
-      .autocomplete({
-        minLength: 0,
-        source: function( request, response ) {
-          // delegate back to autocomplete, but extract the last term
-          response( $.ui.autocomplete.filter(
-            availableReferralAgencies, extractLast( request.term ) ) );
-        },
-        focus: function() {
-          // prevent value inserted on focus
-          return false;
-        },
-        select: function( event, ui ) {
-          var terms = split( this.value );
-          // remove the current input
-          terms.pop();
-          // add the selected item
-          terms.push( ui.item.value );
-          // add placeholder to get the comma-and-space at the end
-          terms.push( "" );
-          this.value = terms.join( ", " );
-          return false;
-        }
-      });
-    });
-  </script>
-<script type="text/javascript">
- var editor = new FroalaEditor('div.editTextDiv', { 
-     //charCounterMax: 500 
- }); 
-        
-$(document).ready(function () {
-    window.setTimeout(function() {
-        $(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
-            $(this).addClass('hide'); 
-        });
-    }, 5000);
-    
-     $('#fileDescriptionInput').keyup(function () {
+	  $(document).ready(function () {
+		$('.nav-horizontal').stickyTabs();
+	    $('[data-toggle="tooltip"]').tooltip(); 
+	    $("select.multiselect").bsMultiSelect();
+		var editor = new FroalaEditor('div.editTextDiv'); 
+	    window.setTimeout(function() {
+			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+				$(this).addClass('hide'); 
+			});
+		}, 5000);
+    	$('#fileDescriptionInput').keyup(function () {
           var max = 256;
           var char = 0; 
           var len = $(this).val().length;
           if (len >= max) {
             var char = len - max; 
             $('.fdt').addClass('iq-input-error-msg'); 
-			$('.fdt').html('Character limit exceeded by ' + char );
-            //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
           } else {
-			$('.fdt').removeClass('iq-input-error-msg'); 
-			$('.fdt').html('Limit to '+max+ ' characters');
-            //$('#charNum').html(len + '/256.');
+            $('#charNum').html(len + '/256.');
           }
         });
-});
+		
+	  });
 
+	  function saveIntakeBasicInfo(ele){
+		  console.log( $('#intakeTypeChecked').val() ); 
+		  if( $('#intakeTypeChecked').val() == '0' ) { 
+			  $('#intakeType .iq-input-error-msg').removeClass('hide'); 
+			  $('.alert.intakeTypeError').removeClass('hide'); 
+		  } else { 
+			  $('#basicInfoTab .edit-view').removeClass('active');  
+			  $('#basicInfoTab .read-view').addClass('active'); 
+			  $('.alert.successMsg').removeClass('hide'); 
+			  $('#basicInfoTab .tabTitle .btn').removeClass('hide'); 
+			  $('.nav.iq-nav .nav-link').removeClass('disabled'); 
+			  $('#newVal').val('1'); 
+			  $('.iq-page-header .breadcrumb-item.current').html('Complaint 12763'); 
+			  $('.iq-page-header-content h1').html('Complaint 12763'); 
+			  $('.iq-summary-bar').removeClass('hide'); 
+			  $('.nav.iq-nav .nav-link.surveyTab').addClass('disabled'); 
+			  $('.infoTooltip.survey').removeClass('hide'); 
+			  $('#intakeType .iq-input-error-msg').addClass('hide'); 
+			  $('.alert.intakeTypeError').addClass('hide'); 
+		  }
+	  }
 var partyCount = 0; 
     
 function sortParties(){
