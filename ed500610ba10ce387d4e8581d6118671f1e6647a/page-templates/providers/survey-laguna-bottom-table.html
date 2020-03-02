@@ -15,7 +15,8 @@
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 <!-- to match design system definition -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
-	<style>.dtr-title { display: none !important; }</style>
+	<style>.dtr-title { display: none !important; }
+	.dataTables_wrapper .dataTables_filter { margin-right: 15.5rem; z-index: 0;}</style>
 </head>
 <body>
 <header>
@@ -1904,9 +1905,11 @@
               </div>
               
 				<div class="row" style="position: relative">
-					<div class="col-md-6"><div style="position: absolute; bottom: -2.25rem;"><span class="info-text"><span class="aoCount">3</span> Citations Total</span></div>
+					<div class="col-md-8"><div style="position: absolute; bottom: -2.25rem;"><span class="info-text"><span class="aoCount">3</span> Citations Total</span></div>
 					</div>
-				<div class="col-md-6"></div>
+				<div class="col-md-4 text-right">
+						<select style="display: inline-block; width: 15rem; position: absolute; bottom: -2.75rem; right: 0; z-index: 100;" onchange="selectRegSetRV()" id="allRegSelectRV"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select>
+				</div>
 				</div>
 			
 			<table class="display" style="width: 100%;" id="currentCitesTable">
@@ -1914,7 +1917,7 @@
 						<tr><th><span>Citation</span></th><th><span>Tag Type</span></th><th><span>Status</span></th><th><span>Authors</span></th><th class="text-right"><span>Actions</span></th></tr>
 					</thead>
 					<tbody>
-						<tr><td><a href="javascript:(void)" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.citeS0').addClass('active'); " style="font-size: 1.125rem;">S0</a><br><small>Opening Comments</small></td>
+						<tr class="ST"><td><a href="javascript:(void)" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.citeS0').addClass('active'); " style="font-size: 1.125rem;">S0</a><br><small>Opening Comments</small></td>
 							<td><span class="badge badge-pill badge-info">Licensure</span></td>
 							<td><span class="iq-status iq-status-in-progress"></span> <small>In Progress</small></td>
 							<td><ul><li>Allen, Paul</li><li>Carr, Roberta</li></ul></td>
@@ -1927,7 +1930,7 @@
 								</div>
 							</td>
 						</tr>
-						<tr><td><a href="javascript:(void)"  onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.citeE2').addClass('active'); " style="font-size: 1.125rem;">G0406</a><br><small>Patient Rights</small></td>
+						<tr class="HHA"><td><a href="javascript:(void)"  onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.citeE2').addClass('active'); " style="font-size: 1.125rem;">G0406</a><br><small>Patient Rights</small></td>
 							<td><span class="badge badge-pill badge-warning">Condition</span></td>
 							<td><span class="iq-status iq-status-not-started"></span> <small>Not Started</small></td>
 							<td><ul><li>Carr, Roberta</li><li>Taylor, Zach</li></ul></td>
@@ -1939,7 +1942,7 @@
 								</div>
 							 </td>
 						</tr>
-						<tr><td><a href="javascript:(void)"  onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.citeE1').addClass('active'); " style="font-size: 1.125rem;">G1008</a><br><small>Clinical Records</small></td>
+						<tr class="HHA"><td><a href="javascript:(void)"  onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.citeE1').addClass('active'); " style="font-size: 1.125rem;">G1008</a><br><small>Clinical Records</small></td>
 							<td><span class="badge badge-pill badge-warning">Condition</span></td>
 							<td><span class="iq-status iq-status-not-started"></span> <small>Not Started</small></td>
 							<td><ul><li>Morales, Loretta</li></ul></td>
@@ -4428,6 +4431,24 @@
 					}
 					break;
 			 } 
+		}
+	function selectRegSetRV(){
+			var regSet = $('#allRegSelectRV option:selected').val();
+			$('#citationsT .read-view.all tbody tr').addClass('hide');
+			switch(regSet) {
+				 case 'er': 
+					$('#citationsT .read-view.all tbody tr.ER').removeClass('hide');
+					break;
+				case 'hha':
+					$('#citationsT .read-view.all tbody tr.HHA').removeClass('hide');
+					break;
+				case 'state':
+					$('#citationsT .read-view.all tbody tr.ST').removeClass('hide');
+					break;
+				case 'all': default: 
+					$('#citationsT .read-view.all tbody tr').removeClass('hide');
+					break;
+			}
 		}
     </script>
 </body>

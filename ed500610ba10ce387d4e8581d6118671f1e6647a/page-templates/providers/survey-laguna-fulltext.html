@@ -1895,22 +1895,17 @@
               </div>
               
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-8"><span class="info-text"><span class="aoCount">3</span> Citations Total</span>
 					</div>
-				<div class="col-md-8 text-right"><span class="info-text"><span class="aoCount">3</span> Citations Total</span> | <a href="#" id="citeStatusLink" data-toggle="dropdown"><small>Citation Status Legend</small> <i class="fal fa-info-circle"></i></a><div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="dropdownMenuButtonLink">
-                 <span class="iq-status iq-status-not-started"></span> Not Started<br>
-						<span class="iq-status iq-status-in-progress"></span> In Progress<br>
-						<span class="iq-status iq-status-review"></span> Ready for Review<br>
-						<span class="iq-status iq-status-finalized"></span> Finalized
-                </div></div>
+				<div class="col-md-4 text-right"><select style="display: inline-block; width: auto; " onchange="selectRegSetRV()" id="allRegSelectRV"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select></div>
 				</div>
 				<hr>
 				
-						<h3 class="iq-label">1 Citation from IL State Home Health (ST - S - 2 - HHA)</h3>
+						<h3 class="iq-label ST">1 Citation from IL State Home Health (ST - S - 2 - HHA)</h3>
 				<div class="accordion-wrapper">
 	
 					
-					<div class="iq-accordion secondary">
+					<div class="iq-accordion secondary ST">
         <div class="card ">
 			
           <div class="card-header d-flex">
@@ -1973,9 +1968,9 @@
           </div>
         </div>
                  </div>
-				<h3 class="iq-label">2 Citations from Home Health Agencies (FED - G - 11.01)</h3>
+				<h3 class="iq-label HHA">2 Citations from Home Health Agencies (FED - G - 11.01)</h3>
 				<div class="accordion-wrapper">
-					<div class="iq-accordion secondary">
+					<div class="iq-accordion secondary HHA">
         <div class="card ">
 			
           <div class="card-header d-flex">
@@ -2028,7 +2023,7 @@
             </div>
           </div>
         </div>
-					<div class="iq-accordion secondary">
+					<div class="iq-accordion secondary HHA">
         <div class="card ">
 			
           <div class="card-header d-flex">
@@ -2082,7 +2077,12 @@
         </div>
 					
 				</div>
-				
+				<a href="#" id="citeStatusLink" data-toggle="dropdown"><small>Citation Status Legend</small> <i class="fal fa-info-circle"></i></a><div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="dropdownMenuButtonLink">
+                 <span class="iq-status iq-status-not-started"></span> Not Started<br>
+						<span class="iq-status iq-status-in-progress"></span> In Progress<br>
+						<span class="iq-status iq-status-review"></span> Ready for Review<br>
+						<span class="iq-status iq-status-finalized"></span> Finalized
+                </div>
 			  	
          
             </section>
@@ -4393,6 +4393,29 @@
 					break;
 			 } 
 		}
+	function selectRegSetRV(){
+		var regSet = $('#allRegSelectRV option:selected').val();
+		$('#citationsT .read-view.all .iq-accordion').addClass('hide');
+		$('#citationsT .read-view.all .iq-label').addClass('hide');
+		switch(regSet) {
+			 case 'er': 
+				$('#citationsT .read-view.all .iq-accordion.ER').removeClass('hide');
+				$('#citationsT .read-view.all .iq-label.ER').removeClass('hide');
+				break;
+			case 'hha':
+				$('#citationsT .read-view.all .iq-accordion.HHA').removeClass('hide');
+				$('#citationsT .read-view.all .iq-label.HHA').removeClass('hide');
+				break;
+			case 'state':
+				$('#citationsT .read-view.all .iq-accordion.ST').removeClass('hide');
+				$('#citationsT .read-view.all .iq-label.ST').removeClass('hide');
+				break;
+			case 'all': default: 
+				$('#citationsT .read-view.all .iq-accordion').removeClass('hide');
+				$('#citationsT .read-view.all .iq-label').removeClass('hide');
+				break;
+		}
+	}
     </script>
 	
 	
