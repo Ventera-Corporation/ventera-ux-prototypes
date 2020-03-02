@@ -904,7 +904,7 @@
                     <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();}" >
         <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="var searchKey = $('#citeSearch').val().toUpperCase(); switch( searchKey.toLowerCase()){ case '': $('#citations .iq-accordion').removeClass('hide'); $('#citations .iq-accordion.allPage2').addClass('hide'); $('#citations .iq-accordion.allPage3').addClass('hide'); $('#citations .iq-accordion.allPage4').addClass('hide'); break; case 'clinical record': case 'record': case 'clinical': $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.CR').removeClass('hide'); break; default: $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.'+$('#citeSearch').val()).removeClass('hide'); break;   }">Search</button>
+         <button type="submit" class="btn btn-primary searchButton" onClick="searchCites()">Search</button>
         </div>
       </div>
                     <div class="input-group-help-text help-text">Search by keyword or citation tag number</div>
@@ -915,19 +915,21 @@
               <div class="row mt-4 citationsList">
                 <div class="col-md-9" id="citations">
 					<br>
-					<div class="row"><div class="col-md-3" style="vertical-align: bottom"><h3 class="iq-label">1-10 of 490 Citations</h3></div><div class="col-md-9 text-right"><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
+					<div class="row"><div class="col-md-3" style="vertical-align: bottom"><h3 class="iq-label citesSearchCount">1-10 of 490 Citations</h3></div><div class="col-md-9 text-right"><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)" id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
      
 <div class="accordion-wrapper"> 
+		<!-- All page 1 -->
+		<!-- [1] ER memo-->
 		<div class="iq-accordion secondary data-focus ER memo 0 0000 e0 e0000">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite1content" type="button" onclick="$(this).toggleClass('expanded');" title="Expand to View Citation" role="link">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0000 - Initial Comments <span class="badge badge-white">Memo</span></span>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0000 - Initial Comments</span> <span class="badge badge-white">Memo</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0000');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0000');">Add</button>
 		</div>
 		</div>
 		<div id="cite1content" class="collapse ">
@@ -942,16 +944,17 @@
 		</div>
 		</div>
 		</div>
+		<!-- [1] HHA memo -->
 		<div class="iq-accordion secondary data-focus HHA memo 0 0000 g0000 g0">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite2content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0000 - Initial Comments  <span class="badge badge-white">Memo</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0000 - Initial Comments</span>  <span class="badge badge-white">Memo</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0000');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0000');">Add</button>
 		</div>
 		</div>
 		<div id="cite2content" class="collapse ">
@@ -967,15 +970,16 @@
 		</div>
 		</div>
 		</div>
+		<!-- [1] ST licensure -->
 		<div class="iq-accordion secondary data-focus ST licensure 0 s0 s0000">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite3content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">IL State Home Health (ST - S - 2 - HHA)</span>S0 - Opening Comments <span class="badge">Licensure</span></span></button>
+		<span><span class="iq-description">IL State Home Health (ST - S - 2 - HHA)</span><span class="tagName">S0 - Opening Comments</span> <span class="badge">Licensure</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 's0000');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('s0000');">Add</button>
 		</div>
 		</div>
 		<div id="cite3content" class="collapse ">
@@ -990,15 +994,16 @@
 		</div>
 		</div>
 		</div>
+		<!-- [7] ER condition 1 standard 6  -->
 		<div class="iq-accordion secondary data-focus ER condition 1 e0001 0001 e1">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0001 - Establishment of the Emergency Program (EP) <span class="badge badge-warning">Condition</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0001');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0001');">Add</button>
 		</div>
 		</div>
 		<div id="cite4content" class="collapse ">
@@ -1019,9 +1024,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite0010content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0010 - Clinic Location - Use of Alarms and Fire <span class="badge">Standard</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0010 - Clinic Location - Use of Alarms and Fire</span> <span class="badge">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0010');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0010');">Add</button>
 		</div>
 		</div>
 		<div id="cite0010content" class="collapse ">
@@ -1042,9 +1047,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite15content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0011 - CORF/Clinic Development and Fire Safety <span class="badge badge-info">Standard</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0011 - CORF/Clinic Development and Fire Safety</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0011');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0011');">Add</button>
 		</div>
 		</div>
 		<div id="cite15content" class="collapse ">
@@ -1065,9 +1070,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite16content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0012 - Transplant with OPO/Hospitals <span class="badge badge-info">Standard</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0012 - Transplant with OPO/Hospitals</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0012');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0012');">Add</button>
 		</div>
 		</div>
 		<div id="cite16content" class="collapse ">
@@ -1088,9 +1093,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite17content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0013 - Development of EP Policies and Procedures <span class="badge badge-info">Standard</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0013 - Development of EP Policies and Procedures</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0013');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0013');">Add</button>
 		</div>
 		</div>
 		<div id="cite17content" class="collapse ">
@@ -1111,9 +1116,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite18content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0014 - Hospital and OPO Mutual Policies <span class="badge badge-info">Standard</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0014 - Hospital and OPO Mutual Policies</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0014');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0014');">Add</button>
 		</div>
 		</div>
 		<div id="cite18content" class="collapse ">
@@ -1134,9 +1139,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite19content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0015 - Subsistence Needs for Staff and Patients <span class="badge badge-info">Standard</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0015 - Subsistence Needs for Staff and Patients</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0015');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0015');">Add</button>
 		</div>
 		</div>
 		<div id="cite19content" class="collapse ">
@@ -1152,16 +1157,17 @@
 		</div>
 		</div>
 		
-		<!-- page 2 -->
+		<!-- all page 2 -->
+		<!-- [2] ER standard 2-->
 		<div class="iq-accordion secondary data-focus ER standard hide allPage2 16 0016 e16 e0016">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite0016content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0016 - Hospice Followup for Staff <span class="badge badge-info">Standard</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0016 - Hospice Followup for Staff</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0016');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0016');">Add</button>
 		</div>
 		</div>
 		<div id="cite0016content" class="collapse ">
@@ -1182,9 +1188,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite0015content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span>E0017 - HHA Comprehensive Assessment in Disaster <span class="badge badge-info">Standard</span></span></button>
+		<span><span class="iq-description">Emergency Preparedness (FED - E - 1.01)</span><span class="tagName">E0017 - HHA Comprehensive Assessment in Disaster</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0017');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0017');">Add</button>
 		</div>
 		</div>
 		<div id="cite0015content" class="collapse ">
@@ -1199,16 +1205,18 @@
 		</div>
 		</div>
 		</div>
+		<!-- ER fits in one page -->
+		<!-- [8] HHA condition 2 standard 4 element 2 -->
 		<div class="iq-accordion secondary data-focus HHA condition 350 0350 g350 g0350 allPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite350content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0350 - Release of patient identifiable OASIS info <span class="badge badge-warning">Condition</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'e0018');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0018');">Add</button>
 		</div>
 		</div>
 		<div id="cite350content" class="collapse ">
@@ -1230,10 +1238,10 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite370content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0370 - Reporting OASIS information  <span class="badge badge-warning">Condition</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0370 - Reporting OASIS information</span>  <span class="badge badge-warning">Condition</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0370');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0370');">Add</button>
 		</div>
 		</div>
 		<div id="cite370content" class="collapse ">
@@ -1255,10 +1263,10 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite372content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0372 - Encoding and transmitting OASIS  <span class="badge badge-info">Standard</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0372 - Encoding and transmitting OASIS</span>  <span class="badge badge-info">Standard</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0372');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0372');">Add</button>
 		</div>
 		</div>
 		<div id="cite372content" class="collapse ">
@@ -1280,10 +1288,10 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite374content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0374 - Accuracy of encoded OASIS data  <span class="badge badge-info">Standard</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0374 - Accuracy of encoded OASIS data</span>  <span class="badge badge-info">Standard</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0374');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0374');">Add</button>
 		</div>
 		</div>
 		<div id="cite374content" class="collapse ">
@@ -1305,10 +1313,10 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite376content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0376 - Transmittal of OASIS data  <span class="badge badge-info">Standard</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0376 - Transmittal of OASIS data</span> <span class="badge badge-info">Standard</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0376');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0376');">Add</button>
 		</div>
 		</div>
 		<div id="cite376content" class="collapse ">
@@ -1330,10 +1338,10 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite378content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0378 - OASIS data transmission format  <span class="badge badge-light">Element</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0378 - OASIS data transmission format</span>  <span class="badge badge-light">Element</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0378');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0378');">Add</button>
 		</div>
 		</div>
 		<div id="cite378content" class="collapse ">
@@ -1355,10 +1363,10 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite380content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0380 - Successfully transmit test data  <span class="badge badge-light">Element</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0380 - Successfully transmit test data</span>  <span class="badge badge-light">Element</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0380');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0380');">Add</button>
 		</div>
 		</div>
 		<div id="cite380content" class="collapse ">
@@ -1380,10 +1388,10 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite382content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0382 - Transmit data using compliant software  <span class="badge badge-light">Element</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0382 - Transmit data using compliant software</span>  <span class="badge badge-light">Element</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0382');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0382');">Add</button>
 		</div>
 		</div>
 		<div id="cite382content" class="collapse ">
@@ -1400,17 +1408,20 @@
 		</div>
 		</div>
 		
-		<!-- page 3 -->
+		<!-- all page 3 -->
+		<!-- [10] HHA condition 2 standard 3 element 5 -->
+		
+		<!-- HHA ele -->
 		<div class="iq-accordion secondary data-focus HHA element 384 0384 g384 g0384 allPage3 hide">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite384content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0384 - Transmit data that includes branch identifier  <span class="badge badge-light">Element</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0384 - Transmit data that includes branch identifier</span>  <span class="badge badge-light">Element</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0384');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0384');">Add</button>
 		</div>
 		</div>
 		<div id="cite384content" class="collapse ">
@@ -1426,16 +1437,19 @@
 		</div>
 		</div>
 		</div>	
+		
+		<!-- HHA page 2 -->
+		<!-- HHA std -->
 		<div class="iq-accordion secondary data-focus HHA standard 386 0386 g386 g0386 allPage3 hhaPage2 hide">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite386content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0386 - Data Format  <span class="badge badge-info">Standard</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0386 - Data Format</span>  <span class="badge badge-info">Standard</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0386');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0386');">Add</button>
 		</div>
 		</div>
 		<div id="cite386content" class="collapse ">
@@ -1451,16 +1465,17 @@
 		</div>
 		</div>
 		</div>
+		<!-- HHA con -->
 		<div class="iq-accordion secondary data-focus HHA condition 406 0406 g406 g0406 allPage3 hhaPage2 hide">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite406content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0406 - Patient Rights  <span class="badge badge-warning">Condition</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0406 - Patient Rights</span>  <span class="badge badge-warning">Condition</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0406');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0406');">Add</button>
 		</div>
 		</div>
 		<div id="cite406content" class="collapse ">
@@ -1476,17 +1491,17 @@
 		</div>
 		</div>
 		</div>
-		
+		<!-- HHA std -->
 		<div class="iq-accordion secondary data-focus HHA standard 408 0408 g408 g0408  allPage3 hhaPage2 hide">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite408content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span>G0408 - Notice of Rights  <span class="badge badge-info">Standard</span></span>
+		<span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0408 - Notice of Rights</span>  <span class="badge badge-info">Standard</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g0408');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0408');">Add</button>
 		</div>
 		</div>
 		<div id="cite408content" class="collapse ">
@@ -1502,16 +1517,17 @@
 		</div>
 		</div>
 		</div>
+		<!-- HHA con -->
 		<div class="iq-accordion secondary data-focus HHA condition 1008 g1008 allPage3 hhaPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite6content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1008 - Clinical Records <span class="badge badge-warning">Condition</span></span>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1008 - Clinical Records</span> <span class="badge badge-warning">Condition</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1008');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1008');">Add</button>
 		</div>
 		</div>
 		<div id="cite6content" class="collapse ">
@@ -1526,15 +1542,16 @@
 		</div>
 		</div>
 		</div>
+		<!-- HHA std -->
 		<div class="iq-accordion secondary data-focus HHA standard 1010 g1010 allPage3 hhaPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite7content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1010 - Contents of Clinical Record <span class="badge">Standard</span></span></button>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1010 - Contents of Clinical Record</span> <span class="badge">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1010');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1010');">Add</button>
 		</div>
 		</div>
 		<div id="cite7content" class="collapse ">
@@ -1549,15 +1566,16 @@
 		</div>
 		</div>
 		</div>
+		<!-- HHA ele -->
 		<div class="iq-accordion secondary data-focus HHA element 1012 g1012 allPage3 hhaPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite8content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1012 - Required Items in Clinical Record <span class="badge badge-light">Element</span></span></button>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1012 - Required Items in Clinical Record</span> <span class="badge badge-light">Element</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1012');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1012');">Add</button>
 		</div>
 		</div>
 		<div id="cite8content" class="collapse ">
@@ -1578,9 +1596,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite9content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1014 - Interventions and Patient Response <span class="badge badge-light">Element</span></span></button>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1014 - Interventions and Patient Response</span> <span class="badge badge-light">Element</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1014');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1014');">Add</button>
 		</div>
 		</div>
 		<div id="cite9content" class="collapse ">
@@ -1601,9 +1619,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite10content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1016 - Goals in the patient's plans of care <span class="badge badge-light">Element</span></span></button>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1016 - Goals in the patient's plans of care</span> <span class="badge badge-light">Element</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1016');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1016');">Add</button>
 		</div>
 		</div>
 		<div id="cite10content" class="collapse ">
@@ -1624,9 +1642,9 @@
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite11content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1018 - Contact Information for the Patient <span class="badge badge-light">Element</span></span></button>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1018 - Contact Information for the Patient</span> <span class="badge badge-light">Element</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1018');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1018');">Add</button>
 		</div>
 		</div>
 		<div id="cite11content" class="collapse ">
@@ -1642,15 +1660,16 @@
 		</div>
 		</div>
 		
+		<!-- all page 4
 		<div class="iq-accordion secondary data-focus HHA element 1020 g1020 allPage4 hhaPage2 hide CR">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite12content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1020 - Contact Info for Primary Care Practitioner <span class="badge badge-light">Element</span></span></button>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1020 - Contact Info for Primary Care Practitioner</span> <span class="badge badge-light">Element</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1020');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1020');">Add</button>
 		</div>
 		</div>
 		<div id="cite12content" class="collapse ">
@@ -1664,16 +1683,17 @@
 		</div>
 		</div>
 		</div>
-		</div>
-		<div class="iq-accordion secondary data-focus HHA element 1022 g1022 allPage4 hhaPage2 hide">
+		</div> -->
+		<!-- HHA page 3
+		<div class="iq-accordion secondary data-focus HHA element 1022 g1022 allPage4 hhaPage3 hide">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite13content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1022 - Discharge and Transfer Summaries <span class="badge badge-light">Element</span></span></button>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1022 - Discharge and Transfer Summaries</span> <span class="badge badge-light">Element</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1022');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1022');">Add</button>
 		</div>
 		</div>
 		<div id="cite13content" class="collapse ">
@@ -1688,15 +1708,15 @@
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA standard 1024 g1024 allPage4 hhaPage2 hide">
+		<div class="iq-accordion secondary data-focus HHA standard 1024 g1024 allPage4 hhaPage3 hide">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite14content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span>G1024 - Authentication <span class="badge badge-info">Standard</span></span></button>
+		<span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1024 - Authentication</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag(this, 'g1024');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g1024');">Add</button>
 		</div>
 		</div>
 		<div id="cite14content" class="collapse ">
@@ -1710,13 +1730,34 @@
 		</div>
 		</div>
 		</div>
-		</div>
+		</div> -->
     </div>
-                    <nav aria-label="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled"><button class="page-link first" aria-label="First" type="button">First</button></li><li class="page-item disabled"><button class="page-link previous" aria-label="Previous" type="button">Previous</button></li><li class="page-item active" onClick="$('#citations .iq-accordion').removeClass('hide'); $('#citations .iq-accordion.allPage2').addClass('hide'); $('#citations .iq-accordion.allPage3').addClass('hide'); $('#citations .iq-accordion.allPage4').addClass('hide'); $('#citations .pagination .page-item').removeClass('active'); $(this).addClass('active');"><span class="page-link">1</span></li><li class="page-item" onClick="$('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.allPage2').removeClass('hide'); $('#citations .pagination .page-item').removeClass('active'); $(this).addClass('active');"><button type="button" class="page-link">2</button></li><li class="page-item" onClick="$('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.allPage3').removeClass('hide'); $('#citations .pagination .page-item').removeClass('active'); $(this).addClass('active');"><button type="button" class="page-link">3</button></li><li class="page-item"><button type="button" class="page-link">4</button></li><li class="page-item"><button type="button" class="page-link">5</button></li><!--<li class="page-item d-none d-md-block"><button type="button" class="page-link">6</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">7</button></li><li class="page-item d-none d-md-block"><button type="button" class="page-link">8</button></li>--><li class="page-item"><button class="page-link next" aria-label="Next" type="button">Next</button></li><li class="page-item"><button type="button" class="page-link last" aria-label="Last">Last</button></li></ul></nav>
-               		<!--<p><a href="#saveCitationsButton">Review citations to add and save</a></p> -->
+<nav aria-label="Table Pagination">
+		<ul class="pagination pagination-large">
+			<li class="page-item first" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button">First</button>
+			</li>
+			<li class="page-item previous" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button">Previous</button>
+			</li>
+			<li class="page-item active page1" onClick="gotoPage1()">
+				<button class="page-link">1</button>
+			</li>
+			<li class="page-item page2" onClick="gotoPage2()">
+				<button type="button" class="page-link">2</button>
+			</li>
+			<li class="page-item page3" onClick="gotoPage3()">
+				<button type="button" class="page-link">3</button>
+			</li>
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button">Next</button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last">Last</button>
+			</li>
+		</ul>
+	</nav>
                    
-                    
-                    
                 </div>
                 <div class="col-md-3 iq-static-col position-sticky" id="saveCitationsButton">
 				<div class="sticky-top">	
@@ -1852,22 +1893,17 @@
               </div>
               
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-4" style="padding-top: .5rem;"><span class="info-text"><span class="aoCount">3</span> Citations Total</span>
 					</div>
-				<div class="col-md-8 text-right"><span class="info-text"><span class="aoCount">3</span> Citations Total</span> | <a href="#" id="citeStatusLink" data-toggle="dropdown"><small>Citation Status Legend</small> <i class="fal fa-info-circle"></i></a><div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="dropdownMenuButtonLink">
-                 <span class="iq-status iq-status-not-started"></span> Not Started<br>
-						<span class="iq-status iq-status-in-progress"></span> In Progress<br>
-						<span class="iq-status iq-status-review"></span> Ready for Review<br>
-						<span class="iq-status iq-status-finalized"></span> Finalized
-                </div></div>
+				<div class="col-md-8 text-right"><select style="display: inline-block; width: auto; " onchange="selectRegSetRV()" id="allRegSelectRV"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select></div>
 				</div>
 				<hr>
 				
-						<h3 class="iq-label">1 Citation from IL State Home Health (ST - S - 2 - HHA)</h3>
+						<h3 class="iq-label ST">1 Citation from IL State Home Health (ST - S - 2 - HHA)</h3>
 				<div class="accordion-wrapper">
 	
 					
-					<div class="iq-accordion secondary">
+					<div class="iq-accordion secondary ST">
         <div class="card ">
 			
           <div class="card-header d-flex">
@@ -1930,9 +1966,9 @@
           </div>
         </div>
                  </div>
-				<h3 class="iq-label">2 Citations from Home Health Agencies (FED - G - 11.01)</h3>
+				<h3 class="iq-label HHA">2 Citations from Home Health Agencies (FED - G - 11.01)</h3>
 				<div class="accordion-wrapper">
-					<div class="iq-accordion secondary">
+					<div class="iq-accordion secondary HHA">
         <div class="card ">
 			
           <div class="card-header d-flex">
@@ -1985,7 +2021,7 @@
             </div>
           </div>
         </div>
-					<div class="iq-accordion secondary">
+					<div class="iq-accordion secondary HHA">
         <div class="card ">
 			
           <div class="card-header d-flex">
@@ -2039,7 +2075,12 @@
         </div>
 					
 				</div>
-				
+				<a href="#" id="citeStatusLink" data-toggle="dropdown"><small>Citation Status Legend</small> <i class="fal fa-info-circle"></i></a><div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="dropdownMenuButtonLink">
+                 <span class="iq-status iq-status-not-started"></span> Not Started<br>
+						<span class="iq-status iq-status-in-progress"></span> In Progress<br>
+						<span class="iq-status iq-status-review"></span> Ready for Review<br>
+						<span class="iq-status iq-status-finalized"></span> Finalized
+                </div>
 			  	
          
             </section>
@@ -3866,8 +3907,6 @@
     </div>
   </div>
 </div>
-
-<input type="hidden" id="tagNameRepo" value="">
 	
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
@@ -3906,33 +3945,15 @@
         });
 		
 	  });
-	 function selectRegSet(ele){
-		 console.log(ele.options[ele.selectedIndex].value);
-		 switch(ele.options[ele.selectedIndex].value){
-			 case 'er': $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.ER').removeClass('hide'); break;
-			 case 'hha': $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.HHA').removeClass('hide'); $('#citations .iq-accordion.HHA.hhaPage2').addClass('hide'); break;
-			 case 'state': $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.ST').removeClass('hide'); break;
-			 default:  $('#citations .iq-accordion').removeClass('hide'); $('#citations .iq-accordion.allPage2').addClass('hide'); $('#citations .iq-accordion.allPage3').addClass('hide'); $('#citations .iq-accordion.allPage4').addClass('hide'); break;
-		 }
+	function selectRegSet(){
+		 gotoPage1();
 	 }
-	function selectTagType(ele2){
-		 console.log(ele2.options[ele2.selectedIndex].value);
-		 switch(ele2.options[ele2.selectedIndex].value){
-			 case 'condition': $('#citations .iq-accordion').addClass('hide');  $('#citations .iq-accordion.condition').removeClass('hide');  break;
-			 case 'standard': $('#citations .iq-accordion').addClass('hide');  $('#citations .iq-accordion.standard').removeClass('hide'); break;
-			  case 'element': $('#citations .iq-accordion').addClass('hide');  $('#citations .iq-accordion.element').removeClass('hide'); break;
-			  case 'licensure': $('#citations .iq-accordion').addClass('hide');  $('#citations .iq-accordion.licensure').removeClass('hide'); break;
-			 case 'memo': $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.memo').removeClass('hide'); break;
-			 default:   $('#citations .iq-accordion').removeClass('hide'); $('#citations .iq-accordion.allPage2').addClass('hide'); $('#citations .iq-accordion.allPage3').addClass('hide'); $('#citations .iq-accordion.allPage4').addClass('hide');  break;
-		 }
+	function selectTagType(){
+		gotoPage1();
 	 }
-	function addTag(ele3, tagName){
-		//$('#addedCitationsCount').val() = $('#addedCitationsCount').val() + 1; 
-		//$('.addedCount').html('('+ $('#addedCitationsCount').val() +')'); 
+	function addTag(tagName){
 		$('#citationsT .card.dashed .iq-not-available').addClass('hide'); 
 		$('#citationsT .errorMsg').addClass('hide'); 
-		$('#tagNameRepo').attr('value', '' + tagName);
-		console.log($('#tagNameRepo').val());
 		$('#addedCitationTags').append('<div class="badge badge-pill"><span>' + tagName + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
 		$('#citationsT .iq-label .countWrap').removeClass('hide');
 		$('#citationsT .addedCount').html(function(i, val) { return +val*1+1 });
@@ -3949,6 +3970,444 @@
 		if( $('#citationsT .addedCount').html() == '' || $('#citationsT .addedCount').html() == 0 ){ $('#citationsT .iq-label .countWrap').addClass('hide'); $('#citationsT .addedCount').html(''); $('#citationsT .card.dashed .iq-not-available').removeClass('hide'); }
 	} 
 	
+	function searchCites(){
+		var searchKey = $('#citeSearch').val().toLowerCase(); 
+		switch( searchKey ){ 
+			case '': 
+				$('#citations .iq-accordion').removeClass('hide'); 
+				$('#citations .iq-accordion.allPage2').addClass('hide'); 
+				$('#citations .iq-accordion.allPage3').addClass('hide'); 
+				$('#citations .iq-accordion.allPage4').addClass('hide'); 
+				$('#citationsT .citesSearchCount').html('1-10 of 490 Citations');
+				break; 
+			case 'clinical record': case 'record': case 'clinical': 
+				$('#citations .iq-accordion').addClass('hide'); 
+				$('#citations .iq-accordion.CR').removeClass('hide'); 
+				$('#citationsT .citesSearchCount').html('Results: 5 Citations');
+				break; 
+			default: 
+				$('#citations .iq-accordion').addClass('hide'); 
+				$('#citations .iq-accordion.'+searchKey).removeClass('hide'); 
+				switch ( searchKey ) {
+					case '0': case '0000': 
+						$('#citationsT .citesSearchCount').html('Result: 3 Citations');
+						break;
+					default: 
+						$('#citationsT .citesSearchCount').html('Result: 1 Citation');
+						break;
+				}
+				break;  
+		}
+	}
+	function gotoPage1() {
+			var tagType = $('#allTagTypeSelect option:selected').val();
+		 	var regSet = $('#allRegSelect option:selected').val();
+			switch(regSet) {
+				 case 'er': 
+					 $('#citations .iq-accordion').addClass('hide'); 
+					 $('#citations .iq-accordion.ER').removeClass('hide'); 
+					 $('#citationsT .citesSearchCount').html('Result: 10 Citations');
+					 switch(tagType){
+						 case 'condition': 
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.condition').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 1 Citations');
+							 break;
+						 case 'standard':
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.standard').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 8 Citations');
+							 break;
+						 case 'element':
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.element').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 break;
+						 case 'memo':
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.memo').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+							 break;
+						 case 'licensure':
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.licensure').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 break;
+					 }
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+					 $('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					 $('#citationsT .pagination .page-item.previous button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+					
+					$('#citationsT .pagination .page-item.first').addClass('disabled');
+					$('#citationsT .pagination .page-item.previous').addClass('disabled');
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					
+					 $('#citationsT .pagination .page-item.page1').addClass('active');
+					 $('#citationsT .pagination .page-item.page2').addClass('hide');
+					 $('#citationsT .pagination .page-item.page3').addClass('hide');
+					 break;
+				 case 'hha':
+					 $('#citations .iq-accordion').addClass('hide'); 
+					 $('#citations .iq-accordion.HHA').removeClass('hide'); 
+					 $('#citations .iq-accordion.HHA.hhaPage2').addClass('hide'); 
+					 $('#citationsT .citesSearchCount').html('Result: 1-10 of 19 Citations');
+					switch(tagType){
+						 case 'condition': 
+							 $('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.condition').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 4 Citations');
+							 break;
+						 case 'standard':
+							 $('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.standard').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 7 Citations');
+							 break;
+						 case 'element':
+							$('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.element').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 7 Citations');
+							 break;
+						 case 'memo':
+							$('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.memo').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+							 break;
+						 case 'licensure':
+							 $('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.licensure').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 break;
+					 }
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+					 $('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					 $('#citationsT .pagination .page-item.previous button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.next button').attr('disabled',false);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',false);
+					
+					$('#citationsT .pagination .page-item.first').addClass('disabled');
+					$('#citationsT .pagination .page-item.previous').addClass('disabled');
+					$('#citationsT .pagination .page-item.next').removeClass('disabled');
+					$('#citationsT .pagination .page-item.last').removeClass('disabled');
+					
+					 $('#citationsT .pagination .page-item.page1').addClass('active');
+					 $('#citationsT .pagination .page-item.page2').removeClass('hide');
+					 $('#citationsT .pagination .page-item.page3').addClass('hide');
+					 break;
+				 case 'state':
+					$('#citations .iq-accordion').addClass('hide'); 
+					 $('#citations .iq-accordion.ST').removeClass('hide'); 
+					 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+					switch(tagType){
+						 case 'condition': 
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.condition').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 break;
+						 case 'standard':
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.standard').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 break;
+						 case 'element':
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.element').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 break;
+						 case 'memo':
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.memo').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 break;
+						 case 'licensure':
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.licensure').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+							 break;
+					 }
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+		             $('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					 $('#citationsT .pagination .page-item.previous button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+					
+					 $('#citationsT .pagination .page-item.first').addClass('disabled');
+					$('#citationsT .pagination .page-item.previous').addClass('disabled');
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					
+					 $('#citationsT .pagination .page-item.page1').addClass('active');
+					 $('#citationsT .pagination .page-item.page2').addClass('hide');
+					 $('#citationsT .pagination .page-item.page3').addClass('hide');
+					 break;		 
+				case 'all': default: 
+					$('#citations .iq-accordion').removeClass('hide'); 
+					$('#citations .iq-accordion.allPage2').addClass('hide'); 
+					$('#citations .iq-accordion.allPage3').addClass('hide'); 
+					$('#citationsT .citesSearchCount').html('1-10 of 30 Citations');
+					
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+					$('#citationsT .pagination .page-item').removeClass('hide'); 
+					$('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					$('#citationsT .pagination .page-item.previous button').attr('disabled',true);
+					$('#citationsT .pagination .page-item.next button').attr('disabled',false);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',false);
+					
+					$('#citationsT .pagination .page-item.first').addClass('disabled');
+					$('#citationsT .pagination .page-item.previous').addClass('disabled');
+					$('#citationsT .pagination .page-item.next').removeClass('disabled');
+					$('#citationsT .pagination .page-item.last').removeClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					
+					switch(tagType){
+						 case 'condition': 
+							 $('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.condition').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 5 Citations');
+							
+					$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+						 case 'standard':
+							$('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.standard').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 1-10 of 15 Citations');
+							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+						 case 'element':
+							$('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.element').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 7 Citations');
+							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+						 case 'memo':
+							$('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.memo').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 2 Citations');
+							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+						 case 'licensure':
+							console.log('all licensure')
+							$('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.licensure').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+					 }
+					
+					break;
+			 } 
+			
+		}
+		function gotoPage2(){
+			var tagType = $('#allTagTypeSelect option:selected').val();
+		 	var regSet = $('#allRegSelect option:selected').val();
+			switch(regSet) {
+				 case 'hha':
+					 $('#citations .iq-accordion').addClass('hide'); 
+					 $('#citations .iq-accordion.HHA.hhaPage2').removeClass('hide'); 
+					 $('#citationsT .pagination .page-item').removeClass('active'); 
+					 $('#citationsT .pagination .page-item.first button').attr('disabled', false);
+					 $('#citationsT .pagination .page-item.previous button').attr('disabled',false);
+					 $('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+					
+					$('#citationsT .pagination .page-item.first').removeClass('disabled');
+					$('#citationsT .pagination .page-item.previous').removeClass('disabled');
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					
+					 $('#citationsT .pagination .page-item.page2').addClass('active');
+					 $('#citationsT .pagination .page-item.page3').addClass('hide');
+					 $('#citationsT .citesSearchCount').html('Result: 11-19 of 19 Citations');
+					switch(tagType){
+						 case 'condition': 
+							 gotoPage1();
+							 break;
+						 case 'standard':
+							 gotoPage1();
+							 break;
+						 case 'element':
+							 gotoPage1();
+							 break;
+						 case 'memo':
+							 gotoPage1();
+							 break;
+						 case 'licensure':
+							 gotoPage1();
+							 break;
+					 }
+					 break;	 
+				case 'all': default: 
+					$('#citations .iq-accordion').addClass('hide'); 
+					$('#citations .iq-accordion.allPage2').removeClass('hide'); 
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+					$('#citationsT .pagination .page-item').removeClass('hide'); 
+					$('#citationsT .pagination .page-item.first button').attr('disabled', false);
+					$('#citationsT .pagination .page-item.previous button').attr('disabled',false);
+					$('#citationsT .pagination .page-item.next button').attr('disabled',false);
+					$('#citationsT .pagination .page-item.last button').attr('disabled',false);
+					
+					$('#citationsT .pagination .page-item').removeClass('disabled');
+				
+					$('#citationsT .pagination .page-item.page2').addClass('active');
+					$('#citationsT .citesSearchCount').html('11-20 of 30 Citations');
+					switch(tagType){
+						 case 'condition': 
+							 gotoPage1();
+							 break;
+						 case 'standard':
+							 gotoPage1();
+							 break;
+						 case 'element':
+							 gotoPage1();
+							 break;
+						 case 'memo':
+							 gotoPage1();
+							 break;
+						 case 'licensure':
+							 gotoPage1();
+							 break;
+					 }
+					break;
+			 } 
+		}
+		function gotoPage3(){
+			var tagType = $('#allTagTypeSelect option:selected').val();
+		 	var regSet = $('#allRegSelect option:selected').val();
+			switch(regSet) {
+				case 'all': default: 
+					$('#citations .iq-accordion').addClass('hide'); 
+					$('#citations .iq-accordion.allPage3').removeClass('hide'); 
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+					$('#citationsT .pagination .page-item').removeClass('hide'); 
+					$('#citationsT .pagination .page-item.first button').attr('disabled', false);
+					$('#citationsT .pagination .page-item.previous button').attr('disabled',false);
+					$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					$('#citationsT .pagination .page-item.last button').attr('disabled',true);
+					
+					$('#citationsT .pagination .page-item.first').removeClass('disabled');
+					$('#citationsT .pagination .page-item.previous').removeClass('disabled');
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					
+					$('#citationsT .pagination .page-item.page3').addClass('active');
+					$('#citationsT .citesSearchCount').html('21-30 of 30 Citations');
+					switch(tagType){
+						 case 'condition': 
+							 gotoPage1();
+							 break;
+						 case 'standard':
+							 gotoPage1();
+							 break;
+						 case 'element':
+							 gotoPage1();
+							 break;
+						 case 'memo':
+							 gotoPage1();
+							 break;
+						 case 'licensure':
+							 gotoPage1();
+							 break;
+					 }
+					break;
+			 } 
+		}
+		function gotoPrev(){
+		 	var regSet = $('#allRegSelect option:selected').val();
+			switch(regSet) {
+				 case 'hha':
+					gotoPage1();
+					break; 
+				case 'all': default: 
+					switch( $('#citationsT .pagination .page-item.active button').html() ){
+						case '2':
+							gotoPage1();
+							break;
+						case '3':
+							gotoPage2();
+							break;
+					}
+					break;
+			 } 
+		}
+		function gotoNext(){
+		 	var regSet = $('#allRegSelect option:selected').val();
+			switch(regSet) {
+				 case 'hha':
+					gotoPage2();
+					break; 
+				case 'all': default: 
+					switch( $('#citationsT .pagination .page-item.active button').html() ){
+						case '1':
+							gotoPage2();
+							break;
+						case '2':
+							gotoPage3();
+							break;
+					}
+					break;
+			 } 
+		}
+	function selectRegSetRV(){
+		var regSet = $('#allRegSelectRV option:selected').val();
+		$('#citationsT .read-view.all .iq-accordion').addClass('hide');
+		$('#citationsT .read-view.all .iq-label').addClass('hide');
+		switch(regSet) {
+			 case 'er': 
+				$('#citationsT .read-view.all .iq-accordion.ER').removeClass('hide');
+				$('#citationsT .read-view.all .iq-label.ER').removeClass('hide');
+				break;
+			case 'hha':
+				$('#citationsT .read-view.all .iq-accordion.HHA').removeClass('hide');
+				$('#citationsT .read-view.all .iq-label.HHA').removeClass('hide');
+				break;
+			case 'state':
+				$('#citationsT .read-view.all .iq-accordion.ST').removeClass('hide');
+				$('#citationsT .read-view.all .iq-label.ST').removeClass('hide');
+				break;
+			case 'all': default: 
+				$('#citationsT .read-view.all .iq-accordion').removeClass('hide');
+				$('#citationsT .read-view.all .iq-label').removeClass('hide');
+				break;
+		}
+	}
     </script>
 	
 	
