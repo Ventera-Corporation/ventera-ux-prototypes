@@ -904,10 +904,10 @@
                     <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();}" >
         <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="var searchKey = $('#citeSearch').val().toUpperCase(); switch( searchKey.toLowerCase()){ case '': $('#citations .iq-accordion').removeClass('hide'); $('#citations .iq-accordion.allPage2').addClass('hide'); $('#citations .iq-accordion.allPage3').addClass('hide'); $('#citations .iq-accordion.allPage4').addClass('hide'); break; case 'clinical record': case 'record': case 'clinical': $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.CR').removeClass('hide'); break; default: $('#citations .iq-accordion').addClass('hide'); $('#citations .iq-accordion.'+$('#citeSearch').val()).removeClass('hide'); break;   }">Search</button>
+         <button type="submit" class="btn btn-primary searchButton" onClick="searchCites()">Search</button> <button class="btn btn-link" onClick="gotoPage1(); $('#citeSearch').val('');">Reset</button>
         </div>
       </div>
-                    <div class="input-group-help-text help-text">Search by keyword or citation tag number</div>
+                    <div class="input-group-help-text help-text">Search by citation tag number, title, or keyword</div>
                 </div>
               </div>
               
@@ -3961,7 +3961,7 @@
 		var fullTag = $('.'+tagName + ' .tagName').html(); 
 		console.log(fullTag);
 		
-		$('#addedCitationTags').append('<div class="badge badge-pill"><span>' + fullTag + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
+		$('#addedCitationTags').append('<div class="badge badge-pill"><span>' + fullTag + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="Remove" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
 		
 		$('#citationsT .iq-label .countWrap').removeClass('hide');
 		$('#citationsT .addedCount').html(function(i, val) { return +val*1+1 });
@@ -3982,11 +3982,7 @@
 		var searchKey = $('#citeSearch').val().toLowerCase(); 
 		switch( searchKey ){ 
 			case '': 
-				$('#citations .iq-accordion').removeClass('hide'); 
-				$('#citations .iq-accordion.allPage2').addClass('hide'); 
-				$('#citations .iq-accordion.allPage3').addClass('hide'); 
-				$('#citations .iq-accordion.allPage4').addClass('hide'); 
-				$('#citationsT .citesSearchCount').html('1-10 of 490 Citations');
+				gotoPage1();
 				break; 
 			case 'clinical record': case 'record': case 'clinical': 
 				$('#citations .iq-accordion').addClass('hide'); 
