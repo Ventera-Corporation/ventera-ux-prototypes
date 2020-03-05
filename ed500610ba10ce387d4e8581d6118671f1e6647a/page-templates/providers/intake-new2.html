@@ -2367,15 +2367,16 @@
           </div>
           <!-- triage -->
           <div class="tab-pane " id="triageTab" role="tabpanel" aria-labelledby="triageTL">
-              <div class="row tabTitle">
+              
+            <section class="edit-view active">
+				 <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Triage</h2>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab5 .edit-view').addClass('active'); $('#tab5 .read-view').removeClass('active'); $(this).addClass('hide');  $('.alert.successMsg').addClass('hide');">Edit</button>
+               
               </div>
             </div>
-            <section class="edit-view active">
                 <p>Indicate the priority of this intake and if additional actions are required.</p>
               <div class="row">
                 <div class="col-md-12">
@@ -2451,12 +2452,92 @@
                 </div>
                 </fieldset>
                 
-                <article class="conditionList hide">  
+                <article class="conditionsList hide">  
 					<h3>Conditions of Participation</h3>
-					<button class="btn btn-outline-primary">Add Conditions of Participation</button>
+					<button class="btn btn-outline-primary" onClick="$('#triageTab .edit-view').removeClass('active'); $('#triageTab .read-view').removeClass('active'); $('#triageTab .edit-view.addConditions').addClass('active'); ">Add Conditions of Participation</button>
+					<p class="iq-not-available mt-4 addedSavedCOP">No Conditions of Participation added.</p>
+					
+				    <div class="addedSavedCOP accordion-wrapper hide mt-4">
+						<p class="mb-2">3 Conditions of Participation</p>
+						<div class="iq-accordion secondary">
+	<div class="card">
+	<div class="card-header d-flex">
+	<button
+	class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+	data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
+	<span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
+	<div class="iq-accordion-actions d-flex align-items-center">
+	<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
+	</div>
+	</div>
+	<div id="cite4content" class="collapse ">
+	<div class="card-body">
+	<label>CFR Section</label>
+	<p>484.102</p>
+	<label>Reguation Text</label>
+	<p>The [facility, except for Transplant Center] must comply with all applicable Federal, State and local emergency preparedness requirements. The [facility] must establish and maintain a comprehensive emergency preparedness program that meets the requirements of this section.* The emergency preparedness program must include, but not be limited to, the following elements: *[For hospitals at &sect;482.15:] The hospital must comply with all applicable Federal, State, and local emergency preparedness requirements. The hospital must develop and maintain a comprehensive emergency preparedness program that meets the requirements of this section, utilizing an all-hazards approach. *[For CAHs at &sect;485.625:] The CAH must comply with all applicable Federal, State, and local emergency preparedness requirements. The CAH must develop and maintain a comprehensive emergency preparedness program, utilizing an all-hazards approach.</p>
+	<label>Interpretive Guidelines</label>
+	<p>Under this condition/requirement, facilities are required to develop an emergency preparedness program that meets all of the standards specified within the condition/requirement. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health, safety, and security needs of their staff and patient population during an emergency or disaster situation. The program must also address how the facility would coordinate with other healthcare facilities, as well as the whole community during an emergency or disaster (natural, man-made, facility). The emergency preparedness program must be reviewed annually. A comprehensive approach to meeting the health and safety needs of a patient population should encompass the elements for emergency preparedness planning based on the "all-hazards" definition and specific to the location of the facility. For instance, a facility in a large flood zone, or tornado prone region, should have included these elements in their overall planning in order to meet the health, safety, and security needs of the staff and of the patient population. Additionally, if the patient population has limited mobility, facilities should have an approach to address these challenges during emergency events. The term "comprehensive" in this requirement is to ensure that facilities do not only choose one potential emergency that may occur in their area, but rather consider a multitude of events and be able to demonstrate that they have considered this during their development of the emergency preparedness plan. Survey Procedures o Interview the facility leadership and ask him/her/them to describe the facility's emergency preparedness program. o Ask to see the facility's written policy and documentation on the emergency preparedness program. o For hospitals and CAHs only: Verify the hospital's or CAH's program was developed based on an all-hazards approach by asking their leadership to describe how the facility used an all-hazards approach when developing its program.</p>
+	</div>
+	</div>
+	</div>
+  </div>
+						<div class="iq-accordion secondary">
+						<div class="card">
+						<div class="card-header d-flex">
+						<button
+						class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+						data-toggle="collapse" data-target="#cite350content" type="button" onclick="$(this).toggleClass('expanded');">
+						<span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
+						</button>
+						<div class="iq-accordion-actions d-flex align-items-center">
+						<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
+						</div>
+						</div>
+						<div id="cite350content" class="collapse ">
+						<div class="card-body">
+
+						<label>CFR Section</label>
+						<p>484.40</p>
+						<label>Reguation Text</label>
+						<p>§484.40 Condition of participation: Release of patient identifiable OASIS information. The HHA and agent acting on behalf of the HHA in accordance with a written contract must ensure the confidentiality of all patient identifiable information contained in the clinical record, including OASIS data, and may not release patient identifiable OASIS information to the public.</p>
+						<label>Interpretive Guidelines</label>
+						<p class="iq-not-available">Not applicable</p>
+						</div>
+						</div>
+						</div>
+						</div>
+						<div class="iq-accordion secondary">
+						<div class="card">
+						<div class="card-header d-flex">
+						<button
+						class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+						data-toggle="collapse" data-target="#cite370content" type="button" onclick="$(this).toggleClass('expanded');">
+						<span><span class="tagName">G0370 - Reporting OASIS information</span>  <span class="badge badge-warning">Condition</span></span>
+						</button>
+						<div class="iq-accordion-actions d-flex align-items-center">
+						<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
+						</div>
+						</div>
+						<div id="cite370content" class="collapse ">
+						<div class="card-body">
+
+						<label>CFR Section</label>
+						<p>484.45</p>
+						<label>Reguation Text</label>
+						<p>HHAs must electronically report all OASIS data collected in accordance with §484.55.</p>
+						<label>Interpretive Guidelines</label>
+						<p class="iq-not-available">Not applicable</p>
+						</div>
+						</div>
+						</div>
+						</div>
+						
+					</div>
+
 				</article>  
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 mt-4">
                     <h3>Triage Completion</h3>
                     
                     <div class="form-group">
@@ -2536,7 +2617,7 @@
         <p><label>Calculated Date</label>
             <input type="text" readonly value="10/30/2019" style="width: 10rem;">
         </p>
-                           <p><button class="btn btn-outline-primary" onclick="$('#surveyDueDateInput').val('2019-10-30')">Accept Date</button></p>
+        <p><button class="btn btn-outline-primary" onclick="$('#surveyDueDateInput').val('2019-10-30')">Accept Date</button></p>
               
                       </div>
 
@@ -2564,6 +2645,14 @@
                 
             </section>
             <section class="read-view">
+				 <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Triage</h2>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-outline-primary" onClick="$('#tab5 .edit-view').addClass('active'); $('#tab5 .read-view').removeClass('active'); $(this).addClass('hide');  $('.alert.successMsg').addClass('hide');">Edit</button>
+              </div>
+            </div>
                 <h3>Priority</h3>
                 <div class="iq-list">
                     <div class="row">
@@ -2631,6 +2720,315 @@
                 </div>
               
             </section>
+			<section class="edit-view addConditions">
+				 <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Add Conditions of Participation</h2>
+				  <p>Select the Conditions of Participation (CoPs) that will be investigated as part of this survey.</p>
+              </div>
+              
+            </div>
+			   <div class="row">
+                <div class="col-lg-7">
+                    <label for="copSearch"><span class="sr-only">Search</span></label>
+                    <div class="input-group">
+                    <input type="text" class="form-control" id="copSearch" onKeyUp="if (event.keyCode === 13) {
+        $('.searchButton').click();}" >
+        <div class="input-group-postpend">
+         <button type="submit" class="btn btn-primary searchButton" onClick="searchCOP()">Search</button> <button class="btn btn-link" onClick="gotoPage1(); $('#copSearch').val('');">Reset</button>
+        </div>
+      </div>
+                    <div class="input-group-help-text help-text">Search by tag number, title, or keyword</div>
+                </div>
+              </div>
+              <div class="row mt-4 copList">
+                <div class="col-md-9" id="COP">
+					<br>
+					<div class="row"><div class="col-md-4" style="vertical-align: bottom"><h3 class="iq-label copSearchCount">1-10 of 30 CoPs</h3></div></div>
+     
+<div class="accordion-wrapper"> 
+		<!-- All page 1 -->
+
+		<div class="iq-accordion secondary data-focus ER condition 1 e0001 0001 e1">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0001');">Add</button>
+		</div>
+		</div>
+		<div id="cite4content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.102</p>
+		<label>Reguation Text</label>
+		<p>The [facility, except for Transplant Center] must comply with all applicable Federal, State and local emergency preparedness requirements. The [facility] must establish and maintain a comprehensive emergency preparedness program that meets the requirements of this section.* The emergency preparedness program must include, but not be limited to, the following elements: *[For hospitals at &sect;482.15:] The hospital must comply with all applicable Federal, State, and local emergency preparedness requirements. The hospital must develop and maintain a comprehensive emergency preparedness program that meets the requirements of this section, utilizing an all-hazards approach. *[For CAHs at &sect;485.625:] The CAH must comply with all applicable Federal, State, and local emergency preparedness requirements. The CAH must develop and maintain a comprehensive emergency preparedness program, utilizing an all-hazards approach.</p>
+		<label>Interpretive Guidelines</label>
+		<p>Under this condition/requirement, facilities are required to develop an emergency preparedness program that meets all of the standards specified within the condition/requirement. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health, safety, and security needs of their staff and patient population during an emergency or disaster situation. The program must also address how the facility would coordinate with other healthcare facilities, as well as the whole community during an emergency or disaster (natural, man-made, facility). The emergency preparedness program must be reviewed annually. A comprehensive approach to meeting the health and safety needs of a patient population should encompass the elements for emergency preparedness planning based on the "all-hazards" definition and specific to the location of the facility. For instance, a facility in a large flood zone, or tornado prone region, should have included these elements in their overall planning in order to meet the health, safety, and security needs of the staff and of the patient population. Additionally, if the patient population has limited mobility, facilities should have an approach to address these challenges during emergency events. The term "comprehensive" in this requirement is to ensure that facilities do not only choose one potential emergency that may occur in their area, but rather consider a multitude of events and be able to demonstrate that they have considered this during their development of the emergency preparedness plan. Survey Procedures o Interview the facility leadership and ask him/her/them to describe the facility's emergency preparedness program. o Ask to see the facility's written policy and documentation on the emergency preparedness program. o For hospitals and CAHs only: Verify the hospital's or CAH's program was developed based on an all-hazards approach by asking their leadership to describe how the facility used an all-hazards approach when developing its program.</p>
+		</div>
+		</div>
+		</div>
+	  </div>
+		<div class="iq-accordion secondary data-focus ER condition 2 0002 e0002 e2">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0010content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">E0002 - Establishment of the EP Program Transplant</span><span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0002');">Add</button>
+		</div>
+		</div>
+		<div id="cite0010content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p class="iq-not-available">Not applicable</p>
+		<label>Reguation Text</label>
+		<p>A transplant center must be included in the emergency preparedness planning and the emergency preparedness program as set forth in §482.15 for the hospital in which it is located. However, a transplant center is not individually responsible for the emergency preparedness requirements set forth in §482.15.</p>
+		<label>Interpretive Guidelines</label>
+		<p>A representative from each transplant center must be actively involved in the development and maintenance of the hospital's emergency preparedness program, as required under §482.15(g). Transplant centers would still be required to have their own emergency preparedness policies and procedures as required under §482.78(a), as well as participate in mutually-agreed upon protocols that address the transplant center, hospital, and OPO's duties and responsibilities during an emergency. Survey Procedures o Verify that a representative from the transplant center was included in the planning of the emergency preparedness program of the hospital in which the transplant center is located.</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus ER condition 3 0003 e0003 e3">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite15content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">E0003 - Establishment of the EP Program Dialysis</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0003');">Add</button>
+		</div>
+		</div>
+		<div id="cite15content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Reguation Text</label>
+		<p>The dialysis facility must comply with all applicable Federal, State, and local emergency preparedness requirements. These emergencies include, but are not limited to, fire, equipment or power failures, care related emergencies, water supply interruption, and natural disasters likely to occur in the facility's geographic area. The dialysis facility must establish and maintain an emergency preparedness program that meets the requirements of this section. The emergency preparedness program must include, but not be limited to, the following elements:</p>
+		<label>Interpretive Guidelines</label>
+		<p>Under this condition, the ESRD facility is required to develop and update an emergency preparedness program that meets all of the standards contained within the condition. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health and safety needs of their patient population during an emergency; as well as the whole community during and surrounding an emergency event (natural or man-made). Survey Procedures o Ask to see written or electronic documentation of the program.</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 0100 100 g100 g0100">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0016content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0100 - Patient Rights</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0100');">Add</button>
+		</div>
+		</div>
+		<div id="cite0016content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.10</p>
+		<label>Reguation Text</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not Applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 0117 117 g117 g0117">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0117content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0117 - Compliance w/ Fed, State, Local Laws</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0117');">Add</button>
+		</div>
+		</div>
+		<div id="cite0117content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.12</p>
+		<label>Reguation Text</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not Applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+	    <div class="iq-accordion secondary data-focus HHA condition 0122 122 g122 g0122">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0122content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0122 - Organization, Services, and Administration</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0122');">Add</button>
+		</div>
+		</div>
+		<div id="cite0122content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.14</p>
+		<label>Reguation Text</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not Applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+	    <div class="iq-accordion secondary data-focus HHA condition 0151 151 g151 g0151">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0151content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0151 - Group of Professional Personnel</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0117');">Add</button>
+		</div>
+		</div>
+		<div id="cite0151content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.16</p>
+		<label>Reguation Text</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not Applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 350 0350 g350 g0350 CR">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite350content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
+		</button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0018');">Add</button>
+		</div>
+		</div>
+		<div id="cite350content" class="collapse ">
+		<div class="card-body">
+
+		<label>CFR Section</label>
+		<p>484.40</p>
+		<label>Reguation Text</label>
+		<p>§484.40 Condition of participation: Release of patient identifiable OASIS information. The HHA and agent acting on behalf of the HHA in accordance with a written contract must ensure the confidentiality of all patient identifiable information contained in the clinical record, including OASIS data, and may not release patient identifiable OASIS information to the public.</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 370 0370 g370 g0370">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite370content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0370 - Reporting OASIS information</span>  <span class="badge badge-warning">Condition</span></span>
+		</button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0370');">Add</button>
+		</div>
+		</div>
+		<div id="cite370content" class="collapse ">
+		<div class="card-body">
+
+		<label>CFR Section</label>
+		<p>484.45</p>
+		<label>Reguation Text</label>
+		<p>HHAs must electronically report all OASIS data collected in accordance with §484.55.</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 406 0406 g406 g0406">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite406content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0406 - Patient Rights</span>  <span class="badge badge-warning">Condition</span></span>
+		</button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0406');">Add</button>
+		</div>
+		</div>
+		<div id="cite406content" class="collapse ">
+		<div class="card-body">
+
+		<label>CFR Section</label>
+		<p>484.5</p>
+		<label>Reguation Text</label>
+		<p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+
+    </div>
+<nav aria-label="Table Pagination">
+		<ul class="pagination pagination-large">
+			<li class="page-item first" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button">First</button>
+			</li>
+			<li class="page-item previous" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button">Previous</button>
+			</li>
+			<li class="page-item active page1" onClick="gotoPage1()">
+				<button class="page-link">1</button>
+			</li>
+			<li class="page-item page2" onClick="gotoPage2()">
+				<button type="button" class="page-link">2</button>
+			</li>
+			<li class="page-item page3" onClick="gotoPage3()">
+				<button type="button" class="page-link">3</button>
+			</li>
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button">Next</button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last">Last</button>
+			</li>
+		</ul>
+	</nav>
+                   
+                </div>
+                <div class="col-md-3 iq-static-col position-sticky" id="saveCOPButton">
+				<div class="sticky-top">	
+					<br>
+				<h3 class="iq-label">Added CoPs <span class="countWrap hide">(</span><span class="addedCount"></span><span class="countWrap hide">)</span></h3>
+				<div class="card dashed">
+					<p class="iq-not-available">No Conditions of Participation have been added.</p>
+					<div id="addedCOPTags" class="tagListDisplay"></div>
+					<div class="iq-footer"><button class="btn btn-primary btn-full" onClick="saveCOP()">Save</button> <button
+                            class="btn btn-link btn-full cancelButton" onClick="$('#triageTab .edit-view').addClass('active'); $('#triageTab .edit-view.addConditions').removeClass('active'); ">Cancel</button></div>
+				</div>  
+				</div>
+				</div>
+              </div>
+
+			</section>
           </div>  
           <!-- survey -->
           <div class="tab-pane " id="surveyTab" role="tabpanel" aria-labelledby="surveyTL">
@@ -4037,6 +4435,87 @@ function sortParties(){
         }                                                                      
     }
 }
+	function addTag(tagName){
+		$('#triageTab .card.dashed .iq-not-available').addClass('hide'); 
+		$('#triageTab .errorMsg').addClass('hide'); 
+		$('#addedCOPTags').append('<div class="badge badge-pill"><span>' + tagName + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="Remove" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
+		$('#triageTab .iq-label .countWrap').removeClass('hide');
+		$('#triageTab .addedCount').html(function(i, val) { return +val*1+1 });
+		console.log($('#triageTab .addedCount').html());
+	}
+	function closeTag(ele4, eParent){
+		eParent.addClass('hide'); 
+		tagN = ele4.previousSibling.innerHTML; //$('#tagNameRepo').val();
+		$('#triageTab .iq-accordion.' + tagN + ' .iq-accordion-actions button').attr('disabled', false); 
+		console.log('success');
+		$('#triageTab .iq-accordion.' + tagN + ' .iq-accordion-actions button').html('Add'); 
+		$('#triageTab .addedCount').html( function(i, val) { return +val*1-1 });
+		console.log('after decrement' + $('#triageTab .addedCount').html());
+		if( $('#triageTab .addedCount').html() == '' || $('#triageTab .addedCount').html() == 0 ){ $('#triageTab .iq-label .countWrap').addClass('hide'); $('#triageTab .addedCount').html(''); $('#triageTab .card.dashed .iq-not-available').removeClass('hide'); }
+	} 
+	
+	function searchCOP(){
+		var searchKey = $('#copSearch').val().toLowerCase(); 
+		switch( searchKey ){ 
+			case '': 
+				gotoPage1();
+				break; 
+			case 'clinical record': case 'record': case 'clinical': 
+				$('#COP .iq-accordion').addClass('hide'); 
+				$('#COP .iq-accordion.CR').removeClass('hide'); 
+				$('#triageTab .copSearchCount').html('Results: 5 CoPs');
+				break; 
+			default: 
+				$('#COP .iq-accordion').addClass('hide'); 
+				$('#COP .iq-accordion.'+searchKey).removeClass('hide'); 
+				switch ( searchKey ) {
+					case '0': case '0000': 
+						$('#triageTab .copSearchCount').html('Result: 3 CoPs');
+						break;
+					default: 
+						$('#triageTab .copSearchCount').html('Result: 1 CoP');
+						break;
+				}
+				break;  
+		}
+	}
+	function gotoPage1() {
+		$('#COP .iq-accordion').removeClass('hide'); 
+		$('#COP .iq-accordion.allPage2').addClass('hide'); 
+		$('#COP .iq-accordion.allPage3').addClass('hide'); 
+		$('#triageTab .copSearchCount').html('1-10 of 30 CoPs');
+
+		$('#triageTab .pagination .page-item').removeClass('active'); 
+		$('#triageTab .pagination .page-item').removeClass('hide'); 
+		$('#triageTab .pagination .page-item.first button').attr('disabled', true);
+		$('#triageTab .pagination .page-item.previous button').attr('disabled',true);
+		$('#triageTab .pagination .page-item.next button').attr('disabled',false);
+		 $('#triageTab .pagination .page-item.last button').attr('disabled',false);
+
+		$('#triageTab .pagination .page-item.first').addClass('disabled');
+		$('#triageTab .pagination .page-item.previous').addClass('disabled');
+		$('#triageTab .pagination .page-item.next').removeClass('disabled');
+		$('#triageTab .pagination .page-item.last').removeClass('disabled');
+		$('#triageTab .pagination .page-item.page1').addClass('active');
+		
+		break;
+	}
+	function saveCOP(){
+		if( $('#saveCOPButton .iq-not-available').hasClass('hide')){ 
+			$('#triageTab .successMsg').removeClass('hide'); 
+			$('#triageTab .edit-view').addClass('active'); 
+			$('#triageTab .edit-view.addConditions').removeClass('active'); 
+			$('#saveCOPButton .badge.badge-pill').addClass('hide'); 
+			$('#saveCOPButton .addedCount').html(''); 
+			$('#saveCOPButton .addedCount').addClass('hide'); 
+			$('#saveCOPButton .iq-not-available').removeClass('hide');  
+			$('#triageTab .addedSavedCOP').toggleClass('hide');
+			$('#triageTab .iq-label .countWrap').addClass('hide'); 
+		} else { 
+			$('#triageTab .errorMsg').removeClass('hide'); 
+		}
+	}
+	
     </script>
 </body>
 </html>
