@@ -327,6 +327,7 @@ div.iq-accordion-actions { color: #d8d8d8; font-weight: normal; font-size: 1rem;
 .iq-accordion .card-header .iq-accordion-actions button, .iq-accordion .card-header .iq-accordion-actions .btn { padding: 0.438rem 1rem; margin-left: 0; }
 
 /* show/hide link */
+.iq-accordion.showhide { margin-bottom: 2rem; }
 .iq-accordion.showhide .card-header:hover { background-color: transparent; }
 .iq-accordion.showhide .card-header button.btn-block:hover, .iq-accordion.showhide .card-header .btn-link.btn-block:focus { text-decoration: underline; }
 .iq-accordion .card.no-border .card-body button, .iq-accordion .card.no-border .card-body .btn { padding: 0.438rem 1rem; margin-right: 1rem; }
@@ -672,11 +673,14 @@ label.inline { font-weight: normal; font-size: .845rem; display: inline-block; c
 .dashboardcode-bsmultiselect ul.form-control li > input { margin-bottom: 0; height: 2rem !important; }
 
 /* STATUSES */
-.iq-status { display: inline-block; margin-right: .5rem; font-size: 1.6rem; vertical-align: middle; height: 1.25rem; text-align: center; margin-bottom: 0;  }
-.iq-status-not-started:before { content: '\f111'; color: transparent; background: url("../images/icon-status-not-started.svg") no-repeat top left; }
-.iq-status-in-progress:before {content: '\f111'; color: transparent; background: url("../images/icon-status-in-progress.svg") no-repeat top left; }
-.iq-status-review:before { content: '\f111'; color: transparent; background: url("../images/icon-status-review.svg") no-repeat top left; }
-.iq-status-finalized:before {content: '\f111'; color: transparent; background: url("../images/icon-status-finalized.svg") no-repeat top left; }
+.iq-status { display: inline-block; margin-right: .5rem; font-size: 1.6rem; vertical-align: middle; height: 1.25rem; text-align: center; margin-bottom: 0; }
+.iq-status-0:before { content: '\f111'; color: transparent; background: url("../images/icon-status-0.svg") no-repeat top left; }
+.iq-status-25:before {content: '\f111'; color: transparent; background: url("../images/icon-status-25.svg") no-repeat top left; }
+.iq-status-50:before { content: '\f111'; color: transparent; background: url("../images/icon-status-50.svg") no-repeat top left; }
+.iq-status-75:before { content: '\f111'; color: transparent; background: url("../images/icon-status-75.svg") no-repeat top left; }
+.iq-status-75-y:before { content: '\f111'; color: transparent; background: url("../images/icon-status-75-y.svg") no-repeat top left; }
+.iq-status-100:before {content: '\f111'; color: transparent; background: url("../images/icon-status-100.svg") no-repeat top left; }
+.iq-status-100-y:before {content: '\f058'; color: #FDB81E; font-family: 'Font Awesome 5 Pro'; font-weight: 900; font-size: 1.125rem; display: inline-block; margin-right: .5rem; }
 .iq-status-open:before { content: '\f111'; color: transparent; background: url("../images/icon-status-open.png") no-repeat top left; }
 .iq-status-closed:before { content: '\f111'; color: transparent; background: url("../images/icon-status-closed.png") no-repeat top left; }
 
