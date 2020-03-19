@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Citations | Laguna Rainbow Home Health Agency</title>
+<title>Citations (Not Started) | Laguna Rainbow Home Health Agency</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -353,7 +353,7 @@
                     <label>Federal Categories</label>
                   </div>
                   <div class="col-md-8">
-                    <p>Initial Certification</p>
+                    <p>Recertification</p>
                   </div>
                 </div>
            <div class="row">
@@ -1794,7 +1794,7 @@
             
               
 				<div class="row" style="position: relative; z-index: 1000;">
-					<div class="col-md-7" style="vertical-align: bottom"><div><span class="info-text"><span class="aoCount">3</span> Citations Total</span> | <p class="m-0" style="display: inline"><a href="javascript:void(0)" onClick=" $(this).children('span').toggleClass('hide'); "><span class="expandAll">Expand All Details</span><span class="collapseAll hide">Collapse All Details</span></a></p></div>
+					<div class="col-md-7" style="vertical-align: bottom"><div><span class="info-text"><span class="aoCount">4</span> Citations Total</span> | <p class="m-0" style="display: inline"><a href="javascript:void(0)" onClick=" $(this).children('span').toggleClass('hide'); "><span class="expandAll">Expand All Details</span><span class="collapseAll hide">Collapse All Details</span></a></p></div>
 					</div>
 				<div class="col-md-5 text-right">
                    <label class="inline" style="margin-right: .5rem;">Filter By: </label><select style="display: inline-block; width: auto; margin-bottom: .5rem; " onchange="selectRegSetRV()" id="allRegSelectRV"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select>
@@ -1808,7 +1808,7 @@
 					</thead>
 					<tbody>
 						<tr class="ST hide"><td style="width: .25rem;"></td><td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('S0');" style="font-size: 1.125rem;">S0</a><br><small>Opening Comments</small></td>
-							<td><span class="badge badge-pill badge-info">Licensure</span></td>
+							<td class="tagType"><span class="badge badge-pill badge-info">Licensure</span></td>
 							<td class="status"><span class="iq-status iq-status-25"></span> <small>In Progress</small></td>
 							<td class="author"><ul><li>Allen, Paul</li><li>Carr, Roberta</li></ul></td>
 							<td>
@@ -1881,9 +1881,7 @@
 				<h4>Findings</h4>
                 
 				<p class="iq-not-available findings g0">There is no Findings for this citation.</p>
-				<h4>Attachments</h4>
-                                    
-				<p class="iq-not-available files g0">There are no attachments for this citation.</p>
+				
 				<hr>
 				<h4>Reguation Text and Interpretive Guidelines</h4>
                     <label>CFR Section</label>
@@ -1902,20 +1900,27 @@
 													<p><label>Survey Category</label>Recertification - Federal</p>
 												</div>
 											</div>
+                                            <div class="card p-1">
+                                                <div class="card-body">
+                                            <h4 class="p-0 m-0">Attachments</h4>
+                                    <hr>
+				<p class="iq-not-available files g0">There are no attachments for this citation.</p>
+                                                </div></div>
 										</div>
 									</div>
 								</div>
 							</td>
-							<td class="text-right"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+							<td class="text-right"> <a href="#" class="btn btn-link dropdown-toggle actionsButton" id="dropdownMenuButtonLinkg0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg0">
 
-								<button class="dropdown-item" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g0').addClass('active'); ">Add Citation Details</button>
-								<button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+								<button class="dropdown-item g0 addButton" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g0').addClass('active'); ">Add Citation Details</button>
+								<button class="dropdown-item g0 removeButton" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
 								</div>
+                                <a href="#" class="btn btn-link actionsButton hide" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g0').addClass('active'); ">Edit</a>
 							 </td>
 						</tr>
-						<tr class="HHA g406"><td></td><td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click();  copyText('g406');" style="font-size: 1.125rem;">G0406</a><br><small>Patient Rights</small></td>
-							<td><span class="badge badge-pill badge-warning">Condition</span></td>
+						<tr class="HHA g406"><td></td><td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('g406');" style="font-size: 1.125rem;">G0406</a><br><small>Patient Rights</small></td>
+							<td class="tagType"><span class="badge badge-pill badge-warning">Condition</span></td>
 							<td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
 							<td class="author"><span class="iq-not-available">No authors</span></td>
 							<td>
@@ -1930,9 +1935,7 @@
 				<h4>Findings</h4>
                 
 				<p class="iq-not-available findings g406">There is no Findings for this citation.</p>
-				<h4>Attachments</h4>
-                                          
-				<p class="iq-not-available files g406">There are no attachments for this citation.</p>
+				
 				<hr>
 				<h4>Reguation Text and Interpretive Guidelines</h4>
                                             
@@ -1947,25 +1950,32 @@
 											<div class="card iq-color-gray-lighter p-1">
 												<div class="card-body">
 													<h4>Citation Overview</h4>
-													<p><label>Immediate Jeopardy (IJ)</label> No</p>
+													<p><label>Immediate Jeopardy (IJ)</label> <span class="g406 ij">No</span></p>
 													<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
-													<p><label>Survey Category</label>Initial Certification - Federal</p>
+													<p><label>Survey Category</label>Recertification - Federal</p>
 												</div>
 											</div>
+                                            <div class="card p-1">
+                                                <div class="card-body">
+                                            <h4 class="p-0 m-0">Attachments</h4>
+                                    <hr>
+				<p class="iq-not-available files g406">There are no attachments for this citation.</p>
+                                                </div></div>
 										</div>
 									</div>
 								</div>
 							</td>
-							<td class="text-right"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2">
+							<td class="text-right"> <a href="#" class="btn btn-link dropdown-toggle actionsButton" id="dropdownMenuButtonLink406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink406">
 
-								<button class="dropdown-item" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g406').addClass('active'); ">Add Citation Details</button>
-								<button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+								<button class="dropdown-item g406 addButton" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g406').addClass('active'); ">Add Citation Details</button>
+								<button class="dropdown-item  g406 removeButton" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
 								</div>
+                                <a href="#" class="btn btn-link actionsButton hide" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g406').addClass('active'); ">Edit</a>
 							 </td>
 						</tr>
 						<tr class="HHA g1008"><td></td><td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('g1008');" style="font-size: 1.125rem;">G1008</a><br><small>Clinical Records</small></td>
-							<td><span class="badge badge-pill badge-warning">Condition</span></td>
+							<td class="tagType"><span class="badge badge-pill badge-warning">Condition</span></td>
 							<td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
 							<td class="author"><span class="iq-not-available">No authors</span></td>
 							<td>
@@ -1980,9 +1990,7 @@
 				<h4>Findings</h4>
                 
 				<p class="iq-not-available findings g1008">There is no Findings for this citation.</p>
-				<h4>Attachments</h4>
-                <div class="files g1008">                           
-				<p class="iq-not-available files">There are no attachments for this citation.</p></div>
+				
 				<hr>
 				<h4>Reguation Text and Interpretive Guidelines</h4>
                                               <label>CFR Section</label>
@@ -1996,21 +2004,28 @@
 											<div class="card iq-color-gray-lighter p-1">
 												<div class="card-body">
 													<h4>Citation Overview</h4>
-													<p><label>Immediate Jeopardy (IJ)</label> No</p>
+													<p><label>Immediate Jeopardy (IJ)</label> <span class="g1008 ij">No</span></p>
 													<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
-													<p><label>Survey Category</label>Initial Certification - Federal</p>
+													<p><label>Survey Category</label>Recertification - Federal</p>
 												</div>
 											</div>
+                                            <div class="card p-1">
+                                                <div class="card-body">
+                                            <h4 class="p-0 m-0">Attachments</h4>
+                                    <hr>
+				<p class="iq-not-available files g1008">There are no attachments for this citation.</p>
+                                                </div></div>
 										</div>
 									</div>
 								</div>
 							</td>
-							<td class="text-right"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink3">
+							<td class="text-right"> <a href="#" class="btn btn-link dropdown-toggle actionsButton" id="dropdownMenuButtonLink1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink1008">
 
-								<button class="dropdown-item" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g1008').addClass('active'); ">Add Citation Details</button>
-								<button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+								<button class="dropdown-item g1008 addButton" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g1008').addClass('active'); ">Add Citation Details</button>
+								<button class="dropdown-item g1008 removeButton" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
 								</div>
+                                <a href="#" class="btn btn-link actionsButton hide" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g1008').addClass('active'); ">Edit</a>
 							 </td>
 						</tr>
                         <tr class="HHA g1010"><td></td><td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click();  copyText('g1010');" style="font-size: 1.125rem;">G1010</a><br><small>Contents of Clinical Record</small></td>
@@ -2029,9 +2044,7 @@
 				<h4>Findings</h4>
                 
 				<p class="iq-not-available findings g1010">There is no Findings for this citation.</p>
-				<h4>Attachments</h4>
-                                    
-				<p class="iq-not-available files g1010">There are no attachments for this citation.</p>
+				
 				<hr>
 				<h4>Reguation Text and Interpretive Guidelines</h4>
                                             <label>CFR Section</label>
@@ -2049,16 +2062,23 @@
 													<p><label>Survey Category</label>Recertification - Federal</p>
 												</div>
 											</div>
+                                            <div class="card p-1">
+                                                <div class="card-body">
+                                            <h4 class="p-0 m-0">Attachments</h4>
+                                    <hr>
+				<p class="iq-not-available files g1010">There are no attachments for this citation.</p>
+                                                </div></div>
 										</div>
 									</div>
 								</div>
 							</td>
-							<td class="text-right"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1010">
+							<td class="text-right"> <a href="#" class="btn btn-link dropdown-toggle actionsButton" id="dropdownMenuButtonLink1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink1010">
 
-								<button class="dropdown-item" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g1010').addClass('active'); ">Add Citation Details</button>
-								<button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+								<button class="dropdown-item g1010 addButton" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g1010').addClass('active'); ">Add Citation Details</button>
+								<button class="dropdown-item  g1010 removeButton" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
 								</div>
+                                <a href="#" class="btn btn-link actionsButton hide" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.g1010').addClass('active'); ">Edit</a>
 							 </td>
 						</tr>
 					</tbody>
@@ -2213,17 +2233,17 @@
 							<label>Immediate Jeopardy (IJ)</label>
 							<ul class="iq-inline-list">
 							<li><div class="custom-control custom-radio mb-4">
-                  <input type="radio" id="ijassociated1" name="ijassociated" class="custom-control-input">
+                  <input type="radio" id="ijassociated1" name="ijassociatedg1008" class="custom-control-input" value="yes">
                    <label class="custom-control-label" for="ijassociated1">Yes</label>
                 </div></li>
 								<li><div class="custom-control custom-radio mb-4 ml-4">
-                  <input type="radio" id="ijassociated2" name="ijassociated" class="custom-control-input">
+                  <input type="radio" id="ijassociated2" name="ijassociatedg1008" class="custom-control-input">
                    <label class="custom-control-label" for="ijassociated2">No</label>
                 </div></li>
 							</ul>
 							
 							<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
-							<p><label>Survey Category</label>Initial Certification - Federal</p>
+							<p><label>Survey Category</label>Recertification - Federal</p>
 						</div>
 					</div>
                        
@@ -2305,11 +2325,11 @@
 							<label>Immediate Jeopardy (IJ)</label>
 							<ul class="iq-inline-list">
 							<li><div class="custom-control custom-radio mb-4">
-                  <input type="radio" id="ijassociated3" name="ijassociated" class="custom-control-input">
+                  <input type="radio" id="ijassociated3" name="ijassociatedg406" class="custom-control-input" value="yes">
                    <label class="custom-control-label" for="ijassociated3">Yes</label>
                 </div></li>
 								<li><div class="custom-control custom-radio mb-4 ml-4">
-                  <input type="radio" id="ijassociated4" name="ijassociated" class="custom-control-input">
+                  <input type="radio" id="ijassociated4" name="ijassociatedg406" class="custom-control-input">
                    <label class="custom-control-label" for="ijassociated4">No</label>
                 </div></li>
 							</ul>
@@ -3997,8 +4017,8 @@
     </div>
   </div>
 </div>
-	
-	<input type="hidden" id="tagNameRepo" value="">
+<input type="hidden" id="editCount" value="0">
+<input type="hidden" id="writingComplete" value="0">
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
@@ -4524,7 +4544,9 @@
             var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view p').html();
             console.log(dps);
             var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view p').html();
+            
             console.log(findings);
+            
             
             $('#citationsT .read-view').removeClass('active'); 
             $('#citationsT .edit-view').removeClass('active'); 
@@ -4533,14 +4555,26 @@
             $('#citationsT .successMsg').alert(); 
             $('html, body').animate({ scrollTop: 0 }, 500);
             
-            $('#currentCitesTable p.' + tagNum + '.dps').removeClass('iq-not-available');
-            $('#currentCitesTable p.' + tagNum + '.findings').removeClass('iq-not-available');
+            if( dps == '<br>' && findings == '<br>'){
+                console.log('nothing');
+            } else {
+                $('#currentCitesTable p.' + tagNum + '.dps').removeClass('iq-not-available');
+                $('#currentCitesTable p.' + tagNum + '.findings').removeClass('iq-not-available');
+
+                $('#currentCitesTable p.' + tagNum + '.dps').html(dps);
+                $('#currentCitesTable p.' + tagNum + '.findings').html('<h5>David Brown&#39;s Observations<br><small><span class="citeStatus">In Progress</span> | 03/09/2020 2:30 PM EST</small></h5>' + findings);
+
+                $('#currentCitesTable tr.' + tagNum + ' td.author').html('David Brown');
+                //$('#currentCitesTable tr.' + tagNum + ' td .addButton').html('Edit Citation Details');
+                //$('#currentCitesTable tr.' + tagNum + ' td .removeButton').hide();
+                $('#currentCitesTable tr.' + tagNum + ' td .actionsButton').toggleClass('hide');
+                $('#editCount').val('1');
+            }
            
-            $('#currentCitesTable p.' + tagNum + '.dps').html(dps);
-            $('#currentCitesTable p.' + tagNum + '.findings').html(findings);
-            
-            $('#currentCitesTable tr.' + tagNum + ' td.author').html('David Brown');
-            
+            if($('input[name=ijassociatedg1008]:checked').val() == 'yes' || $('input[name=ijassociatedg406]:checked').val() == 'yes'){ 
+                $('#currentCitesTable tr.' + tagNum + ' td.tagType').html('<span class="badge badge-pill badge-danger">Condition&nbsp;-&nbsp;IJ</span>');
+                $('#currentCitesTable span.' + tagNum + '.ij').html('Yes');
+            }  
         }
     
        function inProgress(e4){
@@ -4548,6 +4582,7 @@
            $('#currentCitesTable tr.' + tagNum4 + ' td.status .iq-status').removeClass('iq-status-0');
            $('#currentCitesTable tr.' + tagNum4 + ' td.status .iq-status').addClass('iq-status-25');
            $('#currentCitesTable tr.' + tagNum4 + ' td.status small').html('In Progress');
+           
        }
     
        function writingComplete(e3){
@@ -4556,19 +4591,33 @@
            $('#currentCitesTable tr.' + tagNum3 + ' td.status .iq-status').removeClass('iq-status-25');
            $('#currentCitesTable tr.' + tagNum3 + ' td.status .iq-status').addClass('iq-status-50');
            $('#currentCitesTable tr.' + tagNum3 + ' td.status small').html('Writing Complete');
+           $('#currentCitesTable p.' + tagNum3 + ' .findings .citeStatus').html('Writing Complete');
+           $('#writingComplete').val('1');
        }
     
     function copyText(e2){
         var tagNum2 = e2; 
-         var dps2 = $('#citationsT .edit-view.' + tagNum2 + ' .editTextDiv.dps .fr-element.fr-view p').html();
+        var dps2 = $('#citationsT .edit-view.' + tagNum2 + ' .editTextDiv.dps .fr-element.fr-view p').html();
         console.log(dps2);
         var findings2 = $('#citationsT .edit-view.' + tagNum2 + ' .editTextDiv.findings .fr-element.fr-view p').html();
         console.log(findings2);
-        $('#currentCitesTable p.' + tagNum2 + '.dps').removeClass('iq-not-available');
-        $('#currentCitesTable p.' + tagNum2 + '.findings').removeClass('iq-not-available');
+        
+        if( $('#editCount').val() == '0' ) {
+            console.log('nothing');
+        } else {
+            $('#currentCitesTable p.' + tagNum2 + '.dps').removeClass('iq-not-available');
+            $('#currentCitesTable p.' + tagNum2 + '.findings').removeClass('iq-not-available');
 
-        $('#currentCitesTable p.' + tagNum2 + '.dps').html(dps2);
-        $('#currentCitesTable p.' + tagNum2 + '.findings').html(findings2);
+            $('#currentCitesTable p.' + tagNum2 + '.dps').html(dps2);
+            $('#currentCitesTable p.' + tagNum2 + '.findings').html('<h5>David Brown&#39;s Observations<br><small><span class="citeStatus">In Progress</span> | 03/09/2020 2:30 PM EST</small></h5>' + findings2);
+            if($('#writingComplete').val() == '1'){
+                $('#currentCitesTable .' + tagNum2 + '.findings .citeStatus').html('Writing Complete');
+            }
+        }
+        if($('input[name=ijassociatedg1008]:checked').val() == 'yes' || $('input[name=ijassociatedg406]:checked').val() == 'yes'){ 
+            $('#currentCitesTable tr.' + tagNum2 + ' td.tagType').html('<span class="badge badge-pill badge-danger">Condition&nbsp;-&nbsp;IJ</span>');
+            $('#currentCitesTable span.' + tagNum2 + '.ij').html('Yes');
+        }  
     }
     
     function cancelCiteEdit(){
