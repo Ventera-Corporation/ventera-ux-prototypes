@@ -45,7 +45,7 @@
             </div>
             <div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
 					id="navbarDropdown4" role="button" data-toggle="dropdown">
-              <p>DB</p>
+              <p>JS</p>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
                 Profile</a> <a class="dropdown-item" href="#">Help</a> <a class="dropdown-item" href="#">Logout</a> </div>
@@ -2267,10 +2267,11 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                 </div>
               </div>
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick=" if( $('#editCount').val() == 'initial' ){ saveCite('g1008');  writingComplete('g1008'); } else { reviewReady('g1008'); merged('g1008'); }">Save and Submit</button>
+                <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
+                  <button class="btn btn-primary" onClick=" if( $('#editCount').val() == 'initial' ){ saveCite('g1008');  writingComplete('g1008'); } else { reviewReady('g1008'); merged('g1008'); }">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="if( $('#editCount').val() == 'initial' ){ saveCite('g1008');  inProgress('g1008'); } else { reviewReady('g1008'); }">Save as Draft</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
-                <p class="statusNote">Upon submission, citation status will be updated to Ready for Merge.</p>
+                
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
             </section>
@@ -2380,10 +2381,10 @@ oversight, the MSW will be in-serviced".</p>
                 </div>
               </div>
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="saveCite('g406');  writingComplete('g406');">Save and Submit</button>
-                <button class="btn btn-outline-primary" onClick="saveCite('g406');  inProgress('g406');">Save as Draft</button>
+                  <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
+                 <button class="btn btn-primary" onClick=" if( $('#editCount').val() == 'initial' ){ saveCite('g406');  writingComplete('g406'); } else { reviewReady('g406'); merged('g406'); }">Save and Submit</button>
+                <button class="btn btn-outline-primary" onClick="if( $('#editCount').val() == 'initial' ){ saveCite('g406');  inProgress('g406'); } else { reviewReady('g406'); }">Save as Draft</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
-                  <p class="statusNote">Upon submission, citation status will be updated to Ready for Merge.</p>
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
             </section>
@@ -2465,10 +2466,11 @@ oversight, the MSW will be in-serviced".</p>
                 </div>
               </div>
               <div class="iq-button-wrapper">
-                <button class="btn btn-primary" onClick="saveCite('g0');  writingComplete('g0');">Save and Submit</button>
-                <button class="btn btn-outline-primary" onClick="saveCite('g0');  inProgress('g0');">Save as Draft</button>
+                  <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
+                 <button class="btn btn-primary" onClick=" if( $('#editCount').val() == 'initial' ){ saveCite('g0');  writingComplete('g0'); } else { reviewReady('g1008'); merged('g0'); }">Save and Submit</button>
+                <button class="btn btn-outline-primary" onClick="if( $('#editCount').val() == 'initial' ){ saveCite('g0');  inProgress('g0'); } else { reviewReady('g0'); }">Save as Draft</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
-                  <p class="statusNote">Upon submission, citation status will be updated to Ready for Merge.</p>
+                  
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
             </section>
@@ -2671,10 +2673,11 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 </div>
               </div>
               <div class="iq-button-wrapper">
+                  <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
                 <button class="btn btn-primary" onClick=" if( $('#editCount').val() == 'initial' || $('#editCount').val() == 'draft saved' ){ console.log('0' +$('#editCount').val()); saveCite('g1010');  writingComplete('g1010'); } else { console.log('1'+ $('#editCount').val()); reviewReady('g1010'); merged('g1010'); }">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="if( $('#editCount').val() == 'initial' ){ console.log('draft 0'+ $('#editCount').val()); saveCite('g1010');  inProgress('g1010'); } else { console.log('draft 1'+ $('#editCount').val()); reviewReady('g1010'); }">Save as Draft</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
-                <p class="statusNote">Upon submission, citation status will be updated to Ready for Merge.</p>
+                
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
             </section>
