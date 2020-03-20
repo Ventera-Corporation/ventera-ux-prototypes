@@ -2270,6 +2270,7 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                 <button class="btn btn-primary" onClick=" if( $('#editCount').val() == 'initial' ){ saveCite('g1008');  writingComplete('g1008'); } else { reviewReady('g1008'); merged('g1008'); }">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="if( $('#editCount').val() == 'initial' ){ saveCite('g1008');  inProgress('g1008'); } else { reviewReady('g1008'); }">Save as Draft</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+                <p class="statusNote">Upon submission, citation status will be updated to Ready for Merge.</p>
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
             </section>
@@ -2382,6 +2383,7 @@ oversight, the MSW will be in-serviced".</p>
                 <button class="btn btn-primary" onClick="saveCite('g406');  writingComplete('g406');">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="saveCite('g406');  inProgress('g406');">Save as Draft</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+                  <p class="statusNote">Upon submission, citation status will be updated to Ready for Merge.</p>
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
             </section>
@@ -2466,6 +2468,7 @@ oversight, the MSW will be in-serviced".</p>
                 <button class="btn btn-primary" onClick="saveCite('g0');  writingComplete('g0');">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="saveCite('g0');  inProgress('g0');">Save as Draft</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+                  <p class="statusNote">Upon submission, citation status will be updated to Ready for Merge.</p>
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
             </section>
@@ -2671,6 +2674,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 <button class="btn btn-primary" onClick=" if( $('#editCount').val() == 'initial' || $('#editCount').val() == 'draft saved' ){ console.log('0' +$('#editCount').val()); saveCite('g1010');  writingComplete('g1010'); } else { console.log('1'+ $('#editCount').val()); reviewReady('g1010'); merged('g1010'); }">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="if( $('#editCount').val() == 'initial' ){ console.log('draft 0'+ $('#editCount').val()); saveCite('g1010');  inProgress('g1010'); } else { console.log('draft 1'+ $('#editCount').val()); reviewReady('g1010'); }">Save as Draft</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+                <p class="statusNote">Upon submission, citation status will be updated to Ready for Merge.</p>
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
             </section>
@@ -4929,7 +4933,6 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
            $('#writingComplete').val('1');
            $('#currentCitesTable tr.' + tagNum3 + ' td .actionsButton').toggleClass('hide');
            $('#editCount').val('ready for merge');
-           
        }
     
        function merged(e){
@@ -4970,6 +4973,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
         $('#citationsT .edit-view.' + t + ' h5.merged').html('Merged Observations');
         $('#citationsT .edit-view.' + t + ' .showMore.merged').addClass('hide');
         $('#citationsT .edit-view.' + t + ' .showOld.merged').removeClass('hide');
+        $('#citationsT .edit-view.' + t + ' .statusNote').html('Upon submission, citation status will be updated to Ready for Review');
     }
     
     function cancelCiteEdit(){
