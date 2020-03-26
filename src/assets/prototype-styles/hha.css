@@ -292,7 +292,7 @@ label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616
 .badge.badge-warning, .badge.badge-warning:hover { background-color: #FFF1D2; border: 1px solid #FFF1D2; color: #212121; }
 .badge.badge-info, .badge.badge-info:hover { background-color: #E1F3F8; border: 1px solid #E1F3F8; color: #212121; }
 .badge.badge-light, .badge.badge-light:hover { background-color: #F1f1f1; border: 1px solid #f1f1f1; color: #212121; }
-.badge.badge-danger, .badge.badge-danger:hover { background-color: #F9DEDE; border: 1px solid #F9DEDE; color: #212121; font-weight: bold !important;}
+.badge.badge-danger, .badge.badge-danger:hover { background-color: #F9DEDE; border: 1px solid #F9DEDE; color: #212121;}
 .badge.badge-clear, .badge.badge-clear:hover { background-color: transparent; border: 1px solid transparent; color: #212121; }
 
 /* ACCORDION */
@@ -424,7 +424,8 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover { b
 table.dataTable.stripe tbody tr.odd:hover, table.dataTable.display tbody tr.odd:hover { background-color: #f8f8f8; }
 table.dataTable.no-footer { border-bottom: 0; margin-bottom: 2rem;  }
 .dtr-title { font-weight: 600; }
-.dtr-title:after { content: ': '; font-weight: 600;  } 
+.dtr-title:after { content: ': '; font-weight: 600;  }
+tr.child td { border-bottom: 3px solid #c0c0c0 !important; }
 tr.child ul { list-style: none; margin-top: -0.5rem; padding-top: 0;  }
 tr.child ul li { border-bottom: 0; padding: .5rem 1rem; margin: 0;  }
 tr.child ul li:last-child { border-bottom: 0; }
