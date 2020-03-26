@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Citations (Writing Complete) | Laguna Rainbow Home Health Agency</title>
+<title>A - Citations (Not Started) | Laguna Rainbow Home Health Agency</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -45,7 +45,7 @@
             </div>
             <div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
 					id="navbarDropdown4" role="button" data-toggle="dropdown">
-              <p>JS</p>
+              <p>DB</p>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
                 Profile</a> <a class="dropdown-item" href="#">Help</a> <a class="dropdown-item" href="#">Logout</a> </div>
@@ -861,10 +861,6 @@
             <div class="alert alert-success successMsg hide" role="alert">
               <div class="alert-content">Changes saved successfully</div>
             </div>
-            <div class="alert alert-success reviewReadyMsg hide" role="alert">
-              <div class="alert-content">All citations are ready to be reviewed.</div>
-            </div>
-            
             <div class="alert alert-danger errorMsg hide" role="alert">
               <div class="alert-content">
                 <h2>Unable to Save</h2>
@@ -1741,8 +1737,8 @@
               </div>
               <div class="row" style="position: relative; z-index: 1000;">
                 <div class="col-md-7" style="vertical-align: bottom">
-                  <div><span class="info-text"><span class="aoCount">4</span> Citations Total</span> |
-                    <p class="m-0" style="display: inline"><a href="javascript:void(0)" onClick=" $(this).children('span').toggleClass('hide'); "><span class="expandAll">Expand All Details</span><span class="collapseAll hide">Collapse All Details</span></a></p>
+                  <div><span class="info-text"><span class="aoCount">4</span> Citations Total</span>
+                   
                   </div>
                 </div>
                 <div class="col-md-5 text-right">
@@ -1759,375 +1755,98 @@
                   </select>
                 </div>
               </div>
-              <table class="display " style="width: 100%;" id="currentCitesTable">
-                <thead>
-                  <tr>
-                    <th style="width: .25rem;"></th>
-                    <th><span>Citation</span></th>
-                    <th><span>Tag Type</span></th>
-                    <th><span>Status &#8225;</span></th>
-                    <th><span>Authors</span></th>
-                    <th><span>Citation Details</span></th>
-                    <th class="text-right"><span>Actions</span></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="HHA g0">
-                    <td></td>
-                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('g0');" style="font-size: 1.125rem;">G0000</a><br>
-                      <small>Initial Comments</small></td>
-                    <td><span class="badge badge-pill badge-white">Memo</span></td>
-                    <td class="status"><span class="iq-status iq-status-50"></span> <small>Writing Complete</small></td>
-                    <td class="author">David Brown</td>
-                    <td><div class="content">
-                        <div class="row">
-                          <div class="col-md-8">
-                            <h4>Summary</h4>
-                            <h5>Deficient Practice Statement</h5>
-                            <div class="dps g0">
-                              <p>An onsite Complaint Survey (Complaint #NY00130831) was started on 02/24/14 and exited on 02/25/14 at the agency's location in Medford,
-                                New York.</p>
-                              <p>Three (3) Clinical Records were reviewed and identified as Patients #1, #2 and #3.
-                                Five (5) Personnel Records were reviewed and identified as Employees #1, #2, #3, #4 and #5.
-                                The Complaint is Substantiated.</p>
-                              <p>The agency's Admission Information Packet, Complaint Log for 2013 and 2014, and the Policy and Procedure for "Complaint Process" were
-                                reviewed.</p>
-                              <p>Interviews were conducted with the Directors of Patient Services for the Certified Home Health Care and the Long Term Home Health Care
-                                Programs, Director of Performance Improvement, Manager of Rehabilitation and Clinical Managers.</p>
-                            </div>
-                            <h4>Findings</h4>
-                              <div class="findings g0"></div>
-                              <h5>David Brown's Observations<br><small><span>Writing Complete</span> | 03/09/2020 10:20 AM EST</small></h5>
-                           
-                            <p>The following Standard Deficiencies are identified:</p>
-                            <ol>
-                              <li>G 406 - Patient Rights</li>
-                              <li>G 1008 - Clinical Records</li>
-                              <li>G 1010 - Contents of Clinical Records</li>
-                            </ol>
-                            
-                            <hr>
-                            <h4>Reguation Text and Interpretive Guidelines</h4>
-                            <label>CFR Section</label>
-                            <p class="iq-not-available">Not applicable</p>
-                            <label>Reguation Text</label>
-                            <p class="iq-not-available">Not applicable</p>
-                            <label>Interpretive Guidelines</label>
-                            <p class="iq-not-available">Not applicable</p>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card iq-color-gray-lighter p-1">
-                              <div class="card-body">
-                                <h4>Citation Overview</h4>
-                                <p>
-                                  <label>Regulation Set</label>
-                                  Home Health Agencies (FED - G - 11.01)</p>
-                                <p>
-                                  <label>Survey Category</label>
-                                  Recertification - Federal</p>
-                              </div>
-                            </div>
-                            <div class="card p-1">
-                              <div class="card-body">
-                                <h4 class="p-0 m-0">Attachments</h4>
-                                <hr>
-                                <p class="iq-not-available files g0">There are no attachments for this citation.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div></td>
-                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg0">
-                          <button class="dropdown-item" onClick="editDetails('g0');">Edit Citation Details</button>
-                           <button class="dropdown-item" onclick="submitReview('g0'); $(this).addClass('hide');">Submit for Review</button>
-                        </div>
-                      </div>
-                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g0">
-                          <button class="dropdown-item" onClick="editDetails('g0');">Edit Citation Details</button>
-                          <button class="dropdown-item mergeButton" onclick="mergeDetails('g0');">Merge Findings</button>
-                        </div>
-                      </div></td>
-                  </tr>
-                  <tr class="HHA g406">
-                    <td></td>
-                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('g406');" style="font-size: 1.125rem;">G0406</a><br>
-                      <small>Patient Rights</small></td>
-                    <td class="tagType"><span class="badge badge-pill badge-danger">Condition - IJ</span></td>
-                    <td class="status"><span class="iq-status iq-status-50"></span> <small>Writing Complete</small></td>
-                    <td class="author">David Brown</td>
-                    <td><div class="content">
-                      <div class="row">
-                        <div class="col-md-8">
-                          <h4>Summary</h4>
-                          <h5>Deficient Practice Statement</h5>
-                          <div class="dps g406">
-                            <p>Based on record review and staff interview, the Long Term Home Health Care Program (LTHHCP) failed to investigate a patient complaint
-                              regarding home health aide services, provide resolution, and document in the agency's Complaint Log. This was evident in the agency's
-                              Complaint Log for 2013.</p>
-                            <p>Failure to investigate, provide resolution, and document received patient complaints in the Complaint Log, places patients at risk for poor
-                              quality of care.</p>
-                            </div>
-                            <h4>Findings</h4>
-                            <div class="findings g406"></div>
-                            <h5>David Brown's Observations<br><small><span>Writing Complete</span> | 03/09/2020 10:42 AM EST</small></h5>
-                            <div><p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
- 
-<p>The Plan of Care dated 01/22/13 to 03/22/13 documents orders for SN (Skilled Nurse), MSS (Medical Social Services) and Aide 2-3 x week
-(two to three times a week) x 9 (nine) weeks, 4-8h (four to eight hours a day) duration, assist with personal care.</p>
- 
-<p>The MSS documented in the "Clinical Note" dated "01-23-2013": "Patient asked MSW (Medical Social Worker) to complete an Incident
-Report for complaints about hha (home health aide). MSW explained, per Administrator, that while MSW can help patient with a written
-complaint, the Incident Report must be done by vendor agency that provides the Aide services. Patient dictated statements, signed them and
-MSW will fax to the vendor agency and LTHHCP Coordinator".</p>
- 
-<p>There is no documented evidence of the nature of the patient's complaint regarding home health aide services in the "Clinical Note" dated
-"01-23-2013" and the Complaint Log.</p>
- 
-<p>There is no documented evidence in the Clinical Record and the Complaint Log that the LTHHCP conducted an investigation and provided
-resolution of the patient complaint received on 01/23/13.</p>
- 
-<p>The Policy and Procedure for the "Complaint Process - Policy No: 1-009.1" under "Procedure" documents: "3. The agency personnel
-receiving the complaint will discuss the complaint with the appropriate Supervisor within 24 (twenty four) hours of occurrence and will record
-the nature of the complaint on the Complaint Log" and "4. The Supervisor or designee will investigate the complaint as soon as possible but
-no longer than 5 (five) business days and will make every effort to resolve the complaint to the patient's / customer's satisfaction and record the
-results in the Complaint Log".</p>
- 
-<p>The Director of Patient Services (DPS) for the Certified Home Health Care Program was interviewed on 02/25/14 and stated "this was an
-oversight, the MSW will be in-serviced".</p>
- 
-<p>The MSW failed to adhere to the agency's policy and procedure for the "Complaint Process".</p></div>
-                            <hr>
-                            <h4>Reguation Text and Interpretive Guidelines</h4>
-                            <label>CFR Section</label>
-                            <p>484.5</p>
-                            <label>Reguation Text</label>
-                            <p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
-                            <label>Interpretive Guidelines</label>
-                            <p class="iq-not-available">Not applicable</p>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card iq-color-gray-lighter p-1">
-                              <div class="card-body">
-                                <h4>Citation Overview</h4>
-                                <p>
-                                  <label>Immediate Jeopardy (IJ)</label>
-                                  <span class="g406 ij">No</span></p>
-                                <p>
-                                  <label>Regulation Set</label>
-                                  Home Health Agencies (FED - G - 11.01)</p>
-                                <p>
-                                  <label>Survey Category</label>
-                                  Recertification - Federal</p>
-                              </div>
-                            </div>
-                            <div class="card p-1">
-                              <div class="card-body">
-                                <h4 class="p-0 m-0">Attachments</h4>
-                                <hr>
-                                <p class="iq-not-available files g406">There are no attachments for this citation.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div></td>
-                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg406">
-                          <button class="dropdown-item" onClick="editDetails('g406');">Edit Citation Details</button>
-                           <button class="dropdown-item" onclick="submitReview('g406'); $(this).addClass('hide');">Submit for Review</button>
-                        </div>
-                      </div>
-                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g406">
-                          <button class="dropdown-item" onClick="editDetails('g406');">Edit Citation Details</button>
-                          <button class="dropdown-item mergeButton" onclick="mergeDetails('g406');">Merge Findings</button>
-                        </div>
-                      </div></td>
-                  </tr>
-                  <tr class="HHA g1008">
-                    <td></td>
-                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('g1008');" style="font-size: 1.125rem;">G1008</a><br>
-                      <small>Clinical Records</small></td>
-                    <td class="tagType"><span class="badge badge-pill badge-warning">Condition</span></td>
-                    <td class="status"><span class="iq-status iq-status-50"></span> <small>Writing Complete</small></td>
-                    <td class="author">David Brown</td>
-                    <td><div class="content">
-                        <div class="row">
-                          <div class="col-md-8">
-                            <h4>Summary</h4>
-                            <h5>Deficient Practice Statement</h5>
-                            <div class="dps g1008"><p>Based on record review and staff interview, the agency failed to ensure the coordination of patient care services for the patient's wound care
-assessment. This was evident in one (1) of three (3) Clinical Records reviewed (Patient #3).</p>
- 
-<p>Failure to ensure the coordination of patient wound care assessment places patients at risk for poor quality of care.</p></div>
-                            <h4>Findings</h4>
-                            <div class="merged">
-                            <div class="findings g1008"></div>
-                            <h5>David Brown's Observations<br><small>Writing Complete | 03/09/2020 12:25 PM EST</small></h5>
-                            <div><p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
-                              <p>The Plans of Care dated 01/22/13 to 03/22/13 and 03/23/13 to 05/21/13 document orders for &quot;SN 2 (two) x month x 2 (two) months&quot; and for
-                              <p>SN to &quot;Assess Skin &amp; Instruct in methods to prevent breakdown&quot;.</p>
-                              The SN Visit Note dated 02/04/13 documents the patient has a &quot;Rash under abdomen fold and bilateral groins. Rash - skin folds, rash - trunk,
-                              itching - new. Rash precipitated by not showering. No hha (home health aide) several weeks&quot; and &quot;still searching for hha through vendor&quot;.</p>
-                             
-                             <p> The SN Visit Note dated 02/27/13 documents the patient has a &quot;Rash under abdominal folds. Skin Character: erythema: red, flat&quot;.</p>
-                           
-                              <p>The SN Visit Note dated 03/18/13 (Recertification Visit) documents &quot;Rash under abdominal folds. Skin Character: erythema: fold. &quot;Genitalia
-                              rash - longstanding, itching&quot;. Patient using &quot;ointment, Interdry sheets&quot;. There is no documented evidence in the visit note identifying the type of
-                              &quot;ointment&quot; the patient is applying to rash areas.</p>
-                              
-                              </div>
-                            </div>
-                            <hr>
-                            <h4>Reguation Text and Interpretive Guidelines</h4>
-                            <label>CFR Section</label>
-                            <p>484.110</p>
-                            <label>Reguation Text</label>
-                            <p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
-                            <label>Interpretive Guidelines</label>
-                            <p class="iq-not-available">Not applicable</p>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card iq-color-gray-lighter p-1">
-                              <div class="card-body">
-                                <h4>Citation Overview</h4>
-                                <p>
-                                  <label>Immediate Jeopardy (IJ)</label>
-                                  <span class="g1008 ij">No</span></p>
-                                <p>
-                                  <label>Regulation Set</label>
-                                  Home Health Agencies (FED - G - 11.01)</p>
-                                <p>
-                                  <label>Survey Category</label>
-                                  Recertification - Federal</p>
-                              </div>
-                            </div>
-                            <div class="card p-1">
-                              <div class="card-body">
-                                <h4 class="p-0 m-0">Attachments</h4>
-                                <hr>
-                                <p class="iq-not-available files g1008">There are no attachments for this citation.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div></td>
-                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1008">
-                          <button class="dropdown-item" onClick="editDetails('g1008');">Edit Citation Details</button>
-                           <button class="dropdown-item" onclick="submitReview('g1008'); $(this).addClass('hide');">Submit for Review</button>
-                        </div>
-                      </div>
-                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g1008">
-                          <button class="dropdown-item" onClick="editDetails('g1008');">Edit Citation Details</button>
-                          <button class="dropdown-item mergeButton" onclick="mergeDetails('g1008');">Merge Findings</button>
-                        </div>
-                      </div></td>
-                  </tr>
-                  <tr class="HHA g1010">
-                    <td></td>
-                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click();  copyText('g1010');" style="font-size: 1.125rem;">G1010</a><br>
-                      <small>Contents of Clinical Record</small></td>
-                    <td><span class="badge badge-pill badge-info">Standard</span></td>
-                    <td class="status"><span class="iq-status iq-status-25"></span> <small>In Progress</small></td>
-                    <td class="author"><ul><li>David Brown</li><li>Jane Smith <strong>*</strong></li></ul></td>
-                    <td><div class="content">
-                        <div class="row">
-                          <div class="col-md-8">
-                            <h4>Summary</h4>
-                            <h5>Deficient Practice Statement</h5>
-                            <div class="dps g1010"><p>Based on record review and staff interview, the home care agency failed to ensure that patient care provided is in accordance with the written
-Plan of Care. This was evident in three (3) of three (3) Clinical Records reviewed (Patients #1, #2 and #3).</p>
- 
-<p>Failure to ensure that patient care provided follows the written Plan of Care places patients at risk for unmet needs.</p></div>
-                            <h4>Findings</h4>
-                            <div class="merged">
-                            <div class="findings g1010"><h5>Jane Smith's Observations<br><small><span class="citeStatus">In Progress</span> | 03/10/2020 11:30 AM EST</small></h5>
-                                
-                          <p>Patient #2 has an admission date of 12/13/13 with diagnoses including Late Effect of Cerebral Vascular Disease, Intracerebral
-Hemorrhage and Hypertension.</p><p>The Plan of Care dated 12/13/13 to 02/10/14 documents orders for "PT (Physical Therapy) 1-2 x week (one to two times a week) x 2 (two) weeks, Physical Therapy Evaluation, establish home exercise program ". and "OT (Occupational Therapy) 1 x week x 1 week (one visit for one week), Occupational Evaluation".</p><p>The "Physical Therapy Evaluation / Care Plan" documents that the initial patient evaluation by the PT was performed on 12/26/13 (thirteen {13}
-days after the start of care).</p><p>There is no documented evidence explaining the delay of thirteen (13) days for the PT evaluation and of subsequent PT visits to the patient.</p><p>The "Occupational Therapy Evaluation / Care Plan" documents that the initial patient evaluation by the OT was performed on 12/26/13
-(thirteen {13} days after the start of care).</p><p>There is no documented evidence explaining the delay of thirteen (13) days for the OT evaluation.</p><p>There is no documented evidence that the PT, OT and the Manager of Rehabilitation notified the Physician of the delay by the home care
-agency to provide the ordered Physical and Occupational Therapy services from the start of care (12/13/13) to 12/26/13.</p><p>The interim Physician's order dated 12/26/13 documents orders for OT 1-2 week x 3 (one to two times a week for three) weeks. There is no
-documented evidence of subsequent OT visits from 12/26/13 to the present.</p><p>During interview on 02/25/14 with the agency's Director of Patient Services (DPS) and the Manager of Rehabilitation, the Manager stated that
-the patient had multiple Physician appointments.</p></div>
-                            <h5>David Brown's Observations<br><small><span>Writing Complete</span> | 03/09/2020 2:30 PM EST</small></h5>
-                            <div><p>Patient #1 has an admission date of 12/16/13 with diagnoses including Tear Meniscus, Diabetes Mellitus Type II and Atrial Fibrillation.</p>
- 
-<p>The Plan of Care dated 12/16/13 to 02/13/14 documents orders for "SN (Skilled Nurse) 1-2 x week x 9 weeks (one to two times a week for
-nine weeks)."</p>
- 
-<p>The Plan of Care documents an order for daily weights and notify the Physician of 3lbs (three pounds) weight gain in 24 hrs (twenty four hours)
-and 5lbs (five pounds) in one (1) week.</p>
- 
-<p>There is no documented evidence that the SN monitored the patient's weight on the visit dates of 12/20/13, 01/10/14 (Resumption of Care
-Visit), 01/15/14, 01/20/14 and 01/24/14.</p>
- 
-<p>The agency's DPS was interviewed on 02/25/14 and stated that the "weights were not recorded".</p>
- 
-<p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
- 
-<p>The Plan of Care dated 11/23/12 to 01/21/13 documents orders for "SN (Skilled Nurse) 1 x weekx 9 weeks (onetime a week for nine weeks).
-Assess vital signs (T {Temperature}, BP {Blood Pressure}, P {Pulse}, R {Respirations}, Pain) and clinical status. Notify MD (Physician) for
-Systolic BP &gt; 140 (160 65 yr old) or &lt;95: and/or Diastolic &gt;90 unless otherwise specified" and "Assess musculoskeletal status / report
-changes to MD".</p>
- 
-<p>The SN performed home visits to the patient on 12/10/12,12/21/12 and 01/07/13. There is no documented evidence in the Clinical Record to
-explain why the SN visits the patient every two (2) weeks and not weekly as ordered in the Plan of Care.</p>
- 
-<p>There is no documented evidence of a Physician's order to change the Plan of Care for the SN services.</p>
- 
-<p>The SN Visit Note dated 03/18/13 documents the patient's vital signs as BP 156/50, Temperature 99, P 70 and R 18. The SN further
-documents the patient had diarrhea for two (2) days and was weak. There is no documented evidence that the SN notified the MD in
-accordance with the Plan of Care regarding the patient's elevated BP findings and diarrhea for two (2) days with weakness.</p>
- 
-<p>The agency's DPS was interviewed on 02/25/14 and did not provide an explanation for the survey findings.</p></div>
-                            </div>
-                            <hr>
-                            <h4>Reguation Text and Interpretive Guidelines</h4>
-                            <label>CFR Section</label>
-                            <p>484.110(a)</p>
-                            <label>Reguation Text</label>
-                            <p>Standard: Contents of clinical record.</p>
-                            <label>Interpretive Guidelines</label>
-                            <p class="iq-not-available">Not applicable</p>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card iq-color-gray-lighter p-1">
-                              <div class="card-body">
-                                <h4>Citation Overview</h4>
-                                <p>
-                                  <label>Regulation Set</label>
-                                  Home Health Agencies (FED - G - 11.01)</p>
-                                <p>
-                                  <label>Survey Category</label>
-                                  Recertification - Federal</p>
-                              </div>
-                            </div>
-                            <div class="card p-1">
-                              <div class="card-body">
-                                <h4 class="p-0 m-0">Attachments</h4>
-                                <hr>
-                                <p class="iq-not-available files g1010">There are no attachments for this citation.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div></td>
-                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link" onClick="editDetails('g1010');">Edit</a>
-                       </div>
-                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g1010">
-                          <button class="dropdown-item" onClick="editDetails('g1010');">Edit Citation Details</button>
-                          <button class="dropdown-item mergeButton" onclick="mergeDetails('g1010');">Merge Findings</button>
-                        </div>
-                      </div></td>
-                  </tr>
-                </tbody>
-              </table>
-              &#8225; <small><a href="#" id="citeStatusLink" class="mr-3" data-toggle="dropdown">Citation Status</a>
+              <table class="display" style="width: 100%;" id="currentCitesTable">
+					<thead>
+						<tr><th><span>Citation</span></th><th><span>Tag Type</span></th><th><span>Status</span></th><th><span>Authors</span></th><th class="text-right"><span>Actions</span></th></tr>
+					</thead>
+					<tbody>
+						<tr class="HHA g0">
+						  <td><a href="javascript:void(0)" onclick="viewDetails('g0');" style="font-size: 1.125rem;">G0000</a><br>
+						    <small>Initial Comments</small></td>
+						  <td></td>
+						  <td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
+						  <td class="author"><span class="iq-not-available">No information</span></td>
+				          <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg0">
+						      <button class="dropdown-item" onClick="addDetails('g0');">Add Details</button>
+						      <button class="dropdown-item" onClick="viewDetails('g0');">View Details</button>
+						      <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+					        </div>
+						    </div>
+						    <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+						      <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g0">
+						        <button class="dropdown-item" onClick="editDetails('g0');">Edit Details</button>
+						        <button class="dropdown-item" onClick="viewDetails('g0');">View Details</button>
+						        <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+					          </div>
+					        </div></td>
+						</tr>
+						<tr class="HHA g406">
+						  <td><a href="javascript:void(0)" onclick="viewDetails('g406');" style="font-size: 1.125rem;">G0406</a><br>
+						    <small>Patient Rights</small></td>
+						  <td class="tagType"><span class="badge badge-pill badge-warning">Condition</span></td>
+						  <td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
+						  <td class="author"><span class="iq-not-available">No information</span></td>
+						  <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg406">
+						      <button class="dropdown-item" onClick="addDetails('g406');">Add Details</button>
+						      <button class="dropdown-item" onClick="viewDetails('g406');">View Details</button>
+						      <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+					        </div>
+						    </div>
+						    <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+						      <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g406">
+						        <button class="dropdown-item" onClick="editDetails('g406');">Edit Details</button>
+						        <button class="dropdown-item" onClick="viewDetails('g406');">View Details</button>
+						        <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+					          </div>
+					        </div></td>
+						</tr>
+						<tr class="HHA g1008">
+						  <td><a href="javascript:void(0)" onclick="viewDetails('g1008');" style="font-size: 1.125rem;">G1008</a><br>
+						    <small>Clinical Records</small></td>
+						  <td class="tagType"><span class="badge badge-pill badge-warning">Condition</span></td>
+						  <td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
+						  <td class="author"><span class="iq-not-available">No information</span></td>
+						  <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1008">
+						      <button class="dropdown-item" onClick="addDetails('g1008');">Add Details</button>
+						      <button class="dropdown-item" onClick="viewDetails('g1008');">View Details</button>
+						      <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+					        </div>
+						    </div>
+						    <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+						      <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g1008">
+						        <button class="dropdown-item" onClick="editDetails('g1008');">Edit Details</button>
+						        <button class="dropdown-item" onClick="viewDetails('g1008');">View Details</button>
+						        <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+					          </div>
+					        </div></td>
+					  </tr>
+						<tr class="HHA g1010">
+						  <td><a href="javascript:void(0)" onclick="viewDetails('g1010');" style="font-size: 1.125rem;">G1010</a><br>
+						    <small>Contents of Clinical Record</small></td>
+						  <td><span class="badge badge-pill badge-info">Standard</span></td>
+						  <td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
+						  <td class="author"><span class="iq-not-available">No information</span></td>
+						  <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1010">
+						      <button class="dropdown-item" onClick="addDetails('g1010');">Add Details</button>
+						      <button class="dropdown-item" onClick="viewDetails('g1010');">View Details</button>
+						      <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+					        </div>
+						    </div>
+						    <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+						      <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g1010">
+						        <button class="dropdown-item" onClick="editDetails('g1010');">Edit Details</button>
+						        <button class="dropdown-item" onClick="viewDetails('g1010');">View Details</button>
+						        <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+					          </div>
+					        </div></td>
+					  </tr>
+					</tbody>
+				</table>
+              &#8225; <small><a href="#" id="citeStatusLink" data-toggle="dropdown">Citation Status</a>
               <div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="citeStatusLink" style="max-width: 350px;"> <span class="iq-status iq-status-0"></span> Not Started<br>
                 <span class="iq-status iq-status-25"></span> In Progress<br>
                 <span class="iq-status iq-status-50"></span> Writing Complete<br>
@@ -2135,15 +1854,72 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 <span class="iq-status iq-status-75-y"></span> Merge in Progress<br>
                 <span class="iq-status iq-status-75"></span> Ready for Review<br>
                 <div><span class="iq-status-100-y"></span>&nbsp;Review&nbsp;in&nbsp;Progress</div>
-                <span class="iq-status iq-status-100"></span> Finalized </div></small>
-                <strong>*</strong> <small>Team Coordinator</small>
-          
-               </section>
+                <span class="iq-status iq-status-100"></span> Finalized </div>
+              </small> </section>
             
+            <section class="read-view g1008">
+               <p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+						 
+              <div class="row">
+                <div class="col-md-8">
+                    <h2><button class="btn btn-outline-primary float-right" onClick="addDetails('g1008');">Add Details</button>Citation Details for G1008 <span class="badge badge-pill badge-warning">Condition</span><br>
+                <small>Clinical Records</small></h2>
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#reg1008" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="reg1008" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p>484.110</p>
+                          <label>Reguation Text</label>
+                          <p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4>Summary</h4>
+                 
+                   <div class="dps"><p class="iq-not-available">There is no deficient practice statement for this citation.</p></div>
+						
+				<h4 class="mt-4">Findings</h4>
+				 <div class="findings"><p class="iq-not-available">There are no observations for this citation.</p></div>
+			
+				
+					</div>
+					<div class="col-md-4">
+					<div class="card iq-color-gray-lighter">
+						
+						<div class="card-body">
+							<h4>Citation Overview</h4>
+							<p><label>Tag Type</label>Condition</p>
+							<p><label>Immediate Jeopardy (IJ)</label>
+							<span class="ij">No</span></p>
+							
+							<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
+							<p><label>Survey Categories</label>Recertification</p>
+						</div>
+					</div>
+                        <div class="card p-1">
+                              <div class="card-body">
+                                <h4 class="p-0 m-0">Attachments</h4>
+                                <hr>
+                                <p class="iq-not-available files g406">There are no attachments for this citation.</p>
+                              </div>
+                            </div>
+					</div>
+				</div>
+				
+				<p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+            </section>
             <section class="edit-view g1008"> 
-              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+               <p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G1008 <br>
+              <h2><span>Add</span> Citation Details for G1008 <br>
                 <small>Clinical Records</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2168,84 +1944,11 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                   <h4>Summary</h4>
                   <h5>Deficient Practice Statement</h5>
                   <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
-                  <div class="editTextDiv dps"><p>Based on record review and staff interview, the agency failed to ensure the coordination of patient care services for the patient's wound care
-assessment. This was evident in one (1) of three (3) Clinical Records reviewed (Patient #3).</p>
- 
-<p>Failure to ensure the coordination of patient wound care assessment places patients at risk for poor quality of care.</p></div>
+                  <div class="editTextDiv dps"></div>
                   <h4 class="mt-4">Findings</h4>
-                  <h5 title="merged">My Observations</h5>
+                  <h5>David Brown's Observations</h5>
                   <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
-                  <div class="editTextDiv findings" onClick="$('.fr-view .findingsContent').removeClass('hide');">
-                    <div class="hide findingsContent">
-                      <p>The Nurse Coordinator documented in the &quot;Clinical Note&quot; dated 03/22/13: &quot;call placed on 03/18/13 to Wound Care Nurse requesting help with
-                      patient's reddened area&quot; and &quot;Task sent to Wound Care Nurse on 03/18/13 for wound care evaluation for patient&quot;.</p>
-                      <p>The SN documented in the &quot;Clinical Note&quot; dated 03/22/13: &quot;No visit from Wound Nurse as yet per patient&quot;.</p>
-                      <p>The Wound Care Nurse (WCN) documented in the&quot;Clinical Note&quot; dated 03/22/13 that the patient was called and informed that the WCN will
-                      see patient Monday or Tuesday to perform wound evaluation and the SN will visit patient over the weekend for wound care.</p>
-
-                      <p>The SN documented in the &quot;Clinical Note&quot; dated 03/23/13: &quot;Saw patient today. Washed left abdominal fold, bilateral groins, soap, water, pat
-                      dry. Applied Nystatin Powder, waited one (1) minute then applied small amount Mupiracin Cream 3 (three) times a day. These were
-                      instructions from Physician's NP (Nurse Practitioner)&quot;.</p>
-                    <p>The SN documented in the &quot;Clinical Note&quot; dated 03/24/13: &quot;Wound Nurse may see patient Monday/Tuesday&quot;.</p>
-                    </div></div>
-                   
-                  
-                    <div class="showMore merged mb-3">
-                         <article>
-                        <h5>David Brown's Observations<br><small>Writing Complete | 03/09/2020 12:25 PM EST</small></h5>
-                    <p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
-                  <p>The Plans of Care dated 01/22/13 to 03/22/13 and 03/23/13 to 05/21/13 document orders for &quot;SN 2 (two) x month x 2 (two) months&quot; and for
-                  <p>SN to &quot;Assess Skin &amp; Instruct in methods to prevent breakdown&quot;.</p>
-                  The SN Visit Note dated 02/04/13 documents the patient has a &quot;Rash under abdomen fold and bilateral groins. Rash - skin folds, rash - trunk,
-                  itching - new. Rash precipitated by not showering. No hha (home health aide) several weeks&quot; and &quot;still searching for hha through vendor&quot;.</p>
-
-                 <p> The SN Visit Note dated 02/27/13 documents the patient has a &quot;Rash under abdominal folds. Skin Character: erythema: red, flat&quot;.</p>
-
-                  <p>The SN Visit Note dated 03/18/13 (Recertification Visit) documents &quot;Rash under abdominal folds. Skin Character: erythema: fold. &quot;Genitalia
-                  rash - longstanding, itching&quot;. Patient using &quot;ointment, Interdry sheets&quot;. There is no documented evidence in the visit note identifying the type of
-                  &quot;ointment&quot; the patient is applying to rash areas.</p>
-                              </article>
-                    </div>
-                  <a href="#findingsg1008" class="merged" onClick="$(this).prev().toggleClass('hideMore'); $(this).children('span').toggleClass('hide'); "><span>Show</span><span class="hide">Hide</span> more</a>
-                    
-                  <div class="iq-accordion showhide  merged showOld hide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#show-old-observations1008" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Original Findings</span><span class="hide">Hide Original Findings</span>
-                      </button>
-                    </div>
-                  <div id="show-old-observations1008" class="collapse">
-                    <div class="card-body px-0">
-                        <h5>Jane Smith's Observations<br><small><span class="citeStatus">In Progress</span> | 03/10/2020 11:30 AM EST</small></h5>
-                        <p>The Nurse Coordinator documented in the &quot;Clinical Note&quot; dated 03/22/13: &quot;call placed on 03/18/13 to Wound Care Nurse requesting help with
-                      patient's reddened area&quot; and &quot;Task sent to Wound Care Nurse on 03/18/13 for wound care evaluation for patient&quot;.</p>
-                      <p>The SN documented in the &quot;Clinical Note&quot; dated 03/22/13: &quot;No visit from Wound Nurse as yet per patient&quot;.</p>
-                      <p>The Wound Care Nurse (WCN) documented in the&quot;Clinical Note&quot; dated 03/22/13 that the patient was called and informed that the WCN will
-                      see patient Monday or Tuesday to perform wound evaluation and the SN will visit patient over the weekend for wound care.</p>
-
-                      <p>The SN documented in the &quot;Clinical Note&quot; dated 03/23/13: &quot;Saw patient today. Washed left abdominal fold, bilateral groins, soap, water, pat
-                      dry. Applied Nystatin Powder, waited one (1) minute then applied small amount Mupiracin Cream 3 (three) times a day. These were
-                      instructions from Physician's NP (Nurse Practitioner)&quot;.</p>
-                    <p>The SN documented in the &quot;Clinical Note&quot; dated 03/24/13: &quot;Wound Nurse may see patient Monday/Tuesday&quot;.</p>
-                      <h5>David Brown's Observations<br><small>Writing Complete | 03/09/2020 12:25 PM EST</small></h5>
-                    <p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
-                  <p>The Plans of Care dated 01/22/13 to 03/22/13 and 03/23/13 to 05/21/13 document orders for &quot;SN 2 (two) x month x 2 (two) months&quot; and for
-                  <p>SN to &quot;Assess Skin &amp; Instruct in methods to prevent breakdown&quot;.</p>
-                  The SN Visit Note dated 02/04/13 documents the patient has a &quot;Rash under abdomen fold and bilateral groins. Rash - skin folds, rash - trunk,
-                  itching - new. Rash precipitated by not showering. No hha (home health aide) several weeks&quot; and &quot;still searching for hha through vendor&quot;.</p>
-
-                 <p> The SN Visit Note dated 02/27/13 documents the patient has a &quot;Rash under abdominal folds. Skin Character: erythema: red, flat&quot;.</p>
-
-                  <p>The SN Visit Note dated 03/18/13 (Recertification Visit) documents &quot;Rash under abdominal folds. Skin Character: erythema: fold. &quot;Genitalia
-                  rash - longstanding, itching&quot;. Patient using &quot;ointment, Interdry sheets&quot;. There is no documented evidence in the visit note identifying the type of
-                  &quot;ointment&quot; the patient is applying to rash areas.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    
+                  <div class="editTextDiv findings"></div>
                 </div>
                 <div class="col-md-4">
                   <div class="card iq-color-gray-lighter">
@@ -2264,7 +1967,7 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                         </li>
                         <li>
                           <div class="custom-control custom-radio mb-4 ml-4">
-                            <input type="radio" id="ijassociated2" name="ijassociatedg1008" class="custom-control-input" checked>
+                            <input type="radio" id="ijassociated2" name="ijassociatedg1008" class="custom-control-input">
                             <label class="custom-control-label" for="ijassociated2">No</label>
                           </div>
                         </li>
@@ -2273,8 +1976,8 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                         <label>Regulation Set</label>
                         Home Health Agencies (FED - G - 11.01)</p>
                       <p>
-                        <label>Survey Category</label>
-                        Recertification - Federal</p>
+                        <label>Survey Categories</label>
+                        Recertification</p>
                     </div>
                   </div>
                   <div class="card dashed text-center">
@@ -2287,18 +1990,77 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                 </div>
               </div>
               <div class="iq-button-wrapper">
-                <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
-                  <button class="btn btn-primary" onClick="savePrimarySubmit('g1008');">Save and Submit</button>
+                <!--<p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>-->
+                <button class="btn btn-primary" onClick="savePrimarySubmit('g1008');">Writing Complete</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g1008');">Save as Draft</button>
-                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
-                
               </div>
-              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+             <p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
             </section>
+            <section class="read-view g406">
+               <p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+						 
+              <div class="row">
+                <div class="col-md-8">
+                    <h2><button class="btn btn-outline-primary float-right" onClick="addDetails('g406');">Add Details</button>Citation Details for G406 <span class="badge badge-pill badge-warning">Condition</span><br>
+                <small>Patient Rights</small></h2>
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#reg406" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="reg406" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p>484.5</p>
+                          <label>Reguation Text</label>
+                          <p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                 
+                   <h4>Summary</h4>
+                 
+                   <div class="dps"><p class="iq-not-available">There is no deficient practice statement for this citation.</p></div>
+						
+				<h4 class="mt-4">Findings</h4>
+				 <div class="findings"><p class="iq-not-available">There are no observations for this citation.</p></div>
+			
+				
+					</div>
+					<div class="col-md-4">
+					<div class="card iq-color-gray-lighter">
+						
+						<div class="card-body">
+							<h4>Citation Overview</h4>
+							<p><label>Tag Type</label>Condition</p>
+							<p><label>Immediate Jeopardy (IJ)</label>
+							<span class="ij">No</span></p>
+							
+							<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
+							<p><label>Survey Categories</label>Recertification</p>
+						</div>
+					</div>
+                        <div class="card p-1">
+                              <div class="card-body">
+                                <h4 class="p-0 m-0">Attachments</h4>
+                                <hr>
+                                <p class="iq-not-available files g406">There are no attachments for this citation.</p>
+                              </div>
+                            </div>
+					</div>
+				</div>
+				
+				<p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+            </section>  
             <section class="edit-view g406"> 
-              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G0406 <br>
+              <h2><span>Add</span> Citation Details for G0406 <br>
                 <small>Patient Rights</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2323,43 +2085,11 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                   <h4>Summary</h4>
                   <h5>Deficient Practice Statement</h5>
                   <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
-                  <div class="editTextDiv dps"><p>Based on record review and staff interview, the Long Term Home Health Care Program (LTHHCP) failed to investigate a patient complaint
-                              regarding home health aide services, provide resolution, and document in the agency's Complaint Log. This was evident in the agency's
-                              Complaint Log for 2013.</p>
-                            <p>Failure to investigate, provide resolution, and document received patient complaints in the Complaint Log, places patients at risk for poor
-                              quality of care.</p></div>
-                  <h4 class="mt-4" id="findingsg406">Findings</h4>
-                  <h5>My Observations</h5>
+                  <div class="editTextDiv dps"></div>
+                  <h4 class="mt-4">Findings</h4>
+                  <h5>David Brown's Observations</h5>
                   <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
                   <div class="editTextDiv findings"></div>
-
-                    <h5>David Brown's Observations<br><small>Writing Complete | 03/09/2020 10:42 AM EST</small></h5>
-                    <div class="findings g406 showMore mb-3"><p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
- 
-<p>The Plan of Care dated 01/22/13 to 03/22/13 documents orders for SN (Skilled Nurse), MSS (Medical Social Services) and Aide 2-3 x week
-(two to three times a week) x 9 (nine) weeks, 4-8h (four to eight hours a day) duration, assist with personal care.</p>
- 
-<p>The MSS documented in the "Clinical Note" dated "01-23-2013": "Patient asked MSW (Medical Social Worker) to complete an Incident
-Report for complaints about hha (home health aide). MSW explained, per Administrator, that while MSW can help patient with a written
-complaint, the Incident Report must be done by vendor agency that provides the Aide services. Patient dictated statements, signed them and
-MSW will fax to the vendor agency and LTHHCP Coordinator".</p>
- 
-<p>There is no documented evidence of the nature of the patient's complaint regarding home health aide services in the "Clinical Note" dated
-"01-23-2013" and the Complaint Log.</p>
- 
-<p>There is no documented evidence in the Clinical Record and the Complaint Log that the LTHHCP conducted an investigation and provided
-resolution of the patient complaint received on 01/23/13.</p><p>The Policy and Procedure for the "Complaint Process - Policy No: 1-009.1" under "Procedure" documents: "3. The agency personnel
-receiving the complaint will discuss the complaint with the appropriate Supervisor within 24 (twenty four) hours of occurrence and will record
-the nature of the complaint on the Complaint Log" and "4. The Supervisor or designee will investigate the complaint as soon as possible but
-no longer than 5 (five) business days and will make every effort to resolve the complaint to the patient's / customer's satisfaction and record the
-results in the Complaint Log".</p>
- 
-<p>The Director of Patient Services (DPS) for the Certified Home Health Care Program was interviewed on 02/25/14 and stated "this was an
-oversight, the MSW will be in-serviced".</p>
- 
-<p>The MSW failed to adhere to the agency's policy and procedure for the "Complaint Process".</p>
-</div>
-                     <a href="#findingsg406" onClick="$(this).prev().toggleClass('hideMore'); $(this).children('span').toggleClass('hide'); "><span>Show</span><span class="hide">Hide</span> more</a>
                 </div>
                 <div class="col-md-4">
                   <div class="card iq-color-gray-lighter">
@@ -2372,7 +2102,7 @@ oversight, the MSW will be in-serviced".</p>
                       <ul class="iq-inline-list">
                         <li>
                           <div class="custom-control custom-radio mb-4">
-                            <input type="radio" id="ijassociated3" name="ijassociatedg406" class="custom-control-input" value="yes" checked>
+                            <input type="radio" id="ijassociated3" name="ijassociatedg406" class="custom-control-input" value="yes">
                             <label class="custom-control-label" for="ijassociated3">Yes</label>
                           </div>
                         </li>
@@ -2388,7 +2118,7 @@ oversight, the MSW will be in-serviced".</p>
                         Home Health Agencies (FED - G - 11.01)</p>
                       <p>
                         <label>Survey Category</label>
-                        Recertification - Federal</p>
+                        Recertification</p>
                     </div>
                   </div>
                   <div class="card dashed text-center">
@@ -2401,17 +2131,72 @@ oversight, the MSW will be in-serviced".</p>
                 </div>
               </div>
               <div class="iq-button-wrapper">
-                  <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
-                 <button class="btn btn-primary" onClick="savePrimarySubmit('g406')">Save and Submit</button>
+                <!--<p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>-->
+                <button class="btn btn-primary" onClick="savePrimarySubmit('g406');">Writing Complete</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g406');">Save as Draft</button>
-                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
               </div>
-              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+             <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+            </section>
+            <section class="read-view g0">
+               <p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+						 
+              <div class="row">
+                <div class="col-md-8">
+                    <h2><button class="btn btn-outline-primary float-right" onClick="addDetails('g0');">Add Details</button>Citation Details for G0000<br>
+                <small>Initial Comments</small></h2>
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#reg0" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="reg0" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p class="iq-not-available">Not applicable</p>
+                          <label>Reguation Text</label>
+                          <p class="iq-not-available">Not applicable</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    
+                  <h4>Summary</h4>
+                 
+                   <div class="dps"><p class="iq-not-available">There is no deficient practice statement for this citation.</p></div>
+						
+				<h4 class="mt-4">Findings</h4>
+				 <div class="findings"><p class="iq-not-available">There are no observations for this citation.</p></div>
+				
+					</div>
+					<div class="col-md-4">
+					<div class="card iq-color-gray-lighter">
+						
+						<div class="card-body">
+							<h4>Citation Overview</h4>
+							<p><label>Tag Type</label>Memo</p>
+							<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
+							<p><label>Survey Categories</label>Recertification</p>
+						</div>
+					</div>
+                        <div class="card p-1">
+                              <div class="card-body">
+                                <h4 class="p-0 m-0">Attachments</h4>
+                                <hr>
+                                <p class="iq-not-available files g406">There are no attachments for this citation.</p>
+                              </div>
+                            </div>
+					</div>
+				</div>
+				
+				<p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
             </section>
             <section class="edit-view g0"> 
-              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G0000 <br>
+              <h2><span>Add</span> Citation Details for G0000 <br>
                 <small>Initial Comments</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2436,30 +2221,11 @@ oversight, the MSW will be in-serviced".</p>
                   <h4>Summary</h4>
                   <h5>Deficient Practice Statement</h5>
                   <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
-                  <div class="editTextDiv dps"><p>An onsite Complaint Survey (Complaint #NY00130831) was started on 02/24/14 and exited on 02/25/14 at the agency's location in Medford,
-                                New York.</p>
-                              <p>Three (3) Clinical Records were reviewed and identified as Patients #1, #2 and #3.
-                                Five (5) Personnel Records were reviewed and identified as Employees #1, #2, #3, #4 and #5.
-                                The Complaint is Substantiated.</p>
-                              <p>The agency's Admission Information Packet, Complaint Log for 2013 and 2014, and the Policy and Procedure for "Complaint Process" were
-                                reviewed.</p>
-                              <p>Interviews were conducted with the Directors of Patient Services for the Certified Home Health Care and the Long Term Home Health Care
-                                Programs, Director of Performance Improvement, Manager of Rehabilitation and Clinical Managers.</p></div>
+                  <div class="editTextDiv dps"></div>
                   <h4 class="mt-4">Findings</h4>
-                    
-
-                  <h5>My Observations</h5>
+                  <h5>David Brown's Observations</h5>
                   <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
                   <div class="editTextDiv findings"></div>
-                    <h5>David Brown's Observations<br><small><span>Writing Complete</span> | 03/09/2020 10:20 AM EST</small></h5>
-                    
-                <p>The following Standard Deficiencies are identified:</p>
-                <ul>
-                  <li>G 406 - Patient Rights</li>
-                  <li>G 1008 - Clinical Records</li>
-                  <li>G 1010 - Contents of Clinical Records</li>
-                </ul>
-                    
                 </div>
                 <div class="col-md-4">
                   <div class="card iq-color-gray-lighter">
@@ -2473,7 +2239,7 @@ oversight, the MSW will be in-serviced".</p>
                         Home Health Agencies (FED - G - 11.01)</p>
                       <p>
                         <label>Survey Category</label>
-                        Recertification - Federal</p>
+                        Recertification</p>
                     </div>
                   </div>
                   <div class="card dashed text-center">
@@ -2486,18 +2252,73 @@ oversight, the MSW will be in-serviced".</p>
                 </div>
               </div>
               <div class="iq-button-wrapper">
-                  <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
-                 <button class="btn btn-primary" onClick="savePrimarySubmit('g0');">Save and Submit</button>
+                <!--<p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>-->
+                <button class="btn btn-primary" onClick="savePrimarySubmit('g0');">Writing Complete</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g0');">Save as Draft</button>
-                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
-                  
               </div>
-              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+             <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+            </section>
+            <section class="read-view g1010">
+               <p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
+						 
+              <div class="row">
+                <div class="col-md-8">
+                    <h2><button class="btn btn-outline-primary float-right" onClick="addDetails('g1010');">Add Details</button>Citation Details for G1010<br>
+                <small>Contents of Clinical Record</small></h2>
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#reg1010" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="reg1010" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p>484.110(a)</p>
+                          <label>Reguation Text</label>
+                          <p>Standard: Contents of clinical record.</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    
+                  <h4>Summary</h4>
+                 
+                   <div class="dps"><p class="iq-not-available">There is no deficient practice statement for this citation.</p></div>
+						
+				<h4 class="mt-4">Findings</h4>
+				 <div class="findings"><p class="iq-not-available">There are no observations for this citation.</p></div>
+			
+				
+					</div>
+					<div class="col-md-4">
+					<div class="card iq-color-gray-lighter">
+						
+						<div class="card-body">
+							<h4>Citation Overview</h4>
+							<p><label>Tag Type</label>Standard</p>
+							<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
+							<p><label>Survey Categories</label>Recertification</p>
+						</div>
+					</div>
+                        <div class="card p-1">
+                              <div class="card-body">
+                                <h4 class="p-0 m-0">Attachments</h4>
+                                <hr>
+                                <p class="iq-not-available files">There are no attachments for this citation.</p>
+                              </div>
+                            </div>
+					</div>
+				</div>
+				
+				<p><a href="#" class="btn-link" onclick="cancelCiteEdit();"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
             </section>
             <section class="edit-view g1010"> 
-              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G1010 <br>
+              <h2><span>Add</span> Citation Details for G1010 <br>
                 <small>Contents of Clinical Record</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2522,151 +2343,11 @@ oversight, the MSW will be in-serviced".</p>
                   <h4>Summary</h4>
                   <h5>Deficient Practice Statement</h5>
                   <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
-                  <div class="editTextDiv dps"><p>Based on record review and staff interview, the home care agency failed to ensure that patient care provided is in accordance with the written
-Plan of Care. This was evident in three (3) of three (3) Clinical Records reviewed (Patients #1, #2 and #3).</p>
- 
-<p>Failure to ensure that patient care provided follows the written Plan of Care places patients at risk for unmet needs.</p></div>
-                    
-                            <h4 id="findingsg1010">Findings</h4>
-                  <h5 class="merged">My Observations<br><small>In Progress | 03/10/2020 11:30 AM EST</small></h5>
+                  <div class="editTextDiv dps"></div>
+                  <h4 class="mt-4">Findings</h4>
+                  <h5>David Brown's Observations</h5>
                   <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
-                  <div class="editTextDiv findings">
-                    <p>Patient #2 has an admission date of 12/13/13 with diagnoses including Late Effect of Cerebral Vascular Disease, Intracerebral
-Hemorrhage and Hypertension.</p>
- 
-<p>The Plan of Care dated 12/13/13 to 02/10/14 documents orders for "PT (Physical Therapy) 1-2 x week (one to two times a week) x 2 (two)
-weeks, Physical Therapy Evaluation, establish home exercise program       ". and "OT (Occupational Therapy) 1 x week x 1 week (one visit for
-one week), Occupational Evaluation".</p>
- 
-<p>The "Physical Therapy Evaluation / Care Plan" documents that the initial patient evaluation by the PT was performed on 12/26/13 (thirteen {13}
-days after the start of care).</p>
- 
-<p>There is no documented evidence explaining the delay of thirteen (13) days for the PT evaluation and of subsequent PT visits to the patient.</p>
- 
-<p>The "Occupational Therapy Evaluation / Care Plan" documents that the initial patient evaluation by the OT was performed on 12/26/13
-(thirteen {13} days after the start of care).</p>
- 
-<p>There is no documented evidence explaining the delay of thirteen (13) days for the OT evaluation.</p>
- 
-<p>There is no documented evidence that the PT, OT and the Manager of Rehabilitation notified the Physician of the delay by the home care
-agency to provide the ordered Physical and Occupational Therapy services from the start of care (12/13/13) to 12/26/13.</p>
- 
-<p>The interim Physician's order dated 12/26/13 documents orders for OT 1-2 week x 3 (one to two times a week for three) weeks. There is no
-documented evidence of subsequent OT visits from 12/26/13 to the present.</p>
- 
-<p>During interview on 02/25/14 with the agency's Director of Patient Services (DPS) and the Manager of Rehabilitation, the Manager stated that
-the patient had multiple Physician appointments.</p>
-                  </div>
-                    
-                    
-                    <div class="showMore merged mb-3"><article>
-                        <h5>David Brown's Observations<br><small>Writing Complete | 03/09/2020 2:30 PM EST</small></h5>
- <p>Patient #1 has an admission date of 12/16/13 with diagnoses including Tear Meniscus, Diabetes Mellitus Type II and Atrial Fibrillation.</p>
- 
-<p>The Plan of Care dated 12/16/13 to 02/13/14 documents orders for "SN (Skilled Nurse) 1-2 x week x 9 weeks (one to two times a week for
-nine weeks)."</p>
- 
-<p>The Plan of Care documents an order for daily weights and notify the Physician of 3lbs (three pounds) weight gain in 24 hrs (twenty four hours)
-and 5lbs (five pounds) in one (1) week.</p>
- 
-<p>There is no documented evidence that the SN monitored the patient's weight on the visit dates of 12/20/13, 01/10/14 (Resumption of Care
-Visit), 01/15/14, 01/20/14 and 01/24/14.</p>
- 
-<p>The agency's DPS was interviewed on 02/25/14 and stated that the "weights were not recorded".</p>
-
- 
-<p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
- 
-<p>The Plan of Care dated 11/23/12 to 01/21/13 documents orders for "SN (Skilled Nurse) 1 x weekx 9 weeks (onetime a week for nine weeks).
-Assess vital signs (T {Temperature}, BP {Blood Pressure}, P {Pulse}, R {Respirations}, Pain) and clinical status. Notify MD (Physician) for
-Systolic BP &gt; 140 (160 65 yr old) or &lt;95: and/or Diastolic &gt;90 unless otherwise specified" and "Assess musculoskeletal status / report
-changes to MD".</p>
- 
-<p>The SN performed home visits to the patient on 12/10/12,12/21/12 and 01/07/13. There is no documented evidence in the Clinical Record to
-explain why the SN visits the patient every two (2) weeks and not weekly as ordered in the Plan of Care.</p>
- 
-<p>There is no documented evidence of a Physician's order to change the Plan of Care for the SN services.</p>
- 
-<p>The SN Visit Note dated 03/18/13 documents the patient's vital signs as BP 156/50, Temperature 99, P 70 and R 18. The SN further
-documents the patient had diarrhea for two (2) days and was weak. There is no documented evidence that the SN notified the MD in
-accordance with the Plan of Care regarding the patient's elevated BP findings and diarrhea for two (2) days with weakness.</p>
- 
-<p>The agency's DPS was interviewed on 02/25/14 and did not provide an explanation for the survey findings.</p></article></div>
-                    <a href="#findingsg1010" class="merged" onClick="$(this).prev().toggleClass('hideMore'); $(this).children('span').toggleClass('hide'); "><span>Show</span><span class="hide">Hide</span> more</a>
-                 
-                    <div class="iq-accordion showhide merged showOld hide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#show-old-observations1010" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Original Findings</span><span class="hide">Hide Original Findings</span>
-                      </button>
-                    </div>
-                  <div id="show-old-observations1010" class="collapse">
-                    <div class="card-body px-0">
-                        <h5>Jane Smith's Observations<br><small><span class="citeStatus">In Progress</span> | 03/10/2020 11:30 AM EST</small></h5>
-                        <p>Patient #2 has an admission date of 12/13/13 with diagnoses including Late Effect of Cerebral Vascular Disease, Intracerebral
-Hemorrhage and Hypertension.</p>
- 
-<p>The Plan of Care dated 12/13/13 to 02/10/14 documents orders for "PT (Physical Therapy) 1-2 x week (one to two times a week) x 2 (two)
-weeks, Physical Therapy Evaluation, establish home exercise program       ". and "OT (Occupational Therapy) 1 x week x 1 week (one visit for
-one week), Occupational Evaluation".</p>
- 
-<p>The "Physical Therapy Evaluation / Care Plan" documents that the initial patient evaluation by the PT was performed on 12/26/13 (thirteen {13}
-days after the start of care).</p>
- 
-<p>There is no documented evidence explaining the delay of thirteen (13) days for the PT evaluation and of subsequent PT visits to the patient.</p>
- 
-<p>The "Occupational Therapy Evaluation / Care Plan" documents that the initial patient evaluation by the OT was performed on 12/26/13
-(thirteen {13} days after the start of care).</p>
- 
-<p>There is no documented evidence explaining the delay of thirteen (13) days for the OT evaluation.</p>
- 
-<p>There is no documented evidence that the PT, OT and the Manager of Rehabilitation notified the Physician of the delay by the home care
-agency to provide the ordered Physical and Occupational Therapy services from the start of care (12/13/13) to 12/26/13.</p>
- 
-<p>The interim Physician's order dated 12/26/13 documents orders for OT 1-2 week x 3 (one to two times a week for three) weeks. There is no
-documented evidence of subsequent OT visits from 12/26/13 to the present.</p>
- 
-<p>During interview on 02/25/14 with the agency's Director of Patient Services (DPS) and the Manager of Rehabilitation, the Manager stated that
-the patient had multiple Physician appointments.</p>
-                        
-                        <h5>David Brown's Observations<br><small>Writing Complete | 03/09/2020 2:30 PM EST</small></h5>
- <p>Patient #1 has an admission date of 12/16/13 with diagnoses including Tear Meniscus, Diabetes Mellitus Type II and Atrial Fibrillation.</p>
- 
-<p>The Plan of Care dated 12/16/13 to 02/13/14 documents orders for "SN (Skilled Nurse) 1-2 x week x 9 weeks (one to two times a week for
-nine weeks)."</p>
- 
-<p>The Plan of Care documents an order for daily weights and notify the Physician of 3lbs (three pounds) weight gain in 24 hrs (twenty four hours)
-and 5lbs (five pounds) in one (1) week.</p>
- 
-<p>There is no documented evidence that the SN monitored the patient's weight on the visit dates of 12/20/13, 01/10/14 (Resumption of Care
-Visit), 01/15/14, 01/20/14 and 01/24/14.</p>
- 
-<p>The agency's DPS was interviewed on 02/25/14 and stated that the "weights were not recorded".</p>
-
- 
-<p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
- 
-<p>The Plan of Care dated 11/23/12 to 01/21/13 documents orders for "SN (Skilled Nurse) 1 x weekx 9 weeks (onetime a week for nine weeks).
-Assess vital signs (T {Temperature}, BP {Blood Pressure}, P {Pulse}, R {Respirations}, Pain) and clinical status. Notify MD (Physician) for
-Systolic BP &gt; 140 (160 65 yr old) or &lt;95: and/or Diastolic &gt;90 unless otherwise specified" and "Assess musculoskeletal status / report
-changes to MD".</p>
- 
-<p>The SN performed home visits to the patient on 12/10/12,12/21/12 and 01/07/13. There is no documented evidence in the Clinical Record to
-explain why the SN visits the patient every two (2) weeks and not weekly as ordered in the Plan of Care.</p>
- 
-<p>There is no documented evidence of a Physician's order to change the Plan of Care for the SN services.</p>
- 
-<p>The SN Visit Note dated 03/18/13 documents the patient's vital signs as BP 156/50, Temperature 99, P 70 and R 18. The SN further
-documents the patient had diarrhea for two (2) days and was weak. There is no documented evidence that the SN notified the MD in
-accordance with the Plan of Care regarding the patient's elevated BP findings and diarrhea for two (2) days with weakness.</p>
- 
-<p>The agency's DPS was interviewed on 02/25/14 and did not provide an explanation for the survey findings.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  <div class="editTextDiv findings"></div>
                 </div>
                 <div class="col-md-4">
                   <div class="card iq-color-gray-lighter">
@@ -2674,13 +2355,13 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                       <h4>Citation Overview</h4>
                       <p>
                         <label>Tag Type</label>
-                        Memo</p>
+                        Standard</p>
                       <p>
                         <label>Regulation Set</label>
                         Home Health Agencies (FED - G - 11.01)</p>
                       <p>
                         <label>Survey Category</label>
-                        Recertification - Federal</p>
+                        Recertification</p>
                     </div>
                   </div>
                   <div class="card dashed text-center">
@@ -2693,13 +2374,11 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 </div>
               </div>
               <div class="iq-button-wrapper">
-                  <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
-                <button class="btn btn-primary" onClick="savePrimarySubmit('g1010');">Save and Submit</button>
+                <!--<p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>-->
+                <button class="btn btn-primary" onClick="savePrimarySubmit('g1010');">Writing Complete</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g1010');">Save as Draft</button>
-                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
-                
               </div>
-              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+             <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
             </section>
           </div>
           <div class="tab-pane" id="sodT" role="tabpanel" aria-labelledby="sodTab">
@@ -2913,7 +2592,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
               </div>
               <div class="row">
                 <div class="col-md-10">
-                  <div class="iq-button-wrapper">
+                  <div class="status">
                     <button class="btn btn-primary" onClick="$('#tab4 .read-view').removeClass('active'); 
                                                              $('#tab4 .read-view.deemingInfo').addClass('active'); 
                                                              $('.alert.successMsg').removeClass('hide'); 
@@ -4364,9 +4043,22 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
       </div>
     </div>
   </div>
+</div>  
+<div class="modal fade" id="confirmCancel" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Please confirm you want to continue without saving.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="cancelCiteEdit();">Continue</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
 </div>
 <input type="hidden" id="editCount" value="initial">
-<input type="hidden" id="firstDraft" value="0">
+    
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script> 
 <script src="../../../src/assets/third-party/popper/popper.min.js"></script> 
 <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script> 
@@ -4386,7 +4078,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
 	    $("select.multiselect").bsMultiSelect();
 		var editor = new FroalaEditor('div.editTextDiv'); 
 	    window.setTimeout(function() {
-			$(".successMsg").fadeTo(3500, 0).slideUp(500, function(){
+			$(".alert-success").fadeTo(3500, 0).slideUp(500, function(){
 				$(this).addClass('hide'); 
 			});
 		}, 5000);
@@ -4411,10 +4103,10 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
 			  responsive: {
 				details: { type: 'column'}
 			  },
-			  "order": [[ 1, 'asc' ]],
+			  "order": [[ 0, 'asc' ]],
 			  columnDefs: [
-				{ className: 'control', orderable: false, targets: 0 },
-				{ className: 'none', targets: 5 },
+				//{ className: 'control', orderable: false, targets: 0 },
+				//{ className: 'none', targets: 5 },
 				{ responsivePriority: 0, targets: 1 },
 				{ "orderable": false, "targets": -1 }
 				//{ 'visible': false, 'targets': 8 }
@@ -4887,154 +4579,66 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
 		}
 </script>
 <script>
-        function editDetails(e){
-             $('#citationsT .read-view').removeClass('active'); 
-             $('#citationsT .edit-view').removeClass('active'); 
-             $('#citationsT .edit-view.'+e).addClass('active');
-             if($('#editCount').val() == 'ready for merge'){
-                 $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html('Save');
-                 $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-outline-primary').addClass('hide');
-             }
-         }
-        function mergeDetails(e){
-             $('#citationsT .read-view').removeClass('active'); 
-             $('#citationsT .edit-view').removeClass('active'); 
-             $('#citationsT .edit-view.'+e).addClass('active');
-             
-             if($('#editCount').val() == 'ready for merge'){
-                 $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html('Save and Submit');
-                 $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-outline-primary').removeClass('hide');
-             } else {
-                 $('#currentCitesTable tr.' + e + ' td .actionsButton .mergeButton').addClass('hide');
-             }
-            startMerge(e);
-         }
-    
-         function saveBack(){
+    function viewDetails(e){
+         $('#citationsT .read-view').removeClass('active'); 
+         $('#citationsT .edit-view').removeClass('active'); 
+         $('#citationsT .read-view.'+e).addClass('active');
+     } 
+    function addDetails(e){
+         $('#citationsT .read-view').removeClass('active'); 
+         $('#citationsT .edit-view').removeClass('active'); 
+         $('#citationsT .edit-view.'+e).addClass('active');
+         $('#citationsT .edit-view.'+e+' h2 span').html('Add');
+     }
+    function editDetails(e){
+         $('#citationsT .read-view').removeClass('active'); 
+         $('#citationsT .edit-view').removeClass('active'); 
+         $('#citationsT .edit-view.'+e).addClass('active');
+         $('#citationsT .edit-view.'+e+' h2 span').html('Edit');
+    }
+    function saveBack(){
             $('#citationsT .read-view').removeClass('active'); 
             $('#citationsT .edit-view').removeClass('active'); 
             $('#citationsT .read-view.all').addClass('active'); 
             $('#citationsT .successMsg').removeClass('hide'); 
             $('#citationsT .successMsg').alert(); 
             $('html, body').animate({ scrollTop: 0 }, 500);
-         }
-         
-        function saveCite(e){
-            var tagNum = e; 
-            var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view').html();
-            var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view').html();
-            
-            saveBack();
-            
-            if( findings == '<br>'){
-                console.log('nothing');
-            } else {
+    }
+    function saveCite(tagNum){
+        var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view p').html();
+        var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view p').html();
 
-                $('#currentCitesTable .' + tagNum + '.dps').html(dps);
-                $('#currentCitesTable .' + tagNum + '.findings').html('<h5>Jane Smith&#39;s Observations<br><small><span class="citeStatus">In Progress</span> | 03/10/2020 11:30 AM EST</small></h5>' + findings);
+        if( dps == '<br>' && findings == '<br>'){
+            console.log('nothing');
+        } else {
+            $('#citationsT .read-view.' + tagNum + ' .dps').html(dps + '<p>&nbsp;</p>');
+            $('#citationsT .read-view.' + tagNum + ' .findings').html('<h5>David Brown&#39;s Observations<br><small><span class="citeStatus">In Progress</span> | 03/09/2020 2:30 PM EST</small></h5>' + findings);
 
-                if( $('#currentCitesTable tr.' + tagNum + ' td.author').html() == "David Brown"){
-                    $('#currentCitesTable tr.' + tagNum + ' td.author').html("<ul><li>David Brown</li><li>Jane Smith <strong>*</strong></li></ul>");
-                }
-            }
-        }
+            $('#currentCitesTable tr.' + tagNum + ' td.author').html('David Brown');    
+        }    
+        if($('input[name=ijassociatedg1008]:checked').val() == 'yes' || $('input[name=ijassociatedg406]:checked').val() == 'yes'){ 
+            $('#currentCitesTable tr.' + tagNum + ' td.tagType').html('<span class="badge badge-pill badge-danger">Condition&nbsp;-&nbsp;IJ</span>');
+            $('#currentCitesTable span.' + tagNum + '.ij').html('Yes');
+        }  
+        saveBack();
+    }
     
-        function inProgress(tagNum4){
-           $('#currentCitesTable tr.' + tagNum4 + ' td.status .iq-status').removeClass('iq-status-0');
-           $('#currentCitesTable tr.' + tagNum4 + ' td.status .iq-status').addClass('iq-status-25');
-           $('#currentCitesTable tr.' + tagNum4 + ' td.status small').html('In Progress');
-           $('#editCount').val('in progress');
-            $('#firstDraft').val('1');
-           
-       }
-        function readyForMerge(tagNum3){
+    function inProgress(tagNum4){
+        console.log(tagNum4);
+       $('#currentCitesTable tr.' + tagNum4 + ' td.status .iq-status').removeClass('iq-status-0');
+       $('#currentCitesTable tr.' + tagNum4 + ' td.status .iq-status').addClass('iq-status-25');
+       $('#currentCitesTable tr.' + tagNum4 + ' td.status small').html('In Progress');
+    $('#currentCitesTable tr.' + tagNum4 + ' td .actionsButton').toggleClass('hide');
+       console.log('in progress done');
+   }
+   function writingComplete(tagNum3){
            $('#currentCitesTable tr.' + tagNum3 + ' td.status .iq-status').removeClass('iq-status-0');
            $('#currentCitesTable tr.' + tagNum3 + ' td.status .iq-status').removeClass('iq-status-25');
            $('#currentCitesTable tr.' + tagNum3 + ' td.status .iq-status').addClass('iq-status-50');
-           $('#currentCitesTable tr.' + tagNum3 + ' td.status small').html('Ready for Merge');
-           $('#currentCitesTable .' + tagNum3 + '.findings .citeStatus').html('Ready for Merge');
-            
-           $('#currentCitesTable tr.' + tagNum3 + ' td .actionsButton').toggleClass('hide');
-           $('#editCount').val('ready for merge');
-       }
-    
-       function mergeInProgress(tagNum){ 
-            var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view').html();
-            var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view').html();
-            
-            saveBack();
-            
-            console.log('Status for mergeInProgress' + $('#editCount').val());
+           $('#currentCitesTable tr.' + tagNum3 + ' td.status small').html('Writing Complete');
+           $('#currentCitesTable p.' + tagNum3 + ' .findings .citeStatus').html('Writing Complete');
            
-            if( $('#editCount').val() == 'ready for merge' ){
-                //$('#currentCitesTable tr.' + tagNum + ' td .actionsButton').toggleClass('hide');
-                $('#editCount').val('merge in progress');
-                $('#currentCitesTable .' + tagNum + '.dps').html(dps);
-                $('#currentCitesTable .' + tagNum + '.merged').html('<h5>Merged Observations<br><small>Merge in Progress | 03/10/2020 11:30 AM EST | Jane Smith</small></h5>' + findings);
-                $('#currentCitesTable tr.' + tagNum + ' td.status .iq-status').removeClass('iq-status-50');
-               $('#currentCitesTable tr.' + tagNum + ' td.status .iq-status').addClass('iq-status-75-y');
-               $('#currentCitesTable tr.' + tagNum + ' td.status small').html('Merge in Progress');
-            }            
-          
-        }
-    
-       function readyForReview(e){
-            saveBack();
-           $('#currentCitesTable tr.' + e + ' td.status .iq-status').removeClass('iq-status-75-y');
-           $('#currentCitesTable tr.' + e + ' td.status .iq-status').addClass('iq-status-75');
-           $('#currentCitesTable tr.' + e + ' td.status small').html('Ready for Review');
-           //$('#citationsT .reviewReadyMsg').removeClass('hide'); 
-            //$('#citationsT .reviewReadyMsg').alert(); 
-           $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
-           $('#editCount').val('ready for review');
-            $('#citationsT .edit-view.' + e + ' .statusNote').html('');
-           
-            $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html('Save');
-            $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-outline-primary').addClass('hide');
        }
-    
-    function submitReview(e){
-        $('#currentCitesTable tr.' + e + ' td.status .iq-status').removeClass('iq-status-75-y');
-        $('#currentCitesTable tr.' + e + ' td.status .iq-status').addClass('iq-status-75');
-        $('#currentCitesTable tr.' + e + ' td.status small').html('Ready for Review');
-        //$('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
-     }
-    
-    function copyText(tagNum2){
-        var dps2 = $('#citationsT .edit-view.' + tagNum2 + ' .editTextDiv.dps .fr-element.fr-view').html();
-        var findings2 = $('#citationsT .edit-view.' + tagNum2 + ' .editTextDiv.findings .fr-element.fr-view').html();
-        $('#currentCitesTable .' + tagNum2 + '.dps').html(dps2);
-        $('#currentCitesTable .' + tagNum2 + '.findings').html('<h5>Jane Smith&#39;s Observations<br><small><span class="citeStatus">In Progress</span> | 03/10/2020 11:30 AM EST</small></h5>' + findings2);
-        switch( $('#editCount').val()){
-            case 'initial': 
-                console.log('nothing');
-                break;
-            case 'in progress':
-                 $('#currentCitesTable .' + tagNum2 + '.findings .citeStatus').html('In Progress');
-                break;
-            case 'ready for merge':
-                 $('#currentCitesTable .' + tagNum2 + '.findings .citeStatus').html('Writing Complete');
-                break;
-            case 'merge in progress':
-                 $('#currentCitesTable .' + tagNum2 + '.findings .citeStatus').html('Merge in Progress');
-                break;
-            case 'ready for review':
-                 $('#currentCitesTable .' + tagNum2 + '.findings .citeStatus').html('Merged');
-                break;
-        }  
-    }
-    
-    function startMerge(t){
-        $('#citationsT .edit-view.' + t + ' .editTextDiv.findings .fr-element.fr-view').html('');
-        $('#citationsT .edit-view.' + t + ' .editTextDiv.findings .fr-element.fr-view').html( $('#currentCitesTable .' + t + '.findings').html() );
-        $('#citationsT .edit-view.' + t + ' .editTextDiv.findings .fr-element.fr-view').append( $('#citationsT .edit-view.' + t + ' article').html());
-        $('#citationsT .edit-view.' + t + ' a.merged').addClass('hide');
-        $('#citationsT .edit-view.' + t + ' h5.merged').html('Merged Observations');
-        $('#citationsT .edit-view.' + t + ' .showMore.merged').addClass('hide');
-        $('#citationsT .edit-view.' + t + ' .showOld.merged').removeClass('hide');
-        $('#citationsT .edit-view.' + t + ' .statusNote').html('Upon submission, citation status will be updated to Ready for Review');
-    }
-    
     function cancelCiteEdit(){
         $('#citationsT .read-view').removeClass('active'); 
         $('#citationsT .edit-view').removeClass('active'); 
@@ -5045,7 +4649,11 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
         switch( $('#editCount').val()){
             case 'initial': case 'in progress':
                 saveCite(e);
-                readyForMerge(e);
+                writingComplete(e)
+                break;
+            case 'writing complete':
+                console.log('writing done'); 
+                saveBack();
                 break;
             case 'ready for merge':
                 if( $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html() == 'Save' ){
@@ -5069,11 +4677,12 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
         switch( $('#editCount').val()){
             case 'initial':
                 saveCite(e);
+                console.log('save cite done');
                 inProgress(e); 
                 break;
             case 'in progress':
                 saveCite(e);
-                readyForMerge(e);
+                writingComplete(e);
                 break;
             case 'ready for merge':
                 if( $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html() == 'Save' ){
@@ -5091,6 +4700,13 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 break;
         }  
     }
+    function submitReview(e){
+        $('#currentCitesTable tr.' + e + ' td.status .iq-status').removeClass('iq-status-75-y');
+        $('#currentCitesTable tr.' + e + ' td.status .iq-status').addClass('iq-status-75');
+        $('#currentCitesTable tr.' + e + ' td.status small').html('Ready for Review');
+        //$('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
+     }
+    
     </script>
 </body>
 </html>
