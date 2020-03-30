@@ -1777,7 +1777,7 @@
                     <td class="author">David Brown</td>
                     <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
 						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg0">
-						      <button class="dropdown-item" onClick="editDetails('g0');">Edit Details</button>
+						      <button class="dropdown-item" onClick="addDetails('g0');">Add Details</button>
 						      <button class="dropdown-item" onClick="viewDetails('g0');">View Details</button>
 						      <!--<button class="dropdown-item" onclick="submitReview('g0'); $(this).addClass('hide');">Submit for Review</button>-->
 					        </div>
@@ -1798,7 +1798,7 @@
                     <td class="author">David Brown</td>
                     <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
 						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg406">
-						      <button class="dropdown-item" onClick="editDetails('g406');">Edit Details</button>
+						      <button class="dropdown-item" onClick="addDetails('g406');">Add Details</button>
 						      <button class="dropdown-item" onClick="viewDetails('g406');">View Details</button>
 						      <!--<button class="dropdown-item" onclick="submitReview('g406'); $(this).addClass('hide');">Submit for Review</button>-->
 					        </div>
@@ -1820,7 +1820,7 @@
                     <td class="author">David Brown</td>
                     <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
 						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1008">
-						      <button class="dropdown-item" onClick="editDetails('g1008');">Edit Details</button>
+						      <button class="dropdown-item" onClick="addDetails('g1008');">Add Details</button>
 						      <button class="dropdown-item" onClick="viewDetails('g1008');">View Details</button>
 						      <!--<button class="dropdown-item" onclick="submitReview('g1008'); $(this).addClass('hide');">Submit for Review</button>-->
 					        </div>
@@ -1951,7 +1951,7 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
             <section class="edit-view g1008"> 
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G1008 <br>
+              <h2><span>Edit</span> Citation Details for G1008 <br>
                 <small>Clinical Records</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2196,7 +2196,7 @@ oversight, the MSW will be in-serviced".</p>
             <section class="edit-view g406"> 
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G0406 <br>
+              <h2><span>Edit</span> Citation Details for G0406 <br>
                 <small>Patient Rights</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2380,7 +2380,7 @@ oversight, the MSW will be in-serviced".</p>
             <section class="edit-view g0"> 
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G0000 <br>
+              <h2><span>Edit</span> Citation Details for G0000 <br>
                 <small>Initial Comments</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2565,7 +2565,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             <section class="edit-view g1010"> 
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G1010 <br>
+              <h2><span>Edit</span> Citation Details for G1010 <br>
                 <small>Contents of Clinical Record</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -4973,15 +4973,24 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
          $('#citationsT .edit-view').removeClass('active'); 
          $('#citationsT .read-view.'+e).addClass('active');
      } 
+     function addDetails(e){
+             $('#citationsT .read-view').removeClass('active'); 
+         $('#citationsT .edit-view').removeClass('active'); 
+         $('#citationsT .edit-view.'+e).addClass('active');
+         $('#citationsT .edit-view.'+e+' h2 span').html('Add');
+             
+         }
         function editDetails(e){
              $('#citationsT .read-view').removeClass('active'); 
              $('#citationsT .edit-view').removeClass('active'); 
              $('#citationsT .edit-view.'+e).addClass('active');
+             $('#citationsT .edit-view.'+e+' h2 span').html('Edit');
              if($('#editCount').val() == 'ready for merge'){
                  $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html('Save');
                  $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-outline-primary').addClass('hide');
              }
          }
+   
         function mergeDetails(e){
              $('#citationsT .read-view').removeClass('active'); 
              $('#citationsT .edit-view').removeClass('active'); 
