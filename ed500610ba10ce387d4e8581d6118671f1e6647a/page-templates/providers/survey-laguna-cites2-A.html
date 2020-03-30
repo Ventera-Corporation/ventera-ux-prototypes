@@ -1777,7 +1777,7 @@
                     <td class="author">David Brown</td>
                     <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
 						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg0">
-						      <button class="dropdown-item" onClick="editDetails('g0');">Edit Details</button>
+						      <button class="dropdown-item" onClick="addDetails('g0');">Add Details</button>
 						      <button class="dropdown-item" onClick="viewDetails('g0');">View Details</button>
 						      <!--<button class="dropdown-item" onclick="submitReview('g0'); $(this).addClass('hide');">Submit for Review</button>-->
 					        </div>
@@ -1795,11 +1795,12 @@
                       <small>Patient Rights</small></td>
                     <td class="tagType"><span class="badge badge-pill badge-danger">Condition - IJ</span></td>
                     <td class="status"><span class="iq-status iq-status-50"></span> <small>Writing Complete</small></td>
-                    <td class="author">David Brown</td>
+                    <td class="author">Jane Smith</td>
                     <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
 						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg406">
 						      <button class="dropdown-item" onClick="editDetails('g406');">Edit Details</button>
 						      <button class="dropdown-item" onClick="viewDetails('g406');">View Details</button>
+                              <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
 						      <!--<button class="dropdown-item" onclick="submitReview('g406'); $(this).addClass('hide');">Submit for Review</button>-->
 					        </div>
 						    </div>
@@ -1820,7 +1821,7 @@
                     <td class="author">David Brown</td>
                     <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
 						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1008">
-						      <button class="dropdown-item" onClick="editDetails('g1008');">Edit Details</button>
+						      <button class="dropdown-item" onClick="addDetails('g1008');">Add Details</button>
 						      <button class="dropdown-item" onClick="viewDetails('g1008');">View Details</button>
 						      <!--<button class="dropdown-item" onclick="submitReview('g1008'); $(this).addClass('hide');">Submit for Review</button>-->
 					        </div>
@@ -1839,7 +1840,7 @@
                       <small>Contents of Clinical Record</small></td>
                     <td><span class="badge badge-pill badge-info">Standard</span></td>
                     <td class="status"><span class="iq-status iq-status-25"></span> <small>In Progress</small></td>
-                    <td class="author"><ul><li>David Brown</li><li>Jane Smith <strong>*</strong></li></ul></td>
+                    <td class="author"><ul><li>David Brown</li><li>Jane Smith</li></ul></td>
                     <td class="text-right"><div class="actionsButton"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
 						    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1010">
 						      <button class="dropdown-item" onClick="editDetails('g1010');">Edit Details</button>
@@ -1875,7 +1876,7 @@
 						 
               <div class="row">
                 <div class="col-md-8">
-                    <h2><button class="btn btn-outline-primary float-right" onClick="editDetails('g1008');">Edit Details</button>Citation Details for G1008 <span class="badge badge-pill badge-warning">Condition</span><br>
+                    <h2><button class="btn btn-outline-primary float-right" onClick="addDetails('g1008');">Add Details</button>Citation Details for G1008 <span class="badge badge-pill badge-warning">Condition</span><br>
                 <small>Clinical Records</small></h2>
                   <div class="iq-accordion showhide">
                     <div class="card no-border">
@@ -1951,7 +1952,7 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
             <section class="edit-view g1008"> 
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G1008 <br>
+              <h2><span>Edit</span> Citation Details for G1008 <br>
                 <small>Clinical Records</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2096,7 +2097,7 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
               </div>
               <div class="iq-button-wrapper">
                 <!--<p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>-->
-                  <button class="btn btn-primary" onClick="savePrimarySubmit('g1008');">Submit for Manager to Review</button>
+                  <button class="btn btn-primary" onClick="savePrimarySubmit('g1008');">Writing Complete</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g1008');">Save as Draft</button>
                 
                 
@@ -2139,7 +2140,7 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                             </div>
                             <h4 class="mt-2">Findings</h4>
                             <div class="findings g406"></div>
-                            <h5>David Brown's Observations<br><small><span>Writing Complete</span> | 03/09/2020 10:42 AM EST</small></h5>
+                            <h5>Jane Smith's Observations<br><small><span>Writing Complete</span> | 03/09/2020 10:42 AM EST</small></h5>
                             <div><p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
  
 <p>The Plan of Care dated 01/22/13 to 03/22/13 documents orders for SN (Skilled Nurse), MSS (Medical Social Services) and Aide 2-3 x week
@@ -2196,7 +2197,7 @@ oversight, the MSW will be in-serviced".</p>
             <section class="edit-view g406"> 
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G0406 <br>
+              <h2><span>Edit</span> Citation Details for G0406 <br>
                 <small>Patient Rights</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2310,7 +2311,7 @@ oversight, the MSW will be in-serviced".</p>
 						 
               <div class="row">
                 <div class="col-md-8">
-                    <h2><button class="btn btn-outline-primary float-right" onClick="editDetails('g0');">Edit Details</button>Citation Details for G0000<br>
+                    <h2><button class="btn btn-outline-primary float-right" onClick="addDetails('g0');">Add Details</button>Citation Details for G0000<br>
                 <small>Initial Comments</small></h2>
                   <div class="iq-accordion showhide">
                     <div class="card no-border">
@@ -2380,7 +2381,7 @@ oversight, the MSW will be in-serviced".</p>
             <section class="edit-view g0"> 
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G0000 <br>
+              <h2><span>Edit</span> Citation Details for G0000 <br>
                 <small>Initial Comments</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2456,9 +2457,9 @@ oversight, the MSW will be in-serviced".</p>
               </div>
               <div class="iq-button-wrapper">
                   <!--<p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>-->
-                 <button class="btn btn-primary" onClick="savePrimarySubmit('g0');">Submit for Manager to Review</button>
+                 <button class="btn btn-primary" onClick="savePrimarySubmit('g0');">Writing Complete</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g0');">Save as Draft</button>
-                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+                <!--<button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>-->
                   
               </div>
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p> 
@@ -2565,7 +2566,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             <section class="edit-view g1010"> 
               <p><a href="#" class="btn-link" data-toggle="modal" data-target="#confirmCancel"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
               
-              <h2>Edit Citation Details for G1010 <br>
+              <h2><span>Edit</span> Citation Details for G1010 <br>
                 <small>Contents of Clinical Record</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -4973,15 +4974,26 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
          $('#citationsT .edit-view').removeClass('active'); 
          $('#citationsT .read-view.'+e).addClass('active');
      } 
+     function addDetails(e){
+        $('#citationsT .read-view').removeClass('active'); 
+         $('#citationsT .edit-view').removeClass('active'); 
+         $('#citationsT .edit-view.'+e).addClass('active');
+         $('#citationsT .edit-view.'+e+' h2 span').html('Add');
+             
+    }
         function editDetails(e){
              $('#citationsT .read-view').removeClass('active'); 
              $('#citationsT .edit-view').removeClass('active'); 
              $('#citationsT .edit-view.'+e).addClass('active');
+             $('#citationsT .edit-view.'+e+' h2 span').html('Edit');
+             $('#citationsT .read-view h2.btn-outline-primary.float-right').html('Edit Details');
              if($('#editCount').val() == 'ready for merge'){
                  $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html('Save');
                  $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-outline-primary').addClass('hide');
              }
+            
          }
+   
         function mergeDetails(e){
              $('#citationsT .read-view').removeClass('active'); 
              $('#citationsT .edit-view').removeClass('active'); 
