@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laguna Survey - Side Save</title>
+<title>Citation Shopping Cart - Side Ful Text</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -893,6 +893,11 @@
               
             </div>
               <div class="row">
+                <!--<div class="col-md-5">
+                    <label>Search By</label>
+                    <select onChange="$('.regText'tion.toggleClass('hide');"><option value="1">Title and/or Number</option>
+                        <option value="2">Regulation Text Keyword, Title, and/or Number</option></select>
+                </div>-->
                 <div class="col-md-6">
                     <label for="citeSearch"><span class="sr-only">Search</span></label>
                     <div class="input-group">
@@ -910,7 +915,7 @@
               <div class="row mt-4 citationsList">
                 <div class="col-md-9" id="citations">
 					<br>
-					<div class="row"><div class="col-md-3" style="vertical-align: bottom"><h3 class="iq-label citesSearchCount">1-10 of 490 Citations</h3></div><div class="col-md-9 text-right"><label class="inline" style="margin-right: .5rem;">Filter By: </label><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)" id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
+					<div class="row"><div class="col-md-3 pt-2" style="vertical-align: bottom"><h3 class="iq-label citesSearchCount m-0">1-10 of 490 Citations</h3></div><div class="col-md-9 text-right"><label class="inline" style="margin-right: .5rem; font-weight: bold; font-size: 1rem;">Filter By: </label><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)" id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><!--<option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option>--></select></div></div>
      
 <div class="accordion-wrapper"> 
 		<!-- All page 1 -->
@@ -1768,7 +1773,7 @@
 				<div class="card dashed">
 					<p class="iq-not-available">No citations have been added.</p>
 					<div id="addedCitationTags" class="tagListDisplay"></div>
-					<div class="iq-footer"><button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('#citationsT .successMsg').removeClass('hide'); $('#citationsT .edit-view').removeClass('active');  $('#citationsT .read-view.all').addClass('active'); $('#saveCitationsButton .badge.badge-pill').addClass('hide'); $('#saveCitationsButton .addedCount').html(''); $('#saveCitationsButton .addedCount').addClass('hide'); $('#saveCitationsButton .iq-not-available').removeClass('hide');  } else { $('#citationsT .errorMsg').removeClass('hide'); }">Save</button> <button
+					<div class="iq-footer"><button class="btn btn-primary btn-full" onClick="saveAddedTags();">Save</button> <button
                             class="btn btn-link btn-full hide cancelButton" onClick="$('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.all').addClass('active');  $('#citationsT .tabTitle .btn').removeClass('hide'); ">Cancel</button></div>
 				</div>  
 				</div>
@@ -1789,300 +1794,740 @@
               </div>
             </div>
                
-            <div class="row hide">
-                <div class="col">
-                  <div class="iq-accordion showhide">
-            <div class="card no-border">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#viewCitesFilterContent" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                  <span>Show Filter</span><span class="hide">Hide Filter</span>
-                </button>
-              </div>
-              <div id="viewCitesFilterContent" class="collapse">
-                <div class="card-body px-0">
-                    <div class="row">
-                    <div class="col-md-6">
-                      <fieldset>
-                <legend>Immediate Jeopardy</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter1v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter1v">Associated with an immediate jeopardy</label> 
-                </div>
-                  </fieldset>     
-                
-                <fieldset>
-                    <legend>Federal Regulation Sets</legend>    
-                    <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter2v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter2v">Emergency Preparedness (FED - E - 01.01)</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter3v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter3v">LSC 2012 Health Existing (FED - K - 01.01)</label>
-                </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Survey Cateogory</legend> 
-                    <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter4v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter4v">Recertification</label>
-                </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Buildings</legend>    
-                    <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter5v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter5v">01 - RES UNIT - FREESTANDING 9 BEDS</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter6v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter6v">B1 - RES UNIT - FREESTANDING 8 BEDROOM STRUCTURE ON THE WEST SIDE OF NORTHWEST FRANKLIN ST</label>
-                </div>
-                </fieldset>
-                    </div>
-                    <div class="col-md-6">
-                    <fieldset>
-                <legend>Status</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter7v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter7v">Writing Pending</label> 
-                </div>
-                        <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter8v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter8v">Writing in Progress</label> 
-                </div>
-                        <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter9v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter9v">Ready for Merge</label> 
-                </div>
-                        <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter10v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter10v">Writing Complete</label> 
-                </div>
-                        <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter11v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter11v">Corrected</label> 
-                </div>
-                  </fieldset>
-                        <fieldset><legend>Tag Type</legend>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter12v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter12v">Memo</label> 
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter13v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter13v">Condition</label> 
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="citeFilter14v" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="citeFilter14v">Status</label> 
-                </div>
-                        
-                        </fieldset>
-                    </div>
-                    </div>
-                
-                    <div class="iq-button-wrapper" style="margin-bottom: -2rem;">
-                      <button class="btn btn-outline-primary btn">Apply</button>
-                      </div>
-             
-                </div>
-              </div>
-            </div>
-          </div>
-                </div>
-              </div>
+            
               
-				<div class="row">
-					<div class="col-md-8"><span class="info-text"><span class="aoCount">3</span> Citations Total</span>
-					</div>
-				<div class="col-md-4 text-right"><select style="display: inline-block; width: auto; " onchange="selectRegSetRV()" id="allRegSelectRV"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select></div>
-				</div>
-				<hr>
-				
-						<h3 class="iq-label ST">1 Citation from IL State Home Health (ST - S - 2 - HHA)</h3>
-				<div class="accordion-wrapper">
-	
-					
-					<div class="iq-accordion secondary ST">
-        <div class="card ">
-			
-          <div class="card-header d-flex">
-            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions collapsed" data-toggle="collapse" data-target="#cite3" type="button" onclick="$(this).toggleClass('expanded');" aria-expanded="false">
-              <span style="min-width: 20rem; "><a href="#" style="font-size: 1.125rem;">S0</a><br><small>Opening Comments</small></span>
-              <span style="min-width: 10rem; "><span class="badge badge-pill badge-info">Licensure</span></span>
-              <span style="min-width: 10rem; "><span class="iq-status iq-status-in-progress"></span> <small>In Progress</small></span>
-			  <span><ul class="m-0 pl-2"><li class="pl-0 pb-0">Allen, Paul</li><li class="pl-0">Carr, Roberta</li></ul></span>
-              </button>
-			   <div class="iq-accordion-actions d-flex align-items-center"><a href="#" class="btn btn-link" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.citeS0').addClass('active');">Edit</a></div>
-             
-            
-            </div>
-          <div id="cite3" class="collapse" style="">
-            <div class="card-body">
-								<div class="row">
-									<div class="col-md-8">
-									<h4>Summary</h4>	
-				<h5>Deficient Practice Statement</h5>
-				<p>Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Ab optio vero alias facilis nemo deleniti
-              odio
-              rerum autem sunt provident. Accusantium aperiam repudiandae
-              mollitia molestiae error iste, quod ab consequuntur?</p>
-				<h4>Findings</h4>
-				<h5>Jane Smith's Observations<br><small>Submitted on 01/12/2020 10:10 AM EST</small></h5>
-				
-				<p>Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Ab optio vero alias facilis nemo deleniti
-              odio
-              rerum autem sunt provident. Accusantium aperiam repudiandae
-              mollitia molestiae error iste, quod ab consequuntur?</p>
-				<h4>Attachments</h4>
-				<ul class="no-bullet"><li><a href="#"><i class="fas fa-paperclip"></i> File Name.pdf (203 KB)</a></li></ul>
-				<hr>
-								<h4>Regulation Text and Interpretive Guidelines</h4>
-				
-                      <label>CFR Section</label>
-                    <p class="iq-not-available">Not applicable</p>
-					<label>Reguation Text</label>
-                    <p>Rules and Regulations utilized for this survey are: Rules and Regulations for Program Administration of Home Health Agencies, Chapter 9, effective 10/15/2001 Rules and Regulations for Licensure of Home Health Agencies, Chapter 10, effective 11/01/2001</p>
-					<label>Interpretive Guidelines</label>
-					<p class="iq-not-available">Not applicable</p>
-									</div>
-							
-								<div class="col-md-4">
-					<div class="card iq-color-gray-lighter p-1">
-						
-						<div class="card-body pl-4">
-							<h4>Citation Overview</h4>
-							
-							<p><label>Regulation Set</label>IL State Home Health (ST - S - 2 -HHA)</p>
-							<p><label>Survey Category</label>Initial Licensure - State</p>
-						</div>
-					</div>
-					</div>
-								</div>
-								</div>
-            </div>
-          </div>
-        </div>
-                 </div>
-				<h3 class="iq-label HHA">2 Citations from Home Health Agencies (FED - G - 11.01)</h3>
-				<div class="accordion-wrapper">
-					<div class="iq-accordion secondary HHA">
-        <div class="card ">
-			
-          <div class="card-header d-flex">
-            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions collapsed" data-toggle="collapse" data-target="#cite2" type="button" onclick="$(this).toggleClass('expanded');" aria-expanded="false">
-              <span style="min-width: 20rem; "><a href="#" style="font-size: 1.125rem;">G0406</a><br><small>Patient Rights</small></span>
-              <span class="text-left" style="min-width: 10rem; "><span class="badge badge-pill badge-warning">Condition</span></span>
-              <span class="text-left" style="min-width: 10rem; "><span class="iq-status iq-status-not-started"></span> <small>Not Started</small></span>
-			   <span><span class="iq-not-available">No authors</span></span>
-              </button>
-			   <div class="iq-accordion-actions d-flex align-items-center">
-				  <!-- <a href="#" class="btn btn-link">Add Details</a> <a href="#" class="btn btn-link">Remove</a>-->
-              <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2">
-               
-                <button class="dropdown-item" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.citeE2').addClass('active'); ">Add Citation Details</button>
-                <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+				<div class="row" style="position: relative; z-index: 1000;">
+                <div class="col-md-7" style="vertical-align: bottom">
+                  <div><span class="info-text"><span class="aoCount">4</span> Citations Total</span> |
+                    <p class="m-0" style="display: inline"><a href="javascript:void(0)" onClick=" $(this).children('span').toggleClass('hide'); "><span class="expandAll">Expand All Details</span><span class="collapseAll hide">Collapse All Details</span></a></p>
+                  </div>
                 </div>
-			  </div>
-           
-            </div>
-          <div id="cite2" class="collapse" style="">
-            <div class="card-body">
-									<div class="row">
-										<div class="col-md-8">
-											<h4>Summary</h4>	
-				<p class="iq-not-available">No information provided</p>
-				<h4>Findings</h4>
-				<p class="iq-not-available">No information provided</p>
-				<hr>
-				<h4>Reguation Text and Interpretive Guidelines</h4>
-                     <label>CFR Section</label>
-                    <p>484.5</p>
-					<label>Reguation Text</label>
-                    <p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
-					<label>Interpretive Guidelines</label>
-					<p class="iq-not-available">Not applicable</p>
-										</div>
-										<div class="col-md-4">
-											<div class="card iq-color-gray-lighter p-1">
-												<div class="card-body pl-4">
-													<h4>Citation Overview</h4>
-													<p><label>Immediate Jeopardy (IJ)</label> No</p>
-													<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
-													<p><label>Survey Category</label>Initial Certification - Federal</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-            </div>
-          </div>
-        </div>
-					<div class="iq-accordion secondary HHA">
-        <div class="card ">
-			
-          <div class="card-header d-flex">
-            <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions collapsed" data-toggle="collapse" data-target="#cite1" type="button" onclick="$(this).toggleClass('expanded');" aria-expanded="false">
-              <span style="min-width: 20rem; "><a href="#" style="font-size: 1.125rem;">G1008</a><br><small>Clinical Records</small></span>
-              <span style="min-width: 10rem; "><span class="badge badge-pill badge-warning">Condition</span></span>
-              <span style="min-width: 10rem; "><span class="iq-status iq-status-not-started"></span> <small>Not Started</small></span>
-			   <span><span class="iq-not-available">No authors</span></span>
-              </button>
-			   <div class="iq-accordion-actions d-flex align-items-center">
-              <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink">
-                <button class="dropdown-item" onClick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT .edit-view.citeE1').addClass('active'); ">Add Citation Details</button>
-                <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
-                
+                <div class="col-md-5 text-right">
+                  <label class="inline" style="margin-right: .5rem; font-size: 1rem; font-weight: bold;">Filter By: </label>
+                  <select style="display: inline-block; width: auto; margin-bottom: .5rem; " onchange="selectRegSetRV()" id="allRegSelectRV">
+                    <option value="all">All Regulation Sets</option>
+                    <optgroup label="Federal Regulation Sets">
+                    <option value="er">Emergency Preparedness (FED - E - 1.01)</option>
+                    <option value="hha">Home Health Agencies (FED - G - 11.01)</option>
+                    </optgroup>
+                    <optgroup label="State Regulation Sets">
+                    <option value="state">IL State Home Health (ST - S - 2 - HHA)</option>
+                    </optgroup>
+                  </select>
                 </div>
-			  </div>
-             
-            
-            </div>
-          <div id="cite1" class="collapse" style="">
-            <div class="card-body">
-									<div class="row">
-										<div class="col-md-8">
-											<h4>Summary</h4>	
-				<p class="iq-not-available">No information provided</p>
-				<h4>Findings</h4>
-				<p class="iq-not-available">No information provided</p>
-				<hr>
-				<h4>Reguation Text and Interpretive Guidelines</h4>
-                     <p>484.110</p>
-					<label>Reguation Text</label>
-                    <p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
-					<label>Interpretive Guidelines</label>
-					<p class="iq-not-available">Not applicable</p>
-										</div>
-										<div class="col-md-4">
-											<div class="card iq-color-gray-lighter p-1">
-												<div class="card-body pl-4">
-													<h4>Citation Overview</h4>
-													<p><label>Immediate Jeopardy (IJ)</label> No</p>
-													<p><label>Regulation Set</label>Home Health Agencies (FED - G - 11.01)</p>
-													<p><label>Survey Category</label>Initial Certification - Federal</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-            </div>
-          </div>
-        </div>
-					
-				</div>
-				<a href="#" id="citeStatusLink" data-toggle="dropdown"><small>Citation Status Legend</small> <i class="fal fa-info-circle"></i></a><div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="dropdownMenuButtonLink">
-                 <span class="iq-status iq-status-not-started"></span> Not Started<br>
-						<span class="iq-status iq-status-in-progress"></span> In Progress<br>
-						<span class="iq-status iq-status-review"></span> Ready for Review<br>
-						<span class="iq-status iq-status-finalized"></span> Finalized
+              </div>
+		
+				
+						 <table class="display " style="width: 100%;" id="currentCitesTable">
+                <thead>
+                  <tr>
+                    <th style="width: .25rem;"></th>
+                    <th><span>Citation</span></th>
+                    <th><span>Tag Type</span></th>
+                    <th><span>Status &#8225;</span></th>
+                    <th><span>Authors</span></th>
+                    <th><span>Citation Details</span></th>
+                    <th class="text-right"><span>Actions</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="ST hide">
+                    <td style="width: .25rem;"></td>
+                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('S0');" style="font-size: 1.125rem;">S0</a><br>
+                      <small>Opening Comments</small></td>
+                    <td class="tagType"><span class="badge badge-pill badge-info">Licensure</span></td>
+                    <td class="status"><span class="iq-status iq-status-25"></span> <small>In Progress</small></td>
+                    <td class="author"><ul>
+                        <li>Allen, Paul</li>
+                        <li>Carr, Roberta</li>
+                      </ul></td>
+                    <td><div class="content">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <h4>Summary</h4>
+                            <h5>Deficient Practice Statement</h5>
+                            <p class="dps S0">Lorem, ipsum dolor sit amet consectetur
+                              adipisicing elit. Ab optio vero alias facilis nemo deleniti
+                              odio
+                              rerum autem sunt provident. Accusantium aperiam repudiandae
+                              mollitia molestiae error iste, quod ab consequuntur?</p>
+                            <h4>Findings</h4>
+                            <h5>Jane Smith's Observations<br>
+                              <small>Submitted on 01/12/2020 10:10 AM EST</small></h5>
+                            <p class="findings S0">Lorem, ipsum dolor sit amet consectetur
+                              adipisicing elit. Ab optio vero alias facilis nemo deleniti
+                              odio
+                              rerum autem sunt provident. Accusantium aperiam repudiandae
+                              mollitia molestiae error iste, quod ab consequuntur?</p>
+                            <h4>Attachments</h4>
+                            <div class="files S0">
+                              <ul class="no-bullet">
+                                <li><a href="#"><i class="fas fa-paperclip"></i> File Name.pdf (203 KB)</a></li>
+                              </ul>
+                            </div>
+                            <hr>
+                            <h4>Regulation Text and Interpretive Guidelines</h4>
+                            <label>CFR Section</label>
+                            <p class="iq-not-available">Not applicable</p>
+                            <label>Reguation Text</label>
+                            <p>Rules and Regulations utilized for this survey are: Rules and Regulations for Program Administration of Home Health Agencies, Chapter 9, effective 10/15/2001 Rules and Regulations for Licensure of Home Health Agencies, Chapter 10, effective 11/01/2001</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card iq-color-gray-lighter p-1">
+                              <div class="card-body">
+                                <h4>Citation Overview</h4>
+                                <p>
+                                  <label>Regulation Set</label>
+                                  IL State Home Health (ST - S - 2 -HHA)</p>
+                                <p>
+                                  <label>Survey Category</label>
+                                  Initial Licensure - State</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div></td>
+                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkS0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkS0">
+                          <button class="dropdown-item" onClick="addDetails('g0');">Add Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div>
+                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2S0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2S0">
+                          <button class="dropdown-item" onClick="editDetails('S0');">Edit Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr class="HHA g0">
+                    <td></td>
+                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('g0');" style="font-size: 1.125rem;">G0000</a><br>
+                      <small>Initial Comments</small></td>
+                    <td><span class="badge badge-pill badge-white">Memo</span></td>
+                    <td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
+                    <td class="author"><span class="iq-not-available">No information</span></td>
+                    <td><div class="content">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <h4>Summary</h4>
+                            <h5>Deficient Practice Statement</h5>
+                            <p class="iq-not-available dps g0">There is no deficient practice statement for this citation.</p>
+                            <h4>Findings</h4>
+                            <p class="iq-not-available findings g0">There is no Findings for this citation.</p>
+                            <hr>
+                            <h4>Reguation Text and Interpretive Guidelines</h4>
+                            <label>CFR Section</label>
+                            <p class="iq-not-available">Not applicable</p>
+                            <label>Reguation Text</label>
+                            <p class="iq-not-available">Not applicable</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card iq-color-gray-lighter p-1">
+                              <div class="card-body">
+                                <h4>Citation Overview</h4>
+                                <p>
+                                  <label>Regulation Set</label>
+                                  Home Health Agencies (FED - G - 11.01)</p>
+                                <p>
+                                  <label>Survey Category</label>
+                                  Recertification - Federal</p>
+                              </div>
+                            </div>
+                            <div class="card p-1">
+                              <div class="card-body">
+                                <h4 class="p-0 m-0">Attachments</h4>
+                                <hr>
+                                <p class="iq-not-available files g0">There are no attachments for this citation.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div></td>
+                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg0">
+                          <button class="dropdown-item" onClick="addDetails('g0');">Add Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div>
+                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g0">
+                          <button class="dropdown-item" onClick="editDetails('g0');">Edit Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr class="HHA g406">
+                    <td></td>
+                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('g406');" style="font-size: 1.125rem;">G0406</a><br>
+                      <small>Patient Rights</small></td>
+                    <td class="tagType"><span class="badge badge-pill badge-warning">Condition</span></td>
+                    <td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
+                    <td class="author"><span class="iq-not-available">No information</span></td>
+                    <td><div class="content">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <h4>Summary</h4>
+                            <h5>Deficient Practice Statement</h5>
+                            <p class="iq-not-available dps g406">There is no deficient practice statement for this citation.</p>
+                            <h4>Findings</h4>
+                            <p class="iq-not-available findings g406">There is no Findings for this citation.</p>
+                            <hr>
+                            <h4>Reguation Text and Interpretive Guidelines</h4>
+                            <label>CFR Section</label>
+                            <p>484.5</p>
+                            <label>Reguation Text</label>
+                            <p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card iq-color-gray-lighter p-1">
+                              <div class="card-body">
+                                <h4>Citation Overview</h4>
+                                <p>
+                                  <label>Immediate Jeopardy (IJ)</label>
+                                  <span class="g406 ij">No</span></p>
+                                <p>
+                                  <label>Regulation Set</label>
+                                  Home Health Agencies (FED - G - 11.01)</p>
+                                <p>
+                                  <label>Survey Category</label>
+                                  Recertification - Federal</p>
+                              </div>
+                            </div>
+                            <div class="card p-1">
+                              <div class="card-body">
+                                <h4 class="p-0 m-0">Attachments</h4>
+                                <hr>
+                                <p class="iq-not-available files g406">There are no attachments for this citation.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div></td>
+                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg406">
+                          <button class="dropdown-item" onClick="addDetails('g406');">Add Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div>
+                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g406">
+                          <button class="dropdown-item" onClick="editDetails('g406');">Edit Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr class="HHA g1008">
+                    <td></td>
+                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click(); copyText('g1008');" style="font-size: 1.125rem;">G1008</a><br>
+                      <small>Clinical Records</small></td>
+                    <td class="tagType"><span class="badge badge-pill badge-warning">Condition</span></td>
+                    <td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
+                    <td class="author"><span class="iq-not-available">No information</span></td>
+                    <td><div class="content">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <h4>Summary</h4>
+                            <h5>Deficient Practice Statement</h5>
+                            <p class="iq-not-available dps g1008">There is no deficient practice statement for this citation.</p>
+                            <h4>Findings</h4>
+                            <p class="iq-not-available findings g1008">There is no Findings for this citation.</p>
+                            <hr>
+                            <h4>Reguation Text and Interpretive Guidelines</h4>
+                            <label>CFR Section</label>
+                            <p>484.110</p>
+                            <label>Reguation Text</label>
+                            <p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card iq-color-gray-lighter p-1">
+                              <div class="card-body">
+                                <h4>Citation Overview</h4>
+                                <p>
+                                  <label>Immediate Jeopardy (IJ)</label>
+                                  <span class="g1008 ij">No</span></p>
+                                <p>
+                                  <label>Regulation Set</label>
+                                  Home Health Agencies (FED - G - 11.01)</p>
+                                <p>
+                                  <label>Survey Category</label>
+                                  Recertification - Federal</p>
+                              </div>
+                            </div>
+                            <div class="card p-1">
+                              <div class="card-body">
+                                <h4 class="p-0 m-0">Attachments</h4>
+                                <hr>
+                                <p class="iq-not-available files g1008">There are no attachments for this citation.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div></td>
+                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1008">
+                          <button class="dropdown-item" onClick="addDetails('g1008');">Add Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div>
+                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g1008">
+                          <button class="dropdown-item" onClick="editDetails('g1008');">Edit Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div></td>
+                  </tr>
+                  <tr class="HHA g1010">
+                    <td></td>
+                    <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click();  copyText('g1010');" style="font-size: 1.125rem;">G1010</a><br>
+                      <small>Contents of Clinical Record</small></td>
+                    <td><span class="badge badge-pill badge-info">Standard</span></td>
+                    <td class="status"><span class="iq-status iq-status-0"></span> <small>Not Started</small></td>
+                    <td class="author"><span class="iq-not-available">No information</span></td>
+                    <td><div class="content">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <h4>Summary</h4>
+                            <h5>Deficient Practice Statement</h5>
+                            <p class="iq-not-available dps g1010">There is no deficient practice statement for this citation.</p>
+                            <h4>Findings</h4>
+                            <p class="iq-not-available findings g1010">There is no Findings for this citation.</p>
+                            <hr>
+                            <h4>Reguation Text and Interpretive Guidelines</h4>
+                            <label>CFR Section</label>
+                            <p>484.110(a)</p>
+                            <label>Reguation Text</label>
+                            <p>Standard: Contents of clinical record.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="card iq-color-gray-lighter p-1">
+                              <div class="card-body">
+                                <h4>Citation Overview</h4>
+                                <p>
+                                  <label>Regulation Set</label>
+                                  Home Health Agencies (FED - G - 11.01)</p>
+                                <p>
+                                  <label>Survey Category</label>
+                                  Recertification - Federal</p>
+                              </div>
+                            </div>
+                            <div class="card p-1">
+                              <div class="card-body">
+                                <h4 class="p-0 m-0">Attachments</h4>
+                                <hr>
+                                <p class="iq-not-available files g1010">There are no attachments for this citation.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div></td>
+                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1010">
+                          <button class="dropdown-item" onClick="addDetails('g1010');">Add Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div>
+                      <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g1010">
+                          <button class="dropdown-item" onClick="editDetails('g1010');">Edit Citation Details</button>
+                          <button class="dropdown-item" data-toggle="modal" data-target="#confirmCitationRemoval">Remove</button>
+                        </div>
+                      </div></td>
+                  </tr>
+                </tbody>
+              </table>
+              &#8225; <small><a href="#" id="citeStatusLink" data-toggle="dropdown">Citation Status</a>
+              <div class="dropdown-menu p-3 tooltip-inner text-left" aria-labelledby="citeStatusLink" style="max-width: 350px;"> <span class="iq-status iq-status-0"></span> Not Started<br>
+                <span class="iq-status iq-status-25"></span> In Progress<br>
+                <span class="iq-status iq-status-50"></span> Writing Complete<br>
+                <span class="iq-status iq-status-50"></span> Ready for Merge<br>
+                <span class="iq-status iq-status-75-y"></span> Merge in Progress<br>
+                <span class="iq-status iq-status-75"></span> Ready for Review<br>
+                <div><span class="iq-status-100-y"></span>&nbsp;Review&nbsp;in&nbsp;Progress</div>
+                <span class="iq-status iq-status-100"></span> Finalized </div>
+              </small> </section>
+            <section class="edit-view citeS0"> 
+              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+              
+              <h2><span>Edit</span> Citation Details for S0 <br>
+                <small>Opening Comments</small></h2>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT3x" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="citeRT3x" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p class="iq-not-available">Not applicable</p>
+                          <label>Reguation Text</label>
+                          <p>Rules and Regulations utilized for this survey are: Rules and Regulations for Program Administration of Home Health Agencies, Chapter 9, effective 10/15/2001 Rules and Regulations for Licensure of Home Health Agencies, Chapter 10, effective 11/01/2001</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4>Summary</h4>
+                  <h5>Deficient Practice Statement</h5>
+                  <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv dps">Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. Ab optio vero alias facilis nemo deleniti
+                    odio
+                    rerum autem sunt provident. Accusantium aperiam repudiandae
+                    mollitia molestiae error iste, quod ab consequuntur?</div>
+                  <h4 class="mt-4">Findings</h4>
+                  <h5>Jane Smith's Observations<br>
+                    <small>Submitted on 01/12/2020 10:10 AM EST</small></h5>
+                  <p>Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. Ab optio vero alias facilis nemo deleniti
+                    odio rerum autem sunt provident. Accusantium aperiam repudiandae
+                    mollitia molestiae error iste, quod ab consequuntur</p>
+                  <h5>My Observations</h5>
+                  <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv findings"></div>
+                  <h4 class="mt-4">Attachments</h4>
+                  <ul class="no-bullet">
+                    <li><a href="#"><i class="fas fa-paperclip"></i> File Name.pdf (203 KB)</a></li>
+                  </ul>
+                  <div class="card dashed text-center">
+                    <p class="iq-instruction-text">Drag files here<br>
+                      <small>Or, if you prefer...</small></p>
+                    <button class="btn btn-outline-primary btn-sm" style="width: auto; margin: 0 auto; ">Select files from your computer</button>
+                  </div>
                 </div>
+                <div class="col-md-4">
+                  <div class="card iq-color-gray-lighter">
+                    <div class="card-body">
+                      <h4>Citation Overview</h4>
+                      <p>
+                        <label>Tag Type</label>
+                        Licensure</p>
+                      <p>
+                        <label>Regulation Set</label>
+                        IL State Home Health (ST - S - 2 -HHA)</p>
+                      <p>
+                        <label>Survey Category</label>
+                        Initial Licensure - State</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="iq-button-wrapper">
+                <p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>
+                <button class="btn btn-primary" onClick="saveCite('S0'); writingComplete('S0');">Save and Submit</button>
+                <button class="btn btn-outline-primary" onClick="saveCite('S0');  inProgress('S0');">Save Draft</button>
+                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+              </div>
+              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+            </section>
+            <section class="edit-view g1008"> 
+              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+              
+              <h2><span>Add</span> Citation Details for G1008 <br>
+                <small>Clinical Records</small></h2>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT3e" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="citeRT3e" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p>484.110</p>
+                          <label>Reguation Text</label>
+                          <p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4>Summary</h4>
+                  <h5>Deficient Practice Statement</h5>
+                  <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv dps"></div>
+                  <h4 class="mt-4">Findings</h4>
+                  <h5>My Observations</h5>
+                  <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv findings"></div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card iq-color-gray-lighter">
+                    <div class="card-body">
+                      <h4>Citation Overview</h4>
+                      <p>
+                        <label>Tag Type</label>
+                        Condition</p>
+                      <label>Immediate Jeopardy (IJ)</label>
+                      <ul class="iq-inline-list">
+                        <li>
+                          <div class="custom-control custom-radio mb-4">
+                            <input type="radio" id="ijassociated1" name="ijassociatedg1008" class="custom-control-input" value="yes">
+                            <label class="custom-control-label" for="ijassociated1">Yes</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="custom-control custom-radio mb-4 ml-4">
+                            <input type="radio" id="ijassociated2" name="ijassociatedg1008" class="custom-control-input">
+                            <label class="custom-control-label" for="ijassociated2">No</label>
+                          </div>
+                        </li>
+                      </ul>
+                      <p>
+                        <label>Regulation Set</label>
+                        Home Health Agencies (FED - G - 11.01)</p>
+                      <p>
+                        <label>Survey Category</label>
+                        Recertification - Federal</p>
+                    </div>
+                  </div>
+                  <div class="card dashed text-center">
+                    <h4 class="mt-0 mb-0 text-left">Attachments</h4>
+                    <hr>
+                    <p class="iq-instruction-text">Drag files here<br>
+                      <small>Or, if you prefer...</small></p>
+                    <button class="btn btn-outline-primary btn-sm" style="width: auto; margin: 0 auto 2rem auto; ">Select files from your computer</button>
+                  </div>
+                </div>
+              </div>
+              <div class="iq-button-wrapper">
+                <p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>
+                <button class="btn btn-primary" onClick="saveCite('g1008');  writingComplete('g1008');">Save and Submit</button>
+                <button class="btn btn-outline-primary" onClick="saveCite('g1008');  inProgress('g1008');">Save as Draft</button>
+                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+              </div>
+              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+            </section>
+            <section class="edit-view g406"> 
+              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+              
+              <h2><span>Add</span> Citation Details for G0406 <br>
+                <small>Patient Rights</small></h2>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT3e2" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="citeRT3e2" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p>484.5</p>
+                          <label>Reguation Text</label>
+                          <p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4>Summary</h4>
+                  <h5>Deficient Practice Statement</h5>
+                  <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv dps"></div>
+                  <h4 class="mt-4">Findings</h4>
+                  <h5>My Observations</h5>
+                  <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv findings"></div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card iq-color-gray-lighter">
+                    <div class="card-body">
+                      <h4>Citation Overview</h4>
+                      <p>
+                        <label>Tag Type</label>
+                        Condition</p>
+                      <label>Immediate Jeopardy (IJ)</label>
+                      <ul class="iq-inline-list">
+                        <li>
+                          <div class="custom-control custom-radio mb-4">
+                            <input type="radio" id="ijassociated3" name="ijassociatedg406" class="custom-control-input" value="yes">
+                            <label class="custom-control-label" for="ijassociated3">Yes</label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="custom-control custom-radio mb-4 ml-4">
+                            <input type="radio" id="ijassociated4" name="ijassociatedg406" class="custom-control-input">
+                            <label class="custom-control-label" for="ijassociated4">No</label>
+                          </div>
+                        </li>
+                      </ul>
+                      <p>
+                        <label>Regulation Set</label>
+                        Home Health Agencies (FED - G - 11.01)</p>
+                      <p>
+                        <label>Survey Category</label>
+                        Recertification - Federal</p>
+                    </div>
+                  </div>
+                  <div class="card dashed text-center">
+                    <h4 class="mt-0 mb-0 text-left">Attachments</h4>
+                    <hr>
+                    <p class="iq-instruction-text">Drag files here<br>
+                      <small>Or, if you prefer...</small></p>
+                    <button class="btn btn-outline-primary btn-sm" style="width: auto; margin: 0 auto 2rem auto; ">Select files from your computer</button>
+                  </div>
+                </div>
+              </div>
+              <div class="iq-button-wrapper">
+                <p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>
+                <button class="btn btn-primary" onClick="saveCite('g406');  writingComplete('g406');">Save and Submit</button>
+                <button class="btn btn-outline-primary" onClick="saveCite('g406');  inProgress('g406');">Save as Draft</button>
+                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+              </div>
+              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+            </section>
+            <section class="edit-view g0"> 
+              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+              
+              <h2><span>Add</span> Citation Details for G0000 <br>
+                <small>Initial Comments</small></h2>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT3g0" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="citeRT3g0" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p class="iq-not-available">Not applicable</p>
+                          <label>Reguation Text</label>
+                          <p class="iq-not-available">Not applicable</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4>Summary</h4>
+                  <h5>Deficient Practice Statement</h5>
+                  <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv dps"></div>
+                  <h4 class="mt-4">Findings</h4>
+                  <h5>My Observations</h5>
+                  <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv findings"></div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card iq-color-gray-lighter">
+                    <div class="card-body">
+                      <h4>Citation Overview</h4>
+                      <p>
+                        <label>Tag Type</label>
+                        Memo</p>
+                      <p>
+                        <label>Regulation Set</label>
+                        Home Health Agencies (FED - G - 11.01)</p>
+                      <p>
+                        <label>Survey Category</label>
+                        Recertification - Federal</p>
+                    </div>
+                  </div>
+                  <div class="card dashed text-center">
+                    <h4 class="mt-0 mb-0 text-left">Attachments</h4>
+                    <hr>
+                    <p class="iq-instruction-text">Drag files here<br>
+                      <small>Or, if you prefer...</small></p>
+                    <button class="btn btn-outline-primary btn-sm" style="width: auto; margin: 0 auto 2rem auto; ">Select files from your computer</button>
+                  </div>
+                </div>
+              </div>
+              <div class="iq-button-wrapper">
+                <p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>
+                <button class="btn btn-primary" onClick="saveCite('g0');  writingComplete('g0');">Save and Submit</button>
+                <button class="btn btn-outline-primary" onClick="saveCite('g0');  inProgress('g0');">Save as Draft</button>
+                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+              </div>
+              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+            </section>
+            <section class="edit-view g1010"> 
+              <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
+              
+              <h2><span>Add</span> Citation Details for G1010 <br>
+                <small>Contents of Clinical Record</small></h2>
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT3g1010" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="citeRT3g1010" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p>484.110(a)</p>
+                          <label>Reguation Text</label>
+                          <p>Standard: Contents of clinical record.</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h4>Summary</h4>
+                  <h5>Deficient Practice Statement</h5>
+                  <button class="btn btn-link float-right" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv dps"></div>
+                  <h4 class="mt-4">Findings</h4>
+                  <h5>My Observations</h5>
+                  <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv findings"></div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card iq-color-gray-lighter">
+                    <div class="card-body">
+                      <h4>Citation Overview</h4>
+                      <p>
+                        <label>Tag Type</label>
+                        Memo</p>
+                      <p>
+                        <label>Regulation Set</label>
+                        Home Health Agencies (FED - G - 11.01)</p>
+                      <p>
+                        <label>Survey Category</label>
+                        Recertification - Federal</p>
+                    </div>
+                  </div>
+                  <div class="card dashed text-center">
+                    <h4 class="mt-0 mb-0 text-left">Attachments</h4>
+                    <hr>
+                    <p class="iq-instruction-text">Drag files here<br>
+                      <small>Or, if you prefer...</small></p>
+                    <button class="btn btn-outline-primary btn-sm" style="width: auto; margin: 0 auto 2rem auto; ">Select files from your computer</button>
+                  </div>
+                </div>
+              </div>
+              <div class="iq-button-wrapper">
+                <p><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Writing Complete.</p>
+                <button class="btn btn-primary" onClick="saveCite('g1010'); writingComplete('g1010');">Save and Submit</button>
+                <button class="btn btn-outline-primary" onClick="saveCite('g1010'); inProgress('g1010');">Save as Draft</button>
+                <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
+              </div>
+              <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
+            </section>
 			  	
          
             </section>
@@ -3909,8 +4354,8 @@
     </div>
   </div>
 </div>
-
-<input type="hidden" id="tagNameRepo" value="">
+<input type="hidden" id="editCount" value="0">
+<input type="hidden" id="writingComplete" value="0">
 	
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
@@ -3947,7 +4392,34 @@
             $('#charNum').html(len + '/256.');
           }
         });
-		
+		var cTable = $('#currentCitesTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ className: 'none', targets: 5 },
+				{ responsivePriority: 0, targets: 1 },
+				{ "orderable": false, "targets": -1 }
+				//{ 'visible': false, 'targets': 8 }
+			 ]
+		  }); 
+		$('.expandAll').on('click', function(){
+			// Expand row details
+			cTable.rows(':not(.parent)').nodes().to$().find('td:first-child').trigger('click');
+		});
+
+		// Handle click on "Collapse All" button
+		$('.collapseAll').on('click', function(){
+			// Collapse row details
+			cTable.rows('.parent').nodes().to$().find('td:first-child').trigger('click');
+		});
 	  });
 	 function selectRegSet(){
 		 gotoPage1();
@@ -4412,8 +4884,122 @@
 				break;
 		}
 	}
+    
+    function saveAddedTags(){
+        if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ 
+            $('#citationsT .successMsg').removeClass('hide'); 
+            $('#citationsT .edit-view').removeClass('active');  
+            $('#citationsT .read-view.all').addClass('active'); 
+            $('#saveCitationsButton .badge.badge-pill').addClass('hide'); 
+            $('#saveCitationsButton .addedCount').html(''); 
+            $('#saveCitationsButton .addedCount').addClass('hide'); 
+            $('#citationsT .iq-label .countWrap').addClass('hide'); 
+            $('#saveCitationsButton .iq-not-available').removeClass('hide');  
+        } else { 
+            $('#citationsT .errorMsg').removeClass('hide'); 
+        }
+    }
     </script>
-	
+	<script>
+     function addDetails(e){
+         $('#citationsT .read-view').removeClass('active'); 
+         $('#citationsT .edit-view').removeClass('active'); 
+         $('#citationsT .edit-view.'+e).addClass('active');
+         $('#citationsT .edit-view.'+e+' h2 span').html('Add');
+     }
+    function editDetails(e){
+         $('#citationsT .read-view').removeClass('active'); 
+         $('#citationsT .edit-view').removeClass('active'); 
+         $('#citationsT .edit-view.'+e).addClass('active');
+         $('#citationsT .edit-view.'+e+' h2 span').html('Edit');
+     }
+        function saveCite(e){
+            var tagNum = e; 
+            console.log(tagNum);
+            var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view p').html();
+            console.log(dps);
+            var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view p').html();
+            
+            console.log(findings);
+            
+            
+            $('#citationsT .read-view').removeClass('active'); 
+            $('#citationsT .edit-view').removeClass('active'); 
+            $('#citationsT .read-view.all').addClass('active'); 
+            $('#citationsT .successMsg').removeClass('hide'); 
+            $('#citationsT .successMsg').alert(); 
+            $('html, body').animate({ scrollTop: 0 }, 500);
+            
+            if( dps == '<br>' && findings == '<br>'){
+                console.log('nothing');
+            } else {
+                $('#currentCitesTable p.' + tagNum + '.dps').removeClass('iq-not-available');
+                $('#currentCitesTable p.' + tagNum + '.findings').removeClass('iq-not-available');
+
+                $('#currentCitesTable p.' + tagNum + '.dps').html(dps);
+                $('#currentCitesTable p.' + tagNum + '.findings').html('<h5>David Brown&#39;s Observations<br><small><span class="citeStatus">In Progress</span> | 03/09/2020 2:30 PM EST</small></h5>' + findings);
+
+                $('#currentCitesTable tr.' + tagNum + ' td.author').html('David Brown');
+                //$('#currentCitesTable tr.' + tagNum + ' td .addButton').html('Edit Citation Details');
+                //$('#currentCitesTable tr.' + tagNum + ' td .removeButton').hide();
+                $('#editCount').val('1');
+            }
+           
+            if($('input[name=ijassociatedg1008]:checked').val() == 'yes' || $('input[name=ijassociatedg406]:checked').val() == 'yes'){ 
+                $('#currentCitesTable tr.' + tagNum + ' td.tagType').html('<span class="badge badge-pill badge-danger">Condition&nbsp;-&nbsp;IJ</span>');
+                $('#currentCitesTable span.' + tagNum + '.ij').html('Yes');
+            }  
+        }
+    
+       function inProgress(e4){
+           var tagNum4 = e4; 
+           $('#currentCitesTable tr.' + tagNum4 + ' td.status .iq-status').removeClass('iq-status-0');
+           $('#currentCitesTable tr.' + tagNum4 + ' td.status .iq-status').addClass('iq-status-25');
+           $('#currentCitesTable tr.' + tagNum4 + ' td.status small').html('In Progress');
+           
+       }
+    
+       function writingComplete(e3){
+           var tagNum3 = e3; 
+           $('#currentCitesTable tr.' + tagNum3 + ' td.status .iq-status').removeClass('iq-status-0');
+           $('#currentCitesTable tr.' + tagNum3 + ' td.status .iq-status').removeClass('iq-status-25');
+           $('#currentCitesTable tr.' + tagNum3 + ' td.status .iq-status').addClass('iq-status-50');
+           $('#currentCitesTable tr.' + tagNum3 + ' td.status small').html('Writing Complete');
+           $('#currentCitesTable p.' + tagNum3 + ' .findings .citeStatus').html('Writing Complete');
+           $('#writingComplete').val('1');
+           $('#currentCitesTable tr.' + tagNum3 + ' td .actionsButton').toggleClass('hide');
+       }
+    
+    function copyText(e2){
+        var tagNum2 = e2; 
+        var dps2 = $('#citationsT .edit-view.' + tagNum2 + ' .editTextDiv.dps .fr-element.fr-view p').html();
+        console.log(dps2);
+        var findings2 = $('#citationsT .edit-view.' + tagNum2 + ' .editTextDiv.findings .fr-element.fr-view p').html();
+        console.log(findings2);
+        
+        if( $('#editCount').val() == '0' ) {
+            console.log('nothing');
+        } else {
+            $('#currentCitesTable p.' + tagNum2 + '.dps').removeClass('iq-not-available');
+            $('#currentCitesTable p.' + tagNum2 + '.findings').removeClass('iq-not-available');
+
+            $('#currentCitesTable p.' + tagNum2 + '.dps').html(dps2);
+            $('#currentCitesTable p.' + tagNum2 + '.findings').html('<h5>David Brown&#39;s Observations<br><small><span class="citeStatus">In Progress</span> | 03/09/2020 2:30 PM EST</small></h5>' + findings2);
+            if($('#writingComplete').val() == '1'){
+                $('#currentCitesTable .' + tagNum2 + '.findings .citeStatus').html('Writing Complete');
+            }
+        }
+        if($('input[name=ijassociatedg1008]:checked').val() == 'yes' || $('input[name=ijassociatedg406]:checked').val() == 'yes'){ 
+            $('#currentCitesTable tr.' + tagNum2 + ' td.tagType').html('<span class="badge badge-pill badge-danger">Condition&nbsp;-&nbsp;IJ</span>');
+            $('#currentCitesTable span.' + tagNum2 + '.ij').html('Yes');
+        }  
+    }
+    function cancelCiteEdit(){
+        $('#citationsT .read-view').removeClass('active'); 
+        $('#citationsT .edit-view').removeClass('active'); 
+        $('#citationsT .read-view.all').addClass('active'); 
+    }
+    </script>
 	
 </body>
 </html>
