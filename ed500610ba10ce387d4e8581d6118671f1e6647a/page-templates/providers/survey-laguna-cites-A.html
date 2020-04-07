@@ -16,7 +16,7 @@
 <!-- to match design system definition -->
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
 <style>
-.dtr-title {
+.dtr-title {sa
     display: none !important;
 }
 .dataTables_wrapper .dataTables_filter {
@@ -4620,7 +4620,7 @@
             $('#currentCitesTable tr.' + tagNum + ' td.tagType').html('<span class="badge badge-pill badge-danger">Condition&nbsp;-&nbsp;IJ</span>');
             $('#currentCitesTable span.' + tagNum + '.ij').html('Yes');
         }  
-        saveBack();
+        
     }
     
     function inProgress(tagNum4){
@@ -4649,7 +4649,8 @@
         switch( $('#editCount').val()){
             case 'initial': case 'in progress':
                 saveCite(e);
-                writingComplete(e)
+                writingComplete(e);
+                saveBack();
                 break;
             case 'writing complete':
                 console.log('writing done'); 
@@ -4658,13 +4659,16 @@
             case 'ready for merge':
                 if( $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html() == 'Save' ){
                    saveCite(e);
+                    saveBack();
                 } else {
                    mergeInProgress(e);
-                   readyForReview(e);   
+                   readyForReview(e);  
+                    saveBack();
                 }
                 break;
             case 'merge in progress':
                 readyForReview(e);
+                saveBack();
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
@@ -4679,24 +4683,33 @@
                 saveCite(e);
                 console.log('save cite done');
                 inProgress(e); 
+                 $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'in progress':
                 saveCite(e);
                 writingComplete(e);
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'ready for merge':
-                if( $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html() == 'Save' ){
+                if( $('#citationsT .edit-view.'+e+' h2 .iq-button-wrapper .btn-primary').html() == 'Save' ){
                     saveCite(e);
                 } else {
                     mergeInProgress(e);
                 }
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'merge in progress':
                 readyForReview(e);
+                 $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
-                saveBack();
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
         }  
     }

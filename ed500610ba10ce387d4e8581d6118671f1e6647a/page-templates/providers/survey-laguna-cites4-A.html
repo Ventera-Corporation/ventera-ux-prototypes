@@ -5134,8 +5134,6 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view').html();
             var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view').html();
             
-            saveBack();
-            
             if( findings == '<br>'){
                 console.log('nothing');
             } else {
@@ -5171,8 +5169,6 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
        function mergeInProgress(tagNum){ 
             var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view').html();
             var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view').html();
-            
-            saveBack();
             
             console.log('Status for mergeInProgress' + $('#editCount').val());
            
@@ -5291,6 +5287,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             case 'initial': case 'in progress':
                 saveCite(e);
                 readyForMerge(e);
+                saveBack();
                 break;
             case 'ready for merge':
                 if( $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html() == 'Save' ){
@@ -5299,9 +5296,11 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                    mergeInProgress(e);
                    readyForReview(e);   
                 }
+                saveBack();
                 break;
             case 'merge in progress':
                 readyForReview(e);
+                saveBack();
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
@@ -5316,10 +5315,14 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             case 'initial':
                 saveCite(e);
                 inProgress(e); 
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'in progress':
                 saveCite(e);
                 readyForMerge(e);
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'ready for merge':
                 if( $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html() == 'Save' ){
@@ -5328,10 +5331,14 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                     mergeInProgress(e);
                     $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
                 }
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'merge in progress':
                 readyForReview(e);
                 $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
@@ -5339,7 +5346,8 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 $('#currentCitesTable tr.' + e + ' td.status .iq-status').addClass('iq-status-100-y');
                 $('#currentCitesTable tr.' + e + ' td.status small').html('Review in Progress');
                 //$('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
-                saveBack();
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+               viewDetails(e);
                 break;
 
         }  

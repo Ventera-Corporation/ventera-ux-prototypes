@@ -5120,8 +5120,6 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view').html();
             var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view').html();
             
-            saveBack();
-            
             if( findings == '<br>'){
                 console.log('nothing');
             } else {
@@ -5158,7 +5156,6 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view').html();
             var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view').html();
             $('#citationsT .mergeReadyMsg').addClass('hide'); 
-            saveBack();
             
             console.log('Status for mergeInProgress' + $('#editCount').val());
            
@@ -5177,7 +5174,6 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
         }
     
        function readyForReview(e){
-            saveBack();
            $('#currentCitesTable tr.' + e + ' td.status .iq-status').removeClass('iq-status-75-y');
            $('#currentCitesTable tr.' + e + ' td.status .iq-status').addClass('iq-status-75');
            $('#currentCitesTable tr.' + e + ' td.status small').html('Ready for Review');
@@ -5248,6 +5244,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             case 'initial': case 'in progress':
                 saveCite(e);
                 readyForMerge(e);
+                saveBack();
                 break;
             case 'ready for merge':
                 if( $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html() == 'Save' ){
@@ -5258,11 +5255,13 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                    $('#citationsT .reviewReadyMsg').removeClass('hide'); 
                     $('#citationsT .reviewReadyMsg').alert(); 
                 }
+                saveBack();
                 break;
             case 'merge in progress':
                 readyForReview(e);
                 $('#citationsT .reviewReadyMsg').removeClass('hide'); 
                $('#citationsT .reviewReadyMsg').alert(); 
+                saveBack();
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
@@ -5278,10 +5277,14 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
             case 'initial':
                 saveCite(e);
                 inProgress(e); 
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'in progress':
                 saveCite(e);
                 readyForMerge(e);
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'ready for merge':
                 if( $('#citationsT .edit-view.'+e+' .iq-button-wrapper .btn-primary').html() == 'Save' ){
@@ -5290,15 +5293,20 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                     mergeInProgress(e);
                     $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
                 }
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'merge in progress':
                 readyForReview(e);
                 $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
                 $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
-                saveBack();
+                $('#citationsT .read-view.'+e+' h2 .btn').html('Edit Details');
+                viewDetails(e);
                 break;
         }  
     }
