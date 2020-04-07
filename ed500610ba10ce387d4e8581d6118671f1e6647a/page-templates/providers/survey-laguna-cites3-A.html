@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A - Citations (Writing Complete) | Laguna Rainbow Home Health Agency</title>
+<title>Team Coordinator | Laguna Rainbow Home Health Agency</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -93,7 +93,7 @@
           <div class="col d-flex align-items-center">
             <div class="iq-summary-bar-data" data-index="1">
               <p>Survey Status</p>
-              <p>Open - Writing in Progress</p>
+              <p>Open - Writing Complete</p>
             </div>
             <div class="iq-summary-bar-data" data-index="2">
               <p>Survey Category</p>
@@ -859,10 +859,13 @@
               <div class="toast-body"> <a href="citationManagementTest.html" class="return-link">Go back to Index Page</a> </div>
             </div>
             <div class="alert alert-success successMsg hide" role="alert">
-              <div class="alert-content">Changes saved successfully</div>
+              <div class="alert-content">Changes saved successfully<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
             </div>
             <div class="alert alert-success reviewReadyMsg hide" role="alert">
               <div class="alert-content">All citations are ready for review.  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+            </div>
+            <div class="alert alert-success finalReadyMsg hide" role="alert">
+              <div class="alert-content">All citations are ready to be finalized.  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
             </div>
               <div class="alert alert-warning mergeReadyMsg" role="alert">
               <div class="alert-content">All citations are ready for review and 1 citation is ready to merge.
@@ -2521,8 +2524,8 @@ the patient had multiple Physician appointments.</p></article></div>
                                 <a href="#findings-g1010" class="merged" onClick="$(this).prev().toggleClass('hideMore'); $(this).children('span').toggleClass('hide'); "><span>Show</span><span class="hide">Hide</span> more</a><br><br>
                             <div class="showMore mb-3 mt-3">
                             <div class="clearfix mb-2"><div class="btn-group-vertical float-left mr-3">
-              <button class="btn btn-outline-primary btn-sm disabled"><i class="fal fa-chevron-up" aria-hidden="true"></i></button>
-              <button class="btn btn-outline-primary btn-sm"><i class="fal fa-chevron-down" aria-hidden="true" style="font-weight: bold;"></i></button>
+              <button class="btn btn-outline-primary btn-sm"><i class="fal fa-chevron-up" aria-hidden="true" style="font-weight: bold;"></i></button>
+              <button class="btn btn-outline-primary btn-sm disabled"><i class="fal fa-chevron-down" aria-hidden="true"></i></button>
               </div><button class="btn-link btn float-right">Delete</button><h5>David Brown's Observations<br><small><span>Writing Complete</span> | 03/09/2020 2:30 PM EST</small></h5></div>
                             <div><p>Patient #1 has an admission date of 12/16/13 with diagnoses including Tear Meniscus, Diabetes Mellitus Type II and Atrial Fibrillation.</p>
  
@@ -4540,7 +4543,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
     </div>
   </div>
 </div>
-<input type="hidden" id="editCount" value="initial">
+<input type="hidden" id="editCount" value="ready for merge">
 <input type="hidden" id="firstDraft" value="0">
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script> 
 <script src="../../../src/assets/third-party/popper/popper.min.js"></script> 
@@ -5154,7 +5157,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
        function mergeInProgress(tagNum){ 
             var dps = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.dps .fr-element.fr-view').html();
             var findings = $('#citationsT .edit-view.' + tagNum + ' .editTextDiv.findings .fr-element.fr-view').html();
-            
+            $('#citationsT .mergeReadyMsg').addClass('hide'); 
             saveBack();
             
             console.log('Status for mergeInProgress' + $('#editCount').val());
@@ -5178,6 +5181,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
            $('#currentCitesTable tr.' + e + ' td.status .iq-status').removeClass('iq-status-75-y');
            $('#currentCitesTable tr.' + e + ' td.status .iq-status').addClass('iq-status-75');
            $('#currentCitesTable tr.' + e + ' td.status small').html('Ready for Review');
+           $('#citationsT .mergeReadyMsg').addClass('hide'); 
            $('#citationsT .reviewReadyMsg').removeClass('hide'); 
             $('#citationsT .reviewReadyMsg').alert(); 
            $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
@@ -5229,7 +5233,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
         $('#citationsT .edit-view.'+t+' .iq-button-wrapper .btn-primary').html('Submit for Manager to Review');
          $('#citationsT .edit-view.'+t+' h2 span').html('Merge');
         
-        $('#citationsT .edit-view.' + t + ' .statusNote').html('Upon submission, citation status will be updated to Ready for Review');
+        $('#citationsT .edit-view.' + t + ' .statusNote').html('<i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Review');
         $('#editCount').val('ready for merge');
     }
     
@@ -5250,15 +5254,20 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                    saveCite(e);
                 } else {
                    mergeInProgress(e);
-                   readyForReview(e);   
+                   readyForReview(e); 
+                   $('#citationsT .reviewReadyMsg').removeClass('hide'); 
+                    $('#citationsT .reviewReadyMsg').alert(); 
                 }
                 break;
             case 'merge in progress':
                 readyForReview(e);
+                $('#citationsT .reviewReadyMsg').removeClass('hide'); 
+               $('#citationsT .reviewReadyMsg').alert(); 
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
-                $('#citationsT .reviewReadyMsg').removeClass('hide'); 
+                $('#citationsT .reviewReadyMsg').addClass('hide'); 
+                $('#citationsT .finalReadyMsg').removeClass('hide'); 
                 saveBack();
                 break;
         }  
@@ -5288,6 +5297,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
+                $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
                 saveBack();
                 break;
         }  
