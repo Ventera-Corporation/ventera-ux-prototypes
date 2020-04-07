@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Multiple Surveyor | Laguna Rainbow Home Health Agency</title>
+<title>Team Coordinator | Laguna Rainbow Home Health Agency</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -93,7 +93,7 @@
           <div class="col d-flex align-items-center">
             <div class="iq-summary-bar-data" data-index="1">
               <p>Survey Status</p>
-              <p>Open - Writing in Progress</p>
+              <p>Open - Writing Complete</p>
             </div>
             <div class="iq-summary-bar-data" data-index="2">
               <p>Survey Category</p>
@@ -859,10 +859,17 @@
               <div class="toast-body"> <a href="citationManagementTest.html" class="return-link">Go back to Index Page</a> </div>
             </div>
             <div class="alert alert-success successMsg hide" role="alert">
-              <div class="alert-content">Changes saved successfully</div>
+              <div class="alert-content">Changes saved successfully<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
             </div>
             <div class="alert alert-success reviewReadyMsg hide" role="alert">
-              <div class="alert-content">All citations are ready to be reviewed.</div>
+              <div class="alert-content">All citations are ready for review.  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+            </div>
+            <div class="alert alert-success finalReadyMsg hide" role="alert">
+              <div class="alert-content">All citations are ready to be finalized.  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+            </div>
+              <div class="alert alert-warning mergeReadyMsg" role="alert">
+              <div class="alert-content">All citations are ready for review and 1 citation is ready to merge.
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
             </div>
             
             <div class="alert alert-danger errorMsg hide" role="alert">
@@ -1840,14 +1847,14 @@
                     <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg0">
                           <button class="dropdown-item" onClick="addDetails('g0');">Add Details</button>
-                           <!--<button class="dropdown-item submitReview" onclick="submitReview('g0');">Submit for Review</button>
-                            <button class="dropdown-item returnRevision" onclick="returnToSurveyor('g0');">Return to Surveyor for Revision</button>-->
+                           <button class="dropdown-item submitReview" onclick="submitReview('g0');">Submit for Review</button>
+                            <button class="dropdown-item returnRevision" onclick="returnToSurveyor('g0');">Return to Surveyor for Revision</button>
                         </div>
                       </div>
                       <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g0">
                           <button class="dropdown-item" onClick="editDetails('g0');">Edit Details</button>
-                          <!--<button class="dropdown-item mergeButton" onclick="mergeDetails('g0');">Merge Findings</button>-->
+                          <button class="dropdown-item mergeButton" onclick="mergeDetails('g0');">Merge Findings</button>
                         </div>
                       </div></td>
                   </tr>
@@ -1936,14 +1943,14 @@ oversight, the MSW will be in-serviced".</p>
                     <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg406">
                           <button class="dropdown-item" onClick="addDetails('g406');">Add Details</button>
-                           <!--<button class="dropdown-item submitReview" onclick="submitReview('g406');">Submit for Review</button>
-                            <button class="dropdown-item returnRevision" onclick="returnToSurveyor('g406');">Return to Surveyor for Revision</button>-->
+                           <button class="dropdown-item submitReview" onclick="submitReview('g406');">Submit for Review</button>
+                            <button class="dropdown-item returnRevision" onclick="returnToSurveyor('g406');">Return to Surveyor for Revision</button>
                         </div>
                       </div>
                       <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g406" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g406">
                           <button class="dropdown-item" onClick="editDetails('g406');">Edit Details</button>
-                          <!--<button class="dropdown-item mergeButton" onclick="mergeDetails('g406');">Merge Findings</button>-->
+                          <button class="dropdown-item mergeButton" onclick="mergeDetails('g406');">Merge Findings</button>
                         </div>
                       </div></td>
                   </tr>
@@ -2018,14 +2025,14 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                     <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLinkg1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLinkg1008">
                           <button class="dropdown-item" onClick="addDetails('g1008');">Add Details</button>
-                        <!-- <button class="dropdown-item submitReview" onclick="submitReview('g1008');">Submit for Review</button>
-                            <button class="dropdown-item returnRevision" onclick="returnToSurveyor('g1008');">Return to Surveyor for Revision</button>-->
+                         <button class="dropdown-item submitReview" onclick="submitReview('g1008');">Submit for Review</button>
+                            <button class="dropdown-item returnRevision" onclick="returnToSurveyor('g1008');">Return to Surveyor for Revision</button>
                         </div>
                       </div>
                       <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g1008" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g1008">
                           <button class="dropdown-item" onClick="editDetails('g1008');">Edit Details</button>
-                         <!-- <button class="dropdown-item mergeButton" onclick="mergeDetails('g1008');">Merge Findings</button>-->
+                          <button class="dropdown-item mergeButton" onclick="mergeDetails('g1008');">Merge Findings</button>
                         </div>
                       </div></td>
                   </tr>
@@ -2034,8 +2041,8 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                     <td><a href="javascript:void(0)" onclick="$(this).parents('tr').children('td.control').click();  copyText('g1010');" style="font-size: 1.125rem;">G1010</a><br>
                       <small>Contents of Clinical Record</small></td>
                     <td><span class="badge badge-pill badge-info">Standard</span></td>
-                    <td class="status"><span class="iq-status iq-status-25"></span> <small>In Progress</small></td>
-                    <td class="author"><ul><li>David Brown</li><li>Jane Smith</li></ul></td>
+                    <td class="status"><span class="iq-status iq-status-50"></span> <small>Ready for Merge</small></td>
+                    <td class="author"><ul><li>David Brown</li><li>Jane Smith <strong>*</strong></li></ul></td>
                     <td><div class="content">
                         <div class="row">
                           <div class="col-md-8">
@@ -2047,7 +2054,7 @@ Plan of Care. This was evident in three (3) of three (3) Clinical Records review
 <p>Failure to ensure that patient care provided follows the written Plan of Care places patients at risk for unmet needs.</p></div>
                             <h4>Findings</h4>
                             <div class="merged">
-                            <div class="findings g1010"><h5>Jane Smith's Observations<br><small><span class="citeStatus">In Progress</span> | 03/10/2020 11:30 AM EST</small></h5>
+                            <div class="findings g1010"><h5>Jane Smith's Observations<br><small><span class="citeStatus">Writing Complete</span> | 03/10/2020 11:30 AM EST</small></h5>
                                 
                           <p>Patient #2 has an admission date of 12/13/13 with diagnoses including Late Effect of Cerebral Vascular Disease, Intracerebral
 Hemorrhage and Hypertension.</p><p>The Plan of Care dated 12/13/13 to 02/10/14 documents orders for "PT (Physical Therapy) 1-2 x week (one to two times a week) x 2 (two) weeks, Physical Therapy Evaluation, establish home exercise program ". and "OT (Occupational Therapy) 1 x week x 1 week (one visit for one week), Occupational Evaluation".</p><p>The "Physical Therapy Evaluation / Care Plan" documents that the initial patient evaluation by the PT was performed on 12/26/13 (thirteen {13}
@@ -2119,16 +2126,14 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                           </div>
                         </div>
                       </div></td>
-                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link" onClick="editDetails('g1010');">Edit</a>
-                       </div>
-                        <div class="actionsButton hide"><a href="#" class="btn btn-link" onClick="editDetails('g1010');">Edit</a>
-                       </div>
-                       <!-- <div class="actionsButton hide"> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink2g1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink2g1010">
+                    <td class="text-right"><div class="actionsButton"><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink1g1010" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink1g1010">
                           <button class="dropdown-item" onClick="editDetails('g1010');">Edit Details</button>
-                        <button class="dropdown-item mergeButton" onclick="mergeDetails('g1010');">Merge Findings</button>
+                          <button class="dropdown-item mergeButton" onclick="mergeDetails('g1010');">Merge Findings</button>
                         </div>
-                      </div>--></td>
+                       </div>
+                      <div class="actionsButton hide"> <a href="#" class="btn btn-link" onClick="editDetails('g1010');">Edit</a>
+                      </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2141,7 +2146,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 <span class="iq-status iq-status-75"></span> Ready for Review<br>
                 <div><span class="iq-status-100-y"></span>&nbsp;Review&nbsp;in&nbsp;Progress</div>
                 <span class="iq-status iq-status-100"></span> Finalized </div></small>
-                <!--<strong>*</strong> <small>Team Coordinator</small>-->
+                <strong>*</strong> <small>Team Coordinator</small>
           
                </section>
             
@@ -2221,7 +2226,7 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                     </div>
                   <div id="show-old-observations1008" class="collapse">
                     <div class="card-body px-0">
-                        <h5>Jane Smith's Observations<br><small><span class="citeStatus">In Progress</span> | 03/10/2020 11:30 AM EST</small></h5>
+                        <h5>Jane Smith's Observations<br><small><span class="citeStatus">Writing Complete</span> | 03/10/2020 11:30 AM EST</small></h5>
                         <p>The Nurse Coordinator documented in the &quot;Clinical Note&quot; dated 03/22/13: &quot;call placed on 03/18/13 to Wound Care Nurse requesting help with
                       patient's reddened area&quot; and &quot;Task sent to Wound Care Nurse on 03/18/13 for wound care evaluation for patient&quot;.</p>
                       <p>The SN documented in the &quot;Clinical Note&quot; dated 03/22/13: &quot;No visit from Wound Nurse as yet per patient&quot;.</p>
@@ -2295,8 +2300,8 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                   <button class="btn btn-primary" onClick="savePrimarySubmit('g1008');">Save and Submit</button>
                   
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g1008');">Save as Draft</button>
-                  <!--<button class="btn btn-outline-primary" onclick="saveBack(); submitReview('g1008'); ">Submit for Review</button>
-                            <button class="btn btn-outline-primary" onclick="returnToSurveyor('g1008'); saveBack();">Return to Surveyor for Revision</button>-->
+                  <button class="btn btn-outline-primary" onclick="saveBack(); submitReview('g1008'); ">Submit for Review</button>
+                            <button class="btn btn-outline-primary" onclick="returnToSurveyor('g1008'); saveBack();">Return to Surveyor for Revision</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
                 
               </div>
@@ -2411,8 +2416,8 @@ oversight, the MSW will be in-serviced".</p>
                   <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
                  <button class="btn btn-primary" onClick="savePrimarySubmit('g406')">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g406');">Save as Draft</button>
-                   <!--<button class="btn btn-outline-primary" onclick="saveBack(); submitReview('g406'); ">Submit for Review</button>
-                            <button class="btn btn-outline-primary" onclick="returnToSurveyor('g406'); saveBack();">Return to Surveyor for Revision</button>-->
+                  <button class="btn btn-outline-primary" onclick="saveBack(); submitReview('g406'); ">Submit for Review</button>
+                            <button class="btn btn-outline-primary" onclick="returnToSurveyor('g406'); saveBack();">Return to Surveyor for Revision</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
               </div>
               <!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>--> 
@@ -2420,7 +2425,7 @@ oversight, the MSW will be in-serviced".</p>
             <section class="edit-view g0"> 
               <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
               
-              <h2>Edit Citation Details for G0000 <br>
+              <h2><span>Edit</span> Citation Details for G0000 <br>
                 <small>Initial Comments</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2498,8 +2503,8 @@ oversight, the MSW will be in-serviced".</p>
                   <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
                  <button class="btn btn-primary" onClick="savePrimarySubmit('g0');">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g0');">Save as Draft</button>
-                  <!--<button class="btn btn-outline-primary" onclick="saveBack(); submitReview('g0'); ">Submit for Review</button>
-                            <button class="btn btn-outline-primary" onclick="returnToSurveyor('g0'); saveBack();">Return to Surveyor for Revision</button>-->
+                  <button class="btn btn-outline-primary" onclick="saveBack(); submitReview('g0'); ">Submit for Review</button>
+                            <button class="btn btn-outline-primary" onclick="returnToSurveyor('g0'); saveBack();">Return to Surveyor for Revision</button>
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
                   
               </div>
@@ -2508,7 +2513,7 @@ oversight, the MSW will be in-serviced".</p>
             <section class="edit-view g1010"> 
               <!--<p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
               
-              <h2>Edit Citation Details for G1010 <br>
+              <h2><span>Edit</span> Citation Details for G1010 <br>
                 <small>Contents of Clinical Record</small></h2>
               <div class="row">
                 <div class="col-md-8">
@@ -2539,7 +2544,7 @@ Plan of Care. This was evident in three (3) of three (3) Clinical Records review
 <p>Failure to ensure that patient care provided follows the written Plan of Care places patients at risk for unmet needs.</p></div>
                     
                             <h4 id="findingsg1010">Findings</h4>
-                  <h5 class="merged">My Observations<br><small>In Progress | 03/10/2020 11:30 AM EST</small></h5>
+                  <h5 class="merged">My Observations<br><small>Writing Complete | 03/10/2020 11:30 AM EST</small></h5>
                   <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
                   <div class="editTextDiv findings">
                     <p>Patient #2 has an admission date of 12/13/13 with diagnoses including Late Effect of Cerebral Vascular Disease, Intracerebral
@@ -2707,8 +2712,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                   <p class="statusNote"><i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Merge.</p>
                 <button class="btn btn-primary" onClick="savePrimarySubmit('g1010');">Save and Submit</button>
                 <button class="btn btn-outline-primary" onClick="saveSubmit('g1010');">Save as Draft</button>
-                  <!--<button class="btn btn-outline-primary" onclick="saveBack(); submitReview('g1010'); ">Submit for Review</button>
-                            <button class="btn btn-outline-primary" onclick="returnToSurveyor('g1010'); saveBack();">Return to Surveyor for Revision</button>-->
+                
                 <button class="btn btn-link" onClick="cancelCiteEdit();">Cancel</button>
                 
               </div>
@@ -4378,7 +4382,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
     </div>
   </div>
 </div>
-<input type="hidden" id="editCount" value="initial">
+<input type="hidden" id="editCount" value="ready for merge">
 <input type="hidden" id="firstDraft" value="0">
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script> 
 <script src="../../../src/assets/third-party/popper/popper.min.js"></script> 
@@ -4954,7 +4958,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 $('#currentCitesTable .' + tagNum + '.findings').html('<h5>Jane Smith&#39;s Observations<br><small><span class="citeStatus">In Progress</span> | 03/10/2020 11:30 AM EST</small></h5>' + findings);
 
                 if( $('#currentCitesTable tr.' + tagNum + ' td.author').html() == "David Brown"){
-                    $('#currentCitesTable tr.' + tagNum + ' td.author').html("<ul><li>David Brown</li><li>Jane Smith</li></ul>");
+                    $('#currentCitesTable tr.' + tagNum + ' td.author').html("<ul><li>David Brown</li><li>Jane Smith <strong>*</strong></li></ul>");
                 }
             }
         }
@@ -5003,8 +5007,9 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
            $('#currentCitesTable tr.' + e + ' td.status .iq-status').removeClass('iq-status-75-y');
            $('#currentCitesTable tr.' + e + ' td.status .iq-status').addClass('iq-status-75');
            $('#currentCitesTable tr.' + e + ' td.status small').html('Ready for Review');
-           //$('#citationsT .reviewReadyMsg').removeClass('hide'); 
-            //$('#citationsT .reviewReadyMsg').alert(); 
+           $('#citationsT .mergeReadyMsg').addClass('hide'); 
+           $('#citationsT .reviewReadyMsg').removeClass('hide'); 
+            $('#citationsT .reviewReadyMsg').alert(); 
            $('#currentCitesTable tr.' + e + ' td .actionsButton').toggleClass('hide');
            $('#editCount').val('ready for review');
             $('#citationsT .edit-view.' + e + ' .statusNote').html('');
@@ -5059,7 +5064,7 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
         $('#citationsT .edit-view.' + t + ' h5.merged').html('Merged Observations');
         $('#citationsT .edit-view.' + t + ' .showMore.merged').addClass('hide');
         $('#citationsT .edit-view.' + t + ' .showOld.merged').removeClass('hide');
-        $('#citationsT .edit-view.' + t + ' .statusNote').html('Upon submission, citation status will be updated to Ready for Review');
+        $('#citationsT .edit-view.' + t + ' .statusNote').html('<i class="fas fa-info-circle"></i> Upon submission, citation status will be updated to Ready for Review');
     }
     
     function cancelCiteEdit(){
@@ -5080,13 +5085,20 @@ accordance with the Plan of Care regarding the patient's elevated BP findings an
                 } else {
                    mergeInProgress(e);
                    readyForReview(e);   
+                    $('#citationsT .reviewReadyMsg').removeClass('hide'); 
+                    $('#citationsT .reviewReadyMsg').alert(); 
                 }
                 break;
             case 'merge in progress':
                 readyForReview(e);
+                $('#citationsT .reviewReadyMsg').removeClass('hide'); 
+                    $('#citationsT .reviewReadyMsg').alert(); 
                 break;
             case 'ready for review':
                 console.log('ready for review done'); 
+                 $('#citationsT .reviewReadyMsg').addClass('hide'); 
+               // $('#citationsT .finalReadyMsg').removeClass('hide'); 
+                  
                 saveBack();
                 break;
         }  
