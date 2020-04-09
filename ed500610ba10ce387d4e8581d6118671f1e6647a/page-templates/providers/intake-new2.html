@@ -4435,14 +4435,18 @@ function sortParties(){
         }                                                                      
     }
 }
-	function addTag(tagName){
+    function addTag(tagName){
 		$('#triageTab .card.dashed .iq-not-available').addClass('hide'); 
 		$('#triageTab .errorMsg').addClass('hide'); 
-		$('#addedCOPTags').append('<div class="badge badge-pill"><span>' + tagName + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="Remove" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
+		var fullTag = $('.'+tagName + ' .tagName').html(); 
+		console.log(fullTag);
+		
+		$('#addedCOPTags').append('<div class="badge badge-pill"><span>' + fullTag + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="Remove" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
 		$('#triageTab .iq-label .countWrap').removeClass('hide');
 		$('#triageTab .addedCount').html(function(i, val) { return +val*1+1 });
 		console.log($('#triageTab .addedCount').html());
 	}
+
 	function closeTag(ele4, eParent){
 		eParent.addClass('hide'); 
 		tagN = ele4.previousSibling.innerHTML; //$('#tagNameRepo').val();
