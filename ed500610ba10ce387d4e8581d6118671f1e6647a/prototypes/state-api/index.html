@@ -290,7 +290,30 @@
                         <p><strong>Request</strong></p>
                         <p><pre>curl -X GET "https://training-iqies.hcqis.org/api/stateapi/v1/tables" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json"</pre></p>
                         <p><strong>Response</strong></p>
-                        <p><pre>[ RESPONSE EXAMPLE HERE ]</pre></p>
+<p><pre>{
+  "tables": [
+      "aspen_migration.algtn",
+      "aspen_migration.apl_case",
+      "aspen_migration.cfr",
+      "aspen_migration.enfrcmt",
+      "aspen_migration.intk",
+      "aspen_migration.prsn_intk",
+      "aspen_migration.regltn",
+      "aspen_migration.regltn_set",
+      "aspen_migration.snctn",
+      "auth.mgmt_unit",
+      "auth.prmry_dscpln",
+      "auth.role",
+      "auth.user",
+      "auth.user_prmry_dscpln",
+      "auth.user_role",
+      "auth.user_unit",
+      "auth.work_unit",
+      "enforcement.apl_case",
+      "enforcement.apl_rltd_ctn",
+      ...
+  ]
+}</pre></p>
                       </div>
                     </div>
                   </div>
@@ -313,7 +336,7 @@
                   <tbody>
                     <tr>
                       <td>tableName</td>
-                      <td>survey_citations</td>
+                      <td>survey.ctn</td>
                       <td>Name of the table in the schema.</td>
                     </tr>
                   </tbody>
@@ -338,9 +361,53 @@
                          aria-labelledby="iq-heading-one">
                       <div class="card-body">
                         <p><strong>Request</strong></p>
-                        <p><pre>curl -X GET "https://training-iqies.hcqis.org/api/stateapi/v1/tables/survey_citations/cols" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json"</pre></p>
+                        <p><pre>curl -X GET "https://training-iqies.hcqis.org/api/stateapi/v1/tables/survey.ctn/cols" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json"</pre></p>
                         <p><strong>Response</strong></p>
-                        <p><pre>[ RESPONSE EXAMPLE HERE ]</pre></p>
+<p><pre>{
+    "table": "survey.ctn",
+    "cols": [
+        {
+            "column_name": "ctn_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "character_maximum_length": null,
+            "character_octet_length": null,
+            "numeric_precision": 32,
+            "numeric_precision_radix": 2,
+            "numeric_scale": 0,
+            "datetime_precision": null
+        },
+        {
+            "column_name": "rgltn_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "character_maximum_length": null,
+            "character_octet_length": null,
+            "numeric_precision": 32,
+            "numeric_precision_radix": 2,
+            "numeric_scale": 0,
+            "datetime_precision": null
+        },
+        {
+            "column_name": "dfcnt_prctc_stmt",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "character_maximum_length": null,
+            "character_octet_length": 1073741824,
+            "numeric_precision": null,
+            "numeric_precision_radix": null,
+            "numeric_scale": null,
+            "datetime_precision": null
+        },
+        ...
+    ],
+    "constraints": [
+        "PRIMARY KEY (ctn_id)",
+        "FOREIGN KEY (ctn_stus_id) REFERENCES survey.ctn_stus(ctn_stus_id)",
+        "FOREIGN KEY (srvy_id) REFERENCES survey.srvy(srvy_id)"
+    ]
+}
+</pre></p>
                       </div>
                     </div>
                   </div>
