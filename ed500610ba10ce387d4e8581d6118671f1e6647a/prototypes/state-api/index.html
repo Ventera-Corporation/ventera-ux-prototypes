@@ -132,7 +132,7 @@
                 <p>
                   Example for fetching all providers:
                 </p>
-                <table class="table table-striped iq-table">
+                <table class="table table-striped iq-table table-responsive-sm">
                   <thead>
                     <tr>
                       <th>Category</th>
@@ -158,7 +158,7 @@
 {
   "sql": {
     "select" :
-      "prvdr_id,lgl_name,dba_name,ccn,fac_id,prvdr_stus_id",
+      "prvdr_id, lgl_name, dba_name, ccn, fac_id, prvdr_stus_id",
     "from": "provider.prvdr",
     "where":"prvdr_id = :prvdr_id"
   },
