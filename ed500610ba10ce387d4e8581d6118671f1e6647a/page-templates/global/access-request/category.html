@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Select User Category</title>
+  <title>Select User Category - Access Request Form - iQIES</title>
 
   <link rel="stylesheet"
     href="../../../../src/assets/prototype-styles/design-system.css">
@@ -82,7 +82,7 @@
                 </ol>
               </nav>
               <div class="iq-page-header-content">
-               <ol class="iq-step-indicator-group mb-0">
+               <!--<ol class="iq-step-indicator-group mb-0">
             <li class="iq-step-indicator iq-step-indicator-active">
               <h2>1 <span class="iq-step-indicator-line"></span></h2>
               <p>User Category</p>
@@ -95,7 +95,13 @@
               <h2>3 <span class="iq-step-indicator-line"></span></h2>
               <p>Organizations</p>
             </li>
-          </ol>
+          </ol>-->
+                  <fieldset class="iq-stepper"><legend>Step 1 of 3</legend>
+            <ol>
+              <li class="active"><div><span class="sr-only">Step 1: Select a user category</span></div></li>
+              <li><div><span class="sr-only">Step 2: Select a role</span></div></li>
+              <li><div><span class="sr-only">Step 3: Add organizations</span></div></li>
+              </ol></fieldset>
               </div>
             </div>
           </div>
@@ -107,7 +113,7 @@
       <div class="row">
         <div class="col-md-12"> 
               <div class="iq-page-header-content">
-                <h3>STEP 1</h3>
+                
                 <h1>Select a User Category</h1>
                 <div class="mt-5 mb-4"><p class="lead">
             Select the category of your organization to begin the role request process.
@@ -121,7 +127,7 @@
                 <input id="ao" type="radio" name="category" class="custom-control-input" value="ao"><label for="ao" class="custom-control-label"><strong>Accrediting Organization</strong><br>Add and manage administration, survey, and certification information for deemed healthcare providers.</label>
             </div>
             <div class="custom-control custom-radio form-group">
-                <input id="co" type="radio" name="category" class="custom-control-input" value="co"><label for="co" class="custom-control-label"><strong>CMS Central Office</strong><br>Provides security and support for system users.</label>
+                <input id="co" type="radio" name="category" class="custom-control-input" value="co"><label for="co" class="custom-control-label"><strong>CMS Central Office</strong><br>Manages surveys and certifications and provides support for system users.</label>
             </div>
             <div class="custom-control custom-radio form-group">
                 <input id="mac" type="radio" name="category" class="custom-control-input" value="mac"><label for="mac" class="custom-control-label"><strong>CMS Contractor</strong><br>Generate and view  reports.</label>
@@ -130,7 +136,7 @@
                 <input id="ro" type="radio" name="category" class="custom-control-input" value="ro"><label for="ro" class="custom-control-label"><strong>CMS Regional Office</strong><br>Add and manage administration, survey, and certification information for healthcare providers within a specific region.</label>
             </div>
             <div class="custom-control custom-radio form-group">
-                <input id="pa" type="radio" name="category" class="custom-control-input" value="pa"><label for="pa" class="custom-control-label"><strong>Provider</strong><br>Healthcare organizations, agencies, and services.</label>
+                <input id="pa" type="radio" name="category" class="custom-control-input" value="pa"><label for="pa" class="custom-control-label"><strong>Provider</strong><br>Submit patient assessments and survey and certification data for healthcare organizations, agencies, and facilities.</label>
             </div>
             <div class="custom-control custom-radio form-group">
                 <input id="sa" type="radio" name="category" class="custom-control-input" value="sa"><label for="sa" class="custom-control-label"><strong>State Agency</strong><br>Add and manage administration, survey, and certification information for healthcare providers within a state;&nbsp; patient assessment and ICD-10 code management; API Key management.</label>

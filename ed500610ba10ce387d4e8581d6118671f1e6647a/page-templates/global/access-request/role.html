@@ -87,20 +87,21 @@
                 </ol>
               </nav>
               <div class="iq-page-header-content">
-               <ol class="iq-step-indicator-group mb-0">
-            <li class="iq-step-indicator iq-step-indicator-complete">
-              <h2>1 <span class="iq-step-indicator-line"></span></h2>
-              <p>User Category</p>
-            </li>
-            <li class="iq-step-indicator iq-step-indicator-active">
-              <h2>2 <span class="iq-step-indicator-line"></span></h2>
-              <p>User Role</p>
-            </li>
-            <li class="iq-step-indicator iq-step-indicator-pending">
-              <h2>3 <span class="iq-step-indicator-line"></span></h2>
-              <p>Organizations</p>
-            </li>
-          </ol>
+                  <div class="edit-view active roleStep">
+               <fieldset class="iq-stepper"><legend>Step 2 of 3</legend>
+            <ol>
+              <li class="active"><div><span class="sr-only">Step 1: Select a user category</span></div></li>
+              <li class="active"><div><span class="sr-only">Step 2: Select a role</span></div></li>
+              <li><div><span class="sr-only">Step 3: Add organizations</span></div></li>
+              </ol></fieldset></div>
+                  <div class="edit-view orgStep">
+                      <fieldset class="iq-stepper"><legend>Step 3 of 3</legend>
+            <ol>
+              <li class="active"><div><span class="sr-only">Step 1: Select a user category</span></div></li>
+              <li class="active"><div><span class="sr-only">Step 2: Select a role</span></div></li>
+              <li class="active"><div><span class="sr-only">Step 3: Add organizations</span></div></li>
+              </ol></fieldset>
+                  </div>
               </div>
             </div>
           </div>
@@ -113,14 +114,14 @@
         <div class="col-md-12"> 
               <div class="iq-page-header-content">
                  <div class="edit-view active roleStep">
-                <h3>STEP 2</h3>
+                
                 <h1>Select a User Role</h1>
                 <div class="mt-5 mb-4"><p class="lead">
-                    Select the user role that best fits your needs. For more information, review <a href="#">All About iQIES Roles <i class="fal fa-external-link"></i></a>.
+                    Select the user role that best fits your needs. <!--For more information, review <a href="#">All About iQIES Roles <i class="fal fa-external-link"></i></a>.-->
           </p></div>
                  </div>
                 <div class="edit-view orgStep">
-                    <h3>STEP 3</h3>
+                    
                     <h1>Add Organizations</h1>
                 </div>
               </div>
@@ -148,6 +149,31 @@
                 <input id="ao-2" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-2" class="custom-control-label"><strong>Accrediting Organization Security Official</strong><br>Approve iQIES user roles in HARP; manage user profiles.</label>
             </div>
             </fieldset>
+                <div class="iq-accordion showhide">
+                <div class="card no-border">
+                  <div class="card-header d-flex">
+                    <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#aoInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      </button>
+                    </div>
+                  <div id="aoInfo" class="collapse">
+                    <div class="card-body px-0">
+                     <table class="dataTable table-striped">
+                         <thead>
+                             <tr><th></th><th>Accrediting Organization User</th><th>Accrediting Organization Security Official</th></tr>
+                         </thead>
+                         <tbody>
+                             <tr><th>Add AO Provider Information</th><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td><td></td></tr>
+                             <tr><th>Add &amp; Manage AO Surveys</th><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td><td></td></tr>
+                             <tr><th>iQIES Role Approval in HARP</th><td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td></tr>
+                         </tbody>
+                    </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 
             </div>
             <div class="edit-view orgStep">
@@ -185,6 +211,93 @@
                     Approve and manage iQIES user roles in HARP.</label>
                 </div>
             </fieldset>
+                 <div class="iq-accordion showhide">
+                <div class="card no-border">
+                  <div class="card-header d-flex">
+                    <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#coInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      </button>
+                    </div>
+                  <div id="coInfo" class="collapse">
+                    <div class="card-body px-0">
+                     <table class="dataTable table-striped">
+                         <thead>
+                             <tr><th></th>
+                             <th>Central Office User</th>
+                             <th>Central Office Help Desk</th>
+                             <th>Central Office Security Official</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                               <th>Deemed Provider Approval</th><td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>Manage ICD-10 Codes</th><td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Providers</th><td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Intakes</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Surveys</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Maiage Enforcements</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Find Provider Information</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Merge &amp; Split Assessments</th>
+                               <td></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>View Assessments</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>View Patient Profiles</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>iQIES Role Approval (in HARP)</th>
+                               <td></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                         </tbody>
+                    </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="edit-view orgStep">
                  <div class="mt-5 mb-4"><p class="lead">
@@ -206,6 +319,42 @@
                     Approve and manage iQIES user roles in HARP for MAC users.</label>
                 </div>
             </fieldset>
+                <div class="iq-accordion showhide">
+                <div class="card no-border">
+                  <div class="card-header d-flex">
+                    <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#macInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      </button>
+                    </div>
+                  <div id="macInfo" class="collapse">
+                    <div class="card-body px-0">
+                     <table class="dataTable table-striped">
+                         <thead>
+                             <tr><th></th>
+                             <th><strong>Medicare Administrative Contractor (MAC)</strong></th>
+                             <th><strong>Medicare Administrative Contractor (MAC) Security Official</strong></th></tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                               <th>Profile and Role Request</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>Navigating the System</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>MAC User Approvals</th>
+                               <td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td></tr>
+                         </tbody>
+                    </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 </div>
             <div class="edit-view orgStep">
                  <div class="mt-5 mb-4"></div>
@@ -259,6 +408,85 @@
                     Approve and manage iQIES user roles in HARP.</label>
                 </div>
             </fieldset>
+            <div class="iq-accordion showhide">
+                <div class="card no-border">
+                  <div class="card-header d-flex">
+                    <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#roInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      </button>
+                    </div>
+                  <div id="roInfo" class="collapse">
+                    <div class="card-body px-0">
+                     <table class="dataTable table-striped">
+                         <thead>
+                             <tr><th></th>
+                             <th>Regional Office General User</th>
+                             <th>Regional Office Security Official</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                               <th>Deemed Provider Approval</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>Manage ICD-10 Codes</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Providers</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Intakes</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Surveys</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Enforcements</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Find Provider Information</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Merge &amp; Split Assessments</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>View Assessments</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Create &amp; Manage Patient Profiles</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>iQIES Role Approval (in HARP)</th>
+                               <td></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                         </tbody>
+                    </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 </div>
             <div class="edit-view orgStep">
                  <div class="mt-5 mb-4"></div>
@@ -343,6 +571,89 @@
                     Approve and manage iQIES user roles in Saviynt; create and manage patient profiles; upload XML and ZIP formatted patient assessments; create, manage, submit, modify, and inactivate patient assessments; generate and view reports.</label>
                 </div>
             </fieldset>
+                <div class="iq-accordion showhide">
+                <div class="card no-border">
+                  <div class="card-header d-flex">
+                    <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#paInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      </button>
+                    </div>
+                  <div id="paInfo" class="collapse">
+                    <div class="card-body px-0">
+                     <table class="dataTable table-striped">
+                         <thead>
+                             <tr><th></th>
+                             <th>Assessment Submitter<br><small><i class="fas fa-info-circle iq-info"></i> Select this role if you are a provider needing to upload assessments</small></th>
+                             <th>Provider Administrator</th>
+                             <th>Provider Assessment Coordinator</th>
+                             <th>Provider Assessment Viewer</th>
+                             <th>Provider Security Official</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                               <th>View Assessments</th>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>View Patient Profiles</th>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>Create &amp; Manage Patient Profiles</th>
+                               <td></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>Upload Assessments</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>Create Assessments</th>
+                               <td></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>Modify/Inactivate Assessments</th>
+                               <td></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>iQIES Role Approval (in Savynt)</th>
+                               <td></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                         </tbody>
+</table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 </div>
             <div class="edit-view orgStep">
                   <div class="mt-5 mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
@@ -394,6 +705,112 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     Approve and manage iQIES user roles in HARP. </label>
                 </div>
             </fieldset>
+                <div class="iq-accordion showhide">
+                <div class="card no-border">
+                  <div class="card-header d-flex">
+                    <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#saInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      </button>
+                    </div>
+                  <div id="saInfo" class="collapse">
+                    <div class="card-body px-0">
+                     <table class="dataTable table-striped">
+                         <thead>
+                             <tr><th></th>
+                             <th>State Agency General User<br>
+                               <small><i class="fas fa-info-circle iq-info"></i> Can view providers information for any state</small></th>
+                             <th>State Agency Assessment Coordinator<br>
+                               <small><i class="fas fa-exclamation-circle iq-warning"></i> Home Health Agencies only</small></th>
+                             <th>State Agency API Key Manager</th>
+                             <th>State Agency Security Official</th>
+                             </tr>
+                             
+                         </thead>
+                         <tbody>
+                             <tr>
+                               <th>View Assessments</th>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>View Patient Profiles</th>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td></td>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>Merge &amp; Split Assessments</th>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Manage ICD-10 Codes</th>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td></td>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>Access API Key &amp; Data</th>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Providers</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Intakes</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Surveys</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Add &amp; Manage Enforcements</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Find Provider Information</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>iQIES Role Approval (in HARP)</th>
+                               <td></td>
+                               <td>&nbsp;</td>
+                               <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                         </tbody>
+                    </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 </div>
             <div class="edit-view orgStep">
                   <div class="mt-5 mb-4"></div>
@@ -454,6 +871,57 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                 </div>
                
             </fieldset>
+                <div class="iq-accordion showhide">
+                <div class="card no-border">
+                  <div class="card-header d-flex">
+                    <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#vInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      </button>
+                    </div>
+                  <div id="vInfo" class="collapse">
+                    <div class="card-body px-0">
+                     <table class="dataTable table-striped">
+                         <thead>
+                             <tr><th></th>
+                             <th>Assessment Submitter</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                               <th>View Assessments</th>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>View Patient Profiles</th>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
+                               <th>Create &amp; Manage Patient Profiles</th>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>Upload Assessments</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>Create Assessments</th>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>Modify/Inactivate Assessments</th>
+                               <td></td>
+                             </tr>
+                             <tr>
+                               <th>iQIES Role Approval (in Savynt)</th>
+                               <td></td>
+                             </tr>
+                         </tbody>
+</table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 </div>
             <div class="edit-view orgStep">
                   <div class="mt-5 mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
