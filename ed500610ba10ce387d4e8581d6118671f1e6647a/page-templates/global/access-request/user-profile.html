@@ -224,22 +224,40 @@
                     <tr>
                         <td><span class="roleName">Regional Office Security Official</span></td>
                         <td>10 - Seattle</td>
-                       
                         <td><span class="iq-not-available">No information</span></td>
                         <td><span class="iq-not-available">No information</span></td>
                         <td>Requested</td><td>01/01/2020</td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td><span class="roleName">Regional Office General User</span></td>
+                        <td>Regional Office General User</td>
                         <td>10 - Seattle</td>
-                        
-                        <td><span class="roS ro1"><span class="iq-not-available">No information</span></span>
-                            <div class="ro1 hide">
-                            <fieldset>
+                        <td><span class="roS"><span class="iq-not-available">No information</span></span></td>
+                        <td><span class="roSD"><span class="iq-not-available">No information</span></span></td>
+                        <td>Active</td>
+                        <td>10/05/2019</td>
+                        <td><a href="javascript:void(0)" data-toggle="modal" data-target="#editRO">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+                
+            <div class="modal fade" id="editRO" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Regional Office General User<br><small>10 - Seattle</small></h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col col-md-12 form-group">
+                        <label>Surveyor</label>
+                        <fieldset>
             <legend class="sr-only">Surveyor</legend>
                 
-            <div class="custom-control custom-radio mb-2">
+            <div class="custom-control custom-radio">
               <input type="radio" id="six3" name="six" class="custom-control-input" onChange="if(this.checked){ $('.roSDedit').removeClass('hide');}" value="Yes">
               <label class="custom-control-label" for="six3"> Yes </label>
               </div>
@@ -250,60 +268,55 @@
                    
             
             </fieldset>
-                            </div>
-                            
-                        </td>
-                        <td><span class="roSD ro1"><span class="iq-not-available">No information</span></span>
-                            <span class="ro1 hide"><span class="roSDedit hide">
-                                <select multiple="multiple" style="display: none;" class="multiselect surveyDis"><option>Select one</option>
-     <option>Architect</option>
-     <option>Cytotechnologist</option>
-     <option>Engineer</option>
-     <option>Generalist</option>
-     <option>Health Care Administrator</option>
-     <option>Home Health Aide</option>
-     <option>Human Services Professional</option>
-     <option>Laboratorian</option>
-     <option>Licensed Practical (Vocational) Nurse</option>
-     <option>Life Safety Code Inspector</option>
-     <option>Medical Records Administrator</option>
-     <option>Medical Technologist</option>
-     <option>Nutritionist/Dietitian</option>
-     <option>Nutritionist/Dietitian; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Occupational Therapist</option>
-     <option>Pathologist</option>
-     <option>Pharmacist</option>
-     <option>Physical Therapist</option>
-     <option>Physician</option>
-     <option>Physician; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Psychologist</option>
-     <option>Recreational Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Registered Nurse</option>
-     <option>Registered Nurse: Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Sanitarian</option>
-     <option>Social Worker</option>
-     <option>Social Worker; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Speech Pathologist/Audiologist/Therapist</option>
-     <option>Speech Pathologist/Audiologist/Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Speech Therapist</option>
-     <option>X-Ray Specialist</option>
-     <option>Other</option></select>
-								<span class="help-text">Select one or more</span>
-                            </span></span>
-                        </td>
-                        <td>Active</td>
-                        <td>10/05/2019</td>
-                        <td class="iqies-list-button-group">
-                            <span class="roActions ro1">
-                                <a href="javascript:void(0)" onClick="$('.ro1').toggleClass('hide');">Edit</a>
-                            </span>
-                            <span class="ro1 hide">
-                                <a href="javascript:void(0)" onClick="saveRO()">Save</a> <span>|</span> <a href="javascript:void(0)"  onClick="$('.ro1').toggleClass('hide');">Cancel</a></span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-                <script>
+                    </div>
+                    <div class="col col-md-12 roSDedit hide form-group">
+                        <label>Surveyor Disciplines</label>
+                        <select multiple="multiple" style="display: none;" class="multiselect surveyDis"><option>Select one</option>
+ <option>Architect</option>
+ <option>Cytotechnologist</option>
+ <option>Engineer</option>
+ <option>Generalist</option>
+ <option>Health Care Administrator</option>
+ <option>Home Health Aide</option>
+ <option>Human Services Professional</option>
+ <option>Laboratorian</option>
+ <option>Licensed Practical (Vocational) Nurse</option>
+ <option>Life Safety Code Inspector</option>
+ <option>Medical Records Administrator</option>
+ <option>Medical Technologist</option>
+ <option>Nutritionist/Dietitian</option>
+ <option>Nutritionist/Dietitian; Qualified Intellectual Disability Professional (QIDP)</option>
+ <option>Occupational Therapist</option>
+ <option>Pathologist</option>
+ <option>Pharmacist</option>
+ <option>Physical Therapist</option>
+ <option>Physician</option>
+ <option>Physician; Qualified Intellectual Disability Professional (QIDP)</option>
+ <option>Psychologist</option>
+ <option>Recreational Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
+ <option>Registered Nurse</option>
+ <option>Registered Nurse: Qualified Intellectual Disability Professional (QIDP)</option>
+ <option>Sanitarian</option>
+ <option>Social Worker</option>
+ <option>Social Worker; Qualified Intellectual Disability Professional (QIDP)</option>
+ <option>Speech Pathologist/Audiologist/Therapist</option>
+ <option>Speech Pathologist/Audiologist/Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
+ <option>Speech Therapist</option>
+ <option>X-Ray Specialist</option>
+ <option>Other</option></select>
+                        <span class="help-text">Select one or more</span>                        
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="saveRO()">Save</button>
+              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+  </div>
+                
+            <script>
                     function saveRO(){
                         $('.ro1').toggleClass('hide'); 
                         //$('.roFSID').html( $('.roFSIDinput').val()); 
@@ -355,13 +368,15 @@
                 </div>
                 <div class="col col-md-3 form-group">
                     <label>Federal Surveyor ID</label>
-                    <input type="text">
+                    <input type="text" class="fsIDinput1">
                 </div>
                 <div class="col col-md-3 form-group confirmInput">
                     <label>Confirm Federal Surveyor ID</label>
                     <input type="text">
                     
                 </div>
+                <div class="col-12">
+                <p class="iq-input-info-msg" style="font-size: 1rem;">Federal Survey ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. By entering a Federal Survey ID, information from existing ASPEN accounts will be linked to iQIES user profiles.</p></div>
                 <!--<div class="col col-md-3 form-group">
                     <label>&nbsp;</label>
                     <button class="btn btn-outline-primary valiidateButton" onClick="if($('.fsIDmsg').hasClass('hide')){ $('.fsIDmsg').removeClass('hide');} else { $('.fsIDmsg').addClass('hide'); $('#si2').attr('checked',true); }">Validate and Apply</button>  
@@ -422,34 +437,12 @@
                 </div>
             </div>-->
             <div class="iq-button-wrapper si hide">
-                <button class="btn btn-primary" onClick="saveID">Save</button> <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
+                <button class="btn btn-primary" onClick="saveID()">Save</button> <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
             </div>
+                
             </div>
             </section>
-                <script>
-                    function saveID(){
-                        if($('.fsIDmsg').hasClass('hide')){ 
-                            $('.fsIDmsg').removeClass('hide');
-                        } else { 
-                            $('.fsIDmsg').addClass('hide'); 
-                            $('#si2').attr('checked',true); 
-                            $('.si').toggleClass('hide'); 
-                            $('span.surveyor').removeClass('iq-not-available'); 
-                            $('span.surveyor').html( $('input[name=si]:checked').val() ); 
-                            if($('input[name=si]:checked').val() != 'No') { 
-                                $('span.surveyorDisciplines').removeClass('iq-not-available'); 
-                                $('span.surveyorDisciplines').html( $('.surveyDis option:selected').text() );
-                            } else { 
-                                $('span.surveyorDisciplines').html('Not applicable');
-                            }
-                            $('.fsIDform input').attr('readonly', true); 
-                            $('.fsIDform input').addClass('read-only-text'); 
-                            $('.validateButton').addClass('hide'); 
-                            $('span.fsID').removeClass('iq-not-available'); 
-                            $('span.fsID').html( $('.fsIDform input').val()); 
-                        }
-                    }
-                    </script>
+                
             </div>
             <div class="edit-view orgStep">
                 
@@ -488,7 +481,8 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
                     <tr class="ca-row">
                         <td><span class="roleName">State Agency General User</span></td>
                         <td>California</td>
-                        <td class="manU"><span class="iq-not-available">No information</span></td><td class="worU"><span class="iq-not-available">No information</span></td>
+                        <td class="manU"><span class="iq-not-available">No information</span></td>
+                        <td class="worU"><span class="iq-not-available">No information</span></td>
                         <td><span class="saS"><span class="iq-not-available">No information</span></span></td>
                         <td><span class="saSD"><span class="iq-not-available">No information</span></span></td>
                         <td>Active</td><td>10/06/2019</td><td><a href="javascript:void(0)" data-toggle="modal" data-target="#editSA">Edit</a></td>
@@ -590,9 +584,7 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
                 
                 
                 <br>
-            <section class="mt-5 hide">
-                
-            
+            <section class="mt-5">
             <div class="row si">
                 <div class="col col-12">
                      <h2>User Information <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button></h2>
@@ -606,16 +598,6 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
                 
                 
             </div>
-            <div class="row si">
-                <div class="col col-md-3">
-                <p><label>Surveyor</label>
-                <span class="iq-not-available surveyor">No information</span></p>
-                </div>
-                <div class="col col-md-9">
-                <p><label>Surveyor Disciplines</label>
-                <span class="iq-not-available surveyorDisciplines">No information</span></p>
-                </div>
-            </div>
             <div class="iq-conditional-content si hide"><div class="alert alert-danger fsIDmsg hide" role="alert">
                     <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
             </div>
@@ -625,75 +607,52 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
                 </div>
                 <div class="col col-md-3 form-group">
                     <label>Federal Surveyor ID</label>
-                    <input type="text">
+                    <input type="text" class="fsIDinput2">
                 </div>
                 <div class="col col-md-3 form-group confirmInput">
                     <label>Confirm Federal Surveyor ID</label>
                     <input type="text">
                     
                 </div>
-                <div class="col col-md-3 form-group">
-                    <label>&nbsp;</label>
-                    <button class="btn btn-outline-primary valiidateButton" onClick="if($('.fsIDmsg').hasClass('hide')){ $('.fsIDmsg').removeClass('hide');} else { $('.fsIDmsg').addClass('hide'); $('#si4').attr('checked',true); }">Validate and Apply</button><!--  -->
+                <div class="col-12">
+                    <p class="iq-input-info-msg" style="font-size: 1rem;">Federal Survey ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. By entering a Federal Survey ID, information from existing ASPEN accounts will be linked to iQIES user profiles.</p>
                 </div>
-            </div>
-            <div class="row si hide">
-                <div class="col col-md-3 col-lg-2">
                 
-                <fieldset>
-            <legend>Surveyor</legend>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="si3" name="si" class="custom-control-input" onChange="if(this.checked) { $('.sd').removeClass('hide');}" value="Yes">
-              <label class="custom-control-label" for="si3"> Yes </label>
-              </div>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="si4" name="si" class="custom-control-input" onChange="if(this.checked){$('.sd').addClass('hide');}" value="No">
-              <label class="custom-control-label" for="si4"> No </label>
-              </div>
-            
-            </fieldset>
-                </div>
-                <div class="col col-md-9 col-lg-10 sd hide">
-                <p><label>Surveyor Disciplines</label>
-                 <select multiple="multiple" style="display: none;" class="multiselect surveyDis"><option>Select one</option>
-     <option>Architect</option>
-     <option>Cytotechnologist</option>
-     <option>Engineer</option>
-     <option>Generalist</option>
-     <option>Health Care Administrator</option>
-     <option>Home Health Aide</option>
-     <option>Human Services Professional</option>
-     <option>Laboratorian</option>
-     <option>Licensed Practical (Vocational) Nurse</option>
-     <option>Life Safety Code Inspector</option>
-     <option>Medical Records Administrator</option>
-     <option>Medical Technologist</option>
-     <option>Nutritionist/Dietitian</option>
-     <option>Nutritionist/Dietitian; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Occupational Therapist</option>
-     <option>Pathologist</option>
-     <option>Pharmacist</option>
-     <option>Physical Therapist</option>
-     <option>Physician</option>
-     <option>Physician; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Psychologist</option>
-     <option>Recreational Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Registered Nurse</option>
-     <option>Registered Nurse: Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Sanitarian</option>
-     <option>Social Worker</option>
-     <option>Social Worker; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Speech Pathologist/Audiologist/Therapist</option>
-     <option>Speech Pathologist/Audiologist/Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Speech Therapist</option>
-     <option>X-Ray Specialist</option>
-     <option>Other</option></select>
-										 <span class="help-text">Select one or more</span></p>
-                </div>
             </div>
             <div class="iq-button-wrapper si hide">
-                <button class="btn btn-primary" onClick="$('.si').toggleClass('hide'); $('span.surveyor').removeClass('iq-not-available'); $('span.surveyor').html( $('input[name=si]:checked').val() ); if($('input[name=si]:checked').val() != 'No') { $('span.surveyorDisciplines').removeClass('iq-not-available'); $('span.surveyorDisciplines').html( $('.surveyDis option:selected').text() );} else { $('span.surveyorDisciplines').html('Not applicable');}; $('.fsIDform input').attr('readonly', true); $('.fsIDform input').addClass('read-only-text'); $('.validateButton').addClass('hide'); $('span.fsID').removeClass('iq-not-available'); $('span.fsID').html( $('.fsIDform input').val()); ">Save</button> <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
+                <button class="btn btn-primary" onClick="saveID()">Save</button> <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
             </div>
+                <script>
+                    function saveID(){
+                        if($('.fsIDmsg').hasClass('hide')){ 
+                            $('.fsIDmsg').removeClass('hide');
+                        } else { 
+                            $('.fsIDmsg').addClass('hide'); 
+                            console.log($('.fsIDform input').val());
+                            $('span.fsID').removeClass('iq-not-available'); 
+                            if($('.fsIDform input.fsIDinput1').val()){
+                                $('span.fsID').html( $('.fsIDform input.fsIDinput1').val());
+                            } else {
+                                $('span.fsID').html( $('.fsIDform input.fsIDinput2').val());
+                            }
+                            //$('#si2').attr('checked',true); 
+                            //$('#si4').attr('checked',true);
+                            $('.si').toggleClass('hide'); 
+                            //$('span.surveyor').removeClass('iq-not-available'); 
+                            //$('span.surveyor').html( $('input[name=si]:checked').val() ); 
+                            //if($('input[name=si]:checked').val() != 'No') { 
+                              //  $('span.surveyorDisciplines').removeClass('iq-not-available'); 
+                            //    $('span.surveyorDisciplines').html( $('.surveyDis option:selected').text() );
+                            //} else { 
+                              //  $('span.surveyorDisciplines').html('Not applicable');
+                            //}
+                            //$('.fsIDform input').attr('readonly', true); 
+                            //$('.fsIDform input').addClass('read-only-text'); 
+                            //$('.validateButton').addClass('hide'); 
+                           
+                        }
+                    }
+                    </script>
             </div>
             </section>
             </div>
@@ -701,19 +660,19 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
                   
             </div>
             <div class="modal fade" id="editSA" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Edit User Role Details</h4>
+              <h4 class="modal-title">Edit State Agency General User<br><small>California</small></h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
               </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-12 form-group">
+                    <div class="col-6 form-group">
                         <label>Management Unit</label>
-                <select onChange="if(this.options[this.selectedIndex].value != 0) { $('.ca-row .workUnit').attr('disabled',false); }" class="managementUnit"><option value="0">Select one</option>
+                <select onChange="if(this.options[this.selectedIndex].value != 0) { $('.workUnit').attr('disabled',false); }" class="managementUnit"><option value="0">Select one</option>
                         <option>Administration</option>
                         <option>Adult Services Bureau</option>
                         <option>CLIA</option>
@@ -725,11 +684,11 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
                         <option>Special Services Bureau</option>
                         <option>Support</option>
                     <option>Unlicensed Facilities</option></select></div>
-                    <div class="col-12 form-group">
+                    <div class="col-6 form-group">
                         <label>Work Unit</label>
                         <select class="disabled workUnit" disabled><option value="0">Select one</option><option>Engineering</option><option>Life Safety Code</option></select><span class="help-text">Management Unit must be selected</span>
                     </div>
-                        <div class="col col-md-3 col-lg-2">
+                        <div class="col col-md-12">
                 
                 <fieldset>
             <legend>Surveyor</legend>
@@ -744,7 +703,7 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
             
             </fieldset>
                 </div>
-                <div class="col col-md-9 col-lg-10 sd hide">
+                <div class="col col-md-12 sd hide">
                 <p><label>Surveyor Disciplines</label>
                  <select multiple="multiple" style="display: none;" class="multiselect surveyDis"><option>Select one</option>
      <option>Architect</option>
@@ -787,12 +746,31 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
             </div>
               </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveSA()">Save</button>
               <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
               </div>
             </div>
           </div>
   </div>
+            
+            <script>
+                function saveSA(){
+                    $('.si').toggleClass('hide'); 
+                    $('span.surveyor').removeClass('iq-not-available'); 
+                    $('span.surveyor').html( $('input[name=si]:checked').val() ); 
+                    if($('input[name=si]:checked').val() != 'No') { 
+                        $('span.surveyorDisciplines').removeClass('iq-not-available'); 
+                        $('span.surveyorDisciplines').html( $('.surveyDis option:selected').text() );
+                    } else { 
+                        $('span.surveyorDisciplines').html('Not applicable');
+                    } 
+                    $('.fsIDform input').attr('readonly', true); 
+                    $('.fsIDform input').addClass('read-only-text'); 
+                    $('.validateButton').addClass('hide'); 
+                    $('span.fsID').removeClass('iq-not-available'); 
+                    $('span.fsID').html( $('.fsIDform input').val());
+                }
+                </script>
         </div>
         <div class="tab-pane" id="v">
             <h3>Vendor</h3>
