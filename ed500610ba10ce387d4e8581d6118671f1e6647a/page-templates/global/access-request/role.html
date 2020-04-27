@@ -18,6 +18,13 @@
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
     <link rel="stylesheet"
     href="../../../../src/assets/prototype-styles/hha.css">
+    <style>
+        .table-striped { border: 1px solid #D6D7D9; }
+        .table-striped tbody th { padding-left: 1rem; padding-right: 1rem; }
+        .table-striped tbody td, .table-striped tbody th, .table-striped thead th { border-left: 1px solid #D6D7D9; border-right: 1px solid #D6D7D9; }
+        .table-striped tbody tr:last-child td, .table-striped tbody tr:last-child th { border-bottom: 1px solid #D6D7D9;}
+        .table-striped tbody td i { margin-left: 1rem;}
+    </style>
     
 </head>
 
@@ -154,7 +161,7 @@
                   <div class="card-header d-flex">
                     <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#aoInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
                       </button>
                     </div>
                   <div id="aoInfo" class="collapse">
@@ -216,7 +223,7 @@
                   <div class="card-header d-flex">
                     <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#coInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
                       </button>
                     </div>
                   <div id="coInfo" class="collapse">
@@ -324,7 +331,7 @@
                   <div class="card-header d-flex">
                     <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#macInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
                       </button>
                     </div>
                   <div id="macInfo" class="collapse">
@@ -413,7 +420,7 @@
                   <div class="card-header d-flex">
                     <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#roInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
                       </button>
                     </div>
                   <div id="roInfo" class="collapse">
@@ -576,7 +583,7 @@
                   <div class="card-header d-flex">
                     <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#paInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
                       </button>
                     </div>
                   <div id="paInfo" class="collapse">
@@ -710,7 +717,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                   <div class="card-header d-flex">
                     <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#saInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
                       </button>
                     </div>
                   <div id="saInfo" class="collapse">
@@ -876,14 +883,14 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                   <div class="card-header d-flex">
                     <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#vInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Information</span><span class="hide">Hide Role Information</span>
+                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
                       </button>
                     </div>
                   <div id="vInfo" class="collapse">
                     <div class="card-body px-0">
                      <table class="dataTable table-striped">
                          <thead>
-                             <tr><th></th>
+                             <tr><th style="width: 20rem;"></th>
                              <th>Assessment Submitter</th>
                              </tr>
                          </thead>
@@ -959,10 +966,10 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
         </div>
         <div class="col-md-12">
           <div class="iq-button-wrapper edit-view active roleStep">
-            <button class="btn btn-primary" onClick="selectOrg()">Next</button> <button class="btn btn-link" onClick="selectCategory();">Previous</button>
+            <button class="btn btn-primary" onClick="selectOrg()">Next</button> <button class="btn btn-outline-primary" onClick="selectCategory();">Previous</button> <a href="index.html" class="btn btn-link">Cancel</a>
           </div>
            <div class="iq-button-wrapper edit-view orgStep">
-            <button class="btn btn-primary submitButton" onClick="submitRequest()">Submit Request</button> <button class="btn btn-link" onClick="selectRole()">Previous</button>
+            <button class="btn btn-primary submitButton" onClick="submitRequest()">Submit Request</button> <button class="btn btn-outline-primary" onClick="selectRole()">Previous</button> <a href="index.html" class="btn btn-link">Cancel</a>
           </div>
         </div>
           
