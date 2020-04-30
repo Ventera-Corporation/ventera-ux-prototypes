@@ -4366,9 +4366,13 @@
           if (len >= max) {
             var char = len - max; 
             $('.fdt').addClass('iq-input-error-msg'); 
-            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+			$('.fdt').html('Limit exceeded by ' + char + ' characters' );
+            //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
           } else {
-            $('#charNum').html(len + '/256.');
+            //$('#charNum').html(len + '/256.');
+			$('.fdt').removeClass('iq-input-error-msg'); 
+			  
+			$('.fdt').html('Limit to ' + max + ' characters');
           }
         });
 		
