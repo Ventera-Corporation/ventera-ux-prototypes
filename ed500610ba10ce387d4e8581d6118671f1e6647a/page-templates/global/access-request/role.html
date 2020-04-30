@@ -120,16 +120,34 @@
       <div class="row">
         <div class="col-md-12"> 
               <div class="iq-page-header-content">
-                 <div class="edit-view active roleStep">
-                
+        <div class="edit-view active roleStep">
+                <div class="alert alert-danger errorMsg hide roleErrorMsg" role="alert">
+          <div class="alert-content">
+                 <h2>Unable to Proceed</h2>
+				  <p>A user role must be selected.</p>
+             
+          </div>
+        </div>
                 <h1>Select a User Role</h1>
+            <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 <div class="mt-5 mb-4"><p class="lead">
-                    Select the user role that best fits your needs. <!--For more information, review <a href="#">All About iQIES Roles <i class="fal fa-external-link"></i></a>.-->
+                    Select the user role that best fits your needs. <span class="iq-asterisk">*</span> <!--For more information, review <a href="#">All About iQIES Roles <i class="fal fa-external-link"></i></a>.-->
           </p></div>
                  </div>
                 <div class="edit-view orgStep">
-                    
+                    <div class="alert alert-danger errorMsg hide submitErrorMsg" role="alert">
+          <div class="alert-content">
+                 <h2>Unable to Submit</h2>
+				  <p> Please review and correct the following:</p> 
+                  <ul>
+                      <li class="other"><a href="#" class="roleN">Accrediting Organization</a> is required.</li>
+                      <li class="provider hide">Add at least one Provider</li>
+                  </ul>
+             
+          </div>
+        </div>
                     <h1>Add Organizations</h1>
+                     <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
               </div>
             
@@ -189,8 +207,8 @@
           </p></div>
             
           <div class="form-group">
-              <label>Accrediting Organization <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
-              <select class="autoWidth"><option>Select one</option><option>The Joint Comission (TJC)</option>
+              <label>Accrediting Organization <span class="iq-asterisk">*</span></label>
+              <select class="autoWidth aoSelect"><option>Select one</option><option>The Joint Comission (TJC)</option>
               <option>Community Health Accreditation Partner (CHAP)</option>
               <option>Accreditation Commission for Health Care (ACHC)</option></select>
           </div>
@@ -367,8 +385,8 @@
                  <div class="mt-5 mb-4"></div>
             
           <div class="form-group">
-              <label>Medicare Administrative Contractor <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
-              <select class="autoWidth"><option>Select one</option>
+              <label>Medicare Administrative Contractor <span class="iq-asterisk">*</span></label>
+              <select class="autoWidth macSelect"><option>Select one</option>
                   <option>Anthem Health Plans of New Hampshire</option>
       <option>Arkansas Blue Cross Blue Shield</option>
       <option>Associated Hospital Services</option>
@@ -499,8 +517,8 @@
                  <div class="mt-5 mb-4"></div>
             <div class="row">
           <div class="form-group col col-md-3">
-              <label>Region <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
-              <select><option>Select one</option>
+              <label>Region <span class="iq-asterisk">*</span></label>
+              <select class="regionSelect"><option>Select one</option>
                   <option>1 - Boston</option>
                   <option>2 - New York</option>
                   <option>3 - Philadelphia</option>
@@ -658,12 +676,12 @@
                 </div>
                 </div>
             <div class="edit-view orgStep">
-                  <div class="mt-5 mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
+                  <div class="mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
             <div class="row">
           <div class="form-group col col-md-3">
               <label>CCN</label>
               <div class="input-group">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control providerInput">
                   <button class="btn btn-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').removeClass('hide'); $(this).removeClass('btn-primary'); $(this).addClass('btn-outline-primary');">Add</button>
               </div>
           </div>
@@ -819,7 +837,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
             <div class="row">
           <div class="form-group col col-md-3">
               <label>State <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
-              <select><option>Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
+              <select class="stateSelect"><option>Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
           </div>
                 </div>
                  <div class="row">
@@ -921,12 +939,12 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                 </div>
                 </div>
             <div class="edit-view orgStep">
-                  <div class="mt-5 mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
+                  <div class="mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
             <div class="row">
           <div class="form-group col col-md-3">
               <label>CCN</label>
               <div class="input-group">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control vendorInput">
                   <button class="btn btn-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').removeClass('hide'); $(this).removeClass('btn-primary'); $(this).addClass('btn-outline-primary');">Add</button>
               </div>
           </div>
@@ -956,7 +974,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
         </div>
         <div class="col-md-12">
           <div class="iq-button-wrapper edit-view active roleStep">
-            <button class="btn btn-primary" onClick="selectOrg()">Next</button> <button class="btn btn-outline-primary" onClick="selectCategory();">Previous</button> <a href="index.html" class="btn btn-link">Cancel</a>
+            <button class="btn btn-primary" onClick="selectOrg()">Next</button> <a href="category.html" class="btn btn-outline-primary" >Previous</a> <a href="index.html" class="btn btn-link">Cancel</a>
           </div>
            <div class="iq-button-wrapper edit-view orgStep">
             <button class="btn btn-primary submitButton" onClick="submitRequest()">Submit Request</button> <button class="btn btn-outline-primary" onClick="selectRole()">Previous</button> <a href="index.html" class="btn btn-link">Cancel</a>
@@ -967,13 +985,22 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
     </div>
     
 <script>
+    
+    
       function selectOrg(){
-          //console.log( $('input').val() );
-          $('.edit-view.roleStep').removeClass('active');
-          $('.edit-view.orgStep').addClass('active');
-          if( $('input[name="userRole"]:checked').val() == 'pa' || $('input[name="userRole"]:checked').val() == 'v'){ $('.orgStep .submitButton').addClass('hide'); }
+          if( $('input[name="userRole"]').is(':checked')) { 
+              $('.edit-view.roleStep').removeClass('active');
+              $('.edit-view.orgStep').addClass('active');
+              if( $('input[name="userRole"]:checked').val() == 'pa' || $('input[name="userRole"]:checked').val() == 'v'){ 
+                  $('.orgStep .submitButton').addClass('hide');
+              }
+              $('.errorMsg.roleErrorMsg').addClass('hide'); 
+          } else {
+              $('.errorMsg.roleErrorMsg').removeClass('hide');
+              $('html, body').animate({ scrollTop: 0 }, 500);
+          }
       }
-        function selectRole(){
+    function selectRole(){
           $('.edit-view.roleStep').addClass('active');
           $('.edit-view.orgStep').removeClass('active');
           $('.orgStep .submitButton').removeClass('hide');
@@ -982,7 +1009,84 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
          window.location = 'category.html'; //+ $('input[name="userRole"]:checked').val();
     }
     function submitRequest(){
-        window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
+        //$('.submitErrorMsg .roleN').html($('input[name="userRole"]:checked ~ label strong').html());
+        console.log($('input[name="userRole"]:checked').val());
+        console.log($('.aoSelect option:selected').text());
+        switch( $('input[name="userRole"]:checked').val() ) { 
+            case 'ao':
+                if($('.aoSelect option:selected').text() == "Select one" ){
+                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
+                    $('.submitErrorMsg .roleN').html('Accrediting Organization');
+                    $('html, body').animate({ scrollTop: 0 }, 500);
+                } else {
+                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
+                }
+                break;
+            case 'mac':
+                if($('.macSelect option:selected').text() == "Select one" ){
+                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
+                    $('.submitErrorMsg .roleN').html('Medicare Administrative Contractor');
+                    $('html, body').animate({ scrollTop: 0 }, 500);
+                } else {
+                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
+                }
+                break;
+            case 'ro':
+                if($('.regionSelect option:selected').text() == "Select one" ){
+                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
+                    $('.submitErrorMsg .roleN').html('Region');
+                    $('html, body').animate({ scrollTop: 0 }, 500);
+                } else {
+                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
+                }
+                break;
+            case 'sa':
+                if($('.stateSelect option:selected').text() == "Select one" ){
+                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
+                    $('.submitErrorMsg .roleN').html('State');
+                    
+                    $('html, body').animate({ scrollTop: 0 }, 500);
+                } else {
+                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
+                }
+                break;
+            case 'pa':
+                if($('.providerInput').val() == "" ){
+                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.other').addClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.provider').removeClass('hide'); 
+                    $('html, body').animate({ scrollTop: 0 }, 500);
+                } else {
+                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
+                }
+                break;
+            case 'v':
+                if($('.vendorInput').val() == "" ){
+                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.other').addClass('hide'); 
+                    $('.errorMsg.submitErrorMsg li.provider').removeClass('hide'); 
+                    $('html, body').animate({ scrollTop: 0 }, 500);
+                } else {
+                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
+                }
+                break;
+        }
+        
+        
     }
   </script>
    
