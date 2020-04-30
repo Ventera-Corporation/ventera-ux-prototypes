@@ -148,38 +148,27 @@
     <div class="tab-content">
         <div class="tab-pane active" id="ao">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
-            <div class="custom-control custom-radio form-group">
-                <input id="ao-1" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-1" class="custom-control-label"><strong>Accrediting Organization User</strong><br>Manage and upload deemed provider survey and certification information; generate and view reports.</label>
-            </div>
-            <div class="custom-control custom-radio form-group">
-                <input id="ao-2" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-2" class="custom-control-label"><strong>Accrediting Organization Security Official</strong><br>Approve iQIES user roles in HARP; manage user profiles.</label>
-            </div>
-            </fieldset>
-                <div class="iq-accordion showhide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#aoInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
-                      </button>
-                    </div>
-                  <div id="aoInfo" class="collapse">
-                    <div class="card-body px-0">
-                     <table class="dataTable table-striped">
+                <table class="dataTable table-striped">
                          <thead>
-                             <tr><th></th><th>Accrediting Organization User</th><th>Accrediting Organization Security Official</th></tr>
+                             <tr><th></th><th><div class="custom-control custom-radio form-group">
+                <input id="ao-1" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-1" class="custom-control-label">Accrediting Organization User</label>
+            </div></th><th><div class="custom-control custom-radio form-group">
+                <input id="ao-2" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-2" class="custom-control-label">Accrediting Organization Security Official</label>
+            </div></th></tr>
                          </thead>
                          <tbody>
                              <tr><th>Add AO Provider Information</th><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td><td></td></tr>
                              <tr><th>Add &amp; Manage AO Surveys</th><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td><td></td></tr>
                              <tr><th>iQIES Role Approval in HARP</th><td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td></tr>
+                             
                          </tbody>
                     </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                
+            <!--<fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            
+            
+            </fieldset>-->
+                
 
                 
             </div>
@@ -189,7 +178,7 @@
           </p></div>
             
           <div class="form-group">
-              <label>Accrediting Organization <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
+              <label>Accrediting Organization</label>
               <select class="autoWidth"><option>Select one</option><option>The Joint Comission (TJC)</option>
               <option>Community Health Accreditation Partner (CHAP)</option>
               <option>Accreditation Commission for Health Care (ACHC)</option></select>
@@ -367,7 +356,7 @@
                  <div class="mt-5 mb-4"></div>
             
           <div class="form-group">
-              <label>Medicare Administrative Contractor <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
+              <label>Medicare Administrative Contractor</label>
               <select class="autoWidth"><option>Select one</option>
                   <option>Anthem Health Plans of New Hampshire</option>
       <option>Arkansas Blue Cross Blue Shield</option>
@@ -498,9 +487,9 @@
             <div class="edit-view orgStep">
                  <div class="mt-5 mb-4"></div>
             <div class="row">
-          <div class="form-group col col-md-3">
-              <label>Region <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
-              <select><option>Select one</option>
+          <div class="form-group col col-md-6">
+              <label>Region</label>
+              <select class="autoWidth"><option>Select one</option>
                   <option>1 - Boston</option>
                   <option>2 - New York</option>
                   <option>3 - Philadelphia</option>
@@ -536,7 +525,7 @@
                     <p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN"></p>
                     
                 <div class="row">
-                <div class="form-group col col-md-3">
+                <div class="form-group col col-md-6">
               <label>Federal Surveyor ID</label>
               <input type="text">
                     
@@ -551,38 +540,7 @@
         </div>
         <div class="tab-pane" id="pa">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-3" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-3" class="custom-control-label"><strong> Assessment Submitter</strong><br>
-                    Upload XML and ZIP formatted patient assessments; generate and view reports. </label>
-                </div>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-1" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-1" class="custom-control-label"><strong>Provider Administrator</strong><br>
-                    Create and manage patient profiles; view, create, modify and inactiavate patient assessments; generate and view reports. (Cannot upload patient assessments)</label>
-                </div>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-4" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-4" class="custom-control-label"><strong>Provider Assessment Coordinator</strong><br>
-                    Create and manage patient profiles; find, view, create, and submit assessments; generate and view reports.</label>
-                </div>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-2" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-2" class="custom-control-label"><strong>Provider Assessment Viewer</strong><br>
-                    Read-only access to patient profiles and assessments; generate and view reports. (Cannot upload patient assessments)</label>
-                </div>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-5" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-5" class="custom-control-label"><strong>Provider Security Official</strong><br>
-                    Approve and manage iQIES user roles in Saviynt; create and manage patient profiles; upload XML and ZIP formatted patient assessments; create, manage, submit, modify, and inactivate patient assessments; generate and view reports.</label>
-                </div>
-            </fieldset>
-                <div class="iq-accordion showhide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#paInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
-                      </button>
-                    </div>
-                  <div id="paInfo" class="collapse">
-                    <div class="card-body px-0">
+           
                      <table class="dataTable table-striped">
                          <thead>
                              <tr><th></th>
@@ -650,12 +608,24 @@
                                <td>&nbsp;</td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
+                             <tr>
+                               <th></th>
+                               <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td>
+                                <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td> <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td> <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td> <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td>
+                             </tr>
                          </tbody>
 </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                     
                 </div>
             <div class="edit-view orgStep">
                   <div class="mt-5 mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
@@ -678,7 +648,7 @@
               <p class="mb-2">1 Provider</p>
               <table class="table"><thead><tr><th>Provider</th><th>Provider Type</th><th>ID</th><th>Actions</th></tr></thead>
                   <tbody><tr><td>Laguna Rainbow Home Health<br>PO Box 236<br>
-New Laguna, IL 63222</td><td>Home Health Agency</td><td>CCN 327046<br>
+New Laguna, IL 63222</td><td>Home Health Agency</td><td>iQIES 327046<br>
 FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').addClass('hide'); $('.addButton').addClass('btn-primary'); $('.addButton').removeClass('btn-outline-primary'); ">Remove</a></td></tr></tbody></table>
               </div></div>
             
@@ -817,9 +787,9 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
             <div class="edit-view orgStep">
                   <div class="mt-5 mb-4"></div>
             <div class="row">
-          <div class="form-group col col-md-3">
-              <label>State <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
-              <select><option>Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
+          <div class="form-group col col-md-6">
+              <label>State</label>
+              <select class="autoWidth"><option>Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
           </div>
                 </div>
                  <div class="row">
@@ -839,13 +809,10 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     </div>
                 </div>
                 <div class="sfsi hide iq-conditional-content">
-            <p>Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors.</p>
-                <p>Federal Surveyor ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. Even if you are not a federal surveyor, you will be assigned a Federal Surveyor ID within Employee Identification tab in ASPEN as shown in the image below.</p>
-                    <p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN"></p>
-                    
+            <p>Staff ID/Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors.</p>
                 <div class="row">
-                <div class="form-group col col-md-3">
-              <label>Federal Surveyor ID</label>
+                <div class="form-group col col-md-6">
+              <label>Staff ID/Federal Surveyor ID</label>
               <input type="text">
                     
                 
@@ -941,7 +908,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
               <p class="mb-2">1 Provider</p>
               <table class="table"><thead><tr><th>Provider</th><th>Provider Type</th><th>ID</th><th>Actions</th></tr></thead>
                   <tbody><tr><td>Laguna Rainbow Home Health<br>PO Box 236<br>
-New Laguna, IL 63222</td><td>Home Health Agency</td><td>CCN 327046<br>
+New Laguna, IL 63222</td><td>Home Health Agency</td><td>iQIES 327046<br>
 FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').addClass('hide'); $('.addButton').addClass('btn-primary'); $('.addButton').removeClass('btn-outline-primary'); ">Remove</a></td></tr></tbody></table>
               </div></div>
             

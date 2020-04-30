@@ -12,6 +12,8 @@
     href="../../../../src/assets/prototype-styles/design-system.css">
   <link rel="stylesheet"
     href="../../../../src/assets/prototype-styles/prototype.css">
+    <!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
         <!-- you need this font to have the right font weight expressed -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
 <!-- to include fontsome icons professional version -->
@@ -135,36 +137,33 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                   </div>
             
-            <div class="alert alert-warning fsIDWarningmsg hide" role="alert">
-                    <div class="alert-content">Federal Survey ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. By entering a Federal Survey ID, information from existing ASPEN accounts will be linked to iQIES user profiles. </div>
-                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-            </div>
+            
             
             
             <h2>User Roles <a href="category.html" class="float-right btn btn-outline-primary">Request User Role</a></h2> 
         </div>
         <div class="col-12">
     <nav class="nav nav-horizontal sr-only">
-        <a class="nav-link active" href="#ao" data-toggle="tab" role="tab">AO</a>
-        <a class="nav-link" href="#co" data-toggle="tab" role="tab">CO</a>
-        <a class="nav-link" href="#mac" data-toggle="tab" role="tab">MAC</a>
-		<a class="nav-link" href="#ro" data-toggle="tab" role="tab">RO</a>
-        <a class="nav-link" href="#pa" data-toggle="tab" role="tab">PA</a>
-        <a class="nav-link" href="#sa" data-toggle="tab" role="tab">SA</a>
-        <a class="nav-link" href="#v" data-toggle="tab" role="tab">V</a>
+        <a class="nav-link active" href="#ao" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">AO</a>
+        <a class="nav-link" href="#co" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">CO</a>
+        <a class="nav-link" href="#mac" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">MAC</a>
+		<a class="nav-link" href="#ro" data-toggle="tab" role="tab" onClick="$('#FSID').removeClass('hide');">RO</a>
+        <a class="nav-link" href="#pa" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">PA</a>
+        <a class="nav-link" href="#sa" data-toggle="tab" role="tab" onClick="$('#FSID').removeClass('hide');">SA</a>
+        <a class="nav-link" href="#v" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">V</a>
     </nav>
     <div class="tab-content mt-4">
         <div class="tab-pane active" id="ao">
             <h3>Accrediting Organization</h3>
             <div class="edit-view active roleStep"> 
-                <table class="table">
+                <table class="display responsive" id="aoTable">
                 <thead>
-                    <tr><th>User Role</th><th>Accrediting Organization</th><th>Status</th><th>Status Date</th></tr>
+                    <tr><th><span>User Role</span></th><th><span>Accrediting Organization</span></th><th><span>Status</span></th><th><span>Status Date</span></th></tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><span class="roleName">Accrediting Organization User</span></td>
-                        <td>The Joint Comission (TJC)</td><td>Requested</td><td>01/01/2020</td>
+                        <td>The Joint Comission (TJC)</td><td><span class="iq-status-pending"></span><small>Pending</small></td><td>01/01/2020</td>
                     </tr>
                 </tbody>
             </table>
@@ -176,14 +175,14 @@
         <div class="tab-pane" id="co">
             <h3>CMS Central Office</h3>
              <div class="edit-view active roleStep">
-                <table class="table">
+                <table class="display responsive" id="coTable">
                 <thead>
-                    <tr><th>User Role</th><th>CMS Central Office</th><th>Status</th><th>Status Date</th></tr>
+                    <tr><th><span>User Role</span></th><th><span>CMS Central Office</span></th><th><span>Status</span></th><th><span>Status Date</span></th></tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><span class="roleName">Central Office User</span></td>
-                        <td>CMS Central Office</td><td>Requested</td><td>01/01/2020</td>
+                        <td>CMS Central Office</td><td><span class="iq-status-pending"></span><small>Pending</small></td><td>01/01/2020</td>
                     </tr>
                     
                 </tbody>
@@ -196,14 +195,14 @@
         <div class="tab-pane" id="mac">
             <h3>CMS Contractor</h3>
             <div class="edit-view active roleStep">
-                <table class="table">
+                <table class="display responsive" id="macTable">
                 <thead>
-                    <tr><th>User Role</th><th>CMS Contractor</th><th>Status</th><th>Status Date</th></tr>
+                    <tr><th><span>User Role</span></th><th><span>CMS Contractor</span></th><th><span>Status</span></th><th><span>Status Date</span></th></tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><span class="roleName">Medicare Administrative Contractor</span></td>
-                        <td>BlueCrossBlueShield of Wyoming</td><td>Requested</td><td>01/01/2020</td>
+                        <td>BlueCrossBlueShield of Wyoming</td><td><span class="iq-status-pending"></span><small>Pending</small></td><td>01/01/2020</td>
                     </tr>
                     
                 </tbody>
@@ -216,9 +215,9 @@
         <div class="tab-pane" id="ro">
             <h3>CMS Regional Office</h3>
             <div class="edit-view active roleStep">
-                <table class="table">
+                <table class="display responsive" id="roTable">
                 <thead>
-                    <tr><th>User Role</th><th>CMS Regional Office</th><th>Surveyor</th><th>Surveyor Disciplines</th><th>Status</th><th>Status Date</th><th>Actions</th></tr>
+                    <tr><th><span>User Role</span></th><th><span>CMS Regional Office</span></th><th><span>Surveyor</span></th><th><span>Surveyor Disciplines</span></th><th><span>Status</span></th><th><span>Status Date</span></th><th>Actions</th></tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -226,7 +225,7 @@
                         <td>10 - Seattle</td>
                         <td><span class="iq-not-available">No information</span></td>
                         <td><span class="iq-not-available">No information</span></td>
-                        <td>Requested</td><td>01/01/2020</td>
+                        <td><span class="iq-status-pending"></span><small>Pending</small></td><td>01/01/2020</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -234,7 +233,7 @@
                         <td>10 - Seattle</td>
                         <td><span class="roS"><span class="iq-not-available">No information</span></span></td>
                         <td><span class="roSD"><span class="iq-not-available">No information</span></span></td>
-                        <td>Active</td>
+                        <td><span class="iq-status iq-status-open"></span><small>Active</small></td>
                         <td>10/05/2019</td>
                         <td><a href="javascript:void(0)" data-toggle="modal" data-target="#editRO">Edit</a></td>
                     </tr>
@@ -314,8 +313,7 @@
               </div>
             </div>
           </div>
-  </div>
-                
+  </div>  
             <script>
                     function saveRO(){
                         $('.ro1').toggleClass('hide'); 
@@ -339,108 +337,76 @@
             <div class="row si">
                 <div class="col col-12">
                      <h2>User Information <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button></h2>
-                </div>
-                <div class="col col-md-12">
-                    <p><label>Federal Surveyor ID</label>
-                        <span class="iq-not-available fsID">No information</span>
-                    </p>
-                    <p class="iq-input-info-msg" style="font-size: 1rem;">Federal Survey ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. By entering a Federal Survey ID, information from existing ASPEN accounts will be linked to iQIES user profiles.</p>
-                </div>
+                    <p><label>Do you have an account in ASPEN?</label>
+            Yes</p>
+            <br>
+                <div class="fsi iq-conditional-content">
+                    <div class="alert alert-warning fsIDWarningmsg" role="alert">
+                    <div class="alert-content">
                 
+                Federal Surveyor ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES.
+                </div>
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+               <p>
+              <label>Federal Surveyor ID</label>
+              <span class="iq-not-available fsID">No information</span></p>
+            
+            </div>
+                </div>                
+            </div>
+            <div class="iq-conditional-content si hide">
                 
-            </div>
-            <!--<div class="row si">
-                <div class="col col-md-3">
-                <p><label>Surveyor</label>
-                <span class="iq-not-available surveyor">No information</span></p>
-                </div>
-                <div class="col col-md-9">
-                <p><label>Surveyor Disciplines</label>
-                <span class="iq-not-available surveyorDisciplines">No information</span></p>
-                </div>
-            </div>-->
-            <div class="iq-conditional-content si hide"><div class="alert alert-danger fsIDmsg hide" role="alert">
-                    <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
-            </div>
-            <div class="row si hide fsIDform">
+                <div class="row si hide fsIDform">
                 <div class="col col-12">
                      <h2>Edit User Information </h2>
-                </div>
-                <div class="col col-md-3 form-group">
-                    <label>Federal Surveyor ID</label>
-                    <input type="text" class="fsIDinput1">
-                </div>
-                <div class="col col-md-3 form-group confirmInput">
-                    <label>Confirm Federal Surveyor ID</label>
-                    <input type="text">
-                    
-                </div>
-                <div class="col-12">
-                <p class="iq-input-info-msg" style="font-size: 1rem;">Federal Survey ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. By entering a Federal Survey ID, information from existing ASPEN accounts will be linked to iQIES user profiles.</p></div>
-                <!--<div class="col col-md-3 form-group">
-                    <label>&nbsp;</label>
-                    <button class="btn btn-outline-primary valiidateButton" onClick="if($('.fsIDmsg').hasClass('hide')){ $('.fsIDmsg').removeClass('hide');} else { $('.fsIDmsg').addClass('hide'); $('#si2').attr('checked',true); }">Validate and Apply</button>  
-                </div>-->
-            </div>
-            <!--<div class="row si hide">
-                <div class="col col-md-3 col-lg-2">
-                
-                <fieldset>
-            <legend>Surveyor</legend>
+               
+                      <fieldset>
+            <legend>Do you have an account in ASPEN?</legend>
             <div class="custom-control custom-radio">
-              <input type="radio" id="si1" name="si" class="custom-control-input" onChange="if(this.checked) { $('.sd').removeClass('hide');}" value="Yes">
-              <label class="custom-control-label" for="si1"> Yes </label>
+              <input type="radio" id="ox1" checked  name="ox" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
+              <label class="custom-control-label" for="ox1"> Yes </label>
               </div>
             <div class="custom-control custom-radio">
-              <input type="radio" id="si2" name="si" class="custom-control-input" onChange="if(this.checked){$('.sd').addClass('hide');}" value="No">
-              <label class="custom-control-label" for="si2"> No </label>
+              <input type="radio" id="ox2" name="ox" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
+              <label class="custom-control-label" for="ox2"> No </label>
               </div>
             
             </fieldset>
+                    
+                <div class="fsi iq-conditional-content">
+                    <div class="alert alert-danger fsIDmsg hide" role="alert">
+                    <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
                 </div>
-                <div class="col col-md-9 col-lg-10 sd hide">
-                <p><label>Surveyor Disciplines</label>
-                 <select multiple="multiple" style="display: none;" class="multiselect surveyDis"><option>Select one</option>
-     <option>Architect</option>
-     <option>Cytotechnologist</option>
-     <option>Engineer</option>
-     <option>Generalist</option>
-     <option>Health Care Administrator</option>
-     <option>Home Health Aide</option>
-     <option>Human Services Professional</option>
-     <option>Laboratorian</option>
-     <option>Licensed Practical (Vocational) Nurse</option>
-     <option>Life Safety Code Inspector</option>
-     <option>Medical Records Administrator</option>
-     <option>Medical Technologist</option>
-     <option>Nutritionist/Dietitian</option>
-     <option>Nutritionist/Dietitian; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Occupational Therapist</option>
-     <option>Pathologist</option>
-     <option>Pharmacist</option>
-     <option>Physical Therapist</option>
-     <option>Physician</option>
-     <option>Physician; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Psychologist</option>
-     <option>Recreational Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Registered Nurse</option>
-     <option>Registered Nurse: Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Sanitarian</option>
-     <option>Social Worker</option>
-     <option>Social Worker; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Speech Pathologist/Audiologist/Therapist</option>
-     <option>Speech Pathologist/Audiologist/Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
-     <option>Speech Therapist</option>
-     <option>X-Ray Specialist</option>
-     <option>Other</option></select>
-										 <span class="help-text">Select one or more</span></p>
+                <div class="alert alert-warning fsIDWarningmsg" role="alert">
+                    <div class="alert-content">Federal Surveyor ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES.
                 </div>
-            </div>-->
-            <div class="iq-button-wrapper si hide">
-                <button class="btn btn-primary" onClick="saveID()">Save</button> <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+                <p>Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. Your Federal Surveyor ID which can be found within Employee Identification tab in ASPEN as shown in the image below.</p><p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN"></p>
+                    
+                <div class="row">
+                <div class="form-group col col-md-3">
+              <label>Federal Surveyor ID</label>
+             <input type="text" class="fsIDinput1">
+                    
+                
             </div>
                 
             </div>
+                
+                </div>
+              
+                </div>
+ </div>
+               
+           
+           
+            <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
+                <button class="btn btn-primary" onClick="saveID()">Save</button> <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
+            </div>
+                
+          </div>
             </section>
                 
             </div>
@@ -452,10 +418,10 @@
             <h3>Provider</h3>
             <div class="edit-view active roleStep">
                 <p class="mb-2">1 Provider</p>
-              <table class="table"><thead><tr><th>User Role</th><th>Provider</th><th>Provider Type</th><th>ID</th><th>Status</th><th>Status Date</th></tr></thead>
+              <table class="display responsive" id="paTable"><thead><tr><th><span>User Role</span></th><th><span>Provider</span></th><th><span>Provider Type</span></th><th><span>ID</span></th><th><span>Status</span></th><th><span>Status Date</span></th></tr></thead>
                   <tbody><tr><td>Provider Administrator</td><td>Laguna Rainbow Home Health<br>PO Box 236<br>
-New Laguna, IL 63222</td><td>Home Health Agency</td><td>iQIES 327046<br>
-FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></table>  
+New Laguna, IL 63222</td><td>Home Health Agency</td><td>CCN 327046<br>
+FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pending</small></td><td>01/01/2020</td></tr></tbody></table>  
             </div>
             <div class="edit-view orgStep">
               
@@ -466,26 +432,26 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
             <div class="edit-view active roleStep">
                 
                 <section>
-            <table class="table">
+            <table class="display responsive" id="saTable">
                 <thead>
-                    <tr><th>User Role</th><th>State</th><th>Management Unit</th><th>Work Unit</th><th>Surveyor</th><th>Surveyor Disciplines</th><th>Status</th><th>Status Date</th><th>Actions</th></tr>
+                    <tr><th><span>User Role</span></th><th><span>State</span></th><th><span>Management Unit</span></th><th><span>Work Unit</span></th><th><span>Surveyor</span></th><th><span>Surveyor Disciplines</span></th><th><span>Status</span></th><th><span>Status Date</span></th><th>Actions</th></tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><span class="roleName">State Agency General User</span></td>
                         <td>Washington</td><td><span class="iq-not-available">No information</span></td><td><span class="iq-not-available">No information</span></td>
-                        <td><span class="iq-not-available">No information</span></td>
-                        <td><span class="iq-not-available">No information</span></td>
-                        <td>Requested</td><td>01/01/2020</td><td><a href="#" class="hide" onClick="">Edit</a></td>
+                        <td><span class="iq-not-available" style="white-space: nowrap">No information</span></td>
+                        <td><span class="iq-not-available" style="white-space: nowrap">No information</span></td>
+                        <td style="white-space: nowrap;"><span class="iq-status-pending"></span><small>Pending</small></td><td>01/01/2020</td><td><a href="#" class="hide" onClick="">Edit</a></td>
                     </tr>
                     <tr class="ca-row">
                         <td><span class="roleName">State Agency General User</span></td>
                         <td>California</td>
-                        <td class="manU"><span class="iq-not-available">No information</span></td>
-                        <td class="worU"><span class="iq-not-available">No information</span></td>
-                        <td><span class="saS"><span class="iq-not-available">No information</span></span></td>
-                        <td><span class="saSD"><span class="iq-not-available">No information</span></span></td>
-                        <td>Active</td><td>10/06/2019</td><td><a href="javascript:void(0)" data-toggle="modal" data-target="#editSA">Edit</a></td>
+                        <td class="manU"><span class="iq-not-available" style="white-space: nowrap">No information</span></td>
+                        <td class="worU"><span class="iq-not-available" style="white-space: nowrap">No information</span></td>
+                        <td><span class="saS"><span class="iq-not-available" style="white-space: nowrap">No information</span></span></td>
+                        <td><span class="saSD"><span class="iq-not-available" style="white-space: nowrap">No information</span></span></td>
+                        <td style="white-space: nowrap;"><span class="iq-status iq-status-open"></span><small>Active</small></td><td>10/06/2019</td><td><a href="javascript:void(0)" data-toggle="modal" data-target="#editSA">Edit</a></td>
                     </tr>
                     <tr class="ca-row hide">
                         <td>State Agency General User</td>
@@ -581,84 +547,91 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
                     
                
                 </section>
+               <br>
+                <section class="mt-5">
                 
-                
-                <br>
-            <section class="mt-5">
+            
             <div class="row si">
                 <div class="col col-12">
                      <h2>User Information <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button></h2>
-                </div>
-                <div class="col col-md-12">
-                    <p><label>Federal Surveyor ID</label>
-                        <span class="iq-not-available fsID">No information</span>
-                    </p>
-                    <p class="iq-input-info-msg" style="font-size: 1rem;">Federal Survey ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. By entering a Federal Survey ID, information from existing ASPEN accounts will be linked to iQIES user profiles.</p>
-                </div>
+                    <p><label>Do you have an account in ASPEN?</label>
+            Yes</p>
+            <br>
+                <div class="fsi iq-conditional-content">
+                    <div class="alert alert-warning fsIDWarningmsg" role="alert">
+                    <div class="alert-content">
                 
+                 Federal Surveyor ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES.
+                </div>
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+               <p>
+              <label>Federal Surveyor ID</label>
+              <span class="iq-not-available fsID">No information</span></p>
+            
+            </div>
+                </div>                
+            </div>
+            <div class="iq-conditional-content si hide">
                 
-            </div>
-            <div class="iq-conditional-content si hide"><div class="alert alert-danger fsIDmsg hide" role="alert">
-                    <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
-            </div>
-            <div class="row si hide fsIDform">
+                <div class="row si hide fsIDform">
                 <div class="col col-12">
                      <h2>Edit User Information </h2>
-                </div>
-                <div class="col col-md-3 form-group">
-                    <label>Federal Surveyor ID</label>
-                    <input type="text" class="fsIDinput2">
-                </div>
-                <div class="col col-md-3 form-group confirmInput">
-                    <label>Confirm Federal Surveyor ID</label>
-                    <input type="text">
+               
+                      <fieldset>
+            <legend>Do you have an account in ASPEN?</legend>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="oxSA1" checked  name="oxSA" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
+              <label class="custom-control-label" for="oxSA1"> Yes </label>
+              </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="oxSA2" name="oxSA" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
+              <label class="custom-control-label" for="oxSA2"> No </label>
+              </div>
+            
+            </fieldset>
                     
+                <div class="fsi iq-conditional-content">
+                    <div class="alert alert-danger fsIDmsg hide" role="alert">
+                    <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
                 </div>
-                <div class="col-12">
-                    <p class="iq-input-info-msg" style="font-size: 1rem;">Federal Survey ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. By entering a Federal Survey ID, information from existing ASPEN accounts will be linked to iQIES user profiles.</p>
+                <div class="alert alert-warning fsIDWarningmsg" role="alert">
+                    <div class="alert-content">
+                
+                Federal Surveyor ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES.
                 </div>
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+                <p>Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. Your Federal Surveyor ID which can be found within Employee Identification tab in ASPEN as shown in the image below.</p><p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN"></p>
+                    
+                <div class="row">
+                <div class="form-group col col-md-3">
+              <label>Federal Surveyor ID</label>
+             <input type="text" class="fsIDinput2">
+                    
                 
             </div>
-            <div class="iq-button-wrapper si hide">
+                
+            </div>
+                
+                </div>
+              
+                </div>
+ </div>
+               
+           
+           
+            <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
                 <button class="btn btn-primary" onClick="saveID()">Save</button> <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
             </div>
-                <script>
-                    function saveID(){
-                        if($('.fsIDmsg').hasClass('hide')){ 
-                            $('.fsIDmsg').removeClass('hide');
-                        } else { 
-                            $('.fsIDmsg').addClass('hide'); 
-                            console.log($('.fsIDform input').val());
-                            $('span.fsID').removeClass('iq-not-available'); 
-                            if($('.fsIDform input.fsIDinput1').val()){
-                                $('span.fsID').html( $('.fsIDform input.fsIDinput1').val());
-                            } else {
-                                $('span.fsID').html( $('.fsIDform input.fsIDinput2').val());
-                            }
-                            //$('#si2').attr('checked',true); 
-                            //$('#si4').attr('checked',true);
-                            $('.si').toggleClass('hide'); 
-                            //$('span.surveyor').removeClass('iq-not-available'); 
-                            //$('span.surveyor').html( $('input[name=si]:checked').val() ); 
-                            //if($('input[name=si]:checked').val() != 'No') { 
-                              //  $('span.surveyorDisciplines').removeClass('iq-not-available'); 
-                            //    $('span.surveyorDisciplines').html( $('.surveyDis option:selected').text() );
-                            //} else { 
-                              //  $('span.surveyorDisciplines').html('Not applicable');
-                            //}
-                            //$('.fsIDform input').attr('readonly', true); 
-                            //$('.fsIDform input').addClass('read-only-text'); 
-                            //$('.validateButton').addClass('hide'); 
-                           
-                        }
-                    }
-                    </script>
-            </div>
+                
+          </div>
             </section>
             </div>
             <div class="edit-view orgStep">
                   
             </div>
+            
             <div class="modal fade" id="editSA" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
@@ -776,17 +749,17 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
             <h3>Vendor</h3>
             <div class="edit-view active roleStep">
                  <p class="mb-2">1 Provider</p>
-              <table class="table"><thead><tr><th>User Role</th><th>Provider</th><th>Provider Type</th><th>ID</th><th>Status</th><th>Status Date</th></tr></thead>
+              <table class="display responsive" id="vTable"><thead><tr><th><span>User Role</span></th><th><span>Provider</span></th><th><span>Provider Type</span></th><th><span>ID</span></th><th><span>Status</span></th><th><span>Status Date</span></th></tr></thead>
                   <tbody><tr><td>Provider Administrator</td><td>Laguna Rainbow Home Health<br>PO Box 236<br>
-New Laguna, IL 63222</td><td>Home Health Agency</td><td>iQIES 327046<br>
-FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></table>  
+New Laguna, IL 63222</td><td>Home Health Agency</td><td>CCN 327046<br>
+FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pending</small></td><td>01/01/2020</td></tr></tbody></table>  
             </div>
             <div class="edit-view orgStep">
               
             </div>
         </div>
     </div>       
-            
+               
         </div>
       </div>
     </div>
@@ -876,6 +849,8 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
   <script type="text/javascript"
     src="../../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
   </script>
+    <!-- to include datatables for responsive table -->
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <script type="text/javascript" src="../../../../src/assets/js/scripts.js">
   </script>
      <script src="../../../hhaung/js/BsMultiSelect.js"></script>
@@ -885,8 +860,157 @@ FACID IL1199112556677</td><td>Requested</td><td>01/01/2020</td></tr></tbody></ta
         $(document).ready(function () {
           $('.nav-horizontal').stickyTabs();
           $("select.multiselect").bsMultiSelect();
+          $('#aoTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 3, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 }//,
+				//{ responsivePriority: 1, targets: -1 },
+				//{ "orderable": false, "targets": -1 }
+			 ]
+		  }); 
+          $('#coTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 3, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 }
+			 ]
+		  }); 
+          $('#macTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 3, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 }
+			 ]
+		  }); 
+          $('#roTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 5, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  }); 
+          $('#paTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 5, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 }
+			 ]
+		  }); 
+          $('#saTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 7, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  }); 
+          $('#vTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 0, 'asc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  });     
         });
+        
+        
     </script>
+    <script>
+                    function saveID(){
+                        if($('.fsIDmsg').hasClass('hide')){ 
+                            $('.fsIDmsg').removeClass('hide');
+                            
+                        } else { 
+                            $('.fsIDmsg').addClass('hide'); 
+                            console.log($('.fsIDform input').val());
+                            $('span.fsID').removeClass('iq-not-available'); 
+                            if($('.fsIDform input.fsIDinput1').val()){
+                                $('span.fsID').html( $('.fsIDform input.fsIDinput1').val());
+                            } else {
+                                $('span.fsID').html( $('.fsIDform input.fsIDinput2').val());
+                            }
+                            //$('#si2').attr('checked',true); 
+                            //$('#si4').attr('checked',true);
+                            $('.si').toggleClass('hide'); 
+                            
+                            //$('span.surveyor').removeClass('iq-not-available'); 
+                            //$('span.surveyor').html( $('input[name=si]:checked').val() ); 
+                            //if($('input[name=si]:checked').val() != 'No') { 
+                              //  $('span.surveyorDisciplines').removeClass('iq-not-available'); 
+                            //    $('span.surveyorDisciplines').html( $('.surveyDis option:selected').text() );
+                            //} else { 
+                              //  $('span.surveyorDisciplines').html('Not applicable');
+                            //}
+                            //$('.fsIDform input').attr('readonly', true); 
+                            //$('.fsIDform input').addClass('read-only-text'); 
+                            //$('.validateButton').addClass('hide'); 
+                           
+                        }
+                        $('.fsIDWarningmsg').addClass('hide');
+                    }
+                    </script>
 </body>
 
 </html>

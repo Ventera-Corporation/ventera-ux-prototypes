@@ -1459,12 +1459,12 @@
                 </div>
                 <button class="btn btn-link" data-toggle="modal" data-target="#shortcuts">Text Editor Keyboard Shortcuts</button>
                 <div class="editTextDiv"></div>
-                <p class="help-text mb-5">Limit to 500 characters</p>
+                
                 
                 <h3>Citation Text</h3>
                 <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
                 <button class="btn btn-link" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
-                <div class="editTextDiv"></div><p class="help-text mb-5">Limit to 500 characters</p>
+                <div class="editTextDiv"></div>
                 
                 <div class="toast alert-info fade show" id="shortcutsToast" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0; top: 30%; ">
   <div class="toast-header">
@@ -3129,9 +3129,13 @@
           if (len >= max) {
             var char = len - max; 
             $('.fdt').addClass('iq-input-error-msg'); 
-            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+			$('.fdt').html('Limit exceeded by ' + char + ' characters' );
+            //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
           } else {
-            $('#charNum').html(len + '/256.');
+            //$('#charNum').html(len + '/256.');
+			$('.fdt').removeClass('iq-input-error-msg'); 
+			  
+			$('.fdt').html('Limit to ' + max + ' characters');
           }
         });
 		

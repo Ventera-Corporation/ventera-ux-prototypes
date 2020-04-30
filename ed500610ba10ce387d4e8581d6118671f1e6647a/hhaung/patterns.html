@@ -531,8 +531,8 @@
               </div>
             <div class="col-sm-3 col-md-2">
               <!--<p><button class="btn btn-lg btn-primary" disabled>Disabled</button></p>-->
-              <p> <button class="btn btn-primary" disabled>Disabled</button></p>
-              <p><button class="btn btn-sm btn-primary" disabled>Disabled</button></p>
+              <p> <button class="btn btn-primary disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Disabled</span></button></p>
+              <p><button class="btn btn-sm btn-primary disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Disabled</span></button></p>
               </div>
             <!--<div class="col-sm-3 col-md-2">
                            <p><button class="btn btn-danger">Error</button></p>
@@ -564,8 +564,8 @@
               </div>
             <div class="col-sm-3 col-md-2">
               <!--<p><button class="btn btn-lg btn-outline-primary" disabled>Disabled</button></p>-->
-              <p> <button class="btn btn-outline-primary" disabled>Disabled</button></p>
-              <p><button class="btn btn-sm btn-outline-primary" disabled>Disabled</button></p>
+              <p> <button class="btn btn-outline-primary disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Disabled</span></button></p>
+              <p><button class="btn btn-sm btn-outline-primary disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Disabled</span></button></p>
               </div>
             
             <!-- <div class="col-sm-3 col-md-2">
@@ -596,8 +596,8 @@
               </div>
             <div class="col-sm-3 col-md-2">
               <!-- <p><button class="btn btn-lg btn-link" disabled>Disabled</button></p> -->
-              <p> <button class="btn btn-link" disabled>Disabled</button></p>
-              <p><button class="btn btn-sm btn-link" disabled>Disabled</button></p>
+              <p> <button class="btn btn-link disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Disabled</span></button></p>
+              <p><button class="btn btn-sm btn-link disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Disabled</span></button></p>
               </div>
             <!--<div class="col-sm-3 col-md-2">
                           <p><button class="btn btn-lg btn-link danger">Error</button></p>
@@ -623,7 +623,9 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item disabled" data-toggle="tooltip" href="#" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Disabled action</span></a>
                   <a class="dropdown-item" href="#">Something else here</a>
+                
                   </div>
                 </div>
               </div>
@@ -631,7 +633,7 @@
               <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown Menu Link</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink">
                 <button class="dropdown-item">Download</button>
-                <button class="dropdown-item">Edit</button>
+                <button class="dropdown-item disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Edit</span></button>
                 <button class="dropdown-item">Delete</button>
                 </div>
               </div>
@@ -740,7 +742,7 @@
           </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label>Field Label
+            <label><span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">Field Label</span>
               <input type="text" disabled>
               <span class="help-text">Disabled Hint/Help copy</span></label>
             </div>
@@ -827,7 +829,7 @@
           </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label>Label
+            <label><span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">Label</span>
               <select disabled><option>Select one</option><option>Item 1</option><option>Item 2</option><option>Item 3</option></select>
               </label>
             </div>
@@ -940,8 +942,8 @@
               <label class="custom-control-label" for="cb2">Option 2</label>
               </div>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" id="cb3" disabled class="custom-control-input">
-              <label class="custom-control-label" for="cb3">Option 3 <a href="javascript:void(0)" class="infoTooltip" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">&nbsp;</a></label>
+              <input type="checkbox" id="cb3" class="custom-control-input disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">
+              <label class="custom-control-label" for="cb3"><span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">Option 3</span></label>
               </div>     
             </fieldset>
           </div>
@@ -957,8 +959,8 @@
               <label class="custom-control-label" for="ox2"> Option B </label>
               </div>
             <div class="custom-control custom-radio">
-              <input type="radio" id="ox3" disabled name="ox" class="custom-control-input">
-              <label class="custom-control-label" for="ox3"> Option C </label>
+              <input type="radio" id="ox3" name="ox" class="custom-control-input disabled" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">
+              <label class="custom-control-label" for="ox3"><span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it">Option C</span> </label>
               </div>
             </fieldset>
           </div>
@@ -1059,12 +1061,12 @@
           <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
           </div>
         <div class="row">
-          <div class="col-sm-12 file-description">
-            <p><label>File Description
-              <textarea class="form-control file-description-text" maxlength="256"></textarea>
-              </label>
-              <span class="help-text">Limit to 256 characters</span>
-              </p>
+          <div class="col-sm-12 file-description form-group">
+            <label>File Description </label>
+              <textarea class="form-control file-description-text" id="fdI" rows="3"></textarea>
+             
+              <span class="fdt0 help-text">Limit to 255 characters</span>
+              
             </div>
           </div>
         </div>
@@ -1075,13 +1077,11 @@
           <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
           </div>
         <div class="row">
-          <div class="col-sm-12 file-description">
-            <p><label>File Description
-			  <textarea class="form-control file-description-text" id="fileDescriptionInput" rows="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru</textarea>
+          <div class="col-sm-12 file-description form-group">
+            <label>File Description</label>
+			  <textarea class="form-control file-description-text" id="fileDescriptionInput" rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru</textarea>
              
-              </label><span class="fdt help-text iq-input-error-msg">Character limit exceeded by 187</span>
-              
-              </p>
+              <span class="fdt help-text iq-input-error-msg">443/255 characters - Limit exceeded</span>
             </div>
           </div>
         </div>
@@ -1308,7 +1308,7 @@
     <h2>Data Display</h2>
     <article>
       <h3>Table and Pagination</h3>
-      <p class="info-text" role="status"><span class="resultsCount">1-2 of 11 Attachments</span></p>
+      <p class="info-text" role="status"><span class="resultsCount">1-2 of 9 Attachments</span></p>
       
       <table class="display responsive">
         <thead>
@@ -1317,7 +1317,7 @@
             <th style="width: 15rem;"><span>Attached File</span></th>
             <th><span>Uploaded</span></th>
             <th><span>Description</span></th>
-            <th>&nbsp;</th>
+            <th class="text-right">Actions</th>
             </tr>
           </thead>
         <tbody>
@@ -1362,32 +1362,32 @@
           <tr>
             <th><span>Column Heading</span></th>
             <th><span>Heading 2</span></th>
-            <th class="currency"><span>Currency</span></th>
+            <th class="currency" style="width: 5rem;"><span>Currency</span></th>
             <th><span>Heading 4</span></th>
-            <th>&nbsp;</th>
+            <th class="text-right">Actions</th>
             </tr>
           </thead>
         <tbody>
           <tr>
             <td>Tabular data one</td>
             <td>Tabular data two</td>
-            <td class="currency"> $1.00</td>
+            <td class="currency" style="width: 5rem;"> $1.00</td>
             <td><p class="iq-not-available">Not Applicable</p></td>
-            <td class="iqies-list-button-group"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
+            <td class="iq-actions"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
             </tr>
           <tr>
             <td>Tabular data one</td>
             <td>Tabular data two</td>
             <td class="currency"> $100.00</td>
             <td><p class="iq-not-available">Not Applicable</p></td>
-            <td class="iqies-list-button-group"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
+            <td class="iq-actions"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
             </tr>
           <tr>
             <td>Tabular data one</td>
             <td>Tabular data two</td>
             <td class="currency"> $10.00</td>
             <td><p class="iq-not-available">Not Applicable</p></td>
-            <td class="iqies-list-button-group"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
+            <td class="iq-actions"><a href="#" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
             </tr>
           
           </tbody>
@@ -1601,6 +1601,7 @@
           <nav class="nav flex-column iq-nav" role="tablist">
             <a class="nav-link active" id="tab1TabH" href="#tab1H" data-toggle="tab" role="tab">Section A<br>Detailed Section Title</a>
             <a class="nav-link" id="tab2TabH" href="#tab2H" data-toggle="tab" role="tab">Section B<br>Detailed Section Title</a>
+              <a class="nav-link disabled" id="tab3TabH" href="#tab3H" role="tab" data-toggle="tooltip" data-placement="top" title="The reason why this control is disabled and how to enable it"><span class="has-tooltip">Section C<br>Detailed Section Title</span></a>
             </nav>
           </div>
         <div class="col-sm-7 col-md-8 col-lg-9">
@@ -1614,7 +1615,12 @@
                   aria-labelledby="tab2TabH">
               <h2>Section B<br><small class="bottom">Detailed Section Title</small></h2>
               <p>Lorem ipsum dolor sit amet</p>
-              </div>        
+              </div> 
+              <div class="tab-pane" id="tab3H" role="tabpanel"
+                  aria-labelledby="tab3TabH">
+              <h2>Section C<br><small class="bottom">Detailed Section Title</small></h2>
+              <p>Lorem ipsum dolor sit amet</p>
+              </div> 
             </div>
           </div>
         </div>
@@ -1624,9 +1630,9 @@
       <div class="row">
         <div class="col-sm-5 col-md-4 col-lg-3">
           <nav class="nav flex-column iq-nav" role="tablist">
-            <a class="nav-link active success" id="tab1TabHS" href="#tab1HS" data-toggle="tab" role="tab">Section A<br>Detailed Section Title<br><small>Complete</small></a>
-            <a class="nav-link danger" id="tab2TabHS" href="#tab2HS" data-toggle="tab" role="tab">Section B<br>Detailed Section Title<br><small>Errors</small></a>
-            <a class="nav-link disabled dark" id="tab3TabHS" href="#tab3HS" data-toggle="tab" role="tab">Section B<br>Detailed Section Title<br><small>Not Applicable</small></a>
+            <a class="nav-link active" id="tab1TabHS" href="#tab1HS" data-toggle="tab" role="tab">Section A<br>Detailed Section Title<br><small class="iq-text-status success">Complete</small></a>
+            <a class="nav-link" id="tab2TabHS" href="#tab2HS" data-toggle="tab" role="tab">Section B<br>Detailed Section Title<br><small class="iq-text-status danger">Errors</small></a>
+            <a class="nav-link disabled" id="tab3TabHS" href="#tab3HS" data-toggle="tab" role="tab">Section B<br>Detailed Section Title<br><small>Not Applicable</small></a>
             </nav>
           </div>
         <div class="col-sm-7 col-md-8 col-lg-9">
@@ -1659,10 +1665,10 @@
               <div class="col">
                 <nav><a href="#"><img src="../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
                   <div class="dropdown d-sm-none d-lg-inline-block active">
-                    <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Providers  <i class="fal fa-chevron-down"></i></a>
+                    <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey &amp; Certification  <i class="fal fa-chevron-down"></i></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="#">Manage AO Providers</a> 
-                      <a class="dropdown-item" href="#">Find a Provider</a>
+                      <a class="dropdown-item" href="#">Find a Provider, Survey, Intake, or Enforcement</a>
                       <a class="dropdown-item" href="#">Add a Provider</a>
                       </div>
                     </div><a href="javascript:void(0)" class="iq-assessments-link">Assessments</a>
@@ -1746,12 +1752,11 @@
                       <a href="/design-system/patterns">Home</a>
                       </li>
                     <li class="breadcrumb-item">
-                      <a href="/design-system/patterns">Providers</a>
+                      <a href="/design-system/patterns">Survey &amp; Certification</a>
                       </li>
                     <li class="breadcrumb-item">
                       <a href="/design-system/patterns">
-                        iQIES
-                        289
+                        Provider Name
                         </a>
                       </li>
                     <li class="breadcrumb-item">Survey 86</li>
@@ -1792,7 +1797,7 @@
                 <div class="iq-page-header-content">
                   <h1>BrightHope</h1>
                   <div class="iq-page-header-details">
-                    <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->CCN 123456 - Hospice - Deemed</div>
+                    <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->CCN 123456 - Hospice - <a href="#">Deemed</a></div>
                   </div>
                 </div>
               <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -1800,7 +1805,7 @@
                   667 Bent Ridge Lane, Suite 1000<br>
                   Barrington, IL 60010<br>
                   Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
-  <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
+  <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> Map</a>
                   </address>
                 </div>
               </div>
@@ -1853,7 +1858,7 @@
                 <div class="iq-page-header-content">
                   <h1 class="has-tooltip" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip">Intermediate Care Facilities for Individuals with Intellectual Disability</h1>
                   <div class="iq-page-header-details">
-                    <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->CCN 123456 - Hospice - Deemed</div>
+                    <!--<a href="/providers/provider-profile.html">A Better Way</a> | -->CCN 123456 - Hospice - <a href="#">Deemed</a></div>
                   </div>
                 </div>
               <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -1861,7 +1866,7 @@
                   1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>
                   Barrington, IL 60010<br>
                   Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
-  <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
+  <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> Map</a>
                   </address>
                 </div>
               </div>
@@ -1918,7 +1923,7 @@
                 <div class="iq-page-header-content">
                   <h1>Survey FFB-H1</h1>
                   <div class="iq-page-header-details">
-                    <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
+                    <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html">BrightHope</a> - IQIES 123456 - Hospice - <a href="#">Deemed</a></div>
                   </div>
                 </div>
               <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -1926,7 +1931,7 @@
                   667 Bent Ridge Lane, Suite 1000<br>
                   Barrington, IL 60010<br>
                   Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
-  <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> <span>Map</span></a>
+  <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="far fa-link fa-flip-horizontal"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> Map</a>
                   </address>
                 </div>
               </div>
@@ -1993,13 +1998,13 @@
                 <div class="iq-page-header-content">
                   <h1>Survey FFB-H1</h1>
                   <div class="iq-page-header-details">
-                    <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html" class="has-tooltip" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip" data-placement="top">Intermediate Care Facilities for Individuals with Intellectual Disability</a> - IQIES 123456 - Hospice - Deemed</div>
+                    <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-blank.html" class="has-tooltip" title="Intermediate Care Facilities for Individuals with Intellectual Disability" data-toggle="tooltip" data-placement="top">Intermediate Care Facilities for Individuals with Intellectual Disability</a> - IQIES 123456 - Hospice - <a href="#">Deemed</a></div>
                   </div>
                 </div>
               <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
                 <address>
                   1234 Northeast Kentucky Industrial Parkway, Suite 1000<br>Barrington, IL 60010<br>Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
-                  <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="fas fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
+                  <a href="mailto:admin@brighthope.com"><em class="fas fa-envelope"></em> Email</a> | <a href="http://brighthope.com" target="_blank"><em class="fas fa-link"></em> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><em class="fas fa-map-marker-alt"></em> Map</a>
                   </address>
                 </div>
               </div>
@@ -2436,7 +2441,7 @@ Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
       <div class="spinner-border text-primary" role="status">
         <span class="sr-only">Loading...</span>
   </div><br><br>
-      <button class="btn btn-primary" type="button" disabled>
+      <button class="btn btn-primary disabled" type="button">
         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         Loading...
   </button>
@@ -2458,16 +2463,26 @@ Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
       </article>
     <article id="tag">
       <h3>Tag/Badge</h3>
-      <div class="badge badge-pill">
-        <span>Primary </span><button type="button" class="close" aria-label="Close">
+      <span class="badge badge-pill badge-info">
+        Info</span> <span class="badge badge-pill badge-warning">
+        Warning</span> <span class="badge badge-pill badge-danger">
+        Danger</span> <span class="badge badge-pill badge-light">
+        Light</span> <span class="badge badge-pill badge-dark">
+        Dark</span> <span class="badge badge-pill badge-white">
+        White</span> <span class="badge badge-pill badge-clear">
+        Clear</span>
+        
+      </article>
+      <article id="pill">
+     <h3>Pill</h3>
+        <div class="badge badge-pill">
+        <span>Pill Name </span><button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button></div>
-      
       </article>
     <article id="tooltipSection">
       <h3>Tooltip</h3>
-      <ul><li> <a href="javascript:void(0)" data-toggle="tooltip" title="Lorem ipsum dolor sit amet">I have a tooltip</a></li>
-        <li> <span>Item</span> <a href="javascript:void(0)" data-toggle="tooltip" title="Here is info you need" class="infoTooltip"></a></li></ul>
+      <p><span class="has-tooltip" data-toggle="tooltip" title="Here is info you need">I have a tooltip</span></p>
       
       
       </article>
@@ -2498,25 +2513,35 @@ Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
 	    $('[data-toggle="tooltip"]').tooltip(); 
 	    $("select.multiselect").bsMultiSelect();
 		var editor = new FroalaEditor('div.editTextDiv'); 
-	    window.setTimeout(function() {
-			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
-				$(this).addClass('hide'); 
-			});
-		}, 5000);
+	    //window.setTimeout(function() {
+			//$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+			//	$(this).addClass('hide'); 
+			//});
+		//}, 5000);
     	$('#fileDescriptionInput').keyup(function () {
-          var max = 256;
+          var max = 255;
           var char = 0; 
           var len = $(this).val().length;
+          $('.fdt').html(len + '/'+ max + ' characters');
           if (len >= max) {
             var char = len - max; 
             $('.fdt').addClass('iq-input-error-msg'); 
-			$('.fdt').html('Character limit exceeded by ' + char );
-            //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+			$('.fdt').append(' - Limit exceeded');
           } else {
-            //$('#charNum').html(len + '/256.');
 			$('.fdt').removeClass('iq-input-error-msg'); 
-			  
-			$('.fdt').html('Limit to ' + max + ' characters');
+          }
+        });
+        $('#fdI').keyup(function () {
+          var max = 255;
+          var char = 0; 
+          var len = $(this).val().length;
+          $('.fdt0').html(len + '/'+ max + ' characters');
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt0').addClass('iq-input-error-msg'); 
+			$('.fdt0').append(' - Limit exceeded');
+          } else {
+			$('.fdt0').removeClass('iq-input-error-msg'); 
           }
         });
 		$('table.responsive').DataTable( {
