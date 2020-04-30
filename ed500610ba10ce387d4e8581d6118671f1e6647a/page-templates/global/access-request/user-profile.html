@@ -132,8 +132,20 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12"> 
-             <div class="alert alert-success" role="alert">
+             <div class="alert alert-success requestSubmitted" role="alert">
                     <div class="alert-content"><h2>Role Request Submitted</h2>Your approval status will be emailed to you after your request is reviewed.</div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  </div>
+        <div class="alert alert-success ROroleUpdatedMsg hide" role="alert">
+                    <div class="alert-content"><h2>User Role Updated</h2>Regional Office General User role information has been successfully updated.</div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  </div>
+            <div class="alert alert-success SAroleUpdatedMsg hide" role="alert">
+                    <div class="alert-content"><h2>User Role Updated</h2>State Agency General User role information has been successfully updated.</div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  </div>
+            <div class="alert alert-success fsidSuccessMsg hide" role="alert">
+                    <div class="alert-content">Federal Surveyor ID has been added.</div>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                   </div>
             
@@ -314,22 +326,7 @@
             </div>
           </div>
   </div>  
-            <script>
-                    function saveRO(){
-                        $('.ro1').toggleClass('hide'); 
-                        //$('.roFSID').html( $('.roFSIDinput').val()); 
-                        if( $('input[name=six]:checked').val() == 'Yes'){ 
-                            console.log('yes');
-                            $('.roS').html('Yes'); 
-                            $('.roSD').html('Registered Nurse: Qualified Intellectual Disability Professional (QIDP)');  
-                        } else { 
-                            $('.roSDedit').addClass('hide'); 
-                            $('.roS').html('No'); 
-                            $('.roSD').html('Not applicable'); 
-                            $('.roSD').addClass('iq-not-available');
-                        }
-                    }
-                    </script>
+            
                 <br>
                 <section class="mt-5">
                 
@@ -337,7 +334,7 @@
             <div class="row si">
                 <div class="col col-12">
                      <h2>User Information <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button></h2>
-                    <p><label>Do you have an account in ASPEN?</label>
+                    <p class="hasAspen"><label>Do you have an account in ASPEN?</label>
             Yes</p>
             <br>
                 <div class="fsi iq-conditional-content">
@@ -355,7 +352,7 @@
             </div>
                 </div>                
             </div>
-            <div class="iq-conditional-content si hide">
+            <div class="si hide">
                 
                 <div class="row si hide fsIDform">
                 <div class="col col-12">
@@ -383,7 +380,10 @@
                 </div>
                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
-                <p>Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. Your Federal Surveyor ID which can be found within Employee Identification tab in ASPEN as shown in the image below.</p><p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN"></p>
+                <p>Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. Your Federal Surveyor ID which can be found within Employee Identification tab in ASPEN as shown in the image below.</p><p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
+                    <p id="fsidImage" class="sr-only">
+                        Navigate to Employee Identification tab in ASPEN. You can find the Federal Surveyor ID in the Idenfication area.
+                        </p>
                     
                 <div class="row">
                 <div class="form-group col col-md-3">
@@ -453,7 +453,7 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
                         <td><span class="saSD"><span class="iq-not-available" style="white-space: nowrap">No information</span></span></td>
                         <td style="white-space: nowrap;"><span class="iq-status iq-status-open"></span><small>Active</small></td><td>10/06/2019</td><td><a href="javascript:void(0)" data-toggle="modal" data-target="#editSA">Edit</a></td>
                     </tr>
-                    <tr class="ca-row hide">
+                    <!--<tr class="ca-row hide">
                         <td>State Agency General User</td>
                         <td>California</td>
                         <td><select onChange="if(this.options[this.selectedIndex].value != 0) { $('.ca-row .workUnit').attr('disabled',false); }" class="managementUnit"><option value="0">Select one</option>
@@ -518,32 +518,10 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
 								<span class="help-text">Select one or more</span>
                             </span></td>
                         <td>Active</td><td>10/06/2019</td><td class="iqies-list-button-group"><a href="javascript:void(0)"  onClick="saveSA();">Save</a> <span>|</span> <a href="javascript:void(0)"  onClick="$('.ca-row').toggleClass('hide')">Cancel</a></td>
-                    </tr>
+                    </tr>-->
                 </tbody>
             </table>
-                <script>
-                    function saveSA(){
-                        $('.ca-row').toggleClass('hide'); 
-                        if($('.managementUnit option:selected').val() != 0) { 
-                            $('.manU').html($('.managementUnit option:selected').text());
-                        } 
-                        if($('.workUnit option:selected').val() != 0) { 
-                            $('.worU').html($('.workUnit option:selected').text());
-                        }
-                        
-                        $('.saID').html( $('.saFSIDinput').val()); 
-                        if( $('input[name=siy]:checked').val() == 'Yes'){ 
-                            console.log('yes');
-                            $('.saS').html('Yes'); 
-                            $('.saSD').html('Registered Nurse: Qualified Intellectual Disability Professional (QIDP)');  
-                        } else { 
-                            $('.saSDedit').addClass('hide'); 
-                            $('.saS').html('No'); 
-                            $('.saSD').html('Not applicable'); 
-                            $('.saSD').addClass('iq-not-available');
-                        }
-                    }
-                    </script>
+                
                     
                
                 </section>
@@ -554,7 +532,7 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
             <div class="row si">
                 <div class="col col-12">
                      <h2>User Information <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button></h2>
-                    <p><label>Do you have an account in ASPEN?</label>
+                    <p class="hasAspen"><label>Do you have an account in ASPEN?</label>
             Yes</p>
             <br>
                 <div class="fsi iq-conditional-content">
@@ -572,7 +550,7 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
             </div>
                 </div>                
             </div>
-            <div class="iq-conditional-content si hide">
+            <div class="si hide">
                 
                 <div class="row si hide fsIDform">
                 <div class="col col-12">
@@ -602,7 +580,7 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
                 </div>
                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
-                <p>Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. Your Federal Surveyor ID which can be found within Employee Identification tab in ASPEN as shown in the image below.</p><p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN"></p>
+                <p>Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors. Your Federal Surveyor ID which can be found within Employee Identification tab in ASPEN as shown in the image below.</p><p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
                     
                 <div class="row">
                 <div class="form-group col col-md-3">
@@ -725,25 +703,6 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
             </div>
           </div>
   </div>
-            
-            <script>
-                function saveSA(){
-                    $('.si').toggleClass('hide'); 
-                    $('span.surveyor').removeClass('iq-not-available'); 
-                    $('span.surveyor').html( $('input[name=si]:checked').val() ); 
-                    if($('input[name=si]:checked').val() != 'No') { 
-                        $('span.surveyorDisciplines').removeClass('iq-not-available'); 
-                        $('span.surveyorDisciplines').html( $('.surveyDis option:selected').text() );
-                    } else { 
-                        $('span.surveyorDisciplines').html('Not applicable');
-                    } 
-                    $('.fsIDform input').attr('readonly', true); 
-                    $('.fsIDform input').addClass('read-only-text'); 
-                    $('.validateButton').addClass('hide'); 
-                    $('span.fsID').removeClass('iq-not-available'); 
-                    $('span.fsID').html( $('.fsIDform input').val());
-                }
-                </script>
         </div>
         <div class="tab-pane" id="v">
             <h3>Vendor</h3>
@@ -978,38 +937,73 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
         
     </script>
     <script>
-                    function saveID(){
-                        if($('.fsIDmsg').hasClass('hide')){ 
-                            $('.fsIDmsg').removeClass('hide');
-                            
-                        } else { 
-                            $('.fsIDmsg').addClass('hide'); 
-                            console.log($('.fsIDform input').val());
-                            $('span.fsID').removeClass('iq-not-available'); 
-                            if($('.fsIDform input.fsIDinput1').val()){
-                                $('span.fsID').html( $('.fsIDform input.fsIDinput1').val());
-                            } else {
-                                $('span.fsID').html( $('.fsIDform input.fsIDinput2').val());
-                            }
-                            //$('#si2').attr('checked',true); 
-                            //$('#si4').attr('checked',true);
-                            $('.si').toggleClass('hide'); 
-                            
-                            //$('span.surveyor').removeClass('iq-not-available'); 
-                            //$('span.surveyor').html( $('input[name=si]:checked').val() ); 
-                            //if($('input[name=si]:checked').val() != 'No') { 
-                              //  $('span.surveyorDisciplines').removeClass('iq-not-available'); 
-                            //    $('span.surveyorDisciplines').html( $('.surveyDis option:selected').text() );
-                            //} else { 
-                              //  $('span.surveyorDisciplines').html('Not applicable');
-                            //}
-                            //$('.fsIDform input').attr('readonly', true); 
-                            //$('.fsIDform input').addClass('read-only-text'); 
-                            //$('.validateButton').addClass('hide'); 
-                           
-                        }
-                        $('.fsIDWarningmsg').addClass('hide');
-                    }
+        function saveRO(){
+            $('.ro1').toggleClass('hide'); 
+            //$('.roFSID').html( $('.roFSIDinput').val()); 
+            if( $('input[name=six]:checked').val() == 'Yes'){ 
+                console.log('yes');
+                $('.roS').html('Yes'); 
+                $('.roSD').html('Registered Nurse: Qualified Intellectual Disability Professional (QIDP)');  
+            } else { 
+                $('.roSDedit').addClass('hide'); 
+                $('.roS').html('No'); 
+                $('.roSD').html('Not applicable'); 
+                $('.roSD').addClass('iq-not-available');
+            }
+            $('.alert-success').addClass('hide');
+            $('.ROroleUpdatedMsg').removeClass('hide');
+            $('html, body').animate({ scrollTop: 0 }, 500);
+        }
+        function saveSA(){
+            
+            //updating manU and workU
+            if($('.managementUnit option:selected').val() != 0) { 
+                $('.manU').html($('.managementUnit option:selected').text());
+            } 
+            if($('.workUnit option:selected').val() != 0) { 
+                $('.worU').html($('.workUnit option:selected').text());
+            }
+            //updating surveyor and surveyor discipline
+            if( $('input[name=si]:checked').val() == 'Yes'){ 
+                console.log('yes');
+                $('.saS').html('Yes'); 
+                $('.saSD').html('<ul><li>Health Care Administrator</li><li>Registered Nurse: Qualified Intellectual Disability Professional (QIDP)</li></ul>');  
+                $('.saSD').removeClass('iq-not-available');
+            } else { 
+                $('.saSDedit').addClass('hide'); 
+                $('.saS').html('No'); 
+                $('.saSD').html('Not applicable'); 
+                $('.saSD').addClass('iq-not-available');
+            }
+            
+            
+            $('.alert-success').addClass('hide');
+            $('.SAroleUpdatedMsg').removeClass('hide');
+            $('html, body').animate({ scrollTop: 0 }, 500);
+        }
+                  
+        function saveID(){
+            if($('.fsIDmsg').hasClass('hide')){ 
+                $('.fsIDmsg').removeClass('hide');
+
+            } else { 
+                $('.fsIDmsg').addClass('hide'); 
+                console.log($('.fsIDform input').val());
+                $('span.fsID').removeClass('iq-not-available'); 
+                if($('.fsIDform input.fsIDinput1').val()){
+                    $('span.fsID').html( $('.fsIDform input.fsIDinput1').val());
+                } else {
+                    $('span.fsID').html( $('.fsIDform input.fsIDinput2').val());
+                }
+                $('.si').toggleClass('hide'); 
+                $('div.fsi').removeClass('iq-conditional-content'); 
+                $('.hasAspen').addClass('hide');
+                $('.alert-success').addClass('hide');
+                $('.fsidSuccessMsg').removeClass('hide');
+                $('html, body').animate({ scrollTop: 0 }, 500);
+            }
+            $('.fsIDWarningmsg').addClass('hide');
+        }
                     </script>
 </body>
 
