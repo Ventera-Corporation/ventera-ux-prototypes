@@ -8,12 +8,13 @@
 
   <title>Select User Category - Access Request Form - iQIES</title>
 
-  <link rel="stylesheet"
-    href="../../../../src/assets/prototype-styles/design-system.css">
-  <link rel="stylesheet"
-    href="../../../../src/assets/prototype-styles/prototype.css">
-    <link rel="stylesheet"
-    href="../../../../src/assets/prototype-styles/hha.css">
+  <link rel="stylesheet" href="../../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet" href="../../../../src/assets/prototype-styles/prototype.css">
+  <!-- you need this font to have the right font weight expressed -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+  <!-- to include fontsome icons professional version -->
+  <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+  <link rel="stylesheet" href="../../../../src/assets/prototype-styles/hha.css">
 </head>
 
 <body>
@@ -113,10 +114,17 @@
       <div class="row">
         <div class="col-md-12"> 
               <div class="iq-page-header-content">
-                
+                <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content">
+                 <h2>Unable to Proceed</h2>
+				  <p>A user category must be selected.</p>
+             
+          </div>
+        </div>
                 <h1>Select a User Category</h1>
+                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 <div class="mt-5 mb-4"><p class="lead">
-            Select the category of your organization to begin the role request process.
+            Select the category of your organization to begin the role request process. <span class="iq-asterisk">*</span>
           </p></div>
               </div>
             
@@ -236,17 +244,21 @@
   <script type="text/javascript"
     src="../../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
   </script>
-  <script type="text/javascript"
-    src="../../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript" src="../../../../src/assets/third-party/popper/popper.min.js"></script>
   <script type="text/javascript"
     src="../../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
   </script>
-  <script type="text/javascript" src="../../../../src/assets/js/scripts.js">
-  </script>
+  <script type="text/javascript" src="../../../../src/assets/js/scripts.js"></script>
   <script>
       function selectRole(){
-          console.log( $('input').val() );
-          window.location = 'role.html#' + $('input[name="category"]:checked').val();
+          if( $('input[name="category"]').is(':checked')) { 
+              console.log( $('input').val() );
+              $('.errorMsg').addClass('hide'); 
+              window.location = 'role.html#' + $('input[name="category"]:checked').val();
+          } else {
+              $('.errorMsg').removeClass('hide');
+              $('html, body').animate({ scrollTop: 0 }, 500);
+          }
       }
   </script>
 </body>
