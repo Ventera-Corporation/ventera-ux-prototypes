@@ -654,7 +654,7 @@
               <label>CCN</label>
               <div class="input-group">
               <input type="text" class="form-control providerInput">
-                  <button class="btn btn-outline-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide'); ">Add</button>
+                  <button class="btn btn-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').removeClass('hide'); $(this).removeClass('btn-primary'); $(this).addClass('btn-outline-primary');">Add</button>
               </div>
           </div>
                 
@@ -669,7 +669,7 @@
               <table class="table"><thead><tr><th>Provider</th><th>Provider Type</th><th>ID</th><th>Actions</th></tr></thead>
                   <tbody><tr><td>Laguna Rainbow Home Health<br>PO Box 236<br>
 New Laguna, IL 63222</td><td>Home Health Agency</td><td>CCN 327046<br>
-FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); ">Remove</a></td></tr></tbody></table>
+FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').addClass('hide'); $('.addButton').addClass('btn-primary'); $('.addButton').removeClass('btn-outline-primary'); ">Remove</a></td></tr></tbody></table>
               </div></div>
             
          
@@ -917,7 +917,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
               <label>CCN</label>
               <div class="input-group">
               <input type="text" class="form-control vendorInput">
-                  <button class="btn btn-outline-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide');">Add</button>
+                  <button class="btn btn-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').removeClass('hide'); $(this).removeClass('btn-primary'); $(this).addClass('btn-outline-primary');">Add</button>
               </div>
           </div>
                 
@@ -932,7 +932,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
               <table class="table"><thead><tr><th>Provider</th><th>Provider Type</th><th>ID</th><th>Actions</th></tr></thead>
                   <tbody><tr><td>Laguna Rainbow Home Health<br>PO Box 236<br>
 New Laguna, IL 63222</td><td>Home Health Agency</td><td>CCN 327046<br>
-FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); ">Remove</a></td></tr></tbody></table>
+FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').addClass('hide'); $('.addButton').addClass('btn-primary'); $('.addButton').removeClass('btn-outline-primary'); ">Remove</a></td></tr></tbody></table>
               </div></div>
             
          
@@ -963,9 +963,9 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
           if( $('input[name="userRole"]').is(':checked')) { 
               $('.edit-view.roleStep').removeClass('active');
               $('.edit-view.orgStep').addClass('active');
-              //if( $('input[name="userRole"]:checked').val() == 'pa' || $('input[name="userRole"]:checked').val() == 'v'){ 
-                //  $('.orgStep .submitButton').addClass('hide');
-             // }
+              if( $('input[name="userRole"]:checked').val() == 'pa' || $('input[name="userRole"]:checked').val() == 'v'){ 
+                  $('.orgStep .submitButton').addClass('hide');
+              }
               if($('input[name="userRole"]:checked').val() == 'co'){  $('p.iqies-required-text').hide(); }
               $('.errorMsg.roleErrorMsg').addClass('hide'); 
           } else {
@@ -976,7 +976,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
     function selectRole(){
           $('.edit-view.roleStep').addClass('active');
           $('.edit-view.orgStep').removeClass('active');
-          //$('.orgStep .submitButton').removeClass('hide');
+          $('.orgStep .submitButton').removeClass('hide');
       }
     function selectCategory(){
          window.location = 'category.html'; //+ $('input[name="userRole"]:checked').val();
