@@ -152,7 +152,8 @@
             
             
             
-            <h2>User Roles <a href="category.html" class="float-right btn btn-outline-primary">Request User Role</a></h2> 
+            <h2>User Roles<a href="category.html" class="btn btn-outline-primary float-right">Request User Role</a></h2>
+            
         </div>
         <div class="col-12">
     <nav class="nav nav-horizontal sr-only">
@@ -725,6 +726,28 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
    
   </main>
 
+    <div class="modal fade" id="conflictData" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Replace Data?</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+                <p>You currently have new data saved for your roles such as surveyor disciplines. </p><br><p>Do you wish to replace that data with legacy data from ASPEN associated with your Federal Surveyor ID?</p>
+              <div>
+            
+            </div>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-primary" data-dismiss="modal" onclick="saveConflict()">Replace with ASPEN data</button>
+              <a href="#" class="btn btn-outline-primary" data-dismiss="modal">Do not replace</a>
+              </div>
+            </div>
+          </div>
+  </div>
   <footer>
     <div class="container-fluid">
       <div class="row">
@@ -995,6 +1018,10 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
                 } else {
                     $('span.fsID').html( $('.fsIDform input.fsIDinput2').val());
                 }
+                if($('span.roS').html() != '<span class="iq-not-available">No information</span>' || $('span.saS').html() != '<span class="iq-not-available">No information</span>'){
+                    console.log('ros');
+                    $('#conflictData').modal('show');
+                }
                 $('.si').toggleClass('hide'); 
                 $('div.fsi').removeClass('iq-conditional-content'); 
                 $('.hasAspen').addClass('hide');
@@ -1002,7 +1029,14 @@ FACID IL1199112556677</td><td><span class="iq-status-pending"></span><small>Pend
                 $('.fsidSuccessMsg').removeClass('hide');
                 $('html, body').animate({ scrollTop: 0 }, 500);
             }
+            
             $('.fsIDWarningmsg').addClass('hide');
+        }
+        function saveConflict(){
+            $('.saS').html('Yes'); 
+            $('.saSD').html('Registered Nurse: Qualified Intellectual Disability Professional (QIDP)'); 
+            $('.roS').html('Yes'); 
+            $('.roSD').html('Registered Nurse: Qualified Intellectual Disability Professional (QIDP)');  
         }
                     </script>
 </body>
