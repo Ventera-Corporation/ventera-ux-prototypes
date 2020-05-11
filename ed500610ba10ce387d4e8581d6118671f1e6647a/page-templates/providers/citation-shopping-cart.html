@@ -911,11 +911,61 @@
                 </div>
               </div>
               
-               
+               <div class="iq-accordion showhide">
+            <div class="card no-border">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#surveyFilters" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Filters</span><span class="hide">Hide Filters</span>
+                </button>
+              </div>
+              <div id="surveyFilters" class="collapse">
+                <div class="card-body px-0">
+                  <fieldset>
+                <legend class="sr-only">Filter citation list by:</legend>
+                      <div class="row"><div class="col-md-3 form-group"><label>Regulation Set</label>
+                <select onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> </div>
+                          <div class="col-md-3  form-group"><label>Tag Type</label>
+                <select onchange="selectTagType(this)" id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
+                   <div> <button class="btn btn-outline-primary">Apply</button> <!--<button class="btn btn-link">Reset Filter</button>--></div>
+                        
+              </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
               <div class="row mt-4 citationsList">
                 <div class="col-md-9" id="citations">
-					<br>
-					<div class="row"><div class="col-md-3 pt-2" style="vertical-align: bottom"><h3 class="iq-label citesSearchCount m-0">1-10 of 30 Citations</h3></div><div class="col-md-9 text-right"><label class="inline" style="margin-right: .5rem; font-weight: bold; font-size: 1rem;">Filter By: </label><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)" id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><!--<option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option>--></select></div></div>
+					
+					<div class="row mt-4"><div class="col-md-5">
+                        <h3 class="iq-label citesSearchCount m-0">
+                            <ul class="iq-inline-list"><li>
+                            <select class="form-control" style="width: auto; display: inline-block;"><option>10 per page</option><option>20 per page</option><option>50 per page</option><option>100 per page</option><option>All</option></select></li><li>
+                         <button class="btn btn-link">View all (30)</button></li></ul>
+                       </h3></div>
+                        <div class="col-md-7 text-right">
+                        <nav aria-label="Table Pagination" class="float-right">
+    
+		<ul class="pagination pagination-large">
+			<li class="page-item first" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
+			</li>
+			<li class="page-item previous" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
+			</li>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control"> <span>of 3</span></div>
+			</li>
+			
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button"></button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last"></button>
+			</li>
+		</ul>
+	</nav>
+                        </div></div>
      
 <div class="accordion-wrapper"> 
                     <!-- All page 1 --> 
@@ -1674,36 +1724,36 @@
 		</div>
 		</div> --> 
                   </div>
-<nav aria-label="Table Pagination">
+                
+<div class="row"><div class="col-md-5">
+                        <h3 class="iq-label citesSearchCount m-0">
+                            <ul class="iq-inline-list"><li>
+                            <select class="form-control" style="width: auto; display: inline-block;"><option>10 per page</option><option>20 per page</option><option>50 per page</option><option>100 per page</option><option>All</option></select></li><li>
+                         <button class="btn btn-link">View all (30)</button></li></ul>
+                       </h3></div>
+                        <div class="col-md-7 text-right">
+                        <nav aria-label="Table Pagination" class="float-right">
     
 		<ul class="pagination pagination-large">
-            <li><div class="input-group mb-0 mr-3">
-		
-		<select class="form-control" style="width: 4rem"><option>10</option><option>25</option><option>50</option><option>100</option><option>All</option></select><span class="input-group-text">Per Page</span> 
-	</div></li>
 			<li class="page-item first" onClick="gotoPage1()">
-				<button class="page-link first" disabled aria-label="First" type="button">First</button>
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
 			</li>
 			<li class="page-item previous" onClick="gotoPrev()">
-				<button class="page-link previous" disabled aria-label="Previous" type="button">Previous</button>
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
 			</li>
-			<li class="page-item active page1" onClick="gotoPage1()">
-				<button class="page-link">1</button>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control"> <span>of 3</span></div>
 			</li>
-			<li class="page-item page2" onClick="gotoPage2()">
-				<button type="button" class="page-link">2</button>
-			</li>
-			<li class="page-item page3" onClick="gotoPage3()">
-				<button type="button" class="page-link">3</button>
-			</li>
+			
 			<li class="page-item next" onClick="gotoNext()">
-				<button class="page-link next" aria-label="Next" type="button">Next</button>
+				<button class="page-link next" aria-label="Next" type="button"></button>
 			</li>
 			<li class="page-item last" onClick="gotoPage3()">
-				<button type="button" class="page-link last" aria-label="Last">Last</button>
+				<button type="button" class="page-link last" aria-label="Last"></button>
 			</li>
 		</ul>
 	</nav>
+                        </div></div>
                    
                     
                     

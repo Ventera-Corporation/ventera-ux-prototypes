@@ -30,23 +30,51 @@
 
 <body>
   <header>
-	<div class="container-fluid">
-	  <div class="row iq-page-header">
-		<div class="col">
-                  <nav>
-                    <a href="./">
-                      <img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo">
-                    </a>
-                      
-                      <button class="btn btn-outline-primary">Logout</button>
-                  </nav>
-                    
-                    
-                </div>
-              </div>
-            </div>
-           
-          </header>
+	<div class="iq-global-nav">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col">
+			  <nav><a href="#"><img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+				  </div>
+				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					<a class="dropdown-item" href="#">Reports Main</a>
+					<a class="dropdown-item" href="#">Find a Report Type</a>
+					<a class="dropdown-item" href="#">My Reports</a>
+				  </div>
+				</div>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+					  <a class="dropdown-item" href="#">Letters</a>
+					  <a class="dropdown-item" href="#">State Customizations</a>
+				  </div>
+				</div>
+				<div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+					id="navbarDropdown4" role="button" data-toggle="dropdown">
+					<p>DF</p>
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
+					  Profile</a>
+					<a class="dropdown-item" href="#">Help</a>
+					<a class="dropdown-item" href="#">Logout</a>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+  </div>
+  </header>
 
   <main>
 
@@ -92,34 +120,16 @@
       <div class="row">
         <div class="col-md-12"> 
               <div class="iq-page-header-content">
-        <div class="edit-view active roleStep">
-                <div class="alert alert-danger errorMsg hide roleErrorMsg" role="alert">
-          <div class="alert-content">
-                 <h2>Unable to Proceed</h2>
-				  <p>A user role must be selected.</p>
-             
-          </div>
-        </div>
+                 <div class="edit-view active roleStep">
+                
                 <h1>Select a User Role</h1>
-            <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 <div class="mt-5 mb-4"><p class="lead">
-                    Select the user role that best fits your needs. <span class="iq-asterisk">*</span> <!--For more information, review <a href="#">All About iQIES Roles <i class="fal fa-external-link"></i></a>.-->
+                    Select the user role that best fits your needs. <!--For more information, review <a href="#">All About iQIES Roles <i class="fal fa-external-link"></i></a>.-->
           </p></div>
                  </div>
                 <div class="edit-view orgStep">
-                    <div class="alert alert-danger errorMsg hide submitErrorMsg" role="alert">
-          <div class="alert-content">
-                 <h2>Unable to Submit</h2>
-				  <p> Please review and correct the following:</p> 
-                  <ul>
-                      <li class="other"><a href="#" class="roleN">Accrediting Organization</a> is required.</li>
-                      <li class="provider hide">Add at least one Provider</li>
-                  </ul>
-             
-          </div>
-        </div>
+                    
                     <h1>Add Organizations</h1>
-                     <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
                 </div>
               </div>
             
@@ -138,49 +148,38 @@
     <div class="tab-content">
         <div class="tab-pane active" id="ao">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
-            <div class="custom-control custom-radio form-group">
-                <input id="ao-1" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-1" class="custom-control-label"><strong>Accrediting Organization User</strong><br>Manage and upload deemed provider survey and certification information; generate and view reports.</label>
-            </div>
-            <div class="custom-control custom-radio form-group">
-                <input id="ao-2" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-2" class="custom-control-label"><strong>Accrediting Organization Security Official</strong><br>Approve iQIES user roles in HARP; manage user profiles.</label>
-            </div>
-            </fieldset>
-                <div class="iq-accordion showhide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#aoInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
-                      </button>
-                    </div>
-                  <div id="aoInfo" class="collapse">
-                    <div class="card-body px-0">
-                     <table class="dataTable table-striped">
+                <table class="dataTable table-striped">
                          <thead>
-                             <tr><th></th><th>Accrediting Organization User</th><th>Accrediting Organization Security Official</th></tr>
+                             <tr><th></th><th><div class="custom-control custom-radio form-group">
+                <input id="ao-1" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-1" class="custom-control-label">Accrediting Organization User</label>
+            </div></th><th><div class="custom-control custom-radio form-group">
+                <input id="ao-2" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-2" class="custom-control-label">Accrediting Organization Security Official</label>
+            </div></th></tr>
                          </thead>
                          <tbody>
                              <tr><th>Add AO Provider Information</th><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td><td></td></tr>
                              <tr><th>Add &amp; Manage AO Surveys</th><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td><td></td></tr>
                              <tr><th>iQIES Role Approval in HARP</th><td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td></tr>
+                             
                          </tbody>
                     </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                
+            <!--<fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            
+            
+            </fieldset>-->
+                
 
                 
             </div>
             <div class="edit-view orgStep">
-                 <div class="mb-4"><p class="lead">
+                 <div class="mt-5 mb-4"><p class="lead">
            Select your accrediting organization for the <span class="roleName">Accrediting Organization User</span> role.
           </p></div>
             
           <div class="form-group">
-              <label>Accrediting Organization <span class="iq-asterisk">*</span></label>
-              <select class="autoWidth aoSelect"><option>Select one</option><option>The Joint Comission (TJC)</option>
+              <label>Accrediting Organization</label>
+              <select class="autoWidth"><option>Select one</option><option>The Joint Comission (TJC)</option>
               <option>Community Health Accreditation Partner (CHAP)</option>
               <option>Accreditation Commission for Health Care (ACHC)</option></select>
           </div>
@@ -357,8 +356,8 @@
                  <div class="mt-5 mb-4"></div>
             
           <div class="form-group">
-              <label>Medicare Administrative Contractor <span class="iq-asterisk">*</span></label>
-              <select class="autoWidth macSelect"><option>Select one</option>
+              <label>Medicare Administrative Contractor</label>
+              <select class="autoWidth"><option>Select one</option>
                   <option>Anthem Health Plans of New Hampshire</option>
       <option>Arkansas Blue Cross Blue Shield</option>
       <option>Associated Hospital Services</option>
@@ -488,9 +487,9 @@
             <div class="edit-view orgStep">
                  <div class="mt-5 mb-4"></div>
             <div class="row">
-          <div class="form-group col col-md-3">
-              <label>Region <span class="iq-asterisk">*</span></label>
-              <select class="regionSelect"><option>Select one</option>
+          <div class="form-group col col-md-6">
+              <label>Region</label>
+              <select class="autoWidth"><option>Select one</option>
                   <option>1 - Boston</option>
                   <option>2 - New York</option>
                   <option>3 - Philadelphia</option>
@@ -519,35 +518,18 @@
             
             </fieldset>
                     </div>
-                   
                 </div>
                 <div class="fsi hide iq-conditional-content">
-                    <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
-                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                    <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN"></p>
+                <p>Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors.</p>
+                <p>Federal Surveyor ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. Even if you are not a federal surveyor, you will be assigned a Federal Surveyor ID within Employee Identification tab in ASPEN as shown in the image below.</p>
+                    <p><img src="FSID.jpg" style="width: 700px" alt="FSID in Employee Identification tab in ASPEN"></p>
                     
-                    <fieldset>
-            <legend>What type of ID do you have?</legend>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="idType1"  name="idType" class="custom-control-input" onChange=" $('.idType.fsid').removeClass('hide'); $('.idType.sid').addClass('hide');">
-              <label class="custom-control-label" for="idType1"> Federal Surveyor ID </label>
-              </div>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="idType2" name="idType" class="custom-control-input" onChange="$('.idType.sid').removeClass('hide'); $('.idType.fsid').addClass('hide');">
-              <label class="custom-control-label" for="idType2"> Staff ID </label>
-              </div>
-            
-            </fieldset>
-                
                 <div class="row">
-                <div class="form-group col col-md-3 idType fsid hide">
+                <div class="form-group col col-md-6">
               <label>Federal Surveyor ID</label>
               <input type="text">
-               
-            </div><div class="form-group col col-md-3 idType sid hide">
-              <label>Staff ID</label>
-              <input type="text">
-               
+                    
+                
             </div>
                 
             </div>
@@ -558,38 +540,7 @@
         </div>
         <div class="tab-pane" id="pa">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-3" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-3" class="custom-control-label"><strong> Assessment Submitter</strong><br>
-                    Upload XML and ZIP formatted patient assessments; generate and view reports. </label>
-                </div>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-1" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-1" class="custom-control-label"><strong>Provider Administrator</strong><br>
-                    Create and manage patient profiles; view, create, modify and inactiavate patient assessments; generate and view reports. (Cannot upload patient assessments)</label>
-                </div>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-4" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-4" class="custom-control-label"><strong>Provider Assessment Coordinator</strong><br>
-                    Create and manage patient profiles; find, view, create, and submit assessments; generate and view reports.</label>
-                </div>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-2" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-2" class="custom-control-label"><strong>Provider Assessment Viewer</strong><br>
-                    Read-only access to patient profiles and assessments; generate and view reports. (Cannot upload patient assessments)</label>
-                </div>
-                <div class="custom-control custom-radio form-group">
-                    <input id="pa-5" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-5" class="custom-control-label"><strong>Provider Security Official</strong><br>
-                    Approve and manage iQIES user roles in Saviynt; create and manage patient profiles; upload XML and ZIP formatted patient assessments; create, manage, submit, modify, and inactivate patient assessments; generate and view reports.</label>
-                </div>
-            </fieldset>
-                <div class="iq-accordion showhide">
-                <div class="card no-border">
-                  <div class="card-header d-flex">
-                    <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#paInfo" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                      <span>Show Role Privileges</span><span class="hide">Hide Role Privileges</span>
-                      </button>
-                    </div>
-                  <div id="paInfo" class="collapse">
-                    <div class="card-body px-0">
+           
                      <table class="dataTable table-striped">
                          <thead>
                              <tr><th></th>
@@ -657,21 +608,33 @@
                                <td>&nbsp;</td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
+                             <tr>
+                               <th></th>
+                               <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td>
+                                <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td> <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td> <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td> <td style="padding-left: 2rem;"><div class="custom-control custom-radio form-group">
+                    <input type="radio" class="custom-control-input"><label class="custom-control-label"></label>
+                </div></td>
+                             </tr>
                          </tbody>
 </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                     
                 </div>
             <div class="edit-view orgStep">
-                  <div class="mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
+                  <div class="mt-5 mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
             <div class="row">
           <div class="form-group col col-md-3">
               <label>CCN</label>
               <div class="input-group">
-              <input type="text" class="form-control providerInput">
-                  <button class="btn btn-outline-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide'); ">Add</button>
+              <input type="text" class="form-control">
+                  <button class="btn btn-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').removeClass('hide'); $(this).removeClass('btn-primary'); $(this).addClass('btn-outline-primary');">Add</button>
               </div>
           </div>
                 
@@ -685,8 +648,8 @@
               <p class="mb-2">1 Provider</p>
               <table class="table"><thead><tr><th>Provider</th><th>Provider Type</th><th>ID</th><th>Actions</th></tr></thead>
                   <tbody><tr><td>Laguna Rainbow Home Health<br>PO Box 236<br>
-New Laguna, IL 63222</td><td>Home Health Agency</td><td>CCN 327046<br>
-FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); ">Remove</a></td></tr></tbody></table>
+New Laguna, IL 63222</td><td>Home Health Agency</td><td>iQIES 327046<br>
+FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').addClass('hide'); $('.addButton').addClass('btn-primary'); $('.addButton').removeClass('btn-outline-primary'); ">Remove</a></td></tr></tbody></table>
               </div></div>
             
          
@@ -824,9 +787,9 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
             <div class="edit-view orgStep">
                   <div class="mt-5 mb-4"></div>
             <div class="row">
-          <div class="form-group col col-md-3">
-              <label>State <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
-              <select class="stateSelect"><option>Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
+          <div class="form-group col col-md-6">
+              <label>State</label>
+              <select class="autoWidth"><option>Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
           </div>
                 </div>
                  <div class="row">
@@ -846,32 +809,13 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     </div>
                 </div>
                 <div class="sfsi hide iq-conditional-content">
-            <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
-                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                    <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN"></p>
-                    
-                    <fieldset>
-            <legend>What type of ID do you have? </legend>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="idType3"  name="idTypeS" class="custom-control-input" onChange=" $('.idTypeS.fsid').removeClass('hide'); $('.idTypeS.sid').addClass('hide');">
-              <label class="custom-control-label" for="idType3"> Federal Surveyor ID </label>
-              </div>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="idType4" name="idTypeS" class="custom-control-input" onChange="$('.idTypeS.sid').removeClass('hide'); $('.idTypeS.fsid').addClass('hide');">
-              <label class="custom-control-label" for="idType4"> Staff ID </label>
-              </div>
-            
-            </fieldset>
-                
+            <p>Staff ID/Federal Surveyor ID is an identification assigned to each ASPEN user, including those who are not Federal employees or surveyors.</p>
                 <div class="row">
-                <div class="form-group col col-md-3 idTypeS fsid hide">
-              <label>Federal Surveyor ID</label>
+                <div class="form-group col col-md-6">
+              <label>Staff ID/Federal Surveyor ID</label>
               <input type="text">
-               
-            </div><div class="form-group col col-md-3 idTypeS sid hide">
-              <label>Staff ID</label>
-              <input type="text">
-               
+                    
+                
             </div>
                 
             </div>
@@ -944,13 +888,13 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                 </div>
                 </div>
             <div class="edit-view orgStep">
-                  <div class="mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
+                  <div class="mt-5 mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
             <div class="row">
           <div class="form-group col col-md-3">
               <label>CCN</label>
               <div class="input-group">
-              <input type="text" class="form-control vendorInput">
-                  <button class="btn btn-outline-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide');">Add</button>
+              <input type="text" class="form-control">
+                  <button class="btn btn-primary input-group-append addButton" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').removeClass('hide'); $(this).removeClass('btn-primary'); $(this).addClass('btn-outline-primary');">Add</button>
               </div>
           </div>
                 
@@ -964,8 +908,8 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
               <p class="mb-2">1 Provider</p>
               <table class="table"><thead><tr><th>Provider</th><th>Provider Type</th><th>ID</th><th>Actions</th></tr></thead>
                   <tbody><tr><td>Laguna Rainbow Home Health<br>PO Box 236<br>
-New Laguna, IL 63222</td><td>Home Health Agency</td><td>CCN 327046<br>
-FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); ">Remove</a></td></tr></tbody></table>
+New Laguna, IL 63222</td><td>Home Health Agency</td><td>iQIES 327046<br>
+FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hide'); $('.orgStep .submitButton').addClass('hide'); $('.addButton').addClass('btn-primary'); $('.addButton').removeClass('btn-outline-primary'); ">Remove</a></td></tr></tbody></table>
               </div></div>
             
          
@@ -979,7 +923,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
         </div>
         <div class="col-md-12">
           <div class="iq-button-wrapper edit-view active roleStep">
-            <button class="btn btn-primary" onClick="selectOrg()">Next</button> <a href="category.html" class="btn btn-outline-primary" >Previous</a> <a href="index.html" class="btn btn-link">Cancel</a>
+            <button class="btn btn-primary" onClick="selectOrg()">Next</button> <button class="btn btn-outline-primary" onClick="selectCategory();">Previous</button> <a href="index.html" class="btn btn-link">Cancel</a>
           </div>
            <div class="iq-button-wrapper edit-view orgStep">
             <button class="btn btn-primary submitButton" onClick="submitRequest()">Submit Request</button> <button class="btn btn-outline-primary" onClick="selectRole()">Previous</button> <a href="index.html" class="btn btn-link">Cancel</a>
@@ -990,113 +934,22 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
     </div>
     
 <script>
-    
-    
       function selectOrg(){
-          if( $('input[name="userRole"]').is(':checked')) { 
-              $('.edit-view.roleStep').removeClass('active');
-              $('.edit-view.orgStep').addClass('active');
-              //if( $('input[name="userRole"]:checked').val() == 'pa' || $('input[name="userRole"]:checked').val() == 'v'){ 
-                //  $('.orgStep .submitButton').addClass('hide');
-             // }
-              if($('input[name="userRole"]:checked').val() == 'co'){  $('p.iqies-required-text').hide(); }
-              $('.errorMsg.roleErrorMsg').addClass('hide'); 
-          } else {
-              $('.errorMsg.roleErrorMsg').removeClass('hide');
-              $('html, body').animate({ scrollTop: 0 }, 500);
-          }
+          //console.log( $('input').val() );
+          $('.edit-view.roleStep').removeClass('active');
+          $('.edit-view.orgStep').addClass('active');
+          if( $('input[name="userRole"]:checked').val() == 'pa' || $('input[name="userRole"]:checked').val() == 'v'){ $('.orgStep .submitButton').addClass('hide'); }
       }
-    function selectRole(){
+        function selectRole(){
           $('.edit-view.roleStep').addClass('active');
           $('.edit-view.orgStep').removeClass('active');
-          //$('.orgStep .submitButton').removeClass('hide');
+          $('.orgStep .submitButton').removeClass('hide');
       }
     function selectCategory(){
          window.location = 'category.html'; //+ $('input[name="userRole"]:checked').val();
     }
     function submitRequest(){
-        //$('.submitErrorMsg .roleN').html($('input[name="userRole"]:checked ~ label strong').html());
-        console.log($('input[name="userRole"]:checked').val());
-        console.log($('.aoSelect option:selected').text());
-        switch( $('input[name="userRole"]:checked').val() ) { 
-            case 'ao':
-                if($('.aoSelect option:selected').text() == "Select one" ){
-                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
-                    $('.submitErrorMsg .roleN').html('Accrediting Organization');
-                    $('html, body').animate({ scrollTop: 0 }, 500);
-                } else {
-                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
-                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
-                }
-                break;
-            case 'mac':
-                if($('.macSelect option:selected').text() == "Select one" ){
-                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
-                    $('.submitErrorMsg .roleN').html('Medicare Administrative Contractor');
-                    $('html, body').animate({ scrollTop: 0 }, 500);
-                } else {
-                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
-                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
-                }
-                break;
-            case 'ro':
-                if($('.regionSelect option:selected').text() == "Select one" ){
-                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
-                    $('.submitErrorMsg .roleN').html('Region');
-                    $('html, body').animate({ scrollTop: 0 }, 500);
-                } else {
-                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
-                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
-                }
-                break;
-            case 'sa':
-                if($('.stateSelect option:selected').text() == "Select one" ){
-                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
-                    $('.submitErrorMsg .roleN').html('State');
-                    
-                    $('html, body').animate({ scrollTop: 0 }, 500);
-                } else {
-                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
-                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
-                }
-                break;
-            case 'pa':
-                if($('.providerInput').val() == "" ){
-                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.other').addClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.provider').removeClass('hide'); 
-                    $('html, body').animate({ scrollTop: 0 }, 500);
-                } else {
-                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
-                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
-                }
-                break;
-            case 'v':
-                if($('.vendorInput').val() == "" ){
-                    $('.errorMsg.submitErrorMsg').removeClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.other').addClass('hide'); 
-                    $('.errorMsg.submitErrorMsg li.provider').removeClass('hide'); 
-                    $('html, body').animate({ scrollTop: 0 }, 500);
-                } else {
-                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
-                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
-                }
-                break;
-            case 'co':
-                $('.errorMsg.submitErrorMsg').addClass('hide'); 
-                window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
-                break;
-        }
-        
-        
+        window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
     }
   </script>
    
