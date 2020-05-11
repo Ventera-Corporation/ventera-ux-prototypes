@@ -899,62 +899,61 @@
                         <option value="2">Regulation Text Keyword, Title, and/or Number</option></select>
                 </div>-->
                 <div class="col-md-6">
-                    <label for="citeSearch"><span class="sr-only">Search</span></label>
-                    <div class="input-group">
+                    <label for="citeSearch"><span>Search for Citations</span></label>
+                    
                     <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();}" >
-        <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="searchCites()"><i class="fas fa-search"></i></button> <button class="btn btn-link" onClick="gotoPage1(); $('#citeSearch').val('');">Reset</button>
-        </div>
-      </div>
-                    <div class="input-group-help-text help-text">Search by citation tag number, title, or keyword</div>
+                    <p class="help-text">Enter citation tag number, title, or keyword</p>
                 </div>
               </div>
               
                <div class="iq-accordion showhide">
-            <div class="card no-border">
+            <div class="card no-border mb-0">
               <div class="card-header d-flex">
                 <button
                   class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#surveyFilters" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                  <span>Show Filters</span><span class="hide">Hide Filters</span>
+                  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
                 </button>
               </div>
-              <div id="surveyFilters" class="collapse">
-                <div class="card-body px-0">
-                  <fieldset>
+              <div id="surveyFilters" class="collapse mb-0 pb-0">
+                <div class="card-body px-0 mb-0 pb-0">
+                  <fieldset class="mb-0">
                 <legend class="sr-only">Filter citation list by:</legend>
                       <div class="row"><div class="col-md-3 form-group"><label>Regulation Set</label>
-                <select onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> </div>
-                          <div class="col-md-3  form-group"><label>Tag Type</label>
-                <select onchange="selectTagType(this)" id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
-                   <div> <button class="btn btn-outline-primary">Apply</button> <!--<button class="btn btn-link">Reset Filter</button>--></div>
+                <select id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> </div>
+                          <div class="col-md-3 form-group"><label>Tag Type</label>
+                <select id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
+                   
                         
               </fieldset>
                 </div>
               </div>
             </div>
           </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-primary searchButton" onClick="searchCites(); selectRegSet(); selectTagType();">Search</button> <button class="btn btn-link" onClick="resetCites()">Reset</button>
+                    
+                </div>
               <div class="row mt-4 citationsList">
                 <div class="col-md-9" id="citations">
 					
-					<div class="row mt-4"><div class="col-md-5">
-                        <h3 class="iq-label citesSearchCount m-0">
-                            <ul class="iq-inline-list"><li>
-                            <select class="form-control" style="width: auto; display: inline-block;"><option>10 per page</option><option>20 per page</option><option>50 per page</option><option>100 per page</option><option>All</option></select></li><li>
-                         <button class="btn btn-link">View all (30)</button></li></ul>
-                       </h3></div>
-                        <div class="col-md-7 text-right">
-                        <nav aria-label="Table Pagination" class="float-right">
+					<div class="row mt-4"><div class="col-md-3" style="line-height: 3.5rem;"><span class="citesSearchCount">1-10 of</span> <a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">30 citations</a>
+                         
+                    </div>
+                        <div class="col-md-9 text-right">
+                            <ul class="iq-inline-list"><li class="pr-3">
+                        <nav aria-label="Table Pagination">
     
 		<ul class="pagination pagination-large">
-			<li class="page-item first" onClick="gotoPage1()">
+			<li class="page-item first disabled" onClick="gotoPage1()">
 				<button class="page-link first" disabled aria-label="First" type="button"></button>
 			</li>
-			<li class="page-item previous" onClick="gotoPrev()">
+			<li class="page-item previous disabled" onClick="gotoPrev()">
 				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
 			</li>
 			<li class="page-item" onClick="gotoPage1()">
-				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control"> <span>of 3</span></div>
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 3</span></div>
 			</li>
 			
 			<li class="page-item next" onClick="gotoNext()">
@@ -964,7 +963,8 @@
 				<button type="button" class="page-link last" aria-label="Last"></button>
 			</li>
 		</ul>
-	</nav>
+	</nav></li><li class="perPage">
+                             <select class="form-control perPageSelect" style="width: auto;" onChange="if(this.options[this.selectedIndex].value == 'all'){ console.log('x'); viewAllCites(); } else { console.log('y'); gotoPage1(); }"><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select> </li></ul>
                         </div></div>
      
 <div class="accordion-wrapper"> 
@@ -1725,24 +1725,22 @@
 		</div> --> 
                   </div>
                 
-<div class="row"><div class="col-md-5">
-                        <h3 class="iq-label citesSearchCount m-0">
-                            <ul class="iq-inline-list"><li>
-                            <select class="form-control" style="width: auto; display: inline-block;"><option>10 per page</option><option>20 per page</option><option>50 per page</option><option>100 per page</option><option>All</option></select></li><li>
-                         <button class="btn btn-link">View all (30)</button></li></ul>
-                       </h3></div>
-                        <div class="col-md-7 text-right">
-                        <nav aria-label="Table Pagination" class="float-right">
+<div class="row bottomPagination"><div class="col-md-3" style="line-height: 3.5rem;"><span class="citesSearchCount">1-10 of</span> <a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">30 citations</a>
+                         
+                    </div>
+                        <div class="col-md-9 text-right">
+                            <ul class="iq-inline-list"><li class="pr-3">
+                        <nav aria-label="Table Pagination">
     
 		<ul class="pagination pagination-large">
-			<li class="page-item first" onClick="gotoPage1()">
+			<li class="page-item first disabled" onClick="gotoPage1()">
 				<button class="page-link first" disabled aria-label="First" type="button"></button>
 			</li>
-			<li class="page-item previous" onClick="gotoPrev()">
+			<li class="page-item previous disabled" onClick="gotoPrev()">
 				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
 			</li>
 			<li class="page-item" onClick="gotoPage1()">
-				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control"> <span>of 3</span></div>
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 3</span></div>
 			</li>
 			
 			<li class="page-item next" onClick="gotoNext()">
@@ -1752,7 +1750,8 @@
 				<button type="button" class="page-link last" aria-label="Last"></button>
 			</li>
 		</ul>
-	</nav>
+	</nav></li><li class="perPage">
+                             <select class="form-control perPageSelect" style="width: auto;"><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select> </li></ul>
                         </div></div>
                    
                     
@@ -4458,22 +4457,36 @@
 			case 'clinical record': case 'record': case 'clinical': 
 				$('#citations .iq-accordion').addClass('hide'); 
 				$('#citations .iq-accordion.CR').removeClass('hide'); 
-				$('#citationsT .citesSearchCount').html('Results: 5 Citations');
+                
+                $('#citationsT .citesSearchTotal').html('');
+                $('#citationsT .perPageSelect').addClass('hide');
+                $('#citationsT .pagination').addClass('hide');
+                $('#citationsT .citesSearchCount').html('Result: 5 Citations');
+				
 				break; 
 			default: 
 				$('#citations .iq-accordion').addClass('hide'); 
 				$('#citations .iq-accordion.'+searchKey).removeClass('hide'); 
 				switch ( searchKey ) {
 					case '0': case '0000': 
+                        $('#citationsT .citesSearchTotal').html('');
+                        $('#citationsT .perPageSelect').addClass('hide');
+                        $('#citationsT .pagination').addClass('hide');
 						$('#citationsT .citesSearchCount').html('Result: 3 Citations');
 						break;
 					default: 
+                        $('#citationsT .citesSearchTotal').html('');
+                        $('#citationsT .perPageSelect').addClass('hide');
+                        $('#citationsT .pagination').addClass('hide');
 						$('#citationsT .citesSearchCount').html('Result: 1 Citation');
 						break;
 				}
 				break;  
 		}
 	}
+    function resetCites(){
+        $('#citeSearch').val(''); $('#allRegSelect').prop('selectedIndex', 0).change(); $('#allTagTypeSelect').prop('selectedIndex', 0).change(); gotoPage1(); 
+    }
 	function gotoPage1() {
 			var tagType = $('#allTagTypeSelect option:selected').val();
 		 	var regSet = $('#allRegSelect option:selected').val();
@@ -4481,36 +4494,43 @@
 				 case 'er': 
 					 $('#citations .iq-accordion').addClass('hide'); 
 					 $('#citations .iq-accordion.ER').removeClass('hide'); 
-					 $('#citationsT .citesSearchCount').html('Result: 10 Citations');
+                     
+                     $('#citationsT .citesSearchTotal').html('');
+                     $('#citationsT .perPageSelect').addClass('hide');
+                     $('#citationsT .pagination').addClass('hide');
+                     $('#citationsT .citesSearchCount').html('Results: 10 Citations');
+                    $('#citationsT .pagination .pageCount').html('of 1'); 
+                    $('#citationsT .bottomPagination').addClass('hide');
+                    
 					 switch(tagType){
 						 case 'condition': 
 							 $('#citations .iq-accordion.ER').addClass('hide'); 
 							 $('#citations .iq-accordion.ER.condition').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 1 Citations');
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
 							 break;
 						 case 'standard':
 							 $('#citations .iq-accordion.ER').addClass('hide'); 
 							 $('#citations .iq-accordion.ER.standard').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 8 Citations');
+							 $('#citationsT .citesSearchCount').html('Results: 8 Citations');
 							 break;
 						 case 'element':
 							 $('#citations .iq-accordion.ER').addClass('hide'); 
 							 $('#citations .iq-accordion.ER.element').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
 							 break;
 						 case 'memo':
 							 $('#citations .iq-accordion.ER').addClass('hide'); 
 							 $('#citations .iq-accordion.ER.memo').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
 							 break;
 						 case 'licensure':
 							 $('#citations .iq-accordion.ER').addClass('hide'); 
 							 $('#citations .iq-accordion.ER.licensure').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
 							 break;
 					 }
-					$('#citationsT .pagination .page-item').removeClass('active'); 
-					 $('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					 $('#citationsT .pagination .page-item').removeClass('active'); 
+				     $('#citationsT .pagination .page-item.first button').attr('disabled', true);
 					 $('#citationsT .pagination .page-item.previous button').attr('disabled',true);
 					 $('#citationsT .pagination .page-item.next button').attr('disabled',true);
 					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
@@ -4528,32 +4548,68 @@
 					 $('#citations .iq-accordion').addClass('hide'); 
 					 $('#citations .iq-accordion.HHA').removeClass('hide'); 
 					 $('#citations .iq-accordion.HHA.hhaPage2').addClass('hide'); 
-					 $('#citationsT .citesSearchCount').html('Result: 1-10 of 19 Citations');
+                     
+                     $('#citationsT .citesSearchTotal').html('19 Citations');
+                     $('#citationsT .perPageSelect').removeClass('hide');
+                     $('#citationsT .pagination').removeClass('hide');
+					 $('#citationsT .citesSearchCount').html('Results: 1-10 of');
+                    $('#citationsT .pagination .pageCount').html('of 2'); 
+                    
 					switch(tagType){
 						 case 'condition': 
 							 $('#citations .iq-accordion.HHA').addClass('hide'); 
 							 $('#citations .iq-accordion.HHA.condition').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 4 Citations');
+                             
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 4 Citations');
+                             $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .pagination .pageCount').html('of 1'); 
+                             $('#citationsT .bottomPagination').addClass('hide');
 							 break;
 						 case 'standard':
 							 $('#citations .iq-accordion.HHA').addClass('hide'); 
 							 $('#citations .iq-accordion.HHA.standard').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 7 Citations');
+                             
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 7 Citations');
+                             $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .pagination .pageCount').html('of 1'); 
+                            $('#citationsT .bottomPagination').addClass('hide');
 							 break;
 						 case 'element':
 							$('#citations .iq-accordion.HHA').addClass('hide'); 
 							 $('#citations .iq-accordion.HHA.element').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 7 Citations');
+                            
+                            $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 7 Citations');
+                            $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .pagination .pageCount').html('of 1'); 
+                            $('#citationsT .bottomPagination').addClass('hide');
 							 break;
 						 case 'memo':
 							$('#citations .iq-accordion.HHA').addClass('hide'); 
 							 $('#citations .iq-accordion.HHA.memo').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+                            
+                            $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                             $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .pagination .pageCount').html('of 1'); 
+                            $('#citationsT .bottomPagination').addClass('hide');
 							 break;
 						 case 'licensure':
 							 $('#citations .iq-accordion.HHA').addClass('hide'); 
 							 $('#citations .iq-accordion.HHA.licensure').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+                            
+                            $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+                             $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .pagination .pageCount').html('of 1'); 
+                            $('#citationsT .bottomPagination').addClass('hide');
 							 break;
 					 }
 					$('#citationsT .pagination .page-item').removeClass('active'); 
@@ -4574,32 +4630,39 @@
 				 case 'state':
 					$('#citations .iq-accordion').addClass('hide'); 
 					 $('#citations .iq-accordion.ST').removeClass('hide'); 
-					 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+                     
+                     $('#citationsT .citesSearchTotal').html('');
+                     $('#citationsT .perPageSelect').addClass('hide');
+                     $('#citationsT .pagination').addClass('hide');
+					 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                    $('#citationsT .pagination .pageCount').html('of 1'); 
+                    $('#citationsT .bottomPagination').addClass('hide');
+                    
 					switch(tagType){
 						 case 'condition': 
 							$('#citations .iq-accordion.ST').addClass('hide'); 
 							 $('#citations .iq-accordion.ST.condition').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
 							 break;
 						 case 'standard':
 							$('#citations .iq-accordion.ST').addClass('hide'); 
 							 $('#citations .iq-accordion.ST.standard').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
 							 break;
 						 case 'element':
 							$('#citations .iq-accordion.ST').addClass('hide'); 
 							 $('#citations .iq-accordion.ST.element').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
 							 break;
 						 case 'memo':
 							$('#citations .iq-accordion.ST').addClass('hide'); 
 							 $('#citations .iq-accordion.ST.memo').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 0 Citations');
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
 							 break;
 						 case 'licensure':
 							$('#citations .iq-accordion.ST').addClass('hide'); 
 							 $('#citations .iq-accordion.ST.licensure').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
 							 break;
 					 }
 					$('#citationsT .pagination .page-item').removeClass('active'); 
@@ -4621,7 +4684,13 @@
 					$('#citations .iq-accordion').removeClass('hide'); 
 					$('#citations .iq-accordion.allPage2').addClass('hide'); 
 					$('#citations .iq-accordion.allPage3').addClass('hide'); 
-					$('#citationsT .citesSearchCount').html('1-10 of 30 Citations');
+                    
+                    $('#citationsT .citesSearchTotal').html('30 Citations');
+                     $('#citationsT .perPageSelect').removeClass('hide');
+                     $('#citationsT .pagination').removeClass('hide');
+					$('#citationsT .citesSearchCount').html('1-10 of');
+                    $('#citationsT .pagination .pageCount').html('of 3'); 
+                    $('#citationsT .bottomPagination').removeClass('hide');
 					
 					$('#citationsT .pagination .page-item').removeClass('active'); 
 					$('#citationsT .pagination .page-item').removeClass('hide'); 
@@ -4640,7 +4709,12 @@
 						 case 'condition': 
 							 $('#citations .iq-accordion').addClass('hide'); 
 							 $('#citations .iq-accordion.condition').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 5 Citations');
+                            
+                             $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 5 Citations');
+                            $('#citationsT .bottomPagination').addClass('hide');
 							
 					$('#citationsT .pagination .page-item.next button').attr('disabled',true);
 					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
@@ -4654,7 +4728,14 @@
 						 case 'standard':
 							$('#citations .iq-accordion').addClass('hide'); 
 							 $('#citations .iq-accordion.standard').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 1-10 of 15 Citations');
+                            
+                            $('#citationsT .citesSearchTotal').html('15 Citations');
+                            $('#citationsT .perPageSelect').removeClass('hide');
+                            $('#citationsT .pagination').removeClass('hide');
+				            $('#citationsT .citesSearchCount').html('Results: 1-10 of');
+                            $('#citationsT .pagination .pageCount').html('of 2'); 
+                            $('#citationsT .bottomPagination').removeClass('hide');
+                            
 							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
 					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
 
@@ -4667,7 +4748,13 @@
 						 case 'element':
 							$('#citations .iq-accordion').addClass('hide'); 
 							 $('#citations .iq-accordion.element').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 7 Citations');
+                            
+                            $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 7 Citations');
+                            $('#citationsT .bottomPagination').addClass('hide');
+                            
 							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
 					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
 
@@ -4680,7 +4767,13 @@
 						 case 'memo':
 							$('#citations .iq-accordion').addClass('hide'); 
 							 $('#citations .iq-accordion.memo').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 2 Citations');
+                            
+                            $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 2 Citations');
+                            $('#citationsT .bottomPagination').addClass('hide');
+                            
 							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
 					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
 
@@ -4694,7 +4787,336 @@
 							console.log('all licensure')
 							$('#citations .iq-accordion').addClass('hide'); 
 							 $('#citations .iq-accordion.licensure').removeClass('hide'); 
-							 $('#citationsT .citesSearchCount').html('Result: 1 Citation');
+                            
+                            $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                            $('#citationsT .bottomPagination').addClass('hide');
+                            
+							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+					 }
+					
+					break;
+			 } 
+			
+		}
+    function viewAllCites() {
+			var tagType = $('#allTagTypeSelect option:selected').val();
+		 	var regSet = $('#allRegSelect option:selected').val();
+			switch(regSet) {
+				 case 'er': 
+					 $('#citations .iq-accordion').addClass('hide'); 
+					 $('#citations .iq-accordion.ER').removeClass('hide'); 
+                     
+                     $('#citationsT .citesSearchTotal').html('');
+                     $('#citationsT .perPageSelect').addClass('hide');
+                     $('#citationsT .pagination').addClass('hide');
+                     $('#citationsT .citesSearchCount').html('Results: 10 Citations');
+                    $('#citationsT .pagination .pageCount').html('of 1'); 
+                    $('#citationsT .bottomPagination').addClass('hide');
+                    
+					 switch(tagType){
+						 case 'condition': 
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.condition').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+							 break;
+						 case 'standard':
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.standard').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 8 Citations');
+							 break;
+						 case 'element':
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.element').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+							 break;
+						 case 'memo':
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.memo').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+							 break;
+						 case 'licensure':
+							 $('#citations .iq-accordion.ER').addClass('hide'); 
+							 $('#citations .iq-accordion.ER.licensure').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+							 break;
+					 }
+					 $('#citationsT .pagination .page-item').removeClass('active'); 
+				     $('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					 $('#citationsT .pagination .page-item.previous button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+					
+					$('#citationsT .pagination .page-item.first').addClass('disabled');
+					$('#citationsT .pagination .page-item.previous').addClass('disabled');
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					
+					 $('#citationsT .pagination .page-item.page1').addClass('active');
+					 $('#citationsT .pagination .page-item.page2').addClass('hide');
+					 $('#citationsT .pagination .page-item.page3').addClass('hide');
+					 break;
+				 case 'hha':
+					 $('#citations .iq-accordion').addClass('hide'); 
+					 $('#citations .iq-accordion.HHA').removeClass('hide'); 
+					 //$('#citations .iq-accordion.HHA.hhaPage2').addClass('hide'); 
+                     
+                     $('#citationsT .citesSearchTotal').html('');
+                     $('#citationsT .perPageSelect').removeClass('hide');
+                     $('#citationsT .pagination').addClass('hide');
+					 $('#citationsT .citesSearchCount').html('Results: 19 Citations');
+                    //$('#citationsT .pagination .pageCount').html('of 2'); 
+                    $('#citationsT .bottomPagination').removeClass('hide');
+                    
+					switch(tagType){
+						 case 'condition': 
+							 $('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.condition').removeClass('hide'); 
+                             
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 4 Citations');
+                             $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .pagination .pageCount').html('of 1'); 
+                             $('#citationsT .bottomPagination').addClass('hide');
+							 break;
+						 case 'standard':
+							 $('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.standard').removeClass('hide'); 
+                             
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 7 Citations');
+                             $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .pagination .pageCount').html('of 1'); 
+                            $('#citationsT .bottomPagination').addClass('hide');
+							 break;
+						 case 'element':
+							$('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.element').removeClass('hide'); 
+                            
+                            $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 7 Citations');
+                            $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .pagination .pageCount').html('of 1'); 
+                            $('#citationsT .bottomPagination').addClass('hide');
+							 break;
+						 case 'memo':
+							$('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.memo').removeClass('hide'); 
+                            
+                            $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                             $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .pagination .pageCount').html('of 1'); 
+                            $('#citationsT .bottomPagination').addClass('hide');
+							 break;
+						 case 'licensure':
+							 $('#citations .iq-accordion.HHA').addClass('hide'); 
+							 $('#citations .iq-accordion.HHA.licensure').removeClass('hide'); 
+                            
+                            $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+                             $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .pagination .pageCount').html('of 1'); 
+                            $('#citationsT .bottomPagination').addClass('hide');
+							 break;
+					 }
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+					 $('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					 $('#citationsT .pagination .page-item.previous button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.next button').attr('disabled',false);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',false);
+					
+					$('#citationsT .pagination .page-item.first').addClass('disabled');
+					$('#citationsT .pagination .page-item.previous').addClass('disabled');
+					$('#citationsT .pagination .page-item.next').removeClass('disabled');
+					$('#citationsT .pagination .page-item.last').removeClass('disabled');
+					
+					 $('#citationsT .pagination .page-item.page1').addClass('active');
+					 $('#citationsT .pagination .page-item.page2').removeClass('hide');
+					 $('#citationsT .pagination .page-item.page3').addClass('hide');
+					 break;
+				 case 'state':
+					$('#citations .iq-accordion').addClass('hide'); 
+					 $('#citations .iq-accordion.ST').removeClass('hide'); 
+                     
+                     $('#citationsT .citesSearchTotal').html('');
+                     $('#citationsT .perPageSelect').addClass('hide');
+                     $('#citationsT .pagination').addClass('hide');
+					 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                    $('#citationsT .pagination .pageCount').html('of 1'); 
+                    $('#citationsT .bottomPagination').addClass('hide');
+                    
+					switch(tagType){
+						 case 'condition': 
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.condition').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+							 break;
+						 case 'standard':
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.standard').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+							 break;
+						 case 'element':
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.element').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+							 break;
+						 case 'memo':
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.memo').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+							 break;
+						 case 'licensure':
+							$('#citations .iq-accordion.ST').addClass('hide'); 
+							 $('#citations .iq-accordion.ST.licensure').removeClass('hide'); 
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+							 break;
+					 }
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+		             $('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					 $('#citationsT .pagination .page-item.previous button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+					
+					 $('#citationsT .pagination .page-item.first').addClass('disabled');
+					$('#citationsT .pagination .page-item.previous').addClass('disabled');
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					
+					 $('#citationsT .pagination .page-item.page1').addClass('active');
+					 $('#citationsT .pagination .page-item.page2').addClass('hide');
+					 $('#citationsT .pagination .page-item.page3').addClass('hide');
+					 break;		 
+				case 'all': default: 
+					$('#citations .iq-accordion').removeClass('hide'); 
+					//$('#citations .iq-accordion.allPage2').addClass('hide'); 
+					//$('#citations .iq-accordion.allPage3').addClass('hide'); 
+                    
+                    $('#citationsT .citesSearchTotal').html('');
+                     $('#citationsT .perPageSelect').removeClass('hide');
+                     $('#citationsT .pagination').addClass('hide');
+					$('#citationsT .citesSearchCount').html('30 Citations');
+                    //$('#citationsT .pagination .pageCount').html('of 3'); 
+                    $('#citationsT .bottomPagination').removeClass('hide');
+					
+					$('#citationsT .pagination .page-item').removeClass('active'); 
+					$('#citationsT .pagination .page-item').removeClass('hide'); 
+					$('#citationsT .pagination .page-item.first button').attr('disabled', true);
+					$('#citationsT .pagination .page-item.previous button').attr('disabled',true);
+					$('#citationsT .pagination .page-item.next button').attr('disabled',false);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',false);
+					
+					$('#citationsT .pagination .page-item.first').addClass('disabled');
+					$('#citationsT .pagination .page-item.previous').addClass('disabled');
+					$('#citationsT .pagination .page-item.next').removeClass('disabled');
+					$('#citationsT .pagination .page-item.last').removeClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					
+					switch(tagType){
+						 case 'condition': 
+							 $('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.condition').removeClass('hide'); 
+                            
+                             $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 5 Citations');
+                            $('#citationsT .bottomPagination').addClass('hide');
+							
+					$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+						 case 'standard':
+							$('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.standard').removeClass('hide'); 
+                            
+                            $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .perPageSelect').removeClass('hide');
+                            $('#citationsT .pagination').addClass('hide');
+				            $('#citationsT .citesSearchCount').html('Results: 15 Citations');
+                            //$('#citationsT .pagination .pageCount').html('of 2'); 
+                            $('#citationsT .bottomPagination').removeClass('hide');
+                            
+							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+						 case 'element':
+							$('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.element').removeClass('hide'); 
+                            
+                            $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 7 Citations');
+                            $('#citationsT .bottomPagination').addClass('hide');
+                            
+							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+						 case 'memo':
+							$('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.memo').removeClass('hide'); 
+                            
+                            $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 2 Citations');
+                            $('#citationsT .bottomPagination').addClass('hide');
+                            
+							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
+					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
+
+					$('#citationsT .pagination .page-item.next').addClass('disabled');
+					$('#citationsT .pagination .page-item.last').addClass('disabled');
+					$('#citationsT .pagination .page-item.page1').addClass('active');
+					$('#citationsT .pagination .page-item.page2').addClass('hide');
+					$('#citationsT .pagination .page-item.page3').addClass('hide');
+							 break;
+						 case 'licensure':
+							console.log('all licensure')
+							$('#citations .iq-accordion').addClass('hide'); 
+							 $('#citations .iq-accordion.licensure').removeClass('hide'); 
+                            
+                            $('#citationsT .citesSearchTotal').html('');
+                             $('#citationsT .perPageSelect').addClass('hide');
+                             $('#citationsT .pagination').addClass('hide');
+							 $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                            $('#citationsT .bottomPagination').addClass('hide');
+                            
 							$('#citationsT .pagination .page-item.next button').attr('disabled',true);
 					 $('#citationsT .pagination .page-item.last button').attr('disabled',true);
 
@@ -4728,9 +5150,15 @@
 					$('#citationsT .pagination .page-item.next').addClass('disabled');
 					$('#citationsT .pagination .page-item.last').addClass('disabled');
 					
-					 $('#citationsT .pagination .page-item.page2').addClass('active');
-					 $('#citationsT .pagination .page-item.page3').addClass('hide');
-					 $('#citationsT .citesSearchCount').html('Result: 11-19 of 19 Citations');
+					 $('#citationsT .pagination .pageNumberInput').val('2');
+					 
+                     $('#citationsT .citesSearchTotal').html('19 Citations');
+                    $('#citationsT .perPageSelect').removeClass('hide');
+                    $('#citationsT .pagination').removeClass('hide');
+					 $('#citationsT .citesSearchCount').html('Result: 11-19 of');
+                    $('#citationsT .pagination .pageCount').html('of 2'); 
+                    $('#citationsT .bottomPagination').removeClass('hide');
+                    
 					switch(tagType){
 						 case 'condition': 
 							 gotoPage1();
@@ -4762,7 +5190,15 @@
 					$('#citationsT .pagination .page-item').removeClass('disabled');
 				
 					$('#citationsT .pagination .page-item.page2').addClass('active');
-					$('#citationsT .citesSearchCount').html('11-20 of 30 Citations');
+                    
+                    $('#citationsT .pagination .pageNumberInput').val('2');
+                    $('#citationsT .citesSearchTotal').html('30 Citations');
+                    $('#citationsT .perPageSelect').removeClass('hide');
+                    $('#citationsT .pagination').removeClass('hide');
+					$('#citationsT .citesSearchCount').html('11-20 of');
+                    $('#citationsT .pagination .pageCount').html('of 3'); 
+                    $('#citationsT .bottomPagination').removeClass('hide');
+                    
 					switch(tagType){
 						 case 'condition': 
 							 gotoPage1();
@@ -4803,7 +5239,15 @@
 					$('#citationsT .pagination .page-item.last').addClass('disabled');
 					
 					$('#citationsT .pagination .page-item.page3').addClass('active');
-					$('#citationsT .citesSearchCount').html('21-30 of 30 Citations');
+                    $('#citationsT .pagination .pageNumberInput').val('3');
+                    
+                    $('#citationsT .citesSearchTotal').html('30 Citations');
+                    $('#citationsT .perPageSelect').removeClass('hide');
+                    $('#citationsT .pagination').removeClass('hide');
+					$('#citationsT .citesSearchCount').html('21-30 of');
+                    $('#citationsT .pagination .pageCount').html('of 3'); 
+                    $('#citationsT .bottomPagination').removeClass('hide');
+                    
 					switch(tagType){
 						 case 'condition': 
 							 gotoPage1();
@@ -4831,7 +5275,7 @@
 					gotoPage1();
 					break; 
 				case 'all': default: 
-					switch( $('#citationsT .pagination .page-item.active button').html() ){
+					switch( $('#citationsT .pagination .pageNumberInput').val() ){
 						case '2':
 							gotoPage1();
 							break;
@@ -4849,7 +5293,7 @@
 					gotoPage2();
 					break; 
 				case 'all': default: 
-					switch( $('#citationsT .pagination .page-item.active button').html() ){
+					switch( $('#citationsT .pagination .pageNumberInput').val() ){
 						case '1':
 							gotoPage2();
 							break;
@@ -4860,6 +5304,8 @@
 					break;
 			 } 
 		}
+    
+    
 	function selectRegSetRV(){
 		var regSet = $('#allRegSelectRV option:selected').val();
 		$('#citationsT .read-view.all .iq-accordion').addClass('hide');
