@@ -64,6 +64,7 @@
   </div>
   </header>
 <main>
+    
 <div class="iq-page-header-wrapper inverted">
             <div class="container-fluid">
               <div class="iq-page-header">
@@ -142,7 +143,7 @@
         <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
       </div>
     </div>-->
-  
+
     <div class="row">
       <div class="col-md-12">
         <div class="alert alert-success successMsg hide" role="alert">
@@ -867,8 +868,7 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="toast-body">
-    <a href="citationSearchTest.html" class="return-link">Go back to Index Page</a>
+  <div class="toast-body"> Prototype Limitation: If you search, you can't really apply advanced search features on the search results. If you want to see results for a specific regulation set or specific tag type, omit search term in the search input.
   </div>
 </div>
 			  <div class="alert alert-success successMsg hide" role="alert">
@@ -932,7 +932,7 @@
           </div>
                 
                 <div>
-                    <button type="submit" class="btn btn-primary searchButton" onClick="searchCites(); selectRegSet(); selectTagType();">Search</button> <button class="btn btn-link" onClick="resetCites()">Reset</button>
+                    <button type="submit" class="btn btn-primary searchButton" onClick="searchCites();">Search</button> <button class="btn btn-link" onClick="resetCites()">Reset</button>
                     
                 </div>
               <div class="row mt-4 citationsList">
@@ -4449,7 +4449,13 @@
 	} 
 	
 	function searchCites(){
-		var searchKey = $('#citeSearch').val().toLowerCase(); 
+        if( $('#allTagTypeSelect option:selected').val() != 'all'){
+            selectRegSet();
+        }
+		if( $('#allRegSelect option:selected').val() != 'all'){  
+            selectTagType();
+        }
+        var searchKey = $('#citeSearch').val().toLowerCase(); 
 		switch( searchKey ){ 
 			case '': 
 				gotoPage1();
