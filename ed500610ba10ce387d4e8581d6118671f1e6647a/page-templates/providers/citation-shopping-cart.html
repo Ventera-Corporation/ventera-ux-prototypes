@@ -4447,6 +4447,7 @@
                 $('#citationsT .perPageSelect').addClass('hide');
                 $('#citationsT .pagination').addClass('hide');
                 $('#citationsT .citesSearchCount').html('Results: 5 Citations');
+                $('#citationsT .bottomPagination').addClass('hide');
 				
 				break; 
 			default: 
@@ -4458,12 +4459,14 @@
                         $('#citationsT .perPageSelect').addClass('hide');
                         $('#citationsT .pagination').addClass('hide');
 						$('#citationsT .citesSearchCount').html('Results: 3 Citations');
+                        $('#citationsT .bottomPagination').addClass('hide');
 						break;
 					default: 
                         $('#citationsT .citesSearchTotal').html('');
                         $('#citationsT .perPageSelect').addClass('hide');
                         $('#citationsT .pagination').addClass('hide');
 						$('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                        $('#citationsT .bottomPagination').addClass('hide');
 						break;
 				}
 				break;  
