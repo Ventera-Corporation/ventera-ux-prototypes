@@ -8,15 +8,13 @@
 
   <title>Select User Role</title>
 
-  <link rel="stylesheet"
-    href="../../../../src/assets/prototype-styles/design-system.css">
-  <link rel="stylesheet"  href="../../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet" href="../../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet" href="../../../../src/assets/prototype-styles/prototype.css">
     <!-- you need this font to have the right font weight expressed -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
 <!-- to include fontsome icons professional version -->
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
-    <link rel="stylesheet"
-    href="../../../../src/assets/prototype-styles/hha.css">
+    <link rel="stylesheet" href="../../../../src/assets/prototype-styles/hha.css">
     <style>
         .table-striped { border: 1px solid #D6D7D9; }
         .table-striped tbody th { padding-left: 1rem; padding-right: 1rem; }
@@ -178,10 +176,12 @@
           </p></div>
             
           <div class="form-group">
-              <label>Accrediting Organization <span class="iq-asterisk">*</span></label>
+              <label>Accrediting Organization <span class="iq-asterisk">*</span>
               <select class="autoWidth aoSelect"><option>Select one</option><option>The Joint Comission (TJC)</option>
               <option>Community Health Accreditation Partner (CHAP)</option>
               <option>Accreditation Commission for Health Care (ACHC)</option></select>
+              <span class="iq-input-error-msg hide">This field is required</span>
+              </label>
           </div>
                 
             </div>
@@ -356,7 +356,7 @@
                  <div class="mt-5 mb-4"></div>
             
           <div class="form-group">
-              <label>Medicare Administrative Contractor <span class="iq-asterisk">*</span></label>
+              <label>Medicare Administrative Contractor <span class="iq-asterisk">*</span>
               <select class="autoWidth macSelect"><option>Select one</option>
                   <option>Anthem Health Plans of New Hampshire</option>
       <option>Arkansas Blue Cross Blue Shield</option>
@@ -388,6 +388,8 @@
       <option>TriSpan Health Services</option>
       <option>United Government Services</option>
       <option>Wisconsin Physicians Service</option></select>
+              <span class="iq-input-error-msg hide">This field is required</span>
+              </label>
           </div>
                 
             </div>
@@ -488,7 +490,7 @@
                  <div class="mt-5 mb-4"></div>
             <div class="row">
           <div class="form-group col col-md-3">
-              <label>Region <span class="iq-asterisk">*</span></label>
+              <label>Region <span class="iq-asterisk">*</span>
               <select class="regionSelect"><option>Select one</option>
                   <option>1 - Boston</option>
                   <option>2 - New York</option>
@@ -501,12 +503,14 @@
                   <option>9 - San Francisco</option>
                   <option>10 - Seattle</option>
               </select>
+              <span class="iq-input-error-msg hide">This field is required</span>
+              </label>
           </div>
                 </div>
-                <div class="row hide">
+                <div class="row">
                     <div class="col col-md-12">
                       <fieldset>
-            <legend>Do you have an account in ASPEN?</legend>
+            <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
             <div class="custom-control custom-radio">
               <input type="radio" id="ox1"  name="ox" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
               <label class="custom-control-label" for="ox1"> Yes </label>
@@ -521,11 +525,9 @@
                    
                 </div>
                 <div class="fsi hide iq-conditional-content">
-                    <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
-                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                    <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN"></p>
-                    
-                    <fieldset>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <fieldset>
             <legend>What type of ID do you have?</legend>
             <div class="custom-control custom-radio">
               <input type="radio" id="idType1"  name="idType" class="custom-control-input" onChange=" $('.idType.fsid').removeClass('hide'); $('.idType.sid').addClass('hide');">
@@ -537,20 +539,28 @@
               </div>
             
             </fieldset>
-                
-                <div class="row">
-                <div class="form-group col col-md-3 idType fsid hide">
+                            <div class="row">
+                <div class="form-group col col-md-8 idType fsid hide">
               <label>Federal Surveyor ID</label>
               <input type="text">
                
-            </div><div class="form-group col col-md-3 idType sid hide">
+            </div><div class="form-group col col-md-8 idType sid hide">
               <label>Staff ID</label>
               <input type="text">
                
             </div>
                 
             </div>
-                
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card iq-color-gray-lighter"><div class="card-body">
+                        <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
+                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                    <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
+                        <p id="fsidImage" class="sr-only"> Navigate to Employee Identification tab in ASPEN. You can find the Federal Surveyor ID in the Idenfication area. </p>
+                            </div></div>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
@@ -568,7 +578,7 @@
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="pa-4" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-4" class="custom-control-label"><strong>Provider Assessment Coordinator</strong><br>
-                    Create and manage patient profiles; find, view, create, and submit assessments; generate and view reports.</label>
+                    Create and manage patient profiles; view and create patient assessments; generate and view reports. (Cannot upload patient assessments)</label>
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="pa-2" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-2" class="custom-control-label"><strong>Provider Assessment Viewer</strong><br>
@@ -576,7 +586,7 @@
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="pa-5" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-5" class="custom-control-label"><strong>Provider Security Official</strong><br>
-                    Approve and manage iQIES user roles in Saviynt; create and manage patient profiles; upload ZIP formatted patient assessments; create, manage, submit, modify, and inactivate patient assessments; generate and view reports.</label>
+                    Approve and manage iQIES user roles; create and manage patient profiles; upload ZIP formatted patient assessments; create, manage, modify, and inactivate patient assessments; generate and view reports.</label>
                 </div>
             </fieldset>
                 <div class="iq-accordion showhide">
@@ -664,7 +674,7 @@
                 </div>
                 </div>
             <div class="edit-view orgStep">
-                  <div class="mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
+                  <div class="mb-4"><p class="lead">Add providers for the <span class="roleName">Provider Administrator</span> role by entering their CCN.</p></div>
             <div class="row">
           <div class="form-group col col-md-3">
               <label>CCN</label>
@@ -824,14 +834,16 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                   <div class="mt-5 mb-4"></div>
             <div class="row">
           <div class="form-group col col-md-3">
-              <label>State <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span></label>
+              <label>State <span class="iq-asterisk">*</span><span class="iq-required-text"> Required</span>
               <select class="stateSelect" onChange="if(this.options[this.selectedIndex].value != '62'){ $('.IDrequest').removeClass('hide');} else { $('.IDrequest').addClass('hide');}"><option>Select one</option><option value="19">Alabama</option><option value="59">Alaska</option><option value="48">Arizona</option><option value="33">Arkansas</option><option value="49">California</option><option value="42">Colorado</option><option value="1">Connecticut</option><option value="13">Delaware</option><option value="14">District of Columbia</option><option value="20">Florida</option><option value="21">Georgia</option><option value="50">Hawaii</option><option value="60">Idaho</option><option value="27">Illinois</option><option value="28">Indiana</option><option value="38">Iowa</option><option value="39">Kansas</option><option value="22">Kentucky</option><option value="34">Louisiana</option><option value="2">Maine</option><option value="15">Maryland</option><option value="3">Massachusetts</option><option value="29">Michigan</option><option value="30">Minnesota</option><option value="23">Mississippi</option><option value="40">Missouri</option><option value="43">Montana</option><option value="41">Nebraska</option><option value="51">Nevada</option><option value="4">New Hampshire</option><option value="7">New Jersey</option><option value="35">New Mexico</option><option value="8">New York</option><option value="24">North Carolina</option><option value="44">North Dakota</option><option value="31">Ohio</option><option value="36">Oklahoma</option><option value="61">Oregon</option><option value="16">Pennsylvania</option><option value="9">Puerto Rico</option><option value="5">Rhode Island</option><option value="25">South Carolina</option><option value="45">South Dakota</option><option value="26">Tennessee</option><option value="37">Texas</option><option value="46">Utah</option><option value="6">Vermont</option><option value="17">Virginia</option><option value="62">Washington</option><option value="18">West Virginia</option><option value="32">Wisconsin</option><option value="47">Wyoming</option></select>
+              <span class="iq-input-error-msg hide">This field is required</span>
+              </label>
           </div>
                 </div>
                  <div class="row IDrequest hide">
                     <div class="col col-md-12">
                       <fieldset>
-            <legend>Do you have an account in ASPEN?</legend>
+            <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
             <div class="custom-control custom-radio">
               <input type="radio" id="s1"  name="sfsi" class="custom-control-input" onChange="$('.sfsi').toggleClass('hide');">
               <label class="custom-control-label" for="s1"> Yes </label>
@@ -845,11 +857,9 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     </div>
                 </div>
                 <div class="sfsi hide iq-conditional-content">
-            <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
-                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                    <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN"></p>
-                    
-                    <fieldset>
+                    <div class="row">
+                        <div class="col-md-4">
+                              <fieldset>
             <legend>What type of ID do you have? </legend>
             <div class="custom-control custom-radio">
               <input type="radio" id="idType3"  name="idTypeS" class="custom-control-input" onChange=" $('.idTypeS.fsid').removeClass('hide'); $('.idTypeS.sid').addClass('hide');">
@@ -863,17 +873,30 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
             </fieldset>
                 
                 <div class="row">
-                <div class="form-group col col-md-3 idTypeS fsid hide">
+                <div class="form-group col col-md-8 idTypeS fsid hide">
               <label>Federal Surveyor ID</label>
               <input type="text">
                
-            </div><div class="form-group col col-md-3 idTypeS sid hide">
+            </div><div class="form-group col col-md-8 idTypeS sid hide">
               <label>Staff ID</label>
               <input type="text">
                
             </div>
                 
             </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card iq-color-gray-lighter"><div class="card-body">
+                        <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
+                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                    <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
+                        
+                            </div></div>
+                        </div>
+                    </div>
+                    
+                    
+                 
                
                 </div>
             
@@ -943,7 +966,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                 </div>
                 </div>
             <div class="edit-view orgStep">
-                  <div class="mb-4"><p class="lead">Add providers for the <span class="roleName">x</span> role.</p></div>
+                  <div class="mb-4"><p class="lead">Add providers for the <span class="roleName">Assessment Submitter</span> role by entering their CCN.</p></div>
             <div class="row">
           <div class="form-group col col-md-3">
               <label>CCN</label>
@@ -1024,9 +1047,11 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
                     $('.submitErrorMsg .roleN').html('Accrediting Organization');
+                    $('.iq-input-error-msg').removeClass('hide'); 
                     $('html, body').animate({ scrollTop: 0 }, 500);
                 } else {
                     $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    $('.iq-input-error-msg').addClass('hide'); 
                     window.location = 'user-profile2.html#' + $('input[name="userRole"]:checked').val();
                 }
                 break;
@@ -1036,9 +1061,11 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
                     $('.submitErrorMsg .roleN').html('Medicare Administrative Contractor');
+                    $('.iq-input-error-msg').removeClass('hide'); 
                     $('html, body').animate({ scrollTop: 0 }, 500);
                 } else {
                     $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    $('.iq-input-error-msg').addClass('hide'); 
                     window.location = 'user-profile2.html#' + $('input[name="userRole"]:checked').val();
                 }
                 break;
@@ -1048,9 +1075,11 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
                     $('.submitErrorMsg .roleN').html('Region');
+                    $('.iq-input-error-msg').removeClass('hide'); 
                     $('html, body').animate({ scrollTop: 0 }, 500);
                 } else {
                     $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    $('.iq-input-error-msg').addClass('hide'); 
                     window.location = 'user-profile2.html#' + $('input[name="userRole"]:checked').val();
                 }
                 break;
@@ -1060,10 +1089,11 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
                     $('.submitErrorMsg .roleN').html('State');
-                    
+                    $('.iq-input-error-msg').removeClass('hide'); 
                     $('html, body').animate({ scrollTop: 0 }, 500);
                 } else {
                     $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    $('.iq-input-error-msg').addClass('hide'); 
                     window.location = 'user-profile2.html#' + $('input[name="userRole"]:checked').val();
                 }
                 break;
@@ -1072,9 +1102,11 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     $('.errorMsg.submitErrorMsg').removeClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.other').addClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.provider').removeClass('hide'); 
+                    $('.iq-input-error-msg').removeClass('hide'); 
                     $('html, body').animate({ scrollTop: 0 }, 500);
                 } else {
                     $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    $('.iq-input-error-msg').addClass('hide'); 
                     window.location = 'user-profile2.html#' + $('input[name="userRole"]:checked').val();
                 }
                 break;
@@ -1083,14 +1115,17 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                     $('.errorMsg.submitErrorMsg').removeClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.other').addClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.provider').removeClass('hide'); 
+                    $('.iq-input-error-msg').removeClass('hide'); 
                     $('html, body').animate({ scrollTop: 0 }, 500);
                 } else {
                     $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    $('.iq-input-error-msg').addClass('hide'); 
                     window.location = 'user-profile2.html#' + $('input[name="userRole"]:checked').val();
                 }
                 break;
             case 'co':
                 $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                $('.iq-input-error-msg').addClass('hide'); 
                 window.location = 'user-profile2.html#' + $('input[name="userRole"]:checked').val();
                 break;
         }
