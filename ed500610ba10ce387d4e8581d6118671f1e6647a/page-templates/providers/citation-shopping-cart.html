@@ -938,7 +938,20 @@
               <div class="row mt-4 citationsList">
                 <div class="col-md-9" id="citations">
 					
-					<div class="row mt-4"><div class="col-md-3" style="line-height: 3.5rem;"><span class="citesSearchCount">1-10 of</span> <a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">30 citations</a>
+					<div class="row mt-4">
+                        <div class="col-12">
+                        <ul class="iq-inline-list searchCriteria">
+					
+					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
+							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#pSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="regSet hide"><label class="inline ml-2">Regulation Set: </label> <div class="badge badge-pill">
+							<span>Emergency Preparedness (FED - E - 1.01)</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.regSet').addClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+		  			<li><div class="tagType hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
+        <span>Condition</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.tagType').addClass('hide');"><span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		</ul>
+                        </div>
+                        <div class="col-md-3" style="line-height: 3.5rem;"><span class="citesSearchCount">1-10 of</span> <a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">30 citations</a>
                          
                     </div>
                         <div class="col-md-9 text-right">
@@ -4450,11 +4463,21 @@
 	
 	function searchCites(){
         if( $('#allTagTypeSelect option:selected').val() != 'all'){
-            selectRegSet();
+            $('#citationsT .tagType').removeClass('hide'); 
+		    $('#citationsT .tagType .badge > span').html($('#allTagTypeSelect option:selected').text());
+           selectTagType();
         }
 		if( $('#allRegSelect option:selected').val() != 'all'){  
-            selectTagType();
+            $('#citationsT .regSet').removeClass('hide'); 
+		    $('#citationsT .regSet .badge > span').html($('#allRegSelect option:selected').text());
+             selectRegSet();
         }
+        if($('#citeSearch').val() != ''){ 
+		  $('#citationsT .keyword').removeClass('hide'); 
+		  $('#citationsT .keyword .key').html($('#citeSearch').val());
+	   };
+        
+        
         var searchKey = $('#citeSearch').val().toLowerCase(); 
 		switch( searchKey ){ 
 			case '': 
