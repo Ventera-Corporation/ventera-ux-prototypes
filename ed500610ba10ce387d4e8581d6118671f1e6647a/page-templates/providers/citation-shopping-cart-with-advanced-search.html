@@ -860,7 +860,7 @@
             </section>
           </div>
           <div class="tab-pane active" id="citationsT" role="tabpanel" aria-labelledby="citationsTab">
-			  <div class="toast alert-info" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: -23rem; right: -2rem; min-height: auto; z-index: 1000; ">
+			  <div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: -23rem; right: -2rem; min-height: auto; z-index: 1000; ">
   <div class="toast-header">
     <strong class="mr-auto">UI Note</strong>
     <small></small>
@@ -868,7 +868,7 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="toast-body"> xxx
+  <div class="toast-body"> Prototype Limitation: If you search, you can't really apply advanced search features on the search results. If you want to see results for a specific regulation set or specific tag type, omit search term in the search input.
   </div>
 </div>
 			  <div class="alert alert-success successMsg hide" role="alert">
@@ -899,23 +899,40 @@
                         <option value="2">Regulation Text Keyword, Title, and/or Number</option></select>
                 </div>-->
                 <div class="col-md-6">
-                  <label for="citeSearch"><span class="sr-only">Search</span></label>
-                  <div class="input-group">
+                    <label for="citeSearch"><span>Search for Citations</span></label>
+                    
                     <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();}" >
-                    <div class="input-group-postpend">
-                      <button type="submit" class="btn btn-primary searchButton" onClick="searchCites()"><i class="fas fa-search"></i></button>
-                      <button class="btn btn-link" onClick="resetCites()">Reset</button>
-                    </div>
-                  </div>
-                  <div class="input-group-help-text help-text">Search by citation tag number, title, or keyword</div>
+                    <p class="help-text">Enter citation tag number, title, or keyword</p>
                 </div>
               </div>
               
-               
+               <div class="iq-accordion showhide">
+            <div class="card no-border mb-0">
+              <div class="card-header d-flex">
+                <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#surveyFilters" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
+                  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
+                </button>
+              </div>
+              <div id="surveyFilters" class="collapse mb-0 pb-0">
+                <div class="card-body px-0 mb-0 pb-0">
+                  <fieldset class="mb-0">
+                <legend class="sr-only">Filter citation list by:</legend>
+                      <div class="row"><div class="col-md-3 form-group"><label>Regulation Set</label>
+                <select id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> </div>
+                          <div class="col-md-3 form-group"><label>Tag Type</label>
+                <select id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
+                   
+                        
+              </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
                 
                 <div>
-                   
+                    <button type="submit" class="btn btn-primary searchButton" onClick="searchCites();">Search</button> <button class="btn btn-link" onClick="resetCites()">Reset</button>
                     
                 </div>
               <div class="row mt-4 citationsList">
@@ -923,35 +940,44 @@
 					
 					<div class="row mt-4">
                         <div class="col-12">
-                        
+                        <ul class="iq-inline-list searchCriteria">
+					
+					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
+							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#pSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="regSet hide"><label class="inline ml-2">Regulation Set: </label> <div class="badge badge-pill">
+							<span>Emergency Preparedness (FED - E - 1.01)</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.regSet').addClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+		  			<li><div class="tagType hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
+        <span>Condition</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.tagType').addClass('hide');"><span aria-hidden="true">&times;</span>
+				</button></div></div></li>
+		</ul>
                         </div>
-                        <div class="col-md-5" style="line-height: 3.5rem; "><span class="citesSearchCount">1-20 of</span> <!--<a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">--><span  class="citesSearchTotal">30 Citations</span><!--</a>-->
+                        <div class="col-md-3" style="line-height: 3.5rem;"><span class="citesSearchCount">1-10 of</span> <a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">30 citations</a>
                          
                     </div>
-                        <div class="col-md-7 text-right">
-                            <ul class="iq-inline-list">
-                            <li><label class="m-0">Filter By:</label></li>
-                            <li><select style="width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect">
-                                <option value="all">All Regulation Sets</option>
-                                <optgroup label="Federal Regulation Sets">
-                                <option value="er">Emergency Preparedness (FED - E - 1.01)</option>
-                                <option value="hha">Home Health Agencies (FED - G - 11.01)</option>
-                                </optgroup>
-                                <optgroup label="State Regulation Sets">
-                                <option value="state">IL State Home Health (ST - S - 2 - HHA)</option>
-                                </optgroup>
-                              </select>
-                            </li>
-                            <li>
-                              <select style="width: auto" onchange="selectTagType(this)" id="allTagTypeSelect">
-                                <option value="all">All Tag Types</option>
-                                <option value="condition">Condition</option>
-                                <option value="standard">Standard</option>
-                                <option value="licensure">Licensure</option>
-                                <option value="element">Element</option>
-                                <option value="memo">Memo</option>
-                              </select>
-                            </li></ul>
+                        <div class="col-md-9 text-right">
+                            <ul class="iq-inline-list"><li class="pr-3">
+                        <nav aria-label="Table Pagination">
+    
+		<ul class="pagination pagination-large">
+			<li class="page-item first disabled" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
+			</li>
+			<li class="page-item previous disabled" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
+			</li>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 3</span></div>
+			</li>
+			
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button"></button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last"></button>
+			</li>
+		</ul>
+	</nav></li><li class="perPage">
+                             <select class="form-control perPageSelect" style="width: auto;" onChange="if(this.options[this.selectedIndex].value == 'all'){ console.log('x'); viewAllCites(); } else { console.log('y'); gotoPage1(); }"><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select> </li></ul>
                         </div></div>
      
 <div class="accordion-wrapper"> 
@@ -1712,10 +1738,12 @@
 		</div> --> 
                   </div>
                 
-<div class="row bottomPagination">
-    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 Citations</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 Citations</span></span></li></ul> </div>
-    <div class="col-md-6 text-right">
-          <nav aria-label="Table Pagination" class="float-right">
+<div class="row bottomPagination"><div class="col-md-3" style="line-height: 3.5rem;"><span class="citesSearchCount">1-10 of</span> <a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">30 citations</a>
+                         
+                    </div>
+                        <div class="col-md-9 text-right">
+                            <ul class="iq-inline-list"><li class="pr-3">
+                        <nav aria-label="Table Pagination">
     
 		<ul class="pagination pagination-large">
 			<li class="page-item first disabled" onClick="gotoPage1()">
@@ -1725,7 +1753,7 @@
 				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
 			</li>
 			<li class="page-item" onClick="gotoPage1()">
-				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 2</span></div>
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 3</span></div>
 			</li>
 			
 			<li class="page-item next" onClick="gotoNext()">
@@ -1735,9 +1763,9 @@
 				<button type="button" class="page-link last" aria-label="Last"></button>
 			</li>
 		</ul>
-	</nav>
-    </div>
-</div>
+	</nav></li><li class="perPage">
+                             <select class="form-control perPageSelect" style="width: auto;"><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select> </li></ul>
+                        </div></div>
                    
                     
                     
@@ -4434,6 +4462,22 @@
 	} 
 	
 	function searchCites(){
+        if( $('#allTagTypeSelect option:selected').val() != 'all'){
+            $('#citationsT .tagType').removeClass('hide'); 
+		    $('#citationsT .tagType .badge > span').html($('#allTagTypeSelect option:selected').text());
+           selectTagType();
+        }
+		if( $('#allRegSelect option:selected').val() != 'all'){  
+            $('#citationsT .regSet').removeClass('hide'); 
+		    $('#citationsT .regSet .badge > span').html($('#allRegSelect option:selected').text());
+             selectRegSet();
+        }
+        if($('#citeSearch').val() != ''){ 
+		  $('#citationsT .keyword').removeClass('hide'); 
+		  $('#citationsT .keyword .key').html($('#citeSearch').val());
+	   };
+        
+        
         var searchKey = $('#citeSearch').val().toLowerCase(); 
 		switch( searchKey ){ 
 			case '': 
@@ -4446,7 +4490,7 @@
                 $('#citationsT .citesSearchTotal').html('');
                 $('#citationsT .perPageSelect').addClass('hide');
                 $('#citationsT .pagination').addClass('hide');
-                $('#citationsT .citesSearchCount').html('Results: 5 Citations');
+                $('#citationsT .citesSearchCount').html('Result: 5 Citations');
 				
 				break; 
 			default: 
@@ -4457,13 +4501,13 @@
                         $('#citationsT .citesSearchTotal').html('');
                         $('#citationsT .perPageSelect').addClass('hide');
                         $('#citationsT .pagination').addClass('hide');
-						$('#citationsT .citesSearchCount').html('Results: 3 Citations');
+						$('#citationsT .citesSearchCount').html('Result: 3 Citations');
 						break;
 					default: 
                         $('#citationsT .citesSearchTotal').html('');
                         $('#citationsT .perPageSelect').addClass('hide');
                         $('#citationsT .pagination').addClass('hide');
-						$('#citationsT .citesSearchCount').html('Results: 1 Citation');
+						$('#citationsT .citesSearchCount').html('Result: 1 Citation');
 						break;
 				}
 				break;  
@@ -4537,8 +4581,8 @@
                      $('#citationsT .citesSearchTotal').html('19 Citations');
                      $('#citationsT .perPageSelect').removeClass('hide');
                      $('#citationsT .pagination').removeClass('hide');
-					 $('#citationsT .citesSearchCount').html('Results: 1-20 of');
-                    $('#citationsT .pagination .pageCount').html('of 1'); 
+					 $('#citationsT .citesSearchCount').html('Results: 1-10 of');
+                    $('#citationsT .pagination .pageCount').html('of 2'); 
                     
 					switch(tagType){
 						 case 'condition': 
@@ -4673,8 +4717,8 @@
                     $('#citationsT .citesSearchTotal').html('30 Citations');
                      $('#citationsT .perPageSelect').removeClass('hide');
                      $('#citationsT .pagination').removeClass('hide');
-					$('#citationsT .citesSearchCount').html('1-20 of');
-                    $('#citationsT .pagination .pageCount').html('of 2'); 
+					$('#citationsT .citesSearchCount').html('1-10 of');
+                    $('#citationsT .pagination .pageCount').html('of 3'); 
                     $('#citationsT .bottomPagination').removeClass('hide');
 					
 					$('#citationsT .pagination .page-item').removeClass('active'); 
@@ -4717,7 +4761,7 @@
                             $('#citationsT .citesSearchTotal').html('15 Citations');
                             $('#citationsT .perPageSelect').removeClass('hide');
                             $('#citationsT .pagination').removeClass('hide');
-				            $('#citationsT .citesSearchCount').html('Results: 1-20 of');
+				            $('#citationsT .citesSearchCount').html('Results: 1-10 of');
                             $('#citationsT .pagination .pageCount').html('of 2'); 
                             $('#citationsT .bottomPagination').removeClass('hide');
                             
@@ -4996,15 +5040,10 @@
                     $('#citationsT .citesSearchTotal').html('');
                      $('#citationsT .perPageSelect').removeClass('hide');
                      $('#citationsT .pagination').addClass('hide');
-					$('#citationsT .citesSearchCount').html('Viewing All 30 Citations');
+					$('#citationsT .citesSearchCount').html('30 Citations');
                     //$('#citationsT .pagination .pageCount').html('of 3'); 
                     $('#citationsT .bottomPagination').removeClass('hide');
-                    
-                    $('#citationsT .perPageSelect option:selected').val();
-                    $('#citationsT .perPageSelect').prop('selectedIndex', 3).change();
-                    $('#citationsT .viewAllLink').toggleClass('hide');
-					$('#citationsT .viewAllLink .citesSearchTotal').html('30 Citations');
-                    
+					
 					$('#citationsT .pagination .page-item').removeClass('active'); 
 					$('#citationsT .pagination .page-item').removeClass('hide'); 
 					$('#citationsT .pagination .page-item.first button').attr('disabled', true);
@@ -5140,13 +5179,13 @@
 					$('#citationsT .pagination .page-item.next').addClass('disabled');
 					$('#citationsT .pagination .page-item.last').addClass('disabled');
 					
-					 $('#citationsT .pagination .pageNumberInput').val('1');
+					 $('#citationsT .pagination .pageNumberInput').val('2');
 					 
                      $('#citationsT .citesSearchTotal').html('19 Citations');
                     $('#citationsT .perPageSelect').removeClass('hide');
                     $('#citationsT .pagination').removeClass('hide');
-					 $('#citationsT .citesSearchCount').html('Results: ');
-                    $('#citationsT .pagination .pageCount').html('of 1'); 
+					 $('#citationsT .citesSearchCount').html('Result: 11-19 of');
+                    $('#citationsT .pagination .pageCount').html('of 2'); 
                     $('#citationsT .bottomPagination').removeClass('hide');
                     
 					switch(tagType){
@@ -5185,8 +5224,8 @@
                     $('#citationsT .citesSearchTotal').html('30 Citations');
                     $('#citationsT .perPageSelect').removeClass('hide');
                     $('#citationsT .pagination').removeClass('hide');
-					$('#citationsT .citesSearchCount').html('21-30 of');
-                    $('#citationsT .pagination .pageCount').html('of 2'); 
+					$('#citationsT .citesSearchCount').html('11-20 of');
+                    $('#citationsT .pagination .pageCount').html('of 3'); 
                     $('#citationsT .bottomPagination').removeClass('hide');
                     
 					switch(tagType){

@@ -296,7 +296,7 @@
                       <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button>
                     </h2>
                     <p class="hasAspen">
-                      <label>Do you have an account in ASPEN?</label>
+                      <label>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></label>
                       Yes</p>
                     <br>
                     <div class="fsi iq-conditional-content">
@@ -318,7 +318,7 @@
                     <div class="col col-12">
                       <h2>Edit User Information </h2>
                       <fieldset>
-                        <legend>Do you have an account in ASPEN?</legend>
+                        <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
                         <div class="custom-control custom-radio">
                           <input type="radio" id="ox1" checked  name="ox" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
                           <label class="custom-control-label" for="ox1"> Yes </label>
@@ -336,10 +336,9 @@
                           <div class="alert-content">Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                         </div>
-                        <p>You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                        <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
-                        <p id="fsidImage" class="sr-only"> Navigate to Employee Identification tab in ASPEN. You can find the Federal Surveyor ID in the Idenfication area. </p>
-                        <fieldset>
+                        <div class="row">
+                        <div class="col-md-4">
+                            <fieldset>
                           <legend>What type of ID do you have?</legend>
                           <div class="custom-control custom-radio">
                             <input type="radio" id="idType1" checked name="idType" class="custom-control-input" onChange=" $('.idType.fsid').removeClass('hide'); $('.idType.sid').addClass('hide');">
@@ -350,16 +349,26 @@
                             <label class="custom-control-label" for="idType2"> Staff ID </label>
                           </div>
                         </fieldset>
-                        <div class="row">
-                          <div class="form-group col col-md-3 idType fsid">
+                            <div class="row">
+                          <div class="form-group col col-md-8 idType fsid">
                             <label>Federal Surveyor ID</label>
                             <input type="text" class="fsIDinput1">
                           </div>
-                          <div class="form-group col col-md-3 idType sid hide">
+                          <div class="form-group col col-md-8 idType sid hide">
                             <label>Staff ID</label>
                             <input type="text" class="sIDinput1">
                           </div>
+                        </div>  
                         </div>
+                        <div class="col-md-8">
+                            <div class="card iq-color-gray-lighter"><div class="card-body">
+                               <p>You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                        <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
+                        <p id="fsidImage" class="sr-only"> Navigate to Employee Identification tab in ASPEN. You can find the Federal Surveyor ID in the Idenfication area. </p>
+                            </div></div>
+                        </div>
+                    </div>
+                      
                       </div>
                     </div>
                   </div>
@@ -447,7 +456,7 @@
                       <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button>
                     </h2>
                     <p class="hasAspen">
-                      <label>Do you have an account in ASPEN?</label>
+                      <label>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></label>
                       Yes</p>
                     <!-- <p class="hasAspen"><label>What type of ID do you have?</label>
             Federal Surveyor ID</p>--> 
@@ -471,7 +480,7 @@
                     <div class="col col-12">
                       <h2>Edit User Information </h2>
                       <fieldset>
-                        <legend>Do you have an account in ASPEN?</legend>
+                        <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
                         <div class="custom-control custom-radio">
                           <input type="radio" id="oxSA1" checked  name="oxSA" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
                           <label class="custom-control-label" for="oxSA1"> Yes </label>
@@ -489,9 +498,9 @@
                           <div class="alert-content"> Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                         </div>
-                        <p>You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                        <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
-                        <fieldset>
+                        <div class="row">
+                        <div class="col-md-4">
+                            <fieldset>
                           <legend>What type of ID do you have?</legend>
                           <div class="custom-control custom-radio">
                             <input type="radio" id="idType3"  name="idTypeS" class="custom-control-input" onChange=" $('.idTypeS.fsid').removeClass('hide'); $('.idTypeS.sid').addClass('hide');">
@@ -502,18 +511,26 @@
                             <label class="custom-control-label" for="idType4"> Staff ID </label>
                           </div>
                         </fieldset>
-                        <div class="row">
-                          <div class="form-group col col-md-3 idTypeS fsid hide">
+                            <div class="row">
+                          <div class="form-group col col-md-8 idTypeS fsid hide">
                             <label>Federal Surveyor ID</label>
                             <input type="text" class="fsIDinput2">
                           </div>
-                          <div class="form-group col col-md-3 idTypeS sid">
+                          <div class="form-group col col-md-8 idTypeS sid">
                             <label>Staff ID</label>
                             <input type="text" class="sIDinput2">
                           </div>
                         </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card iq-color-gray-lighter"><div class="card-body">
+                               <p>You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                        <p><img src="FSID.jpg" style="width: 700px" alt="FSID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
+                            </div></div>
+                        </div>
                       </div>
                     </div>
+                  </div>
                   </div>
                   <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
                     <button class="btn btn-primary" onClick="saveID()">Save</button>
@@ -749,6 +766,7 @@
         $(document).ready(function () {
           $('.nav-horizontal').stickyTabs();
           $("select.multiselect").bsMultiSelect();
+          $('[data-toggle="tooltip"]').tooltip(); 
           $('#aoTable').DataTable( {
 			  //scrollY: 300,
 			  paging: false,
