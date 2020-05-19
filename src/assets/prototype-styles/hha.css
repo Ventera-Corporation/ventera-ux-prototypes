@@ -321,7 +321,7 @@ label .iq-input-error-msg::before, label .iq-input-info-msg::before { line-heigh
 .iq-accordion.secondary > .card > .card-header button span span.iq-label { font-weight: bold; display: block; margin-bottom: .5rem; margin-left: 0; }
 .iq-accordion.secondary.data-focus > .card > .card-header button span { font-weight: 700; }
 .iq-accordion.secondary.data-focus > .card > .card-header button span label { font-weight: normal !important; }
-.iq-accordion.secondary.data-focus > .card > .card-header button span span.iq-description { display: block; font-weight: normal !important; margin-left: 0; margin-bottom: .5rem;}
+.iq-accordion.secondary.data-focus > .card > .card-header button span span.iq-description { display: block; font-weight: normal !important; margin-bottom: .5rem;}
 
 /* tertiary accordion */
 .iq-accordion.tertiary > .card > .card-header { font-weight: 400; font-size: 1.5rem; background-color: #f7f7f7;  }
@@ -571,7 +571,8 @@ i.status-gray, em.status-gray { color: #d6d7d9; }
 .btn-link.danger { color: #e31c3d; }
 .page-link img { height: 16px; margin-right: .5rem; margin-left: .5rem }
 .btn-link i, .btn-link em { margin-right: 1rem; }
-.btn-outline-primary:hover { color: white !important; }
+.iq-accordion .btn-outline-primary:hover { color: white; }
+.iq-accordion .btn-outline-primary:disabled:hover { color: inherit; }
 
 /* LINKS */
 a.map-link i { float: left; margin-top: .25rem; }
