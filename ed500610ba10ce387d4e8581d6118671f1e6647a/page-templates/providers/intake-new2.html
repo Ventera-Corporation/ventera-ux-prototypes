@@ -2367,7 +2367,16 @@
           </div>
           <!-- triage -->
           <div class="tab-pane active" id="triageTab" role="tabpanel" aria-labelledby="triageTL">
-             
+             <div class="alert alert-danger errorMsg hide" role="alert">
+                  <div class="alert-content">
+                         <h2>Unable to Save</h2>
+                          <p> Please review and correct the following:</p> 
+                          <ul>
+                              <li>Add at least one Condition of Participation.</li>
+                          </ul>
+
+                  </div>
+                </div>
             <section class="edit-view active">
 				 <div class="row tabTitle">
               <div class="col-md-10">
@@ -2668,7 +2677,7 @@
               <div class="row mt-4 copList">
                 <div class="col-md-9" id="COP">
 					<br>
-					<div class="row"><div class="col-md-4" style="vertical-align: bottom"><h3 class="iq-label copSearchCount">1-10 of 30 CoPs</h3></div></div>
+					<div class="row"><div class="col-md-4" style="vertical-align: bottom"><p class="copSearchCount">1-10 of 30 CoPs</p></div></div>
      
 <div class="accordion-wrapper"> 
 		<!-- All page 1 -->
@@ -2678,13 +2687,13 @@
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
+		data-toggle="collapse" data-target="#cite4contentx" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0001');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0001');">Add</button>
 		</div>
 		</div>
-		<div id="cite4content" class="collapse ">
+		<div id="cite4contentx" class="collapse ">
 		<div class="card-body">
 		<label>CFR Section</label>
 		<p>484.102</p>
@@ -2704,7 +2713,7 @@
 		data-toggle="collapse" data-target="#cite0010content" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">E0002 - Establishment of the EP Program Transplant</span><span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0002');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0002');">Add</button>
 		</div>
 		</div>
 		<div id="cite0010content" class="collapse ">
@@ -2727,7 +2736,7 @@
 		data-toggle="collapse" data-target="#cite15content" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">E0003 - Establishment of the EP Program Dialysis</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0003');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0003');">Add</button>
 		</div>
 		</div>
 		<div id="cite15content" class="collapse ">
@@ -2750,7 +2759,7 @@
 		data-toggle="collapse" data-target="#cite0016content" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">G0100 - Patient Rights</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0100');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0100');">Add</button>
 		</div>
 		</div>
 		<div id="cite0016content" class="collapse ">
@@ -2773,7 +2782,7 @@
 		data-toggle="collapse" data-target="#cite0117content" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">G0117 - Compliance w/ Fed, State, Local Laws</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0117');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0117');">Add</button>
 		</div>
 		</div>
 		<div id="cite0117content" class="collapse ">
@@ -2796,7 +2805,7 @@
 		data-toggle="collapse" data-target="#cite0122content" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">G0122 - Organization, Services, and Administration</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0122');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0122');">Add</button>
 		</div>
 		</div>
 		<div id="cite0122content" class="collapse ">
@@ -2819,7 +2828,7 @@
 		data-toggle="collapse" data-target="#cite0151content" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">G0151 - Group of Professional Personnel</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0117');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0151');">Add</button>
 		</div>
 		</div>
 		<div id="cite0151content" class="collapse ">
@@ -2839,14 +2848,14 @@
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite350content" type="button" onclick="$(this).toggleClass('expanded');">
+		data-toggle="collapse" data-target="#cite350contentx" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('e0018');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g350');">Add</button>
 		</div>
 		</div>
-		<div id="cite350content" class="collapse ">
+		<div id="cite350contentx" class="collapse ">
 		<div class="card-body">
 
 		<label>CFR Section</label>
@@ -2864,14 +2873,14 @@
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite370content" type="button" onclick="$(this).toggleClass('expanded');">
+		data-toggle="collapse" data-target="#cite370contentx" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">G0370 - Reporting OASIS information</span>  <span class="badge badge-warning">Condition</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0370');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0370');">Add</button>
 		</div>
 		</div>
-		<div id="cite370content" class="collapse ">
+		<div id="cite370contentx" class="collapse ">
 		<div class="card-body">
 
 		<label>CFR Section</label>
@@ -2893,7 +2902,7 @@
 		<span><span class="tagName">G0406 - Patient Rights</span>  <span class="badge badge-warning">Condition</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="$(this).attr('disabled', true); addTag('g0406');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0406');">Add</button>
 		</div>
 		</div>
 		<div id="cite406content" class="collapse ">
@@ -2911,31 +2920,32 @@
 		</div>
 
     </div>
-<nav aria-label="Table Pagination">
+<div class="row bottomPagination">
+    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 CoPs</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 CoPs</span></span></li></ul> </div>
+    <div class="col-md-6 text-right">
+          <nav aria-label="Table Pagination" class="float-right">
+    
 		<ul class="pagination pagination-large">
-			<li class="page-item first" onClick="gotoPage1()">
-				<button class="page-link first" disabled aria-label="First" type="button">First</button>
+			<li class="page-item first disabled" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
 			</li>
-			<li class="page-item previous" onClick="gotoPrev()">
-				<button class="page-link previous" disabled aria-label="Previous" type="button">Previous</button>
+			<li class="page-item previous disabled" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
 			</li>
-			<li class="page-item active page1" onClick="gotoPage1()">
-				<button class="page-link">1</button>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 3</span></div>
 			</li>
-			<li class="page-item page2" onClick="gotoPage2()">
-				<button type="button" class="page-link">2</button>
-			</li>
-			<li class="page-item page3" onClick="gotoPage3()">
-				<button type="button" class="page-link">3</button>
-			</li>
+			
 			<li class="page-item next" onClick="gotoNext()">
-				<button class="page-link next" aria-label="Next" type="button">Next</button>
+				<button class="page-link next" aria-label="Next" type="button"></button>
 			</li>
 			<li class="page-item last" onClick="gotoPage3()">
-				<button type="button" class="page-link last" aria-label="Last">Last</button>
+				<button type="button" class="page-link last" aria-label="Last"></button>
 			</li>
 		</ul>
 	</nav>
+    </div>
+</div>
                    
                 </div>
                 <div class="col-md-3 iq-static-col position-sticky" id="saveCOPButton">
@@ -4442,27 +4452,36 @@ function sortParties(){
         }                                                                      
     }
 }
+    
     function addTag(tagName){
 		$('#triageTab .card.dashed .iq-not-available').addClass('hide'); 
 		$('#triageTab .errorMsg').addClass('hide'); 
 		var fullTag = $('.'+tagName + ' .tagName').html(); 
 		console.log(fullTag);
+        
+        $('#triageTab .iq-accordion.'+tagName+' .iq-accordion-actions .btn').attr('disabled', true);
+        $('#triageTab .iq-accordion.'+tagName+' .iq-accordion-actions .btn').html('Added');
 		
 		$('#addedCOPTags').append('<div class="badge badge-pill"><span>' + fullTag + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="Remove" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
 		$('#triageTab .iq-label .countWrap').removeClass('hide');
 		$('#triageTab .addedCount').html(function(i, val) { return +val*1+1 });
 		console.log($('#triageTab .addedCount').html());
 	}
-
+    
 	function closeTag(ele4, eParent){
 		eParent.addClass('hide'); 
 		tagN = ele4.previousSibling.innerHTML; //$('#tagNameRepo').val();
+        tagN = tagN.substring(0,5);
+        tagN = tagN.toLowerCase();
 		$('#triageTab .iq-accordion.' + tagN + ' .iq-accordion-actions button').attr('disabled', false); 
-		console.log('success');
 		$('#triageTab .iq-accordion.' + tagN + ' .iq-accordion-actions button').html('Add'); 
 		$('#triageTab .addedCount').html( function(i, val) { return +val*1-1 });
 		console.log('after decrement' + $('#triageTab .addedCount').html());
-		if( $('#triageTab .addedCount').html() == '' || $('#triageTab .addedCount').html() == 0 ){ $('#triageTab .iq-label .countWrap').addClass('hide'); $('#triageTab .addedCount').html(''); $('#triageTab .card.dashed .iq-not-available').removeClass('hide'); }
+		if( $('#triageTab .addedCount').html() == '' || $('#triageTab .addedCount').html() == 0 ){ 
+            $('#triageTab .iq-label .countWrap').addClass('hide'); 
+            $('#triageTab .addedCount').html(''); 
+            $('#triageTab .card.dashed .iq-not-available').removeClass('hide');
+        }
 	} 
 	
 	function searchCOP(){
@@ -4524,6 +4543,7 @@ function sortParties(){
 			$('#triageTab .iq-label .countWrap').addClass('hide'); 
 		} else { 
 			$('#triageTab .errorMsg').removeClass('hide'); 
+             $('html, body').animate({ scrollTop: 0 }, 500);
 		}
 	}
 	function addCOP(){
