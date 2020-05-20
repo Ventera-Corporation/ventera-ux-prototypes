@@ -860,7 +860,7 @@
             </section>
           </div>
           <div class="tab-pane active" id="citationsT" role="tabpanel" aria-labelledby="citationsTab">
-			  <div class="toast alert-info" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: -23rem; right: -2rem; min-height: auto; z-index: 1000; ">
+			  <div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: -6rem; right: -2rem; min-height: auto; z-index: 1000; ">
   <div class="toast-header">
     <strong class="mr-auto">UI Note</strong>
     <small></small>
@@ -868,7 +868,10 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="toast-body"> xxx
+  <div class="toast-body"> <ul><li>Tag Search: Enter g406 or 406</li>
+      <li>Keyword Search: Enter 'clinical record', 'record' or 'clinical'</li>
+      <li>No results search: Enter 'x' or 'z'</li>
+      </ul>
   </div>
 </div>
 			  <div class="alert alert-success successMsg hide" role="alert">
@@ -922,9 +925,7 @@
                 <div class="col-md-9" id="citations">
 					
 					<div class="row mt-4">
-                        <div class="col-12">
                         
-                        </div>
                         <div class="col-md-3" style="line-height: 3.5rem; "><span class="citesSearchCount">1-20 of</span> <!--<a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">--><span  class="citesSearchTotal">30 Citations</span><!--</a>-->
                          
                     </div>
@@ -953,6 +954,11 @@
                               </select>
                             </li></ul>
                         </div></div>
+                    
+                    <div class="noResultsText hide mt-4">
+                        <p class="iq-not-available">No citations found for this search.</p>
+                        <p class="iq-instruction-text">Note: Tag search results are matched using the 1 alpha character and full numeric matches. E.g. “45”, “0045” , "G45", or "G0045". Keyword search results are matched using full search text matches as well as partial (individual search term) matches in both title and citation text</p>
+                        </div>
      
 <div class="accordion-wrapper"> 
                     <!-- All page 1 --> 
@@ -4437,6 +4443,7 @@
         var searchKey = $('#citeSearch').val().toLowerCase(); 
 		switch( searchKey ){ 
 			case '': 
+                $('#citationsT .noResultsText').addClass('hide');
 				gotoPage1();
 				break; 
 			case 'clinical record': case 'record': case 'clinical': 
@@ -4448,8 +4455,17 @@
                 $('#citationsT .pagination').addClass('hide');
                 $('#citationsT .citesSearchCount').html('Results: 5 Citations');
                 $('#citationsT .bottomPagination').addClass('hide');
-				
+                $('#citationsT .noResultsText').addClass('hide');
 				break; 
+            case 'x': case 'z': 
+                $('#citations .iq-accordion').addClass('hide'); 
+                $('#citationsT .citesSearchTotal').html('');
+                $('#citationsT .perPageSelect').addClass('hide');
+                $('#citationsT .pagination').addClass('hide');
+                $('#citationsT .citesSearchCount').html('Results: 0 Citations');
+                $('#citationsT .bottomPagination').addClass('hide');
+                $('#citationsT .noResultsText').removeClass('hide');
+                break;
 			default: 
 				$('#citations .iq-accordion').addClass('hide'); 
 				$('#citations .iq-accordion.'+searchKey).removeClass('hide'); 
@@ -4460,6 +4476,7 @@
                         $('#citationsT .pagination').addClass('hide');
 						$('#citationsT .citesSearchCount').html('Results: 3 Citations');
                         $('#citationsT .bottomPagination').addClass('hide');
+                        $('#citationsT .noResultsText').addClass('hide');
 						break;
 					default: 
                         $('#citationsT .citesSearchTotal').html('');
@@ -4467,6 +4484,7 @@
                         $('#citationsT .pagination').addClass('hide');
 						$('#citationsT .citesSearchCount').html('Results: 1 Citation');
                         $('#citationsT .bottomPagination').addClass('hide');
+                        $('#citationsT .noResultsText').addClass('hide');
 						break;
 				}
 				break;  
