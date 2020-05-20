@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New AO Survey</title>
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<!-- you need this font to have the right font weight expressed -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<!-- to match design system definition -->
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+</head>
+<body>
+<header>
+	<div class="container-fluid">
+	  <div class="row iq-page-header">
+		<div class="col">
+                  <nav>
+                    <a href="./">
+                      <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo">
+                    </a>
+                      
+                      <button class="btn btn-outline-primary" id="menuDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENU</button><nav class="iqies-menu dropdown-menu" ari-labelledby="menuDropdown" style="min-width: 12.5rem;"><ul class="list-group list-group-flush"><a class="list-group-item list-group-item-action iqies-section-header active" href="#">iQIES Home</a><a class="list-group-item list-group-item-action iqies-section-header " href="../users/my-profile.html">My Profile</a><a class="list-group-item list-group-item-action iqies-section-header " href="../providers/providers-landing.html">Survey and Certification</a><a class="list-group-item list-group-item-action " href="../providers/find-a-provider.html">Find a Provider</a><a class="list-group-item list-group-item-action " href="../providers/add-a-provider.html">Add a Provider</a><a class="list-group-item list-group-item-action iqies-section-header " href="../reports/reports-landing.html">Reports</a><a class="list-group-item list-group-item-action " href="../reports/find-a-report.html">Find a Report Type</a><a class="list-group-item list-group-item-action " href="../reports/my-reports.html">My Reports</a><a class="list-group-item list-group-item-action " href="../reports/report-activity.html">Report Activity</a><a class="list-group-item list-group-item-action iqies-section-header " href="../admin/index.html">Administration</a><a class="list-group-item list-group-item-action iqies-section-header " href="../help/">Help</a><a class="list-group-item list-group-item-action iqies-section-header" href="../logout.html">Logout</a></ul></nav>
+                  </nav>
+                    
+                    
+                </div>
+              </div>
+            </div>
+</header>
+<main>
+<div class="iq-page-header-wrapper inverted">
+            <div class="container-fluid">
+              <div class="iq-page-header">
+                <div class="row">
+                  <div class="col d-flex flex-column justify-content-between">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                          <a href="../global/global-landing-menu.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          <a href="provider-profile.html">BrightHope</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                          New Survey
+                        </li>
+                      </ol>
+                    </nav>
+                    <div class="iq-page-header-content">
+                      <h1>New Survey</h1>
+                      <div class="iq-page-header-details">
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
+                    <address>
+                       667 Bent Ridge Lane<br>Suite 1000<br>Barrington, IL 60010<br>Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
+                        <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="far fa-link fa-flip-horizontal"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="iq-summary-bar hide">
+              <div class="container-fluid">
+                <div class="row ">
+                  <div class="col d-flex align-items-center">
+<div class="iq-summary-bar-data" data-index="1">
+              <p>Survey Status</p>
+                      <p>Open - Writing in Progress</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="2">
+                      <p>Survey Category</p>
+                      <p>Initial Certification</p>
+                    </div>
+                    
+                      <div class="iq-summary-bar-data" data-index="3">
+                      <p>Start Date</p>
+                      <p>11/01/2018</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="4">
+                      <p>Exit Date</p>
+                      <p>11/15/2018</p>
+                    </div>
+                    <div class="iq-summary-bar-data" data-index="5">
+                      <p>Revisit Status</p>
+                      <p>Not Required</p>
+                    </div>
+                    <!--<div class="iq-summary-bar-action p-1">
+                      <a href="provider-details-hh.html" class="btn btn-link">
+                        View Details
+                      </a>
+                    </div>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<div     class="container-fluid" id="mainContent">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success successMsg hide" role="alert">
+          <div class="alert-content">Changes saved successfully</div>
+        </div>
+        <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 <h2>Unable to Save</h2>
+				  <p> Please review and correct the following:</p> 
+                  <ul>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                  </ul>
+              </div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+            <section class="edit-view active">
+                 <div class="row tabTitle">
+              <div class="col-sm-10">
+                <h2>Accrediting Organization Survey Information</h2>
+                
+              </div>
+              
+            </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+                </div>
+              </div>
+               <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                  <label>Survey Category <span class="iq-asterisk" title="Required field">*</span>
+                <select><option>Select one</option><option selected>AO Complaint</option></select></label>
+                </div>
+                   </div>
+                </div>
+               <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>AO Survey ID
+                        <input type="text">
+                    </label>
+                </div>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>Start Date <span class="iq-asterisk" title="Required field">*</span>
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>Exit Date <span class="iq-asterisk" title="Required field">*</span>
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>                
+              </div>
+                <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>LSC Onsite Surveyor Hours 
+                        <input type="number" min=".25" max="9999">
+                        <span class="help-text">Increments of .25</span>
+                    </label>
+                </div>
+                   </div>
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>Health Onsite Surveyor Hours
+                        <input type="number" min=".25" max="9999">
+                        <span class="help-text">Increments of .25</span>
+                    </label>
+                </div>
+                   </div>                
+              </div>
+                 <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                  <label>Effective Term of Decision <span class="iq-asterisk" title="Required field">*</span></label>
+                   <div class="input-group input-group-sm"> <input type="number" min="0" class="form-control">
+                      <div class="input-group-append"><span class="input-group-text">Days</span></div>
+                    </div>
+                    
+                </div>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                  <fieldset>
+                <legend>Do you recommend that Medicare Certification be granted? <span class="iq-asterisk" title="Required field">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="surveyStatus1" checked name="ss" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="surveyStatus1"> Yes</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="surveyStatus2" name="ss" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="surveyStatus2"> No</label>
+                    </div>
+                          
+                      </fieldset>     
+              </div>
+                    </div>
+                <hr>
+                <h3>Complaint Information</h3>
+                <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>Complaint Receipt Date <span class="iq-asterisk" title="Required field">*</span>
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>Complaint Survey Authorized Date <span class="iq-asterisk" title="Required field">*</span>
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>                
+              </div>
+                <div class="row">
+                    <div class="col-md-6">
+                  <fieldset>
+                <legend>Complaint Status <span class="iq-asterisk" title="Required field">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="sub1" name="subS" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="sub1"> Unsubstantiated</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="sub2" name="subS" checked class="custom-control-input" value="">
+                  <label class="custom-control-label" for="sub2"> Substantiated</label>
+                    </div>
+                          
+                      </fieldset>     
+              </div>
+                    </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset>
+                <legend>Triage Level <span class="iq-asterisk">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="priority1" name="priority" class="custom-control-input">
+                  <label class="custom-control-label" for="priority1"> Immediate Jeopardy (IJ) </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="priority2" name="priority" class="custom-control-input">
+                  <label class="custom-control-label" for="priority2"> Non-IJ - High </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="priority3" name="priority" class="custom-control-input">
+                  <label class="custom-control-label" for="priority3"> Non-IJ - Medium </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="priority4" name="priority" class="custom-control-input">
+                  <label class="custom-control-label" for="priority4"> Non-IJ - Low </label>
+                </div>
+                
+                </fieldset>
+                    </div>
+                </div>
+                
+                <hr>
+                <h3>Deficiency Information</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                  <fieldset>
+                <legend>Are there deficiencies found? <span class="iq-asterisk" title="Required field">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="d1" checked name="d" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="d1"> Yes</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="d2" name="d" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="d2"> No</label>
+                    </div>
+                          
+                      </fieldset>     
+              </div>
+                    </div>
+                 <div class="row">
+                    <div class="col-md-6">
+                  <fieldset>
+                <legend>Was an immediate jeopardy found? <span class="iq-asterisk" title="Required field">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="ij1" checked name="ij" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="ij1"> Yes</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="ij2" name="ij" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="ij2"> No</label>
+                    </div>
+                          
+                      </fieldset>     
+              </div>
+                    </div>
+                <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>CMS Notification Date <span class="iq-asterisk" title="Required field">*</span>
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>              
+              </div>
+                <hr>
+               
+                 <article class="conditionsList">  
+					<h3>Deficiencies</h3>
+					<button class="btn btn-outline-primary" onClick="addCOP()">Add Deficiencies</button>
+					<p class="iq-not-available mt-4 addedSavedCOP">No deficiencies added.</p>
+					
+				    <div class="addedSavedCOP accordion-wrapper hide mt-4">
+						<p class="mb-2">3 Deficiencies</p>
+						<div class="iq-accordion secondary">
+	<div class="card">
+	<div class="card-header d-flex">
+	<button
+	class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+	data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
+	<span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
+	<div class="iq-accordion-actions d-flex align-items-center">
+	<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
+	</div>
+	</div>
+	<div id="cite4content" class="collapse ">
+	<div class="card-body">
+	<label>CFR Section</label>
+	<p>484.102</p>
+	<label>Reguation Text</label>
+	<p>The [facility, except for Transplant Center] must comply with all applicable Federal, State and local emergency preparedness requirements. The [facility] must establish and maintain a comprehensive emergency preparedness program that meets the requirements of this section.* The emergency preparedness program must include, but not be limited to, the following elements: *[For hospitals at &sect;482.15:] The hospital must comply with all applicable Federal, State, and local emergency preparedness requirements. The hospital must develop and maintain a comprehensive emergency preparedness program that meets the requirements of this section, utilizing an all-hazards approach. *[For CAHs at &sect;485.625:] The CAH must comply with all applicable Federal, State, and local emergency preparedness requirements. The CAH must develop and maintain a comprehensive emergency preparedness program, utilizing an all-hazards approach.</p>
+	<label>Interpretive Guidelines</label>
+	<p>Under this condition/requirement, facilities are required to develop an emergency preparedness program that meets all of the standards specified within the condition/requirement. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health, safety, and security needs of their staff and patient population during an emergency or disaster situation. The program must also address how the facility would coordinate with other healthcare facilities, as well as the whole community during an emergency or disaster (natural, man-made, facility). The emergency preparedness program must be reviewed annually. A comprehensive approach to meeting the health and safety needs of a patient population should encompass the elements for emergency preparedness planning based on the "all-hazards" definition and specific to the location of the facility. For instance, a facility in a large flood zone, or tornado prone region, should have included these elements in their overall planning in order to meet the health, safety, and security needs of the staff and of the patient population. Additionally, if the patient population has limited mobility, facilities should have an approach to address these challenges during emergency events. The term "comprehensive" in this requirement is to ensure that facilities do not only choose one potential emergency that may occur in their area, but rather consider a multitude of events and be able to demonstrate that they have considered this during their development of the emergency preparedness plan. Survey Procedures o Interview the facility leadership and ask him/her/them to describe the facility's emergency preparedness program. o Ask to see the facility's written policy and documentation on the emergency preparedness program. o For hospitals and CAHs only: Verify the hospital's or CAH's program was developed based on an all-hazards approach by asking their leadership to describe how the facility used an all-hazards approach when developing its program.</p>
+	</div>
+	</div>
+	</div>
+  </div>
+						<div class="iq-accordion secondary">
+						<div class="card">
+						<div class="card-header d-flex">
+						<button
+						class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+						data-toggle="collapse" data-target="#cite350content" type="button" onclick="$(this).toggleClass('expanded');">
+						<span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
+						</button>
+						<div class="iq-accordion-actions d-flex align-items-center">
+						<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
+						</div>
+						</div>
+						<div id="cite350content" class="collapse ">
+						<div class="card-body">
+
+						<label>CFR Section</label>
+						<p>484.40</p>
+						<label>Reguation Text</label>
+						<p>§484.40 Condition of participation: Release of patient identifiable OASIS information. The HHA and agent acting on behalf of the HHA in accordance with a written contract must ensure the confidentiality of all patient identifiable information contained in the clinical record, including OASIS data, and may not release patient identifiable OASIS information to the public.</p>
+						<label>Interpretive Guidelines</label>
+						<p class="iq-not-available">Not applicable</p>
+						</div>
+						</div>
+						</div>
+						</div>
+						<div class="iq-accordion secondary">
+						<div class="card">
+						<div class="card-header d-flex">
+						<button
+						class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+						data-toggle="collapse" data-target="#cite370content" type="button" onclick="$(this).toggleClass('expanded');">
+						<span><span class="tagName">G0370 - Reporting OASIS information</span>  <span class="badge badge-warning">Condition</span></span>
+						</button>
+						<div class="iq-accordion-actions d-flex align-items-center">
+						<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
+						</div>
+						</div>
+						<div id="cite370content" class="collapse ">
+						<div class="card-body">
+
+						<label>CFR Section</label>
+						<p>484.45</p>
+						<label>Reguation Text</label>
+						<p>HHAs must electronically report all OASIS data collected in accordance with §484.55.</p>
+						<label>Interpretive Guidelines</label>
+						<p class="iq-not-available">Not applicable</p>
+						</div>
+						</div>
+						</div>
+						</div>
+						
+					</div>
+
+				</article> 
+                <hr>
+                <h3>Correction Information</h3>
+                <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                  <label>Correction Period</label>
+                   <div class="input-group input-group-sm"> <input type="number" min="0" class="form-control">
+                      <div class="input-group-append"><span class="input-group-text">Days</span></div>
+                    </div>
+                    
+                </div>
+                   </div>
+                    <div class="col-md-3">
+                <div class="form-group">
+                    <label>Correction Due Date
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                <div class="form-group">
+                    <label>Provider Notification Date
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>
+                </div>
+              <div class="row">
+              <div class="col-md-6">
+                <fieldset>
+                <legend>Correction Method</legend>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="fc1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="fc1">Plan of Correction</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="fc2" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="fc2">Follow Up Survey</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="fc3" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="fc3">Self Attestation</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="fc4" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="fc4">Document Review</label>
+                </div>
+                
+              </fieldset>
+              </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>Correction Date
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>              
+              </div>
+                    
+                <hr>
+                <h3>Final Accreditation Outcome</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                  <fieldset>
+                <legend>Status</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="a1" name="aS" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="a1"> Full Accreditation</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="a2" name="aS" class="custom-control-input" value="">
+                  <label class="custom-control-label" for="a2"> Denied Accreditation</label>
+                    </div>
+                          
+                      </fieldset>     
+              </div>
+                    </div>
+                <div class="row">
+                   <div class="col-md-3">
+                <div class="form-group">
+                    <label>Effective Date
+                        <input type="date">
+                        <span class="help-text">MM/DD/YYYY</span>
+                    </label>
+                </div>
+                   </div>              
+              </div>
+                
+                
+                <div class="row">
+                
+              
+                  
+                   <div class="col-md-12">
+              <div class="row">
+                <div class="col">
+                  <div class="iq-button-wrapper">
+                    <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button
+                            class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            </section>
+          
+            <section class="edit-view addConditions">
+                <div class="alert alert-danger errorMsg hide" role="alert">
+                  <div class="alert-content">
+                         <h2>Unable to Continue</h2>
+                          <p> Please review and correct the following:</p> 
+                          <ul>
+                              <li>Add at least one Deficiency.</li>
+                          </ul>
+
+                  </div>
+                </div>
+				 <div class="row tabTitle">
+              <div class="col-md-10">
+                <h2>Add Deficiencies</h2>
+				  <p>Select the Deficiencies to add to this survey.</p>
+              </div>
+              
+            </div>
+			   <div class="row">
+                <div class="col-lg-7">
+                    <label for="copSearch"><span class="sr-only">Search</span></label>
+                    <div class="input-group">
+                    <input type="text" class="form-control" id="copSearch" onKeyUp="if (event.keyCode === 13) {
+        $('.searchButton').click();}" >
+        <div class="input-group-postpend">
+         <button type="submit" class="btn btn-primary searchButton" onClick="searchCOP()"><i class="fas fa-search"></i></button> <button class="btn btn-link" onClick="gotoPage1(); $('#copSearch').val('');">Reset</button>
+        </div>
+      </div>
+                    <div class="input-group-help-text help-text">Search by tag number, title, or keyword</div>
+                </div>
+              </div>
+              <div class="row mt-4 copList">
+                <div class="col-md-9" id="COP">
+					<br>
+					<div class="row"><div class="col-md-4" style="vertical-align: bottom"><p class="copSearchCount">1-10 of 30 Deficiencies</p></div></div>
+     
+<div class="accordion-wrapper"> 
+		<!-- All page 1 -->
+
+		<div class="iq-accordion secondary data-focus ER condition 1 e0001 0001 e1">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite4contentx" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0001');">Add</button>
+		</div>
+		</div>
+		<div id="cite4contentx" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.102</p>
+		<label>Reguation Text</label>
+		<p>The [facility, except for Transplant Center] must comply with all applicable Federal, State and local emergency preparedness requirements. The [facility] must establish and maintain a comprehensive emergency preparedness program that meets the requirements of this section.* The emergency preparedness program must include, but not be limited to, the following elements: *[For hospitals at &sect;482.15:] The hospital must comply with all applicable Federal, State, and local emergency preparedness requirements. The hospital must develop and maintain a comprehensive emergency preparedness program that meets the requirements of this section, utilizing an all-hazards approach. *[For CAHs at &sect;485.625:] The CAH must comply with all applicable Federal, State, and local emergency preparedness requirements. The CAH must develop and maintain a comprehensive emergency preparedness program, utilizing an all-hazards approach.</p>
+		<label>Interpretive Guidelines</label>
+		<p>Under this condition/requirement, facilities are required to develop an emergency preparedness program that meets all of the standards specified within the condition/requirement. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health, safety, and security needs of their staff and patient population during an emergency or disaster situation. The program must also address how the facility would coordinate with other healthcare facilities, as well as the whole community during an emergency or disaster (natural, man-made, facility). The emergency preparedness program must be reviewed annually. A comprehensive approach to meeting the health and safety needs of a patient population should encompass the elements for emergency preparedness planning based on the "all-hazards" definition and specific to the location of the facility. For instance, a facility in a large flood zone, or tornado prone region, should have included these elements in their overall planning in order to meet the health, safety, and security needs of the staff and of the patient population. Additionally, if the patient population has limited mobility, facilities should have an approach to address these challenges during emergency events. The term "comprehensive" in this requirement is to ensure that facilities do not only choose one potential emergency that may occur in their area, but rather consider a multitude of events and be able to demonstrate that they have considered this during their development of the emergency preparedness plan. Survey Procedures o Interview the facility leadership and ask him/her/them to describe the facility's emergency preparedness program. o Ask to see the facility's written policy and documentation on the emergency preparedness program. o For hospitals and CAHs only: Verify the hospital's or CAH's program was developed based on an all-hazards approach by asking their leadership to describe how the facility used an all-hazards approach when developing its program.</p>
+		</div>
+		</div>
+		</div>
+	  </div>
+		<div class="iq-accordion secondary data-focus ER condition 2 0002 e0002 e2">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0010content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">E0002 - Establishment of the EP Program Transplant</span><span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0002');">Add</button>
+		</div>
+		</div>
+		<div id="cite0010content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p class="iq-not-available">Not applicable</p>
+		<label>Reguation Text</label>
+		<p>A transplant center must be included in the emergency preparedness planning and the emergency preparedness program as set forth in §482.15 for the hospital in which it is located. However, a transplant center is not individually responsible for the emergency preparedness requirements set forth in §482.15.</p>
+		<label>Interpretive Guidelines</label>
+		<p>A representative from each transplant center must be actively involved in the development and maintenance of the hospital's emergency preparedness program, as required under §482.15(g). Transplant centers would still be required to have their own emergency preparedness policies and procedures as required under §482.78(a), as well as participate in mutually-agreed upon protocols that address the transplant center, hospital, and OPO's duties and responsibilities during an emergency. Survey Procedures o Verify that a representative from the transplant center was included in the planning of the emergency preparedness program of the hospital in which the transplant center is located.</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus ER condition 3 0003 e0003 e3">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite15content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">E0003 - Establishment of the EP Program Dialysis</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0003');">Add</button>
+		</div>
+		</div>
+		<div id="cite15content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Reguation Text</label>
+		<p>The dialysis facility must comply with all applicable Federal, State, and local emergency preparedness requirements. These emergencies include, but are not limited to, fire, equipment or power failures, care related emergencies, water supply interruption, and natural disasters likely to occur in the facility's geographic area. The dialysis facility must establish and maintain an emergency preparedness program that meets the requirements of this section. The emergency preparedness program must include, but not be limited to, the following elements:</p>
+		<label>Interpretive Guidelines</label>
+		<p>Under this condition, the ESRD facility is required to develop and update an emergency preparedness program that meets all of the standards contained within the condition. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health and safety needs of their patient population during an emergency; as well as the whole community during and surrounding an emergency event (natural or man-made). Survey Procedures o Ask to see written or electronic documentation of the program.</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 0100 100 g100 g0100">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0016content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0100 - Patient Rights</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0100');">Add</button>
+		</div>
+		</div>
+		<div id="cite0016content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.10</p>
+		<label>Reguation Text</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not Applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 0117 117 g117 g0117">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0117content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0117 - Compliance w/ Fed, State, Local Laws</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0117');">Add</button>
+		</div>
+		</div>
+		<div id="cite0117content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.12</p>
+		<label>Reguation Text</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not Applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+	    <div class="iq-accordion secondary data-focus HHA condition 0122 122 g122 g0122">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0122content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0122 - Organization, Services, and Administration</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0122');">Add</button>
+		</div>
+		</div>
+		<div id="cite0122content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.14</p>
+		<label>Reguation Text</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not Applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+	    <div class="iq-accordion secondary data-focus HHA condition 0151 151 g151 g0151">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite0151content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0151 - Group of Professional Personnel</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0151');">Add</button>
+		</div>
+		</div>
+		<div id="cite0151content" class="collapse ">
+		<div class="card-body">
+		<label>CFR Section</label>
+		<p>484.16</p>
+		<label>Reguation Text</label>
+		<p class="iq-not-available">Not Applicable</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not Applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 350 0350 g350 g0350 CR">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite350contentx" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
+		</button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g350');">Add</button>
+		</div>
+		</div>
+		<div id="cite350contentx" class="collapse ">
+		<div class="card-body">
+
+		<label>CFR Section</label>
+		<p>484.40</p>
+		<label>Reguation Text</label>
+		<p>§484.40 Condition of participation: Release of patient identifiable OASIS information. The HHA and agent acting on behalf of the HHA in accordance with a written contract must ensure the confidentiality of all patient identifiable information contained in the clinical record, including OASIS data, and may not release patient identifiable OASIS information to the public.</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 370 0370 g370 g0370">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite370contentx" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0370 - Reporting OASIS information</span>  <span class="badge badge-warning">Condition</span></span>
+		</button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0370');">Add</button>
+		</div>
+		</div>
+		<div id="cite370contentx" class="collapse ">
+		<div class="card-body">
+
+		<label>CFR Section</label>
+		<p>484.45</p>
+		<label>Reguation Text</label>
+		<p>HHAs must electronically report all OASIS data collected in accordance with §484.55.</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class="iq-accordion secondary data-focus HHA condition 406 0406 g406 g0406">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite406content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">G0406 - Patient Rights</span>  <span class="badge badge-warning">Condition</span></span>
+		</button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0406');">Add</button>
+		</div>
+		</div>
+		<div id="cite406content" class="collapse ">
+		<div class="card-body">
+
+		<label>CFR Section</label>
+		<p>484.5</p>
+		<label>Reguation Text</label>
+		<p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+		<label>Interpretive Guidelines</label>
+		<p class="iq-not-available">Not applicable</p>
+		</div>
+		</div>
+		</div>
+		</div>
+
+    </div>
+<div class="row bottomPagination">
+    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 CoPs</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 CoPs</span></span></li></ul> </div>
+    <div class="col-md-6 text-right">
+          <nav aria-label="Table Pagination" class="float-right">
+    
+		<ul class="pagination pagination-large">
+			<li class="page-item first disabled" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
+			</li>
+			<li class="page-item previous disabled" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
+			</li>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 3</span></div>
+			</li>
+			
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button"></button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last"></button>
+			</li>
+		</ul>
+	</nav>
+    </div>
+</div>
+                   
+                </div>
+                <div class="col-md-3 iq-static-col position-sticky" id="saveCOPButton">
+				<div class="sticky-top">	
+					<br>
+				<h3 class="iq-label">Added Deficiencies <span class="countWrap hide">(</span><span class="addedCount"></span><span class="countWrap hide">)</span></h3>
+				<div class="card dashed">
+					<p class="iq-not-available">No Deficiencies have been added.</p>
+					<div id="addedCOPTags" class="tagListDisplay"></div>
+					<div class="iq-footer"><button class="btn btn-primary btn-full" onClick="saveCOP()">Continue</button> <button
+                            class="btn btn-link btn-full cancelButton" onClick="cancelAddCOP();">Cancel</button></div>
+				</div>  
+				</div>
+				</div>
+              </div>
+
+			</section>
+            <section class="read-view">
+                 <div class="row tabTitle">
+              <div class="col-sm-10">
+                <h2>Basic Information</h2>
+                <p>Manage the basic information for this survey</p>
+              </div>
+              <div class="col-sm-2 text-right">
+                <button class="btn btn-outline-primary hide" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
+              </div>
+            </div>
+            <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4"><label>Survey Type</label></div>
+                  <div class="col-md-8"><p>Life Safety Code</p></div>
+                </div>
+            </div>
+            <h3>Survey Categories</h3>
+            <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Federal Categories</label>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Initial Certification</p>
+                  </div>
+                </div>
+           <div class="row">
+              <div class="col-md-4">
+                <label>State Categories</label>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">No information provided</p>
+              </div>
+            </div>
+                </div>
+                <h3>Regulation Sets</h3>
+            <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4">
+                <label>Federal Regulation Sets</label>
+              </div>
+              <div class="col-md-8">
+                <p>LSC 20120 Health Existing (FED - K - 01.01)</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>State Regulation Sets</label>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">No information provided
+                </p>
+              </div>
+            </div>
+                </div>
+            <h3>Survey Status</h3>
+            <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4">
+                <label>Status</label>
+              </div>
+              <div class="col-md-8">
+                <p>Open</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Start Date</label>
+              </div>
+              <div class="col-md-8">
+                <p>01/09/2020</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Exit Date</label>
+              </div>
+              <div class="col-md-8">
+                <p>01/12/2020</p>
+              </div>
+            </div>
+        </div>
+          
+            
+            </section>  
+     </div>
+   </div>
+</div>
+</main>
+<div class="modal fade" id="shortcuts" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+    <div class="modal-content">
+      <!--<div class="modal-header">
+        <h5 class="modal-title" id="confirmDeletionTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>-->
+      <div class="modal-body">
+          <h4><strong>Keyboard Shortcuts for Text Editor</strong></h4>
+         <div id="basic-formatting" class="docs-group anchor">
+            <h3 class="title-left-border">Basic Formatting</h3>
+
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>A</code> or <code>⌘ Cmd</code> + <code>A</code></h4>
+                  <p class="text-tint">Selects all text in the editable area of the Froala Rich Text Editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>B</code> or <code>⌘ Cmd</code> + <code>B</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Bold</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>I</code> or <code>⌘ Cmd</code> + <code>I</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Itallic</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>U</code> or <code>⌘ Cmd</code> + <code>U</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Underline</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>S</code> or <code>⌘ Cmd</code> + <code>S</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Strikethrough</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>]</code> or <code>⌘ Cmd</code> + <code>]</code></h4>
+                  <p class="text-tint">Indents the current paragraph.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>[</code> or <code>⌘ Cmd</code> + <code>[</code></h4>
+                  <p class="text-tint">Outdents the current paragraph.</p>
+                </div>
+                </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+	
+	<div class="modal" id="noDelete" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Unable to Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         This team member is a team coordinator and cannot be deleted until the role is reassigned to another team member. 
+         
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-10 col-xl-10">
+        <div class="iq-footer-content">
+          <div class="row">
+            <div class="col">
+              <div class="iq-footer-heading"> <a href="/"> <img
+                      src="../../../src/assets/images/logo-iqies-reversed.svg"
+                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../../src/assets/images/logo-cms.svg"
+                    class="img-fluid logo cms-logo d-lg-none" alt=""> </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col"> <a href="/help">Help</a><span> (800)
+              339-9313 </span><a href="mailto:help@qtso.com">Email Us</a><a
+                  href="https://qtso.cms.gov/" target="_blank"
+                  rel="noopener noreferrer"> QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                    class="iq-external-link-icon" alt=""> </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                  target="_blank" rel="noopener noreferrer"> Medicare <img
+                    src="../../../src/assets/images/icon-link-external.svg"
+                    class="iq-external-link-icon" alt=""> </a><a href="/privacy-policy">Privacy Policy</a> </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="iq-footer-links"> <a href="https://www.medicare.gov/about-us/plain-writing"
+                    target="_blank" rel="noopener noreferrer"> Plain Writing <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a
+                    href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                    target="_blank" rel="noopener noreferrer"> Freedom of
+                Information Act <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a
+                    href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                    target="_blank" rel="noopener noreferrer"> No Fear Act <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a href="https://get.adobe.com/reader/" target="_blank"
+                    rel="noopener noreferrer"> Adobe Acrobat <img
+                      src="../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-xl-2 d-flex align-items-center"> <img src="../../../src/assets/images/logo-cms.svg"
+            class="logo cms-logo d-none d-lg-block" alt="CMS Logo"> </div>
+    </div>
+  </div>
+</footer>
+<script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include multi-select dropdown selector -->
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../src/assets/js/scripts.js"></script>
+  <script src="../../hhaung/js/jquery.stickytabs.js"></script>
+<script>
+	  $(document).ready(function () {
+		$('.nav-horizontal').stickyTabs();
+	    $('[data-toggle="tooltip"]').tooltip(); 
+	    $("select.multiselect").bsMultiSelect();
+	    window.setTimeout(function() {
+			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+				$(this).addClass('hide'); 
+			});
+		}, 5000);
+    	$('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        });
+		
+	  });
+    	function searchCOP(){
+		var searchKey = $('#copSearch').val().toLowerCase(); 
+		switch( searchKey ){ 
+			case '': 
+				gotoPage1();
+				break; 
+			case 'clinical record': case 'record': case 'clinical': 
+				$('#COP .iq-accordion').addClass('hide'); 
+				$('#COP .iq-accordion.CR').removeClass('hide'); 
+				$('.copSearchCount').html('Results: 5 CoPs');
+				break; 
+			default: 
+				$('#COP .iq-accordion').addClass('hide'); 
+				$('#COP .iq-accordion.'+searchKey).removeClass('hide'); 
+				switch ( searchKey ) {
+					case '0': case '0000': 
+						$('.copSearchCount').html('Result: 3 CoPs');
+						break;
+					default: 
+						$('.copSearchCount').html('Result: 1 CoP');
+						break;
+				}
+				break;  
+		}
+	}
+	function gotoPage1() {
+		$('#COP .iq-accordion').removeClass('hide'); 
+		$('#COP .iq-accordion.allPage2').addClass('hide'); 
+		$('#COP .iq-accordion.allPage3').addClass('hide'); 
+		$('.copSearchCount').html('1-10 of 30 CoPs');
+
+		$('.pagination .page-item').removeClass('active'); 
+		$('.pagination .page-item').removeClass('hide'); 
+		$('.pagination .page-item.first button').attr('disabled', true);
+		$('.pagination .page-item.previous button').attr('disabled',true);
+		$('.pagination .page-item.next button').attr('disabled',false);
+		 $('.pagination .page-item.last button').attr('disabled',false);
+
+		$('.pagination .page-item.first').addClass('disabled');
+		$('.pagination .page-item.previous').addClass('disabled');
+		$('.pagination .page-item.next').removeClass('disabled');
+		$('.pagination .page-item.last').removeClass('disabled');
+		$('.pagination .page-item.page1').addClass('active');
+		
+		break;
+	}
+	function saveCOP(){
+		if( $('#saveCOPButton .iq-not-available').hasClass('hide')){ 
+			$('.successMsg').removeClass('hide'); 
+			$('.edit-view').addClass('active'); 
+			$('.edit-view.addConditions').removeClass('active'); 
+			$('#saveCOPButton .badge.badge-pill').addClass('hide'); 
+			$('#saveCOPButton .addedCount').html(''); 
+			$('#saveCOPButton .addedCount').addClass('hide'); 
+			$('#saveCOPButton .iq-not-available').removeClass('hide');  
+			$('.addedSavedCOP').toggleClass('hide');
+			$('.iq-label .countWrap').addClass('hide'); 
+		} else { 
+			$('.errorMsg').removeClass('hide'); 
+             $('html, body').animate({ scrollTop: 0 }, 500);
+		}
+	}
+	function addCOP(){
+        $('.edit-view').removeClass('active'); 
+        $('.read-view').removeClass('active'); 
+        $('.edit-view.addConditions').addClass('active');
+        //$('.sideNav').addClass('hide');
+    }
+    function cancelAddCOP(){
+        $('.edit-view').addClass('active'); 
+        $('.edit-view.addConditions').removeClass('active');
+        //$('.sideNav').removeClass('hide');
+    }
+    </script>
+</body>
+</html>

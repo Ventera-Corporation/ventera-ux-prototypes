@@ -4473,7 +4473,10 @@
 		}
 	}
     function resetCites(){
-        $('#citeSearch').val(''); $('#allRegSelect').prop('selectedIndex', 0).change(); $('#allTagTypeSelect').prop('selectedIndex', 0).change(); gotoPage1(); 
+        $('#citeSearch').val(''); 
+        //$('#allRegSelect').prop('selectedIndex', 0).change(); 
+        //$('#allTagTypeSelect').prop('selectedIndex', 0).change(); 
+        gotoPage1(); 
     }
 	function gotoPage1() {
 			var tagType = $('#allTagTypeSelect option:selected').val();
