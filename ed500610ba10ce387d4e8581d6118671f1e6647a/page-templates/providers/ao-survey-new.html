@@ -106,7 +106,7 @@
         <div class="alert alert-success successMsg hide" role="alert">
           <div class="alert-content">Changes saved successfully</div>
         </div>
-        <div class="alert alert-danger errorMsg hide" role="alert">
+        <!--<div class="alert alert-danger errorMsg hide" role="alert">
           <div class="alert-content"><div class="row">
               <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
               <div class="col-sm-11">
@@ -119,7 +119,7 @@
                   </ul>
               </div></div>
           </div>
-        </div>
+        </div>-->
       </div>
       <div class="col">
             <section class="edit-view active">
@@ -191,10 +191,9 @@
                  <div class="row">
                    <div class="col-md-3">
                 <div class="form-group">
-                  <label>Effective Term of Decision <span class="iq-asterisk" title="Required field">*</span></label>
-                   <div class="input-group input-group-sm"> <input type="number" min="0" class="form-control">
-                      <div class="input-group-append"><span class="input-group-text">Days</span></div>
-                    </div>
+                  <label>Effective Term of Decision (in Days)<span class="iq-asterisk" title="Required field">*</span></label>
+                   <input type="number" min="0" class="form-control">
+                     
                     
                 </div>
                    </div>
@@ -322,12 +321,12 @@
               </div>
                 <hr>
                
-                 <article class="conditionsList">  
+                 <article class="conditionsList" id="deficiencies">  
 					<h3>Deficiencies</h3>
-					<button class="btn btn-outline-primary" onClick="addCOP()">Add Deficiencies</button>
-					<p class="iq-not-available mt-4 addedSavedCOP">No deficiencies added.</p>
+					<button class="btn btn-outline-primary" onClick="addDeficiency()">Add Deficiencies</button>
+					<p class="iq-not-available mt-4 addedSavedDeficiency">No deficiencies added.</p>
 					
-				    <div class="addedSavedCOP accordion-wrapper hide mt-4">
+				    <div class="addedSavedDeficiency accordion-wrapper hide mt-4">
 						<p class="mb-2">3 Deficiencies</p>
 						<div class="iq-accordion secondary">
 	<div class="card">
@@ -335,19 +334,17 @@
 	<button
 	class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 	data-toggle="collapse" data-target="#cite4content" type="button" onclick="$(this).toggleClass('expanded');">
-	<span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
+	<span><span class="tagName">484.10</span> <span class="badge badge-warning">Condition</span></span></button>
 	<div class="iq-accordion-actions d-flex align-items-center">
 	<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
 	</div>
 	</div>
 	<div id="cite4content" class="collapse ">
 	<div class="card-body">
-	<label>CFR Section</label>
-	<p>484.102</p>
-	<label>Reguation Text</label>
-	<p>The [facility, except for Transplant Center] must comply with all applicable Federal, State and local emergency preparedness requirements. The [facility] must establish and maintain a comprehensive emergency preparedness program that meets the requirements of this section.* The emergency preparedness program must include, but not be limited to, the following elements: *[For hospitals at &sect;482.15:] The hospital must comply with all applicable Federal, State, and local emergency preparedness requirements. The hospital must develop and maintain a comprehensive emergency preparedness program that meets the requirements of this section, utilizing an all-hazards approach. *[For CAHs at &sect;485.625:] The CAH must comply with all applicable Federal, State, and local emergency preparedness requirements. The CAH must develop and maintain a comprehensive emergency preparedness program, utilizing an all-hazards approach.</p>
-	<label>Interpretive Guidelines</label>
-	<p>Under this condition/requirement, facilities are required to develop an emergency preparedness program that meets all of the standards specified within the condition/requirement. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health, safety, and security needs of their staff and patient population during an emergency or disaster situation. The program must also address how the facility would coordinate with other healthcare facilities, as well as the whole community during an emergency or disaster (natural, man-made, facility). The emergency preparedness program must be reviewed annually. A comprehensive approach to meeting the health and safety needs of a patient population should encompass the elements for emergency preparedness planning based on the "all-hazards" definition and specific to the location of the facility. For instance, a facility in a large flood zone, or tornado prone region, should have included these elements in their overall planning in order to meet the health, safety, and security needs of the staff and of the patient population. Additionally, if the patient population has limited mobility, facilities should have an approach to address these challenges during emergency events. The term "comprehensive" in this requirement is to ensure that facilities do not only choose one potential emergency that may occur in their area, but rather consider a multitude of events and be able to demonstrate that they have considered this during their development of the emergency preparedness plan. Survey Procedures o Interview the facility leadership and ask him/her/them to describe the facility's emergency preparedness program. o Ask to see the facility's written policy and documentation on the emergency preparedness program. o For hospitals and CAHs only: Verify the hospital's or CAH's program was developed based on an all-hazards approach by asking their leadership to describe how the facility used an all-hazards approach when developing its program.</p>
+	
+	<label>Description</label>
+	<p>Condition of participation: Patient rights. The patient has the right to be informed of his or her rights. The HHA must protect and promote the exercise of these rights.</p>
+	
 	</div>
 	</div>
 	</div>
@@ -358,7 +355,7 @@
 						<button
 						class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 						data-toggle="collapse" data-target="#cite350content" type="button" onclick="$(this).toggleClass('expanded');">
-						<span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
+						<span><span class="tagName">484.30</span> <span class="badge badge-warning">Condition</span></span>
 						</button>
 						<div class="iq-accordion-actions d-flex align-items-center">
 						<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
@@ -367,12 +364,9 @@
 						<div id="cite350content" class="collapse ">
 						<div class="card-body">
 
-						<label>CFR Section</label>
-						<p>484.40</p>
-						<label>Reguation Text</label>
-						<p>§484.40 Condition of participation: Release of patient identifiable OASIS information. The HHA and agent acting on behalf of the HHA in accordance with a written contract must ensure the confidentiality of all patient identifiable information contained in the clinical record, including OASIS data, and may not release patient identifiable OASIS information to the public.</p>
-						<label>Interpretive Guidelines</label>
-						<p class="iq-not-available">Not applicable</p>
+						<label>Description</label>
+						<p>Condition of participation: Skilled nursing services. The HHA furnishes skilled nursing services by or under the supervision of a registered nurse and in accordance with the plan of care.</p>
+						
 						</div>
 						</div>
 						</div>
@@ -383,7 +377,7 @@
 						<button
 						class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 						data-toggle="collapse" data-target="#cite370content" type="button" onclick="$(this).toggleClass('expanded');">
-						<span><span class="tagName">G0370 - Reporting OASIS information</span>  <span class="badge badge-warning">Condition</span></span>
+						<span><span class="tagName">484.55(d)(1)(i)</span>  <span class="badge badge-warning">Condition</span></span>
 						</button>
 						<div class="iq-accordion-actions d-flex align-items-center">
 						<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
@@ -392,12 +386,10 @@
 						<div id="cite370content" class="collapse ">
 						<div class="card-body">
 
-						<label>CFR Section</label>
-						<p>484.45</p>
-						<label>Reguation Text</label>
-						<p>HHAs must electronically report all OASIS data collected in accordance with §484.55.</p>
-						<label>Interpretive Guidelines</label>
-						<p class="iq-not-available">Not applicable</p>
+						
+						<label>Description</label>
+						<p>Beneficiary elected transfer;</p>
+						
 						</div>
 						</div>
 						</div>
@@ -534,271 +526,484 @@
 				 <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Add Deficiencies</h2>
-				  <p>Select the Deficiencies to add to this survey.</p>
+				  <p>
+                  
+                  Find and add deficiencies for this survey.</p>
               </div>
               
             </div>
 			   <div class="row">
                 <div class="col-lg-7">
-                    <label for="copSearch"><span class="sr-only">Search</span></label>
+                    <label for="deficiencySearch"><span class="sr-only">Search</span></label>
                     <div class="input-group">
-                    <input type="text" class="form-control" id="copSearch" onKeyUp="if (event.keyCode === 13) {
+                    <input type="text" class="form-control" id="deficiencySearch" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();}" >
         <div class="input-group-postpend">
-         <button type="submit" class="btn btn-primary searchButton" onClick="searchCOP()"><i class="fas fa-search"></i></button> <button class="btn btn-link" onClick="gotoPage1(); $('#copSearch').val('');">Reset</button>
+         <button type="submit" class="btn btn-primary searchButton" onClick="searchDeficiency()"><i class="fas fa-search"></i></button> <button class="btn btn-link" onClick="resetSearch();">Reset</button>
         </div>
       </div>
-                    <div class="input-group-help-text help-text">Search by tag number, title, or keyword</div>
+                    <div class="input-group-help-text help-text">Search by CFR section number or keyword</div>
                 </div>
               </div>
               <div class="row mt-4 copList">
-                <div class="col-md-9" id="COP">
-					<br>
-					<div class="row"><div class="col-md-4" style="vertical-align: bottom"><p class="copSearchCount">1-10 of 30 Deficiencies</p></div></div>
+                <div class="col-md-9" id="deficiency">
+                    <div class="row mt-4">
+                        <div class="col-md-3" style="line-height: 3.5rem; "><span class="deficiencySearchCount">1-20 of </span><span class="deficiencySearchTotal">688 Deficiencies</span></div>
+                        <div class="col-md-9 text-right">
+                            <ul class="iq-inline-list">
+                            <li><label class="m-0">Filter By:</label></li>
+                            <!--<li><select style="width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect">
+                                <option value="all">All Regulation Sets</option>
+                                <optgroup label="Federal Regulation Sets">
+                                <option value="er">Emergency Preparedness (FED - E - 1.01)</option>
+                                <option value="hha">Home Health Agencies (FED - G - 11.01)</option>
+                                </optgroup>
+                                <optgroup label="State Regulation Sets">
+                                <option value="state">IL State Home Health (ST - S - 2 - HHA)</option>
+                                </optgroup>
+                              </select>
+                            </li>-->
+                            <li>
+                              <select style="width: auto" onchange="selectTagType(this)" id="allTagTypeSelect">
+                                <option value="all">All Deficiency Types</option>
+                                <option value="condition">Condition</option>
+                                <option value="standard">Standard</option>
+                                <!--<option value="licensure">Licensure</option>
+                                <option value="element">Element</option>
+                                <option value="memo">Memo</option>-->
+                              </select>
+                            </li></ul>
+                        </div></div>
      
+                     <div class="noResultsText hide mt-4">
+                        <p class="iq-not-available">No deficiencies found for this search.</p>
+                        
+                        </div>
 <div class="accordion-wrapper"> 
-		<!-- All page 1 -->
-
-		<div class="iq-accordion secondary data-focus ER condition 1 e0001 0001 e1">
+		<div class="iq-accordion secondary data-focus condition 48410">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite4contentx" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
+		<span><span class="tagName">484.10</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0001');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48410');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite4contentx" class="collapse ">
 		<div class="card-body">
-		<label>CFR Section</label>
-		<p>484.102</p>
-		<label>Reguation Text</label>
-		<p>The [facility, except for Transplant Center] must comply with all applicable Federal, State and local emergency preparedness requirements. The [facility] must establish and maintain a comprehensive emergency preparedness program that meets the requirements of this section.* The emergency preparedness program must include, but not be limited to, the following elements: *[For hospitals at &sect;482.15:] The hospital must comply with all applicable Federal, State, and local emergency preparedness requirements. The hospital must develop and maintain a comprehensive emergency preparedness program that meets the requirements of this section, utilizing an all-hazards approach. *[For CAHs at &sect;485.625:] The CAH must comply with all applicable Federal, State, and local emergency preparedness requirements. The CAH must develop and maintain a comprehensive emergency preparedness program, utilizing an all-hazards approach.</p>
-		<label>Interpretive Guidelines</label>
-		<p>Under this condition/requirement, facilities are required to develop an emergency preparedness program that meets all of the standards specified within the condition/requirement. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health, safety, and security needs of their staff and patient population during an emergency or disaster situation. The program must also address how the facility would coordinate with other healthcare facilities, as well as the whole community during an emergency or disaster (natural, man-made, facility). The emergency preparedness program must be reviewed annually. A comprehensive approach to meeting the health and safety needs of a patient population should encompass the elements for emergency preparedness planning based on the "all-hazards" definition and specific to the location of the facility. For instance, a facility in a large flood zone, or tornado prone region, should have included these elements in their overall planning in order to meet the health, safety, and security needs of the staff and of the patient population. Additionally, if the patient population has limited mobility, facilities should have an approach to address these challenges during emergency events. The term "comprehensive" in this requirement is to ensure that facilities do not only choose one potential emergency that may occur in their area, but rather consider a multitude of events and be able to demonstrate that they have considered this during their development of the emergency preparedness plan. Survey Procedures o Interview the facility leadership and ask him/her/them to describe the facility's emergency preparedness program. o Ask to see the facility's written policy and documentation on the emergency preparedness program. o For hospitals and CAHs only: Verify the hospital's or CAH's program was developed based on an all-hazards approach by asking their leadership to describe how the facility used an all-hazards approach when developing its program.</p>
+		<label>Description</label>
+		<p>Condition of participation: Patient rights. The patient has the right to be informed of his or her rights. The HHA must protect and promote the exercise of these rights.</p>
 		</div>
 		</div>
 		</div>
 	  </div>
-		<div class="iq-accordion secondary data-focus ER condition 2 0002 e0002 e2">
+		<div class="iq-accordion secondary data-focus condition 48412">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite0010content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">E0002 - Establishment of the EP Program Transplant</span><span class="badge badge-warning">Condition</span></span></button>
+		<span><span class="tagName">484.12</span><span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0002');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48412');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite0010content" class="collapse ">
 		<div class="card-body">
-		<label>CFR Section</label>
-		<p class="iq-not-available">Not applicable</p>
-		<label>Reguation Text</label>
-		<p>A transplant center must be included in the emergency preparedness planning and the emergency preparedness program as set forth in §482.15 for the hospital in which it is located. However, a transplant center is not individually responsible for the emergency preparedness requirements set forth in §482.15.</p>
-		<label>Interpretive Guidelines</label>
-		<p>A representative from each transplant center must be actively involved in the development and maintenance of the hospital's emergency preparedness program, as required under §482.15(g). Transplant centers would still be required to have their own emergency preparedness policies and procedures as required under §482.78(a), as well as participate in mutually-agreed upon protocols that address the transplant center, hospital, and OPO's duties and responsibilities during an emergency. Survey Procedures o Verify that a representative from the transplant center was included in the planning of the emergency preparedness program of the hospital in which the transplant center is located.</p>
+		
+		<label>Description</label>
+		<p>Condition of participation: Compliance with Federal, State, and local laws, disclosure and ownership information, and accepted professional standards and principles.</p>
+		
 		</div>
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus ER condition 3 0003 e0003 e3">
+		<div class="iq-accordion secondary data-focus condition 48414">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
 		data-toggle="collapse" data-target="#cite15content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">E0003 - Establishment of the EP Program Dialysis</span> <span class="badge badge-warning">Condition</span></span></button>
+		<span><span class="tagName">484.14</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0003');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48414');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite15content" class="collapse ">
 		<div class="card-body">
-		<label>CFR Section</label>
-		<p class="iq-not-available">Not Applicable</p>
-		<label>Reguation Text</label>
-		<p>The dialysis facility must comply with all applicable Federal, State, and local emergency preparedness requirements. These emergencies include, but are not limited to, fire, equipment or power failures, care related emergencies, water supply interruption, and natural disasters likely to occur in the facility's geographic area. The dialysis facility must establish and maintain an emergency preparedness program that meets the requirements of this section. The emergency preparedness program must include, but not be limited to, the following elements:</p>
-		<label>Interpretive Guidelines</label>
-		<p>Under this condition, the ESRD facility is required to develop and update an emergency preparedness program that meets all of the standards contained within the condition. The emergency preparedness program must describe a facility's comprehensive approach to meeting the health and safety needs of their patient population during an emergency; as well as the whole community during and surrounding an emergency event (natural or man-made). Survey Procedures o Ask to see written or electronic documentation of the program.</p>
+		
+		<label>Description</label>
+		<p>Condition of participation: Organization, services, and administration. Organization, services furnished, administrative control, and lines of authority for the delegation of responsibility down to the patient care level are clearly set forth in writing and are readily identifiable. Administrative and supervisory functions are not delegated to another agency or organization and all services not furnished directly, including services provided through subunits are monitored and controlled by the parent agency. If an agency has subunits, appropriate administrative records are maintained for each subunit.</p>
+		
 		</div>
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA condition 0100 100 g100 g0100">
+		<div class="iq-accordion secondary data-focus condition 48416">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite0016content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">G0100 - Patient Rights</span> <span class="badge badge-warning">Condition</span></span></button>
+		data-toggle="collapse" data-target="#d16content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.16</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0100');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48416');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
-		<div id="cite0016content" class="collapse ">
+		<div id="d16content" class="collapse ">
 		<div class="card-body">
-		<label>CFR Section</label>
-		<p>484.10</p>
-		<label>Reguation Text</label>
-		<p class="iq-not-available">Not Applicable</p>
-		<label>Interpretive Guidelines</label>
-		<p class="iq-not-available">Not Applicable</p>
+		<label>Description</label>
+		<p>Condition of participation: Group of professional personnel. A group of professional personnel, which includes at least one physician and one registered nurse (preferably a public health nurse), and with appropriate representation from other professional disciplines, establishes and annually reviews the agency's policies governing scope of services offered, admission and discharge policies, medical supervision and plans of care, emergency care, clinical records, personnel qualifications, and program evaluation. At least one member of the group is neither an owner nor an employee of the agency.</p>
+		
 		</div>
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA condition 0117 117 g117 g0117">
+        <div class="iq-accordion secondary data-focus condition 48418">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite0117content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">G0117 - Compliance w/ Fed, State, Local Laws</span> <span class="badge badge-warning">Condition</span></span></button>
+		data-toggle="collapse" data-target="#d18content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.18</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0117');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48418');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
-		<div id="cite0117content" class="collapse ">
+		<div id="d18content" class="collapse ">
 		<div class="card-body">
-		<label>CFR Section</label>
-		<p>484.12</p>
-		<label>Reguation Text</label>
-		<p class="iq-not-available">Not Applicable</p>
-		<label>Interpretive Guidelines</label>
-		<p class="iq-not-available">Not Applicable</p>
+		<label>Description</label>
+		<p>Condition of participation: Acceptance of patients, plan of care, and medical supervision. Patients are accepted for treatment on the basis of a reasonable expectation that the patient's medical, nursing, and social needs can be met adequately by the agency in the patient's place of residence. Care follows a written plan of care established and periodically reviewed by a doctor of medicine, osteopathy, or podiatric medicine.</p>
+		
 		</div>
 		</div>
 		</div>
 		</div>
-	    <div class="iq-accordion secondary data-focus HHA condition 0122 122 g122 g0122">
+        <div class="iq-accordion secondary data-focus condition 48430">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite0122content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">G0122 - Organization, Services, and Administration</span> <span class="badge badge-warning">Condition</span></span></button>
+		data-toggle="collapse" data-target="#d30content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.30</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0122');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48430');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
-		<div id="cite0122content" class="collapse ">
+		<div id="d30content" class="collapse ">
 		<div class="card-body">
-		<label>CFR Section</label>
-		<p>484.14</p>
-		<label>Reguation Text</label>
-		<p class="iq-not-available">Not Applicable</p>
-		<label>Interpretive Guidelines</label>
-		<p class="iq-not-available">Not Applicable</p>
+		<label>Description</label>
+		<p>Condition of participation: Skilled nursing services. The HHA furnishes skilled nursing services by or under the supervision of a registered nurse and in accordance with the plan of care.</p>
+		
 		</div>
 		</div>
 		</div>
-		</div>
-	    <div class="iq-accordion secondary data-focus HHA condition 0151 151 g151 g0151">
+		</div> 
+        <div class="iq-accordion secondary data-focus standard 4841 4841a">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite0151content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">G0151 - Group of Professional Personnel</span> <span class="badge badge-warning">Condition</span></span></button>
+		data-toggle="collapse" data-target="#d1acontent" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.1(a)</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0151');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('4841a');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
-		<div id="cite0151content" class="collapse ">
+		<div id="d1acontent" class="collapse ">
 		<div class="card-body">
-		<label>CFR Section</label>
-		<p>484.16</p>
-		<label>Reguation Text</label>
-		<p class="iq-not-available">Not Applicable</p>
-		<label>Interpretive Guidelines</label>
-		<p class="iq-not-available">Not Applicable</p>
+		<label>Description</label>
+		<p>OLD Basis and scope. This part is based on the indicated provisions of the following sections of the Act:</p>
+		
 		</div>
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA condition 350 0350 g350 g0350 CR">
+        <div class="iq-accordion secondary data-focus standard 4841 4841a 4841a3">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite350contentx" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
-		</button>
+		data-toggle="collapse" data-target="#d1a3content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.1(a)(3)</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g350');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('4841a3');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
-		<div id="cite350contentx" class="collapse ">
+		<div id="d1a3content" class="collapse ">
 		<div class="card-body">
-
-		<label>CFR Section</label>
-		<p>484.40</p>
-		<label>Reguation Text</label>
-		<p>§484.40 Condition of participation: Release of patient identifiable OASIS information. The HHA and agent acting on behalf of the HHA in accordance with a written contract must ensure the confidentiality of all patient identifiable information contained in the clinical record, including OASIS data, and may not release patient identifiable OASIS information to the public.</p>
-		<label>Interpretive Guidelines</label>
-		<p class="iq-not-available">Not applicable</p>
+		<label>Description</label>
+		<p>OLD Section 1895 provides for the establishment of a prospective payment system for home health services covered under Medicare.</p>
+		
 		</div>
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA condition 370 0370 g370 g0370">
+        <div class="iq-accordion secondary data-focus standard 48410a">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite370contentx" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">G0370 - Reporting OASIS information</span>  <span class="badge badge-warning">Condition</span></span>
-		</button>
+		data-toggle="collapse" data-target="#d10acontent" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.10(a)</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0370');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48410a');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
-		<div id="cite370contentx" class="collapse ">
+		<div id="d10acontent" class="collapse ">
 		<div class="card-body">
-
-		<label>CFR Section</label>
-		<p>484.45</p>
-		<label>Reguation Text</label>
-		<p>HHAs must electronically report all OASIS data collected in accordance with §484.55.</p>
-		<label>Interpretive Guidelines</label>
-		<p class="iq-not-available">Not applicable</p>
+		<label>Description</label>
+		<p>OLD Standard: Notice of rights.</p>
+		
 		</div>
 		</div>
 		</div>
 		</div>
-		<div class="iq-accordion secondary data-focus HHA condition 406 0406 g406 g0406">
+        <div class="iq-accordion secondary data-focus standard 48455d 48455d1 48455d1i">
 		<div class="card">
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite406content" type="button" onclick="$(this).toggleClass('expanded');">
-		<span><span class="tagName">G0406 - Patient Rights</span>  <span class="badge badge-warning">Condition</span></span>
-		</button>
+		data-toggle="collapse" data-target="#d55d1icontent" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.55(d)(1)(i)</span> <span class="badge badge-info">Standard</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
-		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0406');">Add</button>
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48455d');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
-		<div id="cite406content" class="collapse ">
+		<div id="d55d1icontent" class="collapse ">
 		<div class="card-body">
-
-		<label>CFR Section</label>
-		<p>484.5</p>
-		<label>Reguation Text</label>
-		<p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
-		<label>Interpretive Guidelines</label>
-		<p class="iq-not-available">Not applicable</p>
+		<label>Description</label>
+		<p>Beneficiary elected transfer;</p>
+		
 		</div>
 		</div>
 		</div>
 		</div>
-
+        <div class="iq-accordion secondary data-focus condition 48432">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d32content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.32</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48432');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d32content" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Condition of participation: Therapy services. Any therapy services offered by the HHA directly or under arrangement are given by a qualified therapist or by a qualified therapy assistant under the supervision of a qualified therapist and in accordance with the plan of care. The qualified therapist assists the physician in evaluating level of function, helps develop the plan of care (revising it as necessary), prepares clinical and progress notes, advises and consults with the family and other agency personnel, and participates in in-service programs.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus condition 48434">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d34content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.34</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48434');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d34content" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Condition of participation: Medical social services. If the agency furnishes medical social services, those services are given by a qualified social worker or by a qualified social work assistant under the supervision of a qualified social worker, and in accordance with the plan of care. The social worker assists the physician and other team members in understanding the significant social and emotional factors related to the health problems, participates in the development of the plan of care, prepares clinical and progress notes, works with the family, uses appropriate community resources, participates in discharge planning and in-service programs, and acts as a consultant to other agency personnel.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus condition 48436">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d36content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.36</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48436');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d36content" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Condition of participation: Home health aide services. Home health aides are selected on the basis of such factors as a sympathetic attitude toward the care of the sick, ability to read, write, and carry out directions, and maturity and ability to deal effectively with the demands of the job. They are closely supervised to ensure their competence in providing care. For home health services furnished (either directly or through arrangements with other organizations) after August 14, 1990, the HHA must use individuals who meet the personnel qualifications specified in 484.4 for ``home health aide'.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus condition 48438">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d38content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.38</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48438');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d38content" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Condition of participation: Qualifying to furnish outpatient physical therapy or speech pathology services. An HHA that wishes to furnish outpatient physical therapy or speech pathology services must meet all the pertinent conditions of this part and also meet the additional health and safety requirements set forth in 485.711, 485.713, 485.715, 485.719, 485.723, and 485.727 of this chapter to implement section 1861(p) of the Act.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus condition 48448">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d48content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.48</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48448');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d48content" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Condition of participation: Clinical records. A clinical record containing pertinent past and current findings in accordance with accepted professional standards is maintained for every patient receiving home health services. In addition to the plan of care, the record contains appropriate identifying information; name of physician; drug, dietary, treatment, and activity orders; signed and dated clinical and progress notes; copies of summary reports sent to the attending physician; and a discharge summary. The HHA must inform the attending physician of the availability of a discharge summary. The discharge summary must be sent to the attending physician upon request and must include the patient's medical and health status at discharge.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus condition 48452">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d52content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.52</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48452');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d52content" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Condition of participation: Evaluation of the agency's program. The HHA has written policies requiring an overall evaluation of the agency's total program at least once a year by the group of professional personnel (or a committee of this group), HHA staff, and consumers, or by professional people outside the agency working in conjunction with consumers. The evaluation consists of an overall policy and administrative review and a clinical record review. The evaluation assesses the extent to which the agency's program is appropriate, adequate, effective, and efficient. Results of the evaluation are reported to and acted upon by those responsible for the operation of the agency and are maintained separately as administrative records.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus condition 48455">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d55content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.55</span> <span class="badge badge-warning">Condition</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48455');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d55content" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>OLD Condition of participation: Comprehensive assessment of patients. Each patient must receive, and an HHA must provide, a patient-specific, comprehensive assessment that accurately reflects the patient's current health status and includes information that may be used to demonstrate the patient's progress toward achievement of desired outcomes. The comprehensive assessment must identify the patient's continuing need for home care and meet the patient's medical, nursing, rehabilitative, social, and discharge lanning needs. For Medicare beneficiaries, the HHA must verify the patient's eligibility for the Medicare home health benefit including homebound status, both at the time of the initial assessment visit and at the time of the comprehensive assessment. The comprehensive assessment must also incorporate the use of the current version of the Outcome and Assessment Information Set (OASIS) items, using the language and groupings of the OASIS items, as specified by the Secretary.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus standard 48450 48450c 48450c10 48450c10v">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d50content" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.50(c)(10)(v)</span> <span class="badge badge-info">Standard</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48450');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d50content" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Quality Improvement Organization.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus standard 48452 48452b">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d52bcontent" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.52(b)</span> <span class="badge badge-info">Standard</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48452b');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d52bcontent" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Standard: Clinical record review. At least quarterly, appropriate health professionals, representing at least the scope of the program, review a sample of both active and closed clinical records to determine whether established policies are followed in furnishing services directly or under arrangement. There is a continuing review of clinical records for each 60-day period that a patient receives home health services to determine adequacy of the plan of care and appropriateness of continuation of care.</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
+        <div class="iq-accordion secondary data-focus standard 48455 48455d 48455d1 48455d1i">
+		<div class="card">
+		<div class="card-header d-flex">
+		<button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#d55dcontent" type="button" onclick="$(this).toggleClass('expanded');">
+		<span><span class="tagName">484.55(d)(1)(i)</span> <span class="badge badge-info">Standard</span></span></button>
+		<div class="iq-accordion-actions d-flex align-items-center">
+		<button type="button" class="btn btn-outline-primary"  onClick="addTag('48455d1i');">Add</button>
+ <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This deficiency has been already added to the list"><i class="far fa-info-circle"></i></a>
+		</div>
+		</div>
+		<div id="d55dcontent" class="collapse ">
+		<div class="card-body">
+		<label>Description</label>
+		<p>Beneficiary elected transfer;</p>
+		
+		</div>
+		</div>
+		</div>
+		</div>
     </div>
 <div class="row bottomPagination">
-    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 CoPs</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 CoPs</span></span></li></ul> </div>
+    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAlldeficiency(); } else { gotoPage1();} "><option value="20">20 per page</option><option value="50">50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><li><a href="javascript:void(0)" onClick="viewAlldeficiency()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="deficiencySearchTotal">688 Deficiencies</span></a> <span class="viewAllLink hide">Viewing All <span class="deficiencySearchTotal">688 Deficiencies</span></span></li></ul> </div>
     <div class="col-md-6 text-right">
           <nav aria-label="Table Pagination" class="float-right">
     
@@ -810,7 +1015,7 @@
 				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
 			</li>
 			<li class="page-item" onClick="gotoPage1()">
-				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 3</span></div>
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 35</span></div>
 			</li>
 			
 			<li class="page-item next" onClick="gotoNext()">
@@ -825,15 +1030,15 @@
 </div>
                    
                 </div>
-                <div class="col-md-3 iq-static-col position-sticky" id="saveCOPButton">
+                <div class="col-md-3 iq-static-col position-sticky" id="saveDeficiencyButton">
 				<div class="sticky-top">	
 					<br>
 				<h3 class="iq-label">Added Deficiencies <span class="countWrap hide">(</span><span class="addedCount"></span><span class="countWrap hide">)</span></h3>
 				<div class="card dashed">
-					<p class="iq-not-available">No Deficiencies have been added.</p>
-					<div id="addedCOPTags" class="tagListDisplay"></div>
-					<div class="iq-footer"><button class="btn btn-primary btn-full" onClick="saveCOP()">Continue</button> <button
-                            class="btn btn-link btn-full cancelButton" onClick="cancelAddCOP();">Cancel</button></div>
+					<p class="iq-not-available">No deficiencies have been added.</p>
+					<div id="addedDeficiencyTags" class="tagListDisplay"></div>
+					<div class="iq-footer"><button class="btn btn-primary btn-full" onClick="saveDeficiency()">Continue</button> <button
+                            class="btn btn-link btn-full cancelButton" onClick="cancelAddDeficiency();">Cancel</button></div>
 				</div>  
 				</div>
 				</div>
@@ -1061,6 +1266,7 @@
     </div>
   </div>
 </footer>
+<input type="hidden" id="has-savedDeficiency" value="no">
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
@@ -1095,75 +1301,204 @@
         });
 		
 	  });
-    	function searchCOP(){
-		var searchKey = $('#copSearch').val().toLowerCase(); 
+   	function selectTagType(){
+		gotoPage1();
+	 }
+	function addTag(tagName){
+		$('.card.dashed .iq-not-available').addClass('hide'); 
+		$('.errorMsg').addClass('hide'); 
+		var fullTag = $('.'+tagName + ' .tagName').html(); 
+		//console.log(fullTag);
+        
+        $('.iq-accordion.'+tagName+' .iq-accordion-actions .btn').attr('disabled', true);
+        //$('.iq-accordion.'+tagName+' .iq-accordion-actions .btn').html('Added');
+		
+		$('#addedDeficiencyTags').append('<div class="badge badge-pill"><span>' + fullTag + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="Remove" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
+		
+		$('.iq-label .countWrap').removeClass('hide');
+		$('.addedCount').html(function(i, val) { return +val*1+1 });
+		console.log($('.addedCount').html());
+	}
+	function closeTag(ele4, eParent){
+		eParent.addClass('hide'); 
+		tagN = ele4.previousSibling.innerHTML; //$('#tagNameRepo').val();
+        //tagN = tagN.substring(0,14);
+        tagN = tagN.toLowerCase();
+        tagN = tagN.replace('.','');
+        tagN = tagN.replace('(','');
+        tagN = tagN.replace('(','');
+        tagN = tagN.replace('(','');
+        tagN = tagN.replace(')','');
+        tagN = tagN.replace(')','');
+        tagN = tagN.replace(')','');
+        
+        console.log(tagN);
+        console.log('success');
+		$('.iq-accordion.' + tagN + ' .iq-accordion-actions .btn').attr('disabled', false); 
+		$('.iq-accordion.' + tagN + ' .iq-accordion-actions .btn').html('Add'); 
+		$('.addedCount').html( function(i, val) { return +val*1-1 });
+		console.log('after decrement' + $('.addedCount').html());
+		if( $('.addedCount').html() == '' || $('.addedCount').html() == 0 ){ 
+            $('.iq-label .countWrap').addClass('hide'); 
+            $('.addedCount').html(''); 
+            $('.card.dashed .iq-not-available').removeClass('hide'); 
+        }
+	} 
+	
+	function searchDeficiency(){
+        var searchKey = $('#deficiencySearch').val().toLowerCase(); 
+        searchKey = searchKey.replace('.','');
+        searchKey = searchKey.replace(' ','');
+        searchKey = searchKey.replace(' ','');
+        searchKey = searchKey.replace(' ','');
+        console.log(searchKey);
 		switch( searchKey ){ 
 			case '': 
+                $('.noResultsText').addClass('hide');
 				gotoPage1();
 				break; 
-			case 'clinical record': case 'record': case 'clinical': 
-				$('#COP .iq-accordion').addClass('hide'); 
-				$('#COP .iq-accordion.CR').removeClass('hide'); 
-				$('.copSearchCount').html('Results: 5 CoPs');
+			case 'patient rights': case 'patient': case 'rights': 
+				$('.iq-accordion').addClass('hide'); 
+				$('.iq-accordion.CR').removeClass('hide'); 
+                
+                $('.deficiencySearchTotal').html('');
+                $('.perPageSelect').addClass('hide');
+                $('.pagination').addClass('hide');
+                $('.deficiencySearchCount').html('Results: 5 Deficiencies');
+                $('.bottomPagination').addClass('hide');
+                $('.noResultsText').addClass('hide');
 				break; 
+            case 'x': case 'z': 
+                $('.iq-accordion').addClass('hide'); 
+                $('.deficiencySearchTotal').html('');
+                $('.perPageSelect').addClass('hide');
+                $('.pagination').addClass('hide');
+                $('.deficiencySearchCount').html('Results: 0 Deficiencies');
+                $('.bottomPagination').addClass('hide');
+                $('.noResultsText').removeClass('hide');
+                break;
 			default: 
-				$('#COP .iq-accordion').addClass('hide'); 
-				$('#COP .iq-accordion.'+searchKey).removeClass('hide'); 
+				$('.iq-accordion').addClass('hide'); 
+				$('.iq-accordion.'+searchKey).removeClass('hide'); 
 				switch ( searchKey ) {
 					case '0': case '0000': 
-						$('.copSearchCount').html('Result: 3 CoPs');
+                        $('.deficiencySearchTotal').html('');
+                        $('.perPageSelect').addClass('hide');
+                        $('.pagination').addClass('hide');
+						$('.deficiencySearchCount').html('Results: 3 Deficiencies');
+                        $('.bottomPagination').addClass('hide');
+                        $('.noResultsText').addClass('hide');
 						break;
 					default: 
-						$('.copSearchCount').html('Result: 1 CoP');
+                        $('.deficiencySearchTotal').html('');
+                        $('.perPageSelect').addClass('hide');
+                        $('.pagination').addClass('hide');
+						$('.deficiencySearchCount').html('Results: 1 Deficiency');
+                        $('.bottomPagination').addClass('hide');
+                        $('.noResultsText').addClass('hide');
 						break;
 				}
 				break;  
 		}
 	}
+    function resetSearch(){
+        $('#deficiencySearch').val(''); 
+        //$('#allRegSelect').prop('selectedIndex', 0).change(); 
+        //$('#allTagTypeSelect').prop('selectedIndex', 0).change(); 
+        gotoPage1(); 
+    }
 	function gotoPage1() {
-		$('#COP .iq-accordion').removeClass('hide'); 
-		$('#COP .iq-accordion.allPage2').addClass('hide'); 
-		$('#COP .iq-accordion.allPage3').addClass('hide'); 
-		$('.copSearchCount').html('1-10 of 30 CoPs');
+			var tagType = $('#allTagTypeSelect option:selected').val();
+            $('.iq-accordion').addClass('hide'); 
+            switch(tagType){
+                 case 'condition': 
+                     $('.iq-accordion.condition').removeClass('hide'); 
+                     $('.deficiencySearchCount').html('Results: 13 Deficiencies');
+                     $('.deficiencySearchTotal').html('');
+                     $('.perPageSelect').addClass('hide');
+                     $('.pagination').addClass('hide');
+					 $('.bottomPagination').addClass('hide');
+                     break;
+                 case 'standard':
+                     $('.iq-accordion.standard').removeClass('hide'); 
+                     $('.deficiencySearchCount').html('Results: 7 Deficiencies');                            
+                     $('.deficiencySearchTotal').html('');
+                     $('.perPageSelect').addClass('hide');
+                     $('.pagination').addClass('hide');
+					 $('.bottomPagination').addClass('hide');
+                     break;
+                case 'all': default: 
+                    $('.iq-accordion').removeClass('hide'); 
+                    $('.deficiencySearchCount').html('1-20 of ');                            
+                    $('.deficiencySearchTotal').html('688 Deficiencies');
+                    $('.perPageSelect').removeClass('hide');
+                    $('.pagination').removeClass('hide');
+				    $('.bottomPagination').removeClass('hide');
+                    break;
+             }
+		}
+        function viewAlldeficiency() {
+            $('.iq-accordion').removeClass('hide');                     
+            $('.deficiencySearchTotal').html('');
+            $('.perPageSelect').removeClass('hide');
+            $('.pagination').addClass('hide');
+            $('.deficiencySearchCount').html('Viewing All 688 Deficiencies');
+            $('.bottomPagination').removeClass('hide');
 
-		$('.pagination .page-item').removeClass('active'); 
-		$('.pagination .page-item').removeClass('hide'); 
-		$('.pagination .page-item.first button').attr('disabled', true);
-		$('.pagination .page-item.previous button').attr('disabled',true);
-		$('.pagination .page-item.next button').attr('disabled',false);
-		 $('.pagination .page-item.last button').attr('disabled',false);
-
-		$('.pagination .page-item.first').addClass('disabled');
-		$('.pagination .page-item.previous').addClass('disabled');
-		$('.pagination .page-item.next').removeClass('disabled');
-		$('.pagination .page-item.last').removeClass('disabled');
-		$('.pagination .page-item.page1').addClass('active');
-		
-		break;
-	}
-	function saveCOP(){
-		if( $('#saveCOPButton .iq-not-available').hasClass('hide')){ 
+            $('.perPageSelect option:selected').val();
+            $('.perPageSelect').prop('selectedIndex', 3).change();
+            $('.viewAllLink').toggleClass('hide');
+            $('.viewAllLink .deficiencySearchTotal').html('688 Deficiencies');
+           
+		}
+    
+    function saveAddedTags(){
+        if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ 
+            $('.successMsg').removeClass('hide'); 
+            $('.edit-view').removeClass('active');  
+            $('.read-view.all').addClass('active'); 
+            $('#saveCitationsButton .badge.badge-pill').addClass('hide'); 
+            $('#saveCitationsButton .addedCount').html(''); 
+            $('#saveCitationsButton .addedCount').addClass('hide'); 
+            $('.iq-label .countWrap').addClass('hide'); 
+            $('#saveCitationsButton .iq-not-available').removeClass('hide');  
+        } else { 
+            $('.errorMsg').removeClass('hide'); 
+        }
+    }
+	
+   
+	function saveDeficiency(){
+		if( $('#saveDeficiencyButton .iq-not-available').hasClass('hide')){ 
 			$('.successMsg').removeClass('hide'); 
 			$('.edit-view').addClass('active'); 
 			$('.edit-view.addConditions').removeClass('active'); 
-			$('#saveCOPButton .badge.badge-pill').addClass('hide'); 
-			$('#saveCOPButton .addedCount').html(''); 
-			$('#saveCOPButton .addedCount').addClass('hide'); 
-			$('#saveCOPButton .iq-not-available').removeClass('hide');  
-			$('.addedSavedCOP').toggleClass('hide');
+			$('#saveDeficiencyButton .badge.badge-pill').addClass('hide'); 
+			$('#saveDeficiencyButton .addedCount').html(''); 
+			$('#saveDeficiencyButton .addedCount').addClass('hide'); 
+			$('#saveDeficiencyButton .iq-not-available').removeClass('hide');  
+			$('.addedSavedDeficiency').toggleClass('hide');
 			$('.iq-label .countWrap').addClass('hide'); 
+            $('html, body').animate({ scrollTop: 2000 }, 200);
 		} else { 
 			$('.errorMsg').removeClass('hide'); 
              $('html, body').animate({ scrollTop: 0 }, 500);
 		}
 	}
-	function addCOP(){
+	function addDeficiency(){
         $('.edit-view').removeClass('active'); 
         $('.read-view').removeClass('active'); 
         $('.edit-view.addConditions').addClass('active');
+         if($('#has-savedDeficiency').val() == 'yes'){
+                console.log('second add deficiency');
+                $('.iq-accordion-actions .btn:disabled').addClass('hide');
+                $('.iq-accordion-actions .btn:disabled').next('.iq-accordion-actions .added').removeClass('hide');    
+            }
+            $('#has-savedDeficiency').val('yes');
+         $('html, body').animate({ scrollTop: 0 }, 500);
         //$('.sideNav').addClass('hide');
     }
-    function cancelAddCOP(){
+    function cancelAddDeficiency(){
         $('.edit-view').addClass('active'); 
         $('.edit-view.addConditions').removeClass('active');
         //$('.sideNav').removeClass('hide');
