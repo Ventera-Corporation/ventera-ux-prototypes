@@ -2146,7 +2146,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p><label>Category</label>
-                        <select><option>Select one</option>
+                        <select onChange=""><option>Select one</option>
                             <option value="12">Accidents</option>
                             <option value="25">Administration/Personnel</option>
                             <option value="8">Admission, Transfer &amp; Discharge Rights</option><option value="9">Death - General</option><option value="13">Dental Services</option><option value="14">Dietary Services</option><option value="19">Educational Services</option><option value="29">Falsification of Records/Reports</option><option value="34">Fatality/Transfusion Fatality</option><option value="26">Fraud/False Billing</option><option value="23">Infection Control</option><option value="4">Injury of Unknown Origin</option><option value="3">Misappropriation of Property</option><option value="15">Nursing Services</option><option value="36">Other</option><option value="20">Other Services</option><option value="16">Pharmaceutical Services</option><option value="22">Physical Environment</option><option value="17">Physician Services</option><option value="31">Quality Control</option><option value="11">Quality of Care/Treatment</option><option value="10">Quality of Life</option><option value="18">Rehabilitation Services</option><option value="1">Resident/Patient/Client Abuse</option><option value="24">Resident/Patient/Client Assessment</option><option value="2">Resident/Patient/Client Neglect</option><option value="7">Resident/Patient/Client Rights</option><option value="5">Restraints/Seclusion - Death</option><option value="6">Restraints/Seclusion - General</option><option value="35">State Licensure</option><option value="38">State Monitoring</option><option value="30">Unqualified Personnel</option></select>
@@ -2156,6 +2156,142 @@
                       <p class="subcat hide"><label>Subcategory</label>
                         <input type="text">
                       </p>
+                    </div>
+                    <div class="col-md-12">
+                       
+                        <fieldset>
+                <legend>Allegation Findings</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="findings1" name="findings" class="custom-control-input" onChange="$('.unsubReason').addClass('hide'); $('.subReason').removeClass('hide'); ">
+                  <label class="custom-control-label" for="findings1"> Substantiated</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="findings2" name="findings" class="custom-control-input" onChange="$('.unsubReason').removeClass('hide'); $('.subReason').addClass('hide');">
+                  <label class="custom-control-label" for="findings2"> Unsubstantiated</label>
+                </div>
+                
+                </fieldset>
+                        <div class="iq-conditional-content hide subReason">
+                            <fielset><legend>Substantiated Reasons <span class="iq-asterisk">*</span></legend>
+                            <table class="table-borderless">
+                                <tbody><tr><td><div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb1" checked class="custom-control-input">
+              <label class="custom-control-label" for="cb1"></label>
+              </div></td><td>
+                            <div class="iq-accordion secondary data-focus HHA condition 350 0350 g350 g0350">
+                      <div class="card">
+                        <div class="card-header d-flex">
+                          <button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite350content" type="button" onclick="$(this).toggleClass('expanded');"> <span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span> </button>
+                          
+                        </div>
+                        <div id="cite350content" class="collapse ">
+                          <div class="card-body">
+                            <label>CFR Section</label>
+                            <p>484.40</p>
+                            <label>Reguation Text</label>
+                            <p>§484.40 Condition of participation: Release of patient identifiable OASIS information. The HHA and agent acting on behalf of the HHA in accordance with a written contract must ensure the confidentiality of all patient identifiable information contained in the clinical record, including OASIS data, and may not release patient identifiable OASIS information to the public.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td></tr>
+                                    <tr><td><div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb2" class="custom-control-input">
+              <label class="custom-control-label" for="cb2"></label>
+              </div></td><td>
+                            <div class="iq-accordion secondary data-focus HHA condition 406 0406 g406 g0406">
+                      <div class="card">
+                        <div class="card-header d-flex">
+                          <button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite406content" type="button" onclick="$(this).toggleClass('expanded');"> <span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0406 - Patient Rights</span> <span class="badge badge-warning">Condition</span></span> </button>
+                          
+                        </div>
+                        <div id="cite406content" class="collapse ">
+                          <div class="card-body">
+                            <label>CFR Section</label>
+                            <p>484.5</p>
+                            <label>Reguation Text</label>
+                            <p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td></tr>
+                                    <tr><td><div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb3" class="custom-control-input">
+              <label class="custom-control-label" for="cb3"></label>
+              </div></td><td>
+                            <div class="iq-accordion secondary data-focus HHA standard 408 0408 g408 g0408">
+                      <div class="card">
+                        <div class="card-header d-flex">
+                          <button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite408content" type="button" onclick="$(this).toggleClass('expanded');"> <span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0408 - Notice of Rights</span> <span class="badge badge-info">Standard</span></span> </button>
+                          
+                        </div>
+                        <div id="cite408content" class="collapse ">
+                          <div class="card-body">
+                            <label>CFR Section</label>
+                            <p>484.50(a)</p>
+                            <label>Reguation Text</label>
+                            <p>The HHA must informed the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td></tr>
+                                    <tr><td><div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb4" checked class="custom-control-input">
+              <label class="custom-control-label" for="cb4"></label>
+              </div></td><td>
+                            <div class="iq-accordion secondary data-focus HHA condition 1008 g1008">
+                      <div class="card">
+                        <div class="card-header d-flex">
+                          <button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite6content" type="button" onclick="$(this).toggleClass('expanded');"> <span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1008 - Clinical Records</span> <span class="badge badge-warning">Condition</span></span> </button>
+                         
+                        </div>
+                        <div id="cite6content" class="collapse ">
+                          <div class="card-body">
+                            <label>CFR Section</label>
+                            <p>484.110</p>
+                            <label>Reguation Text</label>
+                            <p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td></tr>
+                                    </tbody></table>
+                            </fielset>
+                            </div>
+                        
+                        <div class="iq-conditional-content hide unsubReason">
+                             <fieldset>
+                <legend>Unsubstantiated Reason <span class="iq-asterisk">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="unsub1" name="unsub" class="custom-control-input">
+                  <label class="custom-control-label" for="unsub1"> Allegation did not occur</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="unsub2" name="unsub" class="custom-control-input">
+                  <label class="custom-control-label" for="unsub2"> Lack of sufficient evidence</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="unsub3" name="unsub" class="custom-control-input">
+                  <label class="custom-control-label" for="unsub3"> Referral to appropriate agency</label>
+                </div>
+                </fieldset>
+                        </div>
+                       
                     </div>
                     <div class="col-md-12">
                        
@@ -2182,10 +2318,6 @@
                         </p>
                     </div>
                     <div class="col-md-6"></div>
-                   
-                            
-                       
-                  
                     <div class="col-md-6">
                         <p><label>Shift</label>
                         <input type="text">
@@ -2215,11 +2347,8 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab4 .edit-view').removeClass('active'); 
-     $('#tab4 .read-view').addClass('active'); 
-     $('.alert.successMsg').removeClass('hide'); 
-     $('.addedAllegation .allegationA').removeClass('hide');">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').addClass('active');  ">Cancel</button>
+     addAllegation()">Save</a>
+                    <button class="btn btn-link" onClick="cancelAllegation();">Cancel</button>
                   </div>
             </section>
             <!-- edit allegation -->
@@ -2244,6 +2373,142 @@
                       <p class="subcat hide"><label>Subcategory</label>
                         <input type="text">
                       </p>
+                    </div>
+                    <div class="col-md-12">
+                       
+                        <fieldset>
+                <legend>Allegation Findings</legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="findings1E" checked name="findingsE" class="custom-control-input" onChange="$('.unsubReason').addClass('hide'); $('.subReason').removeClass('hide'); ">
+                  <label class="custom-control-label" for="findings1E"> Substantiated</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="findings2E" name="findingsE" class="custom-control-input" onChange="$('.unsubReason').removeClass('hide'); $('.subReason').addClass('hide');">
+                  <label class="custom-control-label" for="findings2E"> Unsubstantiated</label>
+                </div>
+                
+                </fieldset>
+                        <div class="iq-conditional-content subReason">
+                            <fielset><legend>Substantiated Reasons <span class="iq-asterisk">*</span></legend>
+                            <table class="table-borderless">
+                                <tbody><tr><td><div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb1E" checked class="custom-control-input">
+              <label class="custom-control-label" for="cb1E"></label>
+              </div></td><td>
+                            <div class="iq-accordion secondary data-focus HHA condition 350 0350 g350 g0350">
+                      <div class="card">
+                        <div class="card-header d-flex">
+                          <button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite350contentE" type="button" onclick="$(this).toggleClass('expanded');"> <span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span> </button>
+                          
+                        </div>
+                        <div id="cite350contentE" class="collapse ">
+                          <div class="card-body">
+                            <label>CFR Section</label>
+                            <p>484.40</p>
+                            <label>Reguation Text</label>
+                            <p>§484.40 Condition of participation: Release of patient identifiable OASIS information. The HHA and agent acting on behalf of the HHA in accordance with a written contract must ensure the confidentiality of all patient identifiable information contained in the clinical record, including OASIS data, and may not release patient identifiable OASIS information to the public.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td></tr>
+                                    <tr><td><div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb2E" class="custom-control-input">
+              <label class="custom-control-label" for="cb2E"></label>
+              </div></td><td>
+                            <div class="iq-accordion secondary data-focus HHA condition 406 0406 g406 g0406">
+                      <div class="card">
+                        <div class="card-header d-flex">
+                          <button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite406contentE" type="button" onclick="$(this).toggleClass('expanded');"> <span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0406 - Patient Rights</span> <span class="badge badge-warning">Condition</span></span> </button>
+                          
+                        </div>
+                        <div id="cite406contentE" class="collapse ">
+                          <div class="card-body">
+                            <label>CFR Section</label>
+                            <p>484.5</p>
+                            <label>Reguation Text</label>
+                            <p>The patient and representative (if any), have the right to be informed of the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td></tr>
+                                    <tr><td><div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb3E" class="custom-control-input">
+              <label class="custom-control-label" for="cb3E"></label>
+              </div></td><td>
+                            <div class="iq-accordion secondary data-focus HHA standard 408 0408 g408 g0408">
+                      <div class="card">
+                        <div class="card-header d-flex">
+                          <button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite408contentE" type="button" onclick="$(this).toggleClass('expanded');"> <span><span class="iq-description">Home Health Agencies (FED - G - 11.01)</span><span class="tagName">G0408 - Notice of Rights</span> <span class="badge badge-info">Standard</span></span> </button>
+                          
+                        </div>
+                        <div id="cite408contentE" class="collapse ">
+                          <div class="card-body">
+                            <label>CFR Section</label>
+                            <p>484.50(a)</p>
+                            <label>Reguation Text</label>
+                            <p>The HHA must informed the patient's rights in a language and manner the individual understands. The HHA must protect and promote the exercise of these rights.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td></tr>
+                                    <tr><td><div class="custom-control custom-checkbox">
+              <input type="checkbox" id="cb4E" checked class="custom-control-input">
+              <label class="custom-control-label" for="cb4E"></label>
+              </div></td><td>
+                            <div class="iq-accordion secondary data-focus HHA condition 1008 g1008">
+                      <div class="card">
+                        <div class="card-header d-flex">
+                          <button
+		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+		data-toggle="collapse" data-target="#cite6contentE" type="button" onclick="$(this).toggleClass('expanded');"> <span><span class="iq-description">Home Health Agencies (FEB - G - 11.01)</span><span class="tagName">G1008 - Clinical Records</span> <span class="badge badge-warning">Condition</span></span> </button>
+                         
+                        </div>
+                        <div id="cite6contentE" class="collapse ">
+                          <div class="card-body">
+                            <label>CFR Section</label>
+                            <p>484.110</p>
+                            <label>Reguation Text</label>
+                            <p>Condition of participation: Clinical records. The HHA must maintain a clinical record containing past and current information for every patient accepted by the HHA and receiving home health services. Information contained in the clinical record must be accurate, adhere to current clinical record documentation standards of practice, and be available to the physician(s) issuing orders for the home health plan of care, and appropriate HHA staff. This information may be maintained electronically.</p>
+                            <label>Interpretive Guidelines</label>
+                            <p class="iq-not-available">Not applicable</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td></tr>
+                                    </tbody></table>
+                            </fielset>
+                            </div>
+                        
+                        <div class="iq-conditional-content hide unsubReason">
+                             <fieldset>
+                <legend>Unsubstantiated Reason <span class="iq-asterisk">*</span></legend>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="unsub1E" name="unsub" class="custom-control-input">
+                  <label class="custom-control-label" for="unsub1E"> Allegation did not occur</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="unsub2E" name="unsub" class="custom-control-input">
+                  <label class="custom-control-label" for="unsub2E"> Lack of sufficient evidence</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="unsub3E" name="unsub" class="custom-control-input">
+                  <label class="custom-control-label" for="unsub3E"> Referral to appropriate agency</label>
+                </div>
+                </fieldset>
+                        </div>
+                       
                     </div>
                     <div class="col-md-12">
                        
@@ -2302,12 +2567,8 @@
                     </div>
                 </div>  
                 <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab4 .edit-view').removeClass('active'); 
-     $('#tab4 .read-view').addClass('active'); 
-     $('.alert.successMsg').removeClass('hide'); 
-     $('.addedAllegation .allegationA').removeClass('hide');">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').addClass('active');  ">Cancel</button>
+                    <a href="#mainContent" class="btn btn-primary" onClick="saveAllegation()">Save</a>
+                    <button class="btn btn-link" onClick="cancelAllegation();">Cancel</button>
                   </div>
             </section>
             <!-- read view -->
@@ -2320,7 +2581,7 @@
                 
               </div>
             </div>
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab4 .edit-view.addAllegation').addClass('active'); $('#tab4 .read-view').removeClass('active');">Add Allegation</button>  
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="newAllegation()">Add Allegation</button>  
                 </div>                
                 <p class="info-text"><span class="allegationCount">1</span> Allegation<span class="allePostCount hide">s</span></p>
                 
@@ -2336,12 +2597,20 @@
           <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
             Delete
           </button>
-          <button type="button" class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .edit-view.editAllegation').addClass('active'); ">Edit</button>
+          <button type="button" class="btn btn-link" onClick="editAllegation(); ">Edit</button>
         </div>
       </div>
       <div id="alle1" class="collapse">
         <div class="card-body">
           <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4"><label>Allegation Findings</label></div>
+              <div class="col-md-8">Substantiated</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><label>Substantiated Reasons</label></div>
+              <div class="col-md-8"><ul><li>G0350 - Release of patient identifiable OASIS info</li><li>G1008 - Clinical Records</li></ul></div>
+            </div>
             <div class="row">
               <div class="col-md-4"><label>Shift</label></div>
               <div class="col-md-8"><p>Day</p></div>
@@ -2496,14 +2765,14 @@
 						<div class="card-header d-flex">
 						<button
 						class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-						data-toggle="collapse" data-target="#cite350content" type="button" onclick="$(this).toggleClass('expanded');">
+						data-toggle="collapse" data-target="#cite350xcontent" type="button" onclick="$(this).toggleClass('expanded');">
 						<span><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span></span>
 						</button>
 						<div class="iq-accordion-actions d-flex align-items-center">
 						<button type="button" class="btn btn-outline-primary"  onClick="$(this).parents('.iq-accordion').hide();">Remove</button>
 						</div>
 						</div>
-						<div id="cite350content" class="collapse ">
+						<div id="cite350xcontent" class="collapse ">
 						<div class="card-body">
 
 						<label>CFR Section</label>
@@ -2657,7 +2926,7 @@
 				 <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Add Conditions of Participation</h2>
-				  <p>Select the Conditions of Participation (CoPs) that will be investigated as part of this survey.</p>
+				  <p>Find and add Conditions of Participation (CoPs) that will be investigated as part of this survey.</p>
               </div>
               
             </div>
@@ -2691,6 +2960,7 @@
 		<span><span class="tagName">E0001 - Establishment of the Emergency Program (EP)</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0001');">Add</button>
+        <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite4contentx" class="collapse ">
@@ -2714,6 +2984,7 @@
 		<span><span class="tagName">E0002 - Establishment of the EP Program Transplant</span><span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0002');">Add</button>
+            <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite0010content" class="collapse ">
@@ -2737,6 +3008,7 @@
 		<span><span class="tagName">E0003 - Establishment of the EP Program Dialysis</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('e0003');">Add</button>
+             <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite15content" class="collapse ">
@@ -2760,6 +3032,7 @@
 		<span><span class="tagName">G0100 - Patient Rights</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0100');">Add</button>
+             <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite0016content" class="collapse ">
@@ -2783,6 +3056,7 @@
 		<span><span class="tagName">G0117 - Compliance w/ Fed, State, Local Laws</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0117');">Add</button>
+             <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite0117content" class="collapse ">
@@ -2806,6 +3080,7 @@
 		<span><span class="tagName">G0122 - Organization, Services, and Administration</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0122');">Add</button>
+             <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite0122content" class="collapse ">
@@ -2829,6 +3104,7 @@
 		<span><span class="tagName">G0151 - Group of Professional Personnel</span> <span class="badge badge-warning">Condition</span></span></button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0151');">Add</button>
+             <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite0151content" class="collapse ">
@@ -2853,6 +3129,7 @@
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g350');">Add</button>
+             <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite350contentx" class="collapse ">
@@ -2878,6 +3155,7 @@
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0370');">Add</button>
+             <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
 		<div id="cite370contentx" class="collapse ">
@@ -2898,14 +3176,15 @@
 		<div class="card-header d-flex">
 		<button
 		class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
-		data-toggle="collapse" data-target="#cite406content" type="button" onclick="$(this).toggleClass('expanded');">
+		data-toggle="collapse" data-target="#cite406xcontent" type="button" onclick="$(this).toggleClass('expanded');">
 		<span><span class="tagName">G0406 - Patient Rights</span>  <span class="badge badge-warning">Condition</span></span>
 		</button>
 		<div class="iq-accordion-actions d-flex align-items-center">
 		<button type="button" class="btn btn-outline-primary"  onClick="addTag('g0406');">Add</button>
+             <a href="javascript:void(0)" class="added hide" data-toggle="tooltip" title="This citation has been already added to the list"><i class="far fa-info-circle"></i></a>
 		</div>
 		</div>
-		<div id="cite406content" class="collapse ">
+		<div id="cite406xcontent" class="collapse ">
 		<div class="card-body">
 
 		<label>CFR Section</label>
@@ -4346,6 +4625,8 @@
   </div>
 </footer>
 
+<input type="hidden" id="has-savedCOP" value="no">
+
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
   <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
   <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
@@ -4460,7 +4741,7 @@ function sortParties(){
 		console.log(fullTag);
         
         $('#triageTab .iq-accordion.'+tagName+' .iq-accordion-actions .btn').attr('disabled', true);
-        $('#triageTab .iq-accordion.'+tagName+' .iq-accordion-actions .btn').html('Added');
+        //$('#triageTab .iq-accordion.'+tagName+' .iq-accordion-actions .btn').html('Added');
 		
 		$('#addedCOPTags').append('<div class="badge badge-pill"><span>' + fullTag + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="Remove" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
 		$('#triageTab .iq-label .countWrap').removeClass('hide');
@@ -4527,8 +4808,6 @@ function sortParties(){
 		$('#triageTab .pagination .page-item.next').removeClass('disabled');
 		$('#triageTab .pagination .page-item.last').removeClass('disabled');
 		$('#triageTab .pagination .page-item.page1').addClass('active');
-		
-		break;
 	}
 	function saveCOP(){
 		if( $('#saveCOPButton .iq-not-available').hasClass('hide')){ 
@@ -4550,12 +4829,44 @@ function sortParties(){
         $('#triageTab .edit-view').removeClass('active'); 
         $('#triageTab .read-view').removeClass('active'); 
         $('.edit-view.addConditions').addClass('active');
-        //$('.sideNav').addClass('hide');
+        if($('#has-savedCOP').val() == 'yes'){
+            console.log('second add cop');
+            $('#triageTab .iq-accordion-actions .btn:disabled').addClass('hide');
+           $('.iq-accordion-actions .btn:disabled').next('.iq-accordion-actions .added').removeClass('hide');    
+            
+        }
+        $('#has-savedCOP').val('yes');
+         $('html, body').animate({ scrollTop: 0 }, 500);
+        
     }
     function cancelAddCOP(){
         $('#triageTab .edit-view').addClass('active'); 
         $('#triageTab .edit-view.addConditions').removeClass('active');
         //$('.sideNav').removeClass('hide');
+    }
+    function newAllegation(){
+        $('#allegationTab .edit-view.addAllegation').addClass('active'); 
+        $('#allegationTab .read-view').removeClass('active');
+    }
+    function addAllegation(){
+        $('#allegationTab .edit-view').removeClass('active'); 
+        $('#allegationTab .read-view').addClass('active'); 
+        $('.alert.successMsg').removeClass('hide'); 
+        $('.addedAllegation .allegationA').removeClass('hide');
+    }
+    function saveAllegation(){
+        $('#allegationTab .edit-view').removeClass('active'); 
+        $('#allegationTab .read-view').addClass('active'); 
+        $('.alert.successMsg').removeClass('hide'); 
+        $('.addedAllegation .allegationA').removeClass('hide');
+    }
+    function cancelAllegation(){
+        $('#allegationTab .edit-view').removeClass('active'); 
+        $('#allegationTab .read-view').addClass('active');
+    }
+    function editAllegation(){
+        $('#allegationTab .read-view').removeClass('active'); 
+        $('#allegationTab .edit-view.editAllegation').addClass('active');
     }
     </script>
 </body>
