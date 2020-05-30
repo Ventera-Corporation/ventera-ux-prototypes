@@ -102,8 +102,10 @@
         </div>
                 <h1>Select a User Role</h1>
             <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
+            
                 <div class="mt-5 mb-4"><p class="lead">
-                    Select the user role that best fits your needs. <span class="iq-asterisk">*</span> <!--For more information, review <a href="#">All About iQIES Roles <i class="fal fa-external-link"></i></a>.-->
+                    All organizations must have a Security Official role in order to add and approve additional roles. <!--For more information, review <a href="#">All About iQIES Roles <i class="fal fa-external-link"></i></a>.-->
+                   
           </p></div>
                  </div>
                 <div class="edit-view orgStep">
@@ -138,7 +140,7 @@
     <div class="tab-content">
         <div class="tab-pane active" id="ao">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            <fieldset class="mb-0" role="radiogroup"><legend>User Role <span class="iq-asterisk">*</span></legend>
             <div class="custom-control custom-radio form-group">
                 <input id="ao-1" type="radio" name="userRole" class="custom-control-input" value="ao" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="ao-1" class="custom-control-label"><strong>Accrediting Organization User</strong><br>Manage and upload deemed provider survey and certification information; generate and view reports.</label>
             </div>
@@ -164,6 +166,11 @@
                              <tr><th>Add AO Provider Information</th><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td><td></td></tr>
                              <tr><th>Add &amp; Manage AO Surveys</th><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td><td></td></tr>
                              <tr><th>iQIES Role Approval in HARP</th><td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td></tr>
+                             <tr>
+                               <th>Generate and View Reports</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
                          </tbody>
                     </table>
                       </div>
@@ -191,7 +198,7 @@
         </div>
         <div class="tab-pane" id="co">
              <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            <fieldset class="mb-0" role="radiogroup"><legend>User Role <span class="iq-asterisk">*</span></legend>
                 
                 <div class="custom-control custom-radio form-group">
                     <input id="co-2" type="radio" name="userRole" class="custom-control-input" value="co"><label for="co-2" class="custom-control-label"><strong>Central Office User</strong><br>
@@ -256,7 +263,7 @@
                                <td>&nbsp;</td>
                              </tr>
                              <tr>
-                               <th>Add &amp; Maiage Enforcements</th>
+                               <th>Add &amp; Manage Enforcements</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td>&nbsp;</td>
@@ -291,6 +298,12 @@
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
+                             <tr>
+                               <th>Generate and View Reports</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
                          </tbody>
                     </table>
                       </div>
@@ -308,7 +321,7 @@
         </div>
         <div class="tab-pane" id="mac">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            <fieldset class="mb-0" role="radiogroup"><legend>User Role <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-radio form-group">
                     <input id="mac-1" type="radio" name="userRole" class="custom-control-input" value="mac"><label for="mac-1" class="custom-control-label"><strong>Medicare Administrative Contractor (MAC)</strong><br>
                     Generate and view IRF Administration reports. </label>
@@ -348,6 +361,11 @@
                              <tr>
                                <th>MAC User Approvals</th>
                                <td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td></tr>
+                             <tr>
+                               <th>Generate and View IRF Administrative Reports</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
                          </tbody>
                     </table>
                       </div>
@@ -399,7 +417,7 @@
         </div>
         <div class="tab-pane" id="ro">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            <fieldset class="mb-0" role="radiogroup"><legend>User Role <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-radio form-group">
                     <input id="ro-1" type="radio" name="userRole" class="custom-control-input" value="ro"><label for="ro-1" class="custom-control-label"><strong>Regional Office General User</strong><br>
                     Manage surveys, certifications, enforcements, and provider information; deeming approvals; impose sanctions and CMP enforcement actions; generate and view reports.</label>
@@ -572,18 +590,18 @@
         </div>
         <div class="tab-pane" id="pa">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            <fieldset class="mb-0" role="radiogroup"><legend>User Role <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-radio form-group">
                     <input id="pa-3" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-3" class="custom-control-label"><strong> Assessment Submitter</strong><br>
                     Upload ZIP formatted patient assessments; generate and view reports. </label>
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="pa-1" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-1" class="custom-control-label"><strong>Provider Administrator</strong><br>
-                    Create and manage patient profiles; view, create, modify and inactivate patient assessments; generate and view reports. (Cannot upload patient assessments)</label>
+                    Create and manage patient profiles; create and submit patient assessments within iQIES; view, modify, and inactivate patient assessments; generate and view reports. (Cannot upload patient assessments)</label>
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="pa-4" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-4" class="custom-control-label"><strong>Provider Assessment Coordinator</strong><br>
-                    Create and manage patient profiles; view and create patient assessments; generate and view reports. (Cannot upload patient assessments)</label>
+                    Create and manage patient profiles; create and submit patient assessments within iQIES; view patient assessments; generate and view reports. (Cannot upload patient assessments)</label>
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="pa-2" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-2" class="custom-control-label"><strong>Provider Assessment Viewer</strong><br>
@@ -591,7 +609,8 @@
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="pa-5" type="radio" name="userRole" class="custom-control-input" value="pa" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="pa-5" class="custom-control-label"><strong>Provider Security Official</strong><br>
-                    Approve and manage iQIES user roles; create and manage patient profiles; upload ZIP formatted patient assessments; create, manage, modify, and inactivate patient assessments; generate and view reports.</label>
+                    Approve and manage iQIES user roles; create and manage patient profiles; upload ZIP formatted patient assessments; create and submit patient assessments within iQIES; view, modify, and inactivate patient assessments; generate and view reports. 
+                    </label>
                 </div>
             </fieldset>
                 <div class="iq-accordion showhide">
@@ -613,7 +632,7 @@
                              <th>Provider Assessment Viewer</th>
                              <th>Provider Security Official</th>
                              </tr>
-                         </thead>
+      </thead>
                          <tbody>
                              <tr>
                                <th>View Assessments</th>
@@ -648,7 +667,7 @@
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
                              <tr>
-                               <th>Create Assessments</th>
+                               <th>Create Assessments within iQIES</th>
                                <td></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
@@ -664,11 +683,19 @@
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
                              <tr>
-                               <th>iQIES Role Approval (in Savynt)</th>
+                               <th>iQIES Role Approval </th>
                                <td></td>
                                <td>&nbsp;</td>
                                <td>&nbsp;</td>
                                <td>&nbsp;</td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                             <tr>
+                               <th>Generate and View Reports</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
                          </tbody>
@@ -709,7 +736,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
         </div>
         <div class="tab-pane" id="sa">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            <fieldset class="mb-0" role="radiogroup"><legend>User Role <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-radio form-group">
                     <input id="sa-3" type="radio" name="userRole" class="custom-control-input" value="sa"><label for="sa-3" class="custom-control-label"><strong>State Agency General User</strong><br>
                     Manage surveys, certifications, enforcements, and provider information within the state; read-only access to all providers; generate and view reports. </label>
@@ -911,7 +938,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
         </div>
         <div class="tab-pane" id="v">
             <div class="edit-view active roleStep">
-            <fieldset class="mb-0" role="radiogroup"><legend class="sr-only">User Role</legend>
+            <fieldset class="mb-0" role="radiogroup"><legend>User Role <span class="iq-asterisk">*</span></legend>
                  <div class="custom-control custom-radio form-group">
                     <input id="v-1" type="radio" name="userRole" class="custom-control-input" value="v" onChange="$('.roleName').html( $(this).next().children('strong').html());"><label for="v-1" class="custom-control-label"><strong> Assessment Submitter</strong><br>
                     Upload ZIP formatted patient assessments; generate and view reports. </label>
@@ -960,7 +987,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                                <td></td>
                              </tr>
                              <tr>
-                               <th>iQIES Role Approval (in Savynt)</th>
+                               <th>iQIES Role Approval </th>
                                <td></td>
                              </tr>
                          </tbody>
