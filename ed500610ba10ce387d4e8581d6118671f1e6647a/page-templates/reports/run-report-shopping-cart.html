@@ -110,7 +110,7 @@
 	  	<div class="alert-content">Changes saved successfully</div>
 		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 	  </div>
-	  <div class="alert alert-danger errorMsg hide" role="alert" tabindex="0">
+	  <!--<div class="alert alert-danger errorMsg hide" role="alert" tabindex="0">
           <div class="alert-content"><div class="row">
               <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
               <div class="col-sm-11">
@@ -122,7 +122,7 @@
                   </ul>
               </div></div>
           </div>
-        </div> 
+        </div> -->
 	   <!-- InstanceEndEditable -->
 	  <!-- InstanceBeginEditable name="mainContent" -->		  
       <section class="edit-view active runReport">
@@ -179,7 +179,9 @@
 	  <fieldset id="providers"><legend class="iq-form-group-title">Providers</legend>
 	  <button class="btn btn-outline-primary" onClick="addProviders()">Add Providers</button>
           <p class="iq-not-available mt-4 addedProviders" role="status">No providers added. </p>
-          <table class="display table striped responsive addedProviders hide mt-4" id="providerTableAdded">
+          <div class="addedProviders hide mt-4">
+          <p class="mb-2">1 Provider</p>
+          <table class="display table striped responsive" id="providerTableAdded">
   <thead>
     <tr>
       <th>&nbsp;</th>
@@ -205,12 +207,12 @@
       <td>Open</td>
 	  
       <td>Pending Certification</td><td>Non-Deemed</td>
-      <td><button class="btn btn-link" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); $('#added table').removeClass('hide'); $('#added p.iq-not-available').addClass('hide'); $('a.addedTab').html('1 Provider Added');  } else { $(this).html('Add'); $('#added table').addClass('hide'); $('#added p.iq-not-available').removeClass('hide'); $('a.addedTab').html('0 Provider Added'); };  ">Remove</button></td>
+      <td><a href="#" onClick="if($(this).html() == 'Add'){ $(this).html('Remove'); $('#added table').removeClass('hide'); $('#added p.iq-not-available').addClass('hide'); $('a.addedTab').html('1 Provider Added');  } else { $(this).html('Add'); $('#added table').addClass('hide'); $('#added p.iq-not-available').removeClass('hide'); $('a.addedTab').html('0 Provider Added'); };  ">Remove</a></td>
       </tr>
     
   </tbody>
 </table>
-          
+          </div>
 		  	</fieldset>
 				<!-- search area -->		
 		<br>
@@ -416,11 +418,60 @@
 			    </div>
             </div>
         	
-		 <a href="#" class="return-link">Return to Find a Report Type</a>
+		 <a href="run-report.html" class="return-link">Return to Find a Report Type</a>
 		   
          </section>
-        <section class="edit-view addProviders">
-    <div class="alert alert-danger errorMsg hide" role="alert">
+        
+
+		
+    <div class="modal fade" id="confirmDelete" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Delete Saved Criteria</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+              <p>Please confirm you want to delete this saved criteria: XXXX</p>
+              </div>
+            <div class="modal-footer">
+              <a href="#mainContent" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide'); $('#savedCriteria option[value=opt1]').remove();  window.scrollTo(0, 0); ">Delete</a>
+              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+  </div>
+	<div class="modal fade" id="confirmSave" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Save Search Criteria</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <div class="modal-body">
+              <div class="row">
+			<div class="col">
+				<label>Name of Search Criteria to be Saved</label>
+				<input type="text">
+				<span class="help-text">A descriptive name that can help you remember the search criteria used</span>
+			</div>
+			</div>
+              </div>
+            <div class="modal-footer">
+              <a href="#mainContent" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide');  window.scrollTo(0, 0); ">Save</a>
+              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
+              </div>
+            </div>
+          </div>
+  </div>
+    <div class="modal modal-full" id="addDefDialog" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="alert alert-danger errorMsg hide mt-4 ml-4 mr-4 mb-0" role="alert">
                   <div class="alert-content">
                          <h2>Unable to Continue</h2>
                           <p> Please review and correct the following:</p> 
@@ -430,8 +481,17 @@
 
                   </div>
                 </div>
+      <div class="modal-header">
+        <h5 class="modal-title">Add Providers</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+    
     <div class="tabTitle">
-        <h2>Add Providers</h2>
+       
         <p>Find and add up to 25 providers for this report run.</p>
         <div class="row">
             <div class="col-md-5 col-lg-4 col-xl-3">
@@ -699,55 +759,12 @@
 				</div>
         </div>
     </article>
-          <br>
-           <div class="mt-5"> <a href="#providers" class="return-link" onclick="cancelAddProviders()">Return to Run Report</a></div>
-</section>
+          
 
-		
-    <div class="modal fade" id="confirmDelete" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Delete Saved Criteria</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <div class="modal-body">
-              <p>Please confirm you want to delete this saved criteria: XXXX</p>
-              </div>
-            <div class="modal-footer">
-              <a href="#mainContent" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide'); $('#savedCriteria option[value=opt1]').remove();  window.scrollTo(0, 0); ">Delete</a>
-              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
-              </div>
-            </div>
-          </div>
-  </div>
-	<div class="modal fade" id="confirmSave" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Save Search Criteria</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <div class="modal-body">
-              <div class="row">
-			<div class="col">
-				<label>Name of Search Criteria to be Saved</label>
-				<input type="text">
-				<span class="help-text">A descriptive name that can help you remember the search criteria used</span>
-			</div>
-			</div>
-              </div>
-            <div class="modal-footer">
-              <a href="#mainContent" class="btn btn-primary" data-dismiss="modal" onClick="$('.alert-success.successMsg').removeClass('hide');  window.scrollTo(0, 0); ">Save</a>
-              <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a>
-              </div>
-            </div>
-          </div>
-  </div>
+      </div>
+    </div>
+    </div>
+        </div>
 		<!-- InstanceEndEditable -->
 	</div>
   </main>
@@ -840,9 +857,10 @@
 		  }); 
        }
       function addProviders(){
-        $('.edit-view').removeClass('active'); 
-        $('.read-view').removeClass('active'); 
-        $('.edit-view.addProviders').addClass('active');
+        //$('.edit-view').removeClass('active'); 
+        //$('.read-view').removeClass('active'); 
+        //$('.edit-view.addProviders').addClass('active');
+        $('#addDefDialog').modal('show');
          if($('#has-savedProviders').val() == 'yes'){
                 console.log('second add deficiency');
                 $('table .btn:disabled').addClass('hide');
@@ -852,8 +870,9 @@
          $('html, body').animate({ scrollTop: 0 }, 500);
     }
     function cancelAddProviders(){
-        $('.edit-view').addClass('active'); 
-        $('.edit-view.addProviders').removeClass('active');
+        //$('.edit-view').addClass('active'); 
+        //$('.edit-view.addProviders').removeClass('active');
+        $('#addDefDialog').modal('hide');
     }
     function addPtoList(e){
         $(e).attr('disabled',true);
@@ -980,7 +999,7 @@
                     break;
              }
 		}
-        function viewAlldeficiency() {
+    function viewAlldeficiency() {
             $('.iq-accordion').removeClass('hide');                     
             $('.deficiencySearchTotal').html('');
             $('.perPageSelect').removeClass('hide');
@@ -998,8 +1017,9 @@
     function saveAddedTags(){
         if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ 
             $('.successMsg').removeClass('hide'); 
-            $('.edit-view').removeClass('active');  
-            $('.read-view.all').addClass('active'); 
+           // $('.edit-view').removeClass('active');  
+            //$('.read-view.all').addClass('active'); 
+            $('#addDefDialog').modal('hide');
             $('#saveCitationsButton .badge.badge-pill').addClass('hide'); 
             $('#saveCitationsButton .addedCount').html(''); 
             $('#saveCitationsButton .addedCount').addClass('hide'); 
@@ -1014,8 +1034,9 @@
 	function saveProviders(){
 		if( $('#saveProvidersButton .iq-not-available').hasClass('hide')){ 
 			$('.successMsg').removeClass('hide'); 
-			$('.edit-view').addClass('active'); 
-			$('.edit-view.addProviders').removeClass('active'); 
+			//$('.edit-view').addClass('active'); 
+			//$('.edit-view.addProviders').removeClass('active'); 
+            $('#addDefDialog').modal('hide');
 			$('#saveProvidersButton .badge.badge-pill').addClass('hide'); 
 			$('#saveProvidersButton .addedCount').html(''); 
 			$('#saveProvidersButton .addedCount').addClass('hide'); 
@@ -1027,7 +1048,7 @@
             $('table.responsive').DataTable().destroy();
             drawProviderTable();
             
-            $('html, body').animate({ scrollTop: 1400 }, 200);
+            $('html, body').animate({ scrollTop: 800 }, 200);
 		} else { 
 			$('.errorMsg').removeClass('hide'); 
              $('html, body').animate({ scrollTop: 0 }, 500);

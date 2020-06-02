@@ -206,7 +206,7 @@
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="co-3" type="radio" name="userRole" class="custom-control-input" value="co"><label for="co-3" class="custom-control-label"><strong>Central Office Helpdesk</strong><br>
-                    Read-only access to patient profiles, patient assessments, surveys, certifications, and provider information. (Cannot enter data or generate reports)</label>
+                    Read-only access to patient profiles, patient assessments, surveys, certifications, enforcements, and provider information. (Cannot enter data or generate reports)</label>
                 </div>
                 <!--<div class="custom-control custom-radio form-group">
                     <input id="co-4" type="radio" name="userRole" class="custom-control-input" value="co"><label for="co-4" class="custom-control-label"><strong>Office of Financial Management</strong><br>
@@ -237,51 +237,25 @@
                          </thead>
                          <tbody>
                              <tr>
-                               <th>Deemed Provider Approval</th><td>&nbsp;</td>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td></td>
-                             </tr>
-                             <tr>
-                               <th>Manage ICD-10 Codes</th><td>&nbsp;</td>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td></td>
-                             </tr>
-                             <tr>
-                               <th>Add &amp; Manage Providers</th><td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td>&nbsp;</td>
-                             </tr>
-                             <tr>
-                               <th>Add &amp; Manage Intakes</th>
+                               <th>View Provider Information</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td>&nbsp;</td>
                              </tr>
                              <tr>
-                               <th>Add &amp; Manage Surveys</th>
+                               <th>View Intakes</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td>&nbsp;</td>
                              </tr>
                              <tr>
-                               <th>Add &amp; Manage Enforcements</th>
+                               <th>View Surveys</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td>&nbsp;</td>
                              </tr>
                              <tr>
-                               <th>Find Provider Information</th>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td>&nbsp;</td>
-                             </tr>
-                             <tr>
-                               <th>Merge &amp; Split Assessments</th>
-                               <td></td>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td>&nbsp;</td>
-                             </tr>
-                             <tr>
-                               <th>View Assessments</th>
+                               <th>View Enforcements</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td>&nbsp;</td>
@@ -293,15 +267,21 @@
                                <td>&nbsp;</td>
                              </tr>
                              <tr>
+                               <th>View Assessments</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
+                             </tr>
+                             <tr>
                                <th>iQIES Role Approval (in HARP)</th>
                                <td></td>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
                              <tr>
                                <th>Generate and View Reports</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               <td>&nbsp;</td>
                                <td>&nbsp;</td>
                              </tr>
                          </tbody>
@@ -353,11 +333,7 @@
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
-                             <tr>
-                               <th>Navigating the System</th>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                             </tr>
+                             
                              <tr>
                                <th>MAC User Approvals</th>
                                <td></td><td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td></tr>
@@ -420,7 +396,7 @@
             <fieldset class="mb-0" role="radiogroup"><legend>User Role <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-radio form-group">
                     <input id="ro-1" type="radio" name="userRole" class="custom-control-input" value="ro"><label for="ro-1" class="custom-control-label"><strong>Regional Office General User</strong><br>
-                    Manage surveys, certifications, enforcements, and provider information; deeming approvals; impose sanctions and CMP enforcement actions; generate and view reports.</label>
+                    View patient assessments and profiles; manage surveys, certifications, enforcements, and provider information; deeming approvals; impose sanctions and CMP enforcement actions; generate and view reports.</label>
                 </div>
                 <div class="custom-control custom-radio form-group">
                     <input id="ro-2" type="radio" name="userRole" class="custom-control-input" value="ro"><label for="ro-2" class="custom-control-label"><strong>Regional Office Security Official</strong><br>
@@ -450,11 +426,11 @@
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td></td>
                              </tr>
-                             <tr>
+                            <!-- <tr>
                                <th>Manage ICD-10 Codes</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td></td>
-                             </tr>
+                             </tr>-->
                              <tr>
                                <th>Add &amp; Manage Providers</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
@@ -475,11 +451,7 @@
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td>&nbsp;</td>
                              </tr>
-                             <tr>
-                               <th>Find Provider Information</th>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td>&nbsp;</td>
-                             </tr>
+                             
                              <tr>
                                <th>Merge &amp; Split Assessments</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
@@ -491,7 +463,7 @@
                                <td>&nbsp;</td>
                              </tr>
                              <tr>
-                               <th>Create &amp; Manage Patient Profiles</th>
+                               <th>View Patient Profiles</th>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                                <td>&nbsp;</td>
                              </tr>
@@ -499,6 +471,12 @@
                                <th>iQIES Role Approval (in HARP)</th>
                                <td></td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                             </tr>
+                              <tr>
+                               <th>Generate and View Reports</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                                <td></td>
+                               
                              </tr>
                          </tbody>
                     </table>
@@ -841,13 +819,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                                <td>&nbsp;</td>
                                <td>&nbsp;</td>
                              </tr>
-                             <tr>
-                               <th>Find Provider Information</th>
-                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
-                               <td>&nbsp;</td>
-                               <td>&nbsp;</td>
-                               <td>&nbsp;</td>
-                             </tr>
+                             
                              <tr>
                                <th>iQIES Role Approval (in HARP)</th>
                                <td></td>
@@ -855,6 +827,14 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                                <td>&nbsp;</td>
                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
                              </tr>
+                             <tr>
+                               <th>Generate and View Reports</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                                <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                                <td></td>
+                                <td></td>
+                             </tr>
+                             
                          </tbody>
                     </table>
                       </div>
@@ -989,6 +969,11 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                              <tr>
                                <th>iQIES Role Approval </th>
                                <td></td>
+                             </tr>
+                              <tr>
+                               <th>Generate and View Reports</th>
+                               <td><i class="fas fa-check"></i> <span class="sr-only">Yes</span></td>
+                               
                              </tr>
                          </tbody>
 </table>
