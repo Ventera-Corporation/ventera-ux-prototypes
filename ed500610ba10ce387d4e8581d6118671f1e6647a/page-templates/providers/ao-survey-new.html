@@ -328,7 +328,7 @@
 					
 				    <div class="addedSavedDeficiency accordion-wrapper hide mt-4">
 						<p class="mb-2">3 Deficiencies</p>
-						<div class="iq-accordion secondary">
+						<div class="iq-accordion">
 	<div class="card">
 	<div class="card-header d-flex">
 	<button
@@ -349,7 +349,7 @@
 	</div>
 	</div>
   </div>
-						<div class="iq-accordion secondary">
+						<div class="iq-accordion">
 						<div class="card">
 						<div class="card-header d-flex">
 						<button
@@ -371,7 +371,7 @@
 						</div>
 						</div>
 						</div>
-						<div class="iq-accordion secondary">
+						<div class="iq-accordion">
 						<div class="card">
 						<div class="card-header d-flex">
 						<button
@@ -403,13 +403,13 @@
                 <div class="row">
                    <div class="col-md-3">
                 <div class="form-group">
-                  <label>Correction Period</label>
-                   <div class="input-group input-group-sm"> <input type="number" min="0" class="form-control">
-                      <div class="input-group-append"><span class="input-group-text">Days</span></div>
+                  <label>Correction Period (in Days)</label>
+                  <input type="number" min="0" class="form-control">
+                     
                     </div>
                     
                 </div>
-                   </div>
+                   
                     <div class="col-md-3">
                 <div class="form-group">
                     <label>Correction Due Date
@@ -512,23 +512,205 @@
             </div>
             </section>
           
-            <section class="edit-view addConditions">
-                <div class="alert alert-danger errorMsg hide" role="alert">
+            
+            <section class="read-view">
+                 <div class="row tabTitle">
+              <div class="col-sm-10">
+                <h2>Basic Information</h2>
+                <p>Manage the basic information for this survey</p>
+              </div>
+              <div class="col-sm-2 text-right">
+                <button class="btn btn-outline-primary hide" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
+              </div>
+            </div>
+            <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4"><label>Survey Type</label></div>
+                  <div class="col-md-8"><p>Life Safety Code</p></div>
+                </div>
+            </div>
+            <h3>Survey Categories</h3>
+            <div class="iq-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Federal Categories</label>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Initial Certification</p>
+                  </div>
+                </div>
+           <div class="row">
+              <div class="col-md-4">
+                <label>State Categories</label>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">No information provided</p>
+              </div>
+            </div>
+                </div>
+                <h3>Regulation Sets</h3>
+            <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4">
+                <label>Federal Regulation Sets</label>
+              </div>
+              <div class="col-md-8">
+                <p>LSC 20120 Health Existing (FED - K - 01.01)</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>State Regulation Sets</label>
+              </div>
+              <div class="col-md-8">
+                <p class="iq-not-available">No information provided
+                </p>
+              </div>
+            </div>
+                </div>
+            <h3>Survey Status</h3>
+            <div class="iq-list">
+            <div class="row">
+              <div class="col-md-4">
+                <label>Status</label>
+              </div>
+              <div class="col-md-8">
+                <p>Open</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Start Date</label>
+              </div>
+              <div class="col-md-8">
+                <p>01/09/2020</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label>Exit Date</label>
+              </div>
+              <div class="col-md-8">
+                <p>01/12/2020</p>
+              </div>
+            </div>
+        </div>
+          
+            
+            </section>  
+     </div>
+   </div>
+</div>
+</main>
+<div class="modal fade" id="shortcuts" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+    <div class="modal-content">
+      <!--<div class="modal-header">
+        <h5 class="modal-title" id="confirmDeletionTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>-->
+      <div class="modal-body">
+          <h4><strong>Keyboard Shortcuts for Text Editor</strong></h4>
+         <div id="basic-formatting" class="docs-group anchor">
+            <h3 class="title-left-border">Basic Formatting</h3>
+
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>A</code> or <code>⌘ Cmd</code> + <code>A</code></h4>
+                  <p class="text-tint">Selects all text in the editable area of the Froala Rich Text Editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>B</code> or <code>⌘ Cmd</code> + <code>B</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Bold</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>I</code> or <code>⌘ Cmd</code> + <code>I</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Itallic</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>U</code> or <code>⌘ Cmd</code> + <code>U</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Underline</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>S</code> or <code>⌘ Cmd</code> + <code>S</code></h4>
+                  <p class="text-tint">Same effect as clicking on the <code>Strikethrough</code> button in the WYSIWYG HTML editor.</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>]</code> or <code>⌘ Cmd</code> + <code>]</code></h4>
+                  <p class="text-tint">Indents the current paragraph.</p>
+                </div>
+                </div>
+                <div class="row row-md-middle">
+                <div class="col-xs-12 col-md-6">
+                  <h4><code>Ctrl</code> + <code>[</code> or <code>⌘ Cmd</code> + <code>[</code></h4>
+                  <p class="text-tint">Outdents the current paragraph.</p>
+                </div>
+                </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+	
+	<div class="modal" id="noDelete" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Unable to Delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         This team member is a team coordinator and cannot be deleted until the role is reassigned to another team member. 
+         
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <div class="modal modal-full" id="addDefDialog" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="alert alert-danger errorMsg hide mt-4 ml-4 mr-4 mb-0" role="alert">
                   <div class="alert-content">
                          <h2>Unable to Continue</h2>
                           <p> Please review and correct the following:</p> 
                           <ul>
-                              <li>Add at least one Deficiency.</li>
+                              <li>Add at least one deficiency.</li>
                           </ul>
 
                   </div>
                 </div>
+      <div class="modal-header">
+        <h5 class="modal-title">Add Deficiencies</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <!--<section class="edit-view addConditions">-->
+                
 				 <div class="row tabTitle">
               <div class="col-md-10">
-                <h2>Add Deficiencies</h2>
-				  <p>
-                  
-                  Find and add deficiencies for this survey.</p>
+               <!-- <h2>Add Deficiencies</h2>-->
+				  <p>Find and add deficiencies for this survey.</p>
               </div>
               
             </div>
@@ -1044,175 +1226,15 @@
 				</div>
               </div>
 
-			</section>
-            <section class="read-view">
-                 <div class="row tabTitle">
-              <div class="col-sm-10">
-                <h2>Basic Information</h2>
-                <p>Manage the basic information for this survey</p>
-              </div>
-              <div class="col-sm-2 text-right">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.successMsg').addClass('hide');">Edit</button>
-              </div>
-            </div>
-            <div class="iq-list">
-                <div class="row">
-                  <div class="col-md-4"><label>Survey Type</label></div>
-                  <div class="col-md-8"><p>Life Safety Code</p></div>
-                </div>
-            </div>
-            <h3>Survey Categories</h3>
-            <div class="iq-list">
-                <div class="row">
-                  <div class="col-md-4">
-                    <label>Federal Categories</label>
-                  </div>
-                  <div class="col-md-8">
-                    <p>Initial Certification</p>
-                  </div>
-                </div>
-           <div class="row">
-              <div class="col-md-4">
-                <label>State Categories</label>
-              </div>
-              <div class="col-md-8">
-                <p class="iq-not-available">No information provided</p>
-              </div>
-            </div>
-                </div>
-                <h3>Regulation Sets</h3>
-            <div class="iq-list">
-            <div class="row">
-              <div class="col-md-4">
-                <label>Federal Regulation Sets</label>
-              </div>
-              <div class="col-md-8">
-                <p>LSC 20120 Health Existing (FED - K - 01.01)</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <label>State Regulation Sets</label>
-              </div>
-              <div class="col-md-8">
-                <p class="iq-not-available">No information provided
-                </p>
-              </div>
-            </div>
-                </div>
-            <h3>Survey Status</h3>
-            <div class="iq-list">
-            <div class="row">
-              <div class="col-md-4">
-                <label>Status</label>
-              </div>
-              <div class="col-md-8">
-                <p>Open</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <label>Start Date</label>
-              </div>
-              <div class="col-md-8">
-                <p>01/09/2020</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <label>Exit Date</label>
-              </div>
-              <div class="col-md-8">
-                <p>01/12/2020</p>
-              </div>
-            </div>
-        </div>
-          
-            
-            </section>  
-     </div>
-   </div>
-</div>
-</main>
-<div class="modal fade" id="shortcuts" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
-    <div class="modal-content">
-      <!--<div class="modal-header">
-        <h5 class="modal-title" id="confirmDeletionTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>-->
-      <div class="modal-body">
-          <h4><strong>Keyboard Shortcuts for Text Editor</strong></h4>
-         <div id="basic-formatting" class="docs-group anchor">
-            <h3 class="title-left-border">Basic Formatting</h3>
-
-                <div class="row row-md-middle">
-                <div class="col-xs-12 col-md-6">
-                  <h4><code>Ctrl</code> + <code>A</code> or <code>⌘ Cmd</code> + <code>A</code></h4>
-                  <p class="text-tint">Selects all text in the editable area of the Froala Rich Text Editor.</p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <h4><code>Ctrl</code> + <code>B</code> or <code>⌘ Cmd</code> + <code>B</code></h4>
-                  <p class="text-tint">Same effect as clicking on the <code>Bold</code> button in the WYSIWYG HTML editor.</p>
-                </div>
-                </div>
-                <div class="row row-md-middle">
-                <div class="col-xs-12 col-md-6">
-                  <h4><code>Ctrl</code> + <code>I</code> or <code>⌘ Cmd</code> + <code>I</code></h4>
-                  <p class="text-tint">Same effect as clicking on the <code>Itallic</code> button in the WYSIWYG HTML editor.</p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <h4><code>Ctrl</code> + <code>U</code> or <code>⌘ Cmd</code> + <code>U</code></h4>
-                  <p class="text-tint">Same effect as clicking on the <code>Underline</code> button in the WYSIWYG HTML editor.</p>
-                </div>
-                </div>
-                <div class="row row-md-middle">
-                <div class="col-xs-12 col-md-6">
-                  <h4><code>Ctrl</code> + <code>S</code> or <code>⌘ Cmd</code> + <code>S</code></h4>
-                  <p class="text-tint">Same effect as clicking on the <code>Strikethrough</code> button in the WYSIWYG HTML editor.</p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <h4><code>Ctrl</code> + <code>]</code> or <code>⌘ Cmd</code> + <code>]</code></h4>
-                  <p class="text-tint">Indents the current paragraph.</p>
-                </div>
-                </div>
-                <div class="row row-md-middle">
-                <div class="col-xs-12 col-md-6">
-                  <h4><code>Ctrl</code> + <code>[</code> or <code>⌘ Cmd</code> + <code>[</code></h4>
-                  <p class="text-tint">Outdents the current paragraph.</p>
-                </div>
-                </div>
-          </div>
-      </div>
-      <div class="modal-footer">
-        
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-	
-	<div class="modal" id="noDelete" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Unable to Delete</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-         This team member is a team coordinator and cannot be deleted until the role is reassigned to another team member. 
+			<!--</section>-->
          
       </div>
-      <div class="modal-footer">
+      <!--<div class="modal-footer">
         
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="saveDeficiency()">Continue</button>
+           <button type="button" class="btn btn-link" data-dismiss="modal" onClick="cancelAddDeficiency();">Cancel</button>
         
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
@@ -1471,14 +1493,15 @@
 	function saveDeficiency(){
 		if( $('#saveDeficiencyButton .iq-not-available').hasClass('hide')){ 
 			$('.successMsg').removeClass('hide'); 
-			$('.edit-view').addClass('active'); 
-			$('.edit-view.addConditions').removeClass('active'); 
+			//$('.edit-view').addClass('active'); 
+			//$('.edit-view.addConditions').removeClass('active'); 
 			$('#saveDeficiencyButton .badge.badge-pill').addClass('hide'); 
 			$('#saveDeficiencyButton .addedCount').html(''); 
 			$('#saveDeficiencyButton .addedCount').addClass('hide'); 
 			$('#saveDeficiencyButton .iq-not-available').removeClass('hide');  
 			$('.addedSavedDeficiency').toggleClass('hide');
 			$('.iq-label .countWrap').addClass('hide'); 
+            $('#addDefDialog').modal('hide');
             $('html, body').animate({ scrollTop: 2000 }, 200);
 		} else { 
 			$('.errorMsg').removeClass('hide'); 
@@ -1486,9 +1509,10 @@
 		}
 	}
 	function addDeficiency(){
-        $('.edit-view').removeClass('active'); 
-        $('.read-view').removeClass('active'); 
-        $('.edit-view.addConditions').addClass('active');
+        //$('.edit-view').removeClass('active'); 
+        //$('.read-view').removeClass('active'); 
+        //$('.edit-view.addConditions').addClass('active');
+        $('#addDefDialog').modal('show');
          if($('#has-savedDeficiency').val() == 'yes'){
                 console.log('second add deficiency');
                 $('.iq-accordion-actions .btn:disabled').addClass('hide');
@@ -1499,9 +1523,10 @@
         //$('.sideNav').addClass('hide');
     }
     function cancelAddDeficiency(){
-        $('.edit-view').addClass('active'); 
-        $('.edit-view.addConditions').removeClass('active');
+        //$('.edit-view').addClass('active'); 
+        //$('.edit-view.addConditions').removeClass('active');
         //$('.sideNav').removeClass('hide');
+        $('#addDefDialog').modal('hide');
     }
     </script>
 </body>
