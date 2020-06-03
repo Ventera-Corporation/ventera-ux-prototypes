@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Buildings and Wings - Provider Details - Hospice</title>
+<title>Minimal Buildings and Wings - Provider Details - Hospice</title>
 <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
@@ -129,12 +129,6 @@
             </div>
           </div>
   <div class="container-fluid" id="mainContent">
-    <!--<div class="row">
-      <div class="col">
-        <button class="btn btn-link px-0 my-4">&lt; Return to Provider</button>
-      </div>
-    </div>-->
-  
     <div class="row">
       
       <div class="col-sm-5 col-md-4 col-lg-3">
@@ -1395,14 +1389,14 @@
                       } "><option value="0">Select one</option><option value="primary" selected>Bright Hope (Primary Location)</option><option value="branch1">BrightHope South</option></select>
                       </p>
                   </div>
-                  <div class="col-md-5">
+                  <!--<div class="col-md-5">
                     <p class="parentLocAddress"><label>Parent Location Address</label>
                       <span class="primary">667 Bent Ridge Lane<br>
 Suite 1000<br>
 Barrington, IL 60010</span>
                       <span class="branch1 hide">123 Temporary Road, Suite 100<br>Reston, VA 20190</span>
                     </p>
-                  </div>
+                  </div>-->
                   <div class="col-md-3">
                       <p><label>Building ID</label>
 T1</p>
@@ -1413,7 +1407,7 @@ T1</p>
                      <input type="text" class="form-control" value="Tranquility" required>
                   </div>
                 </div>
-                <div class="col-md-3">
+             <!--   <div class="col-md-3">
                   <div class="form-group">
                     <label>Type</label>
                      <select class="form-control" onChange="switch(this.options[this.selectedIndex].value){
@@ -1508,12 +1502,11 @@ T1</p>
                   
                 
                   <div class="col-md-12">
-                  <!--<fieldset><legend><div class="custom-control custom-checkbox">
+                  <fieldset class="hide"><legend><div class="custom-control custom-checkbox">
                     <input type="checkbox" onChange="if(this.checked){ $('.lsc-fi').addClass('hide'); } else { $('.lsc-fi').removeClass('hide'); }" id="lob" name="lob" class="custom-control-input" value="value">
                     <label class="custom-control-label" for="lob"> State Licensed Only Building </label>
-                  </div></legend></fieldset>-->
+                  </div></legend></fieldset>
                      
-                    
                   </div>
                   <div class="col-md-4">
                       <p>
@@ -1522,7 +1515,6 @@ T1</p>
                       </p>
                   </div>
                 
-                 
                   <div class="col-md-4">
                       <p>
                         <label>Sprinkler Required</label>
@@ -1540,7 +1532,7 @@ T1</p>
                      <input type="date" class="form-control" >
                       <p class="help-text">MM/DD/YYYY</p>
                   </div>
-                </div>
+                </div>-->
                 
                   
                   <div class="col-md-12">
@@ -1591,14 +1583,14 @@ T1</p>
                       } "><option value="0">Select one</option><option value="primary">Bright Hope (Primary Location)</option><option value="branch1">BrightHope South</option></select>
                       </p>
                   </div>
-                <div class="col-md-5">
+                <!--<div class="col-md-5">
                     <p class="parentLocAddress hide"><label>Parent Location Address</label>
                       <span class="primary">667 Bent Ridge Lane<br>
 Suite 1000<br>
 Barrington, IL 60010</span>
                       <span class="branch1 hide">123 Temporary Road, Suite 100<br>Reston, VA 20190</span>
                     </p>
-                  </div>
+                  </div>-->
                 <div class="col-md-3">
                       <p><label>Building ID <span class="iq-asterisk">*</span></label>
                       <input type="text" class="form-control" maxlength="2" style="width: 4rem" /><span class="help-text">Limit to 2 characters</span></p>
@@ -1611,7 +1603,7 @@ Barrington, IL 60010</span>
                      <input type="text" class="form-control" value="" required>
                   </div>
                 </div>
-                <div class="col-md-3">
+            <!--    <div class="col-md-3">
                   <div class="form-group">
                     <label>Type</label>
                      <select class="form-control" onChange="switch(this.options[this.selectedIndex].value){
@@ -1707,10 +1699,10 @@ Barrington, IL 60010</span>
                   
                 
                   <div class="col-md-12">
-                  <!--<fieldset><legend><div class="custom-control custom-checkbox">
+                  <fieldset class="hide"><legend><div class="custom-control custom-checkbox">
                     <input type="checkbox" onChange="if(this.checked){ $('.lsc-fi').addClass('hide'); } else { $('.lsc-fi').removeClass('hide'); }" id="lob" name="lob" class="custom-control-input" value="value">
                     <label class="custom-control-label" for="lob"> State Licensed Only Building </label>
-                  </div></legend></fieldset>-->
+                  </div></legend></fieldset>
                      
                     
                   </div>
@@ -1745,7 +1737,7 @@ Barrington, IL 60010</span>
                   <div class="col-md-12">
                       
                 
-                  </div>
+                  </div>-->
                 </div>
               <div class="row">
                 <div class="col">
@@ -1970,13 +1962,13 @@ Barrington, IL 60010</span>
                 <div class="iq-button-wrapper"><button class="btn btn-primary" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.firstTime').addClass('active');">Add Location</button>
                   <button class="btn btn-outline-primary" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.newBuilding').addClass('active');">Add Building</button>
                   </div>
-                  <div class="custom-control custom-checkbox mb-5">
+                  <!--<div class="custom-control custom-checkbox mb-5">
                     <input type="checkbox" id="showBonly"
                             name="showB" onChange="if(this.checked){ $('.all').addClass('hide'); $('.buildings').removeClass('hide'); $('.parentLocation').removeClass('hide'); } else { $('.all').removeClass('hide'); $('.buildings').addClass('hide'); $('.parentLocation').addClass('hide'); }"
                             class="custom-control-input" value="value">
                     <label class="custom-control-label"
                             for="showBonly"> View Buildings Only </label>
-                  </div>
+                  </div>-->
               </div>
               <div class="col-md-2 text-right">
                 
@@ -1985,14 +1977,14 @@ Barrington, IL 60010</span>
                   
                   <article class="all">
                     <h3>Open Locations</h3>
-                    <p class="info-text"><span class="baCount">2</span> Locations, 6 Buildings</p>
+                    <p class="info-text"><span class="baCount">2</span> Locations, 4 Buildings</p>
         
         <div class="iq-accordion tertiary">
             <div class="card ">
               <div class="card-header d-flex">
                 <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions expanded"
                   data-toggle="collapse" data-target="#site1" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span>BrightHope<br><small class="bottom">Primary Location | 4 Buildings</small></span>
+                  <span>BrightHope<br><small class="bottom">Primary Location | 3 Buildings</small></span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-link" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.editPrimary').addClass('active');">
@@ -2001,14 +1993,14 @@ Barrington, IL 60010</span>
                 </div>
               </div>
               <div id="site1" class="collapse show">
-                   <div class="iq-list" style="margin-bottom: 1rem;">
+                   <!--<div class="iq-list" style="margin-bottom: 1rem;">
                 <div class="row" style="margin-top: -1rem;">
                   
-                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>667 Bent Ridge Lane, Suite 100<br>Barrington, IL 60010</span></a><!--<br><span style="padding-left: 1.25rem">Lake County</span>--></p></div>
+                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>667 Bent Ridge Lane, Suite 100<br>Barrington, IL 60010</span></a></p></div>
                 </div>
-                  </div>
+                  </div>-->
                 <div class="card-body">
-                  <div class="row">
+                  <!--<div class="row">
                         <div class="col-md-12">
                             
                         <div class="bd-example hide">
@@ -2055,27 +2047,35 @@ Barrington, IL 60010</span>
                     
                         
                         </div>
-                       <!-- <div class="col-md-4">
+                     <div class="col-md-4">
                            <div>
                                 <p><label>Address</label>
                              123 Temporary Road<br>Suite 100<br>Reston, VA 20190</a><br><span class="iqies-not-available">County No information provided</span></p>
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.1291793328915!2d-77.33793048382407!3d38.94387715180661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64ae7bd3d28ff%3A0x33a50cc929336b1c!2sVentera+Corporation!5e0!3m2!1sen!2sus!4v1566314784533!5m2!1sen!2sus" frameborder="0" style="width: 100%; min-height: 200px; border:0" allowfullscreen></iframe>
                               </div>
                             
-                        </div>-->
-                    </div>
+                        </div>
+                    </div>-->
                     <div class="row">
                         <div class="col md-12">
-                            <h3>Buildings</h3>
-                            <div class="iq-button-wrapper"><!--<a href="#" class="btn btn-link dropdown-toggle float-right mr-0" id="buildingLegend1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View Color Key</a><div class="dropdown-menu p-3" aria-labelledby="buildingLegend1">
+                            <h4>Buildings</h4>
+                            <!--<div class="iq-button-wrapper"><a href="#" class="btn btn-link dropdown-toggle float-right mr-0" id="buildingLegend1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">View Color Key</a><div class="dropdown-menu p-3" aria-labelledby="buildingLegend1">
                                 <em class="fas fa-square status-blue"></em> Active with effective Date<br>
                                 <em class="fas fa-square status-white"></em> Active - No effective date<br>
                                 <em class="fas fa-square status-lime"></em> State Licensed Only<br>
                                 <em class="fas fa-square status-gray"></em> Closed
-                            </div>-->
-                                <button class="btn btn-outline-primary" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('primary');">Add Building</button> </div>
+                            </div>
+                                <button class="btn btn-outline-primary" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('primary');">Add Building</button> </div>-->
                             
-        <div class="iq-accordion">
+                            <ul><li> Tranquility - T1 | <a href="#" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.building1').addClass('active');">
+                   Edit
+                  </a></li><li> Tranquility 1B - T2 | <a href="#">
+                   Edit
+                  </a>
+                                
+                                </li><li>Tranquility Floor 3 - T3 | <a href="#">Edit</a> </li></ul>
+                            
+      <!--  <div class="iq-accordion">
             <div class="card">
               <div class="card-header d-flex">
                 <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
@@ -2131,10 +2131,10 @@ Barrington, IL 60010</span>
                          
                
                 
-                <!--<div class="row">
+               <div class="row hide">
                   <div class="col-md-4"><label>Licensed Only Building</label></div>
                   <div class="col-md-8"><p>No</p></div>
-                </div>--> 
+                </div> 
                <div class="row">
                   <div class="col-md-4"><label>LSC Form Indicator</label></div>
                   <div class="col-md-8"><p>HC 2012 Existing</p></div>
@@ -2244,11 +2244,11 @@ Barrington, IL 60010</span>
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
                             
                         </div>
                     </div>
-                    <div class="row mt-md-5">
+                    <!--<div class="row mt-md-5">
                         <div class="col-md-12">
             <fieldset id="locationFileAttached"><legend class="iq-form-group-title">Attachments</legend>   
                 <p class="iq-page-header-description" style="margin-top: -1rem">Add and manage attachments for this provider's location.</p>
@@ -2296,7 +2296,7 @@ Barrington, IL 60010</span>
              </fieldset>
                             
                         </div>
-                    </div>
+                    </div>-->
                 </div>
               </div>
             </div>
@@ -2315,11 +2315,8 @@ Barrington, IL 60010</span>
                 </div>
               </div>
               <div id="site2" class="collapse">
-                   <div class="iq-list" style="margin-top: -1rem;">
-                <!--<div class="row">
-                  <div class="col-md-4"><label></label></div>
-                  <div class="col-md-8"><p></p></div>
-                </div>  -->
+                   <!--<div class="iq-list" style="margin-top: -1rem;">
+                
                 <div class="row">
                  
                   <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/3MeC3wsXFoyESYaW8" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>123 Temporary Road, Suite 100<br>Reston, VA 20190</span></a></p></div>
@@ -2328,7 +2325,7 @@ Barrington, IL 60010</span>
                              
                         
                         
-            </div>
+            </div>-->
                 <div class="card-body">
                   <div class="row">
                         <div class="col-md-12">
@@ -2387,9 +2384,13 @@ Barrington, IL 60010</span>
                     </div>
                     <div class="row">
                         <div class="col md-12">
-                            <h3>Buildings</h3>
-                           <p><button class="btn btn-outline-primary" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('branch1');">Add Building</button></p>
-                       <div class="iq-accordion">
+                            <h4>Buildings</h4>
+                           <!--<p><button class="btn btn-outline-primary" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('branch1');">Add Building</button></p>-->
+                            
+                            <ul><li><button type="button" class="btn btn-link">
+                    Morrison - M1
+                  </button></li></ul>
+                <!--       <div class="iq-accordion">
             <div class="card">
               <div class="card-header d-flex">
                 <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
@@ -2435,10 +2436,10 @@ Barrington, IL 60010</span>
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
                         </div>
                     </div>
-                    <div class="row mt-md-5">
+                    <!--<div class="row mt-md-5">
                         <div class="col-md-12">
                         <fieldset><legend class="iq-form-group-title">Attachments</legend>   
                 <p class="iq-page-header-description" style="margin-top: -1rem">Add and manage attachments for this provider's location.</p>
@@ -2485,12 +2486,12 @@ Barrington, IL 60010</span>
              </fieldset>
                             
                         </div>
-                    </div>
+                    </div>-->
                 </div>
               </div>
             </div>
           </div>
-            <br><br>
+           <!-- <br><br>
             <h3>Closed Locations</h3>
             <p class="info-text">1 Location</p>
                   <div class="iq-accordion tertiary">
@@ -2508,13 +2509,10 @@ Barrington, IL 60010</span>
               </div>
               <div id="site3" class="collapse">
                   <div class="iq-list" style="margin-top: -1rem;">
-                <!--<div class="row">
-                  <div class="col-md-4"><label></label></div>
-                  <div class="col-md-8"><p></p></div>
-                </div>  -->
+                
                 <div class="row">
                   
-                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/3MeC3wsXFoyESYaW8" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>555 Any Road, Suite 100<br>Any Town, ST 11111</span></a><!--<br><span class="iqies-not-available">County No information provided</span>--></p></div>
+                  <div class="col-md-8" style="padding-left: 2.75rem;"><p><a href="https://goo.gl/maps/3MeC3wsXFoyESYaW8" target="_blank" class="map-link"><i class="fal fa-map-marker-alt"></i> <span>555 Any Road, Suite 100<br>Any Town, ST 11111</span></a></p></div>
                 </div>
                         
             </div>
@@ -2524,14 +2522,7 @@ Barrington, IL 60010</span>
                             
                         
                         </div>
-                        <!--<div class="col-md-4">
-                           <div>
-                                <p><label>Address</label>
-                            222 Somewhere Road, Suite 204<br>Reston, VA 20190<br>Lake County</p>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.1291793328915!2d-77.33793048382407!3d38.94387715180661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64ae7bd3d28ff%3A0x33a50cc929336b1c!2sVentera+Corporation!5e0!3m2!1sen!2sus!4v1566314784533!5m2!1sen!2sus" frameborder="0" style="width: 100%; min-height: 200px; border:0" allowfullscreen></iframe>
-                              </div>
-                            
-                        </div>-->
+                       
                     </div>
                     <div class="row">
                         <div class="col md-12">
@@ -2555,7 +2546,7 @@ Barrington, IL 60010</span>
               </div>
             </div>
           </div>
-                  
+                  -->
                   </article>
                   <article class="buildings hide">
                <h3>Open Buildings</h3>
