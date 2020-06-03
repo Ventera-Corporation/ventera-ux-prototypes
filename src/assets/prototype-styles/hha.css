@@ -15,6 +15,8 @@ ul li, ol li { padding: .5rem 0; }
 ul.iq-inline-list { list-style: none; margin-left: 0; padding-left: 0;  }
 ul.iq-inline-list li { display: inline-block; margin-right: 0; list-style: none; margin-left: 0; padding-left: 0; }
 
+a.iq-external-link:after { font-family: "Font Awesome 5 Pro"; font-weight: 400; margin-left: .5rem; content: '\f08e'; font-size: 1.125rem; color: #5B616B; color: #0071bc;  }
+
 /* GENERAL UTILITIES */
 .container-fluid { padding: 0 4rem;}
 @media (max-width: 768px) {
@@ -266,10 +268,20 @@ label .iq-input-error-msg::before, label .iq-input-info-msg::before { line-heigh
 /* MODAL */
 .modal-title { font-size: 1.25rem; }
 .modal-wrapper { background-color: #595959; padding: 2rem; margin: 0 auto;   }
-.modal-header { padding: 2rem 2rem 0 2rem; border-bottom: 0; margin-bottom: -.5rem;}
+.modal-header { padding: 2rem 2rem 0 2rem; border-bottom: 0; margin-bottom: -.5rem; position: relative; }
 .modal-header .modal-title { margin-bottom: 0; }
-.modal-header .close { font-size: 2.5rem; font-weight: 100; line-height: 1rem; margin-right: -1.5rem; }
-.modal-body .close { position: absolute; top: 2rem; right: 1.5rem; margin-left: 1rem; font-size: 2.5rem !important; font-weight: 100; line-height: 1rem; }
+.modal-header > .close { font-size: 2.5rem; font-weight: 100; line-height: 1rem; margin-right: -1.5rem; }
+.modal-header > .close { position: absolute; top: 2rem; right: 1.5rem; margin-left: 1rem;  }
+.modal.modal-full {
+    background-color: white; 
+}
+.modal-full .modal-dialog {
+    margin: 0 auto;
+    max-width: 100%;
+}
+.modal-full .modal-title { font-size: 1.875rem; font-weight: 400; }
+.modal-full .modal-content { border: 0; }
+.modal-full .modal-content .modal-body p { margin-bottom: 2rem; }
 
 /* CARD STRIPED LIST */
 .iq-list { margin-bottom: 2rem; padding: 0; }
