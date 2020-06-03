@@ -157,7 +157,7 @@
             </div>
         </div>
         <div class="tab-content">
-          <div class="tab-pane  active" id="basic" role="tabpanel"
+          <div class="tab-pane" id="basic" role="tabpanel"
                     aria-labelledby="basicTab">
             <div class="row tabTitle">
               <div class="col-md-10">
@@ -1356,7 +1356,7 @@
             </section>
           </div>
             
-          <div class="tab-pane " id="building" role="tabpanel"
+          <div class="tab-pane active" id="building" role="tabpanel"
                     aria-labelledby="buildingTab">
               <!-- edit building or wing -->
               <section class="edit-view building1">
@@ -1450,7 +1450,7 @@ T1</p>
                      <input type="date" class="form-control" value="2012-02-12">
                            <p class="help-text">MM/DD/YYYY</p>
                       </div>
-                </div> 
+                </div> -->
                 <div class="col-md-12">
                       
                  <fieldset>
@@ -1490,7 +1490,7 @@ T1</p>
                 </div> 
                 
                 
-                  <div class="col-md-6">
+                <!--  <div class="col-md-6">
                    <div class="form-group">
                     <label>Construction Type</label>
                      <select class="form-control"><option>Select one</option><option selected>Type I - Fire Resistive Construction</option>
@@ -1646,7 +1646,7 @@ Barrington, IL 60010</span>
                      <input type="date" class="form-control" value="">
                            <p class="help-text">MM/DD/YYYY</p>
                       </div>
-                </div> 
+                </div> -->
                 <div class="col-md-12">
                       
                  <fieldset>
@@ -1666,7 +1666,7 @@ Barrington, IL 60010</span>
     
                           
                   </fieldset>
-                    
+                 
                     <div class="iq-conditional-content" style="margin-top: .5rem;">
                       <div class="lsc-fi"><p><label>LSC Form Indicator <span class="iq-asterisk">*</span></label>
                        <select class="form-control"><option selected>Select one</option><option>HC 2012 Existing</option><option>HC 2012 New</option></select>   
@@ -1686,7 +1686,7 @@ Barrington, IL 60010</span>
                     </div>
                 </div> 
                 
-                
+                <!--
                   <div class="col-md-6">
                    <div class="form-group">
                     <label>Construction Type</label>
@@ -1977,14 +1977,14 @@ Barrington, IL 60010</span>
                   
                   <article class="all">
                     <h3>Open Locations</h3>
-                    <p class="info-text"><span class="baCount">2</span> Locations, 4 Buildings</p>
+                    <p class="info-text hide"><span class="baCount">2</span> Locations, 4 Buildings</p>
         
         <div class="iq-accordion tertiary">
             <div class="card ">
               <div class="card-header d-flex">
                 <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions expanded"
                   data-toggle="collapse" data-target="#site1" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span>BrightHope<br><small class="bottom">Primary Location | 3 Buildings</small></span>
+                  <span>BrightHope<!--<br><small class="bottom">Primary Location | 3 Buildings</small>--></span>
                 </button>
                 <div class="iq-accordion-actions d-flex align-items-center">
                   <button type="button" class="btn btn-link" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.editPrimary').addClass('active');">
@@ -2067,13 +2067,10 @@ Barrington, IL 60010</span>
                             </div>
                                 <button class="btn btn-outline-primary" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('primary');">Add Building</button> </div>-->
                             
-                            <ul><li> Tranquility - T1 | <a href="#" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.building1').addClass('active');">
-                   Edit
-                  </a></li><li> Tranquility 1B - T2 | <a href="#">
-                   Edit
-                  </a>
-                                
-                                </li><li>Tranquility Floor 3 - T3 | <a href="#">Edit</a> </li></ul>
+                            <ul><li><a href="#" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.building1').addClass('active');">Edit</a> | Tranquility</li>
+                                <li><a href="#" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.building1').addClass('active');">Edit</a> | Tranquility 1B - T2</li>
+                            <li><a href="#" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.building1').addClass('active');">Edit</a> | Tranquility Floor 3 - T3</li>
+                            </ul>
                             
       <!--  <div class="iq-accordion">
             <div class="card">
@@ -2307,8 +2304,8 @@ Barrington, IL 60010</span>
               <div class="card-header d-flex">
                 <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#site2" type="button" onclick="$(this).toggleClass('expanded');">
-                  <span>BrightHope South<br>
-                  <small class="bottom">Branch Office | ID 002 | Opened 01/21/1999 | 2 Buildings</small></span></button>
+                  <span>BrightHope South<!--<br>
+                  <small class="bottom">Branch Office | ID 002 | Opened 01/21/1999 | 2 Buildings</small>--></span></button>
                 <div class="iq-accordion-actions align-items-center">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmLocationDeletion">Delete</button>
                   <a href="#" class="btn btn-link" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.editBranch1').addClass('active');">Edit</a>
@@ -2387,9 +2384,7 @@ Barrington, IL 60010</span>
                             <h4>Buildings</h4>
                            <!--<p><button class="btn btn-outline-primary" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.newBuilding').addClass('active'); $('.parentLoc').val('branch1');">Add Building</button></p>-->
                             
-                            <ul><li><button type="button" class="btn btn-link">
-                    Morrison - M1
-                  </button></li></ul>
+                            <ul><li><a href="#" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.building1').addClass('active');">Edit</a> | Morrison - M1</li></ul>
                 <!--       <div class="iq-accordion">
             <div class="card">
               <div class="card-header d-flex">
