@@ -108,7 +108,7 @@
   <div class="container-fluid" id="mainContent"> 
     <div class="row">
       <div class="col-sm-5 col-md-4 col-lg-3">
-        <nav class="nav flex-column iq-nav"><a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">Basic Information</a> <!--<a class="nav-link" tabindex="0" id="mailingTab" href="#mailing" data-toggle="tab" role="tab" aria-controls="mailing" aria-selected="false">Mailing Address</a>--><a class="nav-link" tabindex="0" id="buildingTab" href="#building" data-toggle="tab" role="tab" aria-controls="building" aria-selected="false">Locations and Buildings</a> <a class="nav-link" tabindex="0" id="operatingTab" href="#operating" data-toggle="tab" role="tab" aria-controls="operating" aria-selected="false">Operating Details</a> <a class="nav-link" tabindex="0" id="adminTab" href="#admin" data-toggle="tab" role="tab" aria-controls="admin" aria-selected="false">Administrators</a> <a class="nav-link" tabindex="0" id="contactTab" href="#contact" data-toggle="tab" role="tab" aria-controls="contact" aria-selected="false">Additional Contacts</a> <a class="nav-link" tabindex="0" id="certsTab" href="#certs" data-toggle="tab" role="tab" aria-controls="certs" aria-selected="false">Certification and Licensure</a> <a class="nav-link" tabindex="0" id="macTab" href="#mac" data-toggle="tab" role="tab" aria-controls="mac" aria-selected="false">MAC Information</a> <a class="nav-link" tabindex="0" id="deemingTab" href="#deeming" data-toggle="tab" role="tab" aria-controls="deeming" aria-selected="false">Deeming Information</a> <a class="nav-link" tabindex="0" id="attachmentTab" href="#attachment" data-toggle="tab" role="tab" aria-controls="attachment" aria-selected="false">Attachments</a></nav>
+        <nav class="nav flex-column iq-nav"><a class="nav-link active" tabindex="0" id="basicTab" href="#basic" data-toggle="tab" role="tab" aria-controls="basic" aria-selected="true">Basic Information</a> <!--<a class="nav-link" tabindex="0" id="mailingTab" href="#mailing" data-toggle="tab" role="tab" aria-controls="mailing" aria-selected="false">Mailing Address</a>--><a class="nav-link" tabindex="0" id="buildingTab" href="#building" data-toggle="tab" role="tab" aria-controls="building" aria-selected="false">Locations and Buildings</a> <a class="nav-link" tabindex="0" id="operatingTab" href="#operating" data-toggle="tab" role="tab" aria-controls="operating" aria-selected="false">Operating Details</a> <a class="nav-link" tabindex="0" id="adminTab" href="#admin" data-toggle="tab" role="tab" aria-controls="admin" aria-selected="false">Administrators</a> <a class="nav-link" tabindex="0" id="contactTab" href="#contact" data-toggle="tab" role="tab" aria-controls="contact" aria-selected="false">Additional Contacts</a> <a class="nav-link" tabindex="0" id="certsTab" href="#certs" data-toggle="tab" role="tab" aria-controls="certs" aria-selected="false">Certification and Licensure</a> <a class="nav-link" tabindex="0" id="macTab" href="#mac" data-toggle="tab" role="tab" aria-controls="mac" aria-selected="false">MAC Information</a> <a class="nav-link" tabindex="0" id="deemingTab" href="#deeming" data-toggle="tab" role="tab" aria-controls="deeming" aria-selected="false">Deeming Information</a> <a class="nav-link" tabindex="0" id="attachmentTab" href="#attachment" data-toggle="tab" role="tab" aria-controls="attachment" aria-selected="false">Attachments</a></nav>
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="alert alert-success successMsg hide" role="alert">
@@ -1595,7 +1595,13 @@
                     <select class="form-control">
                       <option>Select one</option>
                       <option selected>Type I - Fire Resistive Construction</option>
-                      <option>ssss</option>
+                      <option>Type II - Protected non-combustible construction</option>
+                      <option>Type II - Unprotected non-combustible construction</option>
+                      <option>Type III - Protected ordinary construction</option>
+                      <option>Type III - Unprotected ordinary construction</option>
+                      <option>Type IV - Heavy timber construction</option>
+                      <option>Type V - Protected wood construction</option>
+                      <option>Type V - Unprotected wood frame construction</option>
                     </select>
                   </div>
                 </div>
@@ -2092,7 +2098,7 @@
                   data-toggle="collapse" data-target="#site1" type="button" onclick="$(this).toggleClass('expanded');"> <span>BrightHope<br>
                       <small class="bottom">Primary Location | 4 Buildings</small></span> </button>
                       <div class="iq-accordion-actions d-flex align-items-center">
-                        <button type="button" class="btn btn-link" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.editPrimary').addClass('active');"> Edit </button>
+                        <button type="button" class="btn btn-link" onclick="editPrimaryLocation();"> Edit </button>
                       </div>
                     </div>
                     <div id="site1" class="collapse show">
@@ -4430,6 +4436,11 @@
         $('#building .read-view').removeClass('active'); 
         $('#building .edit-view').removeClass('active'); 
         $('#building .edit-view.editSplint3').addClass('active');
+    }
+    function editPrimaryLocation(){
+        $('#building .read-view').removeClass('active'); 
+        $('#building .edit-view').removeClass('active'); 
+        $('#building .edit-view.editPrimary').addClass('active');
     }
   </script>
 </body>
