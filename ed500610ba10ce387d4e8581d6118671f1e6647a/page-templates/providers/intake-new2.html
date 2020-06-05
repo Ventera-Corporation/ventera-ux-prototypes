@@ -2172,34 +2172,27 @@
                 
                 </fieldset>
                         <div class="iq-conditional-content hide subReason p-4">
-                            <fielset><legend>Substantiated Reasons <span class="iq-asterisk">*</span></legend>
-                            <table class="table table-striped">
-                                <thead><tr><th>Citation</th><th class="text-right">Actions</th></tr></thead>
-                                <tbody>
-                                    <tr><td>
+                            <fieldset class="mb-0"><legend>Substantiated Reasons <span class="iq-asterisk">*</span></legend>
+                           
                             <div class="custom-control custom-checkbox">
                               <input type="checkbox" id="cb1" checked class="custom-control-input">
-                              <label class="custom-control-label" for="cb1"><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span> </label>
-                            </div></td><td class="text-right"><a href="#" data-toggle="modal" data-target="#viewCitationFindings">View Citation Findings</a></td></tr>
-                                    <tr><td>
+                              <label class="custom-control-label" for="cb1"><span class="tagName">G0350 - Release of patient identifiable OASIS info</span> <span class="badge badge-warning">Condition</span> - <a href="#" data-toggle="modal" data-target="#viewCitationFindings" style="font-weight: normal; text-decoration: underline">View Citation Findings</a></label>
+                            </div>
                             <div class="custom-control custom-checkbox">
                               <input type="checkbox" id="cb2" class="custom-control-input">
-                              <label class="custom-control-label" for="cb2"><span class="tagName">G0406 - Patient Rights</span> <span class="badge badge-warning">Condition</span></label>
-                            </div></td><td class="text-right"><a href="#" data-toggle="modal" data-target="#viewCitationFindings">View Citation Findings</a></td></tr>
-                                    <tr><td>
+                              <label class="custom-control-label" for="cb2"><span class="tagName">G0406 - Patient Rights</span> <span class="badge badge-warning">Condition</span> - <a href="#" data-toggle="modal" data-target="#viewCitationFindings" style="font-weight: normal; text-decoration: underline">View Citation Findings</a></label> 
+                            </div>
                             <div class="custom-control custom-checkbox">
                               <input type="checkbox" id="cb3" class="custom-control-input">
-                              <label class="custom-control-label" for="cb3"><span class="tagName">G0408 - Notice of Rights</span> <span class="badge badge-info">Standard</span></label>
-                            </div></td><td class="text-right"><a href="#" data-toggle="modal" data-target="#viewCitationFindings">View Citation Findings</a></td></tr>
-                                    <tr><td>
+                              <label class="custom-control-label" for="cb3"><span class="tagName">G0408 - Notice of Rights</span> <span class="badge badge-info">Standard</span>  - <a href="#" data-toggle="modal" data-target="#viewCitationFindings" style="font-weight: normal; text-decoration: underline">View Citation Findings</a></label>
+                            </div>
                             <div class="custom-control custom-checkbox">
                               <input type="checkbox" id="cb4" checked class="custom-control-input">
-                              <label class="custom-control-label" for="cb4"><span class="tagName">G1008 - Clinical Records</span> <span class="badge badge-warning">Condition</span></label>
-                            </div></td><td class="text-right"><a href="#" data-toggle="modal" data-target="#viewCitationFindings">View Citation Findings</a></td></tr>
-                                    </tbody></table>
-                            
-                            </fielset>
+                              <label class="custom-control-label" for="cb4"><span class="tagName">G1008 - Clinical Records</span> <span class="badge badge-warning">Condition</span> - <a href="#" data-toggle="modal" data-target="#viewCitationFindings" style="font-weight: normal; text-decoration: underline">View Citation Findings</a></label>
                             </div>
+                            
+                            </fieldset>
+                        </div>
                         
                         <div class="iq-conditional-content hide unsubReason">
                              <fieldset>
@@ -4450,29 +4443,74 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">View Citation Findings</h5>
+        <h5 class="modal-title">Citation Findings</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-          <h3>G0350 &mdash; Release of patient identifiable OASIS info</h3>
-      
+          <h3>G0350 &mdash; Release of patient identifiable OASIS info <span class="badge badge-pill badge-warning">Condition</span></h3>
+      <div class="iq-accordion showhide">
+                    <div class="card no-border">
+                      <div class="card-header d-flex">
+                        <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeRT3x" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');"> <span>Show Reguation Text and Interpretive Guidelines</span><span class="hide">Hide Reguation Text and Interpretive Guidelines</span> </button>
+                      </div>
+                      <div id="citeRT3x" class="collapse">
+                        <div class="card-body px-0">
+                          <label>CFR Section</label>
+                          <p class="iq-not-available">Not applicable</p>
+                          <label>Reguation Text</label>
+                          <p>Rules and Regulations utilized for this survey are: Rules and Regulations for Program Administration of Home Health Agencies, Chapter 9, effective 10/15/2001 Rules and Regulations for Licensure of Home Health Agencies, Chapter 10, effective 11/01/2001</p>
+                          <label>Interpretive Guidelines</label>
+                          <p class="iq-not-available">Not applicable</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
        <h4>Summary</h4>
-                            <h5>Deficient Practice Statement</h5>
+                            <h5>Deficient Practice Statement<br><small>David Brown | Last Updated 01/09/2020 at 02:03 PM</small></h5>
+          
                            <p>Based on record review and staff interview, the agency failed to ensure the coordination of patient care services for the patient's wound care
 assessment. This was evident in one (1) of three (3) Clinical Records reviewed (Patient #3).</p>
  
 <p>Failure to ensure the coordination of patient wound care assessment places patients at risk for poor quality of care.</p>
                         <br>   
           <h4>Findings</h4>
-                           
-                            <h5>David Brown's Observations<br><small>Writing Complete | 03/09/2020 12:25 PM EST</small></h5>
+        <div class="iq-accordion">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#iq-collapse1" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>Jane Smith's Findings<br><small>In Progress | Last Updated 01/09/2020 at 02:12 PM</small></span>
+              </button>
+            </div>
+          <div id="iq-collapse1" class="collapse">
+            <div class="card-body">
+              
                             <p>Patient #3 has an admission date of 11/23/12 with diagnoses including Multiple Sclerosis, Depressive Disorder and Hypertension.</p>
                               <p>The Plans of Care dated 01/22/13 to 03/22/13 and 03/23/13 to 05/21/13 document orders for "SN 2 (two) x month x 2 (two) months" and for
                               </p>
           <p>SN to "Assess Skin &amp; Instruct in methods to prevent breakdown".</p>
-                              <p>The SN Visit Note dated 02/04/13 documents the patient has a "Rash under abdomen fold and bilateral groins. Rash - skin folds, rash - trunk,
+                              
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="iq-accordion">
+        <div class="card ">
+          <div class="card-header d-flex">
+            <button
+                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                  data-toggle="collapse" data-target="#iq-collapse2" type="button" onclick="$(this).toggleClass('expanded');">
+              <span>David Brown's Findings<br><small>Writing Complete | Last Updated 03/09/2020 at 12:25 PM</small></span>
+              </button>
+            </div>
+          <div id="iq-collapse2" class="collapse">
+            <div class="card-body">
+              
+                           <p>The SN Visit Note dated 02/04/13 documents the patient has a "Rash under abdomen fold and bilateral groins. Rash - skin folds, rash - trunk,
                               itching - new. Rash precipitated by not showering. No hha (home health aide) several weeks" and "still searching for hha through vendor".</p>
                              
                              <p> The SN Visit Note dated 02/27/13 documents the patient has a "Rash under abdominal folds. Skin Character: erythema: red, flat".</p>
@@ -4480,6 +4518,11 @@ assessment. This was evident in one (1) of three (3) Clinical Records reviewed (
                               <p>The SN Visit Note dated 03/18/13 (Recertification Visit) documents "Rash under abdominal folds. Skin Character: erythema: fold. "Genitalia
                               rash - longstanding, itching". Patient using "ointment, Interdry sheets". There is no documented evidence in the visit note identifying the type of
                               "ointment" the patient is applying to rash areas.</p>
+              </div>
+            </div>
+          </div>
+        </div> 
+                           
                           
     
       </div>
