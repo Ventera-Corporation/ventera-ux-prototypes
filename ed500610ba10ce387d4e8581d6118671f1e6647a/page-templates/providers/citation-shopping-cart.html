@@ -904,14 +904,16 @@
                 <div class="col-md-6">
                   <label for="citeSearch"><span class="sr-only">Search</span></label>
                   <div class="input-group">
-                    <input type="text" class="form-control" id="citeSearch" onKeyUp="if (event.keyCode === 13) {
+                    <input type="text" class="form-control" id="citeSearch" maxlength="256" onKeyUp="if (event.keyCode === 13) {
         $('.searchButton').click();}" >
                     <div class="input-group-postpend">
                       <button type="submit" class="btn btn-primary searchButton" onClick="searchCites()"><i class="fas fa-search"></i></button>
                       <button class="btn btn-link" onClick="resetCites()">Reset</button>
                     </div>
                   </div>
+                  
                   <div class="input-group-help-text help-text">Search by citation tag number, title, or keyword</div>
+                  <div class="input-group-help-text iq-input-info-msg hide p-2">Your entry has been truncated to the maximum allowed 256 characters for search.</div>
                 </div>
               </div>
               
@@ -4474,7 +4476,10 @@
 	} 
 	
 	function searchCites(){
-        var searchKey = $('#citeSearch').val().toLowerCase(); 
+        var searchKey = $('#citeSearch').val().replace(/[_\W]+/g, "");
+        console.log('before' + searchKey);
+        searckKey = $('#citeSearch').val().toLowerCase(); 
+        console.log('after' + searchKey);
 		switch( searchKey ){ 
 			case '': 
                 $('#citationsT .noResultsText').addClass('hide');
@@ -4502,25 +4507,38 @@
                 break;
 			default: 
 				$('#citations .iq-accordion').addClass('hide'); 
-				$('#citations .iq-accordion.'+searchKey).removeClass('hide'); 
-				switch ( searchKey ) {
-					case '0': case '0000': 
-                        $('#citationsT .citesSearchTotal').html('');
-                        $('#citationsT .perPageSelect').addClass('hide');
-                        $('#citationsT .pagination').addClass('hide');
-						$('#citationsT .citesSearchCount').html('Results: 3 Citations');
-                        $('#citationsT .bottomPagination').addClass('hide');
-                        $('#citationsT .noResultsText').addClass('hide');
-						break;
-					default: 
-                        $('#citationsT .citesSearchTotal').html('');
-                        $('#citationsT .perPageSelect').addClass('hide');
-                        $('#citationsT .pagination').addClass('hide');
-						$('#citationsT .citesSearchCount').html('Results: 1 Citation');
-                        $('#citationsT .bottomPagination').addClass('hide');
-                        $('#citationsT .noResultsText').addClass('hide');
-						break;
-				}
+				$('#citations .iq-accordion.'+searchKey).removeClass('hide');
+                if( $('#citeSearch').val().length > 10 ){
+                    $('#citationsT .citesSearchTotal').html('');
+                    $('#citationsT .perPageSelect').addClass('hide');
+                    $('#citationsT .pagination').addClass('hide');
+                    $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                    $('#citationsT .bottomPagination').addClass('hide');
+                    $('#citationsT .noResultsText').addClass('hide');
+                    $('#citations .iq-accordion.g0').removeClass('hide'); 
+                    
+                    $('.input-group-help-text.iq-input-info-msg').html('Your entry has been truncated to the maximum allowed 256 characters for search.');
+                    $('.input-group-help-text.iq-input-info-msg').removeClass('hide');
+                } else {
+                    switch ( searchKey ) {
+                        case '0': case '0000': 
+                            $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .perPageSelect').addClass('hide');
+                            $('#citationsT .pagination').addClass('hide');
+                            $('#citationsT .citesSearchCount').html('Results: 3 Citations');
+                            $('#citationsT .bottomPagination').addClass('hide');
+                            $('#citationsT .noResultsText').addClass('hide');
+                            break;
+                        default: 
+                            $('#citationsT .citesSearchTotal').html('');
+                            $('#citationsT .perPageSelect').addClass('hide');
+                            $('#citationsT .pagination').addClass('hide');
+                            $('#citationsT .citesSearchCount').html('Results: 1 Citation');
+                            $('#citationsT .bottomPagination').addClass('hide');
+                            $('#citationsT .noResultsText').addClass('hide');
+                            break;
+				    }
+                }
 				break;  
 		}
 	}
@@ -5506,7 +5524,18 @@
         $('#citationsT .edit-view').removeClass('active'); 
         $('#citationsT .read-view.all').addClass('active'); 
     }
-    
+    $('#citeSearch').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          
+          if (len >= max) {
+            //var char = len - max; 
+            $('.input-group-help-text.iq-input-info-msg').removeClass('hide');  
+          } else {
+			$('.input-group-help-text.iq-input-info-msg').addClass('hide'); 
+          }
+        });
     </script>
 	
 </body>
