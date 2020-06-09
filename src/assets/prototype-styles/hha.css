@@ -185,8 +185,8 @@ fieldset legend.iq-form-group-title, .accordion .iq-form-group-title { font-size
 label .iq-required-text { font-weight: normal; font-size: .875rem; color: #5b616b; }
 .iq-input-error, input.iq-input-error, input.form-control.iq-input-error  { border: 1px solid #e31c3d; }
 .iq-input-error-msg { color: #cd2026; font-size: .8125rem; margin-top: .5rem; font-weight: normal;}
-.iq-input-error-msg::before, .iq-input-info-msg::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .35rem; height: 100%; line-height: auto; }
-label .iq-input-error-msg::before, label .iq-input-info-msg::before { line-height: 1.65rem; }
+/* .iq-input-error-msg::before, .iq-input-info-msg::before { float: left; display: block; margin-right: .35rem; height: 100%; line-height: auto; }
+label .iq-input-error-msg::before, label .iq-input-info-msg::before { line-height: 1.65rem; }*/
 .iq-input-error-msg a { text-decoration: none; display: block; margin-top: .25rem; }
 .iq-input-error-msg a:hover { text-decoration: underline; }
 
@@ -507,11 +507,17 @@ div.alert { margin-bottom: 2rem;}
 .alert button.close { display: flex; flex-direction: column; padding-top: .25rem; }
 .alert button.close:hover { opacity: 1; }
 .alert-content::before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .5rem; height: 100%; margin-top: .0625rem;  }
-.iq-text-status:before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .35rem; height: 100%; line-height: auto;  }
-.alert-info .alert-content::before, .iq-input-info-msg::before, .toast.alert-info .toast-header strong::before, .iq-text-status.info:before { 
-    content: '\f05a';
+.iq-text-status:before { display: inline-block; font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .35rem; height: 100%; line-height: auto;  }
+.iq-input-info-msg:before, .iq-input-error-msg:before { font-family: "Font Awesome 5 Pro"; font-weight: 700; margin-right: .35rem; height: 100%; line-height: auto;  }
+.alert-info .alert-content::before, .iq-input-info-msg::before, .toast.alert-info .toast-header strong::before, .iq-text-status.info:before, .iq-input-info-msg:before { 
+    background: url("../images/info.svg") top left no-repeat;
+    padding-right: .55rem;
+    margin-top: .2rem;
+    content: '`';
+    padding-left: .25rem;
     color: #0393BB; /* secondary alt */
 }
+.iq-input-info-msg:before { background-size: .85rem .85rem; } 
 .alert-success .alert-content::before, .toast.alert-success .toast-header strong::before, .iq-text-status.success:before { 
     content: '\f058';
     color: #2E8540; /* success */
@@ -520,7 +526,7 @@ div.alert { margin-bottom: 2rem;}
     content: '\f071';
     color: #C9792A; /* warn */
 }
-.alert-danger .alert-content::before, .iq-input-error-msg::before, .toast.alert-danger .toast-header strong::before, .iq-text-status.danger:before  { 
+.alert-danger .alert-content::before, .toast.alert-danger .toast-header strong::before, .iq-text-status.danger:before, .iq-input-error-msg:before  { 
     content: '\f2ee';
     color: #CD2026; /* error dark */
 }
@@ -533,7 +539,8 @@ div.alert { margin-bottom: 2rem;}
 .dropdown-menu ul { margin: 0 2.25rem 0 0; padding-left: 1.25rem;}
 .dropdown-menu li { list-style-position: outside; padding: 0; }
 .dropdown-menu.text-content li { margin-bottom: .5rem; }
-a.dropdown-item.disabled { color: #6c757D; padding: 1.063rem 1.5rem }
+a.dropdown-item.disabled { color: #6c757D; padding: 1.063rem 1.5rem; display: inline-block; }
+a.dropdown-item > a.btn-tooltip { display: inline-block; }
 
 /* TOAST */
 .toast { background-color: white; max-width: 350px; }
@@ -556,6 +563,8 @@ i.status-blue, em.status-blue  { color: #0071bc;  }
 i.status-white, em.status-white { color: #02bfe7;  }
 i.status-gray, em.status-gray { color: #d6d7d9; }
 .btn-link small.bottom i, .btn-link small.bottom em { margin-right: .25rem; }
+.btn-tooltip { margin-left: .25rem; color: #0071BC; }
+.btn-link ~ .btn-tooltip { margin-left: 0; }
 
 /* INPUT GROUP */
 .input-group { margin-bottom: 2rem; }
