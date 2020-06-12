@@ -531,8 +531,8 @@
               </div>
             <div class="col-sm-3 col-md-3">
               <!--<p><button class="btn btn-lg btn-primary" disabled>Disabled</button></p>-->
-              <p> <button class="btn btn-primary" disabled>Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
-              <p><button class="btn btn-sm btn-primary" disabled>Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
+              <p> <button class="btn btn-primary disabled" aria-disabled="true">Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
+              <p><button class="btn btn-sm btn-primary disabled" aria-disabled="true">Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
               </div>
             <!--<div class="col-sm-3 col-md-2">
                            <p><button class="btn btn-danger">Error</button></p>
@@ -564,8 +564,8 @@
               </div>
             <div class="col-sm-3 col-md-2">
               <!--<p><button class="btn btn-lg btn-outline-primary" disabled>Disabled</button></p>-->
-              <p> <button class="btn btn-outline-primary" disabled>Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
-              <p><button class="btn btn-sm btn-outline-primary" disabled>Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
+              <p> <button class="btn btn-outline-primary disabled" aria-disabled="true">Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
+              <p><button class="btn btn-sm btn-outline-primary disabled" aria-disabled="true">Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
               </div>
             
             <!-- <div class="col-sm-3 col-md-2">
@@ -596,8 +596,8 @@
               </div>
             <div class="col-sm-3 col-md-2">
               <!-- <p><button class="btn btn-lg btn-link" disabled>Disabled</button></p> -->
-              <p> <button class="btn btn-link" disabled>Disabled</button><a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
-              <p><button class="btn btn-sm btn-link" disabled>Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
+              <p> <button class="btn btn-link disabled" aria-disabled="true">Disabled</button><a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
+              <p><button class="btn btn-sm btn-link disabled" aria-disabled="true">Disabled</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></p>
               </div>
             <!--<div class="col-sm-3 col-md-2">
                           <p><button class="btn btn-lg btn-link danger">Error</button></p>
@@ -623,7 +623,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item disabled" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it">Disabled action <span class="btn-tooltip"><i class="fal fa-info-circle"></i></span></a>
+                  <a class="dropdown-item disabled" aria-disabled="true" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it">Disabled action <span class="btn-tooltip"><i class="fal fa-info-circle"></i></span></a>
                   <a class="dropdown-item" href="#">Something else here</a>
                 
                   </div>
@@ -633,7 +633,7 @@
               <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown Menu Link</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink">
                 <button class="dropdown-item">Download</button>
-                <button class="dropdown-item disabled" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it">Edit <span class="btn-tooltip"><i class="fal fa-info-circle"></i></span></button>
+                <button class="dropdown-item disabled" aria-disabled="true" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it">Edit <span class="btn-tooltip"><i class="fal fa-info-circle"></i></span></button>
                 <button class="dropdown-item">Delete</button>
                 </div>
               </div>
@@ -776,7 +776,13 @@
               <span class="iq-input-info-msg">Info message</span><span class="help-text">Hint/Help copy</span></label>
             </div>
           </div>
-        
+         <div class="col-md-3">
+          <div class="form-group">
+            <label>Numeric Only Field
+              <input type="number" class="iq-input-error form-control">
+              <span class="iq-input-error-msg">Only digits 0-9 are accepted</span></label>
+            </div>
+          </div>
         </div>    
       </article>
     <article id="formView">
@@ -932,7 +938,7 @@
       <div class="row">
         <div class="col-md-6">
           <fieldset>
-            <legend>Checkbox Group <span class="iq-asterisk">*</span> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why one of the controls below is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></legend>
+            <legend>Checkbox Group <span class="iq-asterisk">*</span> </legend>
             <div class="custom-control custom-checkbox">
               <input type="checkbox" id="cb1" checked class="custom-control-input">
               <label class="custom-control-label" for="cb1">Option 1 </label>
@@ -942,8 +948,8 @@
               <label class="custom-control-label" for="cb2">Option 2</label>
               </div>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" id="cb3" class="custom-control-input" disabled>
-              <label class="custom-control-label" for="cb3">Option 3</label>
+              <input type="checkbox" id="cb3" class="custom-control-input disabled" aria-disabled="true">
+              <label class="custom-control-label" for="cb3">Option 3 <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></label>
               </div>     
             </fieldset>
           </div>
@@ -2483,7 +2489,12 @@ Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
     <article id="tooltipSection">
       <h3>Tooltip</h3>
       <p><span class="has-tooltip" data-toggle="tooltip" title="Here is info you need">I have a tooltip</span></p>
-      
+      <a href="#" class="pl-2" id="tooltipLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">I have a fake tooltip</a>
+              <div class="dropdown-menu iq-tooltip" aria-labelledby="tooltipLink">
+                <ul><li>List item 1.</li>
+                    <li>List item 2.</li>
+                    </ul>
+                </div>
       
       </article>
     
@@ -2561,6 +2572,17 @@ Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
 				{ "orderable": false, "targets": -1 }
 			 ]
 		  }); 
+         $('input[type="checkbox"][aria-disabled=true]').click(function(event) {
+            var $checkbox = $(this);
+
+            // Ensures this code runs AFTER the browser handles click however it wants.
+            setTimeout(function() {
+              $checkbox.removeAttr('checked');
+            }, 0);
+
+            event.preventDefault();
+            event.stopPropagation();
+        });
 	});
 </script>
 </body>
