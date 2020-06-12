@@ -2190,6 +2190,16 @@
                               <input type="checkbox" id="cb4" checked class="custom-control-input">
                               <label class="custom-control-label" for="cb4"><span class="tagName">G1008 - Clinical Records</span> <span class="badge badge-warning">Condition</span> - <a href="#" data-toggle="modal" data-target="#viewCitationFindings" style="font-weight: normal; text-decoration: underline">View Citation Findings</a></label>
                             </div>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" id="cb5" class="custom-control-input" onChange="$('.otherSubReason').toggleClass('hide');">
+                              <label class="custom-control-label" for="cb5"><span class="tagName">Other</span></label>
+                            </div>
+                            <div class="otherSubReason hide">
+                                <label>Other Substantiated Reason </label>
+                                 <button class="btn btn-link float-right" data-toggle="toast" data-target="#shortcutsToast">Text Editor Keyboard Shortcuts</button>
+                  <div class="editTextDiv findings"></div>
+                               
+                            </div>
                             
                             </fieldset>
                         </div>

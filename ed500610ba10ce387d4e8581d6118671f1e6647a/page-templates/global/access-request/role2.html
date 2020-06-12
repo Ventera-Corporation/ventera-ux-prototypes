@@ -103,6 +103,9 @@
         <div class="col-md-12"> 
               <div class="iq-page-header-content">
         <div class="edit-view active roleStep">
+            
+            
+            
                 <div class="alert alert-danger errorMsg hide roleErrorMsg" role="alert">
           <div class="alert-content">
                  <h2>Unable to Proceed</h2>
@@ -117,6 +120,12 @@
           </p></div>
                  </div>
                 <div class="edit-view orgStep">
+                    <div class="alert alert-warning warningMsg repeatRequest hide" role="alert">
+          <div class="alert-content">
+            <h2>Unable to Submit Role Request</h2>
+            The role you are requesting has already been submitted and is pending approval or has been approved. Please contact your security official for additional assistance.</div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
                     <div class="alert alert-danger errorMsg hide submitErrorMsg" role="alert">
           <div class="alert-content">
                  <h2>Unable to Submit</h2>
@@ -1080,12 +1089,16 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                 }
                 break;
             case 'ro':
+                console.log($('.regionSelect option:selected').text());
                 if($('.regionSelect option:selected').text() == "Select one" ){
                     $('.errorMsg.submitErrorMsg').removeClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.other').removeClass('hide'); 
                     $('.errorMsg.submitErrorMsg li.provider').addClass('hide'); 
                     $('.submitErrorMsg .roleN').html('Region');
                     $('.iq-input-error-msg').removeClass('hide'); 
+                    $('html, body').animate({ scrollTop: 0 }, 500);
+                } else if( $('.regionSelect option:selected').text() == "10 - Seattle") {
+                    $('.repeatRequest').removeClass('hide');
                     $('html, body').animate({ scrollTop: 0 }, 500);
                 } else {
                     $('.errorMsg.submitErrorMsg').addClass('hide'); 
