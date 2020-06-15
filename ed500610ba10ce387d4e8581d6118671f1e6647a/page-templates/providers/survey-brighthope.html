@@ -148,6 +148,15 @@
         <div class="tab-content">
           <div class="tab-pane active" id="basic" role="tabpanel" aria-labelledby="basicTab">
             <section class="edit-view active">
+                <div class="alert alert-danger errorMsg" role="alert">
+                <div class="alert-content">
+                 <h2>Unable to Save</h2>
+				  <p> Please review and correct the following:</p> 
+                  <ul>
+                      <li><a href="#openIntakes">A state intake must be selected for a licensure complaint survey.</a></li>
+                  </ul>
+                 </div>
+                </div>
                  <div class="row tabTitle">
               <div class="col-sm-10">
                 <h2>Basic Information</h2>
@@ -216,7 +225,7 @@
               </div>
                  
               <div class="col-md-10">
-                <fieldset>
+                <fieldset id="openIntakes">
                 <legend>Open Intakes to Include in Complaint Survey <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="oi1" class="custom-control-input" value="value">
