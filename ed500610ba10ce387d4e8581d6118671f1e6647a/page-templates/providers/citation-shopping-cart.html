@@ -928,7 +928,7 @@
 					
 					<div class="row mt-4">
                         
-                        <div class="col-md-3" style="line-height: 3.5rem; "><span class="citesSearchCount">1-20 of</span> <!--<a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">--><span  class="citesSearchTotal">30 Citations</span><!--</a>-->
+                        <div class="col-lg-4" style="line-height: 3.5rem; "><span class="citesSearchCount">1-20 of</span> <!--<a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class="citesSearchTotal">--><span  class="citesSearchTotal">30 Citations</span><!--</a>-->
                             <span class="sr-only">
                             <!-- situation 1: search term -->
                             for search term: 406
@@ -939,10 +939,10 @@
                             </span>
                          
                     </div>
-                        <div class="col-md-9 text-right">
+                        <div class="col-lg-8 text-right">
                             <ul class="iq-inline-list">
                             <li><label class="m-0">Filter By:</label></li>
-                            <li><select style="width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect">
+                            <li><select style="max-width: 15rem;" class="mb-2" onChange="selectRegSet(this)" id="allRegSelect">
                                 <option value="all">All Regulation Sets</option>
                                 <option value="er">Emergency Preparedness (FED - E - 1.01)</option>
                                 <option value="hha">Home Health Agencies (FED - G - 11.01)</option>
@@ -950,7 +950,7 @@
                               </select>
                             </li>
                             <li>
-                              <select style="width: auto" onchange="selectTagType(this)" id="allTagTypeSelect">
+                              <select style="max-width: 15rem;" onchange="selectTagType(this)" id="allTagTypeSelect">
                                 <option value="all">All Tag Types</option>
                                 <option value="condition">Condition</option>
                                 <option value="standard">Standard</option>
@@ -4869,7 +4869,8 @@
 					$('#citationsT .pagination .page-item.page3').addClass('hide');
 							 break;
 					 }
-					
+                    
+					$('.iq-input-info-msg.input-group-help-text').addClass('hide');
 					break;
 			 } 
 			

@@ -7,11 +7,13 @@
 <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
 <link rel="shortcut icon" href="https://test1-iqies.hcqis.org/favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+    <!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+
 </head>
 
 <body>
@@ -290,7 +292,7 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label>State</label>
+                          <label>State  <span class="iq-asterisk">*</span></label>
                           <select disabled>
                             <option value="">Select one</option>
                             <option value="AL">Alabama</option>
@@ -1688,7 +1690,7 @@
                                             $('.parentLocAddress .branch1').removeClass('hide');  
                                             break;
                       } ">
-                      <option value="0">Select one</option>
+                      <option value="0" selected>Select one</option>
                       <option value="primary">Bright Hope (Primary Location)</option>
                       <option value="branch1">BrightHope South</option>
                     </select>
@@ -1814,9 +1816,15 @@
                   <div class="form-group">
                     <label>Construction Type</label>
                     <select class="form-control">
-                      <option selected>Select one</option>
-                      <option>Type I - Fire Resistive Construction</option>
-                      <option>ssss</option>
+                      <option>Select one</option>
+                      <option selected>Type I - Fire Resistive Construction</option>
+                      <option>Type II - Protected non-combustible construction</option>
+                      <option>Type II - Unprotected non-combustible construction</option>
+                      <option>Type III - Protected ordinary construction</option>
+                      <option>Type III - Unprotected ordinary construction</option>
+                      <option>Type IV - Heavy timber construction</option>
+                      <option>Type V - Protected wood construction</option>
+                      <option>Type V - Unprotected wood frame construction</option>
                     </select>
                   </div>
                 </div>
@@ -1985,7 +1993,7 @@
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label>State</label>
+                          <label>State <span class="iq-asterisk">*</span></label>
                           <select class="form-control">
                             <option value="">Select one</option>
                             <option value="AL">Alabama</option>
@@ -2155,8 +2163,8 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                            <div class="form-group"><button class="btn btn-outline-primary" onclick="addBuilding()">Add Building</button>
-                            </div>
+                           <!-- <div class="form-group"><button class="btn btn-outline-primary" onclick="addBuilding()">Add Building</button>
+                            </div>-->
                             <div class="iq-accordion">
                               <div class="card">
                                 <div class="card-header d-flex">
@@ -2418,7 +2426,7 @@
                   data-toggle="collapse" data-target="#site2" type="button" onclick="$(this).toggleClass('expanded');"> <span>BrightHope South<br>
                       <small class="bottom">Branch Office | ID 002 | Opened 01/21/1999 | 2 Buildings</small></span></button>
                       <div class="iq-accordion-actions align-items-center">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmLocationDeletion">Delete</button>
+                        <button type="button" class="btn btn-link" disabled>Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This location cannot be deleted because one or more buildings from this location has been included in a past or current survey"><i class="fal fa-info-circle"></i></a>
                         <a href="#" class="btn btn-link" onclick="editBranch1();">Edit</a> </div>
                     </div>
                     <div id="site2" class="collapse">
@@ -2479,9 +2487,9 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                            <div class="form-group">
+                            <!--<div class="form-group">
                               <button class="btn btn-outline-primary" onclick="addBuilding('1');">Add Building</button>
-                            </div>
+                            </div>-->
                             <div class="iq-accordion">
                               <div class="card">
                                 <div class="card-header d-flex">
@@ -2507,8 +2515,8 @@
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s2b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>3rd Floor<br>
                                   <small class="bottom">M2 | Floor | <span class="iq-status iq-status-closed"></span>Closed 09/02/2018</small></span></button>
-                                  <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
+                                  <div class="iq-accordion-actions align-items-center">
+                                    <button type="button" class="btn btn-link" disabled>Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This building cannot be deleted because it has been included in a past or current survey"><i class="fal fa-info-circle"></i></a>
                                     <button type="button" class="btn btn-link"> Edit </button>
                                   </div>
                                 </div>
@@ -2632,9 +2640,9 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                            <div class="form-group">
+                            <!--<div class="form-group">
                               <button class="btn btn-outline-primary">Add Building</button>
-                            </div>
+                            </div>-->
                             <p class="iq-not-available">No buildings have been added.</p>
                           </div>
                         </div>
@@ -4183,54 +4191,181 @@
             </section>
           </div>
           <div class="tab-pane " id="attachment" role="tabpanel" aria-labelledby="attachmentTab">
-            <h2>Attachments</h2>
-            <p>Add and manage attachments for this provider.</p>
+              <section class="edit-view active addAttachment">
+             <div class="alert alert-danger fileTooLarge hide" role="alert">
+            <div class="alert-content"><h2>Unable to Attach File</h2>Maximum file size allowed is 250 MB
+              </div>
+            </div>
+            <h2>Add Attachment</h2>
+            <p>Add an attachment for this provider.</p>
             <div class="row">
               <div class="col-lg-3 col-md-6">
                 <p class="mb-2">
                   <label for="fileUploadX" class="btn btn-outline-primary iqies-file-input-label">
-                    <input type="file" id="fileUploadX" name="file" class="form-control-file" onClick="$('#fileDetailsX').removeClass('hide');">
-                    Select File</label>
+                    <input type="file" id="fileUploadX" name="file" class="form-control-file" onClick="fileUpload();">
+                    <span>Select File</span></label>
                 </p>
               </div>
             </div>
-            <p class="help-text">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
+            <p class="help-text"><strong>Supported file formats: </strong> PDF, Word, Excel, Text, Image, Video, and Audio files <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="Supported file extensions: .pdf, .doc, .docx, .xls, .xlsx, .txt, .rtf, .jpeg, .jpg, .png, .tif, .tiff, .mp4, .mov, .wmv, .3gp, .mp3, .aac, .wav, .wma"><i class="fal fa-info-circle"></i></a><br><strong>Maximum file size: </strong> 256 MB</p>
             <br>
-            <div class="file-attachment-card">
+              <input type="hidden" id="fsize" value="0">
+              <div class="fileSize hide">
+                  <div class="file-attachment-card">
               <div class="row">
                 <div class="col-sm-10">
-                  <h3><i class="far fa-paperclip"></i> LetterSent060119.pdf</h3>
+                  <h3><i class="far fa-paperclip"></i> <span class="fName">My-New-Large-File.docx <small>[260 MB]</small></span>
+                      <div class="fileTooLarge iq-input-error-msg" style="padding-left: 2rem;">File size exceeds maximum limit of 256MB.</div>
+                      <div class="fileWrongType iq-input-error-msg hide" style="padding-left: 2rem;">File type is not supported.</div>
+                      <div class="uploading hide"><div class="text-primary uploaded" style="padding-left: 2rem; margin-top: .5rem;" role="status"><i class="spinner-border"></i> <small>Uploading <span class="Count">100</span>% ... </small></div></div></h3>
                 </div>
-                <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
+                <div class="col-sm-2 text-right"><a href="#" class="fileTooLarge" onClick="cancelFileUpload()">Dismiss</a><a href="#" class="uploaded hide" onClick="cancelFileUpload()">Remove</a></div>
               </div>
-              <div class="row">
+              <div class="row uploaded hide">
                 <div class="col-sm-12 file-description">
                   <p>
-                    <label>File Description</label>
-                    Lorem ipsum dolor sit amet</p>
-                </div>
-              </div>
-            </div>
-            <div class="file-attachment-card hide" id="fileDetailsX">
-              <div class="row">
-                <div class="col-sm-10">
-                  <h3><i class="far fa-paperclip"></i> File Name.pdf</h3>
-                </div>
-                <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12 file-description">
-                  <p>
-                    <label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
+                    <label>File Description
                       <input type="text" class="form-control file-description-text">
                     </label>
                     <span class="fdt"></span></p>
-                  <p>
-                    <button class="btn btn-primary" onClick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('No information provided'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button>
-                  </p>
                 </div>
               </div>
             </div>
+              </div>
+              <!--<div class="file-attachment-card file2 hide">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h3><i class="far fa-paperclip"></i> LetterSent060119.pdf <small>[1.45 MB]</small></h3>
+                </div>
+                <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 file-description">
+                  <p>
+                    <label>File Description
+                      <input type="text" class="form-control file-description-text">
+                    </label>
+                    <span class="fdt"></span></p>
+                </div>
+              </div>
+            </div>-->
+              <div class="iq-button-wrapper">
+                    <button class="btn btn-primary uploadFileSave" onClick="saveFileAttachment()"><span>Save</span> <span class="hide" role="status"><i class="fas fa-circle-notch fa-spin"></i> <small>Uploading... </small></span></button>
+                    <button class="btn btn-link hide cancelAttachment" onClick="cancelFileAttachment()">Cancel</button>
+                  </div>
+                </section>
+              <section class="read-view">
+                  <h2>Attachments</h2>
+              <p>Add and manage attachments for this provider.</p>
+                  <button class="btn btn-primary" onClick="addFileAttachment()">Add Attachment</button>
+                  
+                  <div class="row mt-4">
+                     <div class="col-lg-4" style="line-height: 3.5rem; "><span class="attachmentSearchCount">2 Attachments</span>
+                            <span class="sr-only">
+                            <!-- situation 1: search term -->
+                            for search term: 
+                            <!-- situtation 2: filters are engaged -->
+                            filtered by:
+                            </span>
+                    </div>
+                    <div class="col-lg-8 text-right">
+                        <ul class="iq-inline-list hide">
+                            <li><label class="m-0">Filter By:</label></li>
+                            <li><select style="max-width: 15rem;" class="mb-2" onChange="selectRegSet(this)" id="allRegSelect">
+                                <option value="all">All Regulation Sets</option>
+                                <option value="er">Emergency Preparedness (FED - E - 1.01)</option>
+                                <option value="hha">Home Health Agencies (FED - G - 11.01)</option>
+                                <option value="state">IL State Home Health (ST - S - 2 - HHA)</option>
+                              </select>
+                            </li>
+                            <li>
+                              <select style="max-width: 15rem;" onchange="selectTagType(this)" id="allTagTypeSelect">
+                                <option value="all">All Tag Types</option>
+                                <option value="condition">Condition</option>
+                                <option value="standard">Standard</option>
+                                <option value="licensure">Licensure</option>
+                                <option value="element">Element</option>
+                                <option value="memo">Memo</option>
+                              </select>
+                            </li></ul>
+                    </div>
+                </div>    
+                <div class="noResultsText hide mt-4">
+                <p class="iq-not-available">No attachments found for this search.</p>
+                </div>
+                   <table class="display " style="width: 100%;" id="attachmentTable">
+                <thead>
+                  <tr>
+                    <th><span>File</span></th>
+                    <th><span>Description</span></th>
+                    <th><span>Uploaded</span></th>
+                    <th><span>Category</span></th>
+                    <th><span>Source</span></th>
+                    <th class="text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr><td><a href="#">My-New-File.docx</a> <small>[244 MB]</small></td>
+                        <td><p class="iq-not-available">No information</p></td>
+                        <td>06/10/2020 by David Freeman</td>
+                        <td>Survey</td>
+                        <td><a href="survey-brighthope.html">Survey FFB-H1</a></td>
+                        <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Actions
+                  </a>
+                <div class="dropdown-menu" aria-labelledby="attachmentMenu1">
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a>
+                  <a class="dropdown-item" href="#">Download</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a>
+                </div>
+                        </td>
+                    </tr>
+                    <tr><td><a href="#">LetterSent060119.pdf</a> <small>[1.45 MB]</small></td>
+                        <td><p class="iq-not-available">No information</p></td>
+                        <td>06/08/2020 by David Freeman</td>
+                        <td>Provider</td>
+                        <td>iQIES 123456</td>
+                        <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu2" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Actions
+                  </a>
+                <div class="dropdown-menu" aria-labelledby="attachmentMenu2">
+                  <a class="dropdown-item" href="#" onClick="editDescription()">Edit Description</a>
+                  <a class="dropdown-item" href="#">Download</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a>
+                </div>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+     <!--<div class="row bottomPagination">
+    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 Attachments</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 Attachments</span></span></li></ul> </div>
+    <div class="col-md-6 text-right">
+          <nav aria-label="Table Pagination" class="float-right">
+		<ul class="pagination pagination-large">
+			<li class="page-item first disabled" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
+			</li>
+			<li class="page-item previous disabled" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
+			</li>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 2</span></div>
+			</li>
+			
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button"></button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last"></button>
+			</li>
+		</ul>
+	</nav>
+    </div>
+</div>-->
+                  
+              </section>
           </div>
         </div>
       </div>
@@ -4255,7 +4390,29 @@
     </div>
   </div>
 </div>
-
+<!-- file description modal -->
+    <div class="modal fade" id="editFileDescription" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Description</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group"><label>File Name
+          <input type="text" readonly class="read-only-text" value="My-New-File.docx"></label></div>
+        <div class="form-group"><label>File Description</label>
+           <textarea class="form-control file-description-text" id="fdI" rows="3"></textarea>
+           <span class="fdt0 help-text">Limit to 255 characters</span>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- modal -->
 <div class="modal fade" id="confirmLocationDeletion" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -4367,6 +4524,8 @@
 <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script> 
 <script src="../../../src/assets/third-party/popper/popper.min.js"></script> 
 <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script> 
+      <!-- to include datatables for responsive table -->
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
 <script src="../../../src/assets/js/scripts.js"></script> 
 <script src="../../hhaung/js/BsMultiSelect.js"></script> 
 <script src="../../hhaung/js/jquery.stickytabs.js"></script> 
@@ -4375,7 +4534,103 @@
       //$('.nav-horizontal').stickyTabs();
       $("select.multiselect").bsMultiSelect();
       $('[data-toggle="tooltip"]').tooltip(); 
+    });
+    $('#fdI').keyup(function () {
+          var max = 255;
+          var char = 0; 
+          var len = $(this).val().length;
+          $('.fdt0').html(len + '/'+ max + ' characters');
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt0').addClass('iq-input-error-msg'); 
+			$('.fdt0').append(' - Limit exceeded');
+          } else {
+			$('.fdt0').removeClass('iq-input-error-msg'); 
+          }
+        });
+    function loadPercent(){ 
+            $('.Count').each(function () {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });   
+      
+        setTimeout(function(){
+            $('.uploaded').toggleClass('hide');
+        }, 3000);
     }
+    function fileUpload(){
+         $('.fileSize').removeClass('hide'); 
+         $('.iqies-file-input-label span').text('Replace File');
+        if($('#fsize').val() == 0){
+            //$('.fileTooLarge').removeClass('hide');
+            $('#fsize').val('1');
+            //$('html, body').animate({ scrollTop: 0 }, 500);
+        } else if($('#fsize').val() == 1) {
+           $('.fName').html('My-Wrong-File-Type.svg <small>[12 MB]</small>');
+           $('.fileTooLarge').addClass('hide'); 
+            $('.fileWrongType').removeClass('hide'); 
+            $('a.fileTooLarge').removeClass('hide');
+            //loadPercent(); 
+            $('#fsize').val('2');
+        } else {
+            
+            $('.uploading').removeClass('hide');
+           $('.fName').html('My-New-File.docx <small>[244 MB]</small>');
+           $('.fileWrongType').addClass('hide'); 
+            $('.fileTooLarge').addClass('hide');
+            //loadPercent(); 
+            $('.uploaded').toggleClass('hide');
+            $('#fsize').val('0');
+        }
+    }
+    function cancelFileUpload(){
+        $('.fileSize').addClass('hide'); 
+        $('.fileTooLarge').addClass('hide');
+        $('.iqies-file-input-label span').text('Select File');
+    }
+    function saveFileAttachment(){
+        $('iqies-file-input-label span').text('Select File');
+        $('.uploadFileSave').addClass('disabled');
+        $('.uploadFileSave span').toggleClass('hide');
+        setTimeout(function(){
+            $('#attachment .edit-view').removeClass('active');
+            $('#attachment .read-view').addClass('active');
+        }, 3000);
+    }
+    function cancelFileAttachment(){
+         $('#attachment .edit-view').removeClass('active');
+        $('#attachment .read-view').addClass('active');
+    }
+    function addFileAttachment(){
+        $('#attachment .edit-view').addClass('active');
+        $('#attachment .read-view').removeClass('active');
+        $('#attachment .edit-view .cancelAttachment').removeClass('hide');
+    }
+    var aTable = $('#attachmentTable').DataTable( {
+          //scrollY: 300,
+          paging: false,
+          lengthMenu: false,
+          info: false,
+          searching: false,
+          responsive: {
+            details: { type: 'column'}
+          },
+          "order": [[ 2, 'desc' ]],
+          columnDefs: [
+            //{ className: 'control', orderable: false, targets: 0 },
+            //{ className: 'none', targets: 5 },
+            //{ responsivePriority: 0, targets: 1 },
+            { "orderable": false, "targets": -1 }
+            //{ 'visible': false, 'targets': 8 }
+         ]
+      }); 
 </script> 
 <script>
     function saveBuilding(){

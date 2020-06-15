@@ -57,7 +57,7 @@
                     <div class="iq-page-header-content">
                       <h1>Survey FFB-H1</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile.html">BrightHope</a> - IQIES 123456 - Hospice - Deemed</div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile.html">BrightHope</a> - CCN 123456 - Hospice - Deemed</div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -127,10 +127,11 @@
              
           </div>
         </div>
+          
       </div>
        <div class="col-sm-5 col-md-4 col-lg-3">
         <nav class="nav flex-column iq-nav">
-            <a class="nav-link active" tabindex="0" id="basicInfoTab" href="#basicInfoT" data-toggle="tab" role="tab" aria-controls="basicInfoT" aria-selected="false">Basic Information</a> 
+            <a class="nav-link active" tabindex="0" id="basicTab" href="#basic" data-toggle="tab" role="tab" aria-controls="basic" aria-selected="false">Basic Information</a> 
             <a class="nav-link" tabindex="0" id="staffTab" href="#staffT" data-toggle="tab" role="tab" aria-controls="staffT" aria-selected="false">Responsible Staff</a> 
             <a class="nav-link" tabindex="0" id="surveyTeamTab" href="#surveyTeamT" data-toggle="tab" role="tab" aria-controls="surveyTeamT" aria-selected="false">Survey Team</a>
             <a class="nav-link" tabindex="0" id="citationsTab" href="#citationsT" data-toggle="tab" role="tab" aria-controls="citationsT" aria-selected="false">Citations</a>
@@ -145,8 +146,17 @@
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="tab-content">
-          <div class="tab-pane" id="basicInfoT" role="tabpanel" aria-labelledby="basicInfoTab">
+          <div class="tab-pane active" id="basic" role="tabpanel" aria-labelledby="basicTab">
             <section class="edit-view active">
+                <div class="alert alert-danger errorMsg" role="alert">
+                <div class="alert-content">
+                 <h2>Unable to Save</h2>
+				  <p> Please review and correct the following:</p> 
+                  <ul>
+                      <li><a href="#openIntakes">A state intake must be selected for a licensure complaint survey.</a></li>
+                  </ul>
+                 </div>
+                </div>
                  <div class="row tabTitle">
               <div class="col-sm-10">
                 <h2>Basic Information</h2>
@@ -178,7 +188,7 @@
               </div>
               <div class="col-md-12">
                   <h3>Survey Categories <span class="iq-asterisk">*</span></h3>
-                  <p>Survey categories that are associated with citations cannot be removed.</p>
+                 <!-- <p>Survey categories that are associated with citations cannot be removed.</p>-->
                   
                   
                   
@@ -186,50 +196,54 @@
             <div class="col-md-6">
                 <fieldset>
                 <legend>Federal Categories</legend>
-                <div class="custom-control custom-checkbox">
+                <!--<div class="custom-control custom-checkbox">
                   <input type="checkbox" id="fc1" checked class="custom-control-input" value="value">
                    <label class="custom-control-label" for="fc1">Initial Certification </label>
+                </div>-->
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="fc2" class="custom-control-input disabled" aria-disabled="true" value="value">
+                   <label class="custom-control-label" for="fc2">Recertification <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" title="This provider is not certified."><i class="fal fa-info-circle"></i></a></label>
                 </div>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="fc2" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="fc2">Sample Validation <!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Uncheck all Open Intakes below first."><i class="fal fa-info-circle fa-lg"></i></a>--></label>
-                </div>
+                  <input type="checkbox" id="fc1" class="custom-control-input" aria-disabled="false" value="value">
+                   <label class="custom-control-label" for="fc1">Complaint <!--<a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" title="There are no approved federal intakes."><i class="fal fa-info-circle"></i></a>--></label>
+                    </div>
               </fieldset>
               </div>
                 <div class="col-md-6">
                 <fieldset>
                 <legend>State Categories</legend>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="sc1" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="sc1">Re-Licensure <a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Description on how to enable"><i class="fal fa-info-circle fa-lg"></i></a></label>
+                  <input type="checkbox" id="sc1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="sc1">Re-Licensure </label>
                 </div>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="sc2" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="sc2">Licensure Complaint <a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="This category is related to an open intake and cannot be removed"><i class="fal fa-info-circle fa-lg"></i></a></label>
+                  <input type="checkbox" id="sc2" class="custom-control-input" aria-disabled="false" value="value">
+                   <label class="custom-control-label" for="sc2">Licensure Complaint <!--<a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" title="There are no availble state intakes."><i class="fal fa-info-circle"></i></a>--></label>
                 </div>
               </fieldset>
               </div>
                  
-             <!--   <div class="col-md-6">
-                <fieldset>
+              <div class="col-md-10">
+                <fieldset id="openIntakes">
                 <legend>Open Intakes to Include in Complaint Survey <span class="iq-asterisk">*</span></legend>
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="oi1" checked disabled class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="oi1">Complaint 12193 <a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="Cannot be removed. Associated with an allegation."><i class="fal fa-info-circle fa-lg"></i></a></label> 
+                  <input type="checkbox" id="oi1" class="custom-control-input" value="value">
+                   <label class="custom-control-label" for="oi1">Complaint 12193 <small>[Federal CoPs, CFCs, RFPs, EMTALA]</small> - <a href="#" class="iq-external-link">View Intake</a><!--<a href="#" style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top" title="This intake cannot be added until it is approved by RO."><i class="fal fa-info-circle"></i></a>--></label> 
                 </div>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="oi2" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="oi2">Complaint 11978</label>
+                   <label class="custom-control-label" for="oi2">Complaint 11978 <small>[State-only, licensure]</small> - <a href="#" class="iq-external-link">View Intake</a></label>
                 </div>
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="oi3" class="custom-control-input" value="value">
-                   <label class="custom-control-label" for="oi3">Complaint 11999</label>
+                   <label class="custom-control-label" for="oi3">Complaint 11999 <small>[No state or federal provider compliance issue involved]</small> - <a href="#" class="iq-external-link">View Intake</a></label>
                 </div>
               </fieldset>
                 </div>
                 <div class="col-md-6">
                   
-                </div>-->
+                </div>
             <div class="col-md-12">
                 <h3>Regulation Sets <span class="iq-asterisk">*</span></h3>
                 
@@ -296,7 +310,7 @@
               <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#tab1 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="saveBasic()">Save</button>
                     <button
                             class="btn btn-link" onClick="$('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
@@ -836,7 +850,7 @@
 				  
             </section>
           </div>
-          <div class="tab-pane active" id="citationsT" role="tabpanel" aria-labelledby="citationsTab">
+          <div class="tab-pane" id="citationsT" role="tabpanel" aria-labelledby="citationsTab">
             <section class="edit-view addCites active">
                  <div class="row tabTitle">
               <div class="col-md-10">
