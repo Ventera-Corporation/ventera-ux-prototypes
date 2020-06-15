@@ -2163,8 +2163,8 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                           <!-- <div class="form-group"><button class="btn btn-outline-primary" onclick="addBuilding()">Add Building</button>
-                            </div>-->
+                           <div class="form-group"><button class="btn btn-outline-primary" onclick="addBuilding()">Add Building</button>
+                            </div>
                             <div class="iq-accordion">
                               <div class="card">
                                 <div class="card-header d-flex">
@@ -2426,7 +2426,7 @@
                   data-toggle="collapse" data-target="#site2" type="button" onclick="$(this).toggleClass('expanded');"> <span>BrightHope South<br>
                       <small class="bottom">Branch Office | ID 002 | Opened 01/21/1999 | 2 Buildings</small></span></button>
                       <div class="iq-accordion-actions align-items-center">
-                        <button type="button" class="btn btn-link" disabled>Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This location cannot be deleted because one or more buildings from this location has been included in a past or current survey"><i class="fal fa-info-circle"></i></a>
+                        <button type="button" class="btn btn-link" disabled>Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This location cannot be deleted because one or more of its buildings has been included in a survey."><i class="fal fa-info-circle"></i></a>
                         <a href="#" class="btn btn-link" onclick="editBranch1();">Edit</a> </div>
                     </div>
                     <div id="site2" class="collapse">
@@ -2487,9 +2487,9 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                            <!--<div class="form-group">
+                            <div class="form-group">
                               <button class="btn btn-outline-primary" onclick="addBuilding('1');">Add Building</button>
-                            </div>-->
+                            </div>
                             <div class="iq-accordion">
                               <div class="card">
                                 <div class="card-header d-flex">
@@ -2516,7 +2516,7 @@
                   data-toggle="collapse" data-target="#s2b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>3rd Floor<br>
                                   <small class="bottom">M2 | Floor | <span class="iq-status iq-status-closed"></span>Closed 09/02/2018</small></span></button>
                                   <div class="iq-accordion-actions align-items-center">
-                                    <button type="button" class="btn btn-link" disabled>Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This building cannot be deleted because it has been included in a past or current survey"><i class="fal fa-info-circle"></i></a>
+                                    <button type="button" class="btn btn-link" disabled>Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This building cannot be deleted because it has been included in a survey."><i class="fal fa-info-circle"></i></a>
                                     <button type="button" class="btn btn-link"> Edit </button>
                                   </div>
                                 </div>
@@ -2640,9 +2640,9 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                            <!--<div class="form-group">
+                            <div class="form-group">
                               <button class="btn btn-outline-primary">Add Building</button>
-                            </div>-->
+                              </div>
                             <p class="iq-not-available">No buildings have been added.</p>
                           </div>
                         </div>
@@ -4197,7 +4197,7 @@
               </div>
             </div>
             <h2>Add Attachment</h2>
-            <p>Add an attachment for this provider.</p>
+            <p>Select a file and add a description below.</p>
             <div class="row">
               <div class="col-lg-3 col-md-6">
                 <p class="mb-2">
@@ -4215,8 +4215,8 @@
               <div class="row">
                 <div class="col-sm-10">
                   <h3><i class="far fa-paperclip"></i> <span class="fName">My-New-Large-File.docx <small>[260 MB]</small></span>
-                      <div class="fileTooLarge iq-input-error-msg" style="padding-left: 2rem;">File size exceeds maximum limit of 256MB.</div>
-                      <div class="fileWrongType iq-input-error-msg hide" style="padding-left: 2rem;">File type is not supported.</div>
+                      <div class="fileTooLarge iq-input-error-msg" style="padding-left: 2rem;">File size exceeds maximum limit of 256MB</div>
+                      <div class="fileWrongType iq-input-error-msg hide" style="padding-left: 2rem;">File type is not supported</div>
                       <div class="uploading hide"><div class="text-primary uploaded" style="padding-left: 2rem; margin-top: .5rem;" role="status"><i class="spinner-border"></i> <small>Uploading <span class="Count">100</span>% ... </small></div></div></h3>
                 </div>
                 <div class="col-sm-2 text-right"><a href="#" class="fileTooLarge" onClick="cancelFileUpload()">Dismiss</a><a href="#" class="uploaded hide" onClick="cancelFileUpload()">Remove</a></div>
