@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"><!-- InstanceBegin template="/Templates/general.dwt" codeOutsideHTMLIsLocked="false" -->
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>Search with Tabs | iQIES</title>
-<!-- InstanceEndEditable -->
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<title>Slimmed Down Search| iQIES</title>
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <!-- you need this font to have the right font weight expressed -->
@@ -15,12 +13,7 @@
 <!-- to include fontsome icons professional version -->
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 <!-- to match design system definition -->
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
-<!-- InstanceBeginEditable name="head" -->
-	<style>.dataTables_wrapper.no-footer .dataTables_scrollBody { border-bottom: 0; } 
-		table.dataTable.no-footer { margin-bottom: 1rem; } 
-		nav .pagination { margin-top: 1rem;  }</style>
-<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/hha.css">
 </head>
 
 <body>
@@ -29,13 +22,13 @@
 		<div class="container-fluid">
 		  <div class="row">
 			<div class="col">
-			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+			  <nav><a href="#"><img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
 				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
 					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
-					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
-					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+					  <a class="dropdown-item" href="search.html">Search for a Provider or Intake</a>
+					  <a class="dropdown-item" href="../add-a-provider.html">Add a Provider</a>
 				  </div>
 				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
 				<div class="dropdown d-none d-sm-block d-lg-inline-block">
@@ -80,37 +73,33 @@
             <div class="col">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-				<!-- InstanceBeginEditable name="breadcrumb" -->
-                  <li class="breadcrumb-item">
-                    <a href="../../../global/global-landing-menu.html">Home</a>
+<li class="breadcrumb-item">
+                  <a href="../../../../global/global-landing-menu.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
                   Search</li>
-				<!-- InstanceEndEditable -->
-                </ol>
+				</ol>
               </nav>
-              <div class="iq-page-header-content">
-               <!-- InstanceBeginEditable name="headerRight" -->
-			   <!-- InstanceEndEditable -->
-              </div>
+              <div class="iq-page-header-content"> </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 	<div class="container-fluid" id="mainContent">
-	  <!-- InstanceBeginEditable name="pageLevelErrors" -->	
-		<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
+<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
   <div class="toast-header">
     <strong class="mr-auto">UI Note</strong>
     <small></small>
     <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
       <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+      </button>
+    </div>
   <div class="toast-body">
     <a href="index.html" class="return-link">Go back to Index Page</a>
-  </div>
+	 
+	
+    </div>
 </div>
 	  <div class="alert alert-warning hide" role="alert">
 		<div class="alert-content">You do not have permission to manage this provider's information.</div>
@@ -121,21 +110,14 @@
 		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 	  </div>
 	  <div class="alert alert-danger errorMsg hide" role="alert">
-          <div class="alert-content"><div class="row">
-              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
-              <div class="col-sm-11">
-                 <p> Unable to save. Please review and correct the following:</p> 
+          <div class="alert-content">
+			  <h2>Unable to Search</h2>
+                 <p>Please review and correct the following:</p> 
                   <ul>
-                      <li><a href="#address1M">Address 1</a> is required</li>
-                      <li><a href="#cityM">City</a> is required</li>
-                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                      <li><a href="#stateIntake" onClick="$('#iAdvancedSearchLink').click();">State</a> is required</li>
                   </ul>
-              </div></div>
-          </div>
+		  </div>
         </div> 
-	   <!-- InstanceEndEditable -->
-	  <!-- InstanceBeginEditable name="mainContent" -->		  
-
       <h1>Search</h1>
          
 	  <nav class="nav nav-horizontal parent-tab" style="margin-bottom: 2rem;">
@@ -375,6 +357,7 @@
 				<h2 class="sr-only">Selected Provider Search Criteria</h2>
           		<br>  
 				<div class="float-right">
+					
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
 					<div class="dropdown-menu" aria-labelledby="exportLink">
 						<p class="dropdown-header mt-2">Export results as:</p>
@@ -388,149 +371,197 @@
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
 							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#pSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
-							<span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('#providers table.responsive tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+							<span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('#providers table.responsive tbody tr').removeClass('hide');  resetPSearch();"><span aria-hidden="true">&times;</span></button></div></div></li>
 		  			<li><div class="recertP hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
         <span>Providers nearing recertification</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.recertP').addClass('hide'); $('#pSearchResults').removeClass('hide'); 
     $('#providerTable tbody tr').removeClass('hide'); $('#providers .noResults').addClass('hide'); $('#pSearchResults .baCount').html('Results: 1-10 of 112 Providers'); $('#pSearchResults nav').removeClass('hide'); $('#providers input[type=checkbox]').prop('checked', false); drawProviderTable();"><span aria-hidden="true">&times;</span>
 				</button></div></div></li>
 		</ul>
   				<section id="pSearchResults">
-          			<p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span></p>
- 
-<table class="display nowrap" id="providerTable" style="width:100%">
+          			<p class="info-text" role="status"><span class="sr-only">List of providers filtered by state: Illinois. </span><span class="baCount">Results: 1-10 of 112 Providers</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#pSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#pSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
+<table class="display responsive" id="providerTable" style="width:100%">
   <thead>
     <tr>
+      <th>&nbsp;</th>
       <th><span>Provider</span></th>
       <th><span>ID</span></th>
-      <th><span>Deemed Status</span></th>
-      <th><span>Certification Status</span></th>
       <th><span>Operating Status</span></th>
       <th><span>Provider Type</span></th>
-	  <th><span>Last Survey</span></th>
-	  </tr>
+      <th><span>Certification Status</span></th>
+      <th><span>Deemed Status</span></th>
+      <th><span>Branches</span></th>
+      <th><span>Last Survey</span></th>
+      </tr>
   </thead>
   <tbody>
     <tr class="deemed il">
-      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>6129 County Road, #107<br>Proctorville, IL 63222</td>
-      <td>CCN 368130</td>
-      <td>Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>&nbsp;</td>
+      <td><a href="#">A&amp;L Home Care and Training Center, LLC
+      </a><br>6129 County Road, #107, Proctorville, IL 63222</td>
+      <td>CCN&nbsp;368130</td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
     <tr class="bright il recert">
-      <td><a href="provider-profile.html">BrightHope</a><br>
-        667 Bent Ridge Lane, Suite 1000<br>
-        Barrington, IL 60010</td>
+      <td>&nbsp;</td>
+      <td><a href="../provider-profile.html">BrightHope</a><br>667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010</td>
       <td>iQIES 123456</td>
-      <td>Non-Deemed</td>
-      <td>Pending Certification</td>
-      <td>Open</td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Hospice</td>
-	  <td><a href="#">19A3 - H1</a><br><small>Initial Certification - 03/31/2000</small></td>
-	  </tr>
+      <td><span class="badge badge-light">Pending Certification</span></td>
+      <td><span class="badge badge-light">Non-Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">19A3 - H1</a><br><small>
+        Initial Certification - 03/31/2000</small></td>
+      </tr>
     <tr class="deemed il">
-      <td><a href="#">Encompass Health Braintree Hospital of Braintree</a><br>
-        250 Pond Street<br>
-        Braintree, IL 63222</td>
-      <td>CCN 223027<br>
-        FACID IL1234112233</td>
-      <td>Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>&nbsp;</td>
+      <td><a href="#">Encompass Health Braintree Hospital of Braintree</a><br>250 Pond Street, Braintree, IL 63222</td>
+      <td>CCN&nbsp;223027<br>
+        FACID&nbsp;IL1234112233</td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Hospital</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
     <tr class="deemed">
-      <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>
-        2401 Avenue J, Suite 240<br>
-        Arlington, IL 63225</td>
-      <td>CCN 677863</td>
-      <td>Deemed</td>
-      <td>Terminated</td>
-      <td>Closed</td>
+      <td>&nbsp;</td>
+      <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>2401 Avenue J, Suite 240, Arlington, IL 63225</td>
+      <td>CCN&nbsp;677863</td>
+      <td><span class="badge badge-dark">Closed</span></td>
       <td>Home Health Agency</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td><span class="badge badge-dark">Terminated</span></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
     <tr class="good">
-      <td><a href="#">Good Neighbor HHC of Baxter</a><br>
-        14387 Edgewood Drive<br>
-        Baxter, IL 63231</td>
-      <td>CCN 247269<br>
-        FACID IL5321112233445566</td>
-      <td>Non-Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>&nbsp;</td>
+      <td><a href="#">Good Neighbor HHC of Baxter</a><br>14387 Edgewood Drive, Baxter, IL 63231</td>
+      <td>CCN&nbsp;247269<br>
+        FACID&nbsp;IL5321112233445566</td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
     <tr class="good suspended il">
-      <td><a href="#">Good Samaritan Home Health of Brainerd</a><br>
-        804 Wright Street<br>
-        Brainerd, IL 63227</td>
-      <td>CCN 248032<br>
-        FACID IL764211223344</td>
-      <td>Suspended</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>&nbsp;</td>
+      <td><a href="#">Good Samaritan Home Health of Brainerd</a><br>804 Wright Street, Brainerd, IL 63227</td>
+      <td>CCN&nbsp;248032<br>
+        FACID&nbsp;IL764211223344</td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td class="bright il recert"><span class="badge badge-warning">Suspended</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
     <tr class="deemed il">
-      <td><a href="#">Grainger Co Health Dept</a><br>
-        PO Box 27 Main Street<br>
-        Rutledge, IL 63222</td>
-      <td>CCN 447064</td>
-      <td>Deemed</td>
-      <td>Terminated</td>
-      <td>Closed</td>
+      <td>&nbsp;</td>
+      <td><a href="#">Grainger Co Health Dept</a><br>PO Box 27 Main Street, Rutledge, IL 63222</td>
+      <td>CCN&nbsp;447064</td>
+      <td class="deemed"><span class="badge badge-dark">Closed</span></td>
       <td>Home Health Agency</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td class="deemed"><span class="badge badge-dark">Terminated</span></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
     <tr class="deemed il">
-      <td><a href="#">Highsmith Rainey Memorial Hospital</a><br>
-        150 Robeson Street, 4th Floor<br>
-        Fayetteville, IL 63222</td>
-      <td>CCN 342014<br>
-        FACID IL85321122334<br></td>
-      <td>Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>&nbsp;</td>
+      <td><a href="#">Highsmith Rainey Memorial Hospital</a><br>150 Robeson Street, 4th Floor, Fayetteville, IL 63222</td>
+      <td>CCN&nbsp;342014<br>
+        FACID&nbsp;IL85321122334<br></td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Hospital</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
     <tr class="deemed il">
-      <td><a href="#">Laguna Rainbow Home Care</a><br>
-        State Road 23 South<br>
-        Casa Blanca, IL 63222</td>
-      <td>CCN 327144<br>
-        FACID IL9621112233<br></td>
-      <td>Deemed</td>
-      <td>Certified</td>
-      <td>Open</td>
+      <td>&nbsp;</td>
+      <td><a href="#">Laguna Rainbow Home Care</a><br>State Road 23 South, Casa Blanca, IL 63222</td>
+      <td>CCN&nbsp;327144<br>
+        FACID&nbsp;IL9621112233<br></td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td><span class="badge badge-info">Certified</span></td>
+      <td><span class="badge badge-info">Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
     <tr class="recert">
-      <td><a href="#">Laguna Rainbow Home Health Agency</a><br>
-        PO Box 236<br>
-        New Laguna, IL 63222</td>
+      <td>&nbsp;</td>
+      <td><a href="#">Laguna Rainbow Home Health Agency</a><br>PO Box 236, New Laguna, IL 63222</td>
       <td>iQIES 327046<br>
-        FACID IL1199112556677<br></td>
-      <td>Non-Deemed</td>
-      <td>Pending</td>
-      <td>Open</td>
+        FACID&nbsp;IL1199112556677<br></td>
+      <td><span class="badge badge-success">Open</span></td>
       <td>Home Health Agency</td>
-	  <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
-	  </tr>
+      <td class="bright il recert"><span class="badge badge-light">Pending Certification</span></td>
+      <td class="bright il recert"><span class="badge badge-light">Non-Deemed</span></td>
+      <td><ol>
+        <li>1234 Any Road#100, Any Town, IL 60233</li>
+        <li>53343 Another Road, Another Town, IL 63314</li>
+      </ol></td>
+      <td><a href="#">20A3 - H2</a><br><small>Recertification - 12/31/2005</small></td>
+      </tr>
   </tbody>
 </table>
-<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
+<div class="row">
+<div class="col-md-3 col-lg-2" style="margin-top: -.75rem;">
+	<nav><div class="input-group">
+		<span class="input-group-text">Show</span> 
+		<select class="form-control" style="width: 3rem"><option>10</option><option>50</option><option>100</option></select>
+	
+		
+	</div></nav>
+	</div>
+	<div class="col-lg-10 col-md-9">
+	<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
+	</div>
+				  </div>
+
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
+        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
 		</div>
         <div class="tab-pane" id="surveys">
         
@@ -805,12 +836,13 @@
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  scrollX: true,
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 0 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 7 },
 			{ 'visible': false, 'targets': 9 },
@@ -827,11 +859,12 @@ fixedColumns:   true,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false, scrollX: true,
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 0 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 8 },
 			{ 'visible': false, 'targets': 9 },
@@ -849,19 +882,19 @@ fixedColumns:   true,
         <span>Open surveys with overdue Statement of Deficiency</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.sod').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
 		</ul>
   				<section id="sSearchResults">
-          			<p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span></p>
+          			<p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
  
-<table class="display nowrap" id="surveyTable" style="width: 100%">
+<table class="diplay responsive" id="surveyTable" style="width: 100%;">
   <thead>
     <tr>
-	  <th><span>Survey ID</span></th>
+	  <th></th>
 	  <th><span>Provider</span></th>
-	  <th><span>Exit Date</span></th>
-	  <th><span>Category</span></th>
-	  <th><span>Status</span></th>
-	  <th><span>Citations</span></th>
-	  <th><span>Type</span></th>
-	  <th><span>POC Status</span></th>
+      <th><span>Survey</span></th>
+      <th><span>Category</span></th>
+      <th><span>Status</span></th>
+      <th><span>Citations</span></th>
+      <th><span>Exit Date</span></th>
+      <th><span>POC Status</span></th>
 	  <th><span>Survey Start</span></th>
 	  <th><span>Responsible Staff/Surveyor</span></th>
 	  <th><span>SOD Due</span></th>
@@ -870,59 +903,59 @@ fixedColumns:   true,
   </thead>
   <tbody>
     <tr class="pendingPOC">
-	  <td><a href="survey.html">19A3-H1</a></td>
-	  <td><a href="provider-profile-blank.html">A&amp;L Home Care and Training Center, LLC</a><br>
-	    CCN 368130</td>
-	  <td>01/28/2020</td>
-	  <td><ul>
-	    <li>Initial Certification</li>
-	    </ul></td>
-	  <td>Open</td>
-	  <td><a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
-	    <div class="dropdown-menu text-content" aria-labelledby="citationList1">
-	      <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-	      <ul>
-	        <li>G0 - Initial Comments<br>
-	          <small>Memo</small></li>
-	        <li>G1014 - Interventions and Patient Response<br>
-	          <small>Element</small></li>
+	  <td></td>
+	  <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>
+	    CCN&nbsp;368130</td>
+      <td><a href="#">19A3-H1</a><br><small>Health</small></td>
+      <td><ul>
+        <li>Initial Certification</li>
+      </ul></td>
+      <td>Open</td>
+      <td><a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
+        <div class="dropdown-menu text-content" aria-labelledby="citationList1">
+          <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+          <ul>
+            <li>G0 - Initial Comments<br>
+              <small>Memo</small></li>
+            <li>G1014 - Interventions and Patient Response<br>
+              <small>Element</small></li>
           </ul>
         </div></td>
-	  <td>Health</td>
-	  <td>Pending</td>
+      <td>01/28/2020</td>
+      <td>Pending</td>
 	  <td>01/02/2019</td>
 	  <td>Roberta Carr, Tom Vineman</td>
 	  <td>01/09/2020</td>
 	  <td></td>
     </tr>
     <tr class="ij sod">
-	  <td><a href="survey-brighthope.html">FFB-H1</a></td>
-	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
+	  <td></td>
+	  <td><a href="../provider-profile-hospice.html">BrightHope</a><br>
 	    IQIES 123456</td>
-	  <td>02/28/2020</td>
-	  <td><ul>
-	    <li>Initial Certification</li>
-	    <li>Complaint</li>
-	    </ul></td>
-	  <td>Open</td>
-	  <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
-	    <div class="dropdown-menu text-content" aria-labelledby="allegationList">
-	      <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-	      <ul>
-	        <li>G1008 Clinical Records<br>
-	          <small>Condition</small> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></li>
-	        <li>G0 - Initial Comments<br>
-	          <small>Memo</small></li>
-	        <li>G1014 - Interventions and Patient Response<br>
-	          <small>Element</small></li>
+      <td><a href="../survey-brighthope.html">FFB-H1</a><br><small>Health</small></td>
+      <td><ul>
+        <li>Initial Certification</li>
+        <li>Complaint</li>
+      </ul></td>
+      <td>Open</td>
+      <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
+        <div class="dropdown-menu text-content" aria-labelledby="allegationList">
+          <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+          <ul>
+            <li>G1008 Clinical Records<br>
+              <small>Condition</small> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></li>
+            <li>G0 - Initial Comments<br>
+              <small>Memo</small></li>
+            <li>G1014 - Interventions and Patient Response<br>
+              <small>Element</small></li>
           </ul>
         </div></td>
-	  <td>Health</td>
-	  <td>Pending</td>
+      <td>02/28/2020</td>
+      <td>Pending</td>
 	  <td>12/23/2019</td>
 	  <td>Roberta Carr, Rebecca Moray, Zachary Taggart</td>
 	  <td>01/07/2020</td>
-	  <td><a href="survey-new.html">Create Revisit</a></td>
+	  <td><a href="../survey-new.html">Create Revisit</a></td>
     </tr>
   </tbody>
 </table>
@@ -931,13 +964,29 @@ fixedColumns:   true,
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No surveys found for this search.</p>
+        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
         </div>
         <div class="tab-pane" id="intakes">
+			<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
+  <div class="toast-header">
+    <strong class="mr-auto">UI Note</strong>
+    <small></small>
+    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <div class="toast-body">
+     <p><a href="#" onClick="$('.stateMS').toggleClass('hide'); $('.stateNone').toggleClass('hide');">Toggle View for SA</a> <small>role with access to data only for his/her assigned state. Note the advanced search area and the state search term pill.</small></p>
+	  <p><small>To view what happens when an RO takes out the last state selection, click on X on selected state pill on top of the search results.</small></p>
+	 
+	
+    </div>
+</div>
+			
 			<div class="form-group">
 				<label>Search for Intakes</label>
 				<input type="text" class="form-control" id="iSearchInput" onKeyUp="if (event.keyCode === 13) {
-        $('.iSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter intake ID, provider name, or CCN</div></div>
+        $('.iSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter Intake ID</div></div>
 			<div class="iq-accordion showhide">
 				<div class="card no-border">
 				  <div class="card-header d-flex">
@@ -950,7 +999,7 @@ fixedColumns:   true,
 						<br>
 						<div class="intake">
 						<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3">
+							<div class="col-md-6 col-lg-4 col-xl-3 hide">
 								<div class="form-group">
 									<label>Intake Type</label>
 									<div class="btn-group" role="group" aria-label="Button Group Example">
@@ -984,23 +1033,183 @@ fixedColumns:   true,
 									<span class="help-text">Select one or more</span>
 								</div>
 							</div>
-							<div class="col-md-12 col-lg-12">
+							<div class="col-md-12 col-lg-12 hide">
 								<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="roapproved" class="custom-control-input">
-									   <label class="custom-control-label" for="roapproved">Show only intakes with an investigation approved by an RO</label>
-									</div>   
+									
 									<div class="custom-control custom-checkbox">
 									  <input type="checkbox" id="roapproved2" class="custom-control-input">
 									   <label class="custom-control-label" for="roapproved2">Show only open intakes approved by an RO</label>
 									</div> 
 								</div>
 							</div>
-					  </div>
-					 
-						<div class="row">
+					  
+							
+							<div class="col-md-4 col-lg-4 col-xl-3 hide">
+								  <div class="form-group">
+									  <label>Management Unit
+									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+									  </label>
+									  <p class="help-text">State must be selected</p>
+								  </div>
+							  </div>
+							<div class="col-md-4 col-lg-4 col-xl-3 hide">
+								  <div class="form-group">
+									  <label>Work Unit
+									   <select disabled><option>Select one</option></select>
+									  </label>
+									  <p class="help-text">Management unit must be selected</p>
+								  </div>
+							  </div>
+							
+						
+							<div class="col-md-6 col-lg-4 col-xl-3 hide">
+								<div class="form-group">
+								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
+								<input type="text">
+								</div>
+							</div>
+							<div class="col-md-8 col-lg-8 col-xl-6 hide">
+								
+								<label>Intake Start Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								
+							</div>
+						
+							<div class="col-md-4 col-lg-4 col-xl-3 hide">
+								<div class="form-group">
+								<label>Survey Action</label>
+								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
+								</div>
+							</div>
+							<div class="col-md-8 col-lg-8 col-xl-6 hide">
+								
+								<label>Survey Due Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+							
+							</div>
+							
 							<div class="col-md-4 col-lg-4 col-xl-3">
-							  <div class="form-group">
+								<div class="form-group">
+									<label>Intake Sub Type</label>
+									<select><option>All</option>
+										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
+										<option>State-only, licensure</option>
+										<option>No State or Federal provider complaince issue invovled</option>
+										<option>Federally required, entity reported</option>
+										<option>State-required, may result in Federal non-compliance, entity-reported</option>
+										<option>State-required, all other, entity-reported</option>
+										<option>Reported by other agencies</option>
+										<option>None of the above</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="col-md-8 col-lg-8 col-xl-6 hide">
+						  <label>RO Approval Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+						  </div>
+						
+							<div class="col-md-12 col-lg-4 col-xl-3 hide">
+								<div class="form-group">
+								<label>Triage Complete</label>
+								<div class="btn-group" role="group" aria-label="Button Group Example">
+                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complete</button>
+                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incomplete</button>
+                </div>
+			</div>
+							</div>
+							<div class="col-md-8 col-lg-8 col-xl-6 hide">
+								
+								<label>Triage Complete Date Range</label>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-6">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								
+							</div>
+						
+							<div class="col-md-4 col-lg-4 col-xl-3 hide">
+								<div class="form-group notState">
+								<label>Responsible Staff</label>
+								<select multiple="multiple" style="display: none;" class="multiselect">
+									<option>Roberta Carr</option>
+									<option>Ellen Datlow</option>
+									<option>Daniel Folsom</option>
+									<option>Daisy Freeman</option>
+									<option>Rebecca Moray</option>
+									<option>Zachary Taggart</option>
+									<option>Tom Vineman</option>
+								</select>
+								<span class="help-text">Select one or more</span>
+								</div>
+							</div>
+							</div><div class="row">
+							<div class="col-md-6 col-lg-4 col-xl-3">
+								<div class="form-group">
+								<label>Complainant or Person Affected</label>
+								<input type="text">
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4 col-xl-3">
+							  <div class="form-group stateMS">
 								  <label>State</label>
 								  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
                       <option value="AL">Alabama</option>
@@ -1057,178 +1266,15 @@ fixedColumns:   true,
                    
 				  </select>
 								  <span class="help-text">Select one or more</span>
+								  <span class="iq-input-error-msg hide">At least one state is required</span>
 								  
 							  </div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								  <div class="form-group">
-									  <label>Management Unit
-									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
-									  </label>
-									  <p class="help-text">State must be selected</p>
-								  </div>
+							  <div class="form-group stateNone hide">
+								<label>State</label>
+								<input type="text" class="read-only-text" readonly value="Illinois">
 							  </div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								  <div class="form-group">
-									  <label>Work Unit
-									   <select disabled><option>Select one</option></select>
-									  </label>
-									  <p class="help-text">Management unit must be selected</p>
-								  </div>
-							  </div>
-							  
-						</div>
-						<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group">
-								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
-								<input type="text">
-								</div>
 							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6">
-								
-								<label>Intake Start Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group">
-								<label>Survey Action</label>
-								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
-								</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6">
-								
-								<label>Survey Due Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-							
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group">
-									<label>Intake Sub Type</label>
-									<select><option>All</option>
-										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
-										<option>State-only, licensure</option>
-										<option>No State or Federal provider complaince issue invovled</option>
-										<option>Federally required, entity reported</option>
-										<option>State-required, entity reported</option>
-										<option>State-required, may result in Federal non-compliance, entity-reported</option>
-										<option>State-required, all other, entity-reported</option>
-										<option>Reported by other agencies</option>
-										<option>None of the above</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6">
-						  <label>RO Approval Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-						  </div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 col-lg-4 col-xl-3">
-								<div class="form-group">
-								<label>Triage Complete</label>
-								<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complete</button>
-                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incomplete</button>
-                </div>
-			</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6">
-								
-								<label>Triage Complete Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-								<label>Responsible Staff</label>
-								<select multiple="multiple" style="display: none;" class="multiselect">
-									<option>Roberta Carr</option>
-									<option>Ellen Datlow</option>
-									<option>Daniel Folsom</option>
-									<option>Daisy Freeman</option>
-									<option>Rebecca Moray</option>
-									<option>Zachary Taggart</option>
-									<option>Tom Vineman</option>
-								</select>
-								<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group">
-								<label>Complainant or Person Affected</label>
-								<input type="text">
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
+							<div class="col-md-6 col-lg-4 col-xl-3 hide">
 								<div class="form-group notState">
 								<label>Referral Agency</label>
 								<select multiple="multiple" style="display: none;" class="multiselect">
@@ -1261,7 +1307,7 @@ fixedColumns:   true,
 			<section id="iSearchArea">
 				<h2 class="sr-only">Selected Intake Search Criteria</h2>
           		<br>  
-				<div class="float-right">
+				<div class="float-right hide">
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLinkI" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
 					<div class="dropdown-menu" aria-labelledby="exportLinkI">
 						<p class="dropdown-header mt-2">Export results as:</p>
@@ -1271,70 +1317,49 @@ fixedColumns:   true,
 					</div>
 				</div>
 				<ul class="iq-inline-list searchCriteria">
-					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('#intakes .searchCriteria li').addClass('hide'); $('#intakes .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#iSearchResults .baCount').html('2 Intakes'); "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close stateMS" aria-label="Close" onClick="$('.errorMsg').removeClass('hide'); $('#intakes .searchCriteria li').addClass('hide'); $('#intakes .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#iSearchResults .baCount').addClass('iq-not-available'); $('#iSearchResults .baCount').html('No results found'); $('#intakeTable').addClass('hide'); $('#stateIntake .help-text').addClass('hide'); $('#stateIntake .iq-input-error-msg').removeClass('hide'); $('#stateIntake .dashboardcode-bsmultiselect li button').click();  "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
 							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#iSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="reStaff hide"><label class="inline ml-2">Responsible Staff/Surveyor: </label> <div class="badge badge-pill">
         <span>Roberta Carr</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.reStaff').addClass('hide');  $('#intakeTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
 		</ul>
   				<section id="iSearchResults">
-          			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span></p>
+          			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span><span class="expandCollapse hide"> | <a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
 
-<table class="display nowrap" id="intakeTable" style="width: 100%;">
+<table class="display" id="intakeTable" style="width: 100%">
   <thead>
     <tr>
-
-	  <th><span>Intake ID</span></th>
+	 
+	  
 	  <th><span>Provider</span></th>
-	  <th><span>Intake Start</span></th>
-	  <th><span>Status</span></th>
-	  <th><span>Starting Survey</span></th>
-	  <th><span>Survey Due</span></th>
+	  <th><span>Intake ID</span></th>
 	  <th><span>Priority</span></th>
-      <th><span>Allegations</span></th>
+	  <th><span>Status</span></th>
+	  <th><span class="sortable sorting_asc">Survey Due</span></th>
+	  <th><span>Intake Start</span></th>
     </tr>
   </thead>
   <tbody>
     <tr class="">
-	 
-      <td><a href="intake-new2.html">Complaint 12345</a></td>
-      <td><a href="#">Good Neighbor HHC of Baxter</a><br>
-        CCN 247269<br>
-        FACID IL5321112233445566</td>
-      <td>01/01/2020</td>
-	  <td>Under Investigation</td>
-	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br>Exit 12/01/2019</td>
+	
+	  <td><a href="#">Good Neighbor HHC of Baxter</a><!--<br>
+        CCN&nbsp;247269<br>
+        FACID&nbsp;IL5321112233445566--></td>
+      <td><a href="../intake-new2.html">12345</a><br><small>Complaint </small></td>
+      <td>Non-IJ High</td>
+      <td>Under Investigation</td>
 	  <td>03/01/2020</td>
-	  <td>Non-Immediate Jeopardy-High</td>
-      <td><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
-          <div class="dropdown-menu text-content" aria-labelledby="allegationList">
-			  <button type="button" class="close" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				</button>
-			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Moderate</small></li>
-			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Moderate</small></li></ul>
-  		  </div>
-	  </td>
+      <td>01/01/2020</td>
     </tr>
     <tr class="">
 	 
-      <td><a href="intake-new.html">Incident 3265</a></td>
-      <td><a href="provider-profile-hospice.html">BrightHope</a><br>
-        IQIES 123456</td>
-      <td>02/12/2020</td>
-	  <td>Triage/Prioritization</td>
+      <td><a href="../provider-profile-hospice.html">BrightHope</a><!--<br>
+        IQIES 123456--></td>
+	  <td><a href="../intake-new.html">3265</a><br><small>Incident</small></td>
 	  <td><span class="iq-not-available">Not Applicable</span></td>
+      <td>Triage/Prioritization</td>
 	  <td>03/15/2020</td>
-	  <td><span class="iq-not-available">Not Applicable</span></td>
-      <td><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
-          <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
-			  <button type="button" class="close" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				</button>
-			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li>
-			  </ul>
-  		  </div>
-	  </td>
+	  <td>02/12/2020</td>
     </tr>
   </tbody>
 </table>
@@ -1343,7 +1368,7 @@ fixedColumns:   true,
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No intakes found for this search.</p>
+        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
           </div>
 		<div class="tab-pane" id="enforcements">
         
@@ -1675,36 +1700,38 @@ fixedColumns:   true,
           <span aria-hidden="true">&times;</span></button></div></div></li>
 		</ul>
   				<section id="eSearchResults">
-          			<p class="info-text" role="status"><span class="sr-only">List of enforcements filtered by state: Illinois. </span><span class="baCount">Results: 2 Enforcements</span></p>
+          			<p class="info-text" role="status"><span class="sr-only">List of enforcements filtered by state: Illinois. </span><span class="baCount">Results: 2 Enforcements</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
 
-<table class="display nowrap" id="enforcementTable" width="100%">
+<table class="diplay responsive" id="enforcementTable" style="width: 100%">
   <thead>
     <tr>
-	  <th><span>Enforcement ID</span></th>
+	  <th></th>
 	  <th><span>Provider</span></th>
+	  <th><span>Enforcement</span></th>
 	  <th><span>Enforcement Start</span></th>
+	  <th><span>Survey Exit Date</span></th>
 	  <th><span>Starting Survey</span></th>
 	  <th><span>Case Status</span></th>
 	  <th><span>Sanctions</span></th>
-	  <th><span>Type</span></th>
 	  <th><span>CMP Amount Due</span></th>
 	  <th><span>Appeal/Appeal Waiver Due</span></th>
     </tr>
   </thead>
   <tbody>
     <tr class="appealDue">
-	  <td><a href="../enforcement/enforcement.html">1234</a></td>
-	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
+	  <td></td>
+	  <td><a href="../provider-profile-hospice.html">BrightHope</a><br>
 	    IQIES 123456</td>
-	  <td>01/01/2020</td>
-	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2</a><br>
-	  Exit 12/01/2019 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
+      <td><a href="../../enforcement/enforcement.html">1234</a><br><small>Federal</small></td>
+      <td>01/01/2020</td>
+      <td>12/01/2019</td>
+	  <td><a href="../survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
 	  <td>Open - Active</td>
 	  <td><a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
           <div class="dropdown-menu text-content" aria-labelledby="sanctionList">
 			  <button type="button" class="close" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
-			</button>
+				</button>
 			   <ul>
 				  
 		  <li>Termination at 23 days - IJ<br><small>Recommended</small> </li>
@@ -1712,36 +1739,35 @@ fixedColumns:   true,
 			  </ul>
 			  
   		  </div></td>
-	  <td>Federal</td>
 	  <td class="currency"><p class="iq-not-available">Not Applicable</p></td>
 	  <td>11/20/2019</td>
     </tr>
     <tr class="cmp">
-	  <td><a href="../enforcement/enforcement-new.html">3245</a></td>
-	  <td><a href="provider-profile-blank.html">Laguna Rainbow Home Care</a><br>
-	    CCN 327144 | FACID IL9621112233</td>
-	  <td>12/23/2019</td>
-	  <td><a href="survey-brighthope.html">XYZ0-H1 <i class="fal fa-external-link"></i></a> <br>
-      Exit 11/23/2019</td>
+	  <td></td>
+	  <td><a href="../provider-details.html">Laguna Rainbow Home Care</a><br>
+	    CCN&nbsp;327144 | FACID&nbsp;IL9621112233</td>
+      <td><a href="../../enforcement/enforcement-new.html">3245</a><br><small>State</small></td>
+      <td>12/23/2019</td>
+      <td>11/23/2019</td>
+	  <td><a href="../survey-brighthope.html">XYZ0-H1 <i class="fal fa-external-link"></i></a></td>
 	  <td>Open - Under Appeal</td>
-	   <td><a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
-          <div class="dropdown-menu text-content" aria-labelledby="sanctionList2">
-			  <button type="button" class="close" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-			</button>
-			   <ul>
-				   <li>Civil Monetary Penalty<br>
-			       <small>In Effect: Yes |</small> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span> </li>
+	  <td><a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
+         <div class="dropdown-menu text-content" aria-labelledby="sanctionList2">
+		     <button type="button" class="close" aria-label="Close">
+			     <span aria-hidden="true">&times;</span>
+			   </button>
+		      <ul>
+			      <li>Civil Monetary Penalty<br>
+			        <small>In Effect: Yes | </small> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span> </li>
 		  <li>Directed Plan of Correction<br>
 		    <small>In Effect: Yes</small></li>
 				   
-			  </ul>
+		     </ul>
 			  
-  		  </div></td>
-	   <td>State</td>
+	     </div></td>
 	  <td class="currency">$100,000</td>
 	  <td>04/01/2020</td>
-    </tr>
+	</tr>
   </tbody>
 </table>
 
@@ -1749,7 +1775,7 @@ fixedColumns:   true,
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No enforcements found for this search.</p>
+        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
           </div>
       </div>                         
          
@@ -1774,8 +1800,7 @@ fixedColumns:   true,
           </div>
   </div>-->
     
-		<!-- InstanceEndEditable -->
-	</div>
+		</div>
   </main>
    
   <footer>
@@ -1786,45 +1811,43 @@ fixedColumns:   true,
             <div class="row">
               <div class="col">
                 <div class="iq-footer-heading">
-                  <a href="/"><img src="../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
-                  </a><img src="../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
+                  <a href="/"><img src="../../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
+                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <div class="iq-footer-links">
-                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
+                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-2 col-xl-2 d-flex align-items-center">
-          <img src="../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+          <img src="../../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
-  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <script src="../../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
   <!-- to include text editor code -->
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
   <!-- to include datatables for responsive table -->
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <!-- to include multi-select dropdown selector -->
-  <script src="../../hhaung/js/BsMultiSelect.js"></script>
-  <script src="../../../src/assets/js/scripts.js"></script>
-  <!-- InstanceBeginEditable name="footerScripts" -->
-<script>
+  <script src="../../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../../src/assets/js/scripts.js"></script> <script>
 	  $(document).ready(function () {
 	    $('[data-toggle="tooltip"]').tooltip(); 
 	    $("select.multiselect").bsMultiSelect();
@@ -1845,99 +1868,126 @@ fixedColumns:   true,
             $('#charNum').html(len + '/256.');
           }
         });
-		$('#providerTable').DataTable( {
+		var pTable = $('#providerTable').DataTable( {
 			  //scrollY: 300,
 			  paging: false,
 			  lengthMenu: false,
 			  info: false,
-			  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-			  "order": [[ 0, 'asc' ]],
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
 			  columnDefs: [
-				//{ className: 'control', orderable: false, targets: 0 },
-				//{ responsivePriority: 0, targets: 0 },
-				//{ responsivePriority: 1, targets: -1 },
+				{ className: 'control', orderable: false, targets: 0 },
+				{ className: 'none', targets: 7 },
+				{ className: 'none', targets: 8 },
+				{ responsivePriority: 0, targets: 1 },
 				//{ "orderable": false, "targets": -1 }
-				{ 'visible': false, 'targets': 6 }
+				{ 'visible': false, 'targets': 8 }
 			 ]
 		  }); 
-		$('#surveyTable').DataTable( {      
-			  //scrollY: 300,
-			  paging: false,
-			  lengthMenu: false,
-			  info: false,
-			  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-			  'order': [[ 2, 'asc' ]],
-			  columnDefs: [
-				//{ className: 'control', orderable: false, targets: 0 },
-				//{ responsivePriority: 0, targets: 0 },
-				//{ responsivePriority: 1, targets: -1 },
-				{ 'orderable': false, 'targets': -1 },
-				{ 'visible': false, 'targets': 7 },
-				{ 'visible': false, 'targets': 8 },
-				{ 'visible': false, 'targets': 9 },
-				{ 'visible': false, 'targets': 10 }
-			 ]
+		var sTable = $('#surveyTable').DataTable( {
+			              
+						  //scrollY: 300,
+						  paging: false,
+						  lengthMenu: false,
+						  info: false,
+						  searching: false,
+						  responsive: {
+							details: { type: 'column'}
+						  },
+						  'order': [[ 6, 'asc' ]],
+						  columnDefs: [
+							{ className: 'control', orderable: false, targets: 0 },
+							{ responsivePriority: 0, targets: 1 },
+							{ responsivePriority: 1, targets: -1 },
+							{ 'orderable': false, 'targets': -1 },
+							{ 'visible': false, 'targets': 7 },
+							{ 'visible': false, 'targets': 8 },
+							{ 'visible': false, 'targets': 9 },
+							{ 'visible': false, 'targets': 10 } 
+						 ]
 }); console.log('s');
-		$('#intakeTable').DataTable( {
+		var iTable = $('#intakeTable').DataTable( {
 					  //scrollY: 300,
 					  paging: false,
 					  lengthMenu: false,
 					  info: false,
-					  searching: false,scrollX: true, 
-
-fixedColumns:   true, 
-					  'order': [[ 2, 'asc' ]],
+					  searching: false,
+					  //responsive: {
+						//details: { type: 'column'}
+					  //},
+					  'order': [[ 4, 'asc' ]],
 					  columnDefs: [
 						//{ className: 'control', orderable: false, targets: 0 },
-						//{ responsivePriority: 0, targets: 0 },
-						//{ responsivePriority: 1, targets: -1 },
+						//{ responsivePriority: 0, targets: 1 },
+						//{ responsivePriority: 1, targets: 3 }
 						//{ 'orderable': false, 'targets': -1 }
 					 ]
 });
-		$('#enforcementTable').DataTable( {
+		var eTable = $('#enforcementTable').DataTable( {
 			  //scrollY: 300,
 			  paging: false,
 			  lengthMenu: false,
 			  info: false,
-			  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-			  'order': [[ 2, 'asc' ]],
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  'order': [[ 3, 'asc' ]],
 			  columnDefs: [
-				//{ className: 'control', orderable: false, targets: 0 },
-				//{ responsivePriority: 0, targets: 0 },
-				//{ responsivePriority: 1, targets: -1 },
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: 3 },
 				//{ 'orderable': false, 'targets': -1 },
-				{ 'visible': false, 'targets': 7 },
-				{ 'visible': false, 'targets': 8 }
+				{ 'visible': false, 'targets': 8 },
+				{ 'visible': false, 'targets': 9 }
 			 ]
 	}); 
+		$('.expandAll').on('click', function(){
+			// Expand row details
+			pTable.rows(':not(.parent)').nodes().to$().find('td:first-child').trigger('click');
+			sTable.rows(':not(.parent)').nodes().to$().find('td:first-child').trigger('click');
+			iTable.rows(':not(.parent)').nodes().to$().find('td:first-child').trigger('click');
+			eTable.rows(':not(.parent)').nodes().to$().find('td:first-child').trigger('click');
+		});
+
+		// Handle click on "Collapse All" button
+		$('.collapseAll').on('click', function(){
+			// Collapse row details
+			pTable.rows('.parent').nodes().to$().find('td:first-child').trigger('click');
+			sTable.rows('.parent').nodes().to$().find('td:first-child').trigger('click');
+			iTable.rows('.parent').nodes().to$().find('td:first-child').trigger('click');
+			eTable.rows('.parent').nodes().to$().find('td:first-child').trigger('click');
+		});
 		
 	  });
 function drawProviderTable(){
+	console.log('1');
 	$('#providers .baCount').html('Results: 1-10 of 112 Providers'); 
 	$('#providerTable').DataTable().destroy();
+	console.log('Destroyed');
 	$('#providerTable').DataTable( {
 		  //scrollY: 300,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  "order": [[ 0, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  "order": [[ 1, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			  { className: 'none', targets: 7 },
+				{ className: 'none', targets: 8 },
 			//{ "orderable": false, "targets": -1 }
-			{ 'visible': false, 'targets': 6 }
+			{ 'visible': false, 'targets': 8 }
 		 ]
 	  }); 
+	 console.log('Drawn');
 }
 function drawSurveyTable(){
 	$('#surveys .baCount').html('Results: 2 Surveys'); 
@@ -1947,19 +1997,20 @@ function drawSurveyTable(){
 			  paging: false,
 			  lengthMenu: false,
 			  info: false,
-			  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-			  'order': [[ 2, 'asc' ]],
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  'order': [[ 6, 'asc' ]],
 			  columnDefs: [
-				//{ className: 'control', orderable: false, targets: 0 },
-				//{ responsivePriority: 0, targets: 0 },
-				//{ responsivePriority: 1, targets: -1 },
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
 				{ 'orderable': false, 'targets': -1 },
 				{ 'visible': false, 'targets': 7 },
 				{ 'visible': false, 'targets': 8 },
 				{ 'visible': false, 'targets': 9 },
-				{ 'visible': false, 'targets': 10 }
+				{ 'visible': false, 'targets': 10 } 
 			 ]
 		} );
 }
@@ -1971,14 +2022,15 @@ function drawIntakeTable(){
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  //responsive: {
+		//	details: { type: 'column'}
+		 // },
+		  'order': [[ 4, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+		//	{ className: 'control', orderable: false, targets: 0 },
+		//	{ responsivePriority: 0, targets: 1 },
+		//	{ responsivePriority: 1, targets: 3 }
 			//{ 'orderable': false, 'targets': -1 }
 		 ]
 	});
@@ -1991,17 +2043,18 @@ function drawEnforcementTable(){
 			  paging: false,
 			  lengthMenu: false,
 			  info: false,
-			  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-			  'order': [[ 2, 'asc' ]],
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  'order': [[ 3, 'asc' ]],
 			  columnDefs: [
-				//{ className: 'control', orderable: false, targets: 0 },
-				//{ responsivePriority: 0, targets: 0 },
-				//{ responsivePriority: 1, targets: -1 },
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: 3 },
 				//{ 'orderable': false, 'targets': -1 },
-				{ 'visible': false, 'targets': 7 },
-				{ 'visible': false, 'targets': 8 }
+				{ 'visible': false, 'targets': 8 },
+				{ 'visible': false, 'targets': 9 }
 			 ]
 	}); 
 }	
@@ -2045,15 +2098,18 @@ function goSearchProvider(){
 			  paging: false,
 			  lengthMenu: false,
 			  info: false,
-			  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-			  "order": [[ 0, 'asc' ]],
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
 			  columnDefs: [
-				//{ className: 'control', orderable: false, targets: 0 },
-				//{ responsivePriority: 0, targets: 0 },
-				{ 'visible': false, 'targets': 6 },
-				{ className: 'search-col', targets: 2 }
+				{ className: 'control', orderable: false, targets: 0 },
+				{ className: 'none', targets: 7 },
+				{ className: 'none', targets: 8 },
+				{ responsivePriority: 0, targets: 1 },
+				{ 'visible': false, 'targets': 8 },
+				{ className: 'search-col', targets: 6 }
 			 ]
 		  }); 
 	}; 
@@ -2065,21 +2121,25 @@ fixedColumns:   true,
 			  paging: false,
 			  lengthMenu: false,
 			  info: false,
-			  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-			  "order": [[ 0, 'asc' ]],
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
 			  columnDefs: [
-				//{ className: 'control', orderable: false, targets: 0 },
-				//{ responsivePriority: 0, targets: 0 },
-				{ className: 'search-col', targets: 6 }
-				//{ responsivePriority: 1, targets: -1 },
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ className: 'none', targets: 7 },
+				{ className: 'none', targets: 8 }
+				//{ className: 'search-col', targets: 7 }
 				//{ "orderable": false, "targets": -1 }
 			 ]
 		  }); 
 		$('#providerTable tbody tr').addClass('hide'); 
 		$('#providerTable tbody tr.recert').removeClass('hide');
 		$('#providers .searchCriteria .recertP').removeClass('hide');
+		$('#pSearchResults nav').addClass('hide'); 
+		 $('#pSearchResults .baCount').html('Results: 2 Providers'); 
 	}
 	if( $('#pAdvancedSearch-showhide').hasClass('show') ) { 
 		$('#pAdvancedSearchLink').click();
@@ -2133,18 +2193,19 @@ function goSearchSurvey(){
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 8 },
-			{ 'visible': false, 'targets': 9 },
-			{ 'visible': false, 'targets': 10 }, 
+			{ 'visible': false, 'targets': 9 }, 
+			{ 'visible': false, 'targets': 10 },
 			{ className: 'search-col', targets: 7 }
 		  ]
 		} );
@@ -2160,14 +2221,15 @@ fixedColumns:   true,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 7 },
 			{ 'visible': false, 'targets': 9 },
@@ -2186,14 +2248,15 @@ fixedColumns:   true,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 7 },
 			{ 'visible': false, 'targets': 8 },
@@ -2213,17 +2276,18 @@ fixedColumns:   true,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
+			{ 'visible': false, 'targets': 8 },
 			{ 'visible': false, 'targets': 9 },
-			{ 'visible': false, 'targets': 10 },
 			{ className: 'search-col', targets: 7 },
 			{ className: 'search-col', targets: 8 }
 		  ]
@@ -2240,14 +2304,15 @@ fixedColumns:   true,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,  
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 8 },
 			{ 'visible': false, 'targets': 10 },
@@ -2267,14 +2332,15 @@ fixedColumns:   true,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 7 },
 			{ 'visible': false, 'targets': 10 },
@@ -2295,19 +2361,17 @@ fixedColumns:   true,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 0 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 10 },
-			{ className: 'search-col', targets: 7 },
-			  { className: 'search-col', targets: 8 },
-			  { className: 'search-col', targets: 9 }
+			{ 'visible': false, 'targets': 10 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
@@ -2329,14 +2393,15 @@ fixedColumns:   true,
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
-		  'order': [[ 2, 'asc' ]],
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 6, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 1 },
-			//{ responsivePriority: 1, targets: -1 },
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
 			{ 'visible': false, 'targets': 7 },
 			{ 'visible': false, 'targets': 8 },
@@ -2347,7 +2412,7 @@ fixedColumns:   true,
 		$('#surveyTable tbody tr').addClass('hide'); 
 		$('#surveyTable tbody tr.sod').removeClass('hide');
 		$('#surveys .searchCriteria .sod').removeClass('hide');
-	} else { $('#surveys .searchCriteria .sod').addClass('hide'); }
+	}
 	if( $('#showSurveyWIJ').prop('checked') == true ) { 
 		$('#surveyTable tbody tr').addClass('hide'); 
 		$('#surveyTable tbody tr.ij').removeClass('hide'); 
@@ -2452,22 +2517,24 @@ function goSearchEnforcement(){
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-		  fixedColumns:   true,  
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
 		  'order': [[ 2, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 1 },
-			//{ responsivePriority: 1, targets: -1 },
-			//{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 8 },
-			{ className: 'search-col', targets: 7 }
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
+			{ 'orderable': false, 'targets': -1 },
+			{ 'visible': false, 'targets': 6 },
+			{ className: 'search-col', targets: 5 }
 		  ]
 		} );
 		$('#enforcementTable tbody tr').addClass('hide'); 
 		$('#enforcementTable tbody tr.cmp').removeClass('hide');
 		$('#enforcements .searchCriteria .cmp').removeClass('hide');
-	}
+	} else { $('#enforcements .searchCriteria .cmp').addClass('hide'); }
 	if( $('#appealDue').prop('checked') == true ) { 
 		console.log('appeal due date checked');
 		$('#enforcementTable').DataTable().destroy();
@@ -2476,23 +2543,24 @@ function goSearchEnforcement(){
 		  paging: false,
 		  lengthMenu: false,
 		  info: false,
-		  searching: false,scrollX: true, 
-
-fixedColumns:   true,
+		  searching: false,
+		  responsive: {
+			details: { type: 'column'}
+		  },
 		  'order': [[ 2, 'asc' ]],
 		  columnDefs: [
-			//{ className: 'control', orderable: false, targets: 0 },
-			//{ responsivePriority: 0, targets: 1 },
-			//{ responsivePriority: 1, targets: -1 },
-			//{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 7 },
-			{ className: 'search-col', targets: 8 }
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: -1 },
+			{ 'orderable': false, 'targets': -1 },
+			{ 'visible': false, 'targets': 5 },
+			{ className: 'search-col', targets: 6 }
 		  ]
 		} );
 		$('#enforcementTable tbody tr').addClass('hide'); 
 		$('#enforcementTable tbody tr.appealDue').removeClass('hide');
 		$('#enforcements .searchCriteria .appealDue').removeClass('hide');
-	}
+	} else { $('#enforcements .searchCriteria .appealDue').addClass('hide'); }
 	if( $('#eAdvancedSearch-showhide').hasClass('show') ) { 
 		$('#eAdvancedSearchLink').click();
 	}
@@ -2516,6 +2584,5 @@ function resetESearch(){
 }
 
 </script>
-	<!-- InstanceEndEditable -->
 </body>
-<!-- InstanceEnd --></html>
+</html>
