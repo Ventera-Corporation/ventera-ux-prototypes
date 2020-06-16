@@ -1705,9 +1705,10 @@
                     Reston, VA 20190</span> </p>
                 </div>
                 <div class="col-md-3">
-                  <p>
+                  <p id="abID">
                     <label>Building ID <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" maxlength="2" style="width: 4rem" />
+                    <input type="text" class="form-control" maxlength="2" style="width: 4rem; text-transform: uppercase;" onChange="checkID()"/>
+                    <span class="iq-input-error-msg hide">Duplicate building ID</span><!-- This ID is a duplicate of an existing building ID for this provider. Please enter a unique ID.  -->
                     <span class="help-text">Limit to 2 characters</span></p>
                 </div>
                 <div class="col-md-9">
@@ -2084,7 +2085,7 @@
                   <p class="iq-page-header-description">Add and manage locations and buildings for this provider.</p>
                   <div class="iq-button-wrapper">
                     <button class="btn btn-primary" onclick="addLocation()">Add Location</button>
-                    <button class="btn btn-outline-primary" onclick="addBuilding();">Add Building</button>
+                    <button class="btn btn-outline-primary" onclick="addBuilding(0);">Add Building</button>
                   </div>
                   <div class="custom-control custom-checkbox mb-5">
                     <input type="checkbox" id="showBonly"
@@ -2163,7 +2164,7 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                           <div class="form-group"><button class="btn btn-outline-primary" onclick="addBuilding()">Add Building</button>
+                           <div class="form-group"><button class="btn btn-outline-primary" onclick="addBuilding(1)">Add Building</button>
                             </div>
                             <div class="iq-accordion">
                               <div class="card">
@@ -2488,7 +2489,7 @@
                           <div class="col md-12">
                             <h3>Buildings</h3>
                             <div class="form-group">
-                              <button class="btn btn-outline-primary" onclick="addBuilding('1');">Add Building</button>
+                              <button class="btn btn-outline-primary" onclick="addBuilding(2);">Add Building</button>
                             </div>
                             <div class="iq-accordion">
                               <div class="card">
@@ -2887,7 +2888,7 @@
                     <div class="card-header d-flex">
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s5b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>Solarium<br>
-                      <small class="bottom">W1 | Wing | <em class="fas fa-square status-gray"></em> Closed 03/16/2012</small></span></button>
+                      <small class="bottom">S1 | Wing | <em class="fas fa-square status-gray"></em> Closed 03/16/2012</small></span></button>
                       <div class="iq-accordion-actions">
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                         <button type="button" class="btn btn-link"> Edit </button>
@@ -4192,9 +4193,29 @@
           </div>
           <div class="tab-pane " id="attachment" role="tabpanel" aria-labelledby="attachmentTab">
               <section class="edit-view active addAttachment">
-             <div class="alert alert-danger fileTooLarge hide" role="alert">
-            <div class="alert-content"><h2>Unable to Attach File</h2>Maximum file size allowed is 250 MB
+             <div class="alert alert-danger fileTooLargeMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li><a href="#fileUploadX">Maximum file size allowed is 256 MB.</a></li>
+                  </ul>
               </div>
+            </div>
+            <div class="alert alert-danger duplicateFileMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li><a href="#fileUploadX">File name "My-New-File.docx" already exists. Please rename the file and try again.</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="alert alert-danger fileWrongTypeMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li><a href="#fileUploadX">File type is not supported.</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="alert alert-warning fileMissing hide" role="alert">
+            <div class="alert-content">Please select a file.</div><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
             <h2>Add Attachment</h2>
             <p>Select a file and add a description below.</p>
@@ -4207,7 +4228,7 @@
                 </p>
               </div>
             </div>
-            <p class="help-text"><strong>Supported file formats: </strong> PDF, Word, Excel, Text, Image, Video, and Audio files <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="Supported file extensions: .pdf, .doc, .docx, .xls, .xlsx, .txt, .rtf, .jpeg, .jpg, .png, .tif, .tiff, .mp4, .mov, .wmv, .3gp, .mp3, .aac, .wav, .wma"><i class="fal fa-info-circle"></i></a><br><strong>Maximum file size: </strong> 256 MB</p>
+            
             <br>
               <input type="hidden" id="fsize" value="0">
               <div class="fileSize hide">
@@ -4222,12 +4243,12 @@
                 <div class="col-sm-2 text-right"><a href="#" class="fileTooLarge" onClick="cancelFileUpload()">Dismiss</a><a href="#" class="uploaded hide" onClick="cancelFileUpload()">Remove</a></div>
               </div>
               <div class="row uploaded hide">
-                <div class="col-sm-12 file-description">
-                  <p>
-                    <label>File Description
-                      <input type="text" class="form-control file-description-text">
-                    </label>
-                    <span class="fdt"></span></p>
+                <div class="col-sm-12 file-description">                  
+<div class="form-group">
+    <label>File Description</label>
+    <textarea class="form-control file-description-text" id="fdI1" rows="3"></textarea>
+    <span class="fdt0 help-text">Limit to 255 characters</span>
+</div>
                 </div>
               </div>
             </div>
@@ -4249,6 +4270,9 @@
                 </div>
               </div>
             </div>-->
+            <p class="help-text"><strong>Supported file formats: </strong> PDF, Word, Excel, Text, Image, Video, and Audio files <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="Supported file extensions: .pdf, .doc, .docx, .xls, .xlsx, .txt, .rtf, .jpeg, .jpg, .png, .tif, .tiff, .mp4, .mov, .wmv, .3gp, .mp3, .aac, .wav, .wma" aria-describedby="attachmentExtensions"><i class="fal fa-info-circle"></i></a><br><strong>Maximum file size: </strong> 256 MB</p>
+            <p class="sr-only" id="attachmentExtensions">
+              Supported file extensions: .p d f, .d o c, .d o c x, .x l s, .x l s x, .c s v, .t x t, .r t f, .j peg, .j p g, .p n g, .t i f, .t i f f), .m p 4, .m o v, .w m v, .3 g p, .m p 3, .a a c, .wav, and .w m a.</p>
               <div class="iq-button-wrapper">
                     <button class="btn btn-primary uploadFileSave" onClick="saveFileAttachment()"><span>Save</span> <span class="hide" role="status"><i class="fas fa-circle-notch fa-spin"></i> <small>Uploading... </small></span></button>
                     <button class="btn btn-link hide cancelAttachment" onClick="cancelFileAttachment()">Cancel</button>
@@ -4260,7 +4284,7 @@
                   <button class="btn btn-primary" onClick="addFileAttachment()">Add Attachment</button>
                   
                   <div class="row mt-4">
-                     <div class="col-lg-4" style="line-height: 3.5rem; "><span class="attachmentSearchCount">2 Attachments</span>
+                     <div class="col-lg-4" style="line-height: 3.5rem; position: relative"><span class="attachmentSearchCount" style="position: absolute; ">2 Attachments</span>
                             <span class="sr-only">
                             <!-- situation 1: search term -->
                             for search term: 
@@ -4307,7 +4331,7 @@
                 <tbody>
                     <tr><td><a href="#">My-New-File.docx</a> <small>[244 MB]</small></td>
                         <td><p class="iq-not-available">No information</p></td>
-                        <td>06/10/2020 by David Freeman</td>
+                        <td>06/10/2020 by Janet Smith</td>
                         <td>Survey</td>
                         <td><a href="survey-brighthope.html">Survey FFB-H1</a></td>
                         <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu1" data-toggle="dropdown"
@@ -4322,7 +4346,7 @@
                         </td>
                     </tr>
                     <tr><td><a href="#">LetterSent060119.pdf</a> <small>[1.45 MB]</small></td>
-                        <td><p class="iq-not-available">No information</p></td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
                         <td>06/08/2020 by David Freeman</td>
                         <td>Provider</td>
                         <td>iQIES 123456</td>
@@ -4548,6 +4572,19 @@
 			$('.fdt0').removeClass('iq-input-error-msg'); 
           }
         });
+    $('#fdI1').keyup(function () {
+          var max = 255;
+          var char = 0; 
+          var len = $(this).val().length;
+          $('.fdt0').html(len + '/'+ max + ' characters');
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt0').addClass('iq-input-error-msg'); 
+			$('.fdt0').append(' - Limit exceeded');
+          } else {
+			$('.fdt0').removeClass('iq-input-error-msg'); 
+          }
+        });
     function loadPercent(){ 
             $('.Count').each(function () {
                 $(this).prop('Counter',0).animate({
@@ -4567,6 +4604,7 @@
     }
     function fileUpload(){
          $('.fileSize').removeClass('hide'); 
+        $('.alert').addClass('hide');
          $('.iqies-file-input-label span').text('Replace File');
         if($('#fsize').val() == 0){
             //$('.fileTooLarge').removeClass('hide');
@@ -4580,8 +4618,7 @@
             //loadPercent(); 
             $('#fsize').val('2');
         } else {
-            
-            $('.uploading').removeClass('hide');
+           $('.uploading').removeClass('hide');
            $('.fName').html('My-New-File.docx <small>[244 MB]</small>');
            $('.fileWrongType').addClass('hide'); 
             $('.fileTooLarge').addClass('hide');
@@ -4596,13 +4633,25 @@
         $('.iqies-file-input-label span').text('Select File');
     }
     function saveFileAttachment(){
-        $('iqies-file-input-label span').text('Select File');
-        $('.uploadFileSave').addClass('disabled');
-        $('.uploadFileSave span').toggleClass('hide');
-        setTimeout(function(){
-            $('#attachment .edit-view').removeClass('active');
-            $('#attachment .read-view').addClass('active');
-        }, 3000);
+        if($('.fileSize').hasClass('hide')){
+            $('.alert-warning.fileMissing').removeClass('hide');
+        } else {
+            $('.alert-warning.fileMissing').addClass('hide');
+            if($('.fileTooLarge.iq-input-error-msg').hasClass('hide') == false){
+                $('.alert-danger.fileTooLargeMsg').removeClass('hide');
+            } else if($('.fileWrongType.iq-input-error-msg').hasClass('hide') == false) {
+                $('.alert-danger.fileTooLargeMsg').addClass('hide');
+                $('.alert-danger.fileWrongTypeMsg').removeClass('hide');
+            } else {
+                $('iqies-file-input-label span').text('Select File');
+                $('.uploadFileSave').addClass('disabled');
+                $('.uploadFileSave span').toggleClass('hide');
+                setTimeout(function(){
+                    $('#attachment .edit-view').removeClass('active');
+                    $('#attachment .read-view').addClass('active');
+                }, 3000);
+            }
+        }
     }
     function cancelFileAttachment(){
          $('#attachment .edit-view').removeClass('active');
@@ -4612,13 +4661,19 @@
         $('#attachment .edit-view').addClass('active');
         $('#attachment .read-view').removeClass('active');
         $('#attachment .edit-view .cancelAttachment').removeClass('hide');
+        $('.fileWrongType').addClass('hide'); 
+        $('.fileTooLarge').addClass('hide');
+        $('.fileSize').addClass('hide'); 
+         $('.iqies-file-input-label span').text('Select File');
+        $('.uploadFileSave').removeClass('disabled');
+        $('.uploadFileSave span').toggleClass('hide');
     }
     var aTable = $('#attachmentTable').DataTable( {
           //scrollY: 300,
           paging: false,
           lengthMenu: false,
           info: false,
-          searching: false,
+          searching: true,
           responsive: {
             details: { type: 'column'}
           },
@@ -4664,9 +4719,24 @@
           $('#building .read-view').removeClass('active'); 
           $('#building .edit-view').removeClass('active'); 
           $('#building .edit-view.newBuilding').addClass('active');
-          if(n != ''){
-              $('#building .parentLoc').val('branch1');
-          }
+          console.log('n= ' + n);
+          switch(n){
+              case 0:
+                  console.log('building top');
+                  $('#building .parentLoc').val('0');
+                  break;
+              case 1:
+                  console.log('building primary');
+                  $('#building .parentLoc').val('primary');
+                  break;
+              case 2:
+                  console.log('building branch1');
+                  $('#building .parentLoc').val('branch1');
+                  break;  
+              default: 
+                  console.log('building none');
+                  break;
+          } 
           $('html, body').animate({ scrollTop: 0 }, 500);
       }
     function editBuilding1(){
@@ -4696,6 +4766,20 @@
         $('#building .read-view').removeClass('active'); 
         $('#building .edit-view').removeClass('active'); 
         $('#building .edit-view.editPrimary').addClass('active');
+    }
+    
+    /* add building */
+    function checkID(){
+        /* if input value is one of the existing building ids, throw error */
+        switch($('#abID input').val()){
+            case 'T1': case 'T2': case 'T3': case 'S1': case 'M1': case 'M2':
+                $('#abID .iq-input-error-msg').removeClass('hide');
+                break;
+            default: 
+                $('#abID .iq-input-error-msg').addClass('hide');
+                break;
+        }
+        
     }
   </script>
 </body>
