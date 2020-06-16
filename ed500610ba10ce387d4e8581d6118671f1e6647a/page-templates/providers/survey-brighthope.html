@@ -47,7 +47,7 @@
                           <a href="../global/global-landing-menu.html">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                          <a href="searchC.html#surveys">Search</a>
+                          <a href="search.html#surveys">Search</a>
                         </li>
                         <li class="breadcrumb-item">
                           Survey FFB-H1
@@ -141,14 +141,14 @@
             
             <a class="nav-link" tabindex="0" id="lettersTab" href="#lettersT" data-toggle="tab" role="tab" aria-controls="lettersT" aria-selected="false">Letters</a> 
             <a class="nav-link" tabindex="0" id="notesTab" href="#notesT" data-toggle="tab" role="tab" aria-controls="notesT" aria-selected="false">Notes</a>
-			<a class="nav-link" tabindex="0" id="attachmentsTab" href="#attachmentsT" data-toggle="tab" role="tab" aria-controls="attachmentsT" aria-selected="false">Attachments</a>
+			<a class="nav-link" tabindex="0" id="attachmentsTab" href="#attachment" data-toggle="tab" role="tab" aria-controls="attachment" aria-selected="false">Attachments</a>
            </nav>
       </div>
       <div class="col-sm-7 col-md-8 col-lg-9">
         <div class="tab-content">
           <div class="tab-pane active" id="basic" role="tabpanel" aria-labelledby="basicTab">
             <section class="edit-view active">
-                <div class="alert alert-danger errorMsg" role="alert">
+                <div class="alert alert-danger errorMsg hide" role="alert">
                 <div class="alert-content">
                  <h2>Unable to Save</h2>
 				  <p> Please review and correct the following:</p> 
@@ -2937,51 +2937,235 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="attachmentsT" role="tabpanel" aria-labelledby="attachmentsTab">
-            <h2>Attachments</h2>
-              <p>Add and manage attachments for this provider.</p>
-              <div class="row"><div class="col-lg-3 col-md-6"><p>
-                  <label for="fileUpload" class="btn btn-outline-primary iqies-file-input-label"><input type="file" id="fileUpload" name="file" class="form-control-file" onClick="$('#fileDetails').removeClass('hide');">Select File</label></p></div>
+          <div class="tab-pane " id="attachment" role="tabpanel" aria-labelledby="attachmentTab">
+              <section class="edit-view active addAttachment">
+             <div class="alert alert-danger fileTooLargeMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li><a href="#fileUploadX">Maximum file size allowed is 256 MB.</a></li>
+                  </ul>
               </div>
-              
-              <p class="help-text">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
-              <br>
-              <div class="file-attachment-card">
-                <div class="row">
-                    
-                    <div class="col-sm-10"><h3><i class="far fa-paperclip"></i> LetterSent060119.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
+            </div>
+            <div class="alert alert-danger duplicateFileMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li>File name "My-New-File.docx" already exists. <a href="#fileUploadX">Replace file</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="alert alert-danger fileWrongTypeMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li><a href="#fileUploadX">File type is not supported.</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="alert alert-warning fileMissing hide" role="alert">
+            <div class="alert-content">Please select a file.</div><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <h2>Add Attachment</h2>
+            <p>Select a file and add a description below.</p>
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <p class="mb-2">
+                  <label for="fileUploadX" class="btn btn-outline-primary iqies-file-input-label">
+                    <input type="file" id="fileUploadX" name="file" class="form-control-file" onClick="fileUpload();">
+                    <span>Select File</span></label>
+                </p>
+              </div>
+            </div>
+            
+            <br>
+              <input type="hidden" id="fsize" value="0">
+              <div class="fileSize hide">
+                  <div class="file-attachment-card">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h3><i class="far fa-paperclip"></i> <span class="fName">My-New-Large-File.docx <small>[260 MB]</small></span>
+                      <div class="fileTooLarge iq-input-error-msg" style="padding-left: 2rem;">File size exceeds maximum limit of 256MB</div>
+                      <div class="fileWrongType iq-input-error-msg hide" style="padding-left: 2rem;">File type is not supported</div>
+                      <div class="uploading hide"><div class="text-primary uploaded" style="padding-left: 2rem; margin-top: .5rem;" role="status"><i class="spinner-border"></i> <small>Uploading <span class="Count">100</span>% ... </small></div></div></h3>
                 </div>
-                <div class="row">
-                   
-                    <div class="col-sm-12 file-description"><p><label>File Description</label>
-                        Lorem ipsum dolor sit amet</p>
-           
+                <div class="col-sm-2 text-right"><a href="#" class="fileTooLarge" onClick="cancelFileUpload()">Dismiss</a><a href="#" class="uploaded hide" onClick="cancelFileUpload()">Remove</a></div>
+              </div>
+              <div class="row uploaded hide">
+                <div class="col-sm-12 file-description">                  
+<div class="form-group">
+    <label>File Description</label>
+    <textarea class="form-control file-description-text" id="fdI1" rows="3"></textarea>
+    <span class="fdt0 help-text">Limit to 255 characters</span>
+</div>
+                </div>
+              </div>
+            </div>
+              </div>
+              <!--<div class="file-attachment-card file2 hide">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h3><i class="far fa-paperclip"></i> LetterSent060119.pdf <small>[1.45 MB]</small></h3>
+                </div>
+                <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 file-description">
+                  <p>
+                    <label>File Description
+                      <input type="text" class="form-control file-description-text">
+                    </label>
+                    <span class="fdt"></span></p>
+                </div>
+              </div>
+            </div>-->
+            <p class="help-text"><strong>Supported file formats: </strong> PDF, Word, Excel, Text, Image, Video, and Audio files <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="Supported file extensions: .pdf, .doc, .docx, .xls, .xlsx, .txt, .rtf, .jpeg, .jpg, .png, .tif, .tiff, .mp4, .mov, .wmv, .3gp, .mp3, .aac, .wav, .wma" aria-describedby="attachmentExtensions"><i class="fal fa-info-circle"></i></a><br><strong>Maximum file size: </strong> 256 MB</p>
+            <p class="sr-only" id="attachmentExtensions">
+              Supported file extensions: .p d f, .d o c, .d o c x, .x l s, .x l s x, .c s v, .t x t, .r t f, .j peg, .j p g, .p n g, .t i f, .t i f f), .m p 4, .m o v, .w m v, .3 g p, .m p 3, .a a c, .wav, and .w m a.</p>
+              <div class="iq-button-wrapper">
+                    <button class="btn btn-primary uploadFileSave" onClick="saveFileAttachment()"><span>Save</span> <span class="hide" role="status"><i class="fas fa-circle-notch fa-spin"></i> <small>Uploading... </small></span></button>
+                    <button class="btn btn-link hide cancelAttachment" onClick="cancelFileAttachment()">Cancel</button>
+                  </div>
+                </section>
+              <section class="read-view">
+                  <h2>Attachments</h2>
+              <p>Add and manage attachments for this survey.</p>
+                  <button class="btn btn-primary" onClick="addFileAttachment()">Add Attachment</button>
+                  
+                  <div class="row mt-4">
+                     <div class="col-lg-4" style="line-height: 3.5rem; position: relative"><span class="attachmentSearchCount" style="position: absolute; ">2 Attachments</span>
+                            <span class="sr-only">
+                            <!-- situation 1: search term -->
+                            for search term: 
+                            <!-- situtation 2: filters are engaged -->
+                            filtered by:
+                            </span>
                     </div>
-                </div>
-              </div>
-              <div class="file-attachment-card hide" id="fileDetails">
-                <div class="row">
-                    
-                    <div class="col-sm-10"><h3><i class="far fa-paperclip"></i> File Name.pdf</h3></div>
-                    <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
-                </div>
-                <div class="row">
-                   
-                    <div class="col-sm-12 file-description"><p><label>File Description <!--<span class="iq-asterisk">*</span> <span class="iq-required-text">Required</span>-->
-                        <input type="text" class="form-control file-description-text">
-                        </label><span class="fdt"></span></p>
-           <p><button class="btn btn-primary" onClick="if($('.file-description-text').val()) { $('.file-description .fdt').html($('.file-description-text').val());  } else { $('.file-description .fdt').html('No information provided'); $('.file-description .fdt').addClass('iq-not-available');}; $(this).hide(); $('.file-description-text').addClass('hide');">Save</button></p>
+                    <div class="col-lg-8 text-right">
+                        
                     </div>
+                </div>    
+                <div class="noResultsText hide mt-4">
+                <p class="iq-not-available">No attachments found for this search.</p>
                 </div>
-              </div>
-                
+                   <table class="display " style="width: 100%;" id="attachmentTable">
+                <thead>
+                  <tr>
+                    <th><span>File</span></th>
+                    <th><span>Description</span></th>
+                    <th><span>Uploaded</span></th>
+                    <th><span>Category</span></th>
+                    <th><span>Source</span></th>
+                    <th class="text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr><td><a href="#">My-New-File.docx</a> <small>[244 MB]</small></td>
+                        <td><p class="iq-not-available">No information</p></td>
+                        <td>06/10/2020 by Janet Smith</td>
+                        <td>Survey</td>
+                        <td>Survey FFB-H1</td>
+                        <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Actions
+                  </a>
+                <div class="dropdown-menu" aria-labelledby="attachmentMenu1">
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a>
+                  <a class="dropdown-item" href="#">Download</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a>
+                </div>
+                        </td>
+                    </tr>
+                    <tr><td><a href="#">LetterSent060119.pdf</a> <small>[1.45 MB]</small></td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                        <td>06/08/2020 by David Freeman</td>
+                        <td>Citation</td>
+                        <td><a href="#citationsT">G0406</a></td>
+                        <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu2" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Actions
+                  </a>
+                <div class="dropdown-menu" aria-labelledby="attachmentMenu2">
+                  <a class="dropdown-item" href="#" onClick="editDescription()">Edit Description</a>
+                  <a class="dropdown-item" href="#">Download</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a>
+                </div>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+     <!--<div class="row bottomPagination">
+    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 Attachments</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 Attachments</span></span></li></ul> </div>
+    <div class="col-md-6 text-right">
+          <nav aria-label="Table Pagination" class="float-right">
+		<ul class="pagination pagination-large">
+			<li class="page-item first disabled" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
+			</li>
+			<li class="page-item previous disabled" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
+			</li>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 2</span></div>
+			</li>
+			
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button"></button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last"></button>
+			</li>
+		</ul>
+	</nav>
+    </div>
+</div>-->
+                  
+              </section>
           </div>
+            
         </div>
       </div>
     </div>
   </div>
 </main>
+<!-- file description modal -->
+<div class="modal fade" id="editFileDescription" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Description</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group"><label>File Name
+          <input type="text" readonly class="read-only-text" value="My-New-File.docx"></label></div>
+        <div class="form-group"><label>File Description</label>
+           <textarea class="form-control file-description-text" id="fdI" rows="3"></textarea>
+           <span class="fdt0 help-text">Limit to 255 characters</span>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="confirmAttachmentDeletion" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Attachment</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <p>Please confirm you want to delete this attachment.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- keyboard shortcuts -->
 <div class="modal fade" id="shortcuts" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
     <div class="modal-content">
@@ -3042,8 +3226,8 @@
     </div>
   </div>
 </div>
-	
-	<div class="modal" id="noDelete" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- unable to delete team member -->	
+<div class="modal" id="noDelete" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -3127,33 +3311,160 @@
   <script src="../../../src/assets/js/scripts.js"></script>
   <script src="../../hhaung/js/jquery.stickytabs.js"></script>
 <script>
-	  $(document).ready(function () {
-		$('.nav-horizontal').stickyTabs();
-	    $('[data-toggle="tooltip"]').tooltip(); 
-	    $("select.multiselect").bsMultiSelect();
-	    window.setTimeout(function() {
-			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
-				$(this).addClass('hide'); 
-			});
-		}, 5000);
-    	$('#fileDescriptionInput').keyup(function () {
-          var max = 256;
-          var char = 0; 
-          var len = $(this).val().length;
-          if (len >= max) {
-            var char = len - max; 
-            $('.fdt').addClass('iq-input-error-msg'); 
-			$('.fdt').html('Limit exceeded by ' + char + ' characters' );
-            //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
-          } else {
-            //$('#charNum').html(len + '/256.');
-			$('.fdt').removeClass('iq-input-error-msg'); 
-			  
-			$('.fdt').html('Limit to ' + max + ' characters');
-          }
+  $(document).ready(function () {
+    $('.nav-horizontal').stickyTabs();
+    $('[data-toggle="tooltip"]').tooltip(); 
+    $("select.multiselect").bsMultiSelect();
+  });
+    window.setTimeout(function() {
+        $(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+            $(this).addClass('hide'); 
         });
-		
-	  });
+    }, 5000);
+    $('#fileDescriptionInput').keyup(function () {
+      var max = 256;
+      var char = 0; 
+      var len = $(this).val().length;
+      if (len >= max) {
+        var char = len - max; 
+        $('.fdt').addClass('iq-input-error-msg'); 
+        $('.fdt').html('Limit exceeded by ' + char + ' characters' );
+        //$('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+      } else {
+        //$('#charNum').html(len + '/256.');
+        $('.fdt').removeClass('iq-input-error-msg'); 
+
+        $('.fdt').html('Limit to ' + max + ' characters');
+      }
+    });
+    $('#fdI').keyup(function () {
+      var max = 255;
+      var char = 0; 
+      var len = $(this).val().length;
+      $('.fdt0').html(len + '/'+ max + ' characters');
+      if (len >= max) {
+        var char = len - max; 
+        $('.fdt0').addClass('iq-input-error-msg'); 
+        $('.fdt0').append(' - Limit exceeded');
+      } else {
+        $('.fdt0').removeClass('iq-input-error-msg'); 
+      }
+    });
+    $('#fdI1').keyup(function () {
+      var max = 255;
+      var char = 0; 
+      var len = $(this).val().length;
+      $('.fdt0').html(len + '/'+ max + ' characters');
+      if (len >= max) {
+        var char = len - max; 
+        $('.fdt0').addClass('iq-input-error-msg'); 
+        $('.fdt0').append(' - Limit exceeded');
+      } else {
+        $('.fdt0').removeClass('iq-input-error-msg'); 
+      }
+    });
+    function loadPercent(){ 
+        $('.Count').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 3000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });   
+
+    setTimeout(function(){
+        $('.uploaded').toggleClass('hide');
+    }, 3000);
+}
+    function fileUpload(){
+         $('.fileSize').removeClass('hide'); 
+        $('.alert').addClass('hide');
+         $('.iqies-file-input-label span').text('Replace File');
+        if($('#fsize').val() == 0){
+            //$('.fileTooLarge').removeClass('hide');
+            $('#fsize').val('1');
+            //$('html, body').animate({ scrollTop: 0 }, 500);
+        } else if($('#fsize').val() == 1) {
+           $('.fName').html('My-Wrong-File-Type.svg <small>[12 MB]</small>');
+           $('.fileTooLarge').addClass('hide'); 
+            $('.fileWrongType').removeClass('hide'); 
+            $('a.fileTooLarge').removeClass('hide');
+            //loadPercent(); 
+            $('#fsize').val('2');
+        } else {
+           $('.uploading').removeClass('hide');
+           $('.fName').html('My-New-File.docx <small>[244 MB]</small>');
+           $('.fileWrongType').addClass('hide'); 
+            $('.fileTooLarge').addClass('hide');
+            //loadPercent(); 
+            $('.uploaded').toggleClass('hide');
+            $('#fsize').val('0');
+        }
+    }
+    function cancelFileUpload(){
+        $('.fileSize').addClass('hide'); 
+        $('.fileTooLarge').addClass('hide');
+        $('.iqies-file-input-label span').text('Select File');
+    }
+    function saveFileAttachment(){
+        if($('.fileSize').hasClass('hide')){
+            $('.alert-warning.fileMissing').removeClass('hide');
+        } else {
+            $('.alert-warning.fileMissing').addClass('hide');
+            if($('.fileTooLarge.iq-input-error-msg').hasClass('hide') == false){
+                $('.alert-danger.fileTooLargeMsg').removeClass('hide');
+            } else if($('.fileWrongType.iq-input-error-msg').hasClass('hide') == false) {
+                $('.alert-danger.fileTooLargeMsg').addClass('hide');
+                $('.alert-danger.fileWrongTypeMsg').removeClass('hide');
+            } else {
+                $('iqies-file-input-label span').text('Select File');
+                $('.uploadFileSave').addClass('disabled');
+                $('.uploadFileSave span').toggleClass('hide');
+                setTimeout(function(){
+                    $('#attachment .edit-view').removeClass('active');
+                    $('#attachment .read-view').addClass('active');
+                }, 3000);
+            }
+        }
+    }
+    function cancelFileAttachment(){
+         $('#attachment .edit-view').removeClass('active');
+        $('#attachment .read-view').addClass('active');
+    }
+    function addFileAttachment(){
+        $('#attachment .edit-view').addClass('active');
+        $('#attachment .read-view').removeClass('active');
+        $('#attachment .edit-view .cancelAttachment').removeClass('hide');
+        $('.fileWrongType').addClass('hide'); 
+        $('.fileTooLarge').addClass('hide');
+        $('.fileSize').addClass('hide'); 
+         $('.iqies-file-input-label span').text('Select File');
+        $('.uploadFileSave').removeClass('disabled');
+        $('.uploadFileSave span').toggleClass('hide');
+    }
+    var aTable = $('#attachmentTable').DataTable( {
+          //scrollY: 300,
+          paging: false,
+          lengthMenu: false,
+          info: false,
+          searching: true,
+          responsive: {
+            details: { type: 'column'}
+          },
+          "order": [[ 2, 'desc' ]],
+          columnDefs: [
+            //{ className: 'control', orderable: false, targets: 0 },
+            //{ className: 'none', targets: 5 },
+            //{ responsivePriority: 0, targets: 1 },
+            { "orderable": false, "targets": -1 }
+            //{ 'visible': false, 'targets': 8 }
+         ]
+      }); 
+	  
     </script>
 </body>
 </html>

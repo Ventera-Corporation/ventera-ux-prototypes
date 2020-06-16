@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laguna Survey</title>
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<title>Laguna Survey - Side Save</title>
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <!-- you need this font to have the right font weight expressed -->
@@ -14,7 +14,7 @@
 <!-- to include fontsome icons professional version -->
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 <!-- to match design system definition -->
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/hha.css">
 </head>
 <body>
 <header>
@@ -22,13 +22,13 @@
 		<div class="container-fluid">
 		  <div class="row">
 			<div class="col">
-			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+			  <nav><a href="#"><img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
 				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
 					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
-					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
-					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+					  <a class="dropdown-item" href="../search-test/search.html">Search for a provider, survey, intake, or enforcement</a>
+					  <a class="dropdown-item" href="../add-a-provider.html">Add a Provider</a>
 				  </div>
 				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
 				<div class="dropdown d-none d-sm-block d-lg-inline-block">
@@ -72,13 +72,13 @@
                     <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                          <a href="../global/global-landing-menu.html">Home</a>
+                          <a href="../../global/global-landing-menu.html">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                          <a href="searchC.html#surveys">Search</a>
+                          <a href="../search-test/searchC.html#surveys">Search</a>
                         </li>
 						<li class="breadcrumb-item">
-                          <a href="provider-profile-laguna.html">Laguna Rainbow Home Health Agency</a>
+                          <a href="../provider-profile-laguna.html">Laguna Rainbow Home Health Agency</a>
                         </li>
                         <li class="breadcrumb-item">
                           Survey FFB-L1
@@ -88,7 +88,7 @@
                     <div class="iq-page-header-content">
                       <h1>Survey FFB-L1</h1>
                       <div class="iq-page-header-details">
-                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="provider-profile-laguna.html">Laguna Rainbow Home Health Agency</a> - IQIES 327046 - Home Health Agency - <a href="#">Non-Deemed</a></div>
+                        <!--<a href="/providers/provider-profile.html">A Better Way</a> | --><a href="../provider-profile-laguna.html">Laguna Rainbow Home Health Agency</a> - IQIES 327046 - Home Health Agency - <a href="#">Non-Deemed</a></div>
                     </div>
                   </div>
                   <div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
@@ -868,7 +868,7 @@
     </button>
   </div>
   <div class="toast-body">
-    <a href="citationSearchTest.html" class="return-link">Go back to Index Page</a>
+    <a href="index.html" class="return-link">Go back to Index Page</a>
   </div>
 </div>
 			  <div class="alert alert-success successMsg hide" role="alert">
@@ -893,11 +893,6 @@
               
             </div>
               <div class="row">
-                <!--<div class="col-md-5">
-                    <label>Search By</label>
-                    <select onChange="$('.regText').toggleClass('hide');"><option value="1">Title and/or Number</option>
-                        <option value="2">Regulation Text Keyword, Title, and/or Number</option></select>
-                </div>-->
                 <div class="col-md-6">
                     <label for="citeSearch"><span class="sr-only">Search</span></label>
                     <div class="input-group">
@@ -913,9 +908,9 @@
               
                
               <div class="row mt-4 citationsList">
-                <div class="col-md-12" id="citations">
+                <div class="col-md-9" id="citations">
 					<br>
-					<div class="row"><div class="col-md-3" style="vertical-align: bottom"><h3 class="iq-label citesSearchCount">1-10 of 30 Citations</h3></div><div class="col-md-9 text-right"><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)" id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
+					<div class="row"><div class="col-md-3" style="vertical-align: bottom"><h3 class="iq-label citesSearchCount">1-10 of 30 Citations</h3></div><div class="col-md-9 text-right"><label class="inline" style="margin-right: .5rem;">Filter By: </label><select style="display: inline-block; width: auto; " class="mb-2" onChange="selectRegSet(this)" id="allRegSelect"><option value="all">All Regulation Sets</option><optgroup label="Federal Regulation Sets"><option value="er">Emergency Preparedness (FED - E - 1.01)</option><option value="hha">Home Health Agencies (FED - G - 11.01)</option></optgroup><optgroup label="State Regulation Sets"><option value="state">IL State Home Health (ST - S - 2 - HHA)</option></optgroup></select> <select style="display: inline-block; width: auto" onchange="selectTagType(this)" id="allTagTypeSelect"><option value="all">All Tag Types</option><option value="condition">Condition</option><option value="standard">Standard</option><option value="licensure">Licensure</option><option value="element">Element</option><option value="memo">Memo</option></select></div></div>
      
 <div class="accordion-wrapper"> 
 		<!-- All page 1 -->
@@ -1733,7 +1728,12 @@
 		</div> -->
     </div>
 <nav aria-label="Table Pagination">
+    
 		<ul class="pagination pagination-large">
+            <li><div class="input-group mb-0 mr-3">
+		
+		<select class="form-control" style="width: 4rem"><option>10</option><option>25</option><option>50</option><option>100</option><option>All</option></select><span class="input-group-text">Per Page</span> 
+	</div></li>
 			<li class="page-item first" onClick="gotoPage1()">
 				<button class="page-link first" disabled aria-label="First" type="button">First</button>
 			</li>
@@ -1757,35 +1757,27 @@
 			</li>
 		</ul>
 	</nav>
+                   
                     
                     
                 </div>
-                <div class="col-md-12 iq-static-col position-fixed" style="z-index: 1000;" id="saveCitationsButton">
-				<div class="fixed-bottom" style="background-color: white; border-top: 2px solid #AEB0B5;" >	
-			
-				
-				<div class="card dashed mb-0">
-					<div class="row">
-					<div class="col-md-3 col-lg-2"></div>
-					<div class="col-md-9 col-lg-10" style="padding: 0rem 3rem;">
-					<h3 class="iq-label">Added Citations <span class="countWrap hide">(</span><span class="addedCount"></span><span class="countWrap hide">)</span></h3>
-				
+                <div class="col-md-3 iq-static-col position-sticky" id="saveCitationsButton">
+				<div class="sticky-top">	
+					<br>
+				<h3 class="iq-label">Added Citations <span class="countWrap hide">(</span><span class="addedCount"></span><span class="countWrap hide">)</span></h3>
+				<div class="card dashed">
 					<p class="iq-not-available">No citations have been added.</p>
 					<div id="addedCitationTags" class="tagListDisplay"></div>
-						
-					<div class="iq-footer"><button class="btn btn-primary" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('#citationsT .successMsg').removeClass('hide'); $('#citationsT .edit-view').removeClass('active');  $('#citationsT .read-view.all').addClass('active'); $('#saveCitationsButton .badge.badge-pill').addClass('hide'); $('#saveCitationsButton .addedCount').html(''); $('#saveCitationsButton .addedCount').addClass('hide'); $('#saveCitationsButton .iq-not-available').removeClass('hide');  } else { $('#citationsT .errorMsg').removeClass('hide'); }">Save</button> <button
-                            class="btn btn-link hide cancelButton" onClick="$('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.all').addClass('active');  $('#citationsT .tabTitle .btn').removeClass('hide'); ">Cancel</button></div>
-					</div></div>
+					<div class="iq-footer"><button class="btn btn-primary btn-full" onClick="if( $('#saveCitationsButton .iq-not-available').hasClass('hide')){ $('#citationsT .successMsg').removeClass('hide'); $('#citationsT .edit-view').removeClass('active');  $('#citationsT .read-view.all').addClass('active'); $('#saveCitationsButton .badge.badge-pill').addClass('hide'); $('#saveCitationsButton .addedCount').html(''); $('#saveCitationsButton .addedCount').addClass('hide'); $('#saveCitationsButton .iq-not-available').removeClass('hide');  } else { $('#citationsT .errorMsg').removeClass('hide'); }">Save</button> <button
+                            class="btn btn-link btn-full hide cancelButton" onClick="$('#citationsT .edit-view').removeClass('active'); $('#citationsT .read-view.all').addClass('active');  $('#citationsT .tabTitle .btn').removeClass('hide'); ">Cancel</button></div>
 				</div>  
 				</div>
 				</div>
-				
               </div>
-<br>
+
               
-				
             </section>
-            <section class="read-view all">
+             <section class="read-view all">
                  <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Citations</h2>
@@ -1909,7 +1901,6 @@
 				</div>
 				<hr>
 				
-					
 						<h3 class="iq-label ST">1 Citation from IL State Home Health (ST - S - 2 - HHA)</h3>
 				<div class="accordion-wrapper">
 	
@@ -2005,11 +1996,9 @@
 									<div class="row">
 										<div class="col-md-8">
 											<h4>Summary</h4>	
-				
 				<p class="iq-not-available">No information provided</p>
 				<h4>Findings</h4>
 				<p class="iq-not-available">No information provided</p>
-				
 				<hr>
 				<h4>Reguation Text and Interpretive Guidelines</h4>
                      <label>CFR Section</label>
@@ -2059,8 +2048,8 @@
             <div class="card-body">
 									<div class="row">
 										<div class="col-md-8">
-											<h4>Summary</h4>
-											<p class="iq-not-available">No information provided</p>
+											<h4>Summary</h4>	
+				<p class="iq-not-available">No information provided</p>
 				<h4>Findings</h4>
 				<p class="iq-not-available">No information provided</p>
 				<hr>
@@ -2420,134 +2409,7 @@
 					
               </div>
 				<!-- <p><a href="#" class="btn-link" onclick="$('#citationsT .read-view').removeClass('active'); $('#citationsT .edit-view').removeClass('active'); $('#citationsT  .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
-            </section>
-            <section class="read-view cite224">
-                <p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>
-               <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Citation 0224</h2>
-                <p>Horizontal Sliding Doors - NFPA 101</p>
-              </div>
-              <div class="col-md-2">
-                <button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view.cite224').addClass('active'); $('#tab3 .read-view').removeClass('active'); $(this).addClass('hide');  ">Edit</button>
-              </div>
-            </div>
-                
-                <div class="row mb-5">
-                <div class="col">
-                  <div class="iq-accordion showhide">
-            <div class="card no-border">
-              <div class="card-header d-flex">
-                <button
-                  class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#citeSource2" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-                  <span>Show Regulation Text and Interpretive Guidelines</span><span class="hide">Hide Regulation Text and Interpretive Guidelines</span>
-                </button>
-              </div>
-              <div id="citeSource2" class="collapse">
-                <div class="card-body px-0">
-                  lorem ipsum
-                </div>
-              </div>
-            </div>
-          </div>
-                </div>
-              </div>
-                
-                <h3>Citation Overview</h3>
-               <div class="iq-list">
-                <div class="row">
-                  <div class="col-md-4">
-                    <label>Buildings</label>
-                  </div>
-                  <div class="col-md-8">
-                    <p>01 - RES UNIT - FREESTANDING 9 BEDS - Active</p>
-                  </div>
-                </div>
-               <div class="row">
-                  <div class="col-md-4">
-                    <label>Survey Category</label>
-                  </div>
-                  <div class="col-md-8">
-                    <ul><li>H - Life Safety Code</li>
-                      <li>Complaints</li></ul>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <label>Substantiated Allegations</label>
-                  </div>
-                  <div class="col-md-8">
-                    <ul><li>Admission, Transfer, &amp; Discharge Rights - <a href="#">Complaint 9864</a></li>
-                     </ul>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <label>Deficient Practice Statement</label>
-                  </div>
-                  <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-                </div>
-                
-                <h3>Citation Text</h3>
-                <p>Citation text can be added by any user but text cannot be merged until it is marked as complete. </p>
-                <p><button class="btn btn-outline-primary">Merge Citation Text</button></p>
-                <div class="table-wrapper mb-5">  <table class="table table-striped">
-  <thead>
-    <tr><th scope="col" class="sortable"><span>Order</span></th> 
-      <th scope="col" class="sortable ascending"><span>Name</span></th>
-        
-      <th scope="col" class="sortable"><span>Last Updated</span></th>
-      <th scope="col" class="sortable"><span>Status</span></th>
- <th scope="col">&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><div class="btn-group-vertical">
-              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-up"></i></button>
-              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
-          </div></td>
-      <td><p>Smith, James</p></td>
-      <td><p>08/27/2019 2:04 PM</p></td>
-      <td><p>Writing in Progress</p></td>
-        <td><a href="#">Delete</a> | <a href="#">Edit</a></td>
-    </tr>
-    <tr>
-      <td><div class="btn-group-vertical">
-              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
-              <button class="btn btn-outline-primary"><i class="fal fa-chevron-down"></i></button>
-          </div></td>
-      <td><p>Thomas, Jane</p></td>
-      <td><p>08/27/2019 1:43 PM</p></td>
-      <td><p>Writing in Progress</p></td>
-        <td><a href="#">View</a></td>
-    </tr>
-    <tr>
-      <td><div class="btn-group-vertical">
-              <button class="btn btn-outline-primary"><i class="fal fa-chevron-up"></i></button>
-              <button class="btn btn-outline-primary" disabled><i class="fal fa-chevron-down"></i></button>
-          </div></td>
-      <td><p>Chae, Matthew</p></td>
-      <td><p>08/30/2019 10:21 AM</p></td>
-      <td><p>Writing in Progress</p></td>
-        <td><a href="#">View</a></td>
-    </tr>
-    
-  </tbody>
-</table></div>
-                
-                <h3>Attachments</h3>
-                <p class="mb-0">Add and manage attachments for this citation.</p>
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary">Add Attachment</button></div>
-                <p class="iq-not-available">No attachments have been added</p>
-                
-                <div class="iq-button-wrapper">
-                <!--<p><a href="#" class="btn-link" onclick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view.all').addClass('active');"><i class="fal fa-chevron-left"></i> Return to Citations</a></p>-->
-              </div>
-            </section>             
+            </section>     
           </div>
           <div class="tab-pane" id="sodT" role="tabpanel" aria-labelledby="sodTab">
             <section class="edit-view deemInfo">
@@ -3984,8 +3846,8 @@
           <div class="row">
             <div class="col">
               <div class="iq-footer-heading"> <a href="/"> <img
-                      src="../../../src/assets/images/logo-iqies-reversed.svg"
-                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../../src/assets/images/logo-cms.svg"
+                      src="../../../../src/assets/images/logo-iqies-reversed.svg"
+                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../../../src/assets/images/logo-cms.svg"
                     class="img-fluid logo cms-logo d-lg-none" alt=""> </div>
             </div>
           </div>
@@ -3993,35 +3855,35 @@
             <div class="col"> <a href="/help">Help</a><span> (800)
               339-9313 </span><a href="mailto:help@qtso.com">Email Us</a><a
                   href="https://qtso.cms.gov/" target="_blank"
-                  rel="noopener noreferrer"> QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                  rel="noopener noreferrer"> QTSO <img src="../../../../src/assets/images/logo-cms.svg"
                     class="iq-external-link-icon" alt=""> </a><a href="https://www.cms.gov/Medicare/Medicare.html"
                   target="_blank" rel="noopener noreferrer"> Medicare <img
-                    src="../../../src/assets/images/icon-link-external.svg"
+                    src="../../../../src/assets/images/icon-link-external.svg"
                     class="iq-external-link-icon" alt=""> </a><a href="/privacy-policy">Privacy Policy</a> </div>
           </div>
           <div class="row">
             <div class="col">
               <div class="iq-footer-links"> <a href="https://www.medicare.gov/about-us/plain-writing"
                     target="_blank" rel="noopener noreferrer"> Plain Writing <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a
                     href="https://www.cms.gov/center/freedom-of-information-act-center.html"
                     target="_blank" rel="noopener noreferrer"> Freedom of
                 Information Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a
                     href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
                     target="_blank" rel="noopener noreferrer"> No Fear Act <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a><a href="https://get.adobe.com/reader/" target="_blank"
                     rel="noopener noreferrer"> Adobe Acrobat <img
-                      src="../../../src/assets/images/icon-link-external.svg"
+                      src="../../../../src/assets/images/icon-link-external.svg"
                       class="iq-external-link-icon" alt=""> </a> </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-2 col-xl-2 d-flex align-items-center"> <img src="../../../src/assets/images/logo-cms.svg"
+      <div class="col-lg-2 col-xl-2 d-flex align-items-center"> <img src="../../../../src/assets/images/logo-cms.svg"
             class="logo cms-logo d-none d-lg-block" alt="CMS Logo"> </div>
     </div>
   </div>
@@ -4047,20 +3909,21 @@
     </div>
   </div>
 </div>
+
+<input type="hidden" id="tagNameRepo" value="">
 	
-	<input type="hidden" id="tagNameRepo" value="">
-<script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
-  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+<script src="../../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
   <!-- to include text editor code -->
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
   <!-- to include datatables for responsive table -->
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <!-- to include multi-select dropdown selector -->
-  <script src="../../hhaung/js/BsMultiSelect.js"></script>
-  <script src="../../../src/assets/js/scripts.js"></script>
-  <script src="../../hhaung/js/jquery.stickytabs.js"></script>
+  <script src="../../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../../src/assets/js/scripts.js"></script>
+  <script src="../../../hhaung/js/jquery.stickytabs.js"></script>
 <script>
 	  $(document).ready(function () {
 		$('.nav-horizontal').stickyTabs();
@@ -4550,5 +4413,7 @@
 		}
 	}
     </script>
+	
+	
 </body>
 </html>

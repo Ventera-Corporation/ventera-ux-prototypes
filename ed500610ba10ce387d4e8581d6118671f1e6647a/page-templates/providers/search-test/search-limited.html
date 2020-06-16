@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- InstanceBegin template="/Templates/general.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Search with Tabs | iQIES</title>
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Search - Limited Version | iQIES</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <!-- you need this font to have the right font weight expressed -->
@@ -13,7 +15,10 @@
 <!-- to include fontsome icons professional version -->
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 <!-- to match design system definition -->
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/hha.css">
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- InstanceEndEditable -->
 </head>
 
 <body>
@@ -22,7 +27,7 @@
 		<div class="container-fluid">
 		  <div class="row">
 			<div class="col">
-			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+			  <nav><a href="#"><img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
 				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
 					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -73,31 +78,37 @@
             <div class="col">
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-<li class="breadcrumb-item">
-                  <a href="../../../global/global-landing-menu.html">Home</a>
+				<!-- InstanceBeginEditable name="breadcrumb" -->
+                  <li class="breadcrumb-item">
+                    <a href="../../../../global/global-landing-menu.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
                   Search</li>
-				</ol>
+				<!-- InstanceEndEditable -->
+                </ol>
               </nav>
-              <div class="iq-page-header-content"> </div>
+              <div class="iq-page-header-content">
+               <!-- InstanceBeginEditable name="headerRight" -->
+			   <!-- InstanceEndEditable -->
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 	<div class="container-fluid" id="mainContent">
-<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
+	  <!-- InstanceBeginEditable name="pageLevelErrors" -->	
+		<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
   <div class="toast-header">
     <strong class="mr-auto">UI Note</strong>
     <small></small>
     <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
       <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
+    </button>
+  </div>
   <div class="toast-body">
     <a href="index.html" class="return-link">Go back to Index Page</a>
-    </div>
+  </div>
 </div>
 	  <div class="alert alert-warning hide" role="alert">
 		<div class="alert-content">You do not have permission to manage this provider's information.</div>
@@ -120,6 +131,9 @@
               </div></div>
           </div>
         </div> 
+	   <!-- InstanceEndEditable -->
+	  <!-- InstanceBeginEditable name="mainContent" -->		  
+
       <h1>Search</h1>
          
 	  <nav class="nav nav-horizontal parent-tab" style="margin-bottom: 2rem;">
@@ -130,10 +144,23 @@
         </nav>
       <div class="tab-content">
         <div class="tab-pane active" id="providers">
-			<div class="form-group">
-				<label>Search for Providers</label>
-				<input type="text" class="form-control" id="pSearchInput" onKeyUp="if (event.keyCode === 13) {
-        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter provider name, CCN, or State Facility ID (FACID)</div></div>
+			
+				
+				<div class="row">
+					<div class="col-md-4 col-lg-3">
+					<div class="form-group"><label>Provider Name</label><input type="text" class="form-control" id="pSearchInput" onKeyUp="if (event.keyCode === 13) {
+        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text hide">Enter provider doing as business name or legal name</div></div>
+					</div>
+					<div class="col-md-4 col-lg-3">
+					<div class="form-group"><label>CCN</label><input type="text" class="form-control" id="pSearchInput2" onKeyUp="if (event.keyCode === 13) {
+        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text hide">Enter CCN</div></div>
+					</div>
+					<div class="col-md-4 col-lg-3">
+					<div class="form-group"><label>State Facility ID</label><input type="text" class="form-control" id="pSearchInput3" onKeyUp="if (event.keyCode === 13) {
+        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text hide">Enter State Facility ID (FACID)</div></div>
+					</div>
+				</div>
+			
 			<div class="iq-accordion showhide">
 				<div class="card no-border">
 				  <div class="card-header d-flex">
@@ -149,8 +176,7 @@
 								<div class="col-md-5 col-lg-4 col-xl-3">
 									  <div class="form-group notState">
 										  <label>Provider Type </label>
-										  <select multiple="multiple" style="display: none;" class="multiselect"><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
-										 <span class="help-text">Select one or more</span>
+										  <input type="text" readonly class="read-only-text" value="Home Health Agencies">
 									  </div>
 								  </div>
 								<div class="col-md-5 col-lg-4 col-xl-3">
@@ -224,15 +250,6 @@
 						  <label>License Number<input class="form-control" type="text" value=""></label>
 					  </div>
 				</div>
-				 <div class="col-md-10 col-lg-8 col-xl-6">
-					  <div class="form-group">
-						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
-						  <div class="custom-control custom-checkbox">
-							  <input type="checkbox" id="showrecertP" class="custom-control-input">
-							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
-							</div>
-					  </div>
-				</div>
 							</div>
 							<div class="row">
 				<div class="col-md-10 col-lg-4 col-xl-3">
@@ -245,11 +262,34 @@
 					  <label>City<input class="form-control" type="text" value=""></label>
 				  </div>
 				</div>
-				<div class="col-md-3 col-lg-3 col-xl-3">
+				
+				
+				<div class="col-md-2">
+				  <div class="form-group">
+					  <label>Zip Code<input class="form-control" type="text" value=""></label>
+					  <span class="help-text">Zip code must be 5 digits</span>
+				  </div>
+				</div>
+							</div>
+							<div class="row">
+								<div class="col-md-5 col-lg-4 col-xl-3">
+					  <div class="form-group notState">
+						  <label>CMS Region</label>
+						  <select multiple="multiple" style="display: none;" class="multiselect">
+							  <option>1 - Boston</option><option>2 - New York</option><option>3 - Philadelphia</option>
+							  <option>4 - Atlanta</option><option selected>5 - Chicago</option><option>6 - Dallas</option>
+							  <option>7 - Kansas City</option><option>8 - Denver</option><option>9 - San Francisco</option>
+							  <option>10 - Seattle</option>
+						  </select>
+						  <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
+						  <span class="help-text">Select one or more</span>
+					  </div>
+				  </div>
+								<div class="col-md-3 col-lg-3 col-xl-3">
 				  <div class="form-group">
 					  <label>State</label>
-					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
-						  <option value="AL">Alabama</option>
+					  <select multiple="multiple" style="display: none;" class="multiselect state">
+						  <!--<option value="AL">Alabama</option>
 						  <option value="AK">Alaska</option>
 						  <option value="AZ">Arizona</option>
 						  <option value="AR">Arkansas</option>
@@ -261,19 +301,19 @@
 						  <option value="FL">Florida</option>
 						  <option value="GA">Georgia</option>
 						  <option value="HI">Hawaii</option>
-						  <option value="ID">Idaho</option>
+						  <option value="ID">Idaho</option>-->
 						  <option value="IL" selected>Illinois</option>
-						  <option value="IN">Indiana</option>
-						  <option value="IA">Iowa</option>
+						  <option value="IN" selected>Indiana</option>
+						  <!--<option value="IA">Iowa</option>
 						  <option value="KS">Kansas</option>
 						  <option value="KY">Kentucky</option>
 						  <option value="LA">Louisiana</option>
 						  <option value="ME">Maine</option>
 						  <option value="MD">Maryland</option>
-						  <option value="MA">Massachusetts</option>
-						  <option value="MI">Michigan</option>
-						  <option value="MN">Minnesota</option>
-						  <option value="MS">Mississippi</option>
+						  <option value="MA">Massachusetts</option>-->
+						  <option value="MI" selected>Michigan</option>
+						  <option value="MN" selected>Minnesota</option>
+						  <!--<option value="MS">Mississippi</option>
 						  <option value="MO">Missouri</option>
 						  <option value="MT">Montana</option>
 						  <option value="NE">Nebraska</option>
@@ -283,9 +323,9 @@
 						  <option value="NM">New Mexico</option>
 						  <option value="NY">New York</option>
 						  <option value="NC">North Carolina</option>
-						  <option value="ND">North Dakota</option>
-						  <option value="OH">Ohio</option>
-						  <option value="OK">Oklahoma</option>
+						  <option value="ND">North Dakota</option>-->
+						  <option value="OH" selected>Ohio</option>
+						  <!--<option value="OK">Oklahoma</option>
 						  <option value="OR">Oregon</option>
 						  <option value="PA">Pennsylvania</option>
 						  <option value="RI">Rhode Island</option>
@@ -297,22 +337,25 @@
 						  <option value="VT">Vermont</option>
 						  <option value="VA">Virginia</option>
 						  <option value="WA">Washington</option>
-						  <option value="WV">West Virginia</option>
-						  <option value="WI">Wisconsin</option>
-						  <option value="WY">Wyoming</option>
+						  <option value="WV">West Virginia</option>-->
+						  <option value="WI" selected>Wisconsin</option>
+						  <!--<option value="WY">Wyoming</option>-->
 
 					  </select>
 					  
 					  <span class="help-text">Select one or more. Only states from selected regions are available.</span>
 				  </div>
 				</div>
-				<div class="col-md-2">
-				  <div class="form-group">
-					  <label>Zip Code<input class="form-control" type="text" value=""></label>
-					  <span class="help-text">Zip code must be 5 digits</span>
-				  </div>
+				 <div class="col-md-10 col-lg-8 col-xl-6 hide">
+					  <div class="form-group">
+						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
+						  <div class="custom-control custom-checkbox">
+							  <input type="checkbox" id="showrecertP" class="custom-control-input">
+							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
+							</div>
+					  </div>
 				</div>
-							</div><div class="row">
+							
 				<div class="col-md-5 col-lg-4 col-xl-3">
 					  <div class="form-group">
 						  <label>Management Unit
@@ -329,20 +372,9 @@
 						  <p class="help-text">Management unit must be selected</p>
 					  </div>
 				  </div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group notState">
-						  <label>CMS Region</label>
-						  <select multiple="multiple" style="display: none;" class="multiselect">
-							  <option>1 - Boston</option><option>2 - New York</option><option>3 - Philadelphia</option>
-							  <option>4 - Atlanta</option><option>5 - Chicago</option><option>6 - Dallas</option>
-							  <option>7 - Kansas City</option><option>8 - Denver</option><option>9 - San Francisco</option>
-							  <option>10 - Seattle</option>
-						  </select>
-						  <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
-						  <span class="help-text">Select one or more</span>
-					  </div>
-				  </div>
+				
 			  </div>
+							
 						</div>
 					</div>
 				  </div>
@@ -358,8 +390,8 @@
             </div>
 			<section id="pSearchArea">
 				<h2 class="sr-only">Selected Provider Search Criteria</h2>
-          		<br>  
-				<div class="float-right">
+          		
+				<div class="float-right hide">
 					
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
 					<div class="dropdown-menu" aria-labelledby="exportLink">
@@ -370,7 +402,7 @@
 					</div>
 				</div>
 				<ul class="iq-inline-list searchCriteria">
-					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div> <div class="badge badge-pill"><span>Indiana </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div> <div class="badge badge-pill"><span>Michigan </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div> <div class="badge badge-pill"><span>Minnesota </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div> <div class="badge badge-pill"><span>Ohio </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div> <div class="badge badge-pill"><span>Wisconsin </span><button type="button" class="close" aria-label="Close" onClick="$('#providers .searchCriteria li').addClass('hide'); $('#providers .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#pSearchResults .baCount').html('1-10 of 1400 Providers'); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
 							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#pSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
@@ -1801,7 +1833,8 @@
           </div>
   </div>-->
     
-		</div>
+		<!-- InstanceEndEditable -->
+	</div>
   </main>
    
   <footer>
@@ -1812,35 +1845,35 @@
             <div class="row">
               <div class="col">
                 <div class="iq-footer-heading">
-                  <a href="/"><img src="../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
-                  </a><img src="../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
+                  <a href="/"><img src="../../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
+                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <div class="iq-footer-links">
-                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
+                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-2 col-xl-2 d-flex align-items-center">
-          <img src="../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+          <img src="../../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
-  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <script src="../../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
   <!-- to include text editor code -->
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
@@ -1848,7 +1881,9 @@
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <!-- to include multi-select dropdown selector -->
   <script src="../../../hhaung/js/BsMultiSelect.js"></script>
-  <script src="../../../src/assets/js/scripts.js"></script> <script>
+  <script src="../../../../src/assets/js/scripts.js"></script>
+  <!-- InstanceBeginEditable name="footerScripts" -->
+<script>
 	  $(document).ready(function () {
 	    $('[data-toggle="tooltip"]').tooltip(); 
 	    $("select.multiselect").bsMultiSelect();
@@ -2585,5 +2620,6 @@ function resetESearch(){
 }
 
 </script>
+	<!-- InstanceEndEditable -->
 </body>
-</html>
+<!-- InstanceEnd --></html>

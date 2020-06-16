@@ -131,9 +131,7 @@
             </ul>
           </div>
         </div>
-        <div class="alert alert-warning attachmentError hide" role="alert">
-          <div class="alert-content"> Please select a file for attachment. </div>
-        </div>
+        
         <div class="tab-content">
           <div class="tab-pane  active" id="basic" role="tabpanel"
                     aria-labelledby="basicTab">
@@ -1498,7 +1496,7 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label>Type</label>
+                    <label>Type <span class="iq-asterisk">*</span></label>
                     <select class="form-control" onChange="switch(this.options[this.selectedIndex].value){
                             case 'building': case 'wing': $('.stories').removeClass('hide'); break;
                             default: $('.stories').addClass('hide'); break; }">
@@ -1719,7 +1717,7 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label>Type</label>
+                    <label>Type <span class="iq-asterisk">*</span></label>
                     <select class="form-control" onChange="switch(this.options[this.selectedIndex].value){
                             case 'building': case 'wing': $('.stories').removeClass('hide'); break;
                             default: $('.stories').addClass('hide'); break;
@@ -2362,53 +2360,40 @@
                                 <button class="btn btn-outline-primary" onClick="addAttachment()">Add Attachment</button>
                               </div>
                               <div class="table-wrapper">
+                                <p class="mb-2">1 Attachment</p>
                                 <table class="table table-striped">
                                   <thead>
                                     <tr>
-                                      <th scope="col" class="sortable descending" style="width: 15rem;"><span>Attached File</span></th>
-                                      <th scope="col" class="sortable"><span>Uploaded</span></th>
+                                      <th scope="col" class="sortable descending" style="width: 15rem;"><span>File</span></th>
                                       <th scope="col"><span>Description</span></th>
+                                      <th scope="col" class="sortable"><span>Uploaded</span></th>
                                       <th scope="col">&nbsp;</th>
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td><p><i class="far fa-paperclip"></i> <a href="#">LetterSent060119.pdf</a></p></td>
-                                      <td><p>05/08/2019</p></td>
-                                      <td><p class="desText">This is the description of the file that is long and wraps to multiple lines</p>
-                                        <p class="desText hide">
-                                          <textarea rows="5" class="form-control">This is the description of the file that is long and wraps to multiple lines</textarea>
-                                        </p></td>
-                                      <td><div class="iqies-list-button-group"><span class="saveCancel hide">
-                                          <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button>
-                                          |
-                                          <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button>
-                                          </span> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                                      <td><a href="#">LetterSent060119.pdf</a> <small>[12.3 MB]</small></td>
+                                      <td>This is the description of the file that is long and wraps to multiple lines</td>
+                                      <td>05/08/2019 by Janet Smith</td>
+                                      <td><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                                            <button class="dropdown-item" data-toggle="modal" data-target="#editFileDescription">Edit Description</button>
                                             <button class="dropdown-item">Download</button>
-                                            <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
                                             <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
                                           </div>
-                                        </div></td>
+                                        </td>
                                     </tr>
                                     <tr class="newAttachmentRow hide">
-                                      <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
-                                      <td><p>09/20/2019</p></td>
-                                      <td><p class="desText">Lorem ipsum dolor sit amet</p>
-                                        <p class="desText hide">
-                                          <textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea>
-                                        </p></td>
-                                      <td><div class="iqies-list-button-group"><span class="saveCancel hide">
-                                          <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button>
-                                          |
-                                          <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button>
-                                          </span> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                                      <td><a href="#">File Name.pdf</a> <small>[2.7 KB]</small></td>
+                                      <td>Lorem ipsum dolor sit amet</td>
+                                      <td>09/20/2019 by David Freeman</td>
+                                      <td><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                            <button class="dropdown-item" data-toggle="modal" data-target="#editFileDescription">Edit Description</button>
                                             <button class="dropdown-item">Download</button>
-                                            <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
                                             <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
                                           </div>
-                                        </div></td>
+                                      </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -2543,50 +2528,36 @@
                                 <table class="table table-striped">
                                   <thead>
                                     <tr>
-                                      <th scope="col" class="sortable descending" style="width: 15rem;"><span>Attached File</span></th>
-                                      <th scope="col" class="sortable"><span>Uploaded</span></th>
+                                      <th scope="col" class="sortable descending" style="width: 15rem;"><span>File</span></th>
                                       <th scope="col" class="sortable"><span>Description</span></th>
+                                      <th scope="col" class="sortable"><span>Uploaded</span></th>
                                       <th scope="col">&nbsp;</th>
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td><p><i class="far fa-paperclip"></i> <a href="#">Building Image.jpg</a></p></td>
-                                      <td><p>08/19/2019</p></td>
-                                      <td><p class="desText"></p>
-                                        <p class="desText hide">
-                                          <textarea rows="3" class="form-control">This is the photo of the building from the front</textarea>
-                                        </p></td>
-                                      <td><div class="iqies-list-button-group"><span class="saveCancel hide">
-                                          <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button>
-                                          |
-                                          <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button>
-                                          </span> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                                      <td><a href="#">Building Image.jpg</a> <small>[23 KB]</small></td>
+                                       <td>This is the photo of the building from the front</td>
+                                      <td>08/19/2019 by David Freeman</td>
+                                      <td><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            
+                                            <button class="dropdown-item" data-toggle="modal" data-target="#editFileDescription">Edit Description</button>
                                             <button class="dropdown-item">Download</button>
-                                            <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
                                             <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
-                                          </div>
                                         </div></td>
                                     </tr>
                                     <tr class="newAttachmentRow hide">
-                                      <td><p><i class="far fa-paperclip"></i> <a href="#">File Name.pdf</a></p></td>
-                                      <td><p>09/20/2019</p></td>
-                                      <td><p class="desText">Lorem ipsum dolor sit amet</p>
-                                        <p class="desText hide">
-                                          <textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea>
-                                        </p></td>
-                                      <td><div class="iqies-list-button-group"><span class="saveCancel hide">
-                                          <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button>
-                                          |
-                                          <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button>
-                                          </span> <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+                                      <td><a href="#">File Name.pdf</a> <small>[43 KB]</small></td>
+                                      <td>Lorem ipsum dolor sit amet</td>
+                                      <td>09/20/2019 by Janet Smith</td>
+                                      <td><a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
                                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                            <button class="dropdown-item">Download</button>
-                                            <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
+                                            <button class="dropdown-item" data-toggle="modal" data-target="#editFileDescription">Edit Description</button>
+                                              <button class="dropdown-item">Download</button>
                                             <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
                                           </div>
-                                        </div></td>
+                                      </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -2641,9 +2612,9 @@
                         <div class="row">
                           <div class="col md-12">
                             <h3>Buildings</h3>
-                            <div class="form-group">
+                            <!--<div class="form-group">
                               <button class="btn btn-outline-primary">Add Building</button>
-                              </div>
+                              </div>-->
                             <p class="iq-not-available">No buildings have been added.</p>
                           </div>
                         </div>
@@ -2651,10 +2622,10 @@
                           <div class="col-md-12">
                             <fieldset>
                               <legend class="iq-form-group-title">Attachments</legend>
-                              <p>Add and manage attachments for this provider's location.</p>
+                              <!--<p>Add and manage attachments for this provider's location.</p>
                               <div class="form-group">
                                 <button class="btn btn-outline-primary" onClick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.addAttachment').addClass('active');">Add Attachment</button>
-                              </div>
+                              </div>-->
                               <p class="iq-not-available">No attachments have been added.</p>
                             </fieldset>
                           </div>
@@ -3222,51 +3193,91 @@
             </section>
             <!-- add attachment -->
             <section class="edit-view addAttachment">
-              <h2>Add Attachment</h2>
-              <div id="locationAttachment">
+             <div class="alert alert-danger fileTooLargeMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li><a href="#fileUploadX">Maximum file size allowed is 256 MB.</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="alert alert-danger duplicateFileMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li>File name "My-New-File.docx" already exists. <a href="#fileUploadX">Replace file</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="alert alert-danger fileWrongTypeMsg hide" role="alert">
+            <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
+                  <ul>
+                      <li><a href="#fileUploadX">File type is not supported.</a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="alert alert-warning fileMissing hide" role="alert">
+            <div class="alert-content">Please select a file.</div><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <h2>Add Attachment</h2>
+            <p>Select a file and add a description below.</p>
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
                 <p class="mb-2">
-                  <label for="fileUpload2" class="btn btn-outline-primary iqies-file-input-label" onclick="$('#fileDetails2').removeClass('hide'); $('#locationAttachment').addClass('hide');">
-                    <input type="file" id="fileUpload2" name="file" class="form-control-file">
-                    Select File</label>
+                  <label for="fileUploadX" class="btn btn-outline-primary iqies-file-input-label">
+                    <input type="file" id="fileUploadX" name="file" class="form-control-file" onClick="fileUpload();">
+                    <span>Select File</span></label>
                 </p>
-                <p class="help-text">Supported file formats PDF (.pdf), Word (.doc, .docx), Excel (.xls, .xlsx), Text files (.txt, .rtf), Image files (.jpeg, .jpg, .png, .tif, .tiff), Video files (.mp4, .mov, .wmv, .3gp), and Audio files (.mp3, .aac, .wav, .wma).</p>
               </div>
-              <div class="file-attachment-card hide" id="fileDetails2">
-                <div class="row">
-                  <div class="col-sm-10">
-                    <h3><i class="far fa-paperclip" aria-hidden="true"></i> File Name.pdf</h3>
-                  </div>
-                  <div class="col-sm-2 text-right"><a href="#" onClick="$('#fileDetails2').addClass('hide'); $('#locationAttachment').removeClass('hide');">Remove</a></div>
+            </div>
+            
+            <br>
+              <input type="hidden" id="fsize" value="0">
+              <div class="fileSize hide">
+                  <div class="file-attachment-card">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h3><i class="far fa-paperclip"></i> <span class="fName">My-New-Large-File.docx <small>[260 MB]</small></span>
+                      <div class="fileTooLarge iq-input-error-msg" style="padding-left: 2rem;">File size exceeds maximum limit of 256MB</div>
+                      <div class="fileWrongType iq-input-error-msg hide" style="padding-left: 2rem;">File type is not supported</div>
+                      <div class="uploading hide"><div class="text-primary uploaded" style="padding-left: 2rem; margin-top: .5rem;" role="status"><i class="spinner-border"></i> <small>Uploading <span class="Count">100</span>% ... </small></div></div></h3>
                 </div>
-                <div class="row">
-                  <div class="col-sm-12 file-description">
-                    <p>
-                      <label>File Description
-                        <input type="text" class="form-control file-description-text">
-                      </label>
-                      <span class="fdt"></span></p>
-                  </div>
+                <div class="col-sm-2 text-right"><a href="#" class="fileTooLarge" onClick="cancelFileUpload()">Dismiss</a><a href="#" class="uploaded hide" onClick="cancelFileUpload()">Remove</a></div>
+              </div>
+              <div class="row uploaded hide">
+                <div class="col-sm-12 file-description">                  
+<div class="form-group">
+    <label>File Description</label>
+    <textarea class="form-control file-description-text" id="fdI1" rows="3"></textarea>
+    <span class="fdt0 help-text">Limit to 255 characters</span>
+</div>
                 </div>
               </div>
-              <div class="iq-button-wrapper"> <a href="#locationFileAttached" class="btn btn-primary" onClick="if( $('#fileDetails2').hasClass('hide') ){  
-                    $('.alert.attachmentError').removeClass('hide'); 
-                } else {  
-                    $('#building .edit-view').removeClass('active'); 
-                    $('#building .read-view').addClass('active'); 
-                    $('#building .newAttachmentRow').removeClass('hide'); 
-                    if($('.file-description-text').val()) { 
-                        $('.file-description .fdt').html($('.file-description-text').val());
-                    } else { 
-                        $('.file-description .fdt').html('No information provided'); 
-                        $('.file-description .fdt').addClass('iq-not-available');
-                    } 
-                    $(this).hide(); 
-                    $('.file-description-text').addClass('hide'); 
-                    $('.alert.attachmentError').addClass('hide'); 
-                }">Save</a>
-                <button class="btn btn-link" onClick="$('#building .edit-view').removeClass('active'); $('#building .read-view').addClass('active'); };">Cancel</button>
+            </div>
               </div>
-            </section>
+              <!--<div class="file-attachment-card file2 hide">
+              <div class="row">
+                <div class="col-sm-10">
+                  <h3><i class="far fa-paperclip"></i> LetterSent060119.pdf <small>[1.45 MB]</small></h3>
+                </div>
+                <div class="col-sm-2 text-right"><a href="#">Remove</a></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 file-description">
+                  <p>
+                    <label>File Description
+                      <input type="text" class="form-control file-description-text">
+                    </label>
+                    <span class="fdt"></span></p>
+                </div>
+              </div>
+            </div>-->
+            <p class="help-text"><strong>Supported file formats: </strong> PDF, Word, Excel, Text, Image, Video, and Audio files <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="Supported file extensions: .pdf, .doc, .docx, .xls, .xlsx, .txt, .rtf, .jpeg, .jpg, .png, .tif, .tiff, .mp4, .mov, .wmv, .3gp, .mp3, .aac, .wav, .wma" aria-describedby="attachmentExtensions"><i class="fal fa-info-circle"></i></a><br><strong>Maximum file size: </strong> 256 MB</p>
+            <p class="sr-only" id="attachmentExtensions">
+              Supported file extensions: .p d f, .d o c, .d o c x, .x l s, .x l s x, .c s v, .t x t, .r t f, .j peg, .j p g, .p n g, .t i f, .t i f f), .m p 4, .m o v, .w m v, .3 g p, .m p 3, .a a c, .wav, and .w m a.</p>
+              <div class="iq-button-wrapper">
+                    <button class="btn btn-primary uploadFileSave" onClick="saveFileAttachment()"><span>Save</span> <span class="hide" role="status"><i class="fas fa-circle-notch fa-spin"></i> <small>Uploading... </small></span></button>
+                    <button class="btn btn-link cancelAttachment" onClick="cancelFileAttachment()">Cancel</button>
+                  </div>
+                </section>
           </div>
           <div class="tab-pane " id="contact" role="tabpanel"
                     aria-labelledby="contactTab">
@@ -4203,7 +4214,7 @@
             <div class="alert alert-danger duplicateFileMsg hide" role="alert">
             <div class="alert-content"><h2>Unable to Save</h2>Please review and correct the following:
                   <ul>
-                      <li><a href="#fileUploadX">File name "My-New-File.docx" already exists. Please rename the file and try again.</a></li>
+                      <li>File name "My-New-File.docx" already exists. <a href="#fileUploadX">Replace file</a></li>
                   </ul>
               </div>
             </div>
@@ -4396,7 +4407,7 @@
     </div>
   </div>
 </main>
-<!-- modal -->
+<!-- modal confirm building deletion -->
 <div class="modal fade" id="confirmBuildingDeletion" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -4415,7 +4426,7 @@
   </div>
 </div>
 <!-- file description modal -->
-    <div class="modal fade" id="editFileDescription" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="editFileDescription" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -4432,24 +4443,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
-        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- modal -->
-<div class="modal fade" id="confirmLocationDeletion" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Delete Location</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-      </div>
-      <div class="modal-body">
-        <p>All buildings and attachments that have been added to this location will also be deleted. Please confirm you want to delete this location.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
         <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -4472,6 +4465,25 @@
     </div>
   </div>
 </div>
+<!-- modal confirm location deletion-->
+<div class="modal fade" id="confirmLocationDeletion" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Location</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <p>All buildings and attachments that have been added to this location will also be deleted. Please confirm you want to delete this location.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- confirmation of saving after certificate and license modal -->
 <div class="modal fade" id="confirmCertificateSave" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -4646,16 +4658,30 @@
                 $('iqies-file-input-label span').text('Select File');
                 $('.uploadFileSave').addClass('disabled');
                 $('.uploadFileSave span').toggleClass('hide');
-                setTimeout(function(){
-                    $('#attachment .edit-view').removeClass('active');
-                    $('#attachment .read-view').addClass('active');
-                }, 3000);
+                if($('#building').hasClass('active')){ 
+                    $('#building .newAttachmentRow').removeClass('hide');
+                     setTimeout(function(){
+                        $('#building .edit-view').removeClass('active');
+                        $('#building .read-view').addClass('active');
+                    }, 3000);
+                } else {
+                    setTimeout(function(){
+                        $('#attachment .edit-view').removeClass('active');
+                        $('#attachment .read-view').addClass('active');
+                    }, 3000);
+                }
             }
         }
+        
     }
     function cancelFileAttachment(){
-         $('#attachment .edit-view').removeClass('active');
-        $('#attachment .read-view').addClass('active');
+        if($('#building').hasClass('active')){ 
+             $('#building .edit-view').removeClass('active');
+             $('#building .read-view').addClass('active');
+        } else {
+            $('#attachment .edit-view').removeClass('active');
+            $('#attachment .read-view').addClass('active');
+        }
     }
     function addFileAttachment(){
         $('#attachment .edit-view').addClass('active');
@@ -4686,6 +4712,21 @@
             //{ 'visible': false, 'targets': 8 }
          ]
       }); 
+    function addAttachment(){
+        $('#building .read-view').removeClass('active'); 
+        $('#building .edit-view').removeClass('active'); 
+        $('#building .edit-view.addAttachment').addClass('active');
+        $('.fileWrongType').addClass('hide'); 
+        $('.fileTooLarge').removeClass('hide');
+        $('.fileSize').addClass('hide'); 
+        $('.iqies-file-input-label span').text('Select File');
+        $('.uploadFileSave').removeClass('disabled');
+        //$('.uploadFileSave span').toggleClass('hide');
+        
+        $('html, body').animate({ scrollTop: 0 }, 500);
+        
+        
+    }
 </script> 
 <script>
     function saveBuilding(){
@@ -4745,12 +4786,7 @@
         $('#building .edit-view.building1').addClass('active');
         $('html, body').animate({ scrollTop: 0 }, 500);
     }
-    function addAttachment(){
-        $('#building .read-view').removeClass('active'); 
-        $('#building .edit-view').removeClass('active'); 
-        $('#building .edit-view.addAttachment').addClass('active');
-        $('html, body').animate({ scrollTop: 0 }, 500);
-    }
+    
     function editBranch1(){
         $('#building .read-view').removeClass('active'); 
         $('#building .edit-view').removeClass('active');
