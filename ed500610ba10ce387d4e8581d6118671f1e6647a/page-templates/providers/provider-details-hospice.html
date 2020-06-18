@@ -1541,7 +1541,7 @@
                 </div>
                 <div class="col-md-12">
                   <fieldset>
-                    <legend>Building Status</legend>
+                    <legend>Building Status <span class="iq-asterisk">*</span></legend>
                     <div class="custom-control custom-radio">
                       <input type="radio" id="buildingStatus1" checked name="buildingStatus" class="custom-control-input"  onchange="if(this.checked){$('.bwsclosed').addClass('hide'); $('.lsc-fi').removeClass('hide'); $('.stateRS').addClass('hide');} ">
                       <label class="custom-control-label" for="buildingStatus1"> Active </label>
@@ -1587,7 +1587,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label>Construction Type</label>
                     <select class="form-control">
@@ -1601,6 +1601,13 @@
                       <option>Type V - Protected wood construction</option>
                       <option>Type V - Unprotected wood frame construction</option>
                     </select>
+                  </div>
+                </div>
+                  <div class="col-md-3">
+                  <div class="form-group">
+                    <label>FSES Date</label>
+                    <input type="date" class="form-control" >
+                    <p class="help-text">MM/DD/YYYY</p>
                   </div>
                 </div>
                 <!--<div class="col-md-12"> 
@@ -1640,13 +1647,7 @@
                     </select>
                   </p>
                 </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>FSES Date</label>
-                    <input type="date" class="form-control" >
-                    <p class="help-text">MM/DD/YYYY</p>
-                  </div>
-                </div>
+                
                 <div class="col-md-12"> </div>
               </div>
               <div class="row">
@@ -1809,7 +1810,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <div class="form-group">
                     <label>Construction Type</label>
                     <select class="form-control">
@@ -1825,13 +1826,20 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-12"> 
-                  <!--<fieldset><legend><div class="custom-control custom-checkbox">
+                  <div class="col-md-3">
+                  <div class="form-group">
+                    <label>FSES Date</label>
+                    <input type="date" class="form-control" >
+                    <p class="help-text">MM/DD/YYYY</p>
+                  </div>
+                </div>
+                 <!--<div class="col-md-12"> 
+                 <fieldset><legend><div class="custom-control custom-checkbox">
                     <input type="checkbox" onChange="if(this.checked){ $('.lsc-fi').addClass('hide'); } else { $('.lsc-fi').removeClass('hide'); }" id="lob" name="lob" class="custom-control-input" value="value">
                     <label class="custom-control-label" for="lob"> State Licensed Only Building </label>
-                  </div></legend></fieldset>--> 
+                  </div></legend></fieldset>
                   
-                </div>
+                </div>--> 
                 <div class="col-md-4">
                   <p>
                     <label>Hazmat Area Separate</label>
@@ -1863,13 +1871,7 @@
                     </select>
                   </p>
                 </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>FSES Date</label>
-                    <input type="date" class="form-control" >
-                    <p class="help-text">MM/DD/YYYY</p>
-                  </div>
-                </div>
+                
                 <div class="col-md-12"> </div>
               </div>
               <div class="row">
@@ -2168,7 +2170,7 @@
                                 <div class="card-header d-flex">
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s1b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility<br>
-                                  <small class="bottom">T1 | Building | <span class="iq-status iq-status-open"></span>Active | Effective 10/25/2000</small></span></button>
+                                  <small class="bottom">T1 | Building | <span class="iq-status iq-status-open"></span> Active | Effective 10/25/2000</small></span></button>
                                   <div class="iq-accordion-actions">
                                     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                                     <button type="button" class="btn btn-link" onclick="editBuilding1()"> Edit </button>
@@ -2316,7 +2318,7 @@
                                 <div class="card-header d-flex">
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s1b4" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility Floor 3<br>
-                                  <small class="bottom">T3 | Floor | <span class="iq-status iq-status-open"></span>Active  | <span class="iq-not-available">No effective date</span></small></span></button>
+                                  <small class="bottom">T3 | Floor | <span class="iq-status iq-status-open"></span> Active  | <span class="iq-not-available">No effective date</span></small></span></button>
                                   <div class="iq-accordion-actions">
                                     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                                     <button type="button" class="btn btn-link">Edit</button>
@@ -2335,7 +2337,7 @@
                                 <div class="card-header d-flex">
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s1b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>Solarium<br>
-                                  <small class="bottom">S1 | Wing | <span class="iq-status iq-status-closed"></span>Closed 03/16/2012</small></span></button>
+                                  <small class="bottom">S1 | Wing | <span class="iq-status iq-status-closed"></span> Closed 03/16/2012</small></span></button>
                                   <div class="iq-accordion-actions">
                                     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                                     <button type="button" class="btn btn-link"> Edit </button>
@@ -2479,7 +2481,7 @@
                                 <div class="card-header d-flex">
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s2b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Morrison<br>
-                                  <small class="bottom">M1 | Building | <span class="iq-status iq-status-open"></span>Active | Effective 03/12/2012</small></span></button>
+                                  <small class="bottom">M1 | Building | <span class="iq-status iq-status-open"></span> Active | Effective 03/12/2012</small></span></button>
                                   <div class="iq-accordion-actions">
                                     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                                     <button type="button" class="btn btn-link"> Edit </button>
@@ -2498,7 +2500,7 @@
                                 <div class="card-header d-flex">
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s2b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>3rd Floor<br>
-                                  <small class="bottom">M2 | Floor | <span class="iq-status iq-status-closed"></span>Closed 09/02/2018</small></span></button>
+                                  <small class="bottom">M2 | Floor | <span class="iq-status iq-status-closed"></span> Closed 09/02/2018</small></span></button>
                                   <div class="iq-accordion-actions align-items-center">
                                     <button type="button" class="btn btn-link" disabled>Delete</button>
                                     <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This building cannot be deleted because it has been included in a survey."><i class="fal fa-info-circle"></i></a>
@@ -2640,7 +2642,7 @@
                     <div class="card-header d-flex">
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility<br>
-                      <small class="bottom">T1 | Building | <em class="fas fa-square status-blue"></em> Active | Effective 10/25/2000</small></span></button>
+                      <small class="bottom">T1 | Building | <span class="iq-status iq-status-open"></span> Active | Effective 10/25/2000</small></span></button>
                       <div class="iq-accordion-actions">
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                         <button type="button" class="btn btn-link" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.building1').addClass('active');"> Edit </button>
@@ -2776,7 +2778,7 @@
                     <div class="card-header d-flex">
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#b3" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility 1B<br>
-                      <small class="bottom">T2 | Apartment Unit | <em class="fas fa-circle" style="color:#0071bc "></em> Licensed Only | Effective 05/21/2014</small></span></button>
+                      <small class="bottom">T2 | Apartment Unit | <em class="fas fa-circle" style="color:#0071bc " aria-hidden="true"></em> Licensed Only | Effective 05/21/2014</small></span></button>
                       <div class="iq-accordion-actions">
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                         <button type="button" class="btn btn-link"> Edit </button>
@@ -2795,7 +2797,7 @@
                     <div class="card-header d-flex">
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#b4" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility Floor 3<br>
-                      <small class="bottom">T3 | Floor | <em class="fas fa-square status-white"></em> Active |<span class="iq-not-available">No effective date</span></small></span></button>
+                      <small class="bottom">T3 | Floor | <span class="iq-status iq-status-open"></span> Active | <span class="iq-not-available">No effective date</span></small></span></button>
                       <div class="iq-accordion-actions">
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                         <button type="button" class="btn btn-link"> Edit </button>
@@ -2818,7 +2820,7 @@
                     <div class="card-header d-flex">
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s4b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Morrison<br>
-                      <small class="bottom">M1 | Building | <em class="fas fa-square status-gray"></em> Closed 03/12/2012</small></span></button>
+                      <small class="bottom">M1 | Building | <span class="iq-status iq-status-closed"></span> Closed 03/12/2012</small></span></button>
                       <div class="iq-accordion-actions">
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                         <button type="button" class="btn btn-link"> Edit </button>
@@ -2837,7 +2839,7 @@
                     <div class="card-header d-flex">
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s4b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>3rd Floor<br>
-                      <small class="bottom">M2 | Floor | <em class="fas fa-square status-gray"></em> Closed 09/02/2018</small></span></button>
+                      <small class="bottom">M2 | Floor | <span class="iq-status iq-status-closed"></span> Closed 09/02/2018</small></span></button>
                       <div class="iq-accordion-actions">
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                         <button type="button" class="btn btn-link"> Edit </button>
@@ -2856,7 +2858,7 @@
                     <div class="card-header d-flex">
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s5b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>Solarium<br>
-                      <small class="bottom">S1 | Wing | <em class="fas fa-square status-gray"></em> Closed 03/16/2012</small></span></button>
+                      <small class="bottom">S1 | Wing | <span class="iq-status iq-status-closed"></span> Closed 03/16/2012</small></span></button>
                       <div class="iq-accordion-actions">
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                         <button type="button" class="btn btn-link"> Edit </button>
@@ -4654,6 +4656,8 @@
                 $('.iqies-file-input-label').addClass('disabled');
                 $('.form-control.file-description-text').attr('disabled',true);
                 $('a.uploaded').addClass('disabled');
+                $('#attachment .edit-view .cancelAttachment').removeClass('hide');
+                
                 if($('#building').hasClass('active')){ 
                     $('#building .newAttachmentRow').removeClass('hide');
                      setTimeout(function(){
