@@ -623,7 +623,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item disabled" aria-disabled="true" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it">Disabled action <span class="btn-tooltip"><i class="fal fa-info-circle"></i></span></a>
+                  <a class="dropdown-item disabled" aria-disabled="true" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it">Disabled action <span class="btn-tooltip" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></span></a>
                   <a class="dropdown-item" href="#">Something else here</a>
                 
                   </div>
@@ -633,7 +633,7 @@
               <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown Menu Link</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLink">
                 <button class="dropdown-item">Download</button>
-                <button class="dropdown-item disabled" aria-disabled="true" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it">Edit <span class="btn-tooltip"><i class="fal fa-info-circle"></i></span></button>
+                <button class="dropdown-item disabled" aria-disabled="true" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why this control is disabled and how to enable it">Edit <span class="btn-tooltip" title="The reason why this control is disabled and how to enable it"><i class="fal fa-info-circle"></i></span></button>
                 <button class="dropdown-item">Delete</button>
                 </div>
               </div>
@@ -936,7 +936,7 @@
     <article id="formCheckRadio">
       <h3>Checkbox and Radio Button</h3>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <fieldset>
             <legend>Checkbox Group <span class="iq-asterisk">*</span> </legend>
             <div class="custom-control custom-checkbox">
@@ -953,7 +953,7 @@
               </div>     
             </fieldset>
           </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <fieldset>
             <legend>Radio Group <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason why one of the controls below is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></legend>
             <div class="custom-control custom-radio">
@@ -968,9 +968,35 @@
               <input type="radio" id="ox3" name="ox" class="custom-control-input" disabled>
               <label class="custom-control-label" for="ox3">Option C </label>
               </div>
+              <div class="custom-control custom-radio">
+              <input type="radio" id="ox4" name="ox" class="custom-control-input" disabled>
+              <label class="custom-control-label" for="ox4">Option D </label>
+              </div>
+              <p class="help-text">With a single reason for all disabled options</p>
             </fieldset>
           </div>
-        
+        <div class="col-md-4">
+          <fieldset>
+            <legend>Radio Group</legend>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="ox21" checked name="ox2" class="custom-control-input">
+              <label class="custom-control-label" for="ox21"> Option A </label>
+              </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="ox22" name="ox2" class="custom-control-input">
+              <label class="custom-control-label" for="ox22"> Option B </label>
+              </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="ox23" name="ox2" class="custom-control-input disabled" aria-disabled="true">
+              <label class="custom-control-label" for="ox23">Option C <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason A why this is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></label>
+              </div>
+              <div class="custom-control custom-radio">
+              <input type="radio" id="ox24" name="ox2" class="custom-control-input disabled" aria-disabled="true">
+              <label class="custom-control-label" for="ox24">Option D <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="The reason B why this is disabled and how to enable it"><i class="fal fa-info-circle"></i></a></label>
+              </div>
+              <p class="help-text">With each disabled option having a different reason</p>
+            </fieldset>
+          </div>
         </div>    
       </article>
     <article id="formConditional">
@@ -2578,6 +2604,17 @@ Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
             // Ensures this code runs AFTER the browser handles click however it wants.
             setTimeout(function() {
               $checkbox.removeAttr('checked');
+            }, 0);
+
+            event.preventDefault();
+            event.stopPropagation();
+        });
+        $('input[type="radio"][aria-disabled=true]').click(function(event) {
+            var $radio = $(this);
+
+            // Ensures this code runs AFTER the browser handles click however it wants.
+            setTimeout(function() {
+              $radio.removeAttr('checked');
             }, 0);
 
             event.preventDefault();

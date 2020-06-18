@@ -65,7 +65,7 @@ h5.card-title a { margin-bottom: 1rem; }
 .card dd ul { margin-left: 0; padding-left: 1.25rem; }
 .card dd ul li { margin-bottom: 0; padding: 0; }
 @media (min-width: 576px) {
-.card-deck .card { margin-bottom: 1rem; }
+    .card-deck .card { margin-bottom: 1rem; }
 }
 
  /*.ui-widget-content.ui-autocomplete { background-color: white; color: #212121; border: 1px solid #ddd; box-shadow: 1px 1px 2px rgba(0,0,0,0.1); } , .ui-widget-content, .ui-helper-hidden-accessible div */
@@ -150,8 +150,8 @@ input:not([type=checkbox]):not([type=radio]), select, textarea, .form-control {
 }
 input:not([type=checkbox]):not([type=radio]):disabled, select:disabled, textarea:disabled, .form-control:disabled { background-color: #d6d7d9; border: 1px solid #AEB0B5; opacity: 1;}
 button.btn.disabled[aria-disabled=true], select[aria-disabled=true] { background-color: #d6d7d9; border: 1px solid #AEB0B5; opacity: 1; cursor: not-allowed }
-input[type=checkbox][aria-disabled=true] { opacity: 0; cursor: not-allowed; }
-a.disabled[aria-disabled=true], button.btn-link.disabled[aria-disabled=true] { opacity: .5; cursor: not-allowed; color: #6c757d; border: 0; background-color: transparent; }
+input[type=checkbox][aria-disabled=true], input[type=radio][aria-disabled=true] { opacity: 0; cursor: not-allowed; }
+a.disabled[aria-disabled=true], a.disabled, button.btn-link.disabled[aria-disabled=true] { opacity: .5; cursor: not-allowed; color: #6c757d; border: 0; background-color: transparent; }
 
 .custom-control-input.disabled ~ .custom-control-label { color: #6c757d; }
 .custom-control-input.disabled ~ .custom-control-label::before { border-color: #aeb0b5; background-color: #d6d7d9; }
@@ -302,6 +302,13 @@ label .iq-input-error-msg::before, label .iq-input-info-msg::before { line-heigh
 
 .iq-list-buttons { text-align: right; }
 .iq-list-buttons .btn { float: right; margin-left: 1rem; white-space: nowrap; }
+
+
+dl.iq-list { margin-bottom: 2rem; border-bottom: 1px solid #f1f1f1; }
+dl.iq-list dt { font-size: 1rem; padding: 1rem; margin-bottom: 0; vertical-align: top; display: block; width: 30%; float: left; clear: both;}
+dl.iq-list dd { padding: 1rem; padding-left: 0; margin-bottom: 0; vertical-align: top; display: block; width: 70%; margin-left: -.3rem; align-self: stretch!important; }
+dl.iq-list > dt:nth-of-type(odd), dl.iq-list > dd:nth-of-type(odd){ background-color: #f8f8f8;}
+
 
 /* TAG or BADGE */
 .badge.badge-pill, .badge { background-color: #E1F3F8; color: #112E51; font-size: .875rem; vertical-align: middle; padding: .25rem .75rem; white-space: normal; font-weight: normal !important; border-radius: 10rem; }
