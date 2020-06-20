@@ -305,10 +305,14 @@ label .iq-input-error-msg::before, label .iq-input-info-msg::before { line-heigh
 
 
 dl.iq-list { margin-bottom: 2rem; border-bottom: 1px solid #f1f1f1; }
-dl.iq-list dt { font-size: 1rem; padding: 1rem; margin-bottom: 0; vertical-align: top; display: block; width: 30%; float: left; clear: both;}
-dl.iq-list dd { padding: 1rem; padding-left: 0; margin-bottom: 0; vertical-align: top; display: block; width: 70%; margin-left: -.3rem; align-self: stretch!important; }
+dl.iq-list dt { font-size: 1rem; padding: 1rem; margin-bottom: 0; vertical-align: top; display: inline-block; width: 30%; }
+dl.iq-list dd { padding: 1rem; margin-bottom: 0; vertical-align: top; display: inline-block; width: 70%; margin-left: -.3rem; }
 dl.iq-list > dt:nth-of-type(odd), dl.iq-list > dd:nth-of-type(odd){ background-color: #f8f8f8;}
+dl.iq-list dt ~ dd { align-self: stretch; }
 
+.card-body.iq-list dt { font-size: 1rem; padding: 1rem; margin-bottom: 0; vertical-align: top; display: inline-block; width: 30%; }
+.card-body.iq-list dd { padding: 1rem; padding-left: 0; margin-bottom: 0; vertical-align: top; display: inline-block; width: 70%; margin-left: -.3rem; align-self: stretch!important; }
+.card-body.iq-list dl > dt:nth-of-type(odd), .card-body.iq-list dl > dd:nth-of-type(odd){ background-color: #f8f8f8;}
 
 /* TAG or BADGE */
 .badge.badge-pill, .badge { background-color: #E1F3F8; color: #112E51; font-size: .875rem; vertical-align: middle; padding: .25rem .75rem; white-space: normal; font-weight: normal !important; border-radius: 10rem; }

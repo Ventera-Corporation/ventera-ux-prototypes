@@ -1558,16 +1558,16 @@
                   <div class="iq-conditional-content" style="margin-top: .5rem;">
                     <div class="lsc-fi">
                       <p>
-                        <label>LSC Form Indicator <span class="iq-asterisk">*</span></label>
-                        <select class="form-control">
+                        <label>LSC Form Indicator <span class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="" data-original-title="LSC form indicator cannot be changed because this building has been included in a survey."><i class="fal fa-info-circle" aria-hidden="true"></i></span></label>
+                        <select class="form-control" readonly>
                           <option>Select one</option>
-                          <option selected>HC 2012 Existing</option>
+                          <option selected="">HC 2012 Existing</option>
                           <option>HC 2012 New</option>
                         </select>
                       </p>
                       <p>
                         <label>Regulation Set</label>
-                        <input type="text" readonly value="Reg 112233">
+                        <input type="text" readonly="" value="Reg 112233">
                       </p>
                     </div>
                     <div class="stateRS hide">
@@ -2171,8 +2171,8 @@
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s1b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility<br>
                                   <small class="bottom">T1 | Building | <span class="iq-status iq-status-open"></span> Active | Effective 10/25/2000</small></span></button>
-                                  <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
+                                  <div class="iq-accordion-actions align-items-center">
+                                    <button type="button" class="btn btn-link disabled">Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="" data-original-title="This building cannot be deleted because it has been included in a survey."><i class="fal fa-info-circle" aria-hidden="true"></i></a>
                                     <button type="button" class="btn btn-link" onclick="editBuilding1()"> Edit </button>
                                   </div>
                                 </div>
@@ -2306,10 +2306,36 @@
                                   </div>
                                 </div>
                                 <div id="s1b3" class="collapse">
-                                  <div class="card-body"> Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Hic, voluptate a unde eaque assumenda illum!
-                                    Maiores aliquid reprehenderit eaque, ex explicabo laborum rem,
-                                    error, placeat voluptas impedit maxime dicta corporis! </div>
+                                  <div class="card-body"> 
+                                  <dl class="iq-list">
+                                          <dt>Building ID</dt>
+                                          <dd>T1</dd>
+                                          <dt>Number of Stories</dt>
+                                          <dd>3</dd>
+                                          <dt>Building Location Description</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Plan Approval Date</dt>
+                                          <dd>08/15/2000</dd>
+                                          <dt>Constructed Date</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Effective Date</dt>
+                                          <dd>10/25/2000</dd>
+                                          <dt>LSC Form Indicator</dt>
+                                          <dd>HC 2012 Existing</dd>
+                                          <dt>Regulation Set</dt>
+                                          <dd>Reg 1234556</dd>
+                                          <dt>Construction Type</dt>
+                                          <dd>Type I - Fire Resistive Construction</dd>
+                                          <dt>Hazmat Area Separate</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Sprinkler Required</dt>
+                                          <dd>No</dd>
+                                          <dt>Sprinkler Status</dt>
+                                          <dd>Partially Sprinklered</dd>
+                                          <dt>FSES Date</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                      </dl>  
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -2325,10 +2351,40 @@
                                   </div>
                                 </div>
                                 <div id="s1b4" class="collapse">
-                                  <div class="card-body"> Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Hic, voluptate a unde eaque assumenda illum!
-                                    Maiores aliquid reprehenderit eaque, ex explicabo laborum rem,
-                                    error, placeat voluptas impedit maxime dicta corporis! </div>
+                                  <div class="card-body iq-list">
+                                      
+                                      <dl>
+                                          <dt>Building ID</dt>
+                                          <dd>T1</dd>
+                                      </dl>
+                                      <dl>
+                                          <dt>Number of Stories</dt>
+                                          <dd>3</dd>
+                                      </dl>
+                                      <dl>
+                                          <dt>Building Location Description</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Plan Approval Date</dt>
+                                          <dd>08/15/2000</dd>
+                                          <dt>Constructed Date</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Effective Date</dt>
+                                          <dd>10/25/2000</dd>
+                                          <dt>LSC Form Indicator</dt>
+                                          <dd>HC 2012 Existing</dd>
+                                          <dt>Regulation Set</dt>
+                                          <dd>Reg 1234556</dd>
+                                          <dt>Construction Type</dt>
+                                          <dd>Type I - Fire Resistive Construction</dd>
+                                          <dt>Hazmat Area Separate</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Sprinkler Required</dt>
+                                          <dd>No</dd>
+                                          <dt>Sprinkler Status</dt>
+                                          <dd>Partially Sprinklered</dd>
+                                          <dt>FSES Date</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                      </dl> </div>
                                 </div>
                               </div>
                             </div>
