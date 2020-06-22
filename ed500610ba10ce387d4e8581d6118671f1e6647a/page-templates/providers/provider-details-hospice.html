@@ -1557,17 +1557,16 @@
                   </fieldset>
                   <div class="iq-conditional-content" style="margin-top: .5rem;">
                     <div class="lsc-fi">
-                      <p>
-                        <label>LSC Form Indicator <span class="iq-asterisk">*</span></label>
-                        <select class="form-control">
-                          <option>Select one</option>
+                      <p><label>LSC Form Indicator <span class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="" data-original-title="LCS form indicator cannot be changed because this building has been cited in a survey"><i class="fal fa-info-circle" aria-hidden="true"></i></span></label>
+                        <select class="form-control disabled" aria-disabled="true" readonly>
+                          <option disabled>Select one</option>
                           <option selected>HC 2012 Existing</option>
-                          <option>HC 2012 New</option>
+                          <option disabled>HC 2012 New</option>
                         </select>
                       </p>
                       <p>
                         <label>Regulation Set</label>
-                        <input type="text" readonly value="Reg 112233">
+                        <input type="text" readonly="" value="Reg 112233">
                       </p>
                     </div>
                     <div class="stateRS hide">
@@ -2171,8 +2170,8 @@
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s1b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility<br>
                                   <small class="bottom">T1 | Building | <span class="iq-status iq-status-open"></span> Active | Effective 10/25/2000</small></span></button>
-                                  <div class="iq-accordion-actions">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
+                                  <div class="iq-accordion-actions align-items-center">
+                                    <button type="button" class="btn btn-link disabled" aria-disabled="true">Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This building cannot be deleted because it has been cited in a survey."><i class="fal fa-info-circle"></i></a>
                                     <button type="button" class="btn btn-link" onclick="editBuilding1()"> Edit </button>
                                   </div>
                                 </div>
@@ -2299,17 +2298,43 @@
                                 <div class="card-header d-flex">
                                   <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s1b3" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility 1B<br>
-                                  <small class="bottom">T2 | Apartment Unit | <em class="fas fa-circle" style="color:#0071bc "></em> Licensed Only | Effective 05/21/2014</small></span></button>
+                                  <small class="bottom">T2 | Apartment Unit | <em class="fas fa-circle" style="color:rgba(0,113,188,.7); "></em> Licensed Only | Effective 05/21/2014</small></span></button>
                                   <div class="iq-accordion-actions">
                                     <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                                     <button type="button" class="btn btn-link" onclick="editBuilding2();"> Edit </button>
                                   </div>
                                 </div>
                                 <div id="s1b3" class="collapse">
-                                  <div class="card-body"> Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Hic, voluptate a unde eaque assumenda illum!
-                                    Maiores aliquid reprehenderit eaque, ex explicabo laborum rem,
-                                    error, placeat voluptas impedit maxime dicta corporis! </div>
+                                  <div class="card-body"> 
+                                  <dl class="iq-list">
+                                          <dt>Building ID</dt>
+                                          <dd>T1</dd>
+                                          <dt>Number of Stories</dt>
+                                          <dd>3</dd>
+                                          <dt>Building Location Description</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Plan Approval Date</dt>
+                                          <dd>08/15/2000</dd>
+                                          <dt>Constructed Date</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Effective Date</dt>
+                                          <dd>10/25/2000</dd>
+                                          <dt>LSC Form Indicator</dt>
+                                          <dd>HC 2012 Existing</dd>
+                                          <dt>Regulation Set</dt>
+                                          <dd>Reg 1234556</dd>
+                                          <dt>Construction Type</dt>
+                                          <dd>Type I - Fire Resistive Construction</dd>
+                                          <dt>Hazmat Area Separate</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Sprinkler Required</dt>
+                                          <dd>No</dd>
+                                          <dt>Sprinkler Status</dt>
+                                          <dd>Partially Sprinklered</dd>
+                                          <dt>FSES Date</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                      </dl>  
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -2325,10 +2350,40 @@
                                   </div>
                                 </div>
                                 <div id="s1b4" class="collapse">
-                                  <div class="card-body"> Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Hic, voluptate a unde eaque assumenda illum!
-                                    Maiores aliquid reprehenderit eaque, ex explicabo laborum rem,
-                                    error, placeat voluptas impedit maxime dicta corporis! </div>
+                                  <div class="card-body iq-list">
+                                      
+                                      <dl>
+                                          <dt>Building ID</dt>
+                                          <dd>T1</dd>
+                                      </dl>
+                                      <dl>
+                                          <dt>Number of Stories</dt>
+                                          <dd>3</dd>
+                                      </dl>
+                                      <dl>
+                                          <dt>Building Location Description</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Plan Approval Date</dt>
+                                          <dd>08/15/2000</dd>
+                                          <dt>Constructed Date</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Effective Date</dt>
+                                          <dd>10/25/2000</dd>
+                                          <dt>LSC Form Indicator</dt>
+                                          <dd>HC 2012 Existing</dd>
+                                          <dt>Regulation Set</dt>
+                                          <dd>Reg 1234556</dd>
+                                          <dt>Construction Type</dt>
+                                          <dd>Type I - Fire Resistive Construction</dd>
+                                          <dt>Hazmat Area Separate</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                          <dt>Sprinkler Required</dt>
+                                          <dd>No</dd>
+                                          <dt>Sprinkler Status</dt>
+                                          <dd>Partially Sprinklered</dd>
+                                          <dt>FSES Date</dt>
+                                          <dd><p class="iq-not-available">No information</p></dd>
+                                      </dl> </div>
                                 </div>
                               </div>
                             </div>
@@ -2413,7 +2468,7 @@
                       <small class="bottom">Branch Office | ID 002 | Opened 01/21/1999 | 2 Buildings</small></span></button>
                       <div class="iq-accordion-actions align-items-center">
                         <button type="button" class="btn btn-link" disabled>Delete</button>
-                        <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This location cannot be deleted because one or more of its buildings has been included in a survey."><i class="fal fa-info-circle"></i></a> <a href="#" class="btn btn-link" onclick="editBranch1();">Edit</a> </div>
+                        <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This location cannot be deleted because one or more of its buildings has been cited in a survey."><i class="fal fa-info-circle"></i></a> <a href="#" class="btn btn-link" onclick="editBranch1();">Edit</a> </div>
                     </div>
                     <div id="site2" class="collapse">
                       <div class="iq-list" style="margin-top: -1rem;"> 
@@ -2503,7 +2558,7 @@
                                   <small class="bottom">M2 | Floor | <span class="iq-status iq-status-closed"></span> Closed 09/02/2018</small></span></button>
                                   <div class="iq-accordion-actions align-items-center">
                                     <button type="button" class="btn btn-link" disabled>Delete</button>
-                                    <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This building cannot be deleted because it has been included in a survey."><i class="fal fa-info-circle"></i></a>
+                                    <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This building cannot be deleted because it has been cited in a survey."><i class="fal fa-info-circle"></i></a>
                                     <button type="button" class="btn btn-link"> Edit </button>
                                   </div>
                                 </div>
@@ -2643,8 +2698,8 @@
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#b1" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility<br>
                       <small class="bottom">T1 | Building | <span class="iq-status iq-status-open"></span> Active | Effective 10/25/2000</small></span></button>
-                      <div class="iq-accordion-actions">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
+                      <div class="iq-accordion-actions align-items-center">
+                        <button type="button" class="btn btn-link disabled" aria-disabled="true">Delete</button> <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="" data-original-title="This building cannot be deleted because it has been cited in a survey."><i class="fal fa-info-circle" aria-hidden="true"></i></a>
                         <button type="button" class="btn btn-link" onclick="$('#building .read-view').removeClass('active'); $('#building .edit-view').removeClass('active'); $('#building .edit-view.building1').addClass('active');"> Edit </button>
                       </div>
                     </div>
@@ -2778,7 +2833,7 @@
                     <div class="card-header d-flex">
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#b3" type="button" onclick="$(this).toggleClass('expanded');"> <span>Tranquility 1B<br>
-                      <small class="bottom">T2 | Apartment Unit | <em class="fas fa-circle" style="color:#0071bc " aria-hidden="true"></em> Licensed Only | Effective 05/21/2014</small></span></button>
+                      <small class="bottom">T2 | Apartment Unit | <em class="fas fa-circle" style="color:rgba(0,113,188,.7);" aria-hidden="true"></em> Licensed Only | Effective 05/21/2014</small></span></button>
                       <div class="iq-accordion-actions">
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
                         <button type="button" class="btn btn-link"> Edit </button>
@@ -2840,8 +2895,9 @@
                       <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
                   data-toggle="collapse" data-target="#s4b2" type="button" onclick="$(this).toggleClass('expanded');"> <span>3rd Floor<br>
                       <small class="bottom">M2 | Floor | <span class="iq-status iq-status-closed"></span> Closed 09/02/2018</small></span></button>
-                      <div class="iq-accordion-actions">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmBuildingDeletion">Delete</button>
+                      <div class="iq-accordion-actions align-items-center">
+                        <button type="button" class="btn btn-link" disabled>Delete</button>
+                                    <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="This building cannot be deleted because it has been cited in a survey."><i class="fal fa-info-circle"></i></a>
                         <button type="button" class="btn btn-link"> Edit </button>
                       </div>
                     </div>
