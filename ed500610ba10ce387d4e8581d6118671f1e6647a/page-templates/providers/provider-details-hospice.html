@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Buildings and Wings - Provider Details - Hospice</title>
+<title>Provider Details - Hospice</title>
 <link rel="stylesheet"
     href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
@@ -694,11 +694,11 @@
                      onChange="$('#certifiedForm').removeClass('hide'); $('#terminatedForm').addClass('hide');">
                   <label class="custom-control-label" for="radio-button-fcs3"> Certified </label>
                 </div>
-                <!-- <div class="custom-control custom-radio">
-                  <input type="radio" disabled id="radio-button-fcs4" name="fcs" class="custom-control-input"
+                <div class="custom-control custom-radio hide terminated">
+                  <input type="radio" id="radio-button-fcs4" name="fcs" class="custom-control-input"
                      onChange="$('#certifiedForm').addClass('hide'); $('#terminatedForm').removeClass('hide'); ">
-                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated tooltip</label>
-                </div> -->
+                  <label class="custom-control-label" for="radio-button-fcs4"> Terminated</label>
+                </div>
               </fieldset>
               <div class="iq-conditional-content hide" id="certifiedForm">
                 <div class="row">
@@ -861,7 +861,7 @@
                 <span class="help-text">Unique identifier assigned by the state</span> </p>
               <div class="iq-button-wrapper">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#confirmCertificateSave">Save</button>
-                <button class="btn btn-link" onClick="$('#certs .edit-view').removeClass('active'); $('#certs .read-view').addClass('active');  $('#certs .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                <button class="btn btn-link" onClick="$('#certs .edit-view').removeClass('active'); $('#certs .read-view').addClass('active');  $('#certs .tabTitle .btn').removeClass('hide');  ">Cancel</button>
               </div>
             </section>
             <section class="read-view">
@@ -4230,7 +4230,7 @@
             </section>
           </div>
           <div class="tab-pane " id="attachment" role="tabpanel" aria-labelledby="attachmentTab">
-            <section class="edit-view active addAttachment">
+            <section class="edit-view addAttachment">
               <div class="alert alert-danger fileTooLargeMsg hide" role="alert">
                 <div class="alert-content">
                   <h2>Unable to Save</h2>
@@ -4335,42 +4335,37 @@
                 <strong>Maximum file size: </strong> 256 MB</p>
               <div class="iq-button-wrapper">
                 <button class="btn btn-primary uploadFileSave" onClick="saveFileAttachment()"><span>Save</span> <span class="hide" role="status"><i class="fas fa-circle-notch fa-spin"></i> <small>Uploading... </small></span></button>
-                <button class="btn btn-link hide cancelAttachment" onClick="cancelFileAttachment()">Cancel</button>
+                <button class="btn btn-link cancelAttachment" onClick="cancelFileAttachment()">Cancel</button>
               </div>
             </section>
-            <section class="read-view">
+            <section class="read-view active">
               <h2>Attachments</h2>
               <p>Add and manage attachments for this provider.</p>
               <button class="btn btn-primary" onClick="addFileAttachment()">Add Attachment</button>
               <div class="row mt-4">
-                <div class="col-lg-4" style="line-height: 3.5rem; position: relative"><span class="attachmentSearchCount" style="position: absolute; ">2 Attachments</span> <span class="sr-only"> 
+                <div class="col-lg-4" style="line-height: 3.5rem; position: relative"><span class="attachmentSearchCount" style="position: absolute; ">12 Attachments</span> <span class="sr-only"> 
                   <!-- situation 1: search term --> 
                   for search term: 
                   <!-- situtation 2: filters are engaged --> 
                   filtered by: </span> </div>
                 <div class="col-lg-8 text-right">
-                  <ul class="iq-inline-list hide">
+                  <ul class="iq-inline-list" style="position: absolute; right: 22rem; z-index: 100">
                     <li>
-                      <label class="m-0">Filter By:</label>
+                      <label class="m-0">Filter By: </label>
                     </li>
                     <li>
                       <select style="max-width: 15rem;" class="mb-2" onChange="selectRegSet(this)" id="allRegSelect">
-                        <option value="all">All Regulation Sets</option>
-                        <option value="er">Emergency Preparedness (FED - E - 1.01)</option>
-                        <option value="hha">Home Health Agencies (FED - G - 11.01)</option>
-                        <option value="state">IL State Home Health (ST - S - 2 - HHA)</option>
+                        <option value="all">All File Types</option>
+                        <option value="pdf">PDF</option>
+                        <option value="word">Word</option>
+                        <option value="excel">Excel</option>
+                        <option value="text">Text</option>
+                        <option value="image">Image</option>
+                        <option value="video">Video</option>
+                        <option value="audio">Audio</option>
                       </select>
                     </li>
-                    <li>
-                      <select style="max-width: 15rem;" onchange="selectTagType(this)" id="allTagTypeSelect">
-                        <option value="all">All Tag Types</option>
-                        <option value="condition">Condition</option>
-                        <option value="standard">Standard</option>
-                        <option value="licensure">Licensure</option>
-                        <option value="element">Element</option>
-                        <option value="memo">Memo</option>
-                      </select>
-                    </li>
+                    
                   </ul>
                 </div>
               </div>
@@ -4389,30 +4384,121 @@
                   </tr>
                 </thead>
                 <tbody>
+                  
                   <tr>
-                    <td><a href="#">My-New-File.docx</a> <small>[244 MB]</small></td>
-                    <td><p class="iq-not-available">No information</p></td>
+                    <td><a href="#">LetterSent060119.pdf</a> <small>[1.45 MB]</small></td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
                     <td>06/10/2020 by Janet Smith</td>
                     <td>Survey</td>
                     <td><a href="survey-brighthope.html">Survey FFB-H1</a></td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu2" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu2"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">My-Image.png</a> <small>[1.23 MB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>05/28/2020 by Janet Smith</td>
+                    <td>Enforcement</td>
+                    <td><a href="#">Enforcement 12345</a></td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu3" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu3"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">My-Audio-File.mp3</a> <small>[3.5 MB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>05/03/2020 by Janet Smith</td>
+                    <td>Provider</td>
+                    <td>CCN 12345</td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu4" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu4"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">My-Video-File.mp4</a> <small>[123.34 MB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>05/12/2020 by Janet Smith</td>
+                    <td>Provider</td>
+                    <td>CCN 12345</td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu5" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu5"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">My-Text-File.txt</a> <small>[121 KB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>05/22/2020 by Janet Smith</td>
+                    <td>Provider</td>
+                    <td>CCN 12345</td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu6" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu6"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">My-Other-Text-File.rtf</a> <small>[32 KB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>05/21/2020 by Janet Smith</td>
+                    <td>Enforcement</td>
+                    <td><a href="#">Enforcement 12345</a></td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu7" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu7"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">My-Other-Image-File.jpeg</a> <small>[3 MB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>05/30/2020 by Janet Smith</td>
+                    <td>Enforcement</td>
+                    <td><a href="#">Enforcement 12345</a></td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu8" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu8"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">My-Other-Audio-File.aac</a> <small>[36 MB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>05/28/2020 by Janet Smith</td>
+                    <td>Enforcement</td>
+                    <td><a href="#">Enforcement 12345</a></td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu9" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu9"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">My-TIFF-Image-File.tiff</a> <small>[27 MB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>06/05/2020 by Janet Smith</td>
+                    <td>Survey</td>
+                    <td><a href="survey-brighthope.html">Survey FFB-H1</a></td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu10" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu10"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                   <tr>
+                    <td><a href="#">My-Excel-File.xlsx</a> <small>[11 MB]</small></td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td>06/09/2020 by Janet Smith</td>
+                    <td>Survey</td>
+                    <td><a href="survey-brighthope.html">Survey FFB-H1</a></td>
+                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu11" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"> Actions </a>
+                      <div class="dropdown-menu" aria-labelledby="attachmentMenu11"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
+                  </tr>
+                  <tr class="newAttachmentRow hide">
+                    <td><a href="#">My-New-File.docx</a> <small>[244 MB]</small></td>
+                    <td><p class="iq-not-available">No information</p></td>
+                    <td>06/08/2020 by David Freeman</td>
+                    <td>Provider</td>
+                    <td>iQIES 123456</td>
                     <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu1" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false"> Actions </a>
                       <div class="dropdown-menu" aria-labelledby="attachmentMenu1"> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editFileDescription">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
                   </tr>
-                  <tr>
-                    <td><a href="#">LetterSent060119.pdf</a> <small>[1.45 MB]</small></td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
-                    <td>06/08/2020 by David Freeman</td>
-                    <td>Provider</td>
-                    <td>iQIES 123456</td>
-                    <td class="text-right"><a href="#" class="dropdown-toggle" id="attachmentMenu2" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false"> Actions </a>
-                      <div class="dropdown-menu" aria-labelledby="attachmentMenu2"> <a class="dropdown-item" href="#" onClick="editDescription()">Edit Description</a> <a class="dropdown-item" href="#">Download</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</a> </div></td>
-                  </tr>
                 </tbody>
               </table>
-              <!--<div class="row bottomPagination">
-    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 Attachments</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 Attachments</span></span></li></ul> </div>
+              <div class="row bottomPagination">
+    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option>10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li></ul> </div>
     <div class="col-md-6 text-right">
           <nav aria-label="Table Pagination" class="float-right">
 		<ul class="pagination pagination-large">
@@ -4435,7 +4521,7 @@
 		</ul>
 	</nav>
     </div>
-</div>--> 
+</div>
               
             </section>
           </div>
@@ -4541,7 +4627,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="$('#certs .edit-view').removeClass('active'); $('#certs .read-view').addClass('active'); $('.certificationChanged').removeClass('hide'); $('#certs .tabTitle .btn').removeClass('hide');">Confirm</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="$('#certs .edit-view').removeClass('active'); $('#certs .read-view').addClass('active'); $('.certificationChanged').removeClass('hide'); $('#certs .tabTitle .btn').removeClass('hide'); $('#certs .terminated').removeClass('hide');">Confirm</button>
         <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -4712,7 +4798,7 @@
                 $('.uploadFileSave').addClass('disabled');
                 $('.uploadFileSave span').toggleClass('hide');
                 $('.iqies-file-input-label').addClass('disabled');
-                $('.form-control.file-description-text').attr('disabled',true);
+                $('.edit-view .form-control.file-description-text').attr('disabled',true);
                 $('a.uploaded').addClass('disabled');
                 $('#attachment .edit-view .cancelAttachment').removeClass('hide');
                 
@@ -4723,6 +4809,8 @@
                         $('#building .read-view').addClass('active');
                     }, 3000);
                 } else {
+                    $('.attachmentSearchCount').html('13 Attachments');
+                    $('tr.newAttachmentRow').removeClass('hide');
                     setTimeout(function(){
                         $('#attachment .edit-view').removeClass('active');
                         $('#attachment .read-view').addClass('active');
@@ -4745,15 +4833,17 @@
         $('#attachment .edit-view').addClass('active');
         $('#attachment .read-view').removeClass('active');
         $('#attachment .edit-view .cancelAttachment').removeClass('hide');
-        $('.fileWrongType').addClass('hide'); 
-        $('.fileTooLarge').addClass('hide');
-        $('.fileSize').addClass('hide'); 
-         $('.iqies-file-input-label span').text('Select File');
-        $('.uploadFileSave').removeClass('disabled');
-        $('.uploadFileSave span').toggleClass('hide');
-        $('.iqies-file-input-label').removeClass('disabled');
-        $('.form-control.file-description-text').attr('disabled',false);
-        $('a.uploaded').removeClass('disabled');
+        if($('.uploadFileSave').hasClass('disabled')){
+            $('.fileWrongType').addClass('hide'); 
+            $('.fileTooLarge').addClass('hide');
+            $('.fileSize').addClass('hide'); 
+            $('.iqies-file-input-label span').text('Select File');
+            $('.uploadFileSave').removeClass('disabled');
+            $('.uploadFileSave span').toggleClass('hide');
+            $('.iqies-file-input-label').removeClass('disabled');
+            $('.form-control.file-description-text').attr('disabled',false);
+            $('a.uploaded').removeClass('disabled');
+        }
     }
     var aTable = $('#attachmentTable').DataTable( {
           //scrollY: 300,
@@ -4781,14 +4871,15 @@
         $('.fileTooLarge').removeClass('hide');
         $('.fileSize').addClass('hide'); 
         $('.iqies-file-input-label span').text('Select File');
-        $('.uploadFileSave').removeClass('disabled');
-        //$('.uploadFileSave span').toggleClass('hide');
-       $('.iqies-file-input-label').removeClass('disabled')
-        $('.form-control.file-description-text').attr('disabled',false);
-        $('a.uploaded').removeClass('disabled');
+        if($('.uploadFileSave').hasClass('disabled')){
+            
+            $('.uploadFileSave').removeClass('disabled');
+            //$('.uploadFileSave span').toggleClass('hide');
+            $('.iqies-file-input-label').removeClass('disabled');
+            $('.form-control.file-description-text').attr('disabled',false);
+            $('a.uploaded').removeClass('disabled');
+        }
         $('html, body').animate({ scrollTop: 0 }, 500);
-        
-        
     }
 </script> 
 <script>
