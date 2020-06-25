@@ -5228,8 +5228,8 @@
           </div>
               
               <div class="iq-button-wrapper">
-                <a href="#letterRecipient" class="btn btn-primary">Save and Continue</a>
-                <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Done</button>
+                <a href="#letterRecipient" class="btn btn-primary">Continue</a>
+                <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Save and Close</button>
                 <button class="btn btn-link" data-dismiss="modal">Cancel</button>
               </div>
             
@@ -5277,8 +5277,8 @@
   </tbody>
 </table>    
                 <div class="iq-button-wrapper">
-                <a href="#letterContent" class="btn btn-primary">Save and Continue</a>
-                    <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Done</button>
+                <a href="#letterContent" class="btn btn-primary">Continue</a>
+                    <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Save and Close</button>
                 <button class="btn btn-link" data-dismiss="modal">Cancel</button>
               </div>
                 </section>   
@@ -5454,12 +5454,13 @@
                 
                 </div></article>
                 <div class="iq-button-wrapper">
-                <a href="#letterStatus" class="btn btn-primary">Save and Continue</a>
-                    <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Done</button>
-                    <a href="mailto:jon.snow@thewatch.org" class="btn btn-outline-primary"><i class="far fa-envelope"></i> Send in Email</a>
+                    <div class="row"><div class="col-md-6">
+                <a href="#letterStatus" class="btn btn-primary">Continue</a>
+                    <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Save and Close</button> <button class="btn btn-link" data-dismiss="modal">Cancel</button></div><div class="col-md-6 text-right"><a href="mailto:jon.snow@thewatch.org" class="btn btn-outline-primary"><i class="far fa-envelope"></i> Send in Email</a>
                     <button class="btn btn-outline-primary"><i class="far fa-download"></i> Download</button>
-                    <button class="btn btn-outline-primary"><i class="far fa-print"></i> Print</button>
-                <button class="btn btn-link" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-outline-primary" onClick="print()"><i class="far fa-print"></i> Print</button></div>
+                    </div>
+               
               </div>
             </div>
             <div class="tab-pane" id="letterStatus" role="tabpanel" aria-labelledby="l-statusTab">
@@ -5702,7 +5703,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col"> <a href="/help">Help</a><span> (800)
+            <div class="col"> <a href="#">Help</a><span> (800)
               339-9313 </span><a href="mailto:help@qtso.com">Email Us</a><a
                   href="https://qtso.cms.gov/" target="_blank"
                   rel="noopener noreferrer"> QTSO <img src="../../../src/assets/images/logo-cms.svg"
