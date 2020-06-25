@@ -140,111 +140,119 @@
 					</button>
 				  </div>
 				  <div id="pAdvancedSearch-showhide" class="collapse">
-					<div class="card-body p-0">
+					<div class="card-body p-0 provider">
 						<br>
-						<div class="provider">
-							<div class="row">
-								<div class="col-md-5 col-lg-4 col-xl-3">
+                        <div class="row">
+				            <div class="col-md-12 col-lg-12 col-xl-9">
+                                <div class="d-flex align-items-stretch justify-content-between">
+                                    
+                                        <fieldset class="iq-fieldset" style="width: 32.5%"><legend>Type &amp; ID</legend>
+                                
 									  <div class="form-group notState">
 										  <label>Provider Type </label>
 										  <select multiple="multiple" style="display: none;" class="multiselect"><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
 										 <span class="help-text">Select one or more</span>
 									  </div>
-								  </div>
-								<div class="col-md-5 col-lg-4 col-xl-3">
+								  
 									  <div class="form-group">
 										  <label>iQIES ID
 											  <input type="text">
 										  </label>
 									  </div>
-								  </div>
-								<div class="col-md-5 col-lg-4 col-xl-3">
-									  <div class="form-group">
-										  <label>Deemed Status</label>
-										  <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
-									  </div>
-								</div>
-								<!--<div class="col-md-7">
-									<div class="row hide deemedDates">
-									<div class="col-sm-5">
-									  <div class="form-group">
-										  <label>Deemed - Start Date
+								         <div class="form-group">
+						  <label>License Number<input class="form-control" type="text" value=""></label>
+					  </div>
+                                
+                            </fieldset>
+                                    
+                                        <fieldset class="iq-fieldset" style="width: 32.5%"><legend>Status</legend>
+
+                                                  <div class="form-group">
+                                                      <label>Deemed Status</label>
+                                                      <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
+                                                  </div>
+                                            <div class="form-group notState">
+                                      <label>Federal Certification Status</label>
+                                       <select multiple="multiple" style="display: none;" class="multiselect">
+                                           <option>Not Applicable</option><option>Pending Certification</option><option>Certified</option><option>Terminated</option>
+                                      </select>
+                                      <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
+                                      <span class="help-text">Select one or more</span>
+                                  </div>
+                                            <div class="form-group">
+
+                                    <label>Operating Status</label>
+                                    <div class="btn-group" role="group" aria-label="Button Group Example">
+                                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                                </div>
+                                </div>
+                                        </fieldset>    
+                                    
+                                        <fieldset class="iq-fieldset" style="width: 32.5%"><legend>Citation Tag</legend>
+                                <div class="form-group">
+                          <label>Citation Tag Number</label>
+                          <input type="text">
+                          <span class="help-text">E.g. G0406</span>
+                      </div>
+                                 <div class="form-group">
+										  <label>Citation - Start Date
 											  <input placeholder="" class="form-control" type="date" value="">
 										  </label>
 										  <span class="form-text">MM/DD/YYYY</span>
 									  </div>
-								  </div>
-								  <div class="col-sm-5">
 									  <div class="form-group">
-										  <label>Deemed - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
+										  <label>Citation - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
 										  <span class="form-text">MM/DD/YYYY</span>
 									  </div>
-								  </div>
-									</div>
-								</div>-->
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group notState">
-						  <label>Federal Certification Status</label>
-						   <select multiple="multiple" style="display: none;" class="multiselect">
-							   <option>Not Applicable</option><option>Pending Certification</option><option>Certified</option><option>Terminated</option>
-						  </select>
-						  <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
-						  <span class="help-text">Select one or more</span>
+                            </fieldset>
+                                    
+                                </div>
+                                <div class="row">
+                             <div class="col-md-12">
+                                 
+                                 <fieldset class="iq-fieldset"><legend>Work Flow</legend> 
+                                     <div class="row">
+				            <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="form-group">
+						  <label>Management Unit
+						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+						  </label>
+						  <p class="help-text">State must be selected</p>
 					  </div>
-				</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					<div class="form-group">
-						<!--<fieldset>
-					<legend>Operating Status</legend>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus1" checked name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus1"> Both</label>
-					</div>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus2" name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus2"> Open</label>
-					</div>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus3" name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus3"> Closed </label>
-					</div>
-					</fieldset>-->
-						<label>Operating Status</label>
-						<div class="btn-group" role="group" aria-label="Button Group Example">
-					  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-					  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
-					  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
-					</div>
-					</div>				
-								</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>License Number<input class="form-control" type="text" value=""></label>
+                            </div>
+                             <div class="col-md-6 col-lg-4 col-xl-4">            
+                                <div class="form-group">
+						  <label>Work Unit
+						   <select disabled><option>Select one</option></select>
+						  </label>
+						  <p class="help-text">Management unit must be selected</p>
 					  </div>
-				</div>
-				 <div class="col-md-10 col-lg-8 col-xl-6">
-					  <div class="form-group">
+                             </div>
+                             <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="form-group">
 						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
 						  <div class="custom-control custom-checkbox">
 							  <input type="checkbox" id="showrecertP" class="custom-control-input">
 							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
 							</div>
 					  </div>
-				</div>
-							</div>
-							<div class="row">
-				<div class="col-md-10 col-lg-4 col-xl-3">
-				  <div class="form-group">
+                             </div>
+                            </div>
+                            </fieldset>
+                             </div>
+                        </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12 col-xl-3">
+                                <fieldset class="iq-fieldset"><legend>Location</legend>
+                                <div class="form-group">
 					  <label>Street Address<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-				  <div class="form-group">
+                                <div class="form-group">
 					  <label>City<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-				<div class="col-md-3 col-lg-3 col-xl-3">
-				  <div class="form-group">
+                                <div class="form-group">
 					  <label>State</label>
 					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
 						  <option value="AL">Alabama</option>
@@ -303,31 +311,10 @@
 					  
 					  <span class="help-text">Select one or more</span>
 				  </div>
-				</div>
-				<div class="col-md-2">
-				  <div class="form-group">
+                                <div class="form-group">
 					  <label>ZIP Code<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-							</div><div class="row">
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>Management Unit
-						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
-						  </label>
-						  <p class="help-text">State must be selected</p>
-					  </div>
-				  </div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>Work Unit
-						   <select disabled><option>Select one</option></select>
-						  </label>
-						  <p class="help-text">Management unit must be selected</p>
-					  </div>
-				  </div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group notState">
+                                <div class="form-group notState">
 						  <label>CMS Region</label>
 						  <select multiple="multiple" style="display: none;" class="multiselect">
 							  <option>1 - Boston</option><option>2 - New York</option><option>3 - Philadelphia</option>
@@ -338,38 +325,14 @@
 						  <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
 						  <span class="help-text">Select one or more</span>
 					  </div>
-				  </div>
-			  </div>
-              <div class="row">
-                  <div class="col-md-3">
-                      <div class="form-group">
-                          <label>Citation Tag Number</label>
-                          <input type="text">
-                          <span class="help-text">E.g. G0406</span>
-                      </div>
+                            </fieldset> 
+                            </div>
+                        </div>
+                            
+                        </div>
+                        
+				    </div>
                   </div>
-                  <div class="col-md-7">
-									<div class="row">
-									<div class="col-sm-5">
-									  <div class="form-group">
-										  <label>Citation - Start Date
-											  <input placeholder="" class="form-control" type="date" value="">
-										  </label>
-										  <span class="form-text">MM/DD/YYYY</span>
-									  </div>
-								  </div>
-								  <div class="col-sm-5">
-									  <div class="form-group">
-										  <label>Citation - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
-										  <span class="form-text">MM/DD/YYYY</span>
-									  </div>
-								  </div>
-									</div>
-								</div>
-              </div>
-						</div>
-					</div>
-				  </div>
 				</div>
 			 </div>
 			<div class="row iq-button-wrapper mr-0" style="position: relative">
