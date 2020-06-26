@@ -214,7 +214,7 @@
                                  
                                  <fieldset class="iq-fieldset"><legend>Work Flow</legend> 
                                      <div class="row">
-				            <div class="col-md-6 col-lg-4 col-xl-4">
+				            <div class="col-md-4 col-lg-4 col-xl-4">
                                 <div class="form-group">
 						  <label>Management Unit
 						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
@@ -222,7 +222,7 @@
 						  <p class="help-text">State must be selected</p>
 					  </div>
                             </div>
-                             <div class="col-md-6 col-lg-4 col-xl-4">            
+                             <div class="col-md-4 col-lg-4 col-xl-4">            
                                 <div class="form-group">
 						  <label>Work Unit
 						   <select disabled><option>Select one</option></select>
@@ -230,7 +230,7 @@
 						  <p class="help-text">Management unit must be selected</p>
 					  </div>
                              </div>
-                             <div class="col-md-6 col-lg-4 col-xl-4">
+                             <div class="col-md-4 col-lg-4 col-xl-4">
                                 <div class="form-group">
 						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
 						  <div class="custom-control custom-checkbox">
@@ -246,12 +246,18 @@
                             </div>
                             <div class="col-md-12 col-lg-12 col-xl-3">
                                 <fieldset class="iq-fieldset"><legend>Location</legend>
+                                 <div class="row">
+				                    <div class="col-md-4 col-lg-4 col-xl-12">
                                 <div class="form-group">
 					  <label>Street Address<input class="form-control" type="text" value=""></label>
 				  </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-xl-12">
                                 <div class="form-group">
 					  <label>City<input class="form-control" type="text" value=""></label>
 				  </div>
+                                    </div>
+                                     <div class="col-md-4 col-lg-4 col-xl-12">
                                 <div class="form-group">
 					  <label>State</label>
 					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
@@ -311,9 +317,13 @@
 					  
 					  <span class="help-text">Select one or more</span>
 				  </div>
+                                    </div>
+                                     <div class="col-md-4 col-lg-4 col-xl-12">
                                 <div class="form-group">
 					  <label>ZIP Code<input class="form-control" type="text" value=""></label>
 				  </div>
+                                    </div>
+                                     <div class="col-md-4 col-lg-4 col-xl-12">
                                 <div class="form-group notState">
 						  <label>CMS Region</label>
 						  <select multiple="multiple" style="display: none;" class="multiselect">
@@ -325,12 +335,11 @@
 						  <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
 						  <span class="help-text">Select one or more</span>
 					  </div>
+                                     </div>
+                                </div>
                             </fieldset> 
                             </div>
                         </div>
-                            
-                        </div>
-                        
 				    </div>
                   </div>
 				</div>
@@ -534,20 +543,35 @@
       </tr>
   </tbody>
 </table>
-<div class="row">
-<div class="col-md-3 col-lg-2" style="margin-top: -.75rem;">
-	<nav><div class="input-group">
-		<span class="input-group-text">Show</span> 
-		<select class="form-control" style="width: 3rem"><option>10</option><option>50</option><option>100</option></select>
-	
-		
-	</div></nav>
-	</div>
-	<div class="col-lg-10 col-md-9">
-	<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
-	</div>
-				  </div>
 
+	<div class="row bottomPagination">
+    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><!--<li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 Citations</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 Citations</span></span></li>--></ul> </div>
+    <div class="col-md-6 text-right">
+          <nav aria-label="Table Pagination" class="float-right">
+    
+		<ul class="pagination pagination-large">
+			<li class="page-item first disabled" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
+			</li>
+			<li class="page-item previous disabled" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
+			</li>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 12</span></div>
+			</li>
+			
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button"></button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last"></button>
+			</li>
+		</ul>
+	</nav>
+    </div>
+</div>
+
+				  
 					
         		</section>
 			</section> <!-- search area -->
