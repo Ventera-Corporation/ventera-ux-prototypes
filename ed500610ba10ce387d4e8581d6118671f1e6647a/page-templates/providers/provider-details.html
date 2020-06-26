@@ -4350,8 +4350,8 @@
       <td><p>05/08/2019</p></td><td><p class="desText">This is the first letter sent to the provider</p>
         <p class="desText hide"><textarea rows="5" class="form-control">This is the first letter sent to the provider</textarea></p></td>
       <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
-          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuLetter1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLetter1">
     <button class="dropdown-item">Download</button>
     <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
     <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
@@ -4364,8 +4364,8 @@
         <td><p class="desText">Lorem ipsum dolor sit amet</p><p class="desText hide"><textarea rows="2" class="form-control">Lorem ipsum dolor sit amet</textarea></p></td>
       
     <td><div class="iqies-list-button-group"><span class="saveCancel hide"><button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Save</button> | <button class="btn btn-link" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').addClass('hide'); $('.iqies-list-button-group .dropdown-toggle').removeClass('hide');">Cancel</button></span>
-          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+          <a href="#" class="btn btn-link dropdown-toggle" id="dropdownMenuButtonLetter2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLetter2">
     <button class="dropdown-item">Download</button>
     <button class="dropdown-item" onclick="$('.desText').toggleClass('hide'); $('.saveCancel').removeClass('hide'); $('.iqies-list-button-group .dropdown-toggle').addClass('hide');">Edit</button>
     <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
@@ -4450,7 +4450,7 @@
                 <ul><li>
                 <a href="#">Federal Letter - Notice of Imposition.pdf</a><br>This letter is sent to the provider to inform them of the intent to impose a sanction on the provider<br> <label class="inline">Created:</label>  07/01/2020</li></ul>
                 
-                <h5 class="mt-5">Sent Info</h5>
+                <h5 class="mt-5">Sent Log</h5>
                 <ul><li><label class="inline">Sent:</label> 07/01/2020 by Email
                     <br><label class="inline">To:</label> Jon Snow<br> 
       <label class="inline">From:</label> David Freeman<br><label class="inline">Tracking ID:</label> <span class="iq-not-available">No information</span><br><label class="inline">Receipt acknowledged:</label> No
@@ -5054,16 +5054,17 @@
                   <div class="col-md-3 col-lg-2">
                     <nav class="nav flex-column iq-nav" style="margin-top: 4.8rem;" role="tablist">
                         <a class="nav-link active" id="templateTab" href="#template" data-toggle="tab" role="tab">Templates<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>
-                        <a class="nav-link" id="l-overviewTab" href="#letterOverview" data-toggle="tab" role="tab">Overview<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>    
-                        <a class="nav-link" id="l-recipientTab" href="#letterRecipient" data-toggle="tab" role="tab">Recipients<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>
-                        <a class="nav-link" id="l-contentTab" href="#letterContent" data-toggle="tab" role="tab">Letter<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>
-                        <a class="nav-link" id="l-statusTab" href="#letterStatus" data-toggle="tab" role="tab">Attachments &amp; Status<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>
+                        <a class="nav-link hide" id="l-uploadTab" href="#letterUpload" data-toggle="tab" role="tab">Upload Letter<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>
+                        <a class="nav-link hide" id="l-overviewTab" href="#letterOverview" data-toggle="tab" role="tab">Overview<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>    
+                        <a class="nav-link hide" id="l-recipientTab" href="#letterRecipient" data-toggle="tab" role="tab">Recipients<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>
+                        <a class="nav-link hide" id="l-contentTab" href="#letterContent" data-toggle="tab" role="tab">Letter<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>
+                        <a class="nav-link hide" id="l-statusTab" href="#letterStatus" data-toggle="tab" role="tab">Sent Log &amp; Attachments<div class="step hide"><small class="iq-text-status success">Complete</small></div></a>
                     </nav>
                   </div>
         <div class="col-md-9 col-lg-10">
           <div class="tab-content">
             <div class="tab-pane active" id="template" role="tabpanel" aria-labelledby="templateTab">
-                <div class="row">
+                <!--<div class="row">
                   <div class="col">
                   <fieldset class="iq-stepper"><legend>Step 1 of 5</legend>
                     <ol>
@@ -5075,7 +5076,8 @@
                       </ol></fieldset>
 
                   </div>
-                </div>
+                </div>-->
+                <div class="p-3">
                 <h3>Select a Template</h3>
 <table class="display responsive" style="width: 100%;" id="templatesTable">
   <thead>
@@ -5095,7 +5097,7 @@
       <td>This letter is sent to the provider to inform them of the intent to impose a sanction on the provider</td>
       <td><span class="badge badge-pill badge-danger">Enforcement</span></td>
       <td>Federal</td>
-      <td><a href="#letterOverview" class="btn btn-outline-primary">Select</a></td>
+      <td><a href="#letterOverview" class="btn btn-outline-primary" onclick="$('#newLetterDialog .iq-nav .nav-link').toggleClass('hide'); $('#l-uploadTab').addClass('hide'); ">Select</a></td>
     </tr>
     <tr>
      
@@ -5103,7 +5105,7 @@
       <td>This letter is sent to the provider along with Form 2567 to inform them of the opportunity to correct and request a POC</td>
       <td><span class="badge badge-pill badge-danger">Enforcement</span></td>
       <td>State<br><small>Florida, Orlando Division, Survey and Certification</small></td>
-      <td><a href="#letterOverview" class="btn btn-outline-primary">Select</a></td>
+      <td><a href="#letterOverview" class="btn btn-outline-primary" onclick="$('#newLetterDialog .iq-nav .nav-link').toggleClass('hide'); $('#l-uploadTab').addClass('hide'); ">Select</a></td>
     </tr>
     <tr>
      
@@ -5111,7 +5113,7 @@
       <td>This is the K-02F letter for Op to Correct, not in compliance, sending FMS 2567 and imposition of remedies</td>
       <td><span class="badge badge-pill">Survey</span></td>
       <td>State<br><small>Florida, Orlando Division, Survey and Certification</small></td>
-      <td><a href="#letterOverview" class="btn btn-outline-primary">Select</a></td>
+      <td><a href="#letterOverview" class="btn btn-outline-primary" onclick="$('#newLetterDialog .iq-nav .nav-link').toggleClass('hide'); $('#l-uploadTab').addClass('hide'); ">Select</a></td>
     </tr>
     <tr>
     
@@ -5119,7 +5121,7 @@
       <td>This letter is sent to the complainant(s) when a complaint has been logged</td>
       <td><span class="badge badge-pill">Survey</span><span class="badge badge-pill badge-warning">Intake</span></td>
       <td>Federal</td>
-      <td><a href="#letterOverview" class="btn btn-outline-primary">Select</a></td>
+      <td><a href="#letterOverview" class="btn btn-outline-primary" onclick="$('#newLetterDialog .iq-nav .nav-link').toggleClass('hide'); $('#l-uploadTab').addClass('hide');">Select</a></td>
     </tr>
     <tr>
      
@@ -5127,13 +5129,106 @@
       <td>This letter is sent to the complainant(s) once a complaint has been investigated</td>
       <td><span class="badge badge-pill">Survey</span><span class="badge badge-pill badge-warning">Intake</span></td>
       <td>Federal</td>
-      <td><a href="#letterOverview" class="btn btn-outline-primary">Select</a></td>
+      <td><a href="#letterOverview" class="btn btn-outline-primary" onclick="$('#newLetterDialog .iq-nav .nav-link').toggleClass('hide'); $('#l-uploadTab').addClass('hide'); ">Select</a></td>
     </tr>
   </tbody>
 </table>
+                </div>
               </div>
+            <div class="tab-pane" id="letterUpload" role="tabpanel" aria-labelledby="l-uploadTab">
+              <div class="alert alert-danger fileTooLargeMsg hide" role="alert">
+                <div class="alert-content">
+                  <h2>Unable to Save</h2>
+                  Please review and correct the following:
+                  <ul>
+                    <li><a href="#fileUploadLetter">Maximum file size allowed is 256 MB</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="alert alert-danger duplicateFileMsg hide" role="alert">
+                <div class="alert-content">
+                  <h2>Unable to Save</h2>
+                  Please review and correct the following:
+                  <ul>
+                    <li>File name "My-New-File.docx" already exists. <a href="#fileUploadLetter">Replace file</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="alert alert-danger fileWrongTypeMsg hide" role="alert">
+                <div class="alert-content">
+                  <h2>Unable to Save</h2>
+                  Please review and correct the following:
+                  <ul>
+                    <li><a href="#fileUploadLetter">File type is not supported</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="alert alert-danger fileMissing hide" role="alert">
+                <div class="alert-content">
+                  <h2>Unable to Save</h2>
+                  Please review and correct the following:
+                  <ul>
+                    <li><a href="#fileUploadLetter">Please select a file</a></li>
+                  </ul>
+                  </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+              </div>
+              <div class="alert alert-danger virus hide" role="alert">
+                <div class="alert-content">
+                  <h2>Unable to Save</h2>
+                  Please review and correct the following:
+                  <ul>
+                    <li>This file is corrupted with a virus. <a href="#fileUploadLetter">Replace file</a></li>
+                  </ul>
+                  </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+              </div>
+              <h2>Upload Letter</h2>
+              <p>Select a file and add a description below.</p>
+              <div class="row">
+                <div class="col-lg-3 col-md-6">
+                  <p class="mb-2">
+                    <label for="fileUploadLetter" class="btn btn-outline-primary iqies-file-input-label">
+                      <input type="file" id="fileUploadLetter" name="file" class="form-control-file" onClick="fileUpload();">
+                      <span>Select File</span></label>
+                  </p>
+                </div>
+              </div>
+              <br>
+              <div class="fileSize hide">
+                <div class="file-attachment-card">
+                  <div class="row">
+                    <div class="col-sm-10">
+                      <h3><i class="far fa-paperclip"></i> <span class="fName">My-New-Large-File.docx <small>[260 MB]</small></span></h3>
+                       <p class="fileTooLarge iq-input-error-msg" style="padding-left: 2rem;">File size exceeds maximum limit of 256MB</p>
+                        <p class="fileWrongType iq-input-error-msg hide" style="padding-left: 2rem;">File type is not supported</p>
+                        <div class="uploading hide">
+                          <p class="text-primary uploaded" style="padding-left: 2rem; margin-top: .5rem;" role="status"><i class="spinner-border"></i> <small>Uploading <span class="Count">100</span>% ... </small></p>
+                        </div>
+                      
+                    </div>
+                    <div class="col-sm-2 text-right"><a href="#" class="fileTooLarge" onClick="cancelFileUpload()">Dismiss</a><a href="#" class="uploaded hide" onClick="cancelFileUpload()">Remove</a></div>
+                  </div>
+                  <div class="row uploaded hide">
+                    <div class="col-sm-12 file-description">
+                      <div class="form-group">
+                        <label>File Description</label>
+                        <textarea class="form-control file-description-text" id="fdI3" rows="3"></textarea>
+                        <span class="fdt0 help-text">Limit to 255 characters</span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="help-text"><strong>Supported file formats: </strong> PDF, Word, Excel, Text, Image, Video, and Audio files <a href="#" class="btn-tooltip" data-toggle="tooltip" data-placement="top" tabindex="0" title="Supported file extensions: .pdf, .doc, .docx, .xls, .xlsx, .txt, .rtf, .jpeg, .jpg, .png, .tif, .tiff, .mp4, .mov, .wmv, .3gp, .mp3, .aac, .wav, .wma" aria-describedby="attachmentExtensions"><i class="fal fa-info-circle"></i></a><br>
+                <strong>Maximum file size: </strong> 256 MB</p>
+              <div class="iq-button-wrapper">
+                <button class="btn btn-primary uploadFileSave" onClick="saveFileAttachment();"><span>Continue</span> <span class="hide" role="status"><i class="fas fa-circle-notch fa-spin"></i> <small>Uploading... </small></span></button>
+               
+                <button class="btn btn-link" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
             <div class="tab-pane" id="letterOverview" role="tabpanel" aria-labelledby="l-overviewTab">
-                <div class="row">
+                <!--<div class="row">
                   <div class="col">
                   <fieldset class="iq-stepper"><legend>Step 2 of 5</legend>
                     <ol>
@@ -5145,7 +5240,7 @@
                       </ol></fieldset>
 
                   </div>
-                </div>
+                </div>-->
                 <h3>Overview</h3>
                 <div class="row">
             <div class="col-md-12">
@@ -5230,13 +5325,13 @@
               <div class="iq-button-wrapper">
                 <a href="#letterRecipient" class="btn btn-primary">Continue</a>
                 <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Save and Close</button>
-                <button class="btn btn-link" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#confirmCancel">Cancel</button>
               </div>
             
             </div>
             <div class="tab-pane" id="letterRecipient" role="tabpanel" aria-labelledby="l-recipientTab">
                 <section class="read-view active">
-                    <div class="row">
+                   <!-- <div class="row">
                   <div class="col">
                   <fieldset class="iq-stepper"><legend>Step 3 of 5</legend>
                     <ol>
@@ -5248,7 +5343,7 @@
                       </ol></fieldset>
 
                   </div>
-                </div>
+                </div>-->
                 <h3>Recipients</h3>
                  
                 <div class="form-group"><button class="btn btn-outline-primary" onClick="$('#letterRecipient .edit-view').addClass('active'); $('#letterRecipient .read-view').removeClass('active'); ">Add a Recipient</button></div>
@@ -5415,7 +5510,7 @@
                 
             </div>
             <div class="tab-pane" id="letterContent" role="tabpanel" aria-labelledby="l-contentTab">
-                <div class="row">
+                <!--<div class="row">
                   <div class="col">
                   <fieldset class="iq-stepper"><legend>Step 4 of 5</legend>
                     <ol>
@@ -5426,7 +5521,7 @@
                       <li><div><span class="sr-only">Step 5</span></div></li>
                       </ol></fieldset>
                   </div>
-                </div>
+                </div>-->
                 <h3>Letter: Federal Letter - Notice of Imposition</h3>
                 <article style="margin-top: -2.8rem;"><div class="text-right"><a href="https://www.froala.com/wysiwyg-editor/shortcuts#basic" class="btn btn-link iq-external-link" target="_blank" title="Open in a new tab or window">Text Editor Keyboard Shortcuts</a></div>
       <div class="editTextDiv">
@@ -5456,7 +5551,7 @@
                 <div class="iq-button-wrapper">
                     <div class="row"><div class="col-md-6">
                 <a href="#letterStatus" class="btn btn-primary">Continue</a>
-                    <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Save and Close</button> <button class="btn btn-link" data-dismiss="modal">Cancel</button></div><div class="col-md-6 text-right"><a href="mailto:jon.snow@thewatch.org" class="btn btn-outline-primary"><i class="far fa-envelope"></i> Send in Email</a>
+                    <button class="btn btn-outline-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Save and Close</button> <button class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#confirmCancel">Cancel</button></div><div class="col-md-6 text-right"><a href="mailto:jon.snow@thewatch.org" class="btn btn-outline-primary" onClick="$('#letterStatus .edit-view').removeClass('active'); $('#letterStatus .read-view').addClass('active'); $('.noLog').addClass('hide'); $('#sentTable').removeClass('hide'); "><i class="far fa-envelope"></i> Send in Email</a>
                     <button class="btn btn-outline-primary"><i class="far fa-download"></i> Download</button>
                     <button class="btn btn-outline-primary" onClick="print()"><i class="far fa-print"></i> Print</button></div>
                     </div>
@@ -5464,7 +5559,8 @@
               </div>
             </div>
             <div class="tab-pane" id="letterStatus" role="tabpanel" aria-labelledby="l-statusTab">
-                <div class="row">
+                <section class="read-view active">
+                <!--<div class="row">
                   <div class="col">
                   <fieldset class="iq-stepper"><legend>Step 5 of 5</legend>
                     <ol>
@@ -5475,20 +5571,58 @@
                       <li class="active"><div><span class="sr-only">Step 5</span></div></li>
                       </ol></fieldset>
                   </div>
-                </div>
+                </div>-->
                 <div class="alert alert-success" role="alert">
             <div class="alert-content">Your letter has been saved and added as an attachment below</div>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
-                <h3>Attachments and Status</h3>
+                <h3>Sent Log and Attachments</h3>
+                
+                <h4>Sent Log</h4>
+                <!--<div class="form-group mb-5">
+              <div class="btn-group" role="group" aria-label="Button Group Example">
+                <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.sentStatus').addClass('hide');">Draft</button>
+                <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.sentStatus').removeClass('hide');">Sent</button>
+                </div>
+              </div>-->
+                <div class="form-group"><button class="btn btn-outline-primary" onClick="$('#letterStatus .edit-view').addClass('active'); $('#letterStatus .read-view').removeClass('active'); ">Add a Sent Event</button></div>
+                
+                <p class="iq-not-available noLog">No letters have been logged as sent.</p>
+                    
+                <table class="table table-striped hide" id="sentTable" style="width: 100%;">
+  <thead>
+    <tr>
+      <th scope="col" class="sortable"><span>Recipient Name</span></th>
+      <th scope="col" class="sortable sorting_desc"><span>Date Sent</span></th>
+      <th scope="col" class="sortable"><span>Method</span></th>
+      <th scope="col" class="sortable"><span>Sender</span></th>
+      <th scope="col" class="sortable"><span>Tracking ID</span></th>
+    <th scope="col" class="sortable"><span>Receipt Acknowledged</span></th>
+      <th scope="col" class="text-right">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jon Snow</td>
+      <td>07/01/2020</td>
+      <td>Email</td>
+      <td>David Freeman</td>
+      <td><p class="iq-not-available">No information</p></td>
+      <td>No</td>
+      <td><div class="iq-actions"><a href="#" class="btn btn-link" onClick="$('.sentStatus').removeClass('hide'); $('.sentList').addClass('hide'); $('.sentStatus .cancel').removeClass('hide');">Edit</a><span>|</span><a href="#" class="btn btn-link">Delete</a></div></td>
+    </tr>
+    
+  </tbody>
+</table>
+                    <br>
                 <h4>Attachments</h4>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th class="sortable" style="width: 15rem;"><span>File</span></th>
+      <th class="sortable"><span>File</span></th>
       <th><span>Description</span></th>
       <th class="sortable descending"><span>Created</span></th>
-      <th>&nbsp;</th>
+      <th class="text-right">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -5498,24 +5632,23 @@
         <td>This letter is sent to the provider to inform them of the intent to impose a sanction on the provider</td> <td>07/01/2020</td>
         <td><a href="#" class="dropdown-toggle" id="dropdownMenuButtonLA" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonLA">
-                <button class="dropdown-item" data-toggle="modal" data-target="#editDescription">Edit Description</button>
+                <button class="dropdown-item" onClick="editDescription()">Edit Description</button>
                 <button class="dropdown-item">Download</button>
                   <button class="dropdown-item">Print</button>
-                  <button class="dropdown-item">Email</button>
+                  <button class="dropdown-item" onClick="$('#letterStatus .edit-view').removeClass('active'); $('#letterStatus .read-view').addClass('active'); $('.noLog').addClass('hide'); $('#sentTable').removeClass('hide'); ">Email</button>
                 <button class="dropdown-item" data-toggle="modal" data-target="#confirmAttachmentDeletion">Delete</button>
           </div>
         </td>
     </tr>
   </tbody>
 </table>
-                <h4>Status</h4>
-                <div class="form-group mb-5">
-              <div class="btn-group" role="group" aria-label="Button Group Example">
-                <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.sentStatus').addClass('hide');">Draft</button>
-                <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active'); $('.sentStatus').removeClass('hide');">Sent</button>
-                </div>
+                    <div class="iq-button-wrapper" style="margin-top: 3rem;">
+                <a href="#letters" class="btn btn-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide'); $('#newLetterDialog .iq-nav .nav-link').toggleClass('hide'); $('#newLetterDialog .tab-pane').removeClass('active'); $('#newLetterDialog #template').addClass('active');">Close</a>
+               
               </div>
-              <div class="hide sentStatus iq-conditional-content">
+            </section>
+            <section class="edit-view">
+             <h2>Add a Sent Event</h2>
                 <div class="row">
                      <div class="col-md-3">
                    <p><label>Recipient</label><select class="read-only" readonly><option>Jon Snow</option></select></p>
@@ -5540,43 +5673,13 @@
                 </div>
                 </div><div class="col-md-6"></div>
                 </div>
-                   <div class="iq-button-wrapper">
-                <a href="#" class="btn btn-outline-primary" onClick="$('.sentStatus').addClass('hide'); $('.sentList').removeClass('hide');">Save</a>
-                      <a href="#" class="btn btn-link cancel hide" onClick="$('.sentStatus').removeClass('hide'); $('.sentList').addClass('hide');">Cancel</a> 
-                
+                <div class="iq-button-wrapper">
+                <button class="btn btn-primary" onClick="$('#letterStatus .edit-view').removeClass('active'); $('#letterStatus .read-view').addClass('active'); $('.noLog').addClass('hide'); $('#sentTable').removeClass('hide'); ">Save</button>
+                <button class="btn btn-link"  onClick="$('#letterStatus .edit-view').removeClass('active'); $('#letterStatus .read-view').addClass('active'); ">Cancel</button>
               </div>
-              </div>
-                <div class="sentList hide">
-                    <table class="table table-striped" style="width: 100%;">
-  <thead>
-    <tr>
-      <th scope="col" class="sortable sorting_asc"><span>Recipient Name</span></th>
-      <th scope="col"><span>Date Sent</span></th>
-      <th scope="col"><span>Method</span></th>
-      <th scope="col"><span>Sender</span></th>
-      <th scope="col"><span>Tracking ID</span></th>
-    <th scope="col"><span>Receipt Acknowledged</span></th>
-      <th scope="col" class="text-right">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Jon Snow</td>
-      <td>07/01/2020</td>
-      <td>Email</td>
-      <td>David Freeman</td>
-      <td><p class="iq-not-available">No information</p></td>
-      <td>No</td>
-      <td><div class="iq-actions"><a href="#" class="btn btn-link" onClick="$('.sentStatus').removeClass('hide'); $('.sentList').addClass('hide'); $('.sentStatus .cancel').removeClass('hide');">Edit</a><span>|</span><a href="#" class="btn btn-link">Delete</a></div></td>
-    </tr>
-    
-  </tbody>
-</table>
-                    </div>
-                 <div class="iq-button-wrapper" style="margin-top: 3rem;">
-                <a href="#" class="btn btn-primary" data-dismiss="modal" onclick="$('.noLetters').addClass('hide'); $('.yesLetters').removeClass('hide');">Done</a>
-               
-              </div>
+            </section>
+              
+                 
             </div>
             
             </div>
@@ -5586,6 +5689,25 @@
     </div>  
  </div>
 </div>
+    
+<!-- modal confirm leaving -->
+<div class="modal fade" id="confirmCancel" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <!--<div class="modal-header">
+        <h4 class="modal-title">x</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>-->
+      <div class="modal-body">
+        <p>Please confirm you want to continue without saving.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>    
 <!-- modal confirm building deletion -->
 <div class="modal fade" id="confirmBuildingDeletion" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -5833,6 +5955,19 @@
 			$('.fdt0').removeClass('iq-input-error-msg'); 
           }
         });
+     $('#fdI3').keyup(function () {
+          var max = 255;
+          var char = 0; 
+          var len = $(this).val().length;
+          $('.fdt0').html(len + '/'+ max + ' characters');
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt0').addClass('iq-input-error-msg'); 
+			$('.fdt0').append(' - Limit exceeded');
+          } else {
+			$('.fdt0').removeClass('iq-input-error-msg'); 
+          }
+        });
     function loadPercent(){ 
             $('.Count').each(function () {
                 $(this).prop('Counter',0).animate({
@@ -5904,6 +6039,15 @@
                      setTimeout(function(){
                         $('#building .edit-view').removeClass('active');
                         $('#building .read-view').addClass('active');
+                    }, 3000);
+                } else if ( $('#letterUpload').hasClass('active') ){
+                    setTimeout(function(){
+                        $('#letterUpload').removeClass('active');
+                        $('#newLetterDialog .nav-link').removeClass('hide');
+                        $('#templateTab').addClass('hide');
+                        $('#l-uploadTab').addClass('hide');
+                        $('#l-overviewTab').click();
+                        
                     }, 3000);
                 } else {
                     setTimeout(function(){
@@ -5990,6 +6134,17 @@
     }
     function createLetter(){
          $('#newLetterDialog').modal('show');
+         $('#l-uploadTab').addClass('hide');
+         $('#templateTab').removeClass('hide');
+         $('#templateTab').click();
+    }
+    function uploadLetter(){
+         $('#newLetterDialog').modal('show');
+        $('#newLetterDialog .tab-pane').removeClass('hide');
+         $('#l-uploadTab').removeClass('hide');
+        $('#templateTab').addClass('hide');
+         $('#l-uploadTab').click();
+        $('#fsize').val('2');
     }
     function editRecipient(){
         $('#letters .read-view').removeClass('active');
