@@ -6,48 +6,45 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Providers</title>
+  <title>Request Rejected</title>
 
-  <link rel="stylesheet"
-    href="../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
   <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
-<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+  <link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
+    <!-- to include fontsome icons professional version -->
+    <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 </head>
 
 <body>
-  <header>
+ <header>
 	<div class="container-fluid">
 	  <div class="row iq-page-header">
 		<div class="col">
-          <nav>
-            <a href="../../index.html">
-              <img src="../../../src/assets/images/logo-iqies.svg"
-                class="iq-logo" alt="Logo iQIES Color" />
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
+                  <nav>
+                    <a href="./">
+                      <img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo">
+                    </a>
+                      
+                     <!-- <button class="btn btn-outline-primary">Logout</button>-->
+                  </nav>
+                    
+                    
+                </div>
+              </div>
+            </div>
+           
+          </header>
 
   <main>
-    <div class="iq-page-header-wrapper mb-0">
-      <div class="container">
+
+<div class="iq-page-header-wrapper">
+      <div class="container-fluid mt-3">
         <div class="iq-page-header">
           <div class="row">
-            <div class="col">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="../../index.html">Home</a>
-                  </li>
-                  <li class="breadcrumb-item">
-                    Providers
-                  </li>
-                </ol>
-              </nav>
+            <div class="col d-flex flex-column justify-content-between">
+              
               <div class="iq-page-header-content">
-                <h1>Providers</h1>
+                <h1>Request Rejected</h1>
               </div>
             </div>
           </div>
@@ -55,91 +52,28 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row no-gutters">
-        <div class="col-xl-7 col-md-10">
-          <p class="lead">
-            Current and accurate provider information is vital to quality health
-            care.
-          </p>
+        <div class="col-xl-8 col-md-10">
+            <!--<span class="danger iq-text-status float-left" style="font-size: 3.5rem;"></span>style="padding-left: 6rem;"-->
+            <div><p class="lead">The requested URL was rejected by CMS security policy.</p> 
+            <p>If you believe this is in error, please contact the HIDS Security Operations Center (<a href="mailto:SOC@HCQIS.ORG">SOC@HCQIS.ORG</a>) and reference your support ID number.</p>
+            <p>Your support ID is: 6227098054437131353</p></div>
+          
+           
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col">
-          <div class="iq-button-wrapper"><a href="find-a-provider.html" class="btn btn-primary">Find Provider Information</a>
-            <button class="btn btn-outline-primary">
-              Add a Provider
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12">
-              <h2>My Watchlist</h2>
-              <p>Find provider information to add surveys, intakes, and enforcements to My Watchlist.</p>
-              
-                <nav class="nav nav-horizontal">
-              <a class="nav-link active" href="h-tab-1">Survey (0)</a>
-              <a class="nav-link" href="h-tab-2">Intake (0)</a>
-              <a class="nav-link" href="h-tab-3">Enforcement (0)</a>
-            </nav>
-            <div class="tab-content">
-                <div class="tab-pane active" id="h-tab-1">
-                    <p class="iq-no-results">You are not following any surveys at this time.</p>
-                </div> 
-                <div class="tab-pane" id="h-tab-2">
-                
-                </div>
-                <div class="tab-pane" id="h-tab-3">
-                    <div class="table-wrapper">  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col" class="sortable descending"><span>Date</span></th>
-      <th scope="col" class="sortable currency"><span>Imposed Amount</span></th>
-      <th scope="col" class="sortable count"><span>Imposed # of Instances</span></th>
-      <th scope="col" class="sortable"><span>CMP in Effect</span></th>
-      <th scope="col">&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td scope="row">03/20/2019</td>
-      <td class="currency">$2,000.00</td>
-      <td class="count">102</td>
-      <td>Imposed</td>
-      <td><a href="#" >Actions</a></td>
-    </tr>
-    <tr>
-      <td scope="row">03/20/2019</td>
-      <td class="currency">$400.00</td>
-      <td class="count">2</td>
-      <td>Imposed</td>
-      <td><a href="#">Actions</a></td>
-    </tr>
-    <tr>
-      <td scope="row">03/20/2019</td>
-      <td class="currency">$12,520.00</td>
-      <td class="count">30</td>
-      <td>Imposed</td>
-      <td><a href="#" >Actions</a></td>
-    </tr>
-  </tbody>
-</table></div>
-                </div>
-            </div>
-          </div>  
-      </div>
-    </div>
+
+        
   </main>
 
   <footer>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-10 col-xl-10">
-        <div class="iq-footer-content">
+        <div class="col-lg-10">
+          <div class="iq-footer-content">
             <div class="row">
               <div class="col">
                 <div class="iq-footer-heading">
@@ -202,7 +136,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2 col-xl-2 d-flex align-items-center">
+        <div class="col-lg-2 d-flex align-items-center">
           <img src="../../../src/assets/images/logo-cms.svg"
             class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
         </div>

@@ -28,7 +28,7 @@
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
 					  <a class="dropdown-item" href="search.html">Search for a Provider or Intake</a>
-					  <a class="dropdown-item" href="../add-a-provider.html">Add a Provider</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
 				  </div>
 				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
 				<div class="dropdown d-none d-sm-block d-lg-inline-block">
@@ -74,7 +74,7 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
 <li class="breadcrumb-item">
-                  <a href="../../../global/global-landing-menu.html">Home</a>
+                  <a href="../global/global-landing-menu.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
                   Search</li>
@@ -96,7 +96,7 @@
       </button>
     </div>
   <div class="toast-body">
-    <a href="index.html" class="return-link">Go back to Index Page</a>
+    <a href="search-test/index.html" class="return-link">Go back to Index Page</a>
 	 
 	
     </div>
@@ -140,111 +140,119 @@
 					</button>
 				  </div>
 				  <div id="pAdvancedSearch-showhide" class="collapse">
-					<div class="card-body p-0">
+					<div class="card-body p-0 provider">
 						<br>
-						<div class="provider">
-							<div class="row">
-								<div class="col-md-5 col-lg-4 col-xl-3">
+                        <div class="row">
+				            <div class="col-md-12 col-lg-12 col-xl-9">
+                                <div class="d-flex align-items-stretch justify-content-between">
+                                    
+                                        <fieldset class="iq-fieldset" style="width: 32.5%"><legend>Type &amp; ID</legend>
+                                
 									  <div class="form-group notState">
 										  <label>Provider Type </label>
 										  <select multiple="multiple" style="display: none;" class="multiselect"><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
 										 <span class="help-text">Select one or more</span>
 									  </div>
-								  </div>
-								<div class="col-md-5 col-lg-4 col-xl-3">
+								  
 									  <div class="form-group">
 										  <label>iQIES ID
 											  <input type="text">
 										  </label>
 									  </div>
-								  </div>
-								<div class="col-md-5 col-lg-4 col-xl-3">
-									  <div class="form-group">
-										  <label>Deemed Status</label>
-										  <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
-									  </div>
-								</div>
-								<!--<div class="col-md-7">
-									<div class="row hide deemedDates">
-									<div class="col-sm-5">
-									  <div class="form-group">
-										  <label>Deemed - Start Date
+								         <div class="form-group">
+						  <label>License Number<input class="form-control" type="text" value=""></label>
+					  </div>
+                                
+                            </fieldset>
+                                    
+                                        <fieldset class="iq-fieldset" style="width: 32.5%"><legend>Status</legend>
+
+                                                  <div class="form-group">
+                                                      <label>Deemed Status</label>
+                                                      <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
+                                                  </div>
+                                            <div class="form-group notState">
+                                      <label>Federal Certification Status</label>
+                                       <select multiple="multiple" style="display: none;" class="multiselect">
+                                           <option>Not Applicable</option><option>Pending Certification</option><option>Certified</option><option>Terminated</option>
+                                      </select>
+                                      <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
+                                      <span class="help-text">Select one or more</span>
+                                  </div>
+                                            <div class="form-group">
+
+                                    <label>Operating Status</label>
+                                    <div class="btn-group" role="group" aria-label="Button Group Example">
+                                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                                </div>
+                                </div>
+                                        </fieldset>    
+                                    
+                                        <fieldset class="iq-fieldset" style="width: 32.5%"><legend>Citation Tag</legend>
+                                <div class="form-group">
+                          <label>Citation Tag Number</label>
+                          <input type="text">
+                          <span class="help-text">E.g. G0406</span>
+                      </div>
+                                 <div class="form-group">
+										  <label>Citation - Start Date
 											  <input placeholder="" class="form-control" type="date" value="">
 										  </label>
 										  <span class="form-text">MM/DD/YYYY</span>
 									  </div>
-								  </div>
-								  <div class="col-sm-5">
 									  <div class="form-group">
-										  <label>Deemed - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
+										  <label>Citation - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
 										  <span class="form-text">MM/DD/YYYY</span>
 									  </div>
-								  </div>
-									</div>
-								</div>-->
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group notState">
-						  <label>Federal Certification Status</label>
-						   <select multiple="multiple" style="display: none;" class="multiselect">
-							   <option>Not Applicable</option><option>Pending Certification</option><option>Certified</option><option>Terminated</option>
-						  </select>
-						  <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
-						  <span class="help-text">Select one or more</span>
+                            </fieldset>
+                                    
+                                </div>
+                                <div class="row">
+                             <div class="col-md-12">
+                                 
+                                 <fieldset class="iq-fieldset"><legend>Work Flow</legend> 
+                                     <div class="row">
+				            <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="form-group">
+						  <label>Management Unit
+						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+						  </label>
+						  <p class="help-text">State must be selected</p>
 					  </div>
-				</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					<div class="form-group">
-						<!--<fieldset>
-					<legend>Operating Status</legend>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus1" checked name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus1"> Both</label>
-					</div>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus2" name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus2"> Open</label>
-					</div>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus3" name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus3"> Closed </label>
-					</div>
-					</fieldset>-->
-						<label>Operating Status</label>
-						<div class="btn-group" role="group" aria-label="Button Group Example">
-					  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-					  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
-					  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
-					</div>
-					</div>				
-								</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>License Number<input class="form-control" type="text" value=""></label>
+                            </div>
+                             <div class="col-md-6 col-lg-4 col-xl-4">            
+                                <div class="form-group">
+						  <label>Work Unit
+						   <select disabled><option>Select one</option></select>
+						  </label>
+						  <p class="help-text">Management unit must be selected</p>
 					  </div>
-				</div>
-				 <div class="col-md-10 col-lg-8 col-xl-6">
-					  <div class="form-group">
+                             </div>
+                             <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="form-group">
 						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
 						  <div class="custom-control custom-checkbox">
 							  <input type="checkbox" id="showrecertP" class="custom-control-input">
 							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
 							</div>
 					  </div>
-				</div>
-							</div>
-							<div class="row">
-				<div class="col-md-10 col-lg-4 col-xl-3">
-				  <div class="form-group">
+                             </div>
+                            </div>
+                            </fieldset>
+                             </div>
+                        </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12 col-xl-3">
+                                <fieldset class="iq-fieldset"><legend>Location</legend>
+                                <div class="form-group">
 					  <label>Street Address<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-				  <div class="form-group">
+                                <div class="form-group">
 					  <label>City<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-				<div class="col-md-3 col-lg-3 col-xl-3">
-				  <div class="form-group">
+                                <div class="form-group">
 					  <label>State</label>
 					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
 						  <option value="AL">Alabama</option>
@@ -303,31 +311,10 @@
 					  
 					  <span class="help-text">Select one or more</span>
 				  </div>
-				</div>
-				<div class="col-md-2">
-				  <div class="form-group">
+                                <div class="form-group">
 					  <label>ZIP Code<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-							</div><div class="row">
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>Management Unit
-						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
-						  </label>
-						  <p class="help-text">State must be selected</p>
-					  </div>
-				  </div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>Work Unit
-						   <select disabled><option>Select one</option></select>
-						  </label>
-						  <p class="help-text">Management unit must be selected</p>
-					  </div>
-				  </div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group notState">
+                                <div class="form-group notState">
 						  <label>CMS Region</label>
 						  <select multiple="multiple" style="display: none;" class="multiselect">
 							  <option>1 - Boston</option><option>2 - New York</option><option>3 - Philadelphia</option>
@@ -338,11 +325,14 @@
 						  <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
 						  <span class="help-text">Select one or more</span>
 					  </div>
-				  </div>
-			  </div>
-						</div>
-					</div>
-				  </div>
+                            </fieldset> 
+                            </div>
+                        </div>
+                            
+                        </div>
+                        
+				    </div>
+                  </div>
 				</div>
 			 </div>
 			<div class="row iq-button-wrapper mr-0" style="position: relative">
@@ -411,7 +401,7 @@
       </tr>
     <tr class="bright il recert">
       <td>&nbsp;</td>
-      <td><a href="../provider-profile.html">BrightHope</a><br>667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010</td>
+      <td><a href="provider-profile.html">BrightHope</a><br>667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010</td>
       <td>iQIES 123456</td>
       <td><span class="badge badge-success">Open</span></td>
       <td>Hospice</td>
@@ -930,7 +920,7 @@
     </tr>
     <tr class="ij sod">
 	  <td></td>
-	  <td><a href="../provider-profile-hospice.html">BrightHope</a><br>
+	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
 	    IQIES 123456</td>
       <td><a href="../survey-brighthope.html">FFB-H1</a><br><small>Health</small></td>
       <td><ul>
@@ -1044,22 +1034,7 @@
 							</div>
 					  
 							
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								  <div class="form-group">
-									  <label>Management Unit
-									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
-									  </label>
-									  <p class="help-text">State must be selected</p>
-								  </div>
-							  </div>
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								  <div class="form-group">
-									  <label>Work Unit
-									   <select disabled><option>Select one</option></select>
-									  </label>
-									  <p class="help-text">Management unit must be selected</p>
-								  </div>
-							  </div>
+							
 							
 						
 							<div class="col-md-6 col-lg-4 col-xl-3 hide">
@@ -1202,7 +1177,7 @@
 								</div>
 							</div>
 							</div><div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3">
+							<div class="col-md-6 col-lg-4 col-xl-3 hide">
 								<div class="form-group">
 								<label>Complainant or Person Affected</label>
 								<input type="text">
@@ -1274,6 +1249,22 @@
 								<input type="text" class="read-only-text" readonly value="Illinois">
 							  </div>
 							</div>
+                            <div class="col-md-4 col-lg-4 col-xl-3">
+								  <div class="form-group">
+									  <label>Management Unit
+									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+									  </label>
+									  <p class="help-text">State must be selected</p>
+								  </div>
+							  </div>
+							<div class="col-md-4 col-lg-4 col-xl-3">
+								  <div class="form-group">
+									  <label>Work Unit
+									   <select disabled><option>Select one</option></select>
+									  </label>
+									  <p class="help-text">Management unit must be selected</p>
+								  </div>
+							  </div>
 							<div class="col-md-6 col-lg-4 col-xl-3 hide">
 								<div class="form-group notState">
 								<label>Referral Agency</label>
@@ -1345,7 +1336,7 @@
 	  <td><a href="#">Good Neighbor HHC of Baxter</a><!--<br>
         CCN&nbsp;247269<br>
         FACID&nbsp;IL5321112233445566--></td>
-      <td><a href="../intake-new2.html">12345</a><br><small>Complaint </small></td>
+      <td><a href="intake-new2.html">12345</a><br><small>Complaint </small></td>
       <td>Non-IJ High</td>
       <td>Under Investigation</td>
 	  <td>03/01/2020</td>
@@ -1353,9 +1344,9 @@
     </tr>
     <tr class="">
 	 
-      <td><a href="../provider-profile-hospice.html">BrightHope</a><!--<br>
+      <td><a href="provider-profile-hospice.html">BrightHope</a><!--<br>
         IQIES 123456--></td>
-	  <td><a href="../intake-new.html">3265</a><br><small>Incident</small></td>
+	  <td><a href="intake-new.html">3265</a><br><small>Incident</small></td>
 	  <td><span class="iq-not-available">Not Applicable</span></td>
       <td>Triage/Prioritization</td>
 	  <td>03/15/2020</td>
@@ -1720,9 +1711,9 @@
   <tbody>
     <tr class="appealDue">
 	  <td></td>
-	  <td><a href="../provider-profile-hospice.html">BrightHope</a><br>
+	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
 	    IQIES 123456</td>
-      <td><a href="../../enforcement/enforcement.html">1234</a><br><small>Federal</small></td>
+      <td><a href="../enforcement/enforcement.html">1234</a><br><small>Federal</small></td>
       <td>01/01/2020</td>
       <td>12/01/2019</td>
 	  <td><a href="../survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
@@ -1744,9 +1735,9 @@
     </tr>
     <tr class="cmp">
 	  <td></td>
-	  <td><a href="../provider-details.html">Laguna Rainbow Home Care</a><br>
+	  <td><a href="provider-details.html">Laguna Rainbow Home Care</a><br>
 	    CCN&nbsp;327144 | FACID&nbsp;IL9621112233</td>
-      <td><a href="../../enforcement/enforcement-new.html">3245</a><br><small>State</small></td>
+      <td><a href="../enforcement/enforcement-new.html">3245</a><br><small>State</small></td>
       <td>12/23/2019</td>
       <td>11/23/2019</td>
 	  <td><a href="../survey-brighthope.html">XYZ0-H1 <i class="fal fa-external-link"></i></a></td>
@@ -1818,7 +1809,7 @@
             </div>
             <div class="row">
               <div class="col">
-                <a href="/help">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
+                <a href="#">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
               </div>
             </div>
             <div class="row">
@@ -1846,7 +1837,7 @@
   <!-- to include datatables for responsive table -->
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <!-- to include multi-select dropdown selector -->
-  <script src="../../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
   <script src="../../../src/assets/js/scripts.js"></script> <script>
 	  $(document).ready(function () {
 	    $('[data-toggle="tooltip"]').tooltip(); 
