@@ -342,6 +342,15 @@ table.display td .badge-pill { margin-bottom: .1rem;}
 .iq-accordion-label:before { float: left; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 100; margin-right: .5rem; height: 100%; margin-top: .0625rem; content: '\f054'; font-size: 1.125rem; color: #5B616B; }
 .iq-accordion-label.expanded:before { content: '\f078'; margin-right: 0; }
 
+.iq-accordion.rightToggle .iq-accordion-label { width: 100%; position: relative; }
+.iq-accordion.rightToggle .card.no-border .card-header > button { font-weight: bold; }
+.iq-accordion.rightToggle .card.no-border .card-body { padding-left: 0; padding-top: 2rem; border-bottom: 1px solid #d6d7d9; }
+.iq-accordion.rightToggle .iq-accordion-label:before { margin: 0; content: ''; } 
+.iq-accordion.rightToggle .iq-accordion-label span { margin-left: 0; display: block;}
+.iq-accordion.rightToggle .iq-accordion-label.expanded:before { margin: 0; content: ''; } 
+.iq-accordion.rightToggle .iq-accordion-label:after { position: absolute; right: .5rem; display: block; font-family: "Font Awesome 5 Pro"; font-weight: 100; margin-left: .5rem; height: 100%; margin-top: .0625rem; content: '\f067'; font-size: 1.125rem; color: #5B616B; }
+.iq-accordion.rightToggle .iq-accordion-label.expanded:after { content: '\f068'; margin-left: 0; }
+
 /* hover styles */
 .iq-accordion .card-header:hover { background-color: #f1f1f1; }
 .iq-accordion .card-header button.btn-block:hover, .iq-accordion .btn-link.btn-block:focus { text-decoration: none;  }
