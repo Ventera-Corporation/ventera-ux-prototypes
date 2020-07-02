@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Slimmed Down Search| iQIES</title>
-<link rel="stylesheet" href="../../../../src/assets/prototype-styles/design-system.css">
-<link rel="stylesheet" href="../../../../src/assets/prototype-styles/prototype.css">
+<title>Side Filters | Slimmed Down Search | iQIES</title>
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <!-- you need this font to have the right font weight expressed -->
@@ -13,7 +13,7 @@
 <!-- to include fontsome icons professional version -->
 <script src="https://kit.fontawesome.com/51dd396d57.js"></script>
 <!-- to match design system definition -->
-<link rel="stylesheet" href="../../../../src/assets/prototype-styles/hha.css">
+<link rel="stylesheet" href="../../../src/assets/prototype-styles/hha.css">
 </head>
 
 <body>
@@ -22,13 +22,13 @@
 		<div class="container-fluid">
 		  <div class="row">
 			<div class="col">
-			  <nav><a href="#"><img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
 				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
 					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
 					  <a class="dropdown-item" href="search.html">Search for a Provider or Intake</a>
-					  <a class="dropdown-item" href="../add-a-provider.html">Add a Provider</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
 				  </div>
 				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
 				<div class="dropdown d-none d-sm-block d-lg-inline-block">
@@ -74,7 +74,7 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
 <li class="breadcrumb-item">
-                  <a href="../../global/global-landing-menu.html">Home</a>
+                  <a href="../global/global-landing-menu.html">Home</a>
                   </li>
                   <li class="breadcrumb-item">
                   Search</li>
@@ -96,7 +96,7 @@
       </button>
     </div>
   <div class="toast-body">
-    <a href="index.html" class="return-link">Go back to Index Page</a>
+    <a href="search-test/index.html" class="return-link">Go back to Index Page</a>
 	 
 	
     </div>
@@ -127,124 +127,166 @@
 		 <a class="nav-link" href="#enforcements" data-toggle="tab" role="tab" onClick="drawEnforcementTable(); ">Enforcements</a>
         </nav>
       <div class="tab-content">
-        <div class="tab-pane active" id="providers">
-			<div class="form-group">
-				<label>Search for Providers</label>
-				<input type="text" class="form-control" id="pSearchInput" onKeyUp="if (event.keyCode === 13) {
-        $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter provider name, CCN, or State Facility ID (FACID)</div></div>
-			<div class="iq-accordion showhide">
+        <div class="tab-pane active" id="providers"><label>Search for Providers</label>
+            <div class="row">
+                <div class="col-md-8">
+			    <div class="input-group">
+				    <input type="text" class="form-control" id="pSearchInput" onKeyUp="if (event.keyCode === 13) {
+        $('.pSearchButton').click();}" placeholder="">
+                    <span class="input-group-append"><a href="#pSearchArea" class="btn btn-primary pSearchButton" onClick="goSearchProvider();">Search</a></span>
+                </div><div class="help-text input-group-help-text">Enter provider name, CCN, or State Facility ID (FACID)</div>
+                </div>
+                <div class="col-md-4">
+					  <button class="btn btn-link" onClick="resetPSearch();">Reset</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-xl-2">
+                    
+						<br>
+                    <h3>Filters</h3>
+                <div class="iq-accordion rightToggle showhide">
 				<div class="card no-border">
 				  <div class="card-header d-flex">
-					<button id="pAdvancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#pAdvancedSearch-showhide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-					  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#pSearchFilter1" onclick="$(this).toggleClass('expanded');">
+					  <span>Type &amp; ID</span>
 					</button>
 				  </div>
-				  <div id="pAdvancedSearch-showhide" class="collapse">
-					<div class="card-body p-0">
-						<br>
-						<div class="provider">
-							<div class="row">
-								<div class="col-md-5 col-lg-4 col-xl-3">
-									  <div class="form-group notState">
-										  <label>Provider Type </label>
-										  <select multiple="multiple" style="display: none;" class="multiselect"><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
-										 <span class="help-text">Select one or more</span>
-									  </div>
-								  </div>
-								<div class="col-md-5 col-lg-4 col-xl-3">
-									  <div class="form-group">
-										  <label>iQIES ID
-											  <input type="text">
-										  </label>
-									  </div>
-								  </div>
-								<div class="col-md-5 col-lg-4 col-xl-3">
-									  <div class="form-group">
-										  <label>Deemed Status</label>
-										  <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
-									  </div>
-								</div>
-								<!--<div class="col-md-7">
-									<div class="row hide deemedDates">
-									<div class="col-sm-5">
-									  <div class="form-group">
-										  <label>Deemed - Start Date
-											  <input placeholder="" class="form-control" type="date" value="">
-										  </label>
-										  <span class="form-text">MM/DD/YYYY</span>
-									  </div>
-								  </div>
-								  <div class="col-sm-5">
-									  <div class="form-group">
-										  <label>Deemed - End Date<input placeholder="" type="date"  class="form-control" value=""></label>
-										  <span class="form-text">MM/DD/YYYY</span>
-									  </div>
-								  </div>
-									</div>
-								</div>-->
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group notState">
-						  <label>Federal Certification Status</label>
-						   <select multiple="multiple" style="display: none;" class="multiselect">
-							   <option>Not Applicable</option><option>Pending Certification</option><option>Certified</option><option>Terminated</option>
-						  </select>
-						  <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
-						  <span class="help-text">Select one or more</span>
-					  </div>
-				</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					<div class="form-group">
-						<!--<fieldset>
-					<legend>Operating Status</legend>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus1" checked name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus1"> Both</label>
-					</div>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus2" name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus2"> Open</label>
-					</div>
-					<div class="custom-control custom-radio">
-					  <input type="radio" id="opStatus3" name="opStatus" class="custom-control-input">
-					  <label class="custom-control-label" for="opStatus3"> Closed </label>
-					</div>
-					</fieldset>-->
-						<label>Operating Status</label>
-						<div class="btn-group" role="group" aria-label="Button Group Example">
-					  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-					  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
-					  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
-					</div>
-					</div>				
-								</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>License Number<input class="form-control" type="text" value=""></label>
-					  </div>
-				</div>
-				 <div class="col-md-10 col-lg-8 col-xl-6">
-					  <div class="form-group">
+				  <div id="pSearchFilter1" class="collapse">
+					<div class="card-body">
+                        <div class="form-group notState">
+                              <label>Provider Type </label>
+                              <select multiple="multiple" style="display: none;" class="multiselect"><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
+                             <span class="help-text">Select one or more</span>
+                          </div>
+                        <div class="form-group">
+                              <label>iQIES ID
+                                  <input type="text">
+                              </label>
+                          </div>
+                        <div class="form-group">
+              <label>License Number<input class="form-control" type="text" value=""></label>
+          </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#pSearchFilter2" onclick="$(this).toggleClass('expanded');">
+					  <span>Status</span>
+					</button>
+				  </div>
+				  <div id="pSearchFilter2" class="collapse">
+					<div class="card-body">
+                   
+                        <div class="form-group">
+                                                      <label>Deemed Status</label>
+                                                      <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
+                                                  </div>
+                                            <div class="form-group notState">
+                                      <label>Federal Certification Status</label>
+                                       <select multiple="multiple" style="display: none;" class="multiselect">
+                                           <option>Not Applicable</option><option>Pending Certification</option><option>Certified</option><option>Terminated</option>
+                                      </select>
+                                      <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
+                                      <span class="help-text">Select one or more</span>
+                                  </div>
+                                            <div class="form-group">
+
+                                    <label>Operating Status</label>
+                                        <select><option>Both</option><option>Open</option><option>Closed</option></select>
+                                   <!-- <div class="btn-group" role="group" aria-label="Button Group Example">
+                                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
+                                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
+                                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
+                                </div>-->
+                                </div>
+                        <div class="form-group">
 						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
 						  <div class="custom-control custom-checkbox">
 							  <input type="checkbox" id="showrecertP" class="custom-control-input">
 							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
 							</div>
 					  </div>
-				</div>
-							</div>
-							<div class="row">
-				<div class="col-md-10 col-lg-4 col-xl-3">
-				  <div class="form-group">
+                   
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#pSearchFilter3" onclick="$(this).toggleClass('expanded');">
+					  <span>Citation Tag</span>
+					</button>
+				  </div>
+				  <div id="pSearchFilter3" class="collapse">
+					<div class="card-body">
+                 
+                                <div class="form-group">
+                          <label>Citation Tag Number</label>
+                          <input type="text">
+                          <span class="help-text">E.g. G0406</span>
+                      </div>
+                        <fieldset><legend>Citation Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+						  </fieldset>
+                               
+                           
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <!--<div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#pSearchFilter4" onclick="$(this).toggleClass('expanded');">
+					  <span>Management &amp; Work Unit</span>
+					</button>
+				  </div>
+				  <div id="pSearchFilter4" class="collapse">
+					<div class="card-body">
+                           
+                                
+                    </div>
+                  </div>
+                </div>
+                </div>-->
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#pSearchFilter5" onclick="$(this).toggleClass('expanded');">
+					  <span>Location</span>
+					</button>
+				  </div>
+				  <div id="pSearchFilter5" class="collapse">
+					<div class="card-body">
+                                <div class="form-group">
 					  <label>Street Address<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-				  <div class="form-group">
+                                    
+                                <div class="form-group">
 					  <label>City<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-				<div class="col-md-3 col-lg-3 col-xl-3">
-				  <div class="form-group">
+                                    
+                                <div class="form-group">
 					  <label>State</label>
 					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
 						  <option value="AL">Alabama</option>
@@ -303,31 +345,12 @@
 					  
 					  <span class="help-text">Select one or more</span>
 				  </div>
-				</div>
-				<div class="col-md-2">
-				  <div class="form-group">
+                                   
+                                <div class="form-group">
 					  <label>Zip Code<input class="form-control" type="text" value=""></label>
 				  </div>
-				</div>
-							</div><div class="row">
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>Management Unit
-						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
-						  </label>
-						  <p class="help-text">State must be selected</p>
-					  </div>
-				  </div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group">
-						  <label>Work Unit
-						   <select disabled><option>Select one</option></select>
-						  </label>
-						  <p class="help-text">Management unit must be selected</p>
-					  </div>
-				  </div>
-				<div class="col-md-5 col-lg-4 col-xl-3">
-					  <div class="form-group notState">
+                                    
+                                <div class="form-group notState">
 						  <label>CMS Region</label>
 						  <select multiple="multiple" style="display: none;" class="multiselect">
 							  <option>1 - Boston</option><option>2 - New York</option><option>3 - Philadelphia</option>
@@ -338,22 +361,31 @@
 						  <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
 						  <span class="help-text">Select one or more</span>
 					  </div>
-				  </div>
-			  </div>
-						</div>
-					</div>
-				  </div>
-				</div>
-			 </div>
-			<div class="row iq-button-wrapper mr-0" style="position: relative">
-               <div class="col">
-				  <div>
-					  <a href="#pSearchArea" class="btn btn-primary pSearchButton" onClick="goSearchProvider();">Search</a>
-					  <button class="btn btn-link" onClick="resetPSearch();">Reset</button>
-				  </div>
-			    </div>
-            </div>
-			<section id="pSearchArea">
+                             <div class="form-group">
+						  <label>Management Unit
+						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+						  </label>
+						  <p class="help-text">State must be selected</p>
+					  </div>
+                                <div class="form-group">
+						  <label>Work Unit
+						   <select disabled><option>Select one</option></select>
+						  </label>
+						  <p class="help-text">Management unit must be selected</p>
+					  </div>
+                                
+                    </div>
+                  </div>
+                </div>
+                </div>
+                        
+                    
+                      
+             
+         
+                </div>
+                <div class="col-md-9 col-xl-10">
+			        <section id="pSearchArea">
 				<h2 class="sr-only">Selected Provider Search Criteria</h2>
           		<br>  
 				<div class="float-right">
@@ -411,7 +443,7 @@
       </tr>
     <tr class="bright il recert">
       <td>&nbsp;</td>
-      <td><a href="../provider-profile.html">BrightHope</a><br>667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010</td>
+      <td><a href="provider-profile.html">BrightHope</a><br>667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010</td>
       <td>iQIES 123456</td>
       <td><span class="badge badge-success">Open</span></td>
       <td>Hospice</td>
@@ -544,56 +576,74 @@
       </tr>
   </tbody>
 </table>
-<div class="row">
-<div class="col-md-3 col-lg-2" style="margin-top: -.75rem;">
-	<nav><div class="input-group">
-		<span class="input-group-text">Show</span> 
-		<select class="form-control" style="width: 3rem"><option>10</option><option>50</option><option>100</option></select>
-	
-		
-	</div></nav>
-	</div>
-	<div class="col-lg-10 col-md-9">
-	<nav title="Table Pagination"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
-	</div>
-				  </div>
 
+	<div class="row bottomPagination">
+    <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><!--<li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 Citations</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 Citations</span></span></li>--></ul> </div>
+    <div class="col-md-6 text-right">
+          <nav aria-label="Table Pagination" class="float-right">
+    
+		<ul class="pagination pagination-large">
+			<li class="page-item first disabled" onClick="gotoPage1()">
+				<button class="page-link first" disabled aria-label="First" type="button"></button>
+			</li>
+			<li class="page-item previous disabled" onClick="gotoPrev()">
+				<button class="page-link previous" disabled aria-label="Previous" type="button"></button>
+			</li>
+			<li class="page-item" onClick="gotoPage1()">
+				<div class="input-group"><span>Page</span><input type="number" value="1" max="3" min="1" class="m-0 form-control pageNumberInput"> <span class="pageCount">of 12</span></div>
+			</li>
+			
+			<li class="page-item next" onClick="gotoNext()">
+				<button class="page-link next" aria-label="Next" type="button"></button>
+			</li>
+			<li class="page-item last" onClick="gotoPage3()">
+				<button type="button" class="page-link last" aria-label="Last"></button>
+			</li>
+		</ul>
+	</nav>
+    </div>
+</div>
+
+				  
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
+        	        <p class="iq-no-results hide noResults" role="status">No results found.</p>
+                </div>
+            </div>
+			
+			
 		</div>
         <div class="tab-pane" id="surveys">
-        
-		  <div class="form-group">
-				<label>Search for Surveys</label>
-				<input type="text" class="form-control" id="sSearchInput" onKeyUp="if (event.keyCode === 13) {
-        $('.sSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter survey ID, provider name, or CCN</div></div>
-		  <div class="iq-accordion showhide">
+        <label>Search for Surveys</label>
+        <div class="row">
+                <div class="col-md-8">
+			    <div class="input-group">
+                    <input type="text" class="form-control" id="sSearchInput" onKeyUp="if (event.keyCode === 13) {
+        $('.sSearchButton').click();}"  placeholder="">
+                    <span class="input-group-append"> <a href="#sSearchArea" class="btn btn-primary sSearchButton" onClick="goSearchSurvey();">Search</a>
+					  </span>
+                </div><div class="help-text input-group-help-text">Enter survey ID, provider name, or CCN</div>
+                </div>
+            <div class="col-md-4">
+                <button class="btn btn-link" onClick="resetSSearch();">Reset</button>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-md-3 col-xl-2">
+						<br>
+                    <h3>Filters</h3>
+                <div class="iq-accordion rightToggle showhide">
 				<div class="card no-border">
 				  <div class="card-header d-flex">
-					<button id="sAdvancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#sAdvancedSearch-showhide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-					  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#sSearchFilter1" onclick="$(this).toggleClass('expanded');">
+					  <span>Category &amp; Type</span>
 					</button>
 				  </div>
-				  <div id="sAdvancedSearch-showhide" class="collapse">
-					<div class="card-body p-0">
-						<br>
-						<div class="survey">
-						<div class="row">
-							<div class="col-md-5 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-									<label>Survey Status</label>
-									<!--<input type="text" id="surveyStatus">-->
-									<select multiple="multiple" style="display: none;" class="multiselect">
-									  <option>All</option><option>New</option><option>Writing in Progress</option><option>Writing Complete</option>
-										<option>Revisit Created</option><option>Closed</option>
-								  </select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group notState">
+				  <div id="sSearchFilter1" class="collapse">
+					<div class="card-body">
+                	    	
+                        <div class="form-group notState">
 									<label>Survey Category</label>
 									<select multiple="multiple" style="display: none;" class="multiselect">
 										<option>Initial Certification (Federal)</option><option>Recertification (Federal)</option>
@@ -604,18 +654,164 @@
 					  				</select>
 				
 									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-						    <div class="col-md-3 col-lg-4 col-xl-3">
-								<div class="form-group">
+								</div>	
+                        <div class="form-group">
 									<label>Survey Type</label>
 									<select><option>All</option><option>Health</option><option>Life Safety Code</option><option>Clinical Laboratory</option></select>
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-4 col-xl-3">
-              <div class="form-group">
+                       
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#sSearchFilter3" onclick="$(this).toggleClass('expanded');">
+					  <span>Status</span>
+					</button>
+				  </div>
+				  <div id="sSearchFilter3" class="collapse">
+					<div class="card-body">
+                        <div class="form-group notState">
+									<label>Survey Status</label>
+									<!--<input type="text" id="surveyStatus">-->
+									<select multiple="multiple" style="display: none;" class="multiselect">
+									  <option>All</option><option>New</option><option>Writing in Progress</option><option>Writing Complete</option>
+										<option>Revisit Created</option><option>Closed</option>
+								  </select>
+									<span class="help-text">Select one or more</span>
+								</div>
+								<div class="form-group">
+								<label>POC Status</label>
+								<select id="pocStatus"><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
+            </div>
+								
+								<div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showSurveyWIJ"  class="custom-control-input">
+									   <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
+									</div>   
+								</div>
+								<div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showSOD" class="custom-control-input">
+									   <label class="custom-control-label" for="showSOD">Show open surveys with an overdue Statement of Deficiency</label>
+									</div>   
+								</div>   
+                         
+                        <!--
+								<div class="form-group">
+								<label>Revisit Status</label>
+								<select><option>All</option><option>Not Determined</option><option>Not Required</option><option>Recommended</option><option>Required</option></select>
+								</div>
+							-->
+                    </div>
+                  </div>
+                </div>
+                </div>
+                
+                
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#sSearchFilter4" onclick="$(this).toggleClass('expanded');">
+					  <span>Start &amp; Exit Dates</span>
+					</button>
+				  </div>
+				  <div id="sSearchFilter4" class="collapse">
+					<div class="card-body">
+                        <div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showSurveyWOEndDate" class="custom-control-input">
+									   <label class="custom-control-label" for="showSurveyWOEndDate">Show only surveys without an exit date</label>
+									</div>   
+								</div>
+                        <fieldset><legend>Survey Start Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend" for="ssdr-from">From</label>
+											<input type="date" class="form-control" id="ssdr-from">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend" for="ssdr-to">To</label>
+											<input type="date" class="form-control" id="ssdr-to">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+									
+								</fieldset>
+						
+								<fieldset><legend>Survey Exit Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control" id="sedr-from">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control" id="sedr-to">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>
+								</div>
+								</fieldset>
+                        
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#sSearchFilter5" onclick="$(this).toggleClass('expanded');">
+					  <span>Staff/Surveyor</span>
+					</button>
+				  </div>
+				  <div id="sSearchFilter5" class="collapse">
+					<div class="card-body">
+                           <div class="form-group notState">
+								<label>Responsible Staff/Surveyor</label>
+								<select multiple="multiple" style="display: none;" class="multiselect" id="surveyStaff"><option>All</option>
+									<option>Roberta Carr</option>
+									<option>Ellen Datlow</option>
+									<option>Daniel Folsom</option>
+									<option>Daisy Freeman</option>
+									<option>Rebecca Moray</option>
+									<option>Zachary Taggart</option>
+									<option>Tom Vineman</option>
+								</select>
+								<span class="help-text">Select one or more</span>
+								</div>    
+                        <!--<div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showResStaff" class="custom-control-input">
+									   <label class="custom-control-label" for="showResStaff">Show open surveys where I am a responsible staff member</label>
+									</div>   
+								</div>-->
+                    </div>
+                  </div>
+                </div>
+                </div>
+                    <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#sSearchFilter2" onclick="$(this).toggleClass('expanded');">
+					  <span>Location</span>
+					</button>
+				  </div>
+				  <div id="sSearchFilter2" class="collapse">
+					<div class="card-body">
+                     <div class="form-group">
                   <label>State</label>
                   <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
                       <option value="AL">Alabama</option>
@@ -673,143 +869,27 @@
 				  </select>
                   <span class="help-text">Select one or more</span>
               </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-3">
+            
                   <div class="form-group">
                       <label>Management Unit
                       <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
                       </label>
                       <p class="help-text">State must be selected</p>
                   </div>
-              </div>
-            <div class="col-md-4 col-lg-4 col-xl-3">
+             
                   <div class="form-group">
                       <label>Work Unit
                        <select disabled><option>Select one</option></select>
                       </label>
                       <p class="help-text">Management unit must be selected</p>
                   </div>
-              </div>
-							<div class="col-md-10">
-								<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSurveyWOEndDate" class="custom-control-input">
-									   <label class="custom-control-label" for="showSurveyWOEndDate">Show only surveys without an exit date</label>
-									</div>   
-								</div>
-								
-								<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSurveyWIJ"  class="custom-control-input">
-									   <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
-									</div>   
-								</div>
-								<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSOD" class="custom-control-input">
-									   <label class="custom-control-label" for="showSOD">Show open surveys with an overdue Statement of Deficiency</label>
-									</div>   
-								</div>
-								<!--<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showResStaff" class="custom-control-input">
-									   <label class="custom-control-label" for="showResStaff">Show open surveys where I am a responsible staff member</label>
-									</div>   
-								</div>-->
-							</div>
-							
-							
-						</div>
-						<div class="row">
-							<div class="col-lg-6 col-xl-6">
-								<fieldset><legend>Survey Start Date Range</legend>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend" for="ssdr-from">From</label>
-											<input type="date" class="form-control" id="ssdr-from">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend" for="ssdr-to">To</label>
-											<input type="date" class="form-control" id="ssdr-to">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-									
-								</fieldset>
-								
-							</div>
-							<div class="col-lg-6 col-xl-6">
-								<fieldset><legend>Survey Exit Date Range</legend>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control" id="sedr-from">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control" id="sedr-to">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>
-								</div>
-								</fieldset>
-							</div>
-						</div>
-						<div class="row">
-							<!--<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>Revisit Status</label>
-								<select><option>All</option><option>Not Determined</option><option>Not Required</option><option>Recommended</option><option>Required</option></select>
-								</div>
-							</div>-->
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group">
-								<label>POC Status</label>
-								<select id="pocStatus"><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-								<label>Responsible Staff/Surveyor</label>
-								<select multiple="multiple" style="display: none;" class="multiselect" id="surveyStaff"><option>All</option>
-									<option>Roberta Carr</option>
-									<option>Ellen Datlow</option>
-									<option>Daniel Folsom</option>
-									<option>Daisy Freeman</option>
-									<option>Rebecca Moray</option>
-									<option>Zachary Taggart</option>
-									<option>Tom Vineman</option>
-								</select>
-								<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-						</div>
-						<!-- end survey row -->
-								
-					</div>
-				
-				  </div>
-				</div>
-			  </div>
-		  </div>
-		  <div class="row iq-button-wrapper mr-0" style="position: relative">
-               <div class="col">
-				  <div>
-					  <a href="#sSearchArea" class="btn btn-primary sSearchButton" onClick="goSearchSurvey();">Search</a>
-					  <button class="btn btn-link" onClick="resetSSearch();">Reset</button>
-				  </div>
-			    </div>
-            </div>
-			<section id="sSearchArea">
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-9 col-xl-10">
+			        <section id="sSearchArea">
 				<h2 class="sr-only">Selected Survey Search Criteria</h2>
           		<br>  
 				<div class="float-right">
@@ -930,7 +1010,7 @@
     </tr>
     <tr class="ij sod">
 	  <td></td>
-	  <td><a href="../provider-profile-hospice.html">BrightHope</a><br>
+	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
 	    IQIES 123456</td>
       <td><a href="../survey-brighthope.html">FFB-H1</a><br><small>Health</small></td>
       <td><ul>
@@ -964,7 +1044,22 @@
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
+        	        <p class="iq-no-results hide noResults" role="status">No results found.</p>
+                </div>
+            </div>
+                  		
+						
+            
+              
+								
+							
+								
+							
+							
+								
+							
+				
+				
         </div>
         <div class="tab-pane" id="intakes">
 			<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
@@ -982,144 +1077,44 @@
 	
     </div>
 </div>
-			
-			<div class="form-group">
-				<label>Search for Intakes</label>
-				<input type="text" class="form-control" id="iSearchInput" onKeyUp="if (event.keyCode === 13) {
-        $('.iSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter Intake ID</div></div>
-			<div class="iq-accordion showhide">
+			<label>Search for Intakes</label>
+			  <div class="row">
+                <div class="col-md-8">
+			    <div class="input-group">
+                    <input type="text" class="form-control" id="iSearchInput" onKeyUp="if (event.keyCode === 13) {
+        $('.iSearchButton').click();}"  placeholder="">
+                    <span class="input-group-append"> <a href="#iSearchArea" class="btn btn-primary iSearchButton" onClick="goSearchIntake();">Search</a>
+					  </span>
+                </div><div class="help-text input-group-help-text">Enter intake ID, provider name, or CCN</div>
+                </div>
+            <div class="col-md-4">
+                <button class="btn btn-link" onClick="resetISearch();">Reset</button>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-md-3 col-xl-2">
+						<br>
+                    <h3>Filters</h3>
+                <div class="iq-accordion rightToggle showhide">
 				<div class="card no-border">
 				  <div class="card-header d-flex">
-					<button id="iAdvancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iAdvancedSearch-showhide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-					  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter1" onclick="$(this).toggleClass('expanded');">
+					  <span>Type</span>
 					</button>
 				  </div>
-				  <div id="iAdvancedSearch-showhide" class="collapse">
-					<div class="card-body p-0">
-						<br>
-						<div class="intake">
-						<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
+				  <div id="iSearchFilter1" class="collapse">
+					<div class="card-body">
+                <div class="form-group">
 									<label>Intake Type</label>
-									<div class="btn-group" role="group" aria-label="Button Group Example">
+                    <select><option>Both</option><option>Complaint</option><option>Incident</option></select>
+									<!--<div class="btn-group hide" role="group" aria-label="Button Group Example">
                   <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complaint</button>
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incident</button>
-                </div>
+                </div>-->
 									
 								</div>
-							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-									<label>Intake Status</label>
-									<select multiple="multiple" style="display: none;" class="multiselect">
-										<option>Triage/Prioritization</option>
-										<option>No Action</option>
-										<option>Pending RO Approval</option>
-										<option>Pending Investigation</option>
-										<option>Under Investigation</option>
-									</select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-						    <div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-									<label>Triage Priority</label>
-									<select multiple="multiple" style="display: none;" class="multiselect">
-										<option>Immediate Jeopardy</option><option>Non-IJ High</option>
-										<option>Non-IJ Medium</option><option>Non-IJ Low</option><option>Not Applicable</option>
-									</select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-							<div class="col-md-12 col-lg-12 hide">
-								<div class="form-group">
-									
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="roapproved2" class="custom-control-input">
-									   <label class="custom-control-label" for="roapproved2">Show only open intakes approved by an RO</label>
-									</div> 
-								</div>
-							</div>
-					  
-							
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								  <div class="form-group">
-									  <label>Management Unit
-									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
-									  </label>
-									  <p class="help-text">State must be selected</p>
-								  </div>
-							  </div>
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								  <div class="form-group">
-									  <label>Work Unit
-									   <select disabled><option>Select one</option></select>
-									  </label>
-									  <p class="help-text">Management unit must be selected</p>
-								  </div>
-							  </div>
-							
-						
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
-								<input type="text">
-								</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-								
-								<label>Intake Start Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-						
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-								<label>Survey Action</label>
-								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
-								</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-								
-								<label>Survey Due Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-							
-							</div>
-							
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group">
+                        <div class="form-group">
 									<label>Intake Sub Type</label>
 									<select><option>All</option>
 										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
@@ -1132,50 +1127,60 @@
 										<option>None of the above</option>
 									</select>
 								</div>
-							</div>
-							
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-						  <label>RO Approval Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter2" onclick="$(this).toggleClass('expanded');">
+					  <span>Status</span>
+					</button>
+				  </div>
+				  <div id="iSearchFilter2" class="collapse">
+					<div class="card-body">
+                   <div class="form-group notState">
+									<label>Intake Status</label>
+									<select multiple="multiple" style="display: none;" class="multiselect">
+										<option>Triage/Prioritization</option>
+										<option>No Action</option>
+										<option>Pending RO Approval</option>
+										<option>Pending Investigation</option>
+										<option>Under Investigation</option>
+									</select>
+									<span class="help-text">Select one or more</span>
 								</div>
-						  </div>
-						
-							<div class="col-md-12 col-lg-4 col-xl-3 hide">
+                        <div class="form-group notState">
+									<label>Triage Priority</label>
+									<select multiple="multiple" style="display: none;" class="multiselect">
+										<option>Immediate Jeopardy</option><option>Non-IJ High</option>
+										<option>Non-IJ Medium</option><option>Non-IJ Low</option><option>Not Applicable</option>
+									</select>
+									<span class="help-text">Select one or more</span>
+								</div>
+                        
 								<div class="form-group">
 								<label>Triage Complete</label>
-								<div class="btn-group" role="group" aria-label="Button Group Example">
+                                    <select><option>Both</option><option>Complete</option><option>Incomplete</option></select>
+								<!--<div class="btn-group" role="group" aria-label="Button Group Example">
                   <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complete</button>
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incomplete</button>
-                </div>
+                </div>-->
 			</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
+							
 								
-								<label>Triage Complete Date Range</label>
+								<fieldset><legend>Triage Complete Dates</legend>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-12">
 										<div class="input-group">
 											<label class="input-group-text input-group-prepend">From</label>
 											<input type="date" class="form-control">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
-									<div class="col-md-6">
+									<div class="col-md-12">
 										<div class="input-group">
 											<span class="input-group-text">To</span>
 											<input type="date" class="form-control">
@@ -1183,11 +1188,147 @@
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 								</div>
-								
-							</div>
-						
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								<div class="form-group notState">
+								</fieldset>
+                 <div class="form-group">
+								<label>Survey Action</label>
+								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
+								</div>
+                        <div class="form-group notState">
+								<label>Referral Agency</label>
+								<select multiple="multiple" style="display: none;" class="multiselect">
+									<option>Hospital Program - Regional</option>
+									<option>Office of Mental Health</option>
+									<option>Agency C</option>
+									<option>Agency D</option>
+									<option>Agency E</option>
+									<option>Agency F</option>
+									</select>
+									<span class="help-text">Select one or more</span>
+								</div>
+                        
+                        <div class="form-group">
+									
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="roapproved2" class="custom-control-input">
+									   <label class="custom-control-label" for="roapproved2">Show only open intakes approved by an RO</label>
+									</div> 
+								</div>
+                        <fieldset><legend>RO Approval Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+						  </fieldset>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter3" onclick="$(this).toggleClass('expanded');">
+					  <span>Start &amp; Due Dates</span>
+					</button>
+				  </div>
+				  <div id="iSearchFilter3" class="collapse">
+					<div class="card-body">
+                           <fieldset><legend>Intake Start Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</fieldset>
+                        <fieldset><legend>Survey Due Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+                                </fieldset>
+                        
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide hide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter6" onclick="$(this).toggleClass('expanded');">
+					  <span></span>
+					</button>
+				  </div>
+				  <div id="iSearchFilter6" class="collapse">
+					<div class="card-body">
+                           
+                        
+                        
+                    </div>
+                  </div>
+                </div>
+                </div>    
+                   <div class="iq-accordion rightToggle showhide hide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter7" onclick="$(this).toggleClass('expanded');">
+					  <span></span>
+					</button>
+				  </div>
+				  <div id="iSearchFilter7" class="collapse">
+					<div class="card-body">
+                        
+                    </div>
+                  </div>
+                </div>
+                </div>  
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter4" onclick="$(this).toggleClass('expanded');">
+					  <span>Staff/Parties Involved</span>
+					</button>
+				  </div>
+				  <div id="iSearchFilter4" class="collapse">
+					<div class="card-body">
+                        <div class="form-group">
+								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
+								<input type="text">
+								</div>
+                        <div class="form-group notState">
 								<label>Responsible Staff</label>
 								<select multiple="multiple" style="display: none;" class="multiselect">
 									<option>Roberta Carr</option>
@@ -1200,16 +1341,25 @@
 								</select>
 								<span class="help-text">Select one or more</span>
 								</div>
-							</div>
-							</div><div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group">
+                        <div class="form-group">
 								<label>Complainant or Person Affected</label>
 								<input type="text">
 								</div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-							  <div class="form-group stateMS">
+							
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter5" onclick="$(this).toggleClass('expanded');">
+					  <span>Location</span>
+					</button>
+				  </div>
+				  <div id="iSearchFilter5" class="collapse">
+					<div class="card-body">
+                        <div class="form-group stateMS">
 								  <label>State</label>
 								  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
                       <option value="AL">Alabama</option>
@@ -1269,42 +1419,31 @@
 								  <span class="iq-input-error-msg hide">At least one state is required</span>
 								  
 							  </div>
-							  <div class="form-group stateNone hide">
+                          <div class="form-group stateNone hide">
 								<label>State</label>
 								<input type="text" class="read-only-text" readonly value="Illinois">
 							  </div>
-							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group notState">
-								<label>Referral Agency</label>
-								<select multiple="multiple" style="display: none;" class="multiselect">
-									<option>Hospital Program - Regional</option>
-									<option>Office of Mental Health</option>
-									<option>Agency C</option>
-									<option>Agency D</option>
-									<option>Agency E</option>
-									<option>Agency F</option>
-									</select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-						</div>
-						<!-- end intake row -->
-					</div>
-					
-				  </div>
-				</div>
-			  </div>
-		  </div>
-			<div class="row iq-button-wrapper mr-0" style="position: relative">
-               <div class="col">
-				  <div>
-					  <a href="#iSearchArea" class="btn btn-primary iSearchButton" onClick="goSearchIntake();">Search</a>
-					  <button class="btn btn-link" onClick="resetISearch();">Reset</button>
-				  </div>
-			    </div>
-            </div>
-			<section id="iSearchArea">
+							
+								  <div class="form-group">
+									  <label>Management Unit
+									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
+									  </label>
+									  <p class="help-text">State must be selected</p>
+								  </div>
+							 
+								  <div class="form-group">
+									  <label>Work Unit
+									   <select disabled><option>Select one</option></select>
+									  </label>
+									  <p class="help-text">Management unit must be selected</p>
+								  </div>        
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-9 col-xl-10">
+			        <section id="iSearchArea">
 				<h2 class="sr-only">Selected Intake Search Criteria</h2>
           		<br>  
 				<div class="float-right hide">
@@ -1345,7 +1484,7 @@
 	  <td><a href="#">Good Neighbor HHC of Baxter</a><!--<br>
         CCN&nbsp;247269<br>
         FACID&nbsp;IL5321112233445566--></td>
-      <td><a href="../intake-new2.html">12345</a><br><small>Complaint </small></td>
+      <td><a href="intake-new2.html">12345</a><br><small>Complaint </small></td>
       <td>Non-IJ High</td>
       <td>Under Investigation</td>
 	  <td>03/01/2020</td>
@@ -1353,9 +1492,9 @@
     </tr>
     <tr class="">
 	 
-      <td><a href="../provider-profile-hospice.html">BrightHope</a><!--<br>
+      <td><a href="provider-profile-hospice.html">BrightHope</a><!--<br>
         IQIES 123456--></td>
-	  <td><a href="../intake-new.html">3265</a><br><small>Incident</small></td>
+	  <td><a href="intake-new.html">3265</a><br><small>Incident</small></td>
 	  <td><span class="iq-not-available">Not Applicable</span></td>
       <td>Triage/Prioritization</td>
 	  <td>03/15/2020</td>
@@ -1368,40 +1507,90 @@
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
+        	        <p class="iq-no-results hide noResults" role="status">No results found.</p>
+                </div>
+            </div>
+
+			
           </div>
 		<div class="tab-pane" id="enforcements">
         
-			  <div class="form-group">
 				<label>Search for Enforcements</label>
-				<input type="text" class="form-control" id="eSearchInput" onKeyUp="if (event.keyCode === 13) {
-        $('.eSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter enforcement ID, provider name, or CCN</div></div>
-			  <div class="iq-accordion showhide">
+              <div class="row">
+                <div class="col-md-8">
+			    <div class="input-group">
+                    <input type="text" class="form-control" id="eSearchInput" onKeyUp="if (event.keyCode === 13) {
+        $('.eSearchButton').click();}"  placeholder="">
+                    <span class="input-group-append"> <a href="#eSearchArea" class="btn btn-primary eSearchButton" onClick="goSearchEnforcement();">Search</a>
+					  </span>
+                </div><div class="help-text input-group-help-text">Enter enforcement ID, provider name, or CCN</div>
+                </div>
+            <div class="col-md-4">
+                <button class="btn btn-link" onClick="resetESearch();">Reset</button>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-md-3 col-xl-2">
+						<br>
+                    <h3>Filters</h3>
+                <div class="iq-accordion rightToggle showhide">
 				<div class="card no-border">
 				  <div class="card-header d-flex">
-					<button id="eAdvancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#eAdvancedSearch-showhide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
-					  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#eSearchFilter1" onclick="$(this).toggleClass('expanded');">
+					  <span>Type &amp; ID</span>
 					</button>
 				  </div>
-				  <div id="eAdvancedSearch-showhide" class="collapse">
-					<div class="card-body p-0">
-						<br>
-						<div class="enforcement">
-						<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group">
+				  <div id="eSearchFilter1" class="collapse">
+					<div class="card-body">
+                <div class="form-group">
 									<label>Enforcement Type</label>
-									<div class="btn-group" role="group" aria-label="Button Group Example">
+                    <select><option>Both</option><option>Federal</option><option>State</option></select>
+									<!--<div class="btn-group" role="group" aria-label="Button Group Example">
                   <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Federal</button>
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">State</button>
-                </div>
+                </div>-->
 									
 							
 								</div>
-							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group">
+                        <div class="form-group notState">
+								<label>Associated Survey IDs</label>
+								<select multiple="multiple" style="display: none;" class="multiselect">
+									<option>ID 1234</option>
+									<option>ID 2235</option>
+									<option>ID 3245</option>
+									<option>ID 4234</option>
+									<option>ID 5234</option>
+								</select>
+								<span class="help-text">Select one or more</span>
+								</div>
+                        <div class="form-group notState"><label>Sanction Type</label>
+									<!--<input type="text" id="sanctionType">-->
+									
+									<select multiple="multiple" style="display: none;" class="multiselect">
+									<option>Directed Plan of Correction</option>
+									<option>Temporary Management</option>
+									<option>Directed Inservice Training</option>
+									<option>Civil Monetary Penalty</option>
+									<option>CMS-Approved Alternative or Additional State Remedy</option>
+									<option>Suspension of Payment for New Admissions</option>
+								</select>
+									<span class="help-text">Select one or more</span>
+								</div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#eSearchFilter2" onclick="$(this).toggleClass('expanded');">
+					  <span>Status</span>
+					</button>
+				  </div>
+				  <div id="eSearchFilter2" class="collapse">
+					<div class="card-body">
+                   <div class="form-group">
 									<label>Enforcement Case Status</label>
 									<select><option>All</option>
 									<optgroup label="Home Health Agency">
@@ -1421,23 +1610,21 @@
 									
 									
 								</div>
-							</div>
-							<div class="col-md-6 col-lg-4">
-								<div class="form-group notState">
-								<label>Associated Survey IDs</label>
+                        <div class="form-group notState">
+								<label>CMP Payment Status</label>
+								<!--<input type="text" id="cmpPaymentStatus">-->
 								<select multiple="multiple" style="display: none;" class="multiselect">
-									<option>ID 1234</option>
-									<option>ID 2235</option>
-									<option>ID 3245</option>
-									<option>ID 4234</option>
-									<option>ID 5234</option>
+									<option>None Yet</option>
+									<option>Awaiting CMP Payment</option>
+									<option>Pending Appeal</option>
+									<option>Paid/Closed</option>
+									<option>Extended Payments</option>
+									<option>Overdue CMP</option>
+									<option>IDR Removed CMP</option>
+									<option>Awaiting Bankruptcy</option>
 								</select>
-								<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-	
-						    <div class="col-md-12 col-lg-12">
-								<div class="form-group">
+								<span class="help-text">Select one or more</span></div>
+                        <div class="form-group">
 									<div class="custom-control custom-checkbox">
                   <input type="checkbox" id="eType3" class="custom-control-input">
                    <label class="custom-control-label" for="eType3">Show only enforcement cases containing Immediate Jeopardy</label>
@@ -1459,11 +1646,96 @@
                    <label class="custom-control-label" for="appealDue">Show only enforcement cases with past appeal waiver due date</label>
                 </div>  
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-4">
-								<div class="form-group notState">
+                        
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#eSearchFilter3" onclick="$(this).toggleClass('expanded');">
+					  <span>Start &amp; Due Dates</span>
+					</button>
+				  </div>
+				  <div id="eSearchFilter3" class="collapse">
+					<div class="card-body">
+                           	
+							
+								<fieldset><legend>Enforcement Start Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+								</fieldset>
+							
+								
+							<fieldset><legend>Sanction Effective Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+				            </fieldset>
+							
+							
+							
+								
+							<fieldset><legend>Appeal/Appeal Waiver Due Dates</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+				</fieldset>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#eSearchFilter4" onclick="$(this).toggleClass('expanded');">
+					  <span>Staff</span>
+					</button>
+				  </div>
+				  <div id="eSearchFilter4" class="collapse">
+					<div class="card-body">
+                        <div class="form-group notState">
 								<label>Responsible Staff</label>
 								<select multiple="multiple" style="display: none;" class="multiselect">
 									<option>Roberta Carr</option>
@@ -1475,117 +1747,20 @@
 									<option>Tom Vineman</option>
 								</select><span class="help-text">Select one or more</span>
 								</div>
-							</div>
-							
-							<div class="col-md-10 col-lg-6">
-								
-								<label>Enforcement Start Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-						</div><div class="row">
-						
-							<div class="col-md-4 col-lg-4">
-								<div class="form-group notState"><label>Sanction Type</label>
-									<!--<input type="text" id="sanctionType">-->
-									
-									<select multiple="multiple" style="display: none;" class="multiselect">
-									<option>Directed Plan of Correction</option>
-									<option>Temporary Management</option>
-									<option>Directed Inservice Training</option>
-									<option>Civil Monetary Penalty</option>
-									<option>CMS-Approved Alternative or Additional State Remedy</option>
-									<option>Suspension of Payment for New Admissions</option>
-								</select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-							<div class="col-md-10 col-lg-6">
-								
-								<label>Sanction Effective Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-						</div>
-						<div class="row">
-							<!--<div class="col-md-4 col-lg-3">
-								<div class="form-group"><label>Hearing/Settlement Status</label>
-								<input type="text" />
-								</div>
-							</div>-->
-							<div class="col-md-4 col-lg-4">
-								<div class="form-group notState">
-								<label>CMP Payment Status</label>
-								<!--<input type="text" id="cmpPaymentStatus">-->
-								<select multiple="multiple" style="display: none;" class="multiselect">
-									<option>None Yet</option>
-									<option>Awaiting CMP Payment</option>
-									<option>Pending Appeal</option>
-									<option>Paid/Closed</option>
-									<option>Extended Payments</option>
-									<option>Overdue CMP</option>
-									<option>IDR Removed CMP</option>
-									<option>Awaiting Bankruptcy</option>
-								</select>
-								<span class="help-text">Select one or more</span></div>
-							</div>
-			<div class="col-md-10 col-lg-6">
-								
-								<label>Appeal/Appeal Waiver Due Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-							
-							
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-4 col-xl-3">
-							  <div class="form-group">
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#eSearchFilter5" onclick="$(this).toggleClass('expanded');">
+					  <span>Location</span>
+					</button>
+				  </div>
+				  <div id="eSearchFilter5" class="collapse">
+					<div class="card-body">
+                          	  <div class="form-group">
 								  <label>State</label>
 								  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
                       <option value="AL">Alabama</option>
@@ -1644,40 +1819,27 @@
 								  <span class="help-text">Select one or more</span>
 								  
 							  </div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
+							
 								  <div class="form-group">
 									  <label>Management Unit
 									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
 									  </label>
 									  <p class="help-text">State must be selected</p>
 								  </div>
-							  </div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
+							  
 								  <div class="form-group">
 									  <label>Work Unit
 									   <select disabled><option>Select one</option></select>
 									  </label>
 									  <p class="help-text">Management unit must be selected</p>
-								  </div>
-							  </div>
-							  
-						</div>
-						<!-- end intake row -->
-					</div>
-				  </div>
-				</div>
-			  </div>
-		  </div>
-			  <div class="row iq-button-wrapper mr-0" style="position: relative">
-               <div class="col">
-				  <div>
-					  <a href="#eSearchArea" class="btn btn-primary eSearchButton" onClick="goSearchEnforcement();">Search</a>
-					  <button class="btn btn-link" onClick="resetESearch();">Reset</button>
-				  </div>
-			    </div>
-            </div>
-			<section id="eSearchArea">
+								  </div>      
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-9 col-xl-10">
+			        <section id="eSearchArea">
 				<h2 class="sr-only">Selected Enforcement Search Criteria</h2>
           		<br>  
 				<div class="float-right">
@@ -1720,9 +1882,9 @@
   <tbody>
     <tr class="appealDue">
 	  <td></td>
-	  <td><a href="../provider-profile-hospice.html">BrightHope</a><br>
+	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
 	    IQIES 123456</td>
-      <td><a href="../../enforcement/enforcement.html">1234</a><br><small>Federal</small></td>
+      <td><a href="../enforcement/enforcement.html">1234</a><br><small>Federal</small></td>
       <td>01/01/2020</td>
       <td>12/01/2019</td>
 	  <td><a href="../survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
@@ -1744,9 +1906,9 @@
     </tr>
     <tr class="cmp">
 	  <td></td>
-	  <td><a href="../provider-details.html">Laguna Rainbow Home Care</a><br>
+	  <td><a href="provider-details.html">Laguna Rainbow Home Care</a><br>
 	    CCN&nbsp;327144 | FACID&nbsp;IL9621112233</td>
-      <td><a href="../../enforcement/enforcement-new.html">3245</a><br><small>State</small></td>
+      <td><a href="../enforcement/enforcement-new.html">3245</a><br><small>State</small></td>
       <td>12/23/2019</td>
       <td>11/23/2019</td>
 	  <td><a href="../survey-brighthope.html">XYZ0-H1 <i class="fal fa-external-link"></i></a></td>
@@ -1775,7 +1937,27 @@
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
+        	        <p class="iq-no-results hide noResults" role="status">No results found.</p>
+                </div>
+            </div>
+                    
+            
+				
+			 
+								
+						
+								
+							
+								
+							
+								
+							
+							
+							
+						
+							  
+			
+			
           </div>
       </div>                         
          
@@ -1811,43 +1993,43 @@
             <div class="row">
               <div class="col">
                 <div class="iq-footer-heading">
-                  <a href="/"><img src="../../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
-                  </a><img src="../../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
+                  <a href="/"><img src="../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <a href="#">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
+                <a href="#">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
               </div>
             </div>
             <div class="row">
               <div class="col">
                 <div class="iq-footer-links">
-                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
+                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-2 col-xl-2 d-flex align-items-center">
-          <img src="../../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+          <img src="../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="../../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-  <script src="../../../../src/assets/third-party/popper/popper.min.js"></script>
-  <script src="../../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <script src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
   <!-- to include text editor code -->
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
   <!-- to include datatables for responsive table -->
   <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
   <!-- to include multi-select dropdown selector -->
-  <script src="../../../hhaung/js/BsMultiSelect.js"></script>
-  <script src="../../../../src/assets/js/scripts.js"></script> <script>
+  <script src="../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../src/assets/js/scripts.js"></script> <script>
 	  $(document).ready(function () {
 	    $('[data-toggle="tooltip"]').tooltip(); 
 	    $("select.multiselect").bsMultiSelect();
