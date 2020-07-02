@@ -1496,25 +1496,41 @@
                   <div class="form-group">
                     <label>Type <span class="iq-asterisk">*</span></label>
                     <select class="form-control" onChange="switch(this.options[this.selectedIndex].value){
-                            case 'building': case 'wing': $('.stories').removeClass('hide'); break;
-                            default: $('.stories').addClass('hide'); break; }">
+                            case 'building': case 'wing': 
+                                $('.edit-view.building1 .stories').removeClass('hide'); 
+                                $('.edit-view.building1 .otherBType').addClass('hide'); 
+                                break;
+                            case 'other': 
+                                $('.edit-view.building1 .stories').addClass('hide');
+                                $('.edit-view.building1 .otherBType').removeClass('hide'); 
+                                break;
+                            default: 
+                                $('.edit-view.building1 .stories').addClass('hide'); 
+                                $('.edit-view.building1 .otherBType').addClass('hide'); 
+                                break;}">
                       <option>Select one</option>
                       <option selected value="building">Building</option>
                       <option value="wing">Wing</option>
                       <option value="floor">Floor</option>
                       <option value="apt">Apartment Unit</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group stories">
                     <label>Number of Stories</label>
-                    <input type="number" class="form-control" value="3">
+                    <input type="number" class="form-control" style="width: 5rem;" value="3">
+                  </div>
+                  <div class="form-group otherBType hide">
+                    <label>Other Description</label>
+                    <input type="text">
+                    <span class="help-text">Other types may include trailer, mobile unit, etc.</span>
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Building Location Description</label>
+                    <label>Building Location Details</label>
                     <textarea rows="3" class="form-control"></textarea>
                     <span class="help-text">Additional details such as landmarks, directions, etc. </span> </div>
                 </div>
@@ -1579,10 +1595,22 @@
                         </select>
                       </p>
                     </div>
-                    <div class="form-group hide bwsclosed">
+                    <div class="hide bwsclosed">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3">
+                        <div class="form-group">
                       <label>Closed Date <span class="iq-asterisk">*</span></label>
-                      <input type="date" class="form-control" style="width: 12rem;" />
+                      <input type="date" class="form-control" />
                       <p class="help-text">MM/DD/YYYY</p>
+                    </div>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <div class="form-group">
+                      <label>Reason for Closure </label>
+                      <input type="text" />
+                      
+                    </div>
+                            </div>
                     </div>
                   </div>
                 </div>
@@ -1647,8 +1675,7 @@
                     </select>
                   </p>
                 </div>
-                
-                <div class="col-md-12"> </div>
+              </div>
               </div>
               <div class="row">
                 <div class="col">
@@ -1718,26 +1745,41 @@
                   <div class="form-group">
                     <label>Type <span class="iq-asterisk">*</span></label>
                     <select class="form-control" onChange="switch(this.options[this.selectedIndex].value){
-                            case 'building': case 'wing': $('.stories').removeClass('hide'); break;
-                            default: $('.stories').addClass('hide'); break;
-                                                            }">
+                            case 'building': case 'wing': 
+                                $('.edit-view.newBuilding .stories').removeClass('hide'); 
+                                $('.edit-view.newBuilding .otherBType').addClass('hide'); 
+                                break;
+                            case 'other': 
+                                $('.edit-view.newBuilding .stories').addClass('hide');
+                                $('.edit-view.newBuilding .otherBType').removeClass('hide'); 
+                                break;
+                            default: 
+                                $('.edit-view.newBuilding .stories').addClass('hide'); 
+                                $('.edit-view.newBuilding .otherBType').addClass('hide'); 
+                                break;}">
                       <option selected>Select one</option>
                       <option value="building">Building</option>
                       <option value="wing">Wing</option>
                       <option value="floor">Floor</option>
                       <option value="apt">Apartment Unit</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group stories hide">
                     <label>Number of Stories</label>
-                    <input type="number" class="form-control" value="">
+                    <input type="number" class="form-control" style="width: 5rem" value="">
+                  </div>
+                  <div class="form-group otherBType hide">
+                    <label>Other Description</label>
+                    <input type="text">
+                    <span class="help-text">Other types may include trailer, mobile unit, etc.</span>
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Building Location Description</label>
+                    <label>Building Location Details</label>
                     <textarea rows="3" class="form-control"></textarea>
                     <span class="help-text">Additional details such as landmarks, directions, etc. </span> </div>
                 </div>
@@ -1803,11 +1845,24 @@
                         </select>
                       </p>
                     </div>
-                    <div class="form-group hide bwsclosed">
+                    <div class="hide bwsclosed">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3">
+                        <div class="form-group">
                       <label>Closed Date <span class="iq-asterisk">*</span></label>
-                      <input type="date" class="form-control" style="width: 12rem;" />
+                      <input type="date" class="form-control" />
                       <p class="help-text">MM/DD/YYYY</p>
                     </div>
+                            </div>
+                            <div class="col-md-8 col-lg-9">
+                                <div class="form-group">
+                      <label>Reason for Closure </label>
+                      <input type="text" />
+                      
+                    </div>
+                            </div>
+                    </div>
+                  </div>
                   </div>
                 </div>
                 <div class="col-md-5">
