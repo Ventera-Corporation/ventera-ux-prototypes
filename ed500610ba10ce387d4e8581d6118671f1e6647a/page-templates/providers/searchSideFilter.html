@@ -121,7 +121,7 @@
       <h1>Search</h1>
          
 	  <nav class="nav nav-horizontal parent-tab" style="margin-bottom: 2rem;">
-        <a class="nav-link active" href="#providers" data-toggle="tab" role="tab" onClick="drawProviderTable();">Providers</a>
+        <a class="nav-link active" href="#providers" data-toggle="tab" role="tab" onClick=" drawProviderTable();">Providers</a>
         <a class="nav-link" href="#surveys" data-toggle="tab" role="tab" onClick="drawSurveyTable(); ">Surveys</a>
         <a class="nav-link" href="#intakes" data-toggle="tab" role="tab" onClick="drawIntakeTable(); ">Intakes</a>
 		 <a class="nav-link" href="#enforcements" data-toggle="tab" role="tab" onClick="drawEnforcementTable(); ">Enforcements</a>
@@ -141,8 +141,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-xl-2">
-                    
+                <div class="col-md-3 col-xl-2 iq-static-col position-sticky">
+                    <div class="sticky-top">
 						<br>
                     <h3>Filters</h3>
                 <div class="iq-accordion rightToggle showhide">
@@ -228,7 +228,7 @@
                                 <div class="form-group">
                           <label>Citation Tag Number</label>
                           <input type="text">
-                          <span class="help-text">E.g. G0406</span>
+                          <span class="help-text">Enter full tag number (e.g. G0406)</span>
                       </div>
                         <fieldset><legend>Citation Dates</legend>
 								<div class="row">
@@ -379,7 +379,7 @@
                 </div>
                 </div>
                         
-                    
+                    </div>
                       
              
          
@@ -431,10 +431,10 @@
       <td><a href="#">A&amp;L Home Care and Training Center, LLC
       </a><br>6129 County Road, #107, Proctorville, IL 63222</td>
       <td>CCN&nbsp;368130</td>
-      <td><span class="badge badge-success">Open</span></td>
+      <td><span class="iq-status iq-status-open"></span> Open</td>
       <td>Home Health Agency</td>
-      <td><span class="badge badge-info">Certified</span></td>
-      <td><span class="badge badge-info">Deemed</span></td>
+      <td>Certified</td>
+      <td>Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -445,10 +445,10 @@
       <td>&nbsp;</td>
       <td><a href="provider-profile.html">BrightHope</a><br>667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010</td>
       <td>iQIES 123456</td>
-      <td><span class="badge badge-success">Open</span></td>
+      <td><span class="iq-status iq-status-open"></span> Open</td>
       <td>Hospice</td>
-      <td><span class="badge badge-light">Pending Certification</span></td>
-      <td><span class="badge badge-light">Non-Deemed</span></td>
+      <td><span class="badge badge-warning">Pending</span></td>
+      <td>Non-Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -461,10 +461,10 @@
       <td><a href="#">Encompass Health Braintree Hospital of Braintree</a><br>250 Pond Street, Braintree, IL 63222</td>
       <td>CCN&nbsp;223027<br>
         FACID&nbsp;IL1234112233</td>
-      <td><span class="badge badge-success">Open</span></td>
+      <td><span class="iq-status iq-status-open"></span> Open</td>
       <td>Hospital</td>
-      <td><span class="badge badge-info">Certified</span></td>
-      <td><span class="badge badge-info">Deemed</span></td>
+      <td>Certified</td>
+      <td>Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -475,10 +475,10 @@
       <td>&nbsp;</td>
       <td><a href="#">Florence Health Care Services &amp; Training Center</a><br>2401 Avenue J, Suite 240, Arlington, IL 63225</td>
       <td>CCN&nbsp;677863</td>
-      <td><span class="badge badge-dark">Closed</span></td>
+      <td><span class="iq-status iq-status-closed"></span> Closed</td>
       <td>Home Health Agency</td>
       <td><span class="badge badge-dark">Terminated</span></td>
-      <td><span class="badge badge-info">Deemed</span></td>
+      <td>Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -490,10 +490,10 @@
       <td><a href="#">Good Neighbor HHC of Baxter</a><br>14387 Edgewood Drive, Baxter, IL 63231</td>
       <td>CCN&nbsp;247269<br>
         FACID&nbsp;IL5321112233445566</td>
-      <td><span class="badge badge-success">Open</span></td>
+      <td><span class="iq-status iq-status-open"></span> Open</td>
       <td>Home Health Agency</td>
-      <td><span class="badge badge-info">Certified</span></td>
-      <td><span class="badge badge-info">Deemed</span></td>
+      <td>Certified</td>
+      <td>Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -505,10 +505,10 @@
       <td><a href="#">Good Samaritan Home Health of Brainerd</a><br>804 Wright Street, Brainerd, IL 63227</td>
       <td>CCN&nbsp;248032<br>
         FACID&nbsp;IL764211223344</td>
-      <td><span class="badge badge-success">Open</span></td>
+      <td><span class="iq-status iq-status-open"></span> Open</td>
       <td>Home Health Agency</td>
-      <td><span class="badge badge-info">Certified</span></td>
-      <td class="bright il recert"><span class="badge badge-warning">Suspended</span></td>
+      <td>Certified</td>
+      <td class="bright il recert"><span class="badge badge-danger">Suspended</span></td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -519,10 +519,10 @@
       <td>&nbsp;</td>
       <td><a href="#">Grainger Co Health Dept</a><br>PO Box 27 Main Street, Rutledge, IL 63222</td>
       <td>CCN&nbsp;447064</td>
-      <td class="deemed"><span class="badge badge-dark">Closed</span></td>
+      <td class="deemed"><span class="iq-status iq-status-closed"></span> Closed</td>
       <td>Home Health Agency</td>
       <td class="deemed"><span class="badge badge-dark">Terminated</span></td>
-      <td><span class="badge badge-info">Deemed</span></td>
+      <td>Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -534,10 +534,10 @@
       <td><a href="#">Highsmith Rainey Memorial Hospital</a><br>150 Robeson Street, 4th Floor, Fayetteville, IL 63222</td>
       <td>CCN&nbsp;342014<br>
         FACID&nbsp;IL85321122334<br></td>
-      <td><span class="badge badge-success">Open</span></td>
+      <td><span class="iq-status iq-status-open"></span> Open</td>
       <td>Hospital</td>
-      <td><span class="badge badge-info">Certified</span></td>
-      <td><span class="badge badge-info">Deemed</span></td>
+      <td>Certified</td>
+      <td>Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -549,10 +549,10 @@
       <td><a href="#">Laguna Rainbow Home Care</a><br>State Road 23 South, Casa Blanca, IL 63222</td>
       <td>CCN&nbsp;327144<br>
         FACID&nbsp;IL9621112233<br></td>
-      <td><span class="badge badge-success">Open</span></td>
+      <td><span class="iq-status iq-status-open"></span> Open</td>
       <td>Home Health Agency</td>
-      <td><span class="badge badge-info">Certified</span></td>
-      <td><span class="badge badge-info">Deemed</span></td>
+      <td>Certified</td>
+      <td>Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -564,10 +564,10 @@
       <td><a href="#">Laguna Rainbow Home Health Agency</a><br>PO Box 236, New Laguna, IL 63222</td>
       <td>iQIES 327046<br>
         FACID&nbsp;IL1199112556677<br></td>
-      <td><span class="badge badge-success">Open</span></td>
+      <td><span class="iq-status iq-status-open"></span> Open</td>
       <td>Home Health Agency</td>
-      <td class="bright il recert"><span class="badge badge-light">Pending Certification</span></td>
-      <td class="bright il recert"><span class="badge badge-light">Non-Deemed</span></td>
+      <td class="bright il recert"><span class="badge badge-warning">Pending</span></td>
+      <td class="bright il recert">Non-Deemed</td>
       <td><ol>
         <li>1234 Any Road#100, Any Town, IL 60233</li>
         <li>53343 Another Road, Another Town, IL 63314</li>
@@ -630,7 +630,8 @@
                 </div>
             </div>
         <div class="row">
-                <div class="col-md-3 col-xl-2">
+                <div class="col-md-3 col-xl-2 iq-static-col position-sticky">
+                    <div class="sticky-top">
 						<br>
                     <h3>Filters</h3>
                 <div class="iq-accordion rightToggle showhide">
@@ -887,6 +888,7 @@
                   </div>
                 </div>
                 </div>
+                    </div>
                 </div>
                 <div class="col-md-9 col-xl-10">
 			        <section id="sSearchArea">
@@ -994,12 +996,10 @@
       <td><a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
         <div class="dropdown-menu text-content" aria-labelledby="citationList1">
           <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-          <ul>
-            <li>G0 - Initial Comments<br>
-              <small>Memo</small></li>
-            <li>G1014 - Interventions and Patient Response<br>
-              <small>Element</small></li>
-          </ul>
+           <table>
+              <tr><td>G0000</td><td>Initial Comments</td></tr>
+            <tr><td>G1014</td><td>Interventions and Patient Response</td></tr></table>
+           
         </div></td>
       <td>01/28/2020</td>
       <td>Pending</td>
@@ -1018,17 +1018,12 @@
         <li>Complaint</li>
       </ul></td>
       <td>Open</td>
-      <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
+      <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3</a> <span class="iq-status iq-status-ij"></span>&nbsp;IJ
         <div class="dropdown-menu text-content" aria-labelledby="allegationList">
           <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-          <ul>
-            <li>G1008 Clinical Records<br>
-              <small>Condition</small> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></li>
-            <li>G0 - Initial Comments<br>
-              <small>Memo</small></li>
-            <li>G1014 - Interventions and Patient Response<br>
-              <small>Element</small></li>
-          </ul>
+          <table><tr><td>G1008 <small><span class="badge badge-danger badge-pill" data-toggle="tooltip" title="Immediate Jeopardy">Condition&nbsp;-&nbsp;IJ</span></small></td><td>Clinical Records</td></tr>
+              <tr><td>G0000</td><td>Initial Comments</td></tr>
+            <tr><td>G1014</td><td>Interventions and Patient Response</td></tr></table>
         </div></td>
       <td>02/28/2020</td>
       <td>Pending</td>
@@ -1092,7 +1087,8 @@
                 </div>
             </div>
         <div class="row">
-                <div class="col-md-3 col-xl-2">
+                <div class="col-md-3 col-xl-2 iq-static-col position-sticky">
+                    <div class="sticky-top">
 						<br>
                     <h3>Filters</h3>
                 <div class="iq-accordion rightToggle showhide">
@@ -1206,7 +1202,21 @@
 									<span class="help-text">Select one or more</span>
 								</div>
                         
-                        <div class="form-group">
+                       
+                    </div>
+                  </div>
+                </div>
+                </div>
+                        <div class="iq-accordion rightToggle showhide">
+				<div class="card no-border">
+				  <div class="card-header d-flex">
+					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter6" onclick="$(this).toggleClass('expanded');">
+					  <span>RO Approved</span>
+					</button>
+				  </div>
+				  <div id="iSearchFilter6" class="collapse">
+					<div class="card-body">
+                            <div class="form-group">
 									
 									<div class="custom-control custom-checkbox">
 									  <input type="checkbox" id="roapproved2" class="custom-control-input">
@@ -1231,6 +1241,8 @@
 									</div>	
 								</div>
 						  </fieldset>
+                        
+                        
                     </div>
                   </div>
                 </div>
@@ -1285,22 +1297,7 @@
                   </div>
                 </div>
                 </div>
-                <div class="iq-accordion rightToggle showhide hide">
-				<div class="card no-border">
-				  <div class="card-header d-flex">
-					<button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#iSearchFilter6" onclick="$(this).toggleClass('expanded');">
-					  <span></span>
-					</button>
-				  </div>
-				  <div id="iSearchFilter6" class="collapse">
-					<div class="card-body">
-                           
-                        
-                        
-                    </div>
-                  </div>
-                </div>
-                </div>    
+                    
                    <div class="iq-accordion rightToggle showhide hide">
 				<div class="card no-border">
 				  <div class="card-header d-flex">
@@ -1441,6 +1438,7 @@
                   </div>
                 </div>
                 </div>
+                        </div>
                 </div>
                 <div class="col-md-9 col-xl-10">
 			        <section id="iSearchArea">
@@ -1530,7 +1528,8 @@
                 </div>
             </div>
         <div class="row">
-                <div class="col-md-3 col-xl-2">
+                <div class="col-md-3 col-xl-2 iq-static-col position-sticky">
+                    <div class="sticky-top">
 						<br>
                     <h3>Filters</h3>
                 <div class="iq-accordion rightToggle showhide">
@@ -1704,7 +1703,7 @@
 							
 							
 								
-							<fieldset><legend>Appeal/Appeal Waiver Due Dates</legend>
+							<fieldset><legend>Appeal/Waiver Due Dates</legend>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="input-group">
@@ -1837,6 +1836,7 @@
                   </div>
                 </div>
                 </div>
+                    </div>
                 </div>
                 <div class="col-md-9 col-xl-10">
 			        <section id="eSearchArea">
@@ -1887,7 +1887,7 @@
       <td><a href="../enforcement/enforcement.html">1234</a><br><small>Federal</small></td>
       <td>01/01/2020</td>
       <td>12/01/2019</td>
-	  <td><a href="../survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
+	  <td><a href="../survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br><span class="iq-status iq-status-ij"></span>&nbsp;IJ</td>
 	  <td>Open - Active</td>
 	  <td><a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
           <div class="dropdown-menu text-content" aria-labelledby="sanctionList">
@@ -1896,7 +1896,7 @@
 				</button>
 			   <ul>
 				  
-		  <li>Termination at 23 days - IJ<br><small>Recommended</small> </li>
+		  <li>Termination at 23 days - <span class="iq-status iq-status-ij"></span>&nbsp;IJ<br><small>Recommended</small> </li>
 				   
 			  </ul>
 			  
