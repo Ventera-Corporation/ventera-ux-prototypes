@@ -87,20 +87,7 @@
       </div>
     </div>
 	<div class="container-fluid" id="mainContent">
-<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
-  <div class="toast-header">
-    <strong class="mr-auto">UI Note</strong>
-    <small></small>
-    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
-      <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  <div class="toast-body">
-    <a href="search-test/index.html" class="return-link">Go back to Index Page</a>
-	 
-	
-    </div>
-</div>
+
 	  <div class="alert alert-warning hide" role="alert">
 		<div class="alert-content">You do not have permission to manage this provider's information.</div>
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -127,7 +114,28 @@
 		 <a class="nav-link" href="#enforcements" data-toggle="tab" role="tab" onClick="drawEnforcementTable(); ">Enforcements</a>
         </nav>
       <div class="tab-content">
-        <div class="tab-pane active" id="providers"><label>Search for Providers</label>
+        <div class="tab-pane active" id="providers">
+            <div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
+  <div class="toast-header">
+    <strong class="mr-auto">Provider Search UI Note</strong>
+    <small></small>
+    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <div class="toast-body">
+   
+    <ul><li>Type in "bri" or "good" for provider name match</li>
+      <li>Type in "z" for no results example</li>
+      <li>Select Deemed status filter</li>
+        <li>Check recertification checkbox</li>
+      </ul>
+	 
+	
+    </div>
+</div>
+            
+            <label>Search for Providers</label>
             <div class="row">
                 <div class="col-md-8">
 			    <div class="input-group">
@@ -183,7 +191,7 @@
                    
                         <div class="form-group">
                                                       <label>Deemed Status</label>
-                                                      <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
+                                                      <select id="deemedStatusSelect" onChange="showDeemedProvider()"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
                                                   </div>
                                             <div class="form-group notState">
                                       <label>Federal Certification Status</label>
@@ -206,7 +214,7 @@
                         <div class="form-group">
 						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
 						  <div class="custom-control custom-checkbox">
-							  <input type="checkbox" id="showrecertP" class="custom-control-input">
+							  <input type="checkbox" id="showrecertP" class="custom-control-input" onChange="showRecertProviders()">
 							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
 							</div>
 					  </div>
@@ -615,6 +623,27 @@
 			
 		</div>
         <div class="tab-pane" id="surveys">
+        <div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
+  <div class="toast-header">
+    <strong class="mr-auto">Survey Search UI Note</strong>
+    <small></small>
+    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  <div class="toast-body">
+   
+    <ul>
+      <li>Filter by POC status: pending</li>
+        <li>Filter by status: IJ</li>
+        <li>Filter by status: SOD</li>
+        <li>Filter by start/exit date</li>
+        <li>Filter by staff</li>
+      </ul>
+	 
+	
+    </div>
+</div>
         <label>Search for Surveys</label>
         <div class="row">
                 <div class="col-md-8">
@@ -685,18 +714,18 @@
 								</div>
 								<div class="form-group">
 								<label>POC Status</label>
-								<select id="pocStatus"><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
+								<select id="pocStatus" onChange="filterSurvey()"><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
             </div>
 								
 								<div class="form-group">
 									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSurveyWIJ"  class="custom-control-input">
+									  <input type="checkbox" id="showSurveyWIJ" onChange="filterSurvey()"  class="custom-control-input">
 									   <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
 									</div>   
 								</div>
 								<div class="form-group">
 									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSOD" class="custom-control-input">
+									  <input type="checkbox" id="showSOD" onChange="filterSurvey()" class="custom-control-input">
 									   <label class="custom-control-label" for="showSOD">Show open surveys with an overdue Statement of Deficiency</label>
 									</div>   
 								</div>   
@@ -724,7 +753,7 @@
 					<div class="card-body">
                         <div class="form-group">
 									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSurveyWOEndDate" class="custom-control-input">
+									  <input type="checkbox" id="showSurveyWOEndDate" onChange="filterSurvey()" class="custom-control-input">
 									   <label class="custom-control-label" for="showSurveyWOEndDate">Show only surveys without an exit date</label>
 									</div>   
 								</div>
@@ -733,14 +762,14 @@
 									<div class="col-md-12">
 										<div class="input-group">
 											<label class="input-group-text input-group-prepend" for="ssdr-from">From</label>
-											<input type="date" class="form-control" id="ssdr-from">
+											<input type="date" class="form-control" id="ssdr-from" onChange="filterSurvey()">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 									<div class="col-md-12">
 										<div class="input-group">
 											<label class="input-group-text input-group-prepend" for="ssdr-to">To</label>
-											<input type="date" class="form-control" id="ssdr-to">
+											<input type="date" class="form-control" id="ssdr-to" onChange="filterSurvey()">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
@@ -753,14 +782,14 @@
 									<div class="col-md-12">
 										<div class="input-group">
 											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control" id="sedr-from">
+											<input type="date" class="form-control" id="sedr-from" onChange="filterSurvey()">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 									<div class="col-md-12">
 										<div class="input-group">
 											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control" id="sedr-to">
+											<input type="date" class="form-control" id="sedr-to" onChange="filterSurvey()">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>
@@ -782,7 +811,7 @@
 					<div class="card-body">
                            <div class="form-group notState">
 								<label>Responsible Staff/Surveyor</label>
-								<select multiple="multiple" style="display: none;" class="multiselect" id="surveyStaff"><option>All</option>
+								<select multiple="multiple" style="display: none;" class="multiselect" id="surveyStaff" onChange="filterSurvey()">
 									<option>Roberta Carr</option>
 									<option>Ellen Datlow</option>
 									<option>Daniel Folsom</option>
@@ -903,65 +932,24 @@
 						<button class="dropdown-item">CSV</button>
 					</div>
 				</div>
+                
 				<ul class="iq-inline-list searchCriteria">
-					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('#surveys .searchCriteria li').addClass('hide'); $('#surveys .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#sSearchResults .baCount').html('2 Surveys'); "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="removeStateSurvey(this)"><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
-							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#sSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
+							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="resetSSearch();"><span aria-hidden="true">&times;</span></button></div></div></li>
 		  			<li><div class="ij hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
-        <span>Only surveys with IJ</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.ij').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+        <span>Only surveys with IJ</span><button type="button" class="close" aria-label="Close" onClick="removeIJSurvey()"><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="surveyExit hide"><label class="inline ml-2">Survey Exit Date Range: </label> <div class="badge badge-pill">
-        <span>03/01/2020</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.surveyExit').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+        <span>03/01/2020</span><button type="button" class="close" aria-label="Close" onClick="removeSurveyExit()"><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="poc hide"><label class="inline ml-2">POC Status: </label> <div class="badge badge-pill">
-        <span>Pending</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.poc').addClass('hide'); if($('#sSearchArea .searchCriteria .surveyStart').hasClass('hide')) { $('#surveyTable tbody tr').removeClass('hide'); $('#sSearchResults .baCount').html('Results: 2 Surveys'); drawSurveyTable(); } else { $('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  scrollX: true,
-		  'order': [[ 6, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 0 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 7 },
-			{ 'visible': false, 'targets': 9 },
-			{ 'visible': false, 'targets': 10 },
-			{ className: 'search-col', targets: 8 }
-		  ]
-		} );
-		$('#surveys .searchCriteria .surveyStart').removeClass('hide');}"><span aria-hidden="true">&times;</span></button></div></div></li>
+        <span>Pending</span><button type="button" class="close" aria-label="Close" onClick="removePOCStatusSurvey();"><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="surveyStart hide"><label class="inline ml-2">Survey Start Date Range: </label> <div class="badge badge-pill">
-        <span>01/01/2020 &mdash; 01/31/2020</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.surveyStart').addClass('hide'); if($('#sSearchArea .searchCriteria .poc').hasClass('hide')) { $('#surveyTable tbody tr').removeClass('hide'); $('#sSearchResults .baCount').html('Results: 2 Surveys'); drawSurveyTable(); } else {
-			$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false, scrollX: true,
-		  'order': [[ 6, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 0 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 8 },
-			{ 'visible': false, 'targets': 9 },
-			{ 'visible': false, 'targets': 10 }, 
-			{ className: 'search-col', targets: 7 }
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
-		$('#surveys .searchCriteria .poc').removeClass('hide');
-			} "><span aria-hidden="true">&times;</span>
+        <span>01/01/2020 &mdash; 01/31/2020</span><button type="button" class="close" aria-label="Close" onClick="removeSurveyStart()"><span aria-hidden="true">&times;</span>
 				</button></div></div></li>
 					<li><div class="reStaff hide"><label class="inline ml-2">Responsible Staff/Surveyor: </label> <div class="badge badge-pill">
-        <span>Roberta Carr</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.reStaff').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+        <span>Roberta Carr</span><button type="button" class="close" aria-label="Close" onClick="removeStaffSurvey()"><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="sod hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
-        <span>Open surveys with overdue Statement of Deficiency</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.sod').addClass('hide');  $('#surveyTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
+        <span>Open surveys with overdue Statement of Deficiency</span><button type="button" class="close" aria-label="Close" onClick="removeSODSurvey()"><span aria-hidden="true">&times;</span></button></div></div></li>
 		</ul>
   				<section id="sSearchResults">
           			<p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
@@ -987,7 +975,7 @@
     <tr class="pendingPOC">
 	  <td></td>
 	  <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>
-	    CCN&nbsp;368130</td>
+	    CCN&nbsp;368130 | <a href="#" data-toggle="tooltip" title="Address: 6129 County Road, #107, Proctorville, IL 63222"><i class="fas fa-map-marker-alt"></i></a></td>
       <td><a href="#">19A3-H1</a><br><small>Health</small></td>
       <td><ul>
         <li>Initial Certification</li>
@@ -1011,8 +999,8 @@
     <tr class="ij sod">
 	  <td></td>
 	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
-	    IQIES 123456</td>
-      <td><a href="../survey-brighthope.html">FFB-H1</a><br><small>Health</small></td>
+	    IQIES 123456 | <a href="#" data-toggle="tooltip" title="Address: 667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010"><i class="fas fa-map-marker-alt"></i></a></td>
+      <td><a href="survey-brighthope.html">FFB-H1</a><br><small>Health</small></td>
       <td><ul>
         <li>Initial Certification</li>
         <li>Complaint</li>
@@ -1034,26 +1022,13 @@
     </tr>
   </tbody>
 </table>
-
-<nav title="Table Pagination" class="hide"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
 					
         		</section>
 			</section> <!-- search area -->
         	        <p class="iq-no-results hide noResults" role="status">No results found.</p>
                 </div>
             </div>
-                  		
-						
-            
-              
-								
-							
-								
-							
-							
-								
-							
-				
+                  			
 				
         </div>
         <div class="tab-pane" id="intakes">
@@ -1358,7 +1333,7 @@
 					<div class="card-body">
                         <div class="form-group stateMS">
 								  <label>State</label>
-								  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
+								  <select multiple="multiple" style="display: none;" class="multiselect state">
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -2069,7 +2044,7 @@
 				{ 'visible': false, 'targets': 8 }
 			 ]
 		  }); 
-		var sTable = $('#surveyTable').DataTable( {
+/*		var sTable = $('#surveyTable').DataTable( {
 			              
 						  //scrollY: 300,
 						  paging: false,
@@ -2126,7 +2101,7 @@
 				{ 'visible': false, 'targets': 8 },
 				{ 'visible': false, 'targets': 9 }
 			 ]
-	}); 
+	}); */
 		$('.expandAll').on('click', function(){
 			// Expand row details
 			pTable.rows(':not(.parent)').nodes().to$().find('td:first-child').trigger('click');
@@ -2243,6 +2218,7 @@ function drawEnforcementTable(){
 function goSearchProvider(){
 	if($('#pSearchInput').val() != ''){ 
 		$('.keyword').removeClass('hide'); 
+        // This puts the search term as a search pill
 		$('.keyword .key').html($('#pSearchInput').val());
 	};
 	if( $('#pSearchInput').val().indexOf('b') > -1 ) { 
@@ -2270,7 +2246,12 @@ function goSearchProvider(){
 		$('#pSearchResults nav').removeClass('hide'); 
 	}
 	console.log($('#deemedStatusSelect option:selected').text());
-	if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ 
+	/* if( $('#pAdvancedSearch-showhide').hasClass('show') ) { 
+		$('#pAdvancedSearchLink').click();
+	} */
+}
+function showDeemedProvider(){
+    if( $('#deemedStatusSelect option:selected').text() == 'Deemed' ){ 
 		$('#providers table.responsive tbody tr').addClass('hide'); 
 		$('#providers table.responsive tbody tr.deemed').removeClass('hide'); 
 		$('#providers .searchCriteria .deemed').removeClass('hide'); 
@@ -2294,8 +2275,10 @@ function goSearchProvider(){
 				{ className: 'search-col', targets: 6 }
 			 ]
 		  }); 
-	}; 
-	if( $('#showrecertP').prop('checked') == true ) { 
+	} else { resetPSearch(); } 
+}
+function showRecertProviders(){
+    if( $('#showrecertP').prop('checked') == true ) { 
 		console.log('resertP checked');
 		$('#providerTable').DataTable().destroy(); 			
 		$('#providerTable').DataTable( {
@@ -2322,10 +2305,8 @@ function goSearchProvider(){
 		$('#providers .searchCriteria .recertP').removeClass('hide');
 		$('#pSearchResults nav').addClass('hide'); 
 		 $('#pSearchResults .baCount').html('Results: 2 Providers'); 
-	}
-	if( $('#pAdvancedSearch-showhide').hasClass('show') ) { 
-		$('#pAdvancedSearchLink').click();
-	}
+	} 
+    else { resetPSearch(); } 
 }
 function resetPSearch(){
 	$('#pSearchResults').removeClass('hide'); 
@@ -2363,39 +2344,21 @@ function goSearchSurvey(){
 		$('#sSearchResults .baCount').html('Results: 2 Surveys'); 
 		//$('#sSearchResults nav').removeClass('hide'); 
 	}
-	console.log( $('#pocStatus option:selected').text() );
+/*	if( $('#sAdvancedSearch-showhide').hasClass('show') ) { 
+		$('#sAdvancedSearchLink').click();
+	} */
+}
+function filterSurvey(){
+    console.log( $('#pocStatus option:selected').text() );
 	console.log( $('#ssdr-from').val() ); 
 	console.log( $('#ssdr-to').val() ); 
 	console.log( $('#surveyStaff option:selected').text() );
 	if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() == '') { 
 		console.log('pending only');
-		$('#surveyTable').DataTable().destroy();
-		$('#surveyTable').DataTable( {
-		  //scrollY: 300,
-		  paging: false,
-		  lengthMenu: false,
-		  info: false,
-		  searching: false,
-		  responsive: {
-			details: { type: 'column'}
-		  },
-		  'order': [[ 6, 'asc' ]],
-		  columnDefs: [
-			{ className: 'control', orderable: false, targets: 0 },
-			{ responsivePriority: 0, targets: 1 },
-			{ responsivePriority: 1, targets: -1 },
-			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 8 },
-			{ 'visible': false, 'targets': 9 }, 
-			{ 'visible': false, 'targets': 10 },
-			{ className: 'search-col', targets: 7 }
-		  ]
-		} );
-		$('#surveyTable tbody tr').addClass('hide'); $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
-		$('#surveys .searchCriteria .poc').removeClass('hide');
-		$('#surveys .searchCriteria .surveyStart').addClass('hide');
-		$('#surveys .searchCriteria .reStaff').addClass('hide');
-	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() == '' ) { 
+        applyPendingSurvey();
+		removeStaffSurvey();
+        removeSurveyStart(); 
+	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() == '' ) {
 		console.log('survey start date range only');
 		$('#surveyTable').DataTable().destroy();
 		$('#surveyTable').DataTable( {
@@ -2421,7 +2384,7 @@ function goSearchSurvey(){
 		} );
 		$('#surveys .searchCriteria .poc').addClass('hide');
 		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
-		$('#surveys .searchCriteria .reStaff').addClass('hide');
+        removeStaffSurvey();        
 	} else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() != '') { 
 		console.log('survey staff only');
 		$('#surveyTable').DataTable().destroy();
@@ -2567,6 +2530,7 @@ function goSearchSurvey(){
 		$('#surveys .searchCriteria .surveyStart').addClass('hide');
 		$('#surveys .searchCriteria .reStaff').addClass('hide');
 	};
+    
 	if( $('#showSOD').prop('checked') == true ) { 
 		console.log('sod checked');
 		$('#surveyTable').DataTable().destroy();
@@ -2610,10 +2574,101 @@ function goSearchSurvey(){
 		$('#surveys .searchCriteria .surveyExit').removeClass('hide'); 
 		$('#surveys .searchCriteria .surveyExit .badge > span').html( $('#sedr-to').val() ); 
 	}; 
-	if( $('#sAdvancedSearch-showhide').hasClass('show') ) { 
-		$('#sAdvancedSearchLink').click();
-	}
+}    
+    
+    function removeStateSurvey(e){
+        $('#surveys .searchCriteria li .state').addClass('hide'); 
+        $('#surveys .table tr.il').removeClass('hide'); 
+        $(e).parent('.badge').hide(); 
+        $('#sSearchResults .baCount').html('2 Surveys');
+    }
+    function removeIJSurvey(){
+        $('#surveys .searchCriteria li .ij').addClass('hide'); 
+        $('#surveyTable tbody tr').removeClass('hide');
+        $('#showSurveyWIJ').attr('checked', false);
+    }
+    function removeSurveyStart(){
+        $('#surveys .searchCriteria li .surveyStart').addClass('hide'); 
+        /*if($('#sSearchArea .searchCriteria .poc').hasClass('hide')) { 
+            $('#surveyTable tbody tr').removeClass('hide'); 
+            $('#sSearchResults .baCount').html('Results: 2 Surveys'); 
+            drawSurveyTable(); 
+        } else { } */
+        $('#surveyTable').DataTable().destroy();
+        $('#surveyTable').DataTable( {
+            //scrollY: 300,
+            paging: false,
+            lengthMenu: false,
+            info: false,
+            searching: false, scrollX: true,
+            'order': [[ 6, 'asc' ]],
+            columnDefs: [
+            { className: 'control', orderable: false, targets: 0 },
+            { responsivePriority: 0, targets: 0 },
+            { responsivePriority: 1, targets: -1 },
+            { 'orderable': false, 'targets': -1 },
+            { 'visible': false, 'targets': 8 },
+            { 'visible': false, 'targets': 9 },
+            { 'visible': false, 'targets': 10 }, 
+            { className: 'search-col', targets: 7 }
+            ]
+            } );
+        $('#surveyTable tbody tr').addClass('hide'); 
+        $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
+        $('#surveys .searchCriteria .poc').removeClass('hide');
+          
+        $('#ssdr-from').val('');
+        $('#ssdr-to').val('');
+    }
+    function removeSurveyExit(){
+        $('#surveys .searchCriteria li .surveyExit').addClass('hide');  
+        $('#surveyTable tbody tr').removeClass('hide');
+        $('#sedr-from').val('');
+        $('#sedr-to').val('');
+
+    }
+    function removePOCStatusSurvey(){
+        $('#surveys .searchCriteria li .poc').addClass('hide'); 
+        /* if($('#sSearchArea .searchCriteria .surveyStart').hasClass('hide')) { 
+            $('#surveyTable tbody tr').removeClass('hide'); 
+            $('#sSearchResults .baCount').html('Results: 2 Surveys'); 
+            drawSurveyTable(); 
+        } else {  } */
+        $('#surveyTable').DataTable().destroy();
+        $('#surveyTable').DataTable( {
+            //scrollY: 300,
+            paging: false,
+            lengthMenu: false,
+            info: false,
+            searching: false,
+            scrollX: true,
+            'order': [[ 6, 'asc' ]],
+            columnDefs: [
+            { className: 'control', orderable: false, targets: 0 },
+            { responsivePriority: 0, targets: 0 },
+            { responsivePriority: 1, targets: -1 },
+            { 'orderable': false, 'targets': -1 },
+            { 'visible': false, 'targets': 7 },
+            { 'visible': false, 'targets': 9 },
+            { 'visible': false, 'targets': 10 },
+            { className: 'search-col', targets: 8 }
+            ]
+            } );
+        $('#surveys .searchCriteria .surveyStart').removeClass('hide');
+       
+        $('#surveys #pocStatus').prop('selectedIndex', 0).change();
+    }
+function removeStaffSurvey(){
+    $('#surveys .searchCriteria li .reStaff').addClass('hide');  
+    $('#surveyTable tbody tr').removeClass('hide');
+    $('#surveyStaff option').attr('selected', false);
 }
+function removeSODSurvey(){
+    $('#surveys .searchCriteria li .sod').addClass('hide');  
+    $('#surveyTable tbody tr').removeClass('hide');
+    $('#showSOD').attr('checked', false);
+}
+
 function resetSSearch(){
 	$('#sSearchResults').removeClass('hide'); 
     $('#surveyTable tbody tr').removeClass('hide'); 
