@@ -476,13 +476,15 @@ table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.s
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover { background-color: #fff; }
 table.dataTable.stripe tbody tr.odd:hover, table.dataTable.display tbody tr.odd:hover { background-color: #f8f8f8; }
 table.dataTable.no-footer { border-bottom: 0; margin-bottom: 2rem;  }
+.dataTables_scrollHeadInner > .dataTable.no-footer { margin-bottom: 0 !important; }
+.dataTables_wrapper.no-footer .dataTables_scrollBody { border-bottom: 0; }
 .dtr-title { font-weight: 600; }
 .dtr-title:after { content: ': '; font-weight: 600;  }
-tr.child td { border-bottom: 3px solid #c0c0c0 !important; }
-tr.child td > ul { list-style: none; margin-top: -0.5rem; padding-top: 0;  }
-tr.child td > ul > li { border-bottom: 0; padding: .5rem 1rem; margin: 0;  }
-tr.child td > ul > li:last-child { border-bottom: 0; }
-tr.child td > ul > ul { list-style: disc; }
+tr.child > td { border-bottom: 3px solid #c0c0c0 !important; }
+tr.child > td > ul { list-style: none; margin-top: -0.5rem; padding-top: 0;  }
+tr.child > td > ul > li { border-bottom: 0; padding: .5rem 1rem; margin: 0;  }
+tr.child > td > ul > li:last-child { border-bottom: 0; }
+tr.child > td > ul > ul { list-style: disc; }
 table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-column>tbody>tr>th.control:before {
 	display: block;
     position: absolute;
