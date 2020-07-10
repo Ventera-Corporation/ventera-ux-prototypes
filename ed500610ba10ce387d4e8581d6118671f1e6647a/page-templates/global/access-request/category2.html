@@ -398,14 +398,14 @@
   <script type="text/javascript" src="../../../../src/assets/js/scripts.js"></script>
   <script>
       function selectRole(){
-          if( $('input[name="category"]').is(':checked')) { 
+          //if( $('input[type="radio"]').is(':checked')) { 
               console.log( $('input').val() );
               $('.errorMsg').addClass('hide'); 
-              window.location = 'role2.html#' + $('input[name="category"]:checked').val();
-          } else {
-              $('.errorMsg').removeClass('hide');
-              $('html, body').animate({ scrollTop: 0 }, 500);
-          }
+              window.location = 'role2.html#' + $('.tab-pane.active input[type="radio"]:checked').val();
+          //} else {
+            //  $('.errorMsg').removeClass('hide');
+            //  $('html, body').animate({ scrollTop: 0 }, 500);
+          //}
       }
   </script>
     <script src="../../../hhaung/js/jquery.stickytabs.js"></script>
