@@ -2630,10 +2630,11 @@
          
         </button>
         <div class="iq-accordion-actions d-flex align-items-center">
-          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
+          
+          <button type="button" class="btn btn-link" onClick="$('#allegationsTab .read-view').removeClass('active'); $('#allegationsTab .edit-view.editAllegation').addClass('active'); ">Edit</button>
+            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
             Delete
           </button>
-          <button type="button" class="btn btn-link" onClick="$('#allegationsTab .read-view').removeClass('active'); $('#allegationsTab .edit-view.editAllegation').addClass('active'); ">Edit</button>
         </div>
       </div>
       <div id="alle1" class="collapse">
