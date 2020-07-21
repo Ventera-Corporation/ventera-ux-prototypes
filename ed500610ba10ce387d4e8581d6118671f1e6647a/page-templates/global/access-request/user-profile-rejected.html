@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Profile</title>
+<link rel="stylesheet"
+    href="../../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet"
+    href="../../../../src/assets/prototype-styles/prototype.css">
+<!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">
+<!-- to include fontsome icons professional version --> 
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<link rel="stylesheet"
+    href="../../../../src/assets/prototype-styles/hha.css">
+</head>
+
+<body>
+<header>
+  <div class="container-fluid">
+    <div class="row iq-page-header">
+      <div class="col">
+        <nav> <a href="./"> <img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"> </a>
+          <button class="btn btn-outline-primary">Logout</button>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="iq-page-header-wrapper inverted">
+    <div class="container-fluid">
+      <div class="iq-page-header">
+        <div class="row">
+          <div class="col d-flex flex-column justify-content-between">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"> <a href="../global-landing-menu.html">Home</a> </li>
+                <li class="breadcrumb-item"> My Profile</li>
+              </ol>
+            </nav>
+            <div class="iq-page-header-content">
+              <h1>My Profile -  David Freeman</h1>
+              <div class="iq-page-header-details"> </div>
+            </div>
+          </div>
+          <!--<div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
+            <address>
+              667 Bent Ridge Lane<br>
+              Suite 1000<br>
+              Barrington, IL 60010<br>
+              Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
+              <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="fas fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
+            </address>
+          </div>--> 
+        </div>
+      </div>
+    </div>
+    <div class="iq-summary-bar">
+      <div class="container-fluid">
+        <div class="row ">
+          <div class="col d-flex align-items-center">
+            <div class="iq-summary-bar-data" data-index="1">
+              <p>User ID</p>
+              <p>dfreeman</p>
+            </div>
+            <div class="iq-summary-bar-data" data-index="3">
+              <p>Email</p>
+              <a href="#">dfreeman@orgmail.com</a> </div>
+            <div class="iq-summary-bar-data" data-index="4">
+              <p>Phone Number</p>
+              <p>(703) 123-1234</p>
+            </div>
+            <!--<div class="iq-summary-bar-action p-1">
+                      <a href="provider-details-hh.html" class="btn btn-link">
+                        View Details
+                      </a>
+                    </div>--> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success requestSubmitted hide" role="alert">
+          <div class="alert-content">
+            <h2>Role Request Submitted</h2>
+            Your approval status will be emailed to you after your request is reviewed.</div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="alert alert-warning requestRejected" role="alert">
+          <div class="alert-content">
+            <h2>Role Request Rejected</h2>
+              Your role request for <em>Regional Office Security Official</em> for <em>CMS Regional Office 10 - Seattle</em> was rejected. Please contact your security official for additional assistance. </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="alert alert-success ROroleUpdatedMsg hide" role="alert">
+          <div class="alert-content">
+            <h2>User Role Updated</h2>
+            Regional Office General User role information has been successfully updated.</div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="alert alert-success SAroleUpdatedMsg hide" role="alert">
+          <div class="alert-content">
+            <h2>User Role Updated</h2>
+            State Agency General User role information has been successfully updated.</div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="alert alert-success fsidSuccessMsg hide" role="alert">
+          <div class="alert-content">Federal Surveyor ID has been added.</div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        
+      </div>
+      <div class="col-12">
+        <nav class="nav nav-horizontal sr-only"> <a class="nav-link active" href="#ao" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">AO</a> <a class="nav-link" href="#co" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">CO</a> <a class="nav-link" href="#mac" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">MAC</a> <a class="nav-link" href="#ro" data-toggle="tab" role="tab" onClick="$('#FSID').removeClass('hide');">RO</a> <a class="nav-link" href="#pa" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">PA</a> <a class="nav-link" href="#sa" data-toggle="tab" role="tab" onClick="$('#FSID').removeClass('hide');">SA</a> <a class="nav-link" href="#v" data-toggle="tab" role="tab" onClick="$('#FSID').addClass('hide');">V</a> </nav>
+        <div class="tab-content mt-4">
+          <div class="tab-pane active" id="ao">
+              <h2>User Roles<a href="category2.html#ao" class="btn btn-outline-primary float-right">Request User Role</a></h2>
+            <h3>Accrediting Organization</h3>
+            <div class="edit-view active roleStep">
+              <p class="iq-not-available">There are no pending or active user roles</p>
+            </div>
+            <div class="edit-view orgStep"> </div>
+          </div>
+          <div class="tab-pane" id="co">
+              <h2>User Roles<a href="category2.html#co" class="btn btn-outline-primary float-right">Request User Role</a></h2>
+            <h3>CMS Central Office</h3>
+            <div class="edit-view active roleStep">
+              <p class="iq-not-available">There are no pending or active user roles</p>
+            </div>
+            <div class="edit-view orgStep"> </div>
+          </div>
+          <div class="tab-pane" id="mac">
+              <h2>User Roles<a href="category2.html#mac" class="btn btn-outline-primary float-right">Request User Role</a></h2>
+            <h3>CMS Contractor</h3>
+            <div class="edit-view active roleStep">
+              <p class="iq-not-available">There are no pending or active user roles</p>
+            </div>
+            <div class="edit-view orgStep"> </div>
+          </div>
+          <div class="tab-pane" id="ro">
+              <h2>User Roles<a href="category2.html#ro" class="btn btn-outline-primary float-right">Request User Role</a></h2>
+            <h3>CMS Regional Office</h3>
+            <p class="iq-not-available">There are no pending or active user roles</p>
+            <div class="edit-view orgStep"> </div>
+          </div>
+          <div class="tab-pane" id="pa">
+              <h2>User Roles<a href="category2.html#pa" class="btn btn-outline-primary float-right">Request User Role</a></h2>
+            <h3>Provider</h3>
+            <div class="edit-view active roleStep">
+              <p class="iq-not-available">There are no pending or active user roles</p>
+            </div>
+            <div class="edit-view orgStep"> </div>
+          </div>
+          <div class="tab-pane" id="sa">
+              <h2>User Roles<a href="category2.html#sa" class="btn btn-outline-primary float-right">Request User Role</a></h2>
+            <h3>State Agency</h3>
+            <div class="edit-view active roleStep">
+              <section>
+                <p class="iq-not-available">There are no pending or active user roles</p>
+              </section>
+              <br>
+              
+            </div>
+            <div class="edit-view orgStep"> </div>
+            <div class="modal fade" id="editSA" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Edit State Agency General User<br>
+                      <small>California</small></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-6 form-group">
+                        <label>Management Unit</label>
+                        <select onChange="if(this.options[this.selectedIndex].value != 0) { $('.workUnit').attr('disabled',false); }" class="managementUnit">
+                          <option value="0">Select one</option>
+                          <option>Administration</option>
+                          <option>Adult Services Bureau</option>
+                          <option>CLIA</option>
+                          <option>Complaint/Incident Bureau</option>
+                          <option>Medicare/Medicaid Bureau 1</option>
+                          <option>Medicare/Medicaid Bureau 2</option>
+                          <option>Medicare Services Bureau</option>
+                          <option>MDS/OASIS</option>
+                          <option>RCF</option>
+                          <option>Special Services Bureau</option>
+                          <option>Support</option>
+                          <option>Unlicensed Facilities</option>
+                        </select>
+                      </div>
+                      <div class="col-6 form-group">
+                        <label>Work Unit</label>
+                        <select class="disabled workUnit" disabled>
+                          <option value="0">Select one</option>
+                          <option>Engineering</option>
+                          <option>Life Safety Code</option>
+                        </select>
+                        <span class="help-text">Management Unit must be selected</span> </div>
+                      <div class="col col-md-12">
+                        <fieldset>
+                          <legend>Surveyor</legend>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="si3x" name="si" class="custom-control-input" onChange="if(this.checked) { $('.sd').removeClass('hide');}" value="Yes">
+                            <label class="custom-control-label" for="si3x"> Yes </label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="si4x" name="si" class="custom-control-input" onChange="if(this.checked){$('.sd').addClass('hide');}" value="No">
+                            <label class="custom-control-label" for="si4x"> No </label>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="col col-md-12 sd hide">
+                        <p>
+                          <label>Surveyor Disciplines</label>
+                          <select multiple="multiple" style="display: none;" class="multiselect surveyDis">
+                            <option>Select one</option>
+                            <option>Architect</option>
+                            <option>Cytotechnologist</option>
+                            <option>Engineer</option>
+                            <option>Generalist</option>
+                            <option>Health Care Administrator</option>
+                            <option>Home Health Aide</option>
+                            <option>Human Services Professional</option>
+                            <option>Laboratorian</option>
+                            <option>Licensed Practical (Vocational) Nurse</option>
+                            <option>Life Safety Code Inspector</option>
+                            <option>Medical Records Administrator</option>
+                            <option>Medical Technologist</option>
+                            <option>Nutritionist/Dietitian</option>
+                            <option>Nutritionist/Dietitian; Qualified Intellectual Disability Professional (QIDP)</option>
+                            <option>Occupational Therapist</option>
+                            <option>Pathologist</option>
+                            <option>Pharmacist</option>
+                            <option>Physical Therapist</option>
+                            <option>Physician</option>
+                            <option>Physician; Qualified Intellectual Disability Professional (QIDP)</option>
+                            <option>Psychologist</option>
+                            <option>Recreational Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
+                            <option>Registered Nurse</option>
+                            <option>Registered Nurse: Qualified Intellectual Disability Professional (QIDP)</option>
+                            <option>Sanitarian</option>
+                            <option>Social Worker</option>
+                            <option>Social Worker; Qualified Intellectual Disability Professional (QIDP)</option>
+                            <option>Speech Pathologist/Audiologist/Therapist</option>
+                            <option>Speech Pathologist/Audiologist/Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
+                            <option>Speech Therapist</option>
+                            <option>X-Ray Specialist</option>
+                            <option>Other</option>
+                          </select>
+                          <span class="help-text">Select one or more</span></p>
+                      </div>
+                    </div>
+                    <div> </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveSA()">Save</button>
+                    <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="v">
+              <h2>User Roles<a href="category2.html#v" class="btn btn-outline-primary float-right">Request User Role</a></h2>
+            <h3>Vendor</h3>
+            <div class="edit-view active roleStep">
+             
+              <p class="iq-not-available">There are no pending or active user roles</p>
+            </div>
+            <div class="edit-view orgStep"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="modal fade" id="conflictData" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Replace Data?</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <p>You 
+          
+          You currently have new data saved for your roles for surveyor disciplines (RO and SA), management unit and work unit (SA only). </p>
+        <br>
+        <p>Do you wish to replace your new data with legacy data from ASPEN associated with your Federal Surveyor ID/Staff ID?</p>
+        <div> </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" onclick="saveConflict()">Replace with ASPEN data</button>
+        <a href="#" class="btn btn-outline-primary" data-dismiss="modal">Keep new data</a> <a href="#" class="btn btn-outline-primary" data-dismiss="modal">Cancel</a> </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="iq-footer-content">
+          <div class="row">
+            <div class="col">
+              <div class="iq-footer-heading"> <a href="/"> <img
+                      src="../../../../src/assets/images/logo-iqies-reversed.svg"
+                      class="logo iq-logo" alt="Logo iQIES White"> </a><img src="../../../../src/assets/images/logo-cms.svg"
+                    class="img-fluid logo cms-logo d-lg-none" alt=""> </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col"> <a href="#">Help</a><span> (800)
+              339-9313 </span><a href="mailto:help@qtso.com">Email Us</a><a
+                  href="https://qtso.cms.gov/" target="_blank"
+                  rel="noopener noreferrer"> QTSO <img src="../../../../src/assets/images/logo-cms.svg"
+                    class="iq-external-link-icon" alt=""> </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                  target="_blank" rel="noopener noreferrer"> Medicare <img
+                    src="../../../../src/assets/images/icon-link-external.svg"
+                    class="iq-external-link-icon" alt=""> </a><a href="/privacy-policy">Privacy Policy</a> </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="iq-footer-links"> <a href="https://www.medicare.gov/about-us/plain-writing"
+                    target="_blank" rel="noopener noreferrer"> Plain Writing <img
+                      src="../../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a
+                    href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                    target="_blank" rel="noopener noreferrer"> Freedom of
+                Information Act <img
+                      src="../../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a
+                    href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                    target="_blank" rel="noopener noreferrer"> No Fear Act <img
+                      src="../../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a><a href="https://get.adobe.com/reader/" target="_blank"
+                    rel="noopener noreferrer"> Adobe Acrobat <img
+                      src="../../../../src/assets/images/icon-link-external.svg"
+                      class="iq-external-link-icon" alt=""> </a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 d-flex align-items-center"> <img src="../../../../src/assets/images/logo-cms.svg"
+            class="logo cms-logo d-none d-lg-block" alt="CMS Logo"> </div>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="../../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script> 
+<script type="text/javascript" src="../../../../src/assets/third-party/popper/popper.min.js"></script> 
+<script type="text/javascript" src="../../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script> 
+<!-- to include datatables for responsive table --> 
+<script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script> 
+<script type="text/javascript" src="../../../../src/assets/js/scripts.js"></script> 
+<script src="../../../hhaung/js/BsMultiSelect.js"></script> 
+<script src="../../../hhaung/js/jquery.stickytabs.js"></script> 
+<script>
+        $(document).ready(function () {
+          $('.nav-horizontal').stickyTabs();
+          $("select.multiselect").bsMultiSelect();
+          $('[data-toggle="tooltip"]').tooltip(); 
+          $('#aoTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 3, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 }//,
+				//{ responsivePriority: 1, targets: -1 },
+				//{ "orderable": false, "targets": -1 }
+			 ]
+		  }); 
+          $('#coTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 3, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 }
+			 ]
+		  }); 
+          $('#macTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 3, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 }
+			 ]
+		  }); 
+          $('#roTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 5, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  }); 
+          $('#paTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 5, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 }
+			 ]
+		  }); 
+          $('#saTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 7, 'desc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  }); 
+          $('#vTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 0, 'asc' ]],
+			  columnDefs: [
+				//{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 0 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  });     
+        });
+        
+        
+    </script> 
+<script>
+        function saveRO(){
+            $('.ro1').toggleClass('hide'); 
+            //$('.roFSID').html( $('.roFSIDinput').val()); 
+            if( $('input[name=six]:checked').val() == 'Yes'){ 
+                console.log('yes');
+                $('.roS').html('Yes'); 
+                $('.roSD').html('Registered Nurse: Qualified Intellectual Disability Professional (QIDP)');  
+            } else { 
+                $('.roSDedit').addClass('hide'); 
+                $('.roS').html('No'); 
+                $('.roSD').html('Not applicable'); 
+                $('.roSD').addClass('iq-not-available');
+            }
+            $('.alert-success').addClass('hide');
+            $('.ROroleUpdatedMsg').removeClass('hide');
+            $('html, body').animate({ scrollTop: 0 }, 500);
+        }
+        function saveSA(){
+            
+            //updating manU and workU
+            if($('.managementUnit option:selected').val() != 0) { 
+                $('.manU').html($('.managementUnit option:selected').text());
+            } 
+            if($('.workUnit option:selected').val() != 0) { 
+                $('.worU').html($('.workUnit option:selected').text());
+            }
+            //updating surveyor and surveyor discipline
+            if( $('input[name=si]:checked').val() == 'Yes'){ 
+                console.log('yes');
+                $('.saS').html('Yes'); 
+                $('.saSD').html('<ul><li>Health Care Administrator</li><li>Registered Nurse: Qualified Intellectual Disability Professional (QIDP)</li></ul>');  
+                $('.saSD').removeClass('iq-not-available');
+            } else { 
+                $('.saSDedit').addClass('hide'); 
+                $('.saS').html('No'); 
+                $('.saSD').html('Not applicable'); 
+                $('.saSD').addClass('iq-not-available');
+            }
+            
+            
+            $('.alert-success').addClass('hide');
+            $('.SAroleUpdatedMsg').removeClass('hide');
+            $('html, body').animate({ scrollTop: 0 }, 500);
+        }
+                  
+        function saveID(){
+            if($('.fsIDmsg').hasClass('hide')){ 
+                $('.fsIDmsg').removeClass('hide');
+
+            } else { 
+                $('.fsIDmsg').addClass('hide'); 
+                console.log($('.fsIDform input').val());
+                console.log($('.fsi input').val());
+                
+                
+                if($('.fsIDform input.fsIDinput1').val() || $('.fsi input.fsIDinput2').val()){
+                    $('span.fsID1').html( $('input.fsIDinput1').val());
+                    $('span.fsID2').html( $('input.fsIDinput2').val());
+                    $('span.fsID1').removeClass('iq-not-available'); 
+                    $('span.fsID2').removeClass('iq-not-available'); 
+                }
+                 if($('.fsIDform input.sIDinput1').val() || $('.fsi input.sIDinput2').val()){
+                    $('span.sID1').html( $('input.sIDinput1').val());
+                    $('span.sID2').html( $('input.sIDinput2').val());
+                    $('span.sID1').removeClass('iq-not-available'); 
+                    $('span.sID2').removeClass('iq-not-available'); 
+                }
+                
+                if( $('span.roS').html() != '<span class="iq-not-available">No information</span>' || 
+                    $('span.roS').html() != '<span class="iq-not-available" style="white-space:nowrap">No information</span>'){
+                    console.log('no content there');
+                    $('.roS').html('Yes'); 
+                    $('.roSD').html('Registered Nurse: Qualified Intellectual Disability Professional (QIDP)'); 
+                } 
+                if ( $('span.saS').html() != '<span class="iq-not-available">No information</span>' ||
+                            $('span.saS').html() != '<span class="iq-not-available" style="white-space:nowrap">No information</span>' ){
+                     console.log('no content for Sa');
+                     $('.saS').html('Yes'); 
+                     $('.saSD').html('Registered Nurse: Qualified Intellectual Disability Professional (QIDP)');
+                     $('.manU').html('Administrative');
+                     $('.worU').html('Engineering');
+                }
+                $('.si').toggleClass('hide'); 
+                $('div.fsi').removeClass('iq-conditional-content'); 
+                $('.hasAspen').addClass('hide');
+                $('.alert-success').addClass('hide');
+                $('.fsidSuccessMsg').removeClass('hide');
+                $('html, body').animate({ scrollTop: 0 }, 500);
+            }
+            
+            $('.fsIDWarningmsg').addClass('hide');
+        }
+                    </script>
+</body>
+</html>

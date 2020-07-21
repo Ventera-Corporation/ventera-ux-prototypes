@@ -294,7 +294,65 @@
             <div class="edit-view orgStep">
                  <div class="mt-5 mb-4"><p class="lead">
            This role does not require the addition of organizations. 
+                     
           </p></div>
+                 <div class="row">
+                    <div class="col col-md-12">
+                      <fieldset>
+            <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="cox1"  name="cox" class="custom-control-input" onChange="$('.cfsi').toggleClass('hide');">
+              <label class="custom-control-label" for="cox1"> Yes </label>
+              </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="cox2" checked name="cox" class="custom-control-input" onChange="$('.cfsi').toggleClass('hide');">
+              <label class="custom-control-label" for="cox2"> No </label>
+              </div>
+            
+            </fieldset>
+                    </div>
+                   
+                </div>
+                <div class="cfsi hide iq-conditional-content">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <fieldset>
+            <legend>What type of ID do you have?</legend>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="cidType1"  name="cidType" class="custom-control-input" onChange=" $('.cidType.fsid').removeClass('hide'); $('.cidType.sid').addClass('hide');">
+              <label class="custom-control-label" for="cidType1"> Federal Surveyor ID </label>
+              </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="cidType2" name="cidType" class="custom-control-input" onChange="$('.cidType.sid').removeClass('hide'); $('.cidType.fsid').addClass('hide');">
+              <label class="custom-control-label" for="cidType2"> Staff ID </label>
+              </div>
+            
+            </fieldset>
+                            <div class="row">
+                <div class="form-group col col-md-8 cidType fsid hide">
+              <label>Federal Surveyor ID</label>
+              <input type="text">
+               
+            </div><div class="form-group col col-md-8 cidType sid hide">
+              <label>Staff ID</label>
+              <input type="text">
+               
+            </div>
+                
+            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card iq-color-gray-lighter"><div class="card-body">
+                        <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
+                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                    <p><img src="FSID.jpg" style="width: 700px" alt="Federal Surveyor ID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
+                        
+                        
+                               
+                            </div></div>
+                        </div>
+                    </div>
+                </div>
             
          
             </div>
