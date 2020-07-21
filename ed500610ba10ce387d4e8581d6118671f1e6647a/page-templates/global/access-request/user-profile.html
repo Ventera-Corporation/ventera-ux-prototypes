@@ -94,7 +94,7 @@
             Your approval status will be emailed to you after your request is reviewed.</div>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
         </div>
-        <div class="alert alert-warning requestRejected" role="alert">
+        <div class="alert alert-warning requestRejected hide" role="alert">
           <div class="alert-content">
             <h2>Role Request Rejected</h2>
               Your role request for <em>Regional Office Security Official</em> for <em>CMS Regional Office 10 - Seattle</em> was rejected. Please contact your security official for additional assistance. </div>
@@ -168,6 +168,96 @@
                   </tr>
                 </tbody>
               </table>
+              <br>
+              <section class="mt-5">
+                <div class="row si">
+                  <div class="col col-12">
+                    <h2>User Information
+                      <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button>
+                    </h2>
+                    <p class="hasAspen">
+                      <label>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></label>
+                      Yes</p>
+                    <br>
+                    <div class="fsi iq-conditional-content">
+                      <div class="alert alert-warning fsIDWarningmsg" role="alert">
+                        <div class="alert-content"> Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                      </div>
+                      <p class="idType fsid">
+                        <label>Federal Surveyor ID</label>
+                        <span class="iq-not-available fsID1">No information</span></p>
+                      <p class="idType sid hide">
+                        <label>Staff ID</label>
+                        <span class="iq-not-available sID1">No information</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="si hide">
+                  <div class="row si hide fsIDform">
+                    <div class="col col-12">
+                      <h2>Edit User Information </h2>
+                      <fieldset>
+                        <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="cox1" checked  name="cox" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
+                          <label class="custom-control-label" for="cox1"> Yes </label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="cox2" name="cox" class="custom-control-input" onChange="$('.fsi').toggleClass('hide');">
+                          <label class="custom-control-label" for="cox2"> No </label>
+                        </div>
+                      </fieldset>
+                      <div class="fsi iq-conditional-content">
+                        <div class="alert alert-danger fsIDmsg hide" role="alert">
+                          <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
+                        </div>
+                        <div class="alert alert-warning fsIDWarningmsg" role="alert">
+                          <div class="alert-content">Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        </div>
+                        <div class="row">
+                        <div class="col-md-4">
+                            <fieldset>
+                          <legend>What type of ID do you have?</legend>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="cidType1" checked name="cidType" class="custom-control-input" onChange=" $('.idType.fsid').removeClass('hide'); $('.idType.sid').addClass('hide');">
+                            <label class="custom-control-label" for="cidType1"> Federal Surveyor ID </label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="cidType2" name="cidType" class="custom-control-input" onChange="$('.idType.sid').removeClass('hide'); $('.idType.fsid').addClass('hide');">
+                            <label class="custom-control-label" for="cidType2"> Staff ID </label>
+                          </div>
+                        </fieldset>
+                            <div class="row">
+                          <div class="form-group col col-md-8 idType fsid">
+                            <label>Federal Surveyor ID</label>
+                            <input type="text" class="fsIDinput1">
+                          </div>
+                          <div class="form-group col col-md-8 idType sid hide">
+                            <label>Staff ID</label>
+                            <input type="text" class="sIDinput1">
+                          </div>
+                        </div>  
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card iq-color-gray-lighter"><div class="card-body">
+                               <p>You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                        <p><img src="FSID.jpg" style="width: 700px" alt="Federal Surveyor ID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
+                       
+                            </div></div>
+                        </div>
+                    </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
+                    <button class="btn btn-primary" onClick="saveID()">Save</button>
+                    <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
+                  </div>
+                </div>
+              </section>
             </div>
             <div class="edit-view orgStep"> </div>
           </div>
