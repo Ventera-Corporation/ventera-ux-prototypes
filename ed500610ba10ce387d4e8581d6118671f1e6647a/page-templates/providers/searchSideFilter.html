@@ -2669,7 +2669,8 @@ function showRevisit(){
 				{ 'visible': false, 'targets': 7 },
 				{ 'visible': false, 'targets': 8 },
 				{ 'visible': false, 'targets': 9 },
-				{ 'visible': false, 'targets': 10 }
+				{ 'visible': false, 'targets': 10 },
+                { className: 'search-col', targets: 10 } //revisit column shown
 			 ]
 		} );
     $('#sSearchResults .baCount').html('1 Survey');
@@ -2820,7 +2821,7 @@ function applyPendingPOC_SurveyStaff(){
         { 'visible': false, 'targets': 10 },
         { className: 'search-col', targets: 7 },
         { className: 'search-col', targets: 9 },
-            { 'visible': false, 'targets': 11 }
+        { 'visible': false, 'targets': 11 }
       ]
     } );
     $('#surveyTable tbody tr').addClass('hide'); 
@@ -2849,7 +2850,7 @@ function applySurveyStart_SurveyStaff(){
         { 'visible': false, 'targets': 10 },
         { className: 'search-col', targets: 8 },
         { className: 'search-col', targets: 9 },
-            { 'visible': false, 'targets': 11 }
+        { 'visible': false, 'targets': 11 }
       ]
     } );
     $('#surveys .searchCriteria .surveyStart').removeClass('hide');
