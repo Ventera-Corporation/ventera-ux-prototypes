@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Side Filters | Slimmed Down Search | iQIES</title>
+<title>Side Filters | Full Search | iQIES</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -167,7 +167,7 @@
         <div class="row">
           <div class="col-md-3 col-xl-2 iq-static-col position-sticky">
             <div class="sticky-top sideFilterCol">
-              <h3>Filters</h3>
+              <h3>Refine Results</h3>
                 <div class="fixedScroll">
               <div class="iq-accordion rightToggle showhide">
                 <div class="card no-border">
@@ -715,6 +715,7 @@
               <li>Filter by status: IJ only</li>
               <li>Filter by status: SOD only</li>
               <li>Filter by survey exit date only</li>
+              <li>Filter by revisit status: recommended OR created</li>
             </ul>
           </div>
         </div>
@@ -814,7 +815,7 @@
         <div class="row">
           <div class="col-md-3 col-xl-2 iq-static-col position-sticky">
             <div class="sticky-top sideFilterCol"> 
-              <h3>Filters</h3>
+              <h3>Refine Results</h3>
               <div class="fixedScroll">
               <div class="iq-accordion rightToggle showhide">
                 <div class="card no-border">
@@ -873,7 +874,19 @@
                           <option>Pending</option>
                           <option>Accepted</option>
                           <option>Not Accepted</option>
+                         <!-- <option>Required</option>-->
+                        </select>
+                      </div>
+                     <div class="form-group">
+                        <label>Revisit Status</label>
+                        <select id="revisitStatus" onChange="filterSurvey()">
+                          <option>All</option>
+                          <option>Not Determined</option>
+                          <option>Not Required</option>
+                          <option>Recommended</option>
                           <option>Required</option>
+                          <option>Created</option>
+                          <option>Closed</option>
                         </select>
                       </div>
                       <div class="form-group">
@@ -1072,7 +1085,7 @@
             <section id="sSearchArea">
               
               <section id="sSearchResults">
-                <p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
+                <p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span><span class="expandCollapse hide"> | <a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
                 <table class="diplay responsive" id="surveyTable" style="width: 100%;">
                   <thead>
                     <tr>
@@ -1087,6 +1100,7 @@
                       <th><span>Survey Start</span></th>
                       <th><span>Responsible Staff/Surveyor</span></th>
                       <th><span>SOD Due</span></th>
+                      <th><span>Revisit Status</span></th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -1120,6 +1134,8 @@
                       <td>01/02/2019</td>
                       <td>Roberta Carr, Tom Vineman</td>
                       <td>01/09/2020</td>
+                      <td>Created<br>
+                        <a href="#" class="iq-external-link">Survey XYZ</a></td>
                       <td></td>
                     </tr>
                     <tr class="ij sod bright">
@@ -1156,6 +1172,7 @@
                       <td>12/23/2019</td>
                       <td>Roberta Carr, Rebecca Moray, Zachary Taggart</td>
                       <td>01/07/2020</td>
+                      <td>Recommended</td>
                       <td><a href="../survey-new.html">Create Revisit</a></td>
                     </tr>
                   </tbody>
@@ -1233,7 +1250,7 @@
         <div class="row">
           <div class="col-md-3 col-xl-2 iq-static-col position-sticky">
             <div class="sticky-top sideFilterCol"> 
-              <h3>Filters</h3>
+              <h3>Refine Results</h3>
                  <div class="fixedScroll">
               <div class="iq-accordion rightToggle showhide">
                 <div class="card no-border">
@@ -1690,7 +1707,7 @@
         <div class="row">
           <div class="col-md-3 col-xl-2 iq-static-col position-sticky">
             <div class="sticky-top sideFilterCol">
-              <h3>Filters</h3>
+              <h3>Refine Results</h3>
                  <div class="fixedScroll">
               <div class="iq-accordion rightToggle showhide">
                 <div class="card no-border">
@@ -1980,7 +1997,7 @@
             <section id="eSearchArea">
               
               <section id="eSearchResults">
-                <p class="info-text" role="status"><span class="sr-only">List of enforcements filtered by state: Illinois. </span><span class="baCount">Results: 2 Enforcements</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
+                <p class="info-text" role="status"><span class="sr-only">List of enforcements filtered by state: Illinois. </span><span class="baCount">Results: 2 Enforcements</span><span class="expandCollapse hide"> | <a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
                 <table class="diplay responsive" id="enforcementTable" style="width: 100%">
                   <thead>
                     <tr>
@@ -2276,7 +2293,8 @@ function drawSurveyTable(){
 				{ 'visible': false, 'targets': 7 },
 				{ 'visible': false, 'targets': 8 },
 				{ 'visible': false, 'targets': 9 },
-				{ 'visible': false, 'targets': 10 } 
+				{ 'visible': false, 'targets': 10 },
+                { 'visible': false, 'targets': 11 } 
 			 ]
 		} );
 }
@@ -2497,6 +2515,9 @@ function filterSurvey(){
 	console.log( $('#ssdr-from').val() ); 
 	console.log( $('#ssdr-to').val() ); 
 	console.log( $('#surveyStaff option:selected').text() );
+    console.log( $('#revisitStatus option:selected').text() );
+    
+    
 	if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() == '') { 
 		console.log('pending only');
         applyPendingPOC();
@@ -2516,11 +2537,12 @@ function filterSurvey(){
 	}  else if( $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() == '' && $('#ssdr-to').val() == '' ) && $('#surveyStaff option:selected').text() != '' ){
 		console.log('pending and survey staff');
 		applyPendingPOC_SurveyStaff();
+   
         
 	}  else if( $('#pocStatus option:selected').text() == 'All' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() !='' ){
 		console.log('survey start and staff');
 		applySurveyStart_SurveyStaff();
-        
+        $('#surveys .expandCollapse').removeClass('hide');
 	} else if(  $('#pocStatus option:selected').text() == 'Pending' && ( $('#ssdr-from').val() || $('#ssdr-to').val() ) && $('#surveyStaff option:selected').text() != '' ) {
 		console.log('all');
 		$('#surveyTable').DataTable().destroy();
@@ -2539,7 +2561,8 @@ function filterSurvey(){
 			{ responsivePriority: 0, targets: 1 },
 			{ responsivePriority: 1, targets: -1 },
 			{ 'orderable': false, 'targets': -1 },
-			{ 'visible': false, 'targets': 10 }
+			{ 'visible': false, 'targets': 10 },
+            { 'visible': false, 'targets': 11 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); 
@@ -2547,13 +2570,32 @@ function filterSurvey(){
 		$('#surveys .searchCriteria .poc').removeClass('hide');
 		$('#surveys .searchCriteria .surveyStart').removeClass('hide');
 		$('#surveys .searchCriteria .reStaff').removeClass('hide');
+        $('#surveys .expandCollapse').removeClass('hide');
+        
 	} else {
 		drawSurveyTable();
 		$('#surveyTable tbody tr').removeClass('hide');
 		$('#surveys .searchCriteria .poc').addClass('hide');
 		$('#surveys .searchCriteria .surveyStart').addClass('hide');
 		$('#surveys .searchCriteria .reStaff').addClass('hide');
+        $('#surveys .expandCollapse').addClass('hide');
 	};
+    
+    switch( $('#revisitStatus option:selected').text() ) {
+        case 'Recommended':
+            showRevisit();
+            $('#surveyTable tbody tr').addClass('hide'); 
+            $('#surveyTable tbody tr.bright').removeClass('hide');
+            break;
+        case 'Created':
+            showRevisit();
+            $('#surveyTable tbody tr').addClass('hide'); 
+            $('#surveyTable tbody tr.pendingPOC').removeClass('hide');
+            break;
+        default:
+            drawSurveyTable();
+            break;
+    }
     
 	if( $('#showSOD').prop('checked') == true ) { 
 		console.log('sod checked');
@@ -2576,7 +2618,8 @@ function filterSurvey(){
 			{ 'visible': false, 'targets': 7 },
 			{ 'visible': false, 'targets': 8 },
 			{ 'visible': false, 'targets': 9 },
-			{ className: 'search-col', targets: 10 }
+			{ className: 'search-col', targets: 10 },
+            { 'visible': false, 'targets': 11 }
 		  ]
 		} );
 		$('#surveyTable tbody tr').addClass('hide'); 
@@ -2606,6 +2649,31 @@ function filterSurvey(){
     }; 
 }    
     
+function showRevisit(){
+    $('#surveyTable').DataTable().destroy();
+    $('#surveyTable').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  'order': [[ 6, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
+				{ 'orderable': false, 'targets': -1 },
+				{ 'visible': false, 'targets': 7 },
+				{ 'visible': false, 'targets': 8 },
+				{ 'visible': false, 'targets': 9 },
+				{ 'visible': false, 'targets': 10 }
+			 ]
+		} );
+    $('#sSearchResults .baCount').html('1 Survey');
+}
 function removeStateSurvey(e){
     $('#surveys .searchCriteria li .state').addClass('hide'); 
     $('#surveys .table tr.il').removeClass('hide'); 
@@ -2644,7 +2712,8 @@ function applyPendingPOC(){
             { 'orderable': false, 'targets': -1 },
             { 'visible': false, 'targets': 8 },
             { 'visible': false, 'targets': 9 },
-            { 'visible': false, 'targets': 10 }, 
+            { 'visible': false, 'targets': 10 },
+            { 'visible': false, 'targets': 11 }, 
             { className: 'search-col', targets: 7 } //poc column shown
         ]
     } );
@@ -2669,6 +2738,7 @@ function applySurveyStart(){
             { 'visible': false, 'targets': 7 },
             { 'visible': false, 'targets': 9 },
             { 'visible': false, 'targets': 10 },
+            { 'visible': false, 'targets': 11 },
             { className: 'search-col', targets: 8 } // survey start column shown
         ]
     } );
@@ -2694,6 +2764,7 @@ function applySurveyStaff(){
         { 'visible': false, 'targets': 7 },
         { 'visible': false, 'targets': 8 },
         { 'visible': false, 'targets': 10 },
+        { 'visible': false, 'targets': 11 },
         { className: 'search-col', targets: 9 } // survey staff column shown
       ]
     } );
@@ -2719,7 +2790,8 @@ function applyPendingPOC_SurveyStart(){
         { 'visible': false, 'targets': 9 },
         { 'visible': false, 'targets': 10 },
         { className: 'search-col', targets: 7 },
-        { className: 'search-col', targets: 8 }
+        { className: 'search-col', targets: 8 },
+        { 'visible': false, 'targets': 11 }
       ]
     } );
     $('#surveyTable tbody tr').addClass('hide'); 
@@ -2747,7 +2819,8 @@ function applyPendingPOC_SurveyStaff(){
         { 'visible': false, 'targets': 8 },
         { 'visible': false, 'targets': 10 },
         { className: 'search-col', targets: 7 },
-        { className: 'search-col', targets: 9 }
+        { className: 'search-col', targets: 9 },
+            { 'visible': false, 'targets': 11 }
       ]
     } );
     $('#surveyTable tbody tr').addClass('hide'); 
@@ -2775,7 +2848,8 @@ function applySurveyStart_SurveyStaff(){
         { 'visible': false, 'targets': 7 },
         { 'visible': false, 'targets': 10 },
         { className: 'search-col', targets: 8 },
-        { className: 'search-col', targets: 9 }
+        { className: 'search-col', targets: 9 },
+            { 'visible': false, 'targets': 11 }
       ]
     } );
     $('#surveys .searchCriteria .surveyStart').removeClass('hide');
