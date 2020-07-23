@@ -2635,6 +2635,8 @@ function filterSurvey(){
 	} else {
 		$('#surveys .searchCriteria .ij').addClass('hide');  
     }
+   
+    
 	if( $('#sedr-from').val() && $('#sedr-to').val() ){ 
 		$('#surveys .searchCriteria .surveyExit').removeClass('hide'); 
 		$('#surveys .searchCriteria .surveyExit .badge > span').html( $('#sedr-from').val() + ' &mdash; ' + $('#sedr-to').val() ); 
@@ -2647,6 +2649,13 @@ function filterSurvey(){
 	} else {
         $('#surveys .searchCriteria .surveyExit').addClass('hide'); 
     }; 
+     if( $('#showSurveyWOEndDate').prop('checked') == true ) {
+        $('#sedr-from').prop('disabled',true);
+        $('#sedr-to').prop('disabled',true);
+    } else {
+        $('#sedr-from').prop('disabled',false);
+        $('#sedr-to').prop('disabled',false);
+    }
 }    
     
 function showRevisit(){

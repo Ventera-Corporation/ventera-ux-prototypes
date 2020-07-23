@@ -174,13 +174,13 @@
                     name="sameAsBusName"
                     class="custom-control-input" value="value" onChange="if(this.checked){ $('#legalNameInput').val( $('#providerNameInput').val() ); $('#legalNameInput').prop('readonly', true); }">
                       <label class="custom-control-label"
-                    for="sameAsBusName"> Legal Name Same as Provider Name (DBA) </label>
+                    for="sameAsBusName"> Legal Business Name same as Provider Name (DBA) </label>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Legal Name</label>
+                    <label>Legal Business Name</label>
                     <input type="text" id="legalNameInput" class="form-control" value="">
-                    <p class="help-text">The legal name reported on CMS 855A</p>
+                    <p class="help-text">The legal business name reported on CMS 855A</p>
                   </div>
                 </div>
                 <div class="col-md-12"> <br>
@@ -222,13 +222,13 @@
                           <input type="text" class="form-control" id="county">
                         </div>
                       </div>
-                      <div class="col-md-6"></div>
+                      <!--<div class="col-md-6"></div>-->
                       <div class="col-md-6">
                         <div class="form-group">
                           <label>CMS Region</label>
                           5 - Chicago </div>
                       </div>
-                      <div class="col-md-6"></div>
+                      
                       <div class="col-md-6">
                         <div class="form-group">
                           <label>Management Unit
@@ -433,7 +433,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <label>Legal Name</label>
+                    <label>Legal Business Name</label>
                   </div>
                   <div class="col-md-8">
                     <p class="iq-not-available">No information</p>
@@ -464,7 +464,7 @@
                   </div>
                 </div>
               </div>
-              <h3>Contact Information</h3>
+              <h3>Location and Contact Information</h3>
               <div class="iq-list">
                 <div class="row">
                   <div class="col-md-4">
@@ -1331,10 +1331,16 @@
                     <input type="text" class="form-control" id="opS" required>
                   </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <p>
                     <label for="dateOpened">Date Opened</label>
                     <input type="date" class="form-control" id="dateOpened">
+                    <span class="help-text">MM/DD/YYYY</span> </p>
+                </div>
+                  <div class="col-md-3">
+                  <p>
+                    <label for="dateClosed">Date Closed</label>
+                    <input type="date" class="form-control" id="dateClosed">
                     <span class="help-text">MM/DD/YYYY</span> </p>
                 </div>
                 <div class="col-md-6">
@@ -1414,6 +1420,14 @@
                 <div class="row">
                   <div class="col-md-4">
                     <label>Date Opened</label>
+                  </div>
+                  <div class="col-md-8">
+                    <p><span class="iqies-not-available">No information</span></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label>Date Closed</label>
                   </div>
                   <div class="col-md-8">
                     <p><span class="iqies-not-available">No information</span></p>
@@ -4748,7 +4762,7 @@
 <script src="../../hhaung/js/jquery.stickytabs.js"></script> 
 <script>
     $(document).ready(function () {
-      //$('.nav-horizontal').stickyTabs();
+      $('nav').stickyTabs();
       $("select.multiselect").bsMultiSelect();
       $('[data-toggle="tooltip"]').tooltip(); 
     });
