@@ -134,8 +134,10 @@ label.iq-inline-label { font-weight: normal; font-size: .9rem; display: inline; 
 label.iq-inline-label:after { content: ': '; margin-right: .25rem; }
 .iqies-label-responsive { display: none !important;}
 
-.iq-fieldset { border: 1px solid #d6d7d9; padding: 1rem; }
+.row > .iq-group { padding: 0; }
+.iq-fieldset { padding: 1rem; margin: .5rem; border: 1px solid #d6d7d9; }
 .iq-fieldset > legend { font-weight: normal; font-size: .86rem; text-transform: uppercase; width: auto; }
+.iq-fieldset fieldset .input-group-help-text { margin-bottom: 1rem; }
 
 /* FORM INPUTS */
 input:not([type=checkbox]):not([type=radio]), select , textarea, .form-control { 
