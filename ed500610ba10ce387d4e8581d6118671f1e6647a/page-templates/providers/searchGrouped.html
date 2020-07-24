@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Slimmed Down Search| iQIES</title>
+<title>Grouped Options | Global Advanced Search | iQIES</title>
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet" href="../../../src/assets/prototype-styles/prototype.css">
 <!-- styles needed for data tables -->
@@ -27,7 +27,7 @@
 					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
-					  <a class="dropdown-item" href="search.html">Search for a Provider or Intake</a>
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
 					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
 				  </div>
 				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
@@ -97,8 +97,6 @@
     </div>
   <div class="toast-body">
     <a href="search-test/index.html" class="return-link">Go back to Index Page</a>
-	 
-	
     </div>
 </div>
 	  <div class="alert alert-warning hide" role="alert">
@@ -110,13 +108,17 @@
 		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 	  </div>
 	  <div class="alert alert-danger errorMsg hide" role="alert">
-          <div class="alert-content">
-			  <h2>Unable to Search</h2>
-                 <p>Please review and correct the following:</p> 
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 <p> Unable to save. Please review and correct the following:</p> 
                   <ul>
-                      <li><a href="#stateIntake" onClick="$('#iAdvancedSearchLink').click();">State</a> is required</li>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
                   </ul>
-		  </div>
+              </div></div>
+          </div>
         </div> 
       <h1>Search</h1>
          
@@ -132,8 +134,8 @@
 				<label>Search for Providers</label>
 				<input type="text" class="form-control" id="pSearchInput" onKeyUp="if (event.keyCode === 13) {
         $('.pSearchButton').click();}" style="max-width: 50em;" placeholder=""><div class="help-text">Enter provider name, CCN, or State Facility ID (FACID)</div></div>
-			<div class="iq-accordion showhide">
-				<div class="card no-border">
+			<div class="iq-accordion showhide mb-0">
+				<div class="card no-border mb-0">
 				  <div class="card-header d-flex">
 					<button id="pAdvancedSearchLink" class="btn btn-link btn-block d-flex align-items-center iq-accordion-label" data-toggle="collapse" data-target="#pAdvancedSearch-showhide" onclick="$(this).toggleClass('expanded'); $(this).children('span').toggleClass('hide');">
 					  <span>Show Advanced Search</span><span class="hide">Hide Advanced Search</span>
@@ -143,34 +145,40 @@
 					<div class="card-body p-0 provider">
 						<br>
                         <div class="row">
-				            <div class="col-md-12 col-lg-12 col-xl-12">
-                                <div class="d-flex align-items-stretch justify-content-between">
+				            <div class="col-md-12 col-lg-12 col-xl-9">
+                                <div class="d-flex flex-column align-items-stretch">
                                     
-                                        <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Type &amp; ID</legend>
-                                
+                                        <fieldset class="iq-fieldset"><legend>Type &amp; ID</legend>
+                                <div class="row">
+				            <div class="col-md-4">
 									  <div class="form-group notState">
 										  <label>Provider Type </label>
 										  <select multiple="multiple" style="display: none;" class="multiselect"><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
 										 <span class="help-text">Select one or more</span>
 									  </div>
-								  
+								  </div> <div class="col-md-4">
 									  <div class="form-group">
 										  <label>iQIES ID
 											  <input type="text">
 										  </label>
-									  </div>
-								         <div class="form-group">
+									  </div></div>
+                                    <div class="col-md-4">
+								         <div class="form-group"> 
 						  <label>License Number<input class="form-control" type="text" value=""></label>
 					  </div>
+                                        </div></div>
                                 
                             </fieldset>
                                     
-                                        <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Status</legend>
-
+                                        <fieldset class="iq-fieldset"><legend>Status</legend>
+<div class="row">
+				            <div class="col-md-4">
                                                   <div class="form-group">
                                                       <label>Deemed Status</label>
                                                       <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
                                                   </div>
+                                </div>
+     <div class="col-md-4">
                                             <div class="form-group notState">
                                       <label>Federal Certification Status</label>
                                        <select multiple="multiple" style="display: none;" class="multiselect">
@@ -179,6 +187,7 @@
                                       <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
                                       <span class="help-text">Select one or more</span>
                                   </div>
+         </div> <div class="col-md-4">
                                             <div class="form-group">
 
                                     <label>Operating Status</label>
@@ -186,41 +195,51 @@
                                   <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
                                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
                                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
-                                </div>
-                                </div>
+                                </div></div></div>
+     <div class="col-md-4">
+                               
                                             <div class="form-group">
-						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
+						  
 						  <div class="custom-control custom-checkbox">
 							  <input type="checkbox" id="showrecertP" class="custom-control-input">
 							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
-							</div>
-					  </div>
+							</div></div>
+         </div></div>
+					  
                                         </fieldset>    
                                     
-                                        <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Citation Tag</legend>
+                                        <fieldset class="iq-fieldset mt-auto"><legend>Citation Tag</legend>
+                                            <div class="row"> <div class="col-md-4">
                                 <div class="form-group">
                           <label>Citation Tag Number</label>
                           <input type="text">
                           <span class="help-text">E.g. G0406</span>
-                      </div>
-                               <fieldset>
-                        <legend>Citation Dates</legend>
+                      </div></div> <div class="col-md-8">
+                                                
+                                                
+                               <fieldset class="mb-0">
+                        <legend class="mb-2">Citation Dates</legend>
                         <div class="row">
-                          <div class="col-md-12">
+                          <div class="col-md-6">
                             <div class="input-group">
                               <label class="input-group-text input-group-prepend">From</label>
                               <input type="date" class="form-control">
                             </div>
                             <span class="input-group-help-text help-text">MM/DD/YYYY</span> </div>
-                          <div class="col-md-12">
+                          <div class="col-md-6">
                             <div class="input-group"> <span class="input-group-text">To</span>
                               <input type="date" class="form-control">
                             </div>
                             <span class="input-group-help-text help-text">MM/DD/YYYY</span> </div>
                         </div>
-                      </fieldset>
+                      </fieldset></div></div>
                             </fieldset>
-                                    <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Location</legend>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-12 col-lg-12 col-xl-3">
+                                <fieldset class="iq-fieldset"><legend>Location</legend>
                                  <div class="row">
 				                    <div class="col-md-4 col-lg-4 col-xl-12">
                                 <div class="form-group">
@@ -232,7 +251,7 @@
 					  <label>City<input class="form-control" type="text" value=""></label>
 				  </div>
                                     </div>
-                                     <div class="col-md-8 col-lg-8 col-xl-8">
+                                     <div class="col-md-4 col-lg-4 col-xl-12">
                                 <div class="form-group">
 					  <label>State</label>
 					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
@@ -293,7 +312,7 @@
 					  <span class="help-text">Select one or more</span>
 				  </div>
                                     </div>
-                                     <div class="col-md-4 col-lg-4 col-xl-4">
+                                     <div class="col-md-4 col-lg-4 col-xl-12">
                                 <div class="form-group">
 					  <label>Zip Code<input class="form-control" type="text" value=""></label>
 				  </div>
@@ -328,12 +347,7 @@
 					  </div>
                              </div>
                                 </div>
-                            </fieldset>
-                                </div>
-                                
-                            </div>
-                            <div class="col-md-12 col-lg-12 col-xl-3">
-                                 
+                            </fieldset> 
                             </div>
                         </div>
 				    </div>
@@ -366,7 +380,7 @@
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
 							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#pSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="deemed hide"><label class="inline ml-2">Deemed Status: </label> <div class="badge badge-pill">
-							<span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('#providers table.responsive tbody tr').removeClass('hide');  resetPSearch();"><span aria-hidden="true">&times;</span></button></div></div></li>
+							<span>Deemed</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.deemed').addClass('hide');  $('#providers table.responsive tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
 		  			<li><div class="recertP hide"><label class="inline ml-2">Show: </label> <div class="badge badge-pill">
         <span>Providers nearing recertification</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.recertP').addClass('hide'); $('#pSearchResults').removeClass('hide'); 
     $('#providerTable tbody tr').removeClass('hide'); $('#providers .noResults').addClass('hide'); $('#pSearchResults .baCount').html('Results: 1-10 of 112 Providers'); $('#pSearchResults nav').removeClass('hide'); $('#providers input[type=checkbox]').prop('checked', false); drawProviderTable();"><span aria-hidden="true">&times;</span>
@@ -539,8 +553,7 @@
       </tr>
   </tbody>
 </table>
-
-	<div class="row bottomPagination">
+<div class="row bottomPagination">
     <div class="col-md-6"><ul class="iq-inline-list"><li class="perPage pr-2"><select class="form-control perPageSelect" style="width: auto;" onchange="if(this.options[this.selectedIndex].value == 'all'){ viewAllCites(); } else { gotoPage1();} "><option value="10">10 per page</option><option value="20">20 per page</option><option value="50" disabled>50 per page</option><option value="100" disabled>100 per page</option><option value="all">All</option></select></li><!--<li><a href="javascript:void(0)" onClick="viewAllCites()" title="View all" data-toggle="tooltip" class=" btn btn-link viewAllLink">View All <span class="citesSearchTotal">30 Citations</span></a> <span class="viewAllLink hide">Viewing All <span class="citesSearchTotal">30 Citations</span></span></li>--></ul> </div>
     <div class="col-md-6 text-right">
           <nav aria-label="Table Pagination" class="float-right">
@@ -567,11 +580,10 @@
     </div>
 </div>
 
-				  
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
+        	<p class="iq-no-results hide noResults" role="status">No providers found for this search.</p>
 		</div>
         <div class="tab-pane" id="surveys">
         
@@ -589,21 +601,12 @@
 				  <div id="sAdvancedSearch-showhide" class="collapse">
 					<div class="card-body p-0">
 						<br>
-						<div class="survey">
-						<div class="row">
-							<div class="col-md-5 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-									<label>Survey Status</label>
-									<!--<input type="text" id="surveyStatus">-->
-									<select multiple="multiple" style="display: none;" class="multiselect">
-									  <option>All</option><option>New</option><option>Writing in Progress</option><option>Writing Complete</option>
-										<option>Revisit Created</option><option>Closed</option>
-								  </select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group notState">
+                        <div class="row">
+				            <div class="col-md-12 col-lg-12 col-xl-12">
+                                <div class="d-flex align-items-stretch justify-content-between">
+                                    <div style="width: 24.5%">
+                                <fieldset class="iq-fieldset"><legend>Category &amp; Type</legend>
+                                    <div class="form-group notState">
 									<label>Survey Category</label>
 									<select multiple="multiple" style="display: none;" class="multiselect">
 										<option>Initial Certification (Federal)</option><option>Recertification (Federal)</option>
@@ -615,17 +618,108 @@
 				
 									<span class="help-text">Select one or more</span>
 								</div>
-							</div>
-						    <div class="col-md-3 col-lg-4 col-xl-3">
-								<div class="form-group">
+                                    <div class="form-group">
 									<label>Survey Type</label>
 									<select><option>All</option><option>Health</option><option>Life Safety Code</option><option>Clinical Laboratory</option></select>
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-4 col-lg-4 col-xl-3">
-              <div class="form-group">
+                                </fieldset>
+                                    <fieldset class="iq-fieldset"><legend>Staff/Surveyor</legend>
+                                <div class="form-group notState">
+								<label>Responsible Staff/Surveyor <a href="#" data-toggle="tooltip" title="Only Responsible Staff/Surveyors within selected states will be displayed in results"><i class="fal fa-info-circle"></i></a></label>
+								<input type="text">
+								<span class="help-text">Search by name</span>
+								</div>
+                                </fieldset></div>
+                                <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Status</legend>
+                                    <div class="form-group notState">
+									<label>Survey Status</label>
+									<!--<input type="text" id="surveyStatus">-->
+									<select multiple="multiple" style="display: none;" class="multiselect">
+									  <option>All</option><option>New</option><option>Writing in Progress</option><option>Writing Complete</option>
+										<option>Revisit Created</option><option>Closed</option>
+								  </select>
+									<span class="help-text">Select one or more</span>
+								</div>
+                                    <div class="form-group">
+								<label>POC Status</label>
+								<select id="pocStatus"><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
+								</div>
+                                      <div class="form-group">
+                        <label>Revisit Status</label>
+                        <select id="revisitStatus" onChange="filterSurvey()">
+                          <option>All</option>
+                          <option>Not Determined</option>
+                          <option>Not Required</option>
+                          <option>Recommended</option>
+                          <option>Required</option>
+                          <option>Created</option>
+                          <option>Closed</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="showSurveyWIJ" onChange="filterSurvey()"  class="custom-control-input">
+                          <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="showSOD" onChange="filterSurvey()" class="custom-control-input">
+                          <label class="custom-control-label" for="showSOD">Show open surveys with an overdue Statement of Deficiency</label>
+                        </div>
+                      </div>
+                      
+                                </fieldset>
+                               <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Start &amp; Exit Dates</legend>
+                                   <div class="form-group">
+									<div class="custom-control custom-checkbox">
+									  <input type="checkbox" id="showSurveyWOEndDate" class="custom-control-input">
+									   <label class="custom-control-label" for="showSurveyWOEndDate">Show only surveys without an exit date</label>
+									</div>   
+								</div>
+                                   <fieldset><legend class="mb-2">Survey Start Date Range</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend" for="ssdr-from">From</label>
+											<input type="date" class="form-control" id="ssdr-from">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend" for="ssdr-to">To</label>
+											<input type="date" class="form-control" id="ssdr-to">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+									
+								</fieldset>
+                                   <fieldset><legend class="mb-2">Survey Exit Date Range</legend>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control" id="sedr-from">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text input-group-prepend">To</span>
+											<input type="date" class="form-control" id="sedr-to">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>
+								</div>
+								</fieldset>
+                                </fieldset>
+                            
+                              
+                            
+                            <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Location</legend>
+                                 <div class="form-group">
                   <label>State</label>
                   <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
                       <option value="AL">Alabama</option>
@@ -683,134 +777,34 @@
 				  </select>
                   <span class="help-text">Select one or more</span>
               </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xl-3">
-                  <div class="form-group">
+                                <div class="form-group">
                       <label>Management Unit
                       <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
                       </label>
                       <p class="help-text">State must be selected</p>
                   </div>
-              </div>
-            <div class="col-md-4 col-lg-4 col-xl-3">
-                  <div class="form-group">
+                                <div class="form-group">
                       <label>Work Unit
                        <select disabled><option>Select one</option></select>
                       </label>
                       <p class="help-text">Management unit must be selected</p>
                   </div>
-              </div>
-							<div class="col-md-10">
-								<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSurveyWOEndDate" class="custom-control-input">
-									   <label class="custom-control-label" for="showSurveyWOEndDate">Show only surveys without an exit date</label>
-									</div>   
-								</div>
-								
-								<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSurveyWIJ"  class="custom-control-input">
-									   <label class="custom-control-label" for="showSurveyWIJ">Show only surveys with IJs</label>
-									</div>   
-								</div>
-								<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showSOD" class="custom-control-input">
-									   <label class="custom-control-label" for="showSOD">Show open surveys with an overdue Statement of Deficiency</label>
-									</div>   
-								</div>
-								<!--<div class="form-group">
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="showResStaff" class="custom-control-input">
-									   <label class="custom-control-label" for="showResStaff">Show open surveys where I am a responsible staff member</label>
-									</div>   
-								</div>-->
-							</div>
-							
-							
-						</div>
-						<div class="row">
-							<div class="col-lg-6 col-xl-6">
-								<fieldset><legend>Survey Start Date Range</legend>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend" for="ssdr-from">From</label>
-											<input type="date" class="form-control" id="ssdr-from">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend" for="ssdr-to">To</label>
-											<input type="date" class="form-control" id="ssdr-to">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-									
-								</fieldset>
-								
-							</div>
-							<div class="col-lg-6 col-xl-6">
-								<fieldset><legend>Survey Exit Date Range</legend>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control" id="sedr-from">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text input-group-prepend">To</span>
-											<input type="date" class="form-control" id="sedr-to">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>
-								</div>
-								</fieldset>
-							</div>
-						</div>
-						<div class="row">
-							<!--<div class="col-md-4 col-lg-3 col-xl-3">
-								<div class="form-group">
-								<label>Revisit Status</label>
-								<select><option>All</option><option>Not Determined</option><option>Not Required</option><option>Recommended</option><option>Required</option></select>
-								</div>
-							</div>-->
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group">
-								<label>POC Status</label>
-								<select id="pocStatus"><option>All</option><option>Pending</option><option>Accepted</option><option>Not Accepted</option><option>Required</option></select>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-								<label>Responsible Staff/Surveyor</label>
-								<select multiple="multiple" style="display: none;" class="multiselect" id="surveyStaff"><option>All</option>
-									<option>Roberta Carr</option>
-									<option>Ellen Datlow</option>
-									<option>Daniel Folsom</option>
-									<option>Daisy Freeman</option>
-									<option>Rebecca Moray</option>
-									<option>Zachary Taggart</option>
-									<option>Tom Vineman</option>
-								</select>
-								<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-						</div>
+                            </fieldset>
+                        </div>
+                              
+						
+						
+						
+						
 						<!-- end survey row -->
 								
 					</div>
 				
 				  </div>
-				</div>
+				    </div>
+                  </div>
+                </div>
 			  </div>
-		  </div>
 		  <div class="row iq-button-wrapper mr-0" style="position: relative">
                <div class="col">
 				  <div>
@@ -895,116 +889,88 @@
           			<p class="info-text" role="status"><span class="sr-only">List of surveys filtered by state: Illinois. </span><span class="baCount">Results: 2 Surveys</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#sSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
  
 <table class="diplay responsive" id="surveyTable" style="width: 100%;">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th><span>Provider</span></th>
-                      <th><span>Survey</span></th>
-                      <th><span>Category</span></th>
-                      <th><span>Status</span></th>
-                      <th><span>Citations</span></th>
-                      <th><span>Exit Date</span></th>
-                      <th><span>POC Status</span></th>
-                      <th><span>Survey Start</span></th>
-                      <th><span>Responsible Staff/Surveyor</span></th>
-                      <th><span>SOD Due</span></th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="pendingPOC">
-                      <td></td>
-                      <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>
-                        CCN&nbsp;368130 | <a href="#" data-toggle="tooltip" title="Address: 6129 County Road, #107, Proctorville, IL 63222"><i class="fas fa-map-marker-alt"></i></a></td>
-                      <td><a href="#">19A3-H1</a><br>
-                        <small>Health</small></td>
-                      <td><ul>
-                          <li>Initial Certification</li>
-                        </ul></td>
-                      <td>Open</td>
-                      <td><a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
-                        <div class="dropdown-menu text-content" aria-labelledby="citationList1">
-                          <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                          <table>
-                            <tr>
-                              <td>G0000</td>
-                              <td>Initial Comments</td>
-                            </tr>
-                            <tr>
-                              <td>G1014</td>
-                              <td>Interventions and Patient Response</td>
-                            </tr>
-                          </table>
-                        </div></td>
-                      <td>01/28/2020</td>
-                      <td>Pending</td>
-                      <td>01/02/2019</td>
-                      <td>Roberta Carr, Tom Vineman</td>
-                      <td>01/09/2020</td>
-                      <td></td>
-                    </tr>
-                    <tr class="ij sod bright">
-                      <td></td>
-                      <td><a href="provider-profile-hospice.html">BrightHope</a><br>
-                        IQIES 123456 | <a href="#" data-toggle="tooltip" title="Address: 667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010"><i class="fas fa-map-marker-alt"></i></a></td>
-                      <td><a href="survey-brighthope.html">FFB-H1</a><br>
-                        <small>Health</small></td>
-                      <td><ul>
-                          <li>Initial Certification</li>
-                          <li>Complaint</li>
-                        </ul></td>
-                      <td>Open</td>
-                      <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3</a> <span class="iq-status iq-status-ij"></span>&nbsp;IJ
-                        <div class="dropdown-menu text-content" aria-labelledby="allegationList">
-                          <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                          <table>
-                            <tr>
-                              <td>G1008 <small><span class="badge badge-danger badge-pill" data-toggle="tooltip" title="Immediate Jeopardy">Condition&nbsp;-&nbsp;IJ</span></small></td>
-                              <td>Clinical Records</td>
-                            </tr>
-                            <tr>
-                              <td>G0000</td>
-                              <td>Initial Comments</td>
-                            </tr>
-                            <tr>
-                              <td>G1014</td>
-                              <td>Interventions and Patient Response</td>
-                            </tr>
-                          </table>
-                        </div></td>
-                      <td>02/28/2020</td>
-                      <td>Pending</td>
-                      <td>12/23/2019</td>
-                      <td>Roberta Carr, Rebecca Moray, Zachary Taggart</td>
-                      <td>01/07/2020</td>
-                      <td><a href="../survey-new.html">Create Revisit</a></td>
-                    </tr>
-                  </tbody>
-                </table>
+  <thead>
+    <tr>
+	  <th></th>
+	  <th><span>Provider</span></th>
+      <th><span>Survey</span></th>
+      <th><span>Category</span></th>
+      <th><span>Status</span></th>
+      <th><span>Citations</span></th>
+      <th><span>Exit Date</span></th>
+      <th><span>POC Status</span></th>
+	  <th><span>Survey Start</span></th>
+	  <th><span>Responsible Staff/Surveyor</span></th>
+	  <th><span>SOD Due</span></th>
+	  <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="pendingPOC">
+	  <td></td>
+	  <td><a href="#">A&amp;L Home Care and Training Center, LLC</a><br>
+	    CCN&nbsp;368130</td>
+      <td>Health<br><a href="#">19A3-H1</a></td>
+      <td><ul>
+        <li>Initial Certification</li>
+      </ul></td>
+      <td>Open</td>
+      <td><a href="#" class="dropdown-toggle" id="citationList1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
+        <div class="dropdown-menu text-content" aria-labelledby="citationList1">
+          <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+          <ul>
+            <li>G0 - Initial Comments<br>
+              <small>Memo</small></li>
+            <li>G1014 - Interventions and Patient Response<br>
+              <small>Element</small></li>
+          </ul>
+        </div></td>
+      <td>01/28/2020</td>
+      <td>Pending</td>
+	  <td>01/02/2019</td>
+	  <td><ul><li>Roberta Carr, rcarr@some.org</li><li>Tom Vineman, tvineman@some.org</li></ul></td>
+	  <td>01/09/2020</td>
+	  <td></td>
+    </tr>
+    <tr class="ij sod">
+	  <td></td>
+	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
+	    IQIES 123456</td>
+      <td>Health<br><a href="survey-brighthope.html">FFB-H1</a></td>
+      <td><ul>
+        <li>Initial Certification</li>
+        <li>Complaint</li>
+      </ul></td>
+      <td>Open</td>
+      <td><a href="#" class="dropdown-toggle" id="citationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">3 <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></a>
+        <div class="dropdown-menu text-content" aria-labelledby="allegationList">
+          <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+          <ul>
+            <li>G1008 Clinical Records<br>
+              <small>Condition</small> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></li>
+            <li>G0 - Initial Comments<br>
+              <small>Memo</small></li>
+            <li>G1014 - Interventions and Patient Response<br>
+              <small>Element</small></li>
+          </ul>
+        </div></td>
+      <td>02/28/2020</td>
+      <td>Pending</td>
+	  <td>12/23/2019</td>
+	  <td><ul><li>Roberta Carr, rcarr@some.org</li><li>Rebecca Moray, rmoray@some.org</li><li>Zachary Taggart, ztaggart@some.org</li></ul></td>
+	  <td>01/07/2020</td>
+	  <td><a href="survey-new.html">Create Revisit</a></td>
+    </tr>
+  </tbody>
+</table>
 
-
+<nav title="Table Pagination" class="hide"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
+        	<p class="iq-no-results hide noResults" role="status">No surveys found for this search.</p>
         </div>
         <div class="tab-pane" id="intakes">
-			<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
-  <div class="toast-header">
-    <strong class="mr-auto">UI Note</strong>
-    <small></small>
-    <button type="button" class="ml-2 close" data-dismiss="toast" aria-label="Close" onClick="$('.toast.alert-info').hide();">
-      <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  <div class="toast-body">
-     <p><a href="#" onClick="$('.stateMS').toggleClass('hide'); $('.stateNone').toggleClass('hide');">Toggle View for SA</a> <small>role with access to data only for his/her assigned state. Note the advanced search area and the state search term pill.</small></p>
-	  <p><small>To view what happens when an RO takes out the last state selection, click on X on selected state pill on top of the search results.</small></p>
-	 
-	
-    </div>
-</div>
-			
 			<div class="form-group">
 				<label>Search for Intakes</label>
 				<input type="text" class="form-control" id="iSearchInput" onKeyUp="if (event.keyCode === 13) {
@@ -1019,10 +985,12 @@
 				  <div id="iAdvancedSearch-showhide" class="collapse">
 					<div class="card-body p-0">
 						<br>
-						<div class="intake">
-						<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
+                        <div class="row">
+				            <div class="col-md-12 col-lg-12 col-xl-12">
+                                <div class="d-flex align-items-stretch justify-content-between">
+                                <div style="width: 24.5%">
+                                <fieldset class="iq-fieldset"><legend>Type</legend>
+                                <div class="form-group">
 									<label>Intake Type</label>
 									<div class="btn-group" role="group" aria-label="Button Group Example">
                   <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
@@ -1031,9 +999,32 @@
                 </div>
 									
 								</div>
-							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group notState">
+                                    <div class="form-group">
+									<label>Intake Sub Type</label>
+									<select><option>All</option>
+										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
+										<option>State-only, licensure</option>
+										<option>No State or Federal provider complaince issue invovled</option>
+										<option>Federally required, entity reported</option>
+										<option>State-required, entity reported</option>
+										<option>State-required, may result in Federal non-compliance, entity-reported</option>
+										<option>State-required, all other, entity-reported</option>
+										<option>Reported by other agencies</option>
+										<option>None of the above</option>
+									</select>
+								</div>
+                                    
+                                </fieldset>
+                                <fieldset class="iq-fieldset"><legend>Staff/Parties Involved</legend>
+                                	<div class="form-group">
+								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
+								<input type="text">
+								</div>
+                                </fieldset>
+                                </div>
+                                <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Status</legend>
+                                    
+                                   <div class="form-group notState">
 									<label>Intake Status</label>
 									<select multiple="multiple" style="display: none;" class="multiselect">
 										<option>Triage/Prioritization</option>
@@ -1044,9 +1035,7 @@
 									</select>
 									<span class="help-text">Select one or more</span>
 								</div>
-							</div>
-						    <div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group notState">
+                                    <div class="form-group notState">
 									<label>Triage Priority</label>
 									<select multiple="multiple" style="display: none;" class="multiselect">
 										<option>Immediate Jeopardy</option><option>Non-IJ High</option>
@@ -1054,115 +1043,19 @@
 									</select>
 									<span class="help-text">Select one or more</span>
 								</div>
-							</div>
-							<div class="col-md-12 col-lg-12 hide">
-								<div class="form-group">
-									
+                                    
+                                    <div class="form-group">
+									 
 									<div class="custom-control custom-checkbox">
 									  <input type="checkbox" id="roapproved2" class="custom-control-input">
 									   <label class="custom-control-label" for="roapproved2">Show only open intakes approved by an RO</label>
 									</div> 
 								</div>
-							</div>
-					  
-							
-							
-							
-						
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
-								<input type="text">
-								</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-								
-								<label>Intake Start Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-						
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
+                                    <div class="form-group">
 								<label>Survey Action</label>
 								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
 								</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-								
-								<label>Survey Due Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-							
-							</div>
-							
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group">
-									<label>Intake Sub Type</label>
-									<select><option>All</option>
-										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
-										<option>State-only, licensure</option>
-										<option>No State or Federal provider complaince issue invovled</option>
-										<option>Federally required, entity reported</option>
-										<option>State-required, may result in Federal non-compliance, entity-reported</option>
-										<option>State-required, all other, entity-reported</option>
-										<option>Reported by other agencies</option>
-										<option>None of the above</option>
-									</select>
-								</div>
-							</div>
-							
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-						  <label>RO Approval Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-						  </div>
-						
-							<div class="col-md-12 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
+                                    <div class="form-group">
 								<label>Triage Complete</label>
 								<div class="btn-group" role="group" aria-label="Button Group Example">
                   <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
@@ -1170,19 +1063,19 @@
                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incomplete</button>
                 </div>
 			</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-								
-								<label>Triage Complete Date Range</label>
+                                </fieldset>
+                                     <div style="width: 24.5%">
+                               <fieldset class="iq-fieldset"><legend>Start &amp; Due Dates</legend>
+                               <label>Intake Start Date Range</label>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-12">
 										<div class="input-group">
 											<label class="input-group-text input-group-prepend">From</label>
 											<input type="date" class="form-control">
 										</div>
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
-									<div class="col-md-6">
+									<div class="col-md-12">
 										<div class="input-group">
 											<span class="input-group-text">To</span>
 											<input type="date" class="form-control">
@@ -1190,33 +1083,65 @@
 										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
 									</div>	
 								</div>
-								
-							</div>
-						
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								<div class="form-group notState">
-								<label>Responsible Staff</label>
-								<select multiple="multiple" style="display: none;" class="multiselect">
-									<option>Roberta Carr</option>
-									<option>Ellen Datlow</option>
-									<option>Daniel Folsom</option>
-									<option>Daisy Freeman</option>
-									<option>Rebecca Moray</option>
-									<option>Zachary Taggart</option>
-									<option>Tom Vineman</option>
-								</select>
-								<span class="help-text">Select one or more</span>
+                                   <label>Survey Due Date Range</label>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
 								</div>
-							</div>
-							</div><div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-								<label>Complainant or Person Affected</label>
-								<input type="text">
+                                   <label>RO Approval Date Range</label>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
 								</div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-							  <div class="form-group stateMS">
+                                   <label>Triage Complete Date Range</label>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+									<div class="col-md-12">
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									</div>	
+								</div>
+                                </fieldset>
+                                         <fieldset class="iq-fieldset"><legend>RO Approved</legend>
+                               
+                                </fieldset>
+                                         </div>
+                            <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Location</legend>
+                                
+							  <div class="form-group">
 								  <label>State</label>
 								  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
                       <option value="AL">Alabama</option>
@@ -1273,31 +1198,65 @@
                    
 				  </select>
 								  <span class="help-text">Select one or more</span>
-								  <span class="iq-input-error-msg hide">At least one state is required</span>
 								  
 							  </div>
-							  <div class="form-group stateNone hide">
-								<label>State</label>
-								<input type="text" class="read-only-text" readonly value="Illinois">
-							  </div>
-							</div>
-                            <div class="col-md-4 col-lg-4 col-xl-3">
+							
 								  <div class="form-group">
 									  <label>Management Unit
 									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
 									  </label>
 									  <p class="help-text">State must be selected</p>
 								  </div>
-							  </div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
+							  
 								  <div class="form-group">
 									  <label>Work Unit
 									   <select disabled><option>Select one</option></select>
 									  </label>
 									  <p class="help-text">Management unit must be selected</p>
 								  </div>
-							  </div>
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
+						
+                                
+                            </fieldset>
+                        </div>
+                              
+						
+					</div>
+				
+				  </div>
+						
+						
+						
+						<div class="row">
+							
+							<div class="col-md-8 col-lg-8 col-xl-6">
+								
+								
+								
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4 col-lg-4 col-xl-3">
+								<div class="form-group notState">
+								<label>Responsible Staff</label>
+								<select multiple="multiple" style="display: none;" class="multiselect">
+									<option>Roberta Carr</option>
+									<option>Ellen Datlow</option>
+									<option>Daniel Folsom</option>
+									<option>Daisy Freeman</option>
+									<option>Rebecca Moray</option>
+									<option>Zachary Taggart</option>
+									<option>Tom Vineman</option>
+								</select>
+								<span class="help-text">Select one or more</span>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-4 col-xl-3">
+								<div class="form-group">
+								<label>Complainant or Person Affected</label>
+								<input type="text">
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-4 col-xl-3">
 								<div class="form-group notState">
 								<label>Referral Agency</label>
 								<select multiple="multiple" style="display: none;" class="multiselect">
@@ -1330,7 +1289,7 @@
 			<section id="iSearchArea">
 				<h2 class="sr-only">Selected Intake Search Criteria</h2>
           		<br>  
-				<div class="float-right hide">
+				<div class="float-right">
 					<a href="#" class="btn btn-outline-primary dropdown-toggle" id="exportLinkI" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-file-export"></i> Export</a>
 					<div class="dropdown-menu" aria-labelledby="exportLinkI">
 						<p class="dropdown-header mt-2">Export results as:</p>
@@ -1340,56 +1299,80 @@
 					</div>
 				</div>
 				<ul class="iq-inline-list searchCriteria">
-					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close stateMS" aria-label="Close" onClick="$('.errorMsg').removeClass('hide'); $('#intakes .searchCriteria li').addClass('hide'); $('#intakes .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#iSearchResults .baCount').addClass('iq-not-available'); $('#iSearchResults .baCount').html('No results found'); $('#intakeTable').addClass('hide'); $('#stateIntake .help-text').addClass('hide'); $('#stateIntake .iq-input-error-msg').removeClass('hide'); $('#stateIntake .dashboardcode-bsmultiselect li button').click();  "><span aria-hidden="true">&times;</span></button></div></div></li>
+					<li><div class="state"><label class="inline">State: </label> <div class="badge badge-pill"><span>Illinois </span><button type="button" class="close" aria-label="Close" onClick="$('#intakes .searchCriteria li').addClass('hide'); $('#intakes .table tr.il').removeClass('hide'); $(this).parent('.badge').hide(); $('#iSearchResults .baCount').html('2 Intakes'); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="keyword hide"><label class="inline ml-2">Keyword: </label> <div class="badge badge-pill">
 							<span class="key"></span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.keyword').addClass('hide'); $('#iSearchInput').val(''); "><span aria-hidden="true">&times;</span></button></div></div></li>
 					<li><div class="reStaff hide"><label class="inline ml-2">Responsible Staff/Surveyor: </label> <div class="badge badge-pill">
         <span>Roberta Carr</span><button type="button" class="close" aria-label="Close" onClick="$(this).parents('.reStaff').addClass('hide');  $('#intakeTable tbody tr').removeClass('hide');"><span aria-hidden="true">&times;</span></button></div></div></li>
 		</ul>
   				<section id="iSearchResults">
-          			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span><span class="expandCollapse hide"> | <a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
+          			<p class="info-text" role="status"><span class="sr-only">List of intakes filtered by state: Illinois. </span><span class="baCount">Results: 2 Intakes</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#iSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
 
-<table class="display" id="intakeTable" style="width: 100%">
-                  <thead>
-                    <tr>
-                      <th><span>Provider</span></th>
-                      <th><span>Intake ID</span></th>
-                      <th><span>Priority</span></th>
-                      <th><span>Status</span></th>
-                      <th><span class="sortable sorting_asc">Survey Due</span></th>
-                      <th><span>Intake Start</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="good">
-                      <td><a href="#">Good Neighbor HHC of Baxter</a><br>
+<table class="diplay responsive" id="intakeTable" style="width: 100%">
+  <thead>
+    <tr>
+	  <th></th>
+	  
+	  <th><span>Provider</span></th>
+	  <th><span>Intake ID</span></th>
+	  <th><span>Priority</span></th>
+	  <th><span>Status</span></th>
+	  <th><span>Survey Due</span></th>
+	  <th><span>Intake Start</span></th>
+	  <th><span>Complaint Survey</span></th>
+      <th><span>Allegations</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="">
+	  <td></td>
+	  <td><a href="#">Good Neighbor HHC of Baxter</a><br>
         CCN&nbsp;247269<br>
-        FACID&nbsp;IL5321112233445566 | <a href="#" data-toggle="tooltip" title="Address: 14387 Edgewood Drive, Baxter, IL 63231"><i class="fas fa-map-marker-alt"></i></a></td>
-                      <td><a href="intake-new2.html">12345</a><br>
-                        <small>Complaint </small></td>
-                      <td>Non-IJ High</td>
-                      <td>Under Investigation</td>
-                      <td>03/01/2020</td>
-                      <td>01/01/2020</td>
-                    </tr>
-                    <tr class="bright">
-                      <td><a href="provider-profile-hospice.html">BrightHope</a><br>
-        IQIES 123456 | <a href="#" data-toggle="tooltip" title="Address: 667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010"><i class="fas fa-map-marker-alt"></i></a> </td>
-                      <td><a href="intake-new.html">3265</a><br>
-                        <small>Incident</small></td>
-                      <td><span class="iq-not-available">Not Applicable</span></td>
-                      <td>Triage/Prioritization</td>
-                      <td>03/15/2020</td>
-                      <td>02/12/2020</td>
-                    </tr>
-                  </tbody>
-                </table>
+        FACID&nbsp;IL5321112233445566</td>
+      <td><a href="../intake-new2.html">Complaint 12345</a></td>
+      <td>Non-Immediate Jeopardy-High</td>
+      <td>Under Investigation</td>
+	  <td>03/01/2020</td>
+      <td>01/01/2020</td>
+	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br>Exit 12/01/2019</td>
+      <td><a href="#" class="dropdown-toggle" id="allegationList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a>
+          <div class="dropdown-menu text-content" aria-labelledby="allegationList">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Moderate</small></li>
+			  <li>Admission, Transfer, &amp; Discharge Rights<br><small>Seriousness: Moderate</small></li></ul>
+  		  </div>
+	  </td>
+    </tr>
+    <tr class="">
+	  <td></td>
+      <td><a href="provider-profile-hospice.html">BrightHope</a><br>
+        IQIES 123456</td>
+	  <td><a href="intake-new.html">Incident 3265</a></td>
+	  <td><span class="iq-not-available">Not Applicable</span></td>
+      <td>Triage/Prioritization</td>
+	  <td>03/15/2020</td>
+	  <td>02/12/2020</td>
+	  <td><span class="iq-not-available">Not Applicable</span></td>
+      <td><a href="javascript:void(0)" class="dropdown-toggle" id="allegationList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+          <div class="dropdown-menu text-content" aria-labelledby="allegationList2">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  <ul><li>Resident/Patient/Client Neglect<br><small>Seriousness: Minor</small></li>
+			  </ul>
+  		  </div>
+	  </td>
+    </tr>
+  </tbody>
+</table>
 
 <nav title="Table Pagination" class="hide"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
+        	<p class="iq-no-results hide noResults" role="status">No intakes found for this search.</p>
           </div>
 		<div class="tab-pane" id="enforcements">
         
@@ -1724,72 +1707,79 @@
           			<p class="info-text" role="status"><span class="sr-only">List of enforcements filtered by state: Illinois. </span><span class="baCount">Results: 2 Enforcements</span><span class="expandCollapse"> | <a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="expandAll">Expand All</a><a href="javascript:void(0)" onClick="$('#eSearchResults .expandCollapse a').toggleClass('hide'); " class="collapseAll hide">Collapse All</a></span></p>
 
 <table class="diplay responsive" id="enforcementTable" style="width: 100%">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th><span>Provider</span></th>
-                      <th><span>Enforcement</span></th>
-                      <th><span>Enforcement Start</span></th>
-                      <th><span>Survey Exit Date</span></th>
-                      <th><span>Starting Survey</span></th>
-                      <th><span>Case Status</span></th>
-                      <th><span>Sanctions</span></th>
-                      <th><span>CMP Amount Due</span></th>
-                      <th><span>Appeal/Appeal Waiver Due</span></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="appealDue bright">
-                      <td></td>
-                      <td><a href="provider-profile-hospice.html">BrightHope</a><br>
-                        IQIES 123456 | <a href="#" data-toggle="tooltip" title="Address: 667 Bent Ridge Lane, Suite 1000, Barrington, IL 60010"><i class="fas fa-map-marker-alt"></i></a> </td>
-                      <td><a href="../enforcement/enforcement.html">1234</a><br>
-                        <small>Federal</small></td>
-                      <td>01/01/2020</td>
-                      <td>12/01/2019</td>
-                      <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a><br>
-                        <span class="iq-status iq-status-ij"></span>&nbsp;IJ</td>
-                      <td>Open - Active</td>
-                      <td><a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
-                        <div class="dropdown-menu text-content" aria-labelledby="sanctionList">
-                          <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                          <ul>
-                            <li>Termination at 23 days - <span class="iq-status iq-status-ij"></span>&nbsp;IJ<br>
-                              <small>Recommended</small> </li>
-                          </ul>
-                        </div></td>
-                      <td class="currency"><p class="iq-not-available">Not Applicable</p></td>
-                      <td>11/20/2019</td>
-                    </tr>
-                    <tr class="cmp laguna">
-                      <td></td>
-                      <td><a href="provider-details.html">Laguna Rainbow Home Care</a><br>
-                        CCN&nbsp;327144 | FACID&nbsp;IL9621112233 | <a href="#" data-toggle="tooltip" title="Address: State Road 23 South, Casa Blanca, IL 63222"><i class="fas fa-map-marker-alt"></i></a> </td>
-                      <td><a href="../enforcement/enforcement-new.html">3245</a><br>
-                        <small>State</small></td>
-                      <td>12/23/2019</td>
-                      <td>11/23/2019</td>
-                      <td><a href="citations-search/survey-laguna.html">XYZ0-H1 <i class="fal fa-external-link"></i></a></td>
-                      <td>Open - Under Appeal</td>
-                      <td><a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
-                        <div class="dropdown-menu text-content" aria-labelledby="sanctionList2">
-                          <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                          <ul>
-                            <li>Civil Monetary Penalty<br>
-                              <small>In Effect: Yes | </small> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span> </li>
-                            <li>Directed Plan of Correction<br>
-                              <small>In Effect: Yes</small></li>
-                          </ul>
-                        </div></td>
-                      <td class="currency">$100,000</td>
-                      <td>04/01/2020</td>
-                    </tr>
-                  </tbody>
-                </table>
+  <thead>
+    <tr>
+	  <th></th>
+	  <th><span>Provider</span></th>
+	  <th><span>Enforcement</span></th>
+	  <th><span>Enforcement Start</span></th>
+	  <th><span>Survey Exit Date</span></th>
+	  <th><span>Starting Survey</span></th>
+	  <th><span>Case Status</span></th>
+	  <th><span>Sanctions</span></th>
+	  <th><span>CMP Amount Due</span></th>
+	  <th><span>Appeal/Appeal Waiver Due</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="appealDue">
+	  <td></td>
+	  <td><a href="provider-profile-hospice.html">BrightHope</a><br>
+	    IQIES 123456</td>
+      <td>Federal<br><a href="enforcement/enforcement.html">1234</a></td>
+      <td>01/01/2020</td>
+      <td>12/01/2019</td>
+	  <td><a href="survey-brighthope.html" target="_blank">BFF0-H2 <i class="fal fa-external-link"></i></a> <span class="badge badge-danger" data-toggle="tooltip" title="Immediate Jeopardy">IJ</span></td>
+	  <td>Open - Active</td>
+	  <td><a href="#" class="dropdown-toggle" id="sanctionList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1</a>
+          <div class="dropdown-menu text-content" aria-labelledby="sanctionList">
+			  <button type="button" class="close" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			   <ul>
+				  
+		  <li>Termination at 23 days - IJ<br><small>Recommended</small> </li>
+				   
+			  </ul>
+			  
+  		  </div></td>
+	  <td class="currency"><p class="iq-not-available">Not Applicable</p></td>
+	  <td>11/20/2019</td>
+    </tr>
+    <tr class="cmp">
+	  <td></td>
+	  <td><a href="provider-details.html">Laguna Rainbow Home Care</a><br>
+	    CCN&nbsp;327144 | FACID&nbsp;IL9621112233</td>
+      <td>State<br><a href="enforcement-new.html">3245</a></td>
+      <td>12/23/2019</td>
+      <td>11/23/2019</td>
+	  <td><a href="survey-brighthope.html">XYZ0-H1 <i class="fal fa-external-link"></i></a></td>
+	  <td>Open - Under Appeal</td>
+	  <td><a href="#" class="dropdown-toggle" id="sanctionList2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2</a> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span>
+         <div class="dropdown-menu text-content" aria-labelledby="sanctionList2">
+		     <button type="button" class="close" aria-label="Close">
+			     <span aria-hidden="true">&times;</span>
+			   </button>
+		      <ul>
+			      <li>Civil Monetary Penalty<br>
+			        <small>In Effect: Yes | </small> <span class="badge badge-dark" data-toggle="tooltip" title="Appealed Sanction">A</span> </li>
+		  <li>Directed Plan of Correction<br>
+		    <small>In Effect: Yes</small></li>
+				   
+		     </ul>
+			  
+	     </div></td>
+	  <td class="currency">$100,000</td>
+	  <td>04/01/2020</td>
+	</tr>
+  </tbody>
+</table>
+
+<nav title="Table Pagination" class="hide"><ul class="pagination pagination-large"><li class="page-item disabled hide-for-small"><button class="page-link first" disabled>First</button></li><li class="page-item disabled"><button class="page-link previous" disabled>Previous</button></li><li class="page-item active"><span class="page-link">1</span></li><li class="page-item hide-for-small"><button class="page-link">2</button></li><li class="page-item hide-for-small" ><button  class="page-link">3</button></li><li class="page-item hide-for-medium"><button class="page-link">4</button></li><li class="page-item hide-for-medium"><button class="page-link">5</button></li><li class="page-item"><button class="page-link next">Next</button></li><li class="page-item hide-for-small"><button class="page-link last">Last</button></li></ul></nav>
 					
         		</section>
 			</section> <!-- search area -->
-        	<p class="iq-no-results hide noResults" role="status">No results found.</p>
+        	<p class="iq-no-results hide noResults" role="status">No enforcements found for this search.</p>
           </div>
       </div>                         
          
@@ -1864,9 +1854,9 @@
   <script src="../../../src/assets/js/scripts.js"></script> <script>
 	  $(document).ready(function () {
 	    $('[data-toggle="tooltip"]').tooltip(); 
-	    $("select.multiselect").bsMultiSelect();
+	    $('select.multiselect').bsMultiSelect();
 	    window.setTimeout(function() {
-			$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+			$('.alert-success').fadeTo(4000, 0).slideUp(4000, function(){
 				$(this).addClass('hide'); 
 			});
 		}, 5000);
@@ -1929,14 +1919,14 @@
 					  lengthMenu: false,
 					  info: false,
 					  searching: false,
-					  //responsive: {
-						//details: { type: 'column'}
-					  //},
-					  'order': [[ 4, 'asc' ]],
+					  responsive: {
+						details: { type: 'column'}
+					  },
+					  'order': [[ 3, 'asc' ]],
 					  columnDefs: [
-						//{ className: 'control', orderable: false, targets: 0 },
-						//{ responsivePriority: 0, targets: 1 },
-						//{ responsivePriority: 1, targets: 3 }
+						{ className: 'control', orderable: false, targets: 0 },
+						{ responsivePriority: 0, targets: 1 },
+						{ responsivePriority: 1, targets: 3 }
 						//{ 'orderable': false, 'targets': -1 }
 					 ]
 });
@@ -2037,14 +2027,14 @@ function drawIntakeTable(){
 		  lengthMenu: false,
 		  info: false,
 		  searching: false,
-		  //responsive: {
-		//	details: { type: 'column'}
-		 // },
-		  'order': [[ 4, 'asc' ]],
+		  responsive: {
+			details: { type: 'column'}
+		  },
+		  'order': [[ 3, 'asc' ]],
 		  columnDefs: [
-		//	{ className: 'control', orderable: false, targets: 0 },
-		//	{ responsivePriority: 0, targets: 1 },
-		//	{ responsivePriority: 1, targets: 3 }
+			{ className: 'control', orderable: false, targets: 0 },
+			{ responsivePriority: 0, targets: 1 },
+			{ responsivePriority: 1, targets: 3 }
 			//{ 'orderable': false, 'targets': -1 }
 		 ]
 	});
