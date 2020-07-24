@@ -144,33 +144,35 @@
 						<br>
                         <div class="row">
 				            <div class="col-md-12 col-lg-12 col-xl-12">
-                                <div class="d-flex align-items-stretch justify-content-between">
+                                <div class="d-flex flex-column">
                                     
-                                        <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Type &amp; ID</legend>
-                                
+                                        <fieldset class="iq-fieldset"><legend>Type &amp; ID</legend>
+                                <div class="row"><div class="col-md-4 col-lg-3 col-xl-3">
 									  <div class="form-group notState">
 										  <label>Provider Type </label>
 										  <select multiple="multiple" style="display: none;" class="multiselect"><option>Home Health Agency</option><option>Hospice</option><option>Hospital</option><option>Clinical Laboratory</option></select>
 										 <span class="help-text">Select one or more</span>
 									  </div>
-								  
+                                    </div>
+								  <div class="col-md-4 col-lg-3 col-xl-3">
 									  <div class="form-group">
 										  <label>iQIES ID
 											  <input type="text">
 										  </label>
-									  </div>
+									  </div></div><div class="col-md-4 col-lg-3 col-xl-3">
 								         <div class="form-group">
 						  <label>License Number<input class="form-control" type="text" value=""></label>
-					  </div>
+					  </div></div>
+                                    </div>
                                 
                             </fieldset>
                                     
-                                        <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Status</legend>
-
+                                        <fieldset class="iq-fieldset"><legend>Status</legend>
+<div class="row"><div class="col-md-4 col-lg-3 col-xl-3">
                                                   <div class="form-group">
                                                       <label>Deemed Status</label>
                                                       <select id="deemedStatusSelect"><option>All</option><option>Deemed</option><option>Non-Deemed</option><option>Suspended</option><option>Pending Approval</option></select>
-                                                  </div>
+                                                  </div></div><div class="col-md-4 col-lg-3 col-xl-3">
                                             <div class="form-group notState">
                                       <label>Federal Certification Status</label>
                                        <select multiple="multiple" style="display: none;" class="multiselect">
@@ -178,7 +180,7 @@
                                       </select>
                                       <!--<input type="text" class="form-control" value="" placeholder="" id="certsStatus">-->
                                       <span class="help-text">Select one or more</span>
-                                  </div>
+                                  </div></div><div class="col-md-4 col-lg-3 col-xl-3">
                                             <div class="form-group">
 
                                     <label>Operating Status</label>
@@ -187,52 +189,54 @@
                                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Open</button>
                                   <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Closed</button>
                                 </div>
-                                </div>
+                                </div></div><div class="col-md-4 col-lg-3 col-xl-3">
                                             <div class="form-group">
 						  <label class="hide-for-medium hide-for-small">&nbsp;</label>
 						  <div class="custom-control custom-checkbox">
 							  <input type="checkbox" id="showrecertP" class="custom-control-input">
 							   <label class="custom-control-label" for="showrecertP">Show providers nearing recertification</label>
 							</div>
-					  </div>
+					  </div></div></div>
                                         </fieldset>    
                                     
-                                        <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Citation Tag</legend>
+                                        <fieldset class="iq-fieldset"><legend>Citation Tag</legend>
+                                            <div class="row"><div class="col-md-4 col-lg-3 col-xl-3">
                                 <div class="form-group">
                           <label>Citation Tag Number</label>
                           <input type="text">
                           <span class="help-text">E.g. G0406</span>
-                      </div>
-                               <fieldset>
-                        <legend>Citation Dates</legend>
+                      </div></div><div class="col-md-8 col-lg-6 col-xl-6">
+                               <fieldset class="mb-0">
+                        <legend class="mb-2">Citation Dates</legend>
                         <div class="row">
-                          <div class="col-md-12">
+                          <div class="col-md-6">
                             <div class="input-group">
                               <label class="input-group-text input-group-prepend">From</label>
                               <input type="date" class="form-control">
                             </div>
                             <span class="input-group-help-text help-text">MM/DD/YYYY</span> </div>
-                          <div class="col-md-12">
+                          <div class="col-md-6">
                             <div class="input-group"> <span class="input-group-text">To</span>
                               <input type="date" class="form-control">
                             </div>
                             <span class="input-group-help-text help-text">MM/DD/YYYY</span> </div>
                         </div>
                       </fieldset>
+                                                </div></div>
                             </fieldset>
-                                    <fieldset class="iq-fieldset" style="width: 24.5%"><legend>Location</legend>
+                                    <fieldset class="iq-fieldset"><legend>Location</legend>
                                  <div class="row">
-				                    <div class="col-md-4 col-lg-4 col-xl-12">
+				                    <div class="col-md-4 col-lg-3 col-xl-3">
                                 <div class="form-group">
 					  <label>Street Address<input class="form-control" type="text" value=""></label>
 				  </div>
                                     </div>
-                                    <div class="col-md-4 col-lg-4 col-xl-12">
+                                    <div class="col-md-4 col-lg-3 col-xl-3">
                                 <div class="form-group">
 					  <label>City<input class="form-control" type="text" value=""></label>
 				  </div>
                                     </div>
-                                     <div class="col-md-8 col-lg-8 col-xl-8">
+                                     <div class="col-md-4 col-lg-3 col-xl-3">
                                 <div class="form-group">
 					  <label>State</label>
 					  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
@@ -293,12 +297,12 @@
 					  <span class="help-text">Select one or more</span>
 				  </div>
                                     </div>
-                                     <div class="col-md-4 col-lg-4 col-xl-4">
+                                     <div class="col-md-4 col-lg-3 col-xl-3">
                                 <div class="form-group">
 					  <label>Zip Code<input class="form-control" type="text" value=""></label>
 				  </div>
                                     </div>
-                                     <div class="col-md-4 col-lg-4 col-xl-12">
+                                     <div class="col-md-4 col-lg-3 col-xl-3">
                                 <div class="form-group notState">
 						  <label>CMS Region</label>
 						  <select multiple="multiple" style="display: none;" class="multiselect">
@@ -311,7 +315,7 @@
 						  <span class="help-text">Select one or more</span>
 					  </div>
                                      </div>
-                                     <div class="col-md-4 col-lg-4 col-xl-12">
+                                     <div class="col-md-4 col-lg-3 col-xl-3">
                                 <div class="form-group">
 						  <label>Management Unit
 						  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
@@ -319,7 +323,7 @@
 						  <p class="help-text">State must be selected</p>
 					  </div>
                             </div>
-                             <div class="col-md-4 col-lg-4 col-xl-12">            
+                             <div class="col-md-4 col-lg-3 col-xl-3">            
                                 <div class="form-group">
 						  <label>Work Unit
 						   <select disabled><option>Select one</option></select>
@@ -332,9 +336,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="col-md-12 col-lg-12 col-xl-3">
-                                 
-                            </div>
+                            
                         </div>
 				    </div>
                   </div>
