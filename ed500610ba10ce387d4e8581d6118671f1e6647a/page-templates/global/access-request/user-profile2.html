@@ -237,7 +237,12 @@
                       </fieldset>
                       <div class="fsi iq-conditional-content">
                         <div class="alert alert-danger fsIDmsg hide" role="alert">
-                          <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
+                          <div class="alert-content"><h2>Unable to Save</h2>
+                            Please review and correct the following:
+                            <ul>
+                              <li><a href="#coIDinput">Federal Surveyor ID</a> does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</li>
+                            </ul>
+                        </div>
                         </div>
                         <div class="alert alert-warning fsIDWarningmsg" role="alert">
                           <div class="alert-content">Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
@@ -259,7 +264,8 @@
                             <div class="row">
                           <div class="form-group col col-md-8 idType fsid">
                             <label>Federal Surveyor ID</label>
-                            <input type="text" class="fsIDinput1">
+                            <input type="text" class="fsIDinput1" id="coIDinput">
+                              <span class="iq-input-error-msg csIDerror hide">Invalid Federal Surveyor ID</span>
                           </div>
                           <div class="form-group col col-md-8 idType sid hide">
                             <label>Staff ID</label>
@@ -268,8 +274,8 @@
                         </div>  
                         </div>
                         <div class="col-md-8">
-                            <div class="card iq-color-gray-lighter"><div class="card-body">
-                               <p>You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                            <div class="card iq-color-gray-lighter"><div class="card-body"><p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
+                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
                         <p><img src="FSID.jpg" style="width: 700px" alt="Federal Surveyor ID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
                        
                             </div></div>
@@ -280,7 +286,7 @@
                     </div>
                   </div>
                   <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
-                    <button class="btn btn-primary" onClick="saveID()">Save</button>
+                    <a href="#co" class="btn btn-primary" onClick="saveID()">Save</a>
                     <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
                   </div>
                 </div>
@@ -466,7 +472,11 @@
                       </fieldset>
                       <div class="fsi iq-conditional-content">
                         <div class="alert alert-danger fsIDmsg hide" role="alert">
-                          <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
+                          <div class="alert-content"><h2>Unable to Save</h2>
+                            Please review and correct the following:
+                            <ul>
+                              <li><a href="#roFSID">Federal Surveyor ID</a> does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</li>
+                            </ul></div>
                         </div>
                         <div class="alert alert-warning fsIDWarningmsg" role="alert">
                           <div class="alert-content">Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
@@ -488,7 +498,8 @@
                             <div class="row">
                           <div class="form-group col col-md-8 idType fsid">
                             <label>Federal Surveyor ID</label>
-                            <input type="text" class="fsIDinput1">
+                            <input type="text" class="fsIDinput1" id="roFSID">
+                            <span class="iq-input-error-msg csIDerror hide">Invalid Federal Surveyor ID</span>
                           </div>
                           <div class="form-group col col-md-8 idType sid hide">
                             <label>Staff ID</label>
@@ -497,8 +508,8 @@
                         </div>  
                         </div>
                         <div class="col-md-8">
-                            <div class="card iq-color-gray-lighter"><div class="card-body">
-                               <p>You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                            <div class="card iq-color-gray-lighter"><div class="card-body"><p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
+                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
                         <p><img src="FSID.jpg" style="width: 700px" alt="Federal Surveyor ID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
                         <p id="fsidImage" class="sr-only"> Navigate to Employee Identification tab in ASPEN. You can find the Federal Surveyor ID or Staff ID in the Idenfication area. </p>
                             </div></div>
@@ -509,7 +520,7 @@
                     </div>
                   </div>
                   <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
-                    <button class="btn btn-primary" onClick="saveID()">Save</button>
+                    <a href="#ro" class="btn btn-primary" onClick="saveID()">Save</a>
                     <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
                   </div>
                 </div>
@@ -652,7 +663,7 @@
                             <h2>Unable to Save</h2>
                             Please review and correct the following:
                             <ul>
-                              <li><a href="#">California Staff ID</a> does not match an existing ASPEN ID. Please enter a valid Staff ID.</li>
+                              <li><a href="#calStaffID">California Staff ID</a> does not match an existing ASPEN ID. Please enter a valid Staff ID.</li>
                             </ul>
                           </div>
                         </div>
@@ -681,7 +692,7 @@
                               <div class="form-group col col-md-8 idTypeS sid">
                                 <p>
                                   <label>California Staff ID
-                                    <input type="text" class="sIDinput2 form-control">
+                                    <input type="text" class="sIDinput2 form-control" id="calStaffID">
                                     <span class="iq-input-error-msg csIDerror hide">Invalid Staff ID</span></label>
                                 </p>
                                 <p>
@@ -693,8 +704,8 @@
                           </div>
                           <div class="col-md-8 col order-1">
                             <div class="card iq-color-gray-lighter">
-                              <div class="card-body">
-                                <p>You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
+                              <div class="card-body"><p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
+                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
                                 <p><img src="FSID.jpg" style="width: 700px" alt="Federal Surveyor ID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
                                 
                               </div>
@@ -705,7 +716,7 @@
                     </div>
                   </div>
                   <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
-                    <button class="btn btn-primary" onClick="saveID()">Save</button>
+                    <a href="#sa" class="btn btn-primary" onClick="saveID()">Save</a>
                     <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
                   </div>
                 </div>
