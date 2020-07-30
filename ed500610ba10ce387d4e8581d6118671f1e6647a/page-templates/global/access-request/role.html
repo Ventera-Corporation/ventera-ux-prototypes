@@ -293,12 +293,12 @@
                 </div>
             </div>
             <div class="edit-view orgStep">
-                 <p class="iqies-required-text">All fields are optional</p>
+                <!-- <p class="iqies-required-text">All fields are optional</p>-->
                  <div class="mt-5 mb-4"><p class="lead">
            This role does not require the addition of organizations. 
                      
           </p></div>
-                 <div class="row">
+                 <!--<div class="row">
                     <div class="col col-md-12">
                       <fieldset>
             <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
@@ -314,8 +314,15 @@
             </fieldset>
                     </div>
                    
-                </div>
+                </div>-->
                 <div class="cfsi hide iq-conditional-content">
+                    <div class="alert alert-danger fsIDmsg hide" role="alert">
+                          <div class="alert-content"><h2>Unable to Save</h2>
+                            Please review and correct the following:
+                            <ul>
+                              <li><a href="#coIDinput">Federal Surveyor ID</a> does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</li>
+                            </ul></div>
+                        </div>
                     <div class="row">
                         <div class="col-md-4">
                             <fieldset>
@@ -333,7 +340,8 @@
                             <div class="row">
                 <div class="form-group col col-md-8 cidType fsid hide">
               <label>Federal Surveyor ID</label>
-              <input type="text">
+              <input type="text" id="coIDinput">
+                    <span class="iq-input-error-msg csIDerror hide">Invalid Federal Surveyor ID</span>
                
             </div><div class="form-group col col-md-8 cidType sid hide">
               <label>Staff ID</label>
@@ -561,7 +569,7 @@
               </label>
           </div>
                 </div>
-                <div class="row">
+                <!--<div class="row">
                     <div class="col col-md-12">
                       <fieldset>
             <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
@@ -577,7 +585,7 @@
             </fieldset>
                     </div>
                    
-                </div>
+                </div>-->
                 <div class="fsi hide iq-conditional-content">
                     <div class="row">
                         <div class="col-md-4">
@@ -902,7 +910,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
               </label>
           </div>
                 </div>
-                 <div class="row">
+                 <!--<div class="row">
                     <div class="col col-md-12">
                       <fieldset>
             <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
@@ -917,7 +925,7 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
             
             </fieldset>
                     </div>
-                </div>
+                </div>-->
                 <div class="sfsi hide iq-conditional-content">
                     <div class="row">
                         <div class="col-md-4">
@@ -1191,10 +1199,20 @@ FACID IL1199112556677</td><td><a href="#" onClick="$('.pTable').toggleClass('hid
                 }
                 break;
             case 'co':
-                $('.errorMsg.submitErrorMsg').addClass('hide'); 
-                $('.iq-input-error-msg').addClass('hide'); 
-                window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
-                break;
+                //console.log($('#coIDinput').val());
+                //console.log($('#co .fsIDmsg').hasClass('hide'));
+                //if( $('#coIDinput').val() != "" && $('#co .fsIDmsg').hasClass('hide') == true){
+                //    console.log('coerror');
+                //    $('#co .fsIDmsg').removeClass('hide'); 
+                //    $('#co .csIDerror').removeClass('hide'); 
+                //} else {
+                    $('.fsIDmsg').addClass('hide'); 
+                    $('.csIDerror').addClass('hide'); 
+                    $('.errorMsg.submitErrorMsg').addClass('hide'); 
+                    $('.iq-input-error-msg').addClass('hide'); 
+                    window.location = 'user-profile.html#' + $('input[name="userRole"]:checked').val();
+                //}
+                    break;
         }
         
         
