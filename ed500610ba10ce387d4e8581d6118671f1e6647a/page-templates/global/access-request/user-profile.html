@@ -210,7 +210,13 @@
                       </fieldset>
                       <div class="fsi iq-conditional-content">
                         <div class="alert alert-danger fsIDmsg hide" role="alert">
-                          <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
+                          <div class="alert-content">
+                          <h2>Unable to Save</h2>
+                            Please review and correct the following:
+                            <ul>
+                              <li><a href="#coIDinput">Federal Surveyor ID</a> does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</li>
+                            </ul>
+                          </div>
                         </div>
                         <div class="alert alert-warning fsIDWarningmsg" role="alert">
                           <div class="alert-content">Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
@@ -232,7 +238,8 @@
                             <div class="row">
                           <div class="form-group col col-md-8 idType fsid">
                             <label>Federal Surveyor ID</label>
-                            <input type="text" class="fsIDinput1">
+                            <input type="text" class="fsIDinput1" id="coIDinput">
+                               <span class="iq-input-error-msg csIDerror hide">Invalid Federal Surveyor ID</span>
                           </div>
                           <div class="form-group col col-md-8 idType sid hide">
                             <label>Staff ID</label>
@@ -253,7 +260,7 @@
                     </div>
                   </div>
                   <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
-                    <button class="btn btn-primary" onClick="saveID()">Save</button>
+                    <a href="#co" class="btn btn-primary" onClick="saveID()">Save</a>
                     <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
                   </div>
                 </div>
@@ -426,7 +433,11 @@
                       </fieldset>
                       <div class="fsi iq-conditional-content">
                         <div class="alert alert-danger fsIDmsg hide" role="alert">
-                          <div class="alert-content">This Federal Surveyor ID does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</div>
+                          <div class="alert-content"><h2>Unable to Save</h2>
+                            Please review and correct the following:
+                            <ul>
+                              <li><a href="#roIDinput">Federal Surveyor ID</a> does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</li>
+                            </ul></div>
                         </div>
                         <div class="alert alert-warning fsIDWarningmsg" role="alert">
                           <div class="alert-content">Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
@@ -448,11 +459,13 @@
                             <div class="row">
                           <div class="form-group col col-md-8 idType fsid">
                             <label>Federal Surveyor ID</label>
-                            <input type="text" class="fsIDinput1">
+                            <input type="text" class="fsIDinput1" id="roIDinput">
+                               <span class="iq-input-error-msg csIDerror hide">Invalid Federal Surveyor ID</span>
                           </div>
                           <div class="form-group col col-md-8 idType sid hide">
                             <label>Staff ID</label>
                             <input type="text" class="sIDinput1">
+                               
                           </div>
                         </div>  
                         </div>
@@ -469,7 +482,7 @@
                     </div>
                   </div>
                   <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
-                    <button class="btn btn-primary" onClick="saveID()">Save</button>
+                    <a href="#ro" class="btn btn-primary" onClick="saveID()">Save</a>
                     <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
                   </div>
                 </div>
@@ -588,7 +601,11 @@
                       </fieldset>
                       <div class="fsi iq-conditional-content">
                         <div class="alert alert-danger fsIDmsg hide" role="alert">
-                          <div class="alert-content">This Staff ID does not match an existing ASPEN ID. Please enter a valid Staff ID.</div>
+                          <div class="alert-content"><h2>Unable to Save</h2>
+                            Please review and correct the following:
+                            <ul>
+                              <li><a href="#saIDinput">Staff ID</a> does not match an existing ASPEN ID. Please enter a valid Staff ID.</li>
+                            </ul></div>
                         </div>
                         <div class="alert alert-warning fsIDWarningmsg" role="alert">
                           <div class="alert-content"> Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
@@ -614,7 +631,8 @@
                           </div>
                           <div class="form-group col col-md-8 idTypeS sid">
                             <label>Staff ID</label>
-                            <input type="text" class="sIDinput2">
+                            <input type="text" class="sIDinput2" id="saIDinput">
+                               <span class="iq-input-error-msg csIDerror hide">Invalid Staff ID</span>
                           </div>
                         </div>
                         </div>
@@ -629,7 +647,7 @@
                   </div>
                   </div>
                   <div class="iq-button-wrapper si hide" style="margin-top: -1rem;">
-                    <button class="btn btn-primary" onClick="saveID()">Save</button>
+                    <a href="#sa" class="btn btn-primary" onClick="saveID()">Save</a>
                     <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
                   </div>
                 </div>
@@ -1023,9 +1041,11 @@
         function saveID(){
             if($('.fsIDmsg').hasClass('hide')){ 
                 $('.fsIDmsg').removeClass('hide');
+                $('.csIDerror').removeClass('hide');
 
             } else { 
                 $('.fsIDmsg').addClass('hide'); 
+                 $('.csIDerror').addClass('hide');
                 console.log($('.fsIDform input').val());
                 console.log($('.fsi input').val());
                 
@@ -1040,7 +1060,8 @@
                     $('span.sID1').html( $('input.sIDinput1').val());
                     $('span.sID2').html( $('input.sIDinput2').val());
                     $('span.sID1').removeClass('iq-not-available'); 
-                    $('span.sID2').removeClass('iq-not-available'); 
+                    $('span.sID2').removeClass('iq-not-available');  
+                     
                 }
                 
                 if( $('span.roS').html() != '<span class="iq-not-available">No information</span>' || 
