@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>User Profile</title>
+<title>Pending Role Request</title>
 <link rel="stylesheet"
     href="../../../../src/assets/prototype-styles/design-system.css">
 <link rel="stylesheet"
@@ -21,92 +21,20 @@
 
 <body>
 <header>
-  <div class="iq-global-nav">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <nav><a href="#"><img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
-            <div class="dropdown d-none d-sm-block d-lg-inline-block active"> <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification <i class="fal fa-chevron-down"></i></a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="#">Manage AO Providers</a> <a class="dropdown-item" href="../../providers/search.html">Search for a provider, survey, intake, or enforcement</a> <a class="dropdown-item" href="../../providers/add-a-provider.html">Add a Provider</a> </div>
-            </div>
-            <a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
-            <div class="dropdown d-none d-sm-block d-lg-inline-block"> <a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
-					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown2"> <a class="dropdown-item" href="#">Reports Main</a> <a class="dropdown-item" href="#">Find a Report Type</a> <a class="dropdown-item" href="#">My Reports</a> </div>
-            </div>
-            <div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
-					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown3"> <a class="dropdown-item" href="#">Letters</a> <a class="dropdown-item" href="#">State Customizations</a> </div>
-            </div>
-            <div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
-					id="navbarDropdown4" role="button" data-toggle="dropdown">
-              <p>DF</p>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
-                Profile</a> <a class="dropdown-item" href="#">Help</a> <a class="dropdown-item" href="#">Logout</a> </div>
-            </div>
-          </nav>
-        </div>
+  <div class="container-fluid">
+    <div class="row iq-page-header">
+      <div class="col">
+        <nav> <a href="./"> <img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"> </a>
+          <button class="btn btn-outline-primary">Logout</button>
+        </nav>
       </div>
     </div>
   </div>
 </header>
 <main>
-  <div class="iq-page-header-wrapper inverted">
-    <div class="container-fluid">
-      <div class="iq-page-header">
-        <div class="row">
-          <div class="col d-flex flex-column justify-content-between">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"> <a href="../global-landing-menu.html">Home</a> </li>
-                <li class="breadcrumb-item"> My Profile</li>
-              </ol>
-            </nav>
-            <div class="iq-page-header-content">
-              <h1>My Profile -  David Freeman</h1>
-              <div class="iq-page-header-details"> </div>
-            </div>
-          </div>
-          <!--<div class="col-md-5 col-lg-5 col-xl-4 iq-page-header-contact">
-            <address>
-              667 Bent Ridge Lane<br>
-              Suite 1000<br>
-              Barrington, IL 60010<br>
-              Tel: (888) 888-8888 | Fax: (123) 111-2222<br>
-              <a href="mailto:admin@brighthope.com"><i class="fas fa-envelope"></i> Email</a> | <a href="http://brighthope.com" target="_blank"><i class="fas fa-link"></i> Website</a> | <a href="https://goo.gl/maps/itLKkbBxCnDjZ1Cj9" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> <span>Map</span></a>
-            </address>
-          </div>--> 
-        </div>
-      </div>
-    </div>
-    <div class="iq-summary-bar">
-      <div class="container-fluid">
-        <div class="row ">
-          <div class="col d-flex align-items-center">
-            <div class="iq-summary-bar-data" data-index="1">
-              <p>User ID</p>
-              <p>dfreeman</p>
-            </div>
-            <div class="iq-summary-bar-data" data-index="3">
-              <p>Email</p>
-              <a href="#">dfreeman@orgmail.com</a> </div>
-            <div class="iq-summary-bar-data" data-index="4">
-              <p>Phone Number</p>
-              <p>(703) 123-1234</p>
-            </div>
-            <!--<div class="iq-summary-bar-action p-1">
-                      <a href="provider-details-hh.html" class="btn btn-link">
-                        View Details
-                      </a>
-                    </div>--> 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 1rem; right: 1rem; min-height: auto; z-index: 1000; ">
+  
+  <div class="container-fluid mt-4">
+<div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; bottom: 0; right: 1rem; min-height: auto; z-index: 1000; ">
   <div class="toast-header">
     <strong class="mr-auto">UI Note</strong>
     <small></small>
@@ -115,12 +43,17 @@
       </button>
     </div>
   <div class="toast-body">
-    CO user profile has ID flow for FSID entry fully functional
+      <ul><li><strong>When the request has been rejected: </strong>
+    <a href="user-profile-rejected.html#ro">RO</a></li>
+          <li><strong>When the request has been approved: </strong>
+              <a href="user-profile.html#ao">AO</a>, <a href="user-profile.html#co">CO</a>, <a href="user-profile.html#mac">MAC</a>, <a href="user-profile.html#ro">RO</a>, <a href="user-profile.html#sa">SA</a>, <a href="user-profile.html#pa">Provider</a>, <a href="user-profile.html#v">Vendor</a>
+              
+          </li></ul>
     </div>
 </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="alert alert-success requestSubmitted hide" role="alert">
+        <div class="alert alert-success requestSubmitted" role="alert">
           <div class="alert-content">
             <h2>Role Request Submitted</h2>
             Your approval status will be emailed to you after your request is reviewed.</div>
@@ -169,7 +102,7 @@
                   <tr>
                     <td><span class="roleName">Accrediting Organization User</span></td>
                     <td>The Joint Comission (TJC)</td>
-                    <td><span class="iq-status iq-status-open"></span><small>Active</small></td>
+                    <td><span class="iq-status-pending"></span><small>Pending</small></td>
                     <td>01/03/2020</td>
                   </tr>
                 </tbody>
@@ -194,109 +127,13 @@
                   <tr>
                     <td><span class="roleName">Central Office User</span></td>
                     <td>CMS Central Office</td>
-                    <td><span class="iq-status iq-status-open"></span><small>Active</small></td>
+                    <td><span class="iq-status-pending"></span><small>Pending</small></td>
                     <td>01/01/2020</td>
                   </tr>
                 </tbody>
               </table>
               <br>
-              <section class="mt-5">
-                <div class="row si">
-                  <div class="col col-12">
-                    <h2>User Information
-                      <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button>
-                    </h2>
-                    <p class="hasAspen">
-                      <label>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></label>
-                      <span class="iq-not-available aspen">No information</span></p>
-                    <br>
-                    <div class="fsi iq-conditional-content hide">
-                      <div class="alert alert-warning fsIDWarningmsg" role="alert">
-                        <div class="alert-content"> Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                      </div>
-                      <p class="idType fsid hide">
-                        <label>Federal Surveyor ID</label>
-                        <span class="iq-not-available fsID1">No information</span></p>
-                      <p class="idType sid hide">
-                        <label>Staff ID</label>
-                        <span class="iq-not-available sID1">No information</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="si hide">
-                  <div class="row si hide fsIDform">
-                    <div class="col col-12">
-                      <h2>Edit User Information </h2>
-                      <fieldset>
-                        <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="cox1"  name="ox" value="Yes" class="custom-control-input" onChange="$('.fsi').removeClass('hide');">
-                          <label class="custom-control-label" for="cox1"> Yes </label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="cox2" name="ox" value="No" class="custom-control-input" onChange="$('.fsi').addClass('hide');">
-                          <label class="custom-control-label" for="cox2"> No </label>
-                        </div>
-                      </fieldset>
-                      <div class="fsi iq-conditional-content hide">
-                        <div class="alert alert-danger fsIDmsg hide" role="alert">
-                          <div class="alert-content">
-                            <h2>Unable to Save</h2>
-                            Please review and correct the following:
-                            <ul>
-                              <li><a href="#coIDinput">Federal Surveyor ID</a> does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="alert alert-warning fsIDWarningmsg hide" role="alert">
-                          <div class="alert-content">Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-4">
-                            <fieldset>
-                              <legend>What type of ID do you have?</legend>
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="cidType1" name="idType" value="fsid" class="custom-control-input" onChange=" $('.idType.fsid').removeClass('hide'); $('.idType.sid').addClass('hide');">
-                                <label class="custom-control-label" for="cidType1"> Federal Surveyor ID </label>
-                              </div>
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="cidType2" name="idType" value="sid" class="custom-control-input" onChange="$('.idType.sid').removeClass('hide'); $('.idType.fsid').addClass('hide');">
-                                <label class="custom-control-label" for="cidType2"> Staff ID </label>
-                              </div>
-                            </fieldset>
-                            <div class="row">
-                              <div class="form-group col col-md-8 idType fsid hide">
-                                <label>Federal Surveyor ID</label>
-                                <input type="text" class="fsIDinput1" id="coIDinput">
-                                <span class="iq-input-error-msg csIDerror hide">Invalid Federal Surveyor ID</span> </div>
-                              <div class="form-group col col-md-8 idType sid hide">
-                                <label>Staff ID</label>
-                                <input type="text" class="sIDinput1">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card iq-color-gray-lighter">
-                              <div class="card-body">
-                                  <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
-                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                                  
-                               
-                                <p><img src="FSID.jpg" style="width: 700px" alt="Federal Surveyor ID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="iq-button-wrapper si hide" style="margin-top: -1rem;"> <a href="#co" class="btn btn-primary" onClick="saveID()">Save</a>
-                    <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
-                  </div>
-                </div>
-              </section>
+              
             </div>
             <div class="edit-view orgStep"> </div>
           </div>
@@ -317,7 +154,7 @@
                   <tr>
                     <td><span class="roleName">Medicare Administrative Contractor</span></td>
                     <td>BlueCrossBlueShield of Wyoming</td>
-                    <td><span class="iq-status iq-status-open"></span><small>Active</small></td>
+                    <td><span class="iq-status-pending"></span><small>Pending</small></td>
                     <td>01/01/2020</td>
                   </tr>
                 </tbody>
@@ -338,7 +175,6 @@
                     <th><span>Surveyor Disciplines</span></th>
                     <th><span>Status</span></th>
                     <th><span>Status Date</span></th>
-                    <th class="text-right">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -347,179 +183,14 @@
                     <td>10 - Seattle</td>
                     <td><span class="roS"><span class="iq-not-available">No information</span></span></td>
                     <td><span class="roSD"><span class="iq-not-available">No information</span></span></td>
-                    <td><span class="iq-status iq-status-open"></span><small>Active</small></td>
+                    <td><span class="iq-status-pending"></span><small>Pending</small></td>
                     <td>01/01/2020</td>
-                    <td class="text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#editRO">Edit</a></td>
                   </tr>
                 </tbody>
               </table>
-              <div class="modal fade" id="editRO" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title">Edit Regional Office General User<br>
-                        <small>10 - Seattle</small></h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col col-md-12 form-group">
-                          <label>Surveyor</label>
-                          <fieldset>
-                            <legend class="sr-only">Surveyor</legend>
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="six3" name="six" class="custom-control-input" onChange="if(this.checked){ $('.roSDedit').removeClass('hide');}" value="Yes">
-                              <label class="custom-control-label" for="six3"> Yes </label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="six4" name="six" class="custom-control-input" onChange="if(this.checked){ $('.roSDedit').addClass('hide');}" value="No">
-                              <label class="custom-control-label" for="six4"> No </label>
-                            </div>
-                          </fieldset>
-                        </div>
-                        <div class="col col-md-12 roSDedit hide form-group">
-                          <label>Surveyor Disciplines</label>
-                          <select multiple="multiple" style="display: none;" class="multiselect surveyDis">
-                            <option>Select one</option>
-                            <option>Architect</option>
-                            <option>Cytotechnologist</option>
-                            <option>Engineer</option>
-                            <option>Generalist</option>
-                            <option>Health Care Administrator</option>
-                            <option>Home Health Aide</option>
-                            <option>Human Services Professional</option>
-                            <option>Laboratorian</option>
-                            <option>Licensed Practical (Vocational) Nurse</option>
-                            <option>Life Safety Code Inspector</option>
-                            <option>Medical Records Administrator</option>
-                            <option>Medical Technologist</option>
-                            <option>Nutritionist/Dietitian</option>
-                            <option>Nutritionist/Dietitian; Qualified Intellectual Disability Professional (QIDP)</option>
-                            <option>Occupational Therapist</option>
-                            <option>Pathologist</option>
-                            <option>Pharmacist</option>
-                            <option>Physical Therapist</option>
-                            <option>Physician</option>
-                            <option>Physician; Qualified Intellectual Disability Professional (QIDP)</option>
-                            <option>Psychologist</option>
-                            <option>Recreational Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
-                            <option>Registered Nurse</option>
-                            <option>Registered Nurse: Qualified Intellectual Disability Professional (QIDP)</option>
-                            <option>Sanitarian</option>
-                            <option>Social Worker</option>
-                            <option>Social Worker; Qualified Intellectual Disability Professional (QIDP)</option>
-                            <option>Speech Pathologist/Audiologist/Therapist</option>
-                            <option>Speech Pathologist/Audiologist/Therapist; Qualified Intellectual Disability Professional (QIDP)</option>
-                            <option>Speech Therapist</option>
-                            <option>X-Ray Specialist</option>
-                            <option>Other</option>
-                          </select>
-                          <span class="help-text">Select one or more</span> </div>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="saveRO()">Save</button>
-                      <a href="#" class="btn btn-link" data-dismiss="modal">Cancel</a> </div>
-                  </div>
-                </div>
-              </div>
+              
               <br>
-              <section class="mt-5">
-                <div class="row si">
-                  <div class="col col-12">
-                    <h2>User Information
-                      <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button>
-                    </h2>
-                    <p class="hasAspen">
-                      <label>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></label>
-                      <span class="iq-not-available aspen">No information</span></p>
-                    <br>
-                    <div class="fsi iq-conditional-content hide">
-                      <div class="alert alert-warning fsIDWarningmsg" role="alert">
-                        <div class="alert-content"> Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                      </div>
-                      <p class="idType fsid hide">
-                        <label>Federal Surveyor ID</label>
-                        <span class="iq-not-available fsID1">No information</span></p>
-                      <p class="idType sid hide">
-                        <label>Staff ID</label>
-                        <span class="iq-not-available sID1">No information</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="si hide">
-                  <div class="row si hide fsIDform">
-                    <div class="col col-12">
-                      <h2>Edit User Information </h2>
-                      <fieldset>
-                        <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="ox1" name="ox" value="Yes" class="custom-control-input" onChange="$('.fsi').removeClass('hide');">
-                          <label class="custom-control-label" for="ox1"> Yes </label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="ox2" name="ox" value="No" class="custom-control-input" onChange="$('.fsi').addClass('hide');">
-                          <label class="custom-control-label" for="ox2"> No </label>
-                        </div>
-                      </fieldset>
-                      <div class="fsi iq-conditional-content hide">
-                        <div class="alert alert-danger fsIDmsg hide" role="alert">
-                          <div class="alert-content">
-                            <h2>Unable to Save</h2>
-                            Please review and correct the following:
-                            <ul>
-                              <li><a href="#roIDinput">Federal Surveyor ID</a> does not match an existing ASPEN ID. Please enter a valid Federal Surveyor ID.</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="alert alert-warning fsIDWarningmsg hide" role="alert">
-                          <div class="alert-content">Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-4">
-                            <fieldset>
-                              <legend>What type of ID do you have?</legend>
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="idType1" value="fsid" name="idType" class="custom-control-input" onChange=" $('.idType.fsid').removeClass('hide'); $('.idType.sid').addClass('hide');">
-                                <label class="custom-control-label" for="idType1"> Federal Surveyor ID </label>
-                              </div>
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="idType2" value="sid" name="idType" class="custom-control-input" onChange="$('.idType.sid').removeClass('hide'); $('.idType.fsid').addClass('hide');">
-                                <label class="custom-control-label" for="idType2"> Staff ID </label>
-                              </div>
-                            </fieldset>
-                            <div class="row">
-                              <div class="form-group col col-md-8 idType fsid hide">
-                                <label>Federal Surveyor ID</label>
-                                <input type="text" class="fsIDinput1" id="roIDinput">
-                                <span class="iq-input-error-msg csIDerror hide">Invalid Federal Surveyor ID</span> </div>
-                              <div class="form-group col col-md-8 idType sid hide">
-                                <label>Staff ID</label>
-                                <input type="text" class="sIDinput1">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card iq-color-gray-lighter">
-                              <div class="card-body">
-                                <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
-                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                                <p><img src="FSID.jpg" style="width: 700px" alt="Federal Surveyor ID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
-                                <p id="fsidImage" class="sr-only"> Navigate to Employee Identification tab in ASPEN. You can find the Federal Surveyor ID or Staff ID in the Idenfication area. </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="iq-button-wrapper si hide" style="margin-top: -1rem;"> <a href="#ro" class="btn btn-primary" onClick="saveID()">Save</a>
-                    <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
-                  </div>
-                </div>
-              </section>
+              
             </div>
             <div class="edit-view orgStep"> </div>
           </div>
@@ -548,7 +219,7 @@
                     <td>Home Health Agency</td>
                     <td>CCN 327046<br>
                       FACID IL1199112556677</td>
-                    <td><span class="iq-status iq-status-open"></span><small>Active</small></td>
+                    <td><span class="iq-status-pending"></span><small>Pending</small></td>
                     <td>01/01/2020</td>
                   </tr>
                 </tbody>
@@ -572,7 +243,6 @@
                       <th><span>Surveyor Disciplines</span></th>
                       <th><span>Status</span></th>
                       <th><span>Status Date</span></th>
-                      <th class="text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -583,111 +253,14 @@
                       <td><span class="worU"><span class="iq-not-available">No information</span></span></td>
                       <td><span class="saS"><span class="iq-not-available" style="white-space: nowrap">No information</span></span></td>
                       <td><span class="saSD"><span class="iq-not-available" style="white-space: nowrap">No information</span></span></td>
-                      <td style="white-space: nowrap;"><span class="iq-status iq-status-open"></span><small>Active</small></td>
+                      <td style="white-space: nowrap;"><span class="iq-status-pending"></span><small>Pending</small></td>
                       <td>01/01/2020</td>
-                     <td class="text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#editSA">Edit</a></td>
                     </tr>
                   </tbody>
                 </table>
               </section>
               <br>
-              <section class="mt-5">
-                <div class="row si">
-                  <div class="col col-12">
-                    <h2>User Information
-                      <button class="btn btn-outline-primary float-right si" onClick="$('.si').toggleClass('hide');">Edit</button>
-                    </h2>
-                    <p class="hasAspen">
-                      <label>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></label>
-                      <span class="iq-not-available aspen">No information</span></p>
-                    <!-- <p class="hasAspen"><label>What type of ID do you have?</label>
-            Federal Surveyor ID</p>--> 
-                    <br>
-                    <div class="fsi iq-conditional-content hide">
-                      <div class="alert alert-warning fsIDWarningmsg" role="alert">
-                        <div class="alert-content"> Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                      </div>
-                      <p class="idTypeS fsid hide">
-                        <label>Federal Surveyor ID</label>
-                        <span class="iq-not-available fsID2">No information</span></p>
-                      <p class="idTypeS sid hide">
-                        <label>Staff ID</label>
-                        <span class="iq-not-available sID2">No information</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="si hide">
-                  <div class="row si hide fsIDform">
-                    <div class="col col-12">
-                      <h2>Edit User Information </h2>
-                      <fieldset>
-                        <legend>Do you have an account in ASPEN? <a href="javascript:void(0)" title="ASPEN is the Automated Survey Process Environment and includes the following applications: ACO/ARO, ASE-Q, ACTS, and AEM" data-toggle="tooltip"><i class="fal fa-info-circle"></i></a></legend>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="oxSA1"  name="ox" value="Yes" class="custom-control-input" onChange="$('.fsi').removeClass('hide');">
-                          <label class="custom-control-label" for="oxSA1"> Yes </label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" id="oxSA2" name="ox" value="No" class="custom-control-input" onChange="$('.fsi').addClass('hide');">
-                          <label class="custom-control-label" for="oxSA2"> No </label>
-                        </div>
-                      </fieldset>
-                      <div class="fsi iq-conditional-content hide">
-                        <div class="alert alert-danger fsIDmsg hide" role="alert">
-                          <div class="alert-content">
-                            <h2>Unable to Save</h2>
-                            Please review and correct the following:
-                            <ul>
-                              <li><a href="#saIDinput">Staff ID</a> does not match an existing ASPEN ID. Please enter a valid Staff ID.</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="alert alert-warning fsIDWarningmsg hide" role="alert">
-                          <div class="alert-content"> Federal Surveyor ID or Staff ID is needed to associate your user profile with existing surveys, providers, and other assets from ASPEN that have been migrated into iQIES. </div>
-                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-4">
-                            <fieldset>
-                              <legend>What type of ID do you have?</legend>
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="idType3" name="idType" value="fsid" class="custom-control-input" onChange=" $('.idTypeS.fsid').removeClass('hide'); $('.idTypeS.sid').addClass('hide');">
-                                <label class="custom-control-label" for="idType3"> Federal Surveyor ID </label>
-                              </div>
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="idType4" name="idType" value="sid" class="custom-control-input" onChange="$('.idTypeS.sid').removeClass('hide'); $('.idTypeS.fsid').addClass('hide');">
-                                <label class="custom-control-label" for="idType4"> Staff ID </label>
-                              </div>
-                            </fieldset>
-                            <div class="row">
-                              <div class="form-group col col-md-8 idTypeS fsid hide">
-                                <label>Federal Surveyor ID</label>
-                                <input type="text" class="fsIDinput2">
-                              </div>
-                              <div class="form-group col col-md-8 idTypeS sid hide">
-                                <label>Staff ID</label>
-                                <input type="text" class="sIDinput2" id="saIDinput">
-                                <span class="iq-input-error-msg csIDerror hide">Invalid Staff ID</span> </div>
-                            </div>
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card iq-color-gray-lighter">
-                              <div class="card-body">
-                                <p>Federal Surveyor ID or Staff ID is an identification assigned to each ASPEN user.</p>
-                <p>Federal Surveyor ID or Staff ID is required so that legacy users can be associated with existing surveys, providers, and other assets that have been migrated into iQIES. You can find your Federal Surveyor ID or Staff ID in the Employee Identification tab in ASPEN as shown in the image below.</p>
-                                <p><img src="FSID.jpg" style="width: 700px" alt="Federal Surveyor ID/Staff ID in Employee Identification tab in ASPEN" aria-describedby="fsidImage"></p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="iq-button-wrapper si hide" style="margin-top: -1rem;"> <a href="#sa" class="btn btn-primary" onClick="saveID()">Save</a>
-                    <button class="btn btn-link" onClick="$('.si').toggleClass('hide');">Cancel</button>
-                  </div>
-                </div>
-              </section>
+              
             </div>
             <div class="edit-view orgStep"> </div>
             <div class="modal fade" id="editSA" tabindex="-1" role="dialog" aria-hidden="true">
@@ -814,7 +387,7 @@
                     <td>Home Health Agency</td>
                     <td>CCN 327046<br>
                       FACID IL1199112556677</td>
-                    <td><span class="iq-status iq-status-open"></span><small>Active</small></td>
+                    <td><span class="iq-status-pending"></span><small>Pending</small></td>
                     <td>01/01/2020</td>
                   </tr>
                 </tbody>
