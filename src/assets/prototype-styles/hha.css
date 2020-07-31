@@ -677,16 +677,11 @@ a.return-link:before { font-family: "Font Awesome 5 Pro"; font-weight: 100; marg
 .iq-inline-list li { display: inline-block; }
 
 /* STEPPER */
-.iq-stepper { padding-top: 0; margin-top: 0; position: relative; }
+.iq-stepper { padding-top: 0; margin-top: 0; position: relative;  }
 .iq-stepper legend { position: absolute; bottom: -1rem; }
 .iq-stepper ol { list-style: none; margin: 0 0 2rem 0; padding: 0; }
-.iq-stepper li { display: inline-block; margin-right: .5rem;}
-.iq-stepper li div {
-    background-color: #D6D7D9; height: .75rem; width: 12rem; display: inline-block; 
-}
-.iq-stepper li.active div {
-    background-color: #0071BC; 
-}
+.iq-stepper li { display: inline-block; margin-right: .5rem; background-color: #D6D7D9; padding: 0; height: .7rem; width: 100%; max-width: 12rem; }
+.iq-stepper li.active { background-color: #0071BC; }
 
 
 /* SPINNER */
