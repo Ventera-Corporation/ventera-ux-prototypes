@@ -163,9 +163,9 @@
                 </div>
                 <div class="col-md-12">
                   <p>
-                    <label>Provider Name (DBA) <span class="iq-asterisk">*</span></label>
+                    <label>Provider's Doing Business As (DBA) Name <span class="iq-asterisk">*</span></label>
                     <input type="text" class="form-control" value="BrightHope" id="providerNameInput" required>
-                    <span class="help-text">The Doing Business As Name reported on CMS 855</span> </p>
+                    <span class="help-text">The DBA Name reported on CMS 855A</span> </p>
                 </div>
                 <div class="col-md-12 legalName">
                   <div class="form-group">
@@ -174,7 +174,7 @@
                     name="sameAsBusName"
                     class="custom-control-input" value="value" onChange="if(this.checked){ $('#legalNameInput').val( $('#providerNameInput').val() ); $('#legalNameInput').prop('readonly', true); }">
                       <label class="custom-control-label"
-                    for="sameAsBusName"> Legal Business Name same as Provider Name (DBA) </label>
+                    for="sameAsBusName"> Legal Business Name same as DBA Name</label>
                     </div>
                   </div>
                   <div class="form-group">
@@ -425,7 +425,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <label>Provider Name (DBA)</label>
+                    <label>Provider's Doing Business As (DBA) Name</label>
                   </div>
                   <div class="col-md-8">
                     <p>BrightHope</p>
@@ -519,150 +519,7 @@
               </div>
             </section>
           </div>
-          <!--<div class="tab-pane " id="mailing" role="tabpanel">
-            <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Mailing Address</h2>
-              </div>
-              <div class="col-md-2 text-right">
-                <button class="btn btn-outline-primary hide" onClick="$('#mailing .edit-view').addClass('active'); $('#mailing .read-view').removeClass('active'); $(this).addClass('hide');  $('.successMsg').addClass('hide');">Edit</button>
-              </div>
-            </div>
-            <section class="edit-view active">
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" id="sameAsFacilityAddressM"
-                            name="sameAsFacilityAddress"
-                            class="custom-control-input" value="value">
-                    <label class="custom-control-label"
-                            for="sameAsFacilityAddressM"> Same as Primary Location </label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                 <div class="col-md-12">
-                  <div class="form-group">
-                    <label>Address Line 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control"
-                            required>
-                      <span class="help-text">Number and street name or PO box</span>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label>Address Line 2</label>
-                    <input type="text" class="form-control">
-                      <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input"
-                            required>
-                    <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>State</label>
-                    <select class="form-control">
-                      <option value="">Select one</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">District Of Columbia</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
-                      <option value="KY">Kentucky</option>
-                      <option value="LA">Louisiana</option>
-                      <option value="ME">Maine</option>
-                      <option value="MD">Maryland</option>
-                      <option value="MA">Massachusetts</option>
-                      <option value="MI">Michigan</option>
-                      <option value="MN">Minnesota</option>
-                      <option value="MS">Mississippi</option>
-                      <option value="MO">Missouri</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NV">Nevada</option>
-                      <option value="NH">New Hampshire</option>
-                      <option value="NJ">New Jersey</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="NY">New York</option>
-                      <option value="NC">North Carolina</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
-                      <option value="OR">Oregon</option>
-                      <option value="PA">Pennsylvania</option>
-                      <option value="RI">Rhode Island</option>
-                      <option value="SC">South Carolina</option>
-                      <option value="SD">South Dakota</option>
-                      <option value="TN">Tennessee</option>
-                      <option value="TX">Texas</option>
-                      <option value="UT">Utah</option>
-                      <option value="VT">Vermont</option>
-                      <option value="VA">Virginia</option>
-                      <option value="WA">Washington</option>
-                      <option value="WV">West Virginia</option>
-                      <option value="WI">Wisconsin</option>
-                      <option value="WY">Wyoming</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>Zip Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control required-form-input" required>
-                     <p class="iq-input-error-msg hide"><i class="fas fa-exclamation-triangle" title="Error"></i> This field is required</p>
-                  </div>
-                </div>
-              </div>
-              
-              
-                  <div class="iq-button-wrapper">
-                    <a href="#mainContent" class="btn btn-primary" onClick="if($('#cityM').val() == ''){ $('.errorMsg').removeClass('hide'); $('.required-form-input').addClass('iq-input-error'); $('.iq-input-error-msg').removeClass('hide'); } else { $('.errorMsg').addClass('hide');  $('.required-form-input').removeClass('iq-input-error'); $('.iq-input-error-msg').addClass('hide'); $('#mailing .edit-view').removeClass('active'); $('#mailing .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#mailing .tabTitle .btn').removeClass('hide');}">Save</a>
-                    <button class="btn btn-link" onClick="$('#mailing .edit-view').removeClass('active'); $('#mailing .read-view').addClass('active');  $('#mailing .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                  </div>
-               
-            </section>
-            <section class="read-view">
-                
-            <div class="iq-list">
-                <div class="row">
-                    <div class="col-md-4"><label>Same as Primary Location</label></div>
-                    <div class="col-md-8"><p>Yes</p></div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4"><label>Address</label></div>
-                  <div class="col-md-8"><p>123 Temporary Road, Suite 100<br>
-                    Reston, VA 20190</p></div>
-                </div>
-            </div>
-               
-            
-            </section>
-          </div>-->
+      
           <div class="tab-pane " id="certs" role="tabpanel"
                     aria-labelledby="certsTab">
             <div class="row tabTitle">
@@ -1452,8 +1309,7 @@
               </div>
             </section>
           </div>
-          <div class="tab-pane " id="building" role="tabpanel"
-                    aria-labelledby="buildingTab"> 
+          <div class="tab-pane " id="building" role="tabpanel" aria-labelledby="buildingTab"> 
             <!-- edit building or wing -->
             <section class="edit-view building1">
               <div class="row tabTitle">
