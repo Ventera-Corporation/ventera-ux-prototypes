@@ -154,9 +154,9 @@
                 </div>
                 <div class="col-md-12">
                   <p>
-                    <label>Provider Name (DBA) <span class="iq-asterisk">*</span></label>
+                    <label>Provider's Doing Business As (DBA) Name <span class="iq-asterisk">*</span></label>
                     <input type="text" class="form-control" value="BrightHope" id="providerNameInput" required>
-                    <span class="help-text">The Doing Business As Name reported on CMS 855</span> </p>
+                    <span class="help-text">The DBA Name reported on CMS 855A</span> </p>
                 </div>
                 <div class="col-md-12 legalName">
                   <div class="form-group">
@@ -165,13 +165,13 @@
                     name="sameAsBusName"
                     class="custom-control-input" value="value" onChange="if(this.checked){ $('#legalNameInput').val( $('#providerNameInput').val() ); $('#legalNameInput').prop('readonly', true); }">
                       <label class="custom-control-label"
-                    for="sameAsBusName"> Legal Name Same as Provider Name (DBA) </label>
+                    for="sameAsBusName"> Legal Business Name same as DBA Name</label>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Legal Name</label>
+                    <label>Legal Business Name</label>
                     <input type="text" id="legalNameInput" class="form-control" value="">
-                    <p class="help-text">The legal name reported on CMS 855A</p>
+                    <p class="help-text">The legal business name reported on CMS 855A</p>
                   </div>
                 </div>
                 <div class="col-md-12"> <br>
@@ -213,13 +213,13 @@
                           <input type="text" class="form-control" id="county">
                         </div>
                       </div>
-                      <div class="col-md-6"></div>
+                      <!--<div class="col-md-6"></div>-->
                       <div class="col-md-6">
                         <div class="form-group">
                           <label>CMS Region</label>
                           5 - Chicago </div>
                       </div>
-                      <div class="col-md-6"></div>
+                      
                       <div class="col-md-6">
                         <div class="form-group">
                           <label>Management Unit
@@ -416,7 +416,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <label>Provider Name (DBA)</label>
+                    <label>Provider's Doing Business As (DBA) Name</label>
                   </div>
                   <div class="col-md-8">
                     <p>BrightHope</p>
@@ -424,7 +424,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <label>Legal Name</label>
+                    <label>Legal Business Name</label>
                   </div>
                   <div class="col-md-8">
                     <p class="iq-not-available">No information</p>
@@ -455,7 +455,7 @@
                   </div>
                 </div>
               </div>
-              <h3>Contact Information</h3>
+              <h3>Location and Contact Information</h3>
               <div class="iq-list">
                 <div class="row">
                   <div class="col-md-4">
