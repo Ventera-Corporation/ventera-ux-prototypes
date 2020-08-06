@@ -145,7 +145,7 @@
 					<div class="card-body p-0 provider">
 						<br>
                        <div class="row">
-				                    <div class="col-md-6 col-lg-4 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch">
+				                    <div class="col-md-6 col-lg-6 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch">
                                         <fieldset class="iq-fieldset flex-fill"><legend>Type &amp; ID</legend>
                                 
 									  <div class="form-group notState">
@@ -165,7 +165,7 @@
                                 
                             </fieldset>
                                     </div> 
-                                   <div class="col-md-6 col-lg-4 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch">
+                                   <div class="col-md-6 col-lg-6 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch">
                                         <fieldset class="iq-fieldset flex-fill"><legend>Status</legend>
 
                                                   <div class="form-group">
@@ -199,45 +199,22 @@
                                         </fieldset>    
                                     </div>
                                   
-                                   <div class="col-md-6 col-lg-4 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch">
-                                        <fieldset class="iq-fieldset flex-fill"><legend>Citation Tag</legend>
-                                <div class="form-group">
-                          <label>Citation Tag Number</label>
-                          <input type="text">
-                          <span class="help-text">E.g. G0406</span>
-                      </div>
-                               <fieldset>
-                        <legend class="mb-2">Citation Dates</legend>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="input-group">
-                              <label class="input-group-text input-group-prepend">From</label>
-                              <input type="date" class="form-control">
-                            </div>
-                            <span class="input-group-help-text help-text">MM/DD/YYYY</span> </div>
-                          <div class="col-md-12">
-                            <div class="input-group"> <span class="input-group-text">To</span>
-                              <input type="date" class="form-control">
-                            </div>
-                            <span class="input-group-help-text help-text">MM/DD/YYYY</span> </div>
-                        </div>
-                      </fieldset>
-                            </fieldset>
-                                   </div>
-                                    <div class="col-md-6 col-lg-12 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch">
+                                   <div class="col-md-12 col-lg-12 col-xl-6 iq-group d-flex align-items-stretch align-content-stretch">
+                                     
+                                  
                                         <fieldset class="iq-fieldset flex-fill"><legend>Location</legend>
-<div class="row"><div class="col-lg-3 col-xl-12">
+<div class="row"><div class="col-md-4 col-lg-3 col-xl-6">
                                     <div class="form-group">
                           <label>Street Address<input class="form-control" type="text" value=""></label>
                       </div>
-</div><div class="col-lg-3 col-xl-12">
+</div><div class="col-md-4 col-lg-3 col-xl-6">
                                     <div class="form-group">
                           <label>City<input class="form-control" type="text" value=""></label>
                       </div>
-</div><div class="col-lg-3 col-xl-12">
+</div><div class="col-md-4 col-lg-3 col-xl-6">
                                     <div class="form-group">
                           <label>State</label>
-                          <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
+                          <select multiple="multiple" style="display: none;" class="multiselect state">
                               <option value="AL">Alabama</option>
                               <option value="AK">Alaska</option>
                               <option value="AZ">Arizona</option>
@@ -294,11 +271,11 @@
 
                           <span class="help-text">Select one or more</span>
                       </div>
-</div><div class="col-lg-3 col-xl-12">
+</div><div class="col-md-4 col-lg-3 col-xl-6">
                                     <div class="form-group">
                           <label>Zip Code<input class="form-control" type="text" value=""></label>
                       </div>
-</div><div class="col-lg-3 col-xl-12">
+</div><div class="col-md-4 col-lg-3 col-xl-6">
                                     <div class="form-group notState">
                               <label>CMS Region</label>
                               <select multiple="multiple" style="display: none;" class="multiselect">
@@ -310,14 +287,15 @@
                               <!--<input class="form-control" type="text" value="" id="cmsregion" placeholder="">-->
                               <span class="help-text">Select one or more</span>
                           </div>
-</div><div class="col-lg-3 col-xl-12">
+</div><div class="d-none d-xl-block d-sm-block d-lg-none col-md-4 col-lg-3 col-xl-6"></div>
+    <div class="col-md-4 col-lg-3 col-xl-6">
                                     <div class="form-group">
                               <label>Management Unit
                               <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
                               </label>
                               <p class="help-text">State must be selected</p>
                           </div>
-</div><div class="col-lg-3 col-xl-12">
+</div><div class="col-md-4 col-lg-3 col-xl-6">
                                     <div class="form-group">
                               <label>Work Unit
                                <select disabled><option>Select one</option></select>
@@ -601,7 +579,11 @@
                                     <div class="form-group">
                                     <label>Survey Type</label>
                                     <select><option>All</option><option>Health</option><option>Life Safety Code</option><option>Clinical Laboratory</option></select>
-                                </div>
+                                </div><div class="form-group">
+                          <label>Citation Tag Number</label>
+                          <input type="text">
+                          <span class="help-text">E.g. G0406</span>
+                      </div>
                                 </fieldset>
                                 <fieldset class="iq-fieldset flex-fill"><legend>Staff/Surveyor</legend>
                                     <div class="form-group notState">
@@ -610,6 +592,9 @@
 								<span class="help-text">Search by name</span>
 								</div>
                                 </fieldset>
+                               <!-- <fieldset class="iq-fieldset flex-fill"><legend>Citation Tag</legend>
+                                    
+                                </fieldset>-->
                             </div>
                             
                             <div class="col-md-6 col-lg-4 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch">
@@ -618,7 +603,7 @@
 									<label>Survey Status</label>
 									<!--<input type="text" id="surveyStatus">-->
 									<select multiple="multiple" style="display: none;" class="multiselect">
-									  <option>All</option><option>New</option><option>Writing in Progress</option><option>Writing Complete</option>
+									  <option>New</option><option>Writing in Progress</option><option>Writing Complete</option>
 										<option>Revisit Created</option><option>Closed</option>
 								  </select>
 									<span class="help-text">Select one or more</span>
@@ -705,7 +690,7 @@
                                     <div class="row"><div class="col-lg-4 col-xl-12">
                                     <div class="form-group">
                   <label>State</label>
-                  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
+                  <select multiple="multiple" style="display: none;" class="multiselect state">
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -1141,7 +1126,7 @@
                                  <div class="row"><div class="col-lg-4 col-xl-12">
 							  <div class="form-group">
 								  <label>State</label>
-								  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
+								  <select multiple="multiple" style="display: none;" class="multiselect state">
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
@@ -1505,7 +1490,7 @@
                                      <div class="row"><div class="col-lg-4 col-xl-12">
                                       <div class="form-group">
 								  <label>State</label>
-								  <select multiple="multiple" style="display: none;" class="multiselect state"><option>All</option>
+								  <select multiple="multiple" style="display: none;" class="multiselect state">
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
                       <option value="AZ">Arizona</option>
