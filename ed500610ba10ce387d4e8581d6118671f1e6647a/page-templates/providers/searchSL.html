@@ -22,16 +22,16 @@
 		<div class="container-fluid">
 		  <div class="row">
 			<div class="col">
-			  <nav><a href="#"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
-				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
+			  <nav><a href="#" class="p-3"><img src="../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+				<div class="dropdown d-none d-lg-block d-lg-inline-block active">
 					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
-					  <a class="dropdown-item" href="search.html">Search for a Provider or Intake</a>
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
 					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
 				  </div>
-				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
-				<div class="dropdown d-none d-sm-block d-lg-inline-block">
+				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-lg-block">Assessments</a>
+				<div class="dropdown d-none d-lg-block d-lg-inline-block">
 					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
 					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
@@ -40,7 +40,7 @@
 					<a class="dropdown-item" href="#">My Reports</a>
 				  </div>
 				</div>
-				<div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+				<div class="dropdown d-none d-lg-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
 					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
 				  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
 					  <a class="dropdown-item" href="#">Letters</a>
@@ -1019,182 +1019,37 @@
 				  <div id="iAdvancedSearch-showhide" class="collapse">
 					<div class="card-body p-0">
 						<br>
-						<div class="intake">
 						<div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-									<label>Intake Type</label>
-									<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complaint</button>
-                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incident</button>
-                </div>
-									
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-									<label>Intake Status</label>
-									<select multiple="multiple" style="display: none;" class="multiselect">
-										<option>Triage/Prioritization</option>
-										<option>No Action</option>
-										<option>Pending RO Approval</option>
-										<option>Pending Investigation</option>
-										<option>Under Investigation</option>
-									</select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-						    <div class="col-md-6 col-lg-4 col-xl-3">
-								<div class="form-group notState">
-									<label>Triage Priority</label>
-									<select multiple="multiple" style="display: none;" class="multiselect">
-										<option>Immediate Jeopardy</option><option>Non-IJ High</option>
-										<option>Non-IJ Medium</option><option>Non-IJ Low</option><option>Not Applicable</option>
-									</select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-							<div class="col-md-12 col-lg-12 hide">
-								<div class="form-group">
-									
-									<div class="custom-control custom-checkbox">
-									  <input type="checkbox" id="roapproved2" class="custom-control-input">
-									   <label class="custom-control-label" for="roapproved2">Show only open intakes approved by an RO</label>
-									</div> 
-								</div>
-							</div>
-					  
-							
-							
-							
-						
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
-								<input type="text">
-								</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-								
-								<label>Intake Start Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-						
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-								<label>Survey Action</label>
-								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
-								</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-								
-								<label>Survey Due Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-							
-							</div>
-							
-							<div class="col-md-4 col-lg-4 col-xl-3">
-								<div class="form-group">
+                            <div class="col-md-6 col-lg-6 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch flex-column">
+                                <fieldset class="iq-fieldset flex-fill"><legend>Type</legend>
+                                 <div class="form-group">
+                        <label>Intake Type</label>
+                        <select>
+                          <option>Both</option>
+                          <option>Complaint</option>
+                          <option>Incident</option>
+                        </select></div>
+                                    <div class="form-group">
 									<label>Intake Sub Type</label>
 									<select><option>All</option>
 										<option>Federal COPs, CFCs, RFPs, EMTALA</option>
 										<option>State-only, licensure</option>
 										<option>No State or Federal provider complaince issue invovled</option>
 										<option>Federally required, entity reported</option>
+										<option>State-required, entity reported</option>
 										<option>State-required, may result in Federal non-compliance, entity-reported</option>
 										<option>State-required, all other, entity-reported</option>
 										<option>Reported by other agencies</option>
 										<option>None of the above</option>
 									</select>
 								</div>
-							</div>
-							
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-						  <label>RO Approval Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
+                                </fieldset>
+                                <!--<fieldset class="iq-fieldset flex-fill"><legend>Staff/Parties Involved</legend>
+                                	<div class="form-group">
+								<label>Intake Staff <i class="far fa-info-circle has-tooltip" title="User that recorded the intake" data-toggle="tooltip"></i></label>
+								<input type="text">
 								</div>
-						  </div>
-						
-							<div class="col-md-12 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-								<label>Triage Complete</label>
-								<div class="btn-group" role="group" aria-label="Button Group Example">
-                  <button type="button" class="btn active" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Both</button>
-                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Complete</button>
-                  <button type="button" class="btn" onClick="$(this).siblings('button').removeClass('active'); $(this).addClass('active');">Incomplete</button>
-                </div>
-			</div>
-							</div>
-							<div class="col-md-8 col-lg-8 col-xl-6 hide">
-								
-								<label>Triage Complete Date Range</label>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-group">
-											<label class="input-group-text input-group-prepend">From</label>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-									<div class="col-md-6">
-										<div class="input-group">
-											<span class="input-group-text">To</span>
-											<input type="date" class="form-control">
-										</div>
-										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
-									</div>	
-								</div>
-								
-							</div>
-						
-							<div class="col-md-4 col-lg-4 col-xl-3 hide">
-								<div class="form-group notState">
+                                    <div class="form-group notState">
 								<label>Responsible Staff</label>
 								<select multiple="multiple" style="display: none;" class="multiselect">
 									<option>Roberta Carr</option>
@@ -1207,16 +1062,137 @@
 								</select>
 								<span class="help-text">Select one or more</span>
 								</div>
-							</div>
-							</div><div class="row">
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group">
-								<label>Complainant or Person Affected</label>
+                                    <div class="form-group">
+								<label>Complainant/Person Affected</label>
 								<input type="text">
 								</div>
-							</div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
-							  <div class="form-group stateMS">
+                                </fieldset>-->
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch">
+                                <fieldset class="iq-fieldset flex-fill"><legend>Status</legend>
+                                   <div class="form-group notState">
+									<label>Intake Status</label>
+									<select multiple="multiple" style="display: none;" class="multiselect">
+										<option>Triage/Prioritization</option>
+										<option>No Action</option>
+										<option>Pending RO Approval</option>
+										<option>Pending Investigation</option>
+										<option>Under Investigation</option>
+									</select>
+									<span class="help-text">Select one or more</span>
+								</div>
+                                    <div class="form-group notState">
+									<label>Triage Priority</label>
+									<select multiple="multiple" style="display: none;" class="multiselect">
+										<option>Immediate Jeopardy</option><option>Non-IJ High</option>
+										<option>Non-IJ Medium</option><option>Non-IJ Low</option><option>Not Applicable</option>
+									</select>
+									<span class="help-text">Select one or more</span>
+								</div>
+                                   <!--   <div class="form-group">
+								<label>Triage Complete</label>
+                        <select>
+                          <option>Both</option>
+                          <option>Complete</option>
+                          <option>Incomplete</option>
+                        </select>
+			</div>
+                                    <fieldset><legend class="mb-2">Triage Complete Dates</legend>
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+                                </fieldset>
+                                    <div class="form-group">
+								<label>Survey Action</label>
+								<select><option>All</option><option>Survey</option><option>Offsite Investigation/Administrative Review</option><option>No Investigation</option></select>
+								</div>
+                                  <div class="form-group notState">
+								<label>Referral Agency</label>
+								<select multiple="multiple" style="display: none;" class="multiselect">
+									<option>Hospital Program - Regional</option>
+									<option>Office of Mental Health</option>
+									<option>Agency C</option>
+									<option>Agency D</option>
+									<option>Agency E</option>
+									<option>Agency F</option>
+									</select>
+									<span class="help-text">Select one or more</span>
+								</div>-->
+                                </fieldset>
+                            </div>
+                            <!--<div class="col-md-6 col-lg-4 col-xl-3 iq-group d-flex align-items-stretch align-content-stretch flex-column">
+                                
+                               <fieldset class="iq-fieldset flex-fill"><legend>Start &amp; Due Dates</legend>
+                         
+								<fieldset><legend class="mb-2">Intake Start Dates</legend>
+									
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+								 </fieldset>
+                                <fieldset><legend class="mb-2">Survey Due Dates</legend>
+								
+										<div class="input-group">
+											<label class="input-group-text input-group-prepend">From</label>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									
+										<div class="input-group">
+											<span class="input-group-text">To</span>
+											<input type="date" class="form-control">
+										</div>
+										<span class="input-group-help-text help-text">MM/DD/YYYY</span>
+									
+                                </fieldset>
+                                </fieldset>
+                                <fieldset class="iq-fieldset flex-fill"><legend>RO Approved</legend>
+                                           <div class="form-group">
+
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="roapproved2" class="custom-control-input">
+                                   <label class="custom-control-label" for="roapproved2">Show only open intakes approved by an RO</label>
+                                </div> 
+                            </div>
+                                         <fieldset><legend class="mb-2">RO Approval Dates</legend>
+
+                                    <div class="input-group">
+                                        <label class="input-group-text input-group-prepend">From</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <span class="input-group-help-text help-text">MM/DD/YYYY</span>
+
+                                    <div class="input-group">
+                                        <span class="input-group-text">To</span>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <span class="input-group-help-text help-text">MM/DD/YYYY</span>
+
+                            </fieldset>
+                                      </fieldset>
+                                
+                            </div>-->
+                            
+                             <div class="col-md-12 col-lg-12 col-xl-6 iq-group d-flex align-items-stretch align-content-stretch">
+                                         
+                            <fieldset class="iq-fieldset flex-fill"><legend>Location</legend>
+                                 <div class="row"><div class="col-md-4 col-lg-3 col-xl-6">
+							  <div class="form-group">
 								  <label>State</label>
 								  <select multiple="multiple" style="display: none;" class="multiselect state">
                       <option value="AL">Alabama</option>
@@ -1273,47 +1249,29 @@
                    
 				  </select>
 								  <span class="help-text">Select one or more</span>
-								  <span class="iq-input-error-msg hide">At least one state is required</span>
 								  
 							  </div>
-							  <div class="form-group stateNone hide">
-								<label>State</label>
-								<input type="text" class="read-only-text" readonly value="Illinois">
-							  </div>
 							</div>
-                            <div class="col-md-4 col-lg-4 col-xl-3">
+                            <div class="d-none d-xl-block d-sm-block d-lg-none d-md-none col-md-4 col-lg-3 col-xl-6"></div>
+                                     <div class="col-md-4 col-lg-3 col-xl-6">
 								  <div class="form-group">
 									  <label>Management Unit
 									  <select><option>Select one</option><option>x</option><option>y</option><option>z</option></select>
 									  </label>
 									  <p class="help-text">State must be selected</p>
 								  </div>
-							  </div>
-							<div class="col-md-4 col-lg-4 col-xl-3">
+							  </div><div class="col-md-4 col-lg-3 col-xl-6">
 								  <div class="form-group">
 									  <label>Work Unit
 									   <select disabled><option>Select one</option></select>
 									  </label>
 									  <p class="help-text">Management unit must be selected</p>
 								  </div>
-							  </div>
-							<div class="col-md-6 col-lg-4 col-xl-3 hide">
-								<div class="form-group notState">
-								<label>Referral Agency</label>
-								<select multiple="multiple" style="display: none;" class="multiselect">
-									<option>Hospital Program - Regional</option>
-									<option>Office of Mental Health</option>
-									<option>Agency C</option>
-									<option>Agency D</option>
-									<option>Agency E</option>
-									<option>Agency F</option>
-									</select>
-									<span class="help-text">Select one or more</span>
-								</div>
-							</div>
-						</div>
-						<!-- end intake row -->
-					</div>
+						</div></div>
+                                
+                            </fieldset>
+                            </div>
+                        </div>
 					
 				  </div>
 				</div>
@@ -2037,6 +1995,8 @@ function drawIntakeTable(){
 		  lengthMenu: false,
 		  info: false,
 		  searching: false,
+          scrollX: true,
+          
 		  //responsive: {
 		//	details: { type: 'column'}
 		 // },
