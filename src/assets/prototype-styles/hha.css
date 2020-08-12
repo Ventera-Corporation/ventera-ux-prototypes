@@ -318,6 +318,11 @@ dl.iq-list dd { padding: 1rem; margin-bottom: 0; vertical-align: top; display: i
 dl.iq-list > dt:nth-of-type(odd), dl.iq-list > dd:nth-of-type(odd){ background-color: #f8f8f8;}
 dl.iq-list dt ~ dd { align-self: stretch; }
 
+dl.iq-dl dt { color: #5B616B; font-weight: normal; width: 5rem; float: left; clear: left;}
+dl.iq-dl dt::after { content: ': ';  }
+dl.iq-dl dd { margin: 0 0 0 5.5rem; padding: 0 0 0.5em 0;}
+
+
 .card-body.iq-list dt { font-size: 1rem; padding: 1rem; margin-bottom: 0; vertical-align: top; display: inline-block; width: 30%; }
 .card-body.iq-list dd { padding: 1rem; padding-left: 0; margin-bottom: 0; vertical-align: top; display: inline-block; width: 70%; margin-left: -.3rem; align-self: stretch!important; }
 .card-body.iq-list dl > dt:nth-of-type(odd), .card-body.iq-list dl > dd:nth-of-type(odd){ background-color: #f8f8f8;}
