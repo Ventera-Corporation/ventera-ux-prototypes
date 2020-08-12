@@ -311,10 +311,27 @@ label .iq-input-error-msg::before, label .iq-input-info-msg::before { line-heigh
 .iq-list-buttons { text-align: right; }
 .iq-list-buttons .btn { float: right; margin-left: 1rem; white-space: nowrap; }
 
+dl.iq-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 2rem; 
+    border-bottom: 1px solid #f1f1f1;
+}
+dl.iq-list dt {
+    flex-basis: 30%;
+    text-align: left;
+    font-size: 1rem; 
+    padding: 1rem; margin-bottom: 0; 
+    vertical-align: top;
+}
+dl.iq-list dd {
+    flex-basis: 60%;
+    flex-grow: 1;
+    padding: 1rem; 
+    margin-bottom: 0; 
+    vertical-align: top;
+}
 
-dl.iq-list { margin-bottom: 2rem; border-bottom: 1px solid #f1f1f1; }
-dl.iq-list dt { font-size: 1rem; padding: 1rem; margin-bottom: 0; vertical-align: top; display: inline-block; width: 30%; }
-dl.iq-list dd { padding: 1rem; margin-bottom: 0; vertical-align: top; display: inline-block; width: 70%; margin-left: -.3rem; }
 dl.iq-list > dt:nth-of-type(odd), dl.iq-list > dd:nth-of-type(odd){ background-color: #f8f8f8;}
 dl.iq-list dt ~ dd { align-self: stretch; }
 
