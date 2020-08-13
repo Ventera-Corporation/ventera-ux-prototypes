@@ -2278,39 +2278,118 @@
                                 </div>
                                 <div id="s1b4" class="collapse">
                                   <div class="card-body iq-list">
-                                      
-                                      <dl>
-                                          <dt>Building ID</dt>
-                                          <dd>T1</dd>
-                                      </dl>
-                                      <dl>
-                                          <dt>Number of Stories</dt>
-                                          <dd>3</dd>
-                                      </dl>
-                                      <dl>
-                                          <dt>Building Location Description</dt>
-                                          <dd><p class="iq-not-available">No information</p></dd>
-                                          <dt>Plan Approval Date</dt>
-                                          <dd>08/15/2000</dd>
-                                          <dt>Constructed Date</dt>
-                                          <dd><p class="iq-not-available">No information</p></dd>
-                                          <dt>Effective Date</dt>
-                                          <dd>10/25/2000</dd>
-                                          <dt>LSC Form Indicator</dt>
-                                          <dd>HC 2012 Existing</dd>
-                                          <dt>Regulation Set</dt>
-                                          <dd>Reg 1234556</dd>
-                                          <dt>Construction Type</dt>
-                                          <dd>Type I - Fire Resistive Construction</dd>
-                                          <dt>Hazmat Area Separate</dt>
-                                          <dd><p class="iq-not-available">No information</p></dd>
-                                          <dt>Sprinkler Required</dt>
-                                          <dd>No</dd>
-                                          <dt>Sprinkler Status</dt>
-                                          <dd>Partially Sprinklered</dd>
-                                          <dt>FSES Date</dt>
-                                          <dd><p class="iq-not-available">No information</p></dd>
-                                      </dl> </div>
+                                      <table class="iqies-list-table-row mt-4">
+                                          <tbody>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Building ID</p>
+                                                  </th>
+                                                  <td>
+                                                      T1
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Number of Stories</p>
+                                                  </th>
+                                                  <td>
+                                                      3
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Building Location Description</p>
+                                                  </th>
+                                                  <td>
+                                                     <p class="iq-not-available">No information</p> 
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Plan Approval Date</p>
+                                                  </th>
+                                                  <td>
+                                                      08/15/2000
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Constructed Date</p>
+                                                  </th>
+                                                  <td>
+                                                      <p class="iq-not-available">No information</p>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Effective Date</p>
+                                                  </th>
+                                                  <td>
+                                                      10/25/2000
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">LSC Form Indicator</p>
+                                                  </th>
+                                                  <td>
+                                                      HC 2012 Existing
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Regulation Set</p>
+                                                  </th>
+                                                  <td>
+                                                      Reg 1234556
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Construction Type</p>
+                                                  </th>
+                                                  <td>Type I - Fire Resistive Construction
+                                                      
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Hazmat Area Separate</p>
+                                                  </th>
+                                                  <td>
+                                                      <p class="iq-not-available">No information</p>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Sprinkler Required</p>
+                                                  </th>
+                                                  <td>
+                                                      No
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">Sprinkler Status</p>
+                                                  </th>
+                                                  <td>
+                                                      Partially Sprinklered
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <p class="iqies-label">FSES Date</p>
+                                                  </th>
+                                                  <td>
+                                                      <p class="iq-not-available">No information</p>
+                                                  </td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                     
+                                     
+                                        
+                                         </div>
                                 </div>
                               </div>
                             </div>
@@ -3238,34 +3317,56 @@
                   <h2>Add Contact</h2>
                   <p class="iqies-required-text">At least one field must be filled in below</p>
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <p>
-                        <label>Type
-                          <select><option disabled selected>Select one</option>
-                              <option>Provider Contact</option>
-                              <option>Emergency Contact</option>
-                              <option>Additional Contact</option>
+                        <label>Type 
+                           <select><option disabled>Select one</option>
+                              <option value="provider" disabled>Provider Contact</option>
+                              <option selected value="emergency"  disabled>Emergency Contact</option>
+                              <option value="additional" selected>Additional Contact</option>
                           </select>
+                            <span class="help-text">Only one provider contact and one emergency contact can be added</span>
                         </label>
                       </p>
                     </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-6">
+                      
+                        <div class="col-md-4">
                       <p>
                         <label>Name
                           <input type="text" class="form-control">
                         </label>
                       </p>
                     </div>
-                      <div class="col-md-6">
+                      <div class="col-md-8">
+                          <div class="row contactTitle">
+                                 <div class="col-md-6">
                       <p>
                         <label>Title
-                          <input type="text" class="form-control">
+                         <select onChange="if(this.options[this.selectedIndex].value == 'other'){ $('.otherTitle').removeClass('hide'); } else { $('.otherTitle').addClass('hide'); }"><option disabled selected>Select one</option><option>Chief Executive Officer</option><option>Clinical Manager</option>
+                             <option>Director of Nursing</option><option>Licensed Social Worker</option>
+                             <option>Managing Owner</option><option  value="other">Other</option></select>
+                            
                         </label>
                       </p>
                     </div>
+                    <div class="col-md-6 hide otherTitle">
+                        <p><label>Other Title</label>
+                            <input type="text" class="form-control">
+                            </p>
+                    </div>
+                          </div>
+                          <!-- onChange="console.log(this.options[this.selectedIndex].value); switch(this.options[this.selectedIndex].value){ case 'provider': case 'emergency': console.log('x'); $('.contactTitle').toggleClass('hide'); break; case 'additional': $('.contactTitle').toggleClass('hide'); break; }"<div class="row contactTitle hide">
+                      <div class="col-md-6"><p>
+                        <label>Title
+                          <input type="text" class="form-control">
+                        </label>
+                      </p></div></div>-->
+                    </div>
                     
+                    </div>
+                    <div class="row">
                     <div class="col-md-4">
                       
                           <p>
@@ -3319,7 +3420,7 @@
               <div class="row tabTitle">
                 <div class="col-md-10">
                   <h2>Additional Contacts</h2>
-                  <p>Add and manage additional contacts for this provider.</p>
+                  <p>Add and manage additional contacts for this provider. Only one provider contact and one emergency contact can be added.</p>
                   <p>
                     <button class="btn btn-primary" onclick="$('#contact .read-view').removeClass('active'); $('#contact .edit-view').removeClass('active'); $('#contact .edit-view.newContact').addClass('active');">Add Contact</button>
                   </p>
@@ -3382,11 +3483,7 @@
                     <div class="col-md-4">
                       <p>
                         <label>Type
-                          <select><option disabled>Select one</option>
-                              <option>Provider Contact</option>
-                              <option selected>Emergency Contact</option>
-                              <option>Additional Contact</option>
-                          </select>
+                          <input type="text" class="read-only-text" readonly  value="Emergency Contact">
                         </label>
                       </p>
                     </div>
@@ -3461,11 +3558,7 @@
                     <div class="col-md-4">
                       <p>
                         <label>Type
-                         <select><option disabled>Select one</option>
-                              <option selected>Provider Contact</option>
-                              <option>Emergency Contact</option>
-                              <option>Additional Contact</option>
-                          </select>
+                          <input type="text" class="read-only-text" readonly  value="Provider Contact">
                         </label>
                       </p>
                     </div>
@@ -3540,11 +3633,7 @@
                     <div class="col-md-4">
                       <p>
                         <label>Type
-                          <select><option disabled>Select one</option>
-                              <option>Provider Contact</option>
-                              <option>Emergency Contact</option>
-                              <option selected>Additional Contact</option>
-                          </select>
+                           <input type="text" class="read-only-text" readonly  value="Additional Contact">
                         </label>
                       </p>
                     </div>

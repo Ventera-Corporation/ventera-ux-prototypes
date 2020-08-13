@@ -1822,32 +1822,51 @@
                   <h2>Add Contact</h2>
                   <p class="iqies-required-text">At least one field must be filled in below</p>
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <p>
                         <label>Type
                           <select><option disabled>Select one</option>
-                              <option>Provider Contact</option>
-                              <option selected>Emergency Contact</option>
-                              <option>Additional Contact</option>
+                              <option value="provider">Provider Contact</option>
+                              <option selected value="emergency">Emergency Contact</option>
+                              <option value="additional">Additional Contact</option>
                           </select>
+                            <span class="help-text">Only one provider contact and one emergency contact can be added</span>
                         </label>
                       </p>
                     </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                       <p>
                         <label>Name
                           <input type="text" class="form-control">
                         </label>
                       </p>
                     </div>
-                      <div class="col-md-6">
+                      <div class="col-md-8">
+                          <div class="row contactTitle">
+                                 <div class="col-md-6">
                       <p>
+                        <label>Title
+                         <select onChange="if(this.options[this.selectedIndex].value == 'other'){ $('.otherTitle').removeClass('hide'); } else { $('.otherTitle').addClass('hide'); }"><option disabled selected>Select one</option><option>Chief Executive Officer</option><option>Clinical Manager</option>
+                             <option>Director of Nursing</option><option>Licensed Social Worker</option>
+                             <option>Managing Owner</option><option  value="other">Other</option></select>
+                            
+                        </label>
+                      </p>
+                    </div>
+                    <div class="col-md-6 hide otherTitle">
+                        <p><label>Other Title</label>
+                            <input type="text" class="form-control">
+                            </p>
+                    </div>
+                          </div>
+                          <!--<div class="row contactTitle">
+                      <div class="col-md-6"><p>
                         <label>Title
                           <input type="text" class="form-control">
                         </label>
-                      </p>
+                      </p></div></div>-->
                     </div>
                     
                     <div class="col-md-4">
@@ -1903,7 +1922,7 @@
               <div class="row tabTitle">
                 <div class="col-md-10">
                   <h2>Additional Contacts</h2>
-                  <p>Add and manage additional contacts for this provider.</p>
+                  <p>Add and manage additional contacts for this provider. Only one provider contact and one emergency contact can be added.</p>
                   <p>
                     <button class="btn btn-primary" onclick="$('#contact .read-view').removeClass('active'); $('#contact .edit-view').removeClass('active'); $('#contact .edit-view.newContact').addClass('active');">Add Contact</button>
                   </p>
