@@ -151,15 +151,15 @@
     <div class="row">
       <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 sideNav">
         <nav class="nav flex-column iq-nav" role="navigation" style="position: relative">
-            <a class="nav-link" tabindex="0" id="basicInfoTL" href="#basicInfoTab" data-toggle="tab" role="tab">Basic Information</a> 
-            <a class="nav-link" tabindex="0" id="staffTL" href="#staffTab" data-toggle="tab" role="tab">Responsible Staff</a> 
-            <a class="nav-link" tabindex="0" id="partiesTL" href="#partiesTab" data-toggle="tab" role="tab">Parties Involved</a>
-            <a class="nav-link" tabindex="0" id="allegationTL" href="#allegationTab" data-toggle="tab" role="tab">Allegations</a>
-            <a class="nav-link active" tabindex="0" id="triageTL" href="#triageTab" data-toggle="tab" role="tab">Triage</a>
-            <a href="javascript:void(0)" class="infoTooltip survey hide" style="position: absolute; bottom: 11.35rem; left: 4rem; " data-toggle="tooltip" data-placement="top" title="To initiate a survey or offsite investigation/administrative review, it must be indicated in the triage. ">&nbsp;</a><a class="nav-link disabled surveyTab" tabindex="0" id="surveyTL" href="#surveyTab" data-toggle="tab" role="tab">Survey</a>
-            <a class="nav-link" tabindex="0" id="lettersTL" href="#lettersTab" data-toggle="tab" role="tab">Letters</a>
-            <a class="nav-link" tabindex="0" id="notesTL" href="#notesTab" data-toggle="tab" role="tab">Notes</a>
-            <a class="nav-link" tabindex="0" id="attachmentsTL" href="#attachmentsTab" data-toggle="tab" role="tab">Attachments</a> 
+            <a class="nav-link" tabindex="0" id="basicInfoTL" href="#basic" data-toggle="tab" role="tab">Basic Information</a> 
+            <a class="nav-link" tabindex="0" id="staffTL" href="#staff" data-toggle="tab" role="tab">Responsible Staff</a> 
+            <a class="nav-link" tabindex="0" id="partiesTL" href="#parties" data-toggle="tab" role="tab">Parties Involved</a>
+            <a class="nav-link" tabindex="0" id="allegationTL" href="#allegation" data-toggle="tab" role="tab">Allegations</a>
+            <a class="nav-link active" tabindex="0" id="triageTL" href="#triage" data-toggle="tab" role="tab">Triage</a>
+            <a href="javascript:void(0)" class="infoTooltip survey hide" style="position: absolute; bottom: 11.35rem; left: 4rem; " data-toggle="tooltip" data-placement="top" title="To initiate a survey or offsite investigation/administrative review, it must be indicated in the triage. ">&nbsp;</a><a class="nav-link disabled surveyTab" tabindex="0" id="surveyTL" href="#survey" data-toggle="tab" role="tab">Survey</a>
+            <a class="nav-link" tabindex="0" id="lettersTL" href="#letters" data-toggle="tab" role="tab">Letters</a>
+            <a class="nav-link" tabindex="0" id="notesTL" href="#notes" data-toggle="tab" role="tab">Notes</a>
+            <a class="nav-link" tabindex="0" id="attachmentsTL" href="#attachments" data-toggle="tab" role="tab">Attachments</a> 
            
            </nav>
           
@@ -212,7 +212,7 @@
         </div>
         <div class="tab-content">
           <!-- basic info -->
-          <div class="tab-pane" id="basicInfoTab" role="tabpanel"  aria-labelledby="basicInfoTL">
+          <div class="tab-pane" id="basic" role="tabpanel"  aria-labelledby="basicInfoTL">
 			 
             <section class="edit-view">
 		
@@ -310,7 +310,7 @@
                 <a href="#" class="btn btn-primary" onClick="saveIntakeBasicInfo(this);">Save</a>
                 <button class="btn btn-link" onClick="if($('#newVal').val() == 0){
                       window.location = 'provider-profile.html';                  
-                    } else {('#tab1 .edit-view').removeClass('active'); $('#tab1 .read-view').addClass('active');  $('#tab1 .tabTitle .btn').removeClass('hide'); }">Cancel</button>
+                    } else {('#basic .edit-view').removeClass('active'); $('#basic .read-view').addClass('active');  $('#basic .tabTitle .btn').removeClass('hide'); }">Cancel</button>
                     <input type="hidden" id="newVal" value="0">
                   </div>
             </section>
@@ -321,7 +321,7 @@
                 
               </div>
               <div class="col-sm-2 text-right">
-                <button class="btn btn-outline-primary hide" onClick="$('#tab1 .edit-view').addClass('active'); $('#tab1 .read-view').removeClass('active'); $(this).addClass('hide'); $('.alert.successMsg').addClass('hide');">Edit</button>
+                <button class="btn btn-outline-primary hide" onClick="$('#basic .edit-view').addClass('active'); $('#basic .read-view').removeClass('active'); $(this).addClass('hide'); $('.alert.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
             <div class="iq-list">
@@ -382,7 +382,7 @@
             </section>  
           </div>
           <!-- responsible staff -->
-          <div class="tab-pane " id="staffTab" role="tabpanel" aria-labelledby="staffTL">
+          <div class="tab-pane " id="staff" role="tabpanel" aria-labelledby="staffTL">
             <section class="edit-view">
 				<div class="alert alert-danger staffCountError hide" role="alert">
           <div class="alert-content">
@@ -405,7 +405,7 @@
         $('.searchButton').click();
     }" >
           <div class="input-group-postpend">
-         <button type="submit" class="btn btn-outline-primary searchButton" onClick="if($('#inlineFormInputGroup').val().indexOf('s') > -1 && $('#inlineFormInputGroup').val().indexOf('m') > -1){ $('#tab2 .staffMembers tbody tr').addClass('hide'); $('#tab2 .staffMembers tbody tr.sm').removeClass('hide'); $('#tab2 .staffMembers .info-text').toggleClass('hide'); }">Search</button>
+         <button type="submit" class="btn btn-outline-primary searchButton" onClick="if($('#inlineFormInputGroup').val().indexOf('s') > -1 && $('#inlineFormInputGroup').val().indexOf('m') > -1){ $('#staff .staffMembers tbody tr').addClass('hide'); $('#staff .staffMembers tbody tr.sm').removeClass('hide'); $('#staff .staffMembers .info-text').toggleClass('hide'); }">Search</button>
         </div>
       </div><div class="input-group-help-text help-text">Search by name</div>
 <div class="toast alert-info show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: -5rem; right: -26rem; min-height: auto; ">
@@ -582,8 +582,8 @@
                     <a href="#mainContent" class="btn btn-primary" onClick="
     $('input[name=staffCheckList]').each(function (index, obj) {
         if($(this).prop('checked') == true){ $('#staffCount').val('1'); }
-    }); if( $('#staffCount').val() == 0 ){ $('.staffCountError').removeClass('hide'); } else { $('.staffCountError').addClass('hide'); $('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab2 .tabTitle .btn').removeClass('hide'); $('table.addedStaffMembers tr.asmith').removeClass('hide'); }">Add</a>
-                    <button class="btn btn-link" onClick="$('#tab2 .edit-view').removeClass('active'); $('#tab2 .read-view').addClass('active');  $('#tab2 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+    }); if( $('#staffCount').val() == 0 ){ $('.staffCountError').removeClass('hide'); } else { $('.staffCountError').addClass('hide'); $('#staff .edit-view').removeClass('active'); $('#staff .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#staff .tabTitle .btn').removeClass('hide'); $('table.addedStaffMembers tr.asmith').removeClass('hide'); }">Add</a>
+                    <button class="btn btn-link" onClick="$('#staff .edit-view').removeClass('active'); $('#staff .read-view').addClass('active');  $('#staff .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 
             </section>
@@ -598,7 +598,7 @@
             </div>
                
               
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab2 .read-view').removeClass('active'); $('#tab2 .edit-view').addClass('active'); ">Add Staff</button></div>
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#staff .read-view').removeClass('active'); $('#staff .edit-view').addClass('active'); ">Add Staff</button></div>
             <p class="info-text"><span class="baCount">1</span> Staff Member</p>
                   <div class="table-wrapper">  <table class="table table-striped addedStaffMembers">
   <thead>
@@ -628,7 +628,7 @@
             </section>
           </div>
           <!-- parties involved -->
-          <div class="tab-pane" id="partiesTab" role="tabpanel" aria-labelledby="partiesTL">
+          <div class="tab-pane" id="parties" role="tabpanel" aria-labelledby="partiesTL">
             <!-- party type -->
             <section class="edit-view active partyType">
                 <div class="row tabTitle">
@@ -856,11 +856,11 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab3 .edit-view').removeClass('active'); 
-     $('#tab3 .read-view').addClass('active'); 
+     $('#parties .edit-view').removeClass('active'); 
+     $('#parties .read-view').addClass('active'); 
      $('.alert.successMsg').removeClass('hide'); 
      $('.addedParty .complainant').removeClass('hide');">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- edit complainant --> 
@@ -1027,10 +1027,10 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab3 .edit-view').removeClass('active'); 
-     $('#tab3 .read-view').addClass('active'); 
+     $('#parties .edit-view').removeClass('active'); 
+     $('#parties .read-view').addClass('active'); 
      $('.alert.successMsg').removeClass('hide'); ">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- new perp -->
@@ -1186,8 +1186,8 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('.addedParty .perp').removeClass('hide');">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  ">Cancel</button>
+     $('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('.addedParty .perp').removeClass('hide');">Save</a>
+                    <button class="btn btn-link" onClick="$('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- edit perp -->
@@ -1343,8 +1343,8 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide');">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  ">Cancel</button>
+     $('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide');">Save</a>
+                    <button class="btn btn-link" onClick="$('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section> 
             <!-- new affected -->
@@ -1430,8 +1430,8 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('.addedParty .affected').removeClass('hide'); ">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  ">Cancel</button>
+     $('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('.addedParty .affected').removeClass('hide'); ">Save</a>
+                    <button class="btn btn-link" onClick="$('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- edit affected -->
@@ -1517,8 +1517,8 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide');">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  ">Cancel</button>
+     $('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide');">Save</a>
+                    <button class="btn btn-link" onClick="$('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- new other -->
@@ -1678,8 +1678,8 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('.addedParty .otherParty').removeClass('hide'); ">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  ">Cancel</button>
+     $('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('.addedParty .otherParty').removeClass('hide'); ">Save</a>
+                    <button class="btn btn-link" onClick="$('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- edit other -->
@@ -1840,8 +1840,8 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('.addedParty .otherParty').removeClass('hide'); ">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab3 .edit-view').removeClass('active'); $('#tab3 .read-view').addClass('active');  ">Cancel</button>
+     $('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('.addedParty .otherParty').removeClass('hide'); ">Save</a>
+                    <button class="btn btn-link" onClick="$('#parties .edit-view').removeClass('active'); $('#parties .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- read view -->
@@ -1854,7 +1854,7 @@
                 
               </div>
             </div>
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab3 .edit-view.partyType').addClass('active'); $('#tab3 .read-view').removeClass('active');">Add Party</button>  
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#parties .edit-view.partyType').addClass('active'); $('#parties .read-view').removeClass('active');">Add Party</button>  
                 </div>                
                 <p class="info-text"><span class="partyCount">1 Party</span> Involved</p>
                 
@@ -1869,7 +1869,7 @@
               <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
                 Delete
               </button>
-              <button type="button" class="btn btn-link" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editOtherParty').addClass('active'); ">Edit</button>
+              <button type="button" class="btn btn-link" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.editOtherParty').addClass('active'); ">Edit</button>
             </div>
           </div>
           <div id="aP5" class="collapse">
@@ -1915,7 +1915,7 @@
               <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
                 Delete
               </button>
-              <button type="button" class="btn btn-link" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editAffected').addClass('active'); ">Edit</button>
+              <button type="button" class="btn btn-link" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.editAffected').addClass('active'); ">Edit</button>
             </div>
           </div>
           <div id="aP4" class="collapse">
@@ -1961,7 +1961,7 @@
               <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
                 Delete
               </button>
-              <button type="button" class="btn btn-link" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editPerp').addClass('active'); ">Edit</button>
+              <button type="button" class="btn btn-link" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.editPerp').addClass('active'); ">Edit</button>
             </div>
           </div>
           <div id="aP3" class="collapse">
@@ -2016,7 +2016,7 @@
               <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmPartyDeletion">
                 Delete
               </button>
-              <button type="button" class="btn btn-link" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editComplainant').addClass('active'); ">Edit</button>
+              <button type="button" class="btn btn-link" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.editComplainant').addClass('active'); ">Edit</button>
             </div>
           </div>
           <div id="aP2" class="collapse">
@@ -2095,8 +2095,8 @@
       <td><p>Complainant: Confidential, Primary</p></td>
       <td><p></p></td>
       <td class="iqies-list-button-group">
-          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.viewComplainant').addClass('active'); ">View</a>
-          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editComplainant').addClass('active'); ">Edit</a>
+          <a href="javascript:void(0)" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.viewComplainant').addClass('active'); ">View</a>
+          <a href="javascript:void(0)" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.editComplainant').addClass('active'); ">Edit</a>
           <a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
     </tr>
     <tr class="perp hide">
@@ -2104,8 +2104,8 @@
       <td><p>Alleged Perpetrator</p></td>
       <td><p></p></td>
       <td class="iqies-list-button-group">
-          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.viewPerp').addClass('active'); ">View</a>
-          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editPerp').addClass('active'); ">Edit</a>
+          <a href="javascript:void(0)" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.viewPerp').addClass('active'); ">View</a>
+          <a href="javascript:void(0)" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.editPerp').addClass('active'); ">Edit</a>
           <a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
     </tr>
     <tr class="affected hide">
@@ -2113,8 +2113,8 @@
       <td><p>Person Affected: Confidential</p></td>
       <td><p></p></td>
       <td class="iqies-list-button-group">
-          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.viewAffected').addClass('active'); ">View</a>
-          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editAffected').addClass('active'); ">Edit</a>
+          <a href="javascript:void(0)" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.viewAffected').addClass('active'); ">View</a>
+          <a href="javascript:void(0)" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.editAffected').addClass('active'); ">Edit</a>
           <a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
     </tr>
     
@@ -2123,8 +2123,8 @@
       <td><p>Other Party: Possible Witness</p></td>
       <td><p></p></td>
       <td class="iqies-list-button-group">
-          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.viewOtherParty').addClass('active'); ">View</a>
-          <a href="javascript:void(0)" onClick="$('#tab3 .read-view').removeClass('active'); $('#tab3 .edit-view.editOtherParty').addClass('active'); ">Edit</a>
+          <a href="javascript:void(0)" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.viewOtherParty').addClass('active'); ">View</a>
+          <a href="javascript:void(0)" onClick="$('#parties .read-view').removeClass('active'); $('#parties .edit-view.editOtherParty').addClass('active'); ">Edit</a>
           <a href="javascript:void(0)" data-toggle="modal" data-target="#confirmPartyDeletion">Delete</a></td>
     </tr>
                       </tbody>
@@ -2133,7 +2133,7 @@
             </section>
           </div>
           <!-- allegation -->
-          <div class="tab-pane" id="allegationTab" role="tabpanel" aria-labelledby="allegationTL">
+          <div class="tab-pane" id="allegation" role="tabpanel" aria-labelledby="allegationTL">
             <!-- new allegation -->  
             <section class="edit-view addAllegation active">
                 <h2>Add Allegation</h2>
@@ -2215,11 +2215,11 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab4 .edit-view').removeClass('active'); 
-     $('#tab4 .read-view').addClass('active'); 
+     $('#allegation .edit-view').removeClass('active'); 
+     $('#allegation .read-view').addClass('active'); 
      $('.alert.successMsg').removeClass('hide'); 
      $('.addedAllegation .allegationA').removeClass('hide');">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').addClass('active');  ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#allegation .edit-view').removeClass('active'); $('#allegation .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- edit allegation -->
@@ -2303,11 +2303,11 @@
                 </div>  
                 <div class="iq-button-wrapper">
                     <a href="#mainContent" class="btn btn-primary" onClick="
-     $('#tab4 .edit-view').removeClass('active'); 
-     $('#tab4 .read-view').addClass('active'); 
+     $('#allegation .edit-view').removeClass('active'); 
+     $('#allegation .read-view').addClass('active'); 
      $('.alert.successMsg').removeClass('hide'); 
      $('.addedAllegation .allegationA').removeClass('hide');">Save</a>
-                    <button class="btn btn-link" onClick="$('#tab4 .edit-view').removeClass('active'); $('#tab4 .read-view').addClass('active');  ">Cancel</button>
+                    <button class="btn btn-link" onClick="$('#allegation .edit-view').removeClass('active'); $('#allegation .read-view').addClass('active');  ">Cancel</button>
                   </div>
             </section>
             <!-- read view -->
@@ -2320,7 +2320,7 @@
                 
               </div>
             </div>
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab4 .edit-view.addAllegation').addClass('active'); $('#tab4 .read-view').removeClass('active');">Add Allegation</button>  
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#allegation .edit-view.addAllegation').addClass('active'); $('#allegation .read-view').removeClass('active');">Add Allegation</button>  
                 </div>                
                 <p class="info-text"><span class="allegationCount">1</span> Allegation<span class="allePostCount hide">s</span></p>
                 
@@ -2336,7 +2336,7 @@
           <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
             Delete
           </button>
-          <button type="button" class="btn btn-link" onClick="$('#tab4 .read-view').removeClass('active'); $('#tab4 .edit-view.editAllegation').addClass('active'); ">Edit</button>
+          <button type="button" class="btn btn-link" onClick="$('#allegation .read-view').removeClass('active'); $('#allegation .edit-view.editAllegation').addClass('active'); ">Edit</button>
         </div>
       </div>
       <div id="alle1" class="collapse">
@@ -2366,7 +2366,7 @@
     
           </div>
           <!-- triage -->
-          <div class="tab-pane active" id="triageTab" role="tabpanel" aria-labelledby="triageTL">
+          <div class="tab-pane active" id="triage" role="tabpanel" aria-labelledby="triageTL">
              
             <section class="edit-view active">
 				 <div class="row tabTitle">
@@ -2397,7 +2397,7 @@
                   <label class="custom-control-label" for="priority2"> Non-Immediate Jeopardy - High </label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="priority3" name="priority" class="custom-control-input">
+                  <input type="radio" id="priority3" checked name="priority" class="custom-control-input">
                   <label class="custom-control-label" for="priority3"> Non-Immediate Jeopardy - Medium </label>
                 </div>
                 <div class="custom-control custom-radio">
@@ -2439,7 +2439,7 @@
                     <fieldset>
                 <legend>Action Required</legend>
                 <div class="custom-control custom-radio">
-                  <input type="radio" id="surveyAction1" name="surveyAction" class="custom-control-input" onchange="if(this.checked) { $('.surveyDate').removeClass('hide'); $('.conditionsList').removeClass('hide'); }">
+                  <input type="radio" id="surveyAction1" checked name="surveyAction" class="custom-control-input" onchange="if(this.checked) { $('.surveyDate').removeClass('hide'); $('.conditionsList').removeClass('hide'); }">
                   <label class="custom-control-label" for="surveyAction1">  Survey </label>
                 </div>
                 <div class="custom-control custom-radio">
@@ -2452,7 +2452,7 @@
                 </div>
                 </fieldset>
                 
-                <article class="conditionsList hide">  
+                <article class="conditionsList">  
 					<h3>Conditions of Participation</h3>
 					<button class="btn btn-outline-primary" onClick="addCOP()">Add Conditions of Participation</button>
 					<p class="iq-not-available mt-4 addedSavedCOP">No Conditions of Participation added.</p>
@@ -2639,8 +2639,8 @@
                 </div></div>
               </div> 
               <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab5 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button class="btn btn-link" onClick="$('#tab5 .edit-view').removeClass('active'); $('#tab5 .read-view').addClass('active');  $('#tab5 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                    <button class="btn btn-primary" onClick="$('#triage .edit-view').removeClass('active'); $('#triage .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#triage .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-link" onClick="$('#triage .edit-view').removeClass('active'); $('#triage .read-view').addClass('active');  $('#triage .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 
             </section>
@@ -2959,7 +2959,7 @@
                 <h2>Triage</h2>
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary" onClick="$('#tab5 .edit-view').addClass('active'); $('#tab5 .read-view').removeClass('active'); $(this).addClass('hide');  $('.alert.successMsg').addClass('hide');">Edit</button>
+                <button class="btn btn-outline-primary" onClick="$('#triage .edit-view').addClass('active'); $('#triage .read-view').removeClass('active'); $(this).addClass('hide');  $('.alert.successMsg').addClass('hide');">Edit</button>
               </div>
             </div>
                 <h3>Priority</h3>
@@ -3032,324 +3032,9 @@
 			
           </div>  
           <!-- survey -->
-          <div class="tab-pane " id="surveyTab" role="tabpanel" aria-labelledby="surveyTL">
-            <section class="edit-view active firstTime">
-            <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Add Survey</h2>
-              </div>
-              <div class="col-md-2">
-                <!--<button class="btn btn-outline-primary hide" onClick="$('#tab6 .edit-view').addClass('active'); $('#tab6 .read-view').removeClass('active'); $(this).addClass('hide');  $('.alert.successMsg').addClass('hide');">Edit</button>-->
-              </div>
-            </div>
-                
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                </div>
-                  <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bn">Branch Name <span class="iq-asterisk">*</span></label>
-                     <input type="text" class="form-control" id="bn" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bt">Branch Type</label>
-                     <select class="form-control" id="bt"><option>Select one</option><option>Branch Office</option>
-                      <option>Child Affiliate Office</option><option>Sibling Affiliate</option></select>
-                  </div>
-                </div>
-                  <div class="col-md-12">
-                      <br>
-                <fieldset><legend><h3>Branch Address</h3></legend>
-                    <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="address1B">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="address1B"
-                            required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="address2B">Address 2</label>
-                    <input type="text" class="form-control" id="address2B">
-                  </div>
-                </div>
-              </div>
-            <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="cityB">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="cityB"
-                            required>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="stateB">State</label>
-                    <select class="form-control" id="stateB">
-                      <option value="">Select one</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">District Of Columbia</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
-                      <option value="KY">Kentucky</option>
-                      <option value="LA">Louisiana</option>
-                      <option value="ME">Maine</option>
-                      <option value="MD">Maryland</option>
-                      <option value="MA">Massachusetts</option>
-                      <option value="MI">Michigan</option>
-                      <option value="MN">Minnesota</option>
-                      <option value="MS">Mississippi</option>
-                      <option value="MO">Missouri</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NV">Nevada</option>
-                      <option value="NH">New Hampshire</option>
-                      <option value="NJ">New Jersey</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="NY">New York</option>
-                      <option value="NC">North Carolina</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
-                      <option value="OR">Oregon</option>
-                      <option value="PA">Pennsylvania</option>
-                      <option value="RI">Rhode Island</option>
-                      <option value="SC">South Carolina</option>
-                      <option value="SD">South Dakota</option>
-                      <option value="TN">Tennessee</option>
-                      <option value="TX">Texas</option>
-                      <option value="UT">Utah</option>
-                      <option value="VT">Vermont</option>
-                      <option value="VA">Virginia</option>
-                      <option value="WA">Washington</option>
-                      <option value="WV">West Virginia</option>
-                      <option value="WI">Wisconsin</option>
-                      <option value="WY">Wyoming</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="zipCodeB">Zip Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="zipCodeB"
-                            required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="countyB">County</label>
-                    <input type="text" class="form-control" id="countyB">
-                  </div>
-                </div>
-                
-              </div>
-                </fieldset>
-                 
-              <div class="row">
-                <div class="col">
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                  </div>
-                </div>
-              </div>
-              </div>
-              </div>
-              </section>
-              <section class="read-view">
-                  <div class="row tabTitle">
-              <div class="col-md-10">
-                <h2>Survey</h2> <p class="iq-page-header-description">Manage and add additional branches for the provider.</p>
-                <p><button class="btn btn-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.firstTime').addClass('active');">Add Branch</button></p>
-              </div>
-              <div class="col-md-2">
-                
-              </div>
-            </div>
-                  <p class="info-text"><span class="baCount">1</span> Additional Branches</p>
-                  
-                <div class="iqies-list-row">
-                <div class="iqies-list-row-header">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <h3>Splint</h3>
-                    </div>
-                    <div class="col-md-2">
-                      <button class="btn btn-outline-primary" onclick="$('#tab6 .read-view').removeClass('active'); $('#tab6 .edit-view').removeClass('active'); $('#tab6 .edit-view.editSplint').addClass('active');">Edit</button>
-                    </div>
-                  </div>
-                </div>
-                      
-                <div class="row">
-                    <div class="col-md-5">
-                          <p><label>Branch Type</label>
-                          Branch Office</p>
-                  </div>
-                    <div class="col-md-5">
-                          <p>
-                            <label>Branch Address</label>
-                          123 Temporary Road, Suite 100<br>Reston, VA 20190<br><span class="iqies-not-available">County No information</span></p>
-                        
-                      </div>
-                  </div></div>
-              </section>
-              <section class="edit-view editSplint">
-            
-                <h2>Edit Branch</h2>
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                </div>
-                  <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bn2">Branch Name <span class="iq-asterisk">*</span></label>
-                     <input type="text" value="Splint" class="form-control" id="bn2" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bt2">Branch Type</label>
-                     <select class="form-control" id="bt2"><option>Select one</option><option selected>Branch Office</option>
-                      <option>Child Affiliate Office</option><option>Sibling Affiliate</option></select>
-                  </div>
-                </div>
-                  <div class="col-md-12">
-                      <br>
-                <fieldset><legend><h3>Branch Address</h3></legend>
-                    <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="address1B2">Address 1 <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="address1B2" value="123 Temporary Road"
-                            required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="address2B2">Address 2</label>
-                    <input type="text" class="form-control" id="address2B2" value="Suite 100">
-                  </div>
-                </div>
-              </div>
-            <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="cityB2">City <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="cityB2" value="Reston"
-                            required>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="stateB2">State</label>
-                    <select class="form-control" id="stateB2">
-                      <option value="">Select one</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="DC">District Of Columbia</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
-                      <option value="KY">Kentucky</option>
-                      <option value="LA">Louisiana</option>
-                      <option value="ME">Maine</option>
-                      <option value="MD">Maryland</option>
-                      <option value="MA">Massachusetts</option>
-                      <option value="MI">Michigan</option>
-                      <option value="MN">Minnesota</option>
-                      <option value="MS">Mississippi</option>
-                      <option value="MO">Missouri</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NV">Nevada</option>
-                      <option value="NH">New Hampshire</option>
-                      <option value="NJ">New Jersey</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="NY">New York</option>
-                      <option value="NC">North Carolina</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
-                      <option value="OR">Oregon</option>
-                      <option value="PA">Pennsylvania</option>
-                      <option value="RI">Rhode Island</option>
-                      <option value="SC">South Carolina</option>
-                      <option value="SD">South Dakota</option>
-                      <option value="TN">Tennessee</option>
-                      <option value="TX">Texas</option>
-                      <option value="UT">Utah</option>
-                      <option value="VT">Vermont</option>
-                      <option value="VA" selected>Virginia</option>
-                      <option value="WA">Washington</option>
-                      <option value="WV">West Virginia</option>
-                      <option value="WI">Wisconsin</option>
-                      <option value="WY">Wyoming</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="zipCodeB2">Zip Code <span class="iq-asterisk">*</span></label>
-                    <input type="text" class="form-control" id="zipCodeB2" value="20190"
-                            required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="countyB2">County</label>
-                    <input type="text" class="form-control" id="countyB2">
-                  </div>
-                </div>
-                
-              </div>
-                </fieldset>
-                 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab6 .tabTitle .btn').removeClass('hide');">Save</button>
-                    <button
-                            class="btn btn-link" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
-                      
-                      <button class="btn btn-link danger float-right" onClick="$('#tab6 .edit-view').removeClass('active'); $('#tab6 .read-view').addClass('active');  $('#tab6 .tabTitle .btn').removeClass('hide'); ">Delete</button>
-                  </div>
-                </div>
-              </div>
-              </div>
-              </div>
-            </section>
-          </div>
+          
           <!-- letters -->
-          <div class="tab-pane " id="lettersTab" aria-labelledby="lettersTL">
+          <div class="tab-pane " id="letters" aria-labelledby="lettersTL">
             <section class="edit-view newLetter active">
               <div class="row">
                 <div class="col-md-12"><h2>Add Letter: Overview</h2>
@@ -3394,9 +3079,9 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide'); $(this).siblings('button').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#letters .edit-view').removeClass('active'); $('#letters .edit-view.letter1').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#letters .tabTitle .btn').removeClass('hide'); $(this).siblings('button').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link hide" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link hide" onClick="$('#letters .edit-view').removeClass('active'); $('#letters .read-view').addClass('active');  $('#letters .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -3448,9 +3133,9 @@
                     <div class="row">
                 <div class="col">
                   <div class="iq-button-wrapper">
-                    <button class="btn btn-primary" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#tab7 .tabTitle .btn').removeClass('hide');">Save</button>
+                    <button class="btn btn-primary" onClick="$('#letters .edit-view').removeClass('active'); $('#letters .edit-view.letter1').addClass('active'); $('.alert.successMsg').removeClass('hide'); $('#letters .tabTitle .btn').removeClass('hide');">Save</button>
                     <button
-                            class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                            class="btn btn-link" onClick="$('#letters .edit-view').removeClass('active'); $('#letters .read-view').addClass('active');  $('#letters .tabTitle .btn').removeClass('hide'); ">Cancel</button>
                   </div>
                 </div>
               </div>
@@ -3458,7 +3143,7 @@
               </div>
             </section>
             <section class="edit-view letter1">
-                <div class="iq-button-wrapper"><a href="#" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active');  $('#tab7 .tabTitle .btn').removeClass('hide'); " class="return-link">Return to Letter</a></div>
+                <div class="iq-button-wrapper"><a href="#" onClick="$('#letters .edit-view').removeClass('active'); $('#letters .read-view').addClass('active');  $('#letters .tabTitle .btn').removeClass('hide'); " class="return-link">Return to Letter</a></div>
                 <h2>Letter: Federal Letter - Notice of Imposition</h2>
               <div class="row">
                   <div class="col-md-12">
@@ -3468,7 +3153,7 @@
               <h4>Overview</h4>
             </div>
             <div class="col-md-4 iq-list-buttons">
-              <button class="btn btn-outline-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editLetter').addClass('active');">Edit</button>
+              <button class="btn btn-outline-primary" onclick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.editLetter').addClass('active');">Edit</button>
              <!-- <button class="btn btn-link">Delete</button>-->
             </div>
         </div>
@@ -3501,7 +3186,7 @@
                       
                       <fieldset id="letter1Attachments"><legend class="iq-form-group-title">Attachments</legend>   
                 
-                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.addAttachment').addClass('active');">Add Attachment</button></div>
+                <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.addAttachment').addClass('active');">Add Attachment</button></div>
                 <p class="iq-not-available">No attachments have been added.</p>
                           
 <table class="table table-striped hide">
@@ -3548,7 +3233,7 @@
                       <fieldset id="letter1Recipients"><legend class="iq-form-group-title">Recipients</legend>
                       
                      
-                            <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.addRecipient').addClass('active');">Add Recipient</button></div>
+                            <div class="iq-button-wrapper"><button class="btn btn-outline-primary" onClick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.addRecipient').addClass('active');">Add Recipient</button></div>
                         <p class="iq-not-available">No recipients have been added.</p>
                       <table class="table table-striped hide">
   <thead>
@@ -3565,7 +3250,7 @@
       <td>10/03/2019 3:04 PM</td>
 
       <td>Eric Sinclair</td>
-      <td class="iqies-list-button-group"><a href="#" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active');">View</a> | <a href="#" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editLetter1').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
+      <td class="iqies-list-button-group"><a href="#" onclick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.letter1').addClass('active');">View</a> | <a href="#" onclick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.editLetter1').addClass('active');">Edit</a> | <a href="#">Delete</a></td>
     </tr>
   </tbody>
 </table>
@@ -3578,7 +3263,7 @@
                   <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Letters</h2> <p>Add and manage letters for this intake.</p>
-                <p><button class="btn btn-outline-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.newLetter').addClass('active');">Add Letter</button></p>
+                <p><button class="btn btn-outline-primary" onclick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.newLetter').addClass('active');">Add Letter</button></p>
               </div>
               <div class="col-md-2">
                 
@@ -3602,9 +3287,9 @@
       <td><div class="iqies-list-button-group">
           <a href="#" class="btn btn-link dropdown-toggle" id="letterDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</a>
           <div class="dropdown-menu" aria-labelledby="letterDropdownMenu">
-    <button class="dropdown-item" onClick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editLetter').addClass('active');">Edit Overview</button>
-    <button class="dropdown-item" onClick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.addRecipient').addClass('active');">Add Recipients</button>
-    <button class="dropdown-item" onClick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.addAttachment').addClass('active');">Add Attachments</button>
+    <button class="dropdown-item" onClick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.editLetter').addClass('active');">Edit Overview</button>
+    <button class="dropdown-item" onClick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.addRecipient').addClass('active');">Add Recipients</button>
+    <button class="dropdown-item" onClick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.addAttachment').addClass('active');">Add Attachments</button>
     <button class="dropdown-item" onClick="$(this).parents('tr').hide();" data-toggle="modal" data-target="#confirmLetterDeletion">Delete Letter</button>
   </div>
           </div></td>
@@ -3636,12 +3321,12 @@
                 <a href="#letter1Attachments" class="btn btn-primary" onClick="if( $('#fileDetailsLetter1').hasClass('hide') ){  
                     $('.alert.fileAttachmentError').removeClass('hide'); 
                 } else {  
-                    $('#tab7 .edit-view').removeClass('active'); 
-                    $('#tab7 .edit-view.letter1').addClass('active'); 
-                    $('#tab7 #letter1Attachments .table-striped').removeClass('hide');
-                    $('#tab7 #letter1Attachments .iq-not-available').addClass('hide');
+                    $('#letters .edit-view').removeClass('active'); 
+                    $('#letters .edit-view.letter1').addClass('active'); 
+                    $('#letters #letter1Attachments .table-striped').removeClass('hide');
+                    $('#letters #letter1Attachments .iq-not-available').addClass('hide');
                     $('#fileDetailsLetter1').addClass('hide'); $('#letter1FileAttachment').removeClass('hide');
-                    //$('#tab7 .newAttachmentRow').removeClass('hide'); 
+                    //$('#letters .newAttachmentRow').removeClass('hide'); 
                     if($('.file-description-text').val()) { 
                         $('.file-description .fdt').html($('.file-description-text').val());
                     } else { 
@@ -3651,8 +3336,8 @@
                     $('.file-description-text').addClass('hide'); 
                     $('.alert.fileAttachmentError').addClass('hide'); 
                 }">Save</a>
-                <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); 
-                    $('#tab7 .edit-view.letter1').addClass('active');">Cancel</button>
+                <button class="btn btn-link" onClick="$('#letters .edit-view').removeClass('active'); 
+                    $('#letters .edit-view.letter1').addClass('active');">Cancel</button>
               </div>
                 
               </section>
@@ -3787,26 +3472,26 @@
                 if( $empty == 0 ){  
                     $('.alert.letterRecipientError').removeClass('hide'); 
                 } else {  
-                    $('#tab7 .edit-view').removeClass('active'); 
-                    $('#tab7 .edit-view.letter1').addClass('active'); 
-                    $('#tab7 #letter1Recipients .table-striped').removeClass('hide');
-                    $('#tab7 #letter1Recipients .iq-not-available').addClass('hide');
+                    $('#letters .edit-view').removeClass('active'); 
+                    $('#letters .edit-view.letter1').addClass('active'); 
+                    $('#letters #letter1Recipients .table-striped').removeClass('hide');
+                    $('#letters #letter1Recipients .iq-not-available').addClass('hide');
         
                     $('.alert.letterRecipientError').addClass('hide'); 
                 }">Save</a>
-                <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); };">Cancel</button>
+                <button class="btn btn-link" onClick="$('#letters .edit-view').removeClass('active'); $('#letters .edit-view.letter1').addClass('active'); };">Cancel</button>
               </div>
                 
               </section>
             <section class="edit-view recipient1">
-                <div class="iq-button-wrapper"><a href="#" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .read-view').addClass('active'); $('#tab7 .edit-view.letter1').removeClass('active'); " class="return-link">Return to Letter</a></div>
+                <div class="iq-button-wrapper"><a href="#" onClick="$('#letters .edit-view').removeClass('active'); $('#letters .read-view').addClass('active'); $('#letters .edit-view.letter1').removeClass('active'); " class="return-link">Return to Letter</a></div>
                 <div class="row tabTitle">
               <div class="col-md-10">
                 <h2>Letter: Recipient Information</h2>
                
               </div>
               <div class="col-md-2">
-                <button class="btn btn-outline-primary" onclick="$('#tab7 .read-view').removeClass('active'); $('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.editRecipient1').addClass('active');"></button>
+                <button class="btn btn-outline-primary" onclick="$('#letters .read-view').removeClass('active'); $('#letters .edit-view').removeClass('active'); $('#letters .edit-view.editRecipient1').addClass('active');"></button>
               </div>
             </div>
         <div class="iq-list">
@@ -3978,11 +3663,11 @@
               <div class="iq-button-wrapper">
                 <a href="#" class="btn btn-primary" onClick="
                
-                    $('#tab7 .edit-view').removeClass('active'); 
-                    $('#tab7 .edit-view.letter1').addClass('active');
+                    $('#letters .edit-view').removeClass('active'); 
+                    $('#letters .edit-view.letter1').addClass('active');
                     $('.alert.successMsg').removeClass('hide');
                 }">Save</a>
-                <button class="btn btn-link" onClick="$('#tab7 .edit-view').removeClass('active'); $('#tab7 .edit-view.letter1').addClass('active'); };">Cancel</button>
+                <button class="btn btn-link" onClick="$('#letters .edit-view').removeClass('active'); $('#letters .edit-view.letter1').addClass('active'); };">Cancel</button>
               </div>
                 
               </section>
@@ -4380,10 +4065,10 @@
 			  $('#intakeType .iq-input-error-msg').removeClass('hide'); 
 			  $('.alert.intakeTypeError').removeClass('hide'); 
 		  } else { 
-			  $('#basicInfoTab .edit-view').removeClass('active');  
-			  $('#basicInfoTab .read-view').addClass('active'); 
+			  $('#basic .edit-view').removeClass('active');  
+			  $('#basic .read-view').addClass('active'); 
 			  $('.alert.successMsg').removeClass('hide'); 
-			  $('#basicInfoTab .tabTitle .btn').removeClass('hide'); 
+			  $('#basic .tabTitle .btn').removeClass('hide'); 
 			  $('.nav.iq-nav .nav-link').removeClass('disabled'); 
 			  $('#newVal').val('1'); 
 			  $('.iq-page-header .breadcrumb-item.current').html('Complaint 12763'); 
@@ -4417,48 +4102,48 @@ function sortParties(){
         
         if($('#anonCount').val() == '1'){ 
             console.log('anonymous');                                            
-            $('#tab3 .edit-view').removeClass('active'); $('.read-view').addClass('active');
-            $('#tab3 .addedParty .anon').removeClass('hide'); 
+            $('#parties .edit-view').removeClass('active'); $('.read-view').addClass('active');
+            $('#parties .addedParty .anon').removeClass('hide'); 
             $('#anon2').click();                                                                 
         } else {
             console.log('not anonymous');   
-            $('#tab3 .edit-view').removeClass('active');
+            $('#parties .edit-view').removeClass('active');
             if($('#involveType1').prop('checked') == true ){
-               $('#tab3 .edit-view.complainant').addClass('active');         
+               $('#parties .edit-view.complainant').addClass('active');         
             }                                                               
             if($('#involveType2').prop('checked') == true ){
-               $('#tab3 .edit-view.perp').addClass('active');         
+               $('#parties .edit-view.perp').addClass('active');         
             }   
             if($('#involveType3').prop('checked') == true ){
-               $('#tab3 .edit-view.affected').addClass('active');         
+               $('#parties .edit-view.affected').addClass('active');         
             }   
             if($('#involveType4').prop('checked') == true ){
-               $('#tab3 .edit-view.otherParty').addClass('active');         
+               $('#parties .edit-view.otherParty').addClass('active');         
             }                                                                           
         }                                                                      
     }
 }
     function addTag(tagName){
-		$('#triageTab .card.dashed .iq-not-available').addClass('hide'); 
-		$('#triageTab .errorMsg').addClass('hide'); 
+		$('#triage .card.dashed .iq-not-available').addClass('hide'); 
+		$('#triage .errorMsg').addClass('hide'); 
 		var fullTag = $('.'+tagName + ' .tagName').html(); 
 		console.log(fullTag);
 		
 		$('#addedCOPTags').append('<div class="badge badge-pill"><span>' + fullTag + '</span><button type="button" class="close" aria-label="Close" onclick="closeTag(this, $(this).parent());" data-toggle="tooltip" title="Remove" data-original-title="Remove"><span aria-hidden="true">×</span></button></div>');
-		$('#triageTab .iq-label .countWrap').removeClass('hide');
-		$('#triageTab .addedCount').html(function(i, val) { return +val*1+1 });
-		console.log($('#triageTab .addedCount').html());
+		$('#triage .iq-label .countWrap').removeClass('hide');
+		$('#triage .addedCount').html(function(i, val) { return +val*1+1 });
+		console.log($('#triage .addedCount').html());
 	}
 
 	function closeTag(ele4, eParent){
 		eParent.addClass('hide'); 
 		tagN = ele4.previousSibling.innerHTML; //$('#tagNameRepo').val();
-		$('#triageTab .iq-accordion.' + tagN + ' .iq-accordion-actions button').attr('disabled', false); 
+		$('#triage .iq-accordion.' + tagN + ' .iq-accordion-actions button').attr('disabled', false); 
 		console.log('success');
-		$('#triageTab .iq-accordion.' + tagN + ' .iq-accordion-actions button').html('Add'); 
-		$('#triageTab .addedCount').html( function(i, val) { return +val*1-1 });
-		console.log('after decrement' + $('#triageTab .addedCount').html());
-		if( $('#triageTab .addedCount').html() == '' || $('#triageTab .addedCount').html() == 0 ){ $('#triageTab .iq-label .countWrap').addClass('hide'); $('#triageTab .addedCount').html(''); $('#triageTab .card.dashed .iq-not-available').removeClass('hide'); }
+		$('#triage .iq-accordion.' + tagN + ' .iq-accordion-actions button').html('Add'); 
+		$('#triage .addedCount').html( function(i, val) { return +val*1-1 });
+		console.log('after decrement' + $('#triage .addedCount').html());
+		if( $('#triage .addedCount').html() == '' || $('#triage .addedCount').html() == 0 ){ $('#triage .iq-label .countWrap').addClass('hide'); $('#triage .addedCount').html(''); $('#triage .card.dashed .iq-not-available').removeClass('hide'); }
 	} 
 	
 	function searchCOP(){
@@ -4470,17 +4155,17 @@ function sortParties(){
 			case 'clinical record': case 'record': case 'clinical': 
 				$('#COP .iq-accordion').addClass('hide'); 
 				$('#COP .iq-accordion.CR').removeClass('hide'); 
-				$('#triageTab .copSearchCount').html('Results: 5 CoPs');
+				$('#triage .copSearchCount').html('Results: 5 CoPs');
 				break; 
 			default: 
 				$('#COP .iq-accordion').addClass('hide'); 
 				$('#COP .iq-accordion.'+searchKey).removeClass('hide'); 
 				switch ( searchKey ) {
 					case '0': case '0000': 
-						$('#triageTab .copSearchCount').html('Result: 3 CoPs');
+						$('#triage .copSearchCount').html('Result: 3 CoPs');
 						break;
 					default: 
-						$('#triageTab .copSearchCount').html('Result: 1 CoP');
+						$('#triage .copSearchCount').html('Result: 1 CoP');
 						break;
 				}
 				break;  
@@ -4490,47 +4175,46 @@ function sortParties(){
 		$('#COP .iq-accordion').removeClass('hide'); 
 		$('#COP .iq-accordion.allPage2').addClass('hide'); 
 		$('#COP .iq-accordion.allPage3').addClass('hide'); 
-		$('#triageTab .copSearchCount').html('1-10 of 30 CoPs');
+		$('#triage .copSearchCount').html('1-10 of 30 CoPs');
 
-		$('#triageTab .pagination .page-item').removeClass('active'); 
-		$('#triageTab .pagination .page-item').removeClass('hide'); 
-		$('#triageTab .pagination .page-item.first button').attr('disabled', true);
-		$('#triageTab .pagination .page-item.previous button').attr('disabled',true);
-		$('#triageTab .pagination .page-item.next button').attr('disabled',false);
-		 $('#triageTab .pagination .page-item.last button').attr('disabled',false);
+		$('#triage .pagination .page-item').removeClass('active'); 
+		$('#triage .pagination .page-item').removeClass('hide'); 
+		$('#triage .pagination .page-item.first button').attr('disabled', true);
+		$('#triage .pagination .page-item.previous button').attr('disabled',true);
+		$('#triage .pagination .page-item.next button').attr('disabled',false);
+		 $('#triage .pagination .page-item.last button').attr('disabled',false);
 
-		$('#triageTab .pagination .page-item.first').addClass('disabled');
-		$('#triageTab .pagination .page-item.previous').addClass('disabled');
-		$('#triageTab .pagination .page-item.next').removeClass('disabled');
-		$('#triageTab .pagination .page-item.last').removeClass('disabled');
-		$('#triageTab .pagination .page-item.page1').addClass('active');
-		
-		break;
+		$('#triage .pagination .page-item.first').addClass('disabled');
+		$('#triage .pagination .page-item.previous').addClass('disabled');
+		$('#triage .pagination .page-item.next').removeClass('disabled');
+		$('#triage .pagination .page-item.last').removeClass('disabled');
+		$('#triage .pagination .page-item.page1').addClass('active');
 	}
 	function saveCOP(){
 		if( $('#saveCOPButton .iq-not-available').hasClass('hide')){ 
-			$('#triageTab .successMsg').removeClass('hide'); 
-			$('#triageTab .edit-view').addClass('active'); 
-			$('.edit-view.addConditions').removeClass('active'); 
+			$('#triage .successMsg').removeClass('hide'); 
+			$('#triage .edit-view').addClass('active'); 
+			$('#triage .edit-view.addConditions').removeClass('active'); 
 			$('#saveCOPButton .badge.badge-pill').addClass('hide'); 
 			$('#saveCOPButton .addedCount').html(''); 
 			$('#saveCOPButton .addedCount').addClass('hide'); 
 			$('#saveCOPButton .iq-not-available').removeClass('hide');  
-			$('#triageTab .addedSavedCOP').toggleClass('hide');
-			$('#triageTab .iq-label .countWrap').addClass('hide'); 
+			$('#triage .addedSavedCOP').toggleClass('hide');
+			$('#triage .iq-label .countWrap').addClass('hide'); 
+            $('.sideNav').removeClass('hide');
 		} else { 
-			$('#triageTab .errorMsg').removeClass('hide'); 
+			$('#triage .errorMsg').removeClass('hide'); 
 		}
 	}
 	function addCOP(){
-        $('#triageTab .edit-view').removeClass('active'); 
-        $('#triageTab .read-view').removeClass('active'); 
-        $('.edit-view.addConditions').addClass('active');
+        $('#triage .edit-view').removeClass('active'); 
+        $('#triage .read-view').removeClass('active'); 
+        $('#triage .edit-view.addConditions').addClass('active');
         $('.sideNav').addClass('hide');
     }
     function cancelAddCOP(){
-        $('#triageTab .edit-view').addClass('active'); 
-        $('#triageTab .edit-view.addConditions').removeClass('active');
+        $('#triage .edit-view').addClass('active'); 
+        $('#triage .edit-view.addConditions').removeClass('active');
         $('.sideNav').removeClass('hide');
     }
     </script>
