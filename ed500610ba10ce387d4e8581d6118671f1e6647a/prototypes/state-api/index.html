@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="">
+
+  <title>iQIES Help</title>
+
+  <link rel="stylesheet"
+        href="../../../src/assets/prototype-styles/design-system.css">
+  <link rel="stylesheet"
+        href="../../../src/assets/prototype-styles/prototype.css">
+  <link rel="stylesheet"
+        href="state-api.css">
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav>
+            <a href="../../index.html">
+              <img src="../../../src/assets/images/logo-iqies.svg"
+                   class="iq-logo" alt="Logo iQIES Color" />
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="iq-page-header-wrapper inverted mb-5">
+      <div class="container-fluid">
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col d-flex flex-column justify-content-between">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="../../index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    Help
+                  </li>
+                </ol>
+              </nav>
+              <div class="iq-page-header-content">
+                <h1>iQIES Help</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-9 col-lg-7">
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1" role="tabpanel" aria-labelledby="tab1Tab">
+              <h2>Overview</h2>
+              <section>
+                <div class="alert alert-info">
+                  This State API documentation currently applies to the training environment, but will apply to the production environment in the future.
+                </div>
+                <p>
+                  An Application Programming Interface (API) is a communication method between a client and a server. It allows systems to share data with each other through specific protocols. APIs work by sending requests for information from a web application or web server and receiving a response. If the client makes a request in a specific format, it will always get a response in a specific format or initiate a defined action.
+                </p>
+                <p>
+                  The iQIES State API service bridges the gap between a state's data needs and the iQIES system. By supporting standards-based data formats and protocols, the iQIES State API connects state systems (clients) to iQIES (server) to support state-specific applications and reporting demands.
+                </p>
+                <p>
+                  View examples in the <a href="https://git.hcqis.org/iQIES/iqies-state-api-examples" target="_blank">Github repository</a>.
+                </p>
+              </section>
+              <section>
+                <h3>Available Data</h3>
+                <p>
+                  Upon each release of S&C functionality and the migration of a specific Provider Type (e.g. Home Health Agency) into iQIES, the survey and certification data for that Provider Type will be migrated permanently to the central iQIES database and thus will no longer be maintained/updated in state-level databases.
+                </p>
+                <p>
+                  The API will provide states access to the following data:
+                </p>
+                <ul>
+                  <li>Provider demographics and certification data</li>
+                  <li>Survey and citations</li>
+                  <li>Complaints and incidents </li>
+                  <li>Enforcement cases</li>
+                  <li>Personnel/User information</li>
+                  <li>State work and management units (if exists)</li>
+                </ul>
+              </section>
+            </div>
+            <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2Tab">
+              <h2>Getting Started</h2>
+
+              <section>
+                <h3>API Basics</h3>
+                <p>
+                  Base Request URL: <code>https://iqies.cms.gov/api/stateapi/</code>
+                </p>
+
+                <p>
+                  The iQIES State API service builds upon RESTful API standards thus you can choose to consume the iQIES API with any client once you've generated an API key. You can choose to use a RESTful client such as Postman, Insomnia, Swagger or modify your ODBC driver for State API Service using an SDK such as OpenAccess SDK.
+                </p>
+              </section>
+
+              <section>
+                <h3>API Key</h3>
+                <p>
+                  The iQIES API uses API keys to authenticate and authorize API requests. States are authorized only to pull(read) your state data, and State Agency users with role "State Agency API Key Manager" have the necessary permissions to generate the API Key for your state in iQIES.
+                </p>
+                <p>
+                  For the purposes of the training environment you will be assigned an API Key.
+                </p>
+                <p>
+                  In a future production environment you will generate your own API key if you have the right role and an email notification is sent to you when you generate your iQIES API Key. A system-generated email will notify you about pending and current expiration of your API key. There will be three email notifications to alert you about the pending expiration of your API key (15 days, 5 days, and 1 day) and one sent upon expiration.
+                </p>
+              </section>
+            </div>
+            <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3Tab">
+              <h2>State API Syntax</h2>
+              <section>
+                <p>
+                  The core use case of the iQIES API is to support applications created and run by a state's Departments of Health that currently depends on data retrieved from a direct ODBC/Oracle TNS client connections to state-level ASPEN Oracle databases.
+                </p>
+                <p>
+                  Example for fetching all providers:
+                </p>
+                <table class="table table-striped iq-table table-responsive-sm">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Fields from Provider Table</th>
+                      <th>Query</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Provider Demographics
+                      </td>
+                      <td>
+                        prvdr_id,<br />
+                        lgl_name,<br />
+                        dba_name,<br />
+                        ccn,<br />
+                        fac_id,<br />
+                        prvdr_stus_id
+                      </td>
+                      <td>
+<pre>
+{
+  "sql": {
+    "select" :
+      "prvdr_id, lgl_name, dba_name, ccn, fac_id, prvdr_stus_id",
+    "from": "provider.prvdr",
+    "where":"prvdr_id = :prvdr_id"
+  },
+  "replacements": {"prvdr_id": 1}
+}
+</pre>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+
+              <section>
+                <h3>SQL Query Syntax</h3>
+                <p>The queries you execute are ANSI Standard SQL Query Syntax and not a specific flavor of SQL. The SQL itself is sent to the API wrapped in a JSON formatted body.</p>
+                <p>
+                  The new database technology that iQIES uses and which will be hosting the State API endpoint is Postgres, and Postgres’ flavor of SQL is called PL/pgSQL.  It is similar to Oracle, and in fact was developed/adapted directly from Oracle, but it is not 100% compatible.
+                </p>
+                <p>
+                  Oracle’s engine is much older, and Oracle’s PL/SQL language includes a very rich set of aggregate functions and Oracle-only extensions that do not exist in any other database engine.   These extensions are not necessarily supported in Postgres.  The best bet is to stay with ANSI-compliant SQL as a starting point; both Oracle and Postgres support ANSI standard SQL for certain.  Postgres does include support for commonly used aggregate functions that may be in frequent use (Denserank, partition over, etc) but will not support Oracle-specific things like rownum, use of the dual table, NVL(), embedded regular expressions, listagg functions, etc.
+                </p>
+                <p>
+                  There are some Oracle to Postgres conversion tools available and the internet is rich with examples of organizations who have migrated from Oracle to Postgres and have posted about your experiences converting code.
+                </p>
+              </section>
+
+              <section>
+                <h3>Unsupported SQL Queries</h3>
+                <p>The following types of queries are <strong>not supported</strong>:</p>
+                <ul>
+                  <li>
+                    Any query with RIGHT JOIN.
+                    <ul>
+                      <li>Note: LEFT JOIN and INNER JOIN are supported.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    If a query has transaction tables and uses GROUP BY and HAVING, where the HAVING clause doesn't have a primary key from the left-most transaction table.
+                    <ul>
+                      <li>Note: Queries without transaction tables using GROUP BY and HAVING will work. Queries with transaction tables using GROUP BY only will also work. </li>
+                    </ul>
+                  </li>
+                  <li>Any query which has used "vw" as table alias. "vw" is reserved word for us and any query should not have use this word as table alias.</li>
+                  <li>Any query without schema Qualified Table Name.</li>
+                  <li>Tables with reserved keywords in our Postgresql DB will need to have a table alias name in order for the query to be executed successful. Reserved keywords can be found here: <a href="https://www.postgresql.org/docs/9.4/sql-keywords-appendix.html" target="_blank">https://www.postgresql.org/docs/9.4/sql-keywords-appendix.html</a></li>
+                </ul>
+              </section>
+            </div>
+            <div class="tab-pane" id="tab4" role="tabpanel" aria-labelledby="tab4Tab">
+              <h2>Endpoints Overview</h2>
+
+              <section>
+                <p>Below are the list of endpoints and consist of example queries when applicable. The State API service will construct the SQL query to fetch the data and will always include this state value as one of the filters in the where clause.</p>
+
+                <table class="table table-striped iq-table">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th width="25%">Endpoint</th>
+                      <th>Usage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>GET</strong></td>
+                      <td><code>/v1/tables</code></td>
+                      <td>Gets a list of tables in the schema.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>GET</strong></td>
+                      <td><code>/v1/tables/{tableName}/cols</code></td>
+                      <td>Gets the columns and constraints information for a pre-existing table.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>POST</strong></td>
+                      <td><code>/v1/rows</code></td>
+                      <td>
+                        This endpoint will accept a SQL request in JSON format and return results of the SQL query.
+                        The SQL request is a JSON with the keys being the keywords in the SQL statement and the values being the column names, table name, etc as the case may be.
+                        Response will be limited to 500 rows and requests can be made to fetch additional rows using the offset key in the JSON request.
+                        The order of the keys in the JSON request must be in the same order as expected when writing a SQL statement.
+                        In addition to the data results, the response will also include an error object as well the actual SQL statement that was executed based on the key-values in the JSON request.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <div class="tab-pane" id="tab5" role="tabpanel" aria-labelledby="tab5Tab">
+              <h2>Endpoints Usage</h2>
+              <section>
+                <p>
+                  View examples in the <a href="https://git.hcqis.org/iQIES/iqies-state-api-examples" target="_blank">Github repository</a>.
+                </p>
+                <p>
+                  <strong>cURL:</strong> If your network restrict the use of 3rd-party clients such as Postman, Insomnia, Swagger etc. to consume RESTful web services, here are some cURL ("Client URL") examples to get iQIES data.  These examples use ANSI-C Quoting (<a href="http://www.gnu.org/software/bash/manual/html_node/ANSI_002dC-Quoting.html#ANSI_002dC-Quoting">http://www.gnu.org/software/bash/manual/html_node/ANSI_002dC-Quoting.html#ANSI_002dC-Quoting</a>)
+                </p>
+                <p>
+                  Note: if you're pasting this command within your Terminal, make sure to replace YOURAPIKEY with your assigned API key.
+                </p>
+                <p>The output (iQIES data) you will receive back from the API service is in JSON format. </p>
+                <p>
+                  You can convert the JSON into a preferable format (e.g. CSV) using publicly available libraries or internet-based tools. Please Note: Usage of these tools, however, may pose a security risk if you are using real data. iQIES does not recommend nor promote using these tools. Please consult with your IT and Security departments before employing these tools for your purposes.
+                </p>
+              </section>
+
+              <section>
+                <h3><strong>Tables Endpoint</strong></h3>
+                <p><code>GET https://iqies.cms.gov/api/stateapi/v1/tables</code></p>
+
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-1">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-tables-1"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-1')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Example: Get All Tables</span>
+                      </button>
+                    </div>
+                    <div id="iq-tables-1" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p><strong>Request</strong></p>
+                        <p><pre>curl -X GET "https://training-iqies.hcqis.org/api/stateapi/v1/tables" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json"</pre></p>
+                        <p><strong>Response</strong></p>
+<p><pre>{
+  "tables": [
+      "aspen_migration.algtn",
+      "aspen_migration.apl_case",
+      "aspen_migration.cfr",
+      "aspen_migration.enfrcmt",
+      "aspen_migration.intk",
+      "aspen_migration.prsn_intk",
+      "aspen_migration.regltn",
+      "aspen_migration.regltn_set",
+      "aspen_migration.snctn",
+      "auth.mgmt_unit",
+      "auth.prmry_dscpln",
+      "auth.role",
+      "auth.user",
+      "auth.user_prmry_dscpln",
+      "auth.user_role",
+      "auth.user_unit",
+      "auth.work_unit",
+      "enforcement.apl_case",
+      "enforcement.apl_rltd_ctn",
+      ...
+  ]
+}</pre></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3><strong>Table Columns Endpoint</strong></h3>
+                <p><code>GET https://iqies.cms.gov/api/stateapi/v1/tables/{tableName}/cols</code> </p>
+
+                <h4>Parameters</h4>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Example</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>tableName</td>
+                      <td>survey.ctn</td>
+                      <td>Name of the table in the schema.</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-2">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-cols-1"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-2')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Example: Get Table Columns</span>
+                      </button>
+                    </div>
+                    <div id="iq-cols-1" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p><strong>Request</strong></p>
+                        <p><pre>curl -X GET "https://training-iqies.hcqis.org/api/stateapi/v1/tables/survey.ctn/cols" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json"</pre></p>
+                        <p><strong>Response</strong></p>
+<p><pre>{
+    "table": "survey.ctn",
+    "cols": [
+        {
+            "column_name": "ctn_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "character_maximum_length": null,
+            "character_octet_length": null,
+            "numeric_precision": 32,
+            "numeric_precision_radix": 2,
+            "numeric_scale": 0,
+            "datetime_precision": null
+        },
+        {
+            "column_name": "rgltn_id",
+            "data_type": "integer",
+            "is_nullable": "NO",
+            "character_maximum_length": null,
+            "character_octet_length": null,
+            "numeric_precision": 32,
+            "numeric_precision_radix": 2,
+            "numeric_scale": 0,
+            "datetime_precision": null
+        },
+        {
+            "column_name": "dfcnt_prctc_stmt",
+            "data_type": "text",
+            "is_nullable": "YES",
+            "character_maximum_length": null,
+            "character_octet_length": 1073741824,
+            "numeric_precision": null,
+            "numeric_precision_radix": null,
+            "numeric_scale": null,
+            "datetime_precision": null
+        },
+        ...
+    ],
+    "constraints": [
+        "PRIMARY KEY (ctn_id)",
+        "FOREIGN KEY (ctn_stus_id) REFERENCES survey.ctn_stus(ctn_stus_id)",
+        "FOREIGN KEY (srvy_id) REFERENCES survey.srvy(srvy_id)"
+    ]
+}
+</pre></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3><strong>Rows Endpoint</strong></h3>
+                <p><code>POST https://iqies.cms.gov/api/stateapi/v1/rows</code></p>
+
+                <p>For examples in specific languages, please refer to the the following repository:</p>
+                <ul>
+                  <li><a href="https://git.hcqis.org/iQIES/iqies-state-api-examples/tree/develop/csharp_example" target="_blank">.NET C#</a></li>
+                  <li><a href="https://git.hcqis.org/iQIES/iqies-state-api-examples/tree/develop/vbnet_example" target="_blank">.NET VB.net</a></li>
+                  <li><a href="https://git.hcqis.org/iQIES/iqies-state-api-examples/tree/develop/java_example" target="_blank">Java</a></li>
+                  <li><a href="https://git.hcqis.org/iQIES/iqies-state-api-examples/tree/develop/python_example" target="_blank">Python</a></li>
+                  <li><a href="https://git.hcqis.org/iQIES/iqies-state-api-examples/tree/develop/javascript_example" target="_blank">Javascript NodeJS</a></li>
+                  <li><a href="https://git.hcqis.org/iQIES/iqies-state-api-examples/tree/develop/powershell_example" target="_blank">PowerShell</a></li>
+                  <li><a href="https://git.hcqis.org/iQIES/iqies-state-api-examples/tree/develop/console_example" target="_blank">Shell wget</a></li>
+                </ul>
+
+                <p>The following JSON and cURL examples are for demonstration purposes only.</p>
+
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-3">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-rows-1"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-3')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Example 1: Get all Providers</span>
+                      </button>
+                    </div>
+                    <div id="iq-rows-1" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p><strong>Request</strong></p>
+                        <p>
+<pre>
+{
+  "sql": {
+    "select": "*",
+    "from": "provider.prvdr"
+  },
+  "replacements": {}
+}
+</pre>
+                        </p>
+                        <p><pre>curl -X POST "https://training-iqies.hcqis.org/api/stateapi/v1/rows" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json" -d "{ \"sql\": { \"select\": \"*\", \"from\": \"provider.prvdr\" }, \"replacements\": {  }}"</pre></p>
+
+                        <p>
+                          The above request will result in the following sql query being executed:<br />
+                          <em>SELECT * FROM provider.prvdr LIMIT 500 OFFSET 0</em>
+                        </p>
+                        <p><strong>Response</strong></p>
+<p><pre>[
+    {
+        "ccn": null,
+        "lgl_name": "testing 123",
+        "prvdr_id": 1484677
+    },
+    {
+        "ccn": "337294",
+        "lgl_name": "Sisters Of Charity H Hlth Care",
+        "prvdr_id": 323487
+    },
+    {
+        "ccn": null,
+        "lgl_name": "testing 123",
+        "prvdr_id": 1633734
+    },
+    {
+        "ccn": "337283",
+        "lgl_name": null,
+        "prvdr_id": 1041147
+    }
+]</pre></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-4">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-rows-2"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-4')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Example 2: Get all Providers with Limit, Offset and Order by</span>
+                      </button>
+                    </div>
+                    <div id="iq-rows-2" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p><strong>Request</strong></p>
+                        <p>
+<pre>
+{
+  "sql": {
+    "select": "*",
+    "from": "provider.prvdr",
+    "orderBy":"lgl_name",
+              "limit":100,
+              "offset":100
+  },
+  "replacements": {}
+}
+</pre>
+                        </p>
+                        <p><pre>curl -X POST "https://training-iqies.hcqis.org/api/stateapi/v1/rows" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json" -d "{ \"sql\": { \"select\": \"*\", \"from\": \"provider.prvdr\", \"order by\": \"lgl_name\", \"limit\": \"100\", \"offset\": \"100\"}, \"replacements\": {  }}"</pre></p>
+
+                        <p>
+                          The above request will result in the following sql query being executed:<br />
+                          <em>SELECT * FROM provider.prvdr ORDER BY lgl_name LIMIT 100 OFFSET 100</em>
+                        </p>
+                        <p><strong>Response</strong></p>
+<p><pre>[
+    {
+        "ccn": null,
+        "lgl_name": "Test provider",
+        "prvdr_id": 118584
+    },
+    {
+        "ccn": null,
+        "lgl_name": "Denzel's HHA provider",
+        "prvdr_id": 120359
+    },
+    {
+        "ccn": null,
+        "lgl_name": "First Response HHA provider",
+        "prvdr_id": 118103
+    },
+    {
+        "ccn": null,
+        "lgl_name": "Happy Time HHA provider",
+        "prvdr_id": 1630675
+    }
+]</pre></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-5">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-rows-3"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-5')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Example 3: Inner Join provider with Provider Type</span>
+                      </button>
+                    </div>
+                    <div id="iq-rows-3" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p><strong>Request</strong></p>
+                        <p>
+                          <pre>
+{
+  "sql":{
+    "select":"p.*,pt.prvdr_type_name",
+    "from":"provider.prvdr p",
+    "joins":[
+      {
+        "innerJoin":"provider.prvdr_type pt",
+        "on":"p.prvdr_type_id =pt.prvdr_type_id"
+      }
+    ]
+  },
+  "replacements":{}
+}
+</pre>
+                        </p>
+                        <p><pre>curl -X POST "https://training-iqies.hcqis.org/api/stateapi/v1/rows" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json" -d "{ \"sql\": { \"select\": \"p.*,pt.prvdr_type_name\", \"from\": \"provider.prvdr p\", \"joins\": [ { \"innerJoin\": \"provider.prvdr_type pt\", \"on\": \"p.prvdr_type_id =pt.prvdr_type_id\" } ] }, \"replacements\": {} } "</pre></p>
+
+                        <p>
+                          The above request will result in the following sql query being executed:<br />
+                          <em>SELECT p.*,pt.prvdr_type_name FROM provider.prvdr p INNER JOIN provider.prvdr_type pt ON p.prvdr_type_id =pt.prvdr_type_id LIMIT 500 OFFSET 0</em>
+                        </p>
+                        <p><strong>Response</strong></p>
+<p><pre>[
+    {
+        "ccn": "337294",
+        "lgl_name": "Sisters Of Charity H Hlth Care",
+        "prvdr_id": 323487,
+        "prvdr_type_name": "Home Health Agencies"
+    },
+    {
+        "ccn": null,
+        "lgl_name": "testing 123",
+        "prvdr_id": 1484677,
+        "prvdr_type_name": "Home Health Agencies"
+    },
+    {
+        "ccn": null,
+        "lgl_name": "testing 123",
+        "prvdr_id": 1633734,
+        "prvdr_type_name": "Home Health Agencies"
+    },
+    {
+        "ccn": "337283",
+        "lgl_name": null,
+        "prvdr_id": 1041147,
+        "prvdr_type_name": "Home Health Agencies"
+    }
+]</pre></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-6">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-rows-4"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-6')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Example 4: Left Join Provider with Branch table</span>
+                      </button>
+                    </div>
+                    <div id="iq-rows-4" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p><strong>Request</strong></p>
+                        <p>
+<pre>
+{
+  "sql":{
+    "select":"p.*,b.brnch_name",
+    "from":"provider.prvdr p",
+    "joins":[
+      {
+        "leftJoin":"provider.brnch b",
+        "on":"p.prvdr_id =b.prvdr_id"
+      }
+    ]
+  },
+  "replacements":{}
+}
+</pre>
+                        </p>
+                        <p><pre>curl -X POST "https://training-iqies.hcqis.org/api/stateapi/v1/rows" -H "accept: application/json" -H "apikey: YOURAPIKEY" -H "Content-Type: application/json" -d "{ \"sql\":{ \"select\":\"p.*,b.brnch_name\", \"from\":\"provider.prvdr p\", \"joins\":[ { \"leftJoin\":\"provider.brnch b\", \"on\":\"p.prvdr_id =b.prvdr_id\" } ] }, \"replacements\":{}}"</pre></p>
+
+                        <p>
+                          The above request will result in the following sql query being executed:<br />
+                          <em>SELECT p.*,b.brnch_name FROM provider.prvdr p LEFT JOIN provider.brnch b ON p.prvdr_id =b.prvdr_id LIMIT 500 OFFSET 0</em>
+                        </p>
+                        <p><strong>Response</strong></p>
+<p><pre>[
+    {
+        "brnch_name": null,
+        "ccn": null,
+        "lgl_name": "testing 123",
+        "prvdr_id": 1484677
+    },
+    {
+        "brnch_name": null,
+        "ccn": "337294",
+        "lgl_name": "Sisters Of Charity H Hlth Care",
+        "prvdr_id": 323487
+    },
+    {
+        "brnch_name": null,
+        "ccn": null,
+        "lgl_name": "testing 123",
+        "prvdr_id": 1633734
+    },
+    {
+        "brnch_name": null,
+        "ccn": "337283",
+        "lgl_name": null,
+        "prvdr_id": 1041147
+    }
+]</pre></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-7">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-rows-5"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-7')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Example 5: Multiple Left joins</span>
+                      </button>
+                    </div>
+                    <div id="iq-rows-5" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p><strong>Request</strong></p>
+                        <p>
+                          <pre>
+{
+  "sql":{
+    "select":"p.prvdr_id,p.lgl_name,pt.prvdr_type_name,ps.prvdr_sbtyp_name",
+    "from":"provider.prvdr p",
+    "joins":[
+      {
+        "leftJoin":"provider.prvdr_type pt",
+        "on":"p.prvdr_type_id =pt.prvdr_type_id"
+      },
+      {
+        "leftJoin":"provider.prvdr_sbtyp ps",
+        "on":"p.prvdr_sbtyp_id =ps.prvdr_sbtyp_id"
+      }
+ 
+    ]
+  },
+    "replacements":{}
+}
+</pre>
+                        </p>
+                        <p><pre>curl -X POST "https://training-iqies.hcqis.org/api/stateapi/v1/rows" -H "accept: application/json" -H "apikey: 4g4GnlSWWZWgyDyOo742HnPiKwNK87LW" -H "Content-Type: application/json" -d "{ \"sql\":{ \"select\":\"p.prvdr_id,p.lgl_name,pt.prvdr_type_name,ps.prvdr_sbtyp_name\", \"from\":\"provider.prvdr p\", \"joins\":[ {\t \"leftJoin\":\"provider.prvdr_type pt\",\t \"on\":\"p.prvdr_type_id =pt.prvdr_type_id\" }, {\t \"leftJoin\":\"provider.prvdr_sbtyp ps\",\t \"on\":\"p.prvdr_sbtyp_id =ps.prvdr_sbtyp_id\" } ] }, \"replacements\":{}}"</pre></p>
+
+                        <p>
+                          The above request will result in the following sql query being executed:<br />
+                          <em>SELECT p.prvdr_id,p.lgl_name,pt.prvdr_type_name,ps.prvdr_sbtyp_name FROM provider.prvdr p LEFT JOIN provider.prvdr_type pt ON p.prvdr_type_id =pt.prvdr_type_id LEFT JOIN provider.prvdr_sbtyp ps ON p.prvdr_sbtyp_id =ps.prvdr_sbtyp_id LIMIT 500 OFFSET 0</em>
+                        </p>
+                        <p><strong>Response</strong></p>
+<p><pre>[
+    {
+        "lgl_name": "testing 123",
+        "prvdr_id": 1484677,
+        "prvdr_sbtyp_name": null,
+        "prvdr_type_name": "Home Health Agencies"
+    },
+    {
+        "lgl_name": "testing 123",
+        "prvdr_id": 1633734,
+        "prvdr_sbtyp_name": null,
+        "prvdr_type_name": "Home Health Agencies"
+    },
+    {
+        "lgl_name": "provider name here",
+        "prvdr_id": 1041147,
+        "prvdr_sbtyp_name": null,
+        "prvdr_type_name": "Home Health Agencies"
+    },
+    {
+        "lgl_name": "testing 123",
+        "prvdr_id": 154164,
+        "prvdr_sbtyp_name": null,
+        "prvdr_type_name": "Home Health Agencies"
+    }
+]</pre></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-8">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-rows-6"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-8')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Example 6: Group By, Order By, Having</span>
+                      </button>
+                    </div>
+                    <div id="iq-rows-6" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p><strong>Request</strong></p>
+                        <p>
+<pre>
+{
+  "sql":{
+    "select":"rgn_id, count(*)",
+    "from":"location.state",
+    "groupBy": "rgn_id",
+    "orderBy": "rgn_id",
+    "having":"rgn_id=:rgn_id"
+  },
+  "replacements":{"rgn_id":1}
+}
+</pre>
+                        </p>
+                        <p><pre>curl -X POST "https://training-iqies.hcqis.org/api/stateapi/v1/rows" -H "accept: application/json" -H "apikey: bKNWQJ3j52ovM2gH76EeQBeWeJaIja7G" -H "Content-Type: application/json" -d "{ \"sql\":{ \"select\":\"rgn_id, count(*)\", \"from\":\"location.state\", \"groupBy\": \"rgn_id\", \"orderBy\": \"rgn_id\", \"having\":\"rgn_id=:rgn_id\" }, \"replacements\":{\"rgn_id\":1} } "</pre></p>
+
+                        <p>
+                          The above request will result in the following sql query being executed:<br />
+                          <em>SELECT rgn_id, count(*) FROM location.state GROUP BY rgn_id ORDER BY rgn_id HAVING rgn_id=rgn_id</em>
+                        </p>
+                        <p><strong>Response</strong></p>
+<p><pre>[
+    {
+        "count": 6,
+        "rgn_id": 1
+    }
+]</pre></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="tab-pane" id="tab6" role="tabpanel" aria-labelledby="tab6Tab">
+
+              <h2>Status Codes & Errors</h2>
+
+              <section>
+                <h3>HTTP Status Codes</h3>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>200 - OK</td>
+                      <td>Everything worked as expected.</td>
+                    </tr>
+                    <tr>
+                      <td>400 - Bad Request</td>
+                      <td>The request was unacceptable, often due to missing a required parameter.</td>
+                    </tr>
+                    <tr>
+                      <td>401 - Unauthorized</td>
+                      <td>No valid API key provided or if an API key is not supplied.</td>
+                    </tr>
+                    <tr>
+                      <td>403 - Forbidden</td>
+                      <td>The API key is expired, or does not have permissions to perform the request.</td>
+                    </tr>
+                    <tr>
+                      <td>500 - Server Errors</td>
+                      <td>Something went wrong on iQIES end.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+
+              <section>
+                <h3>Error Types</h3>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Error Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>missing JOIN key</td>
+                      <td>Missing <strong>JOIN</strong> key</td>
+                    </tr>
+                    <tr>
+                      <td>invalid JOIN</td>
+                      <td>Invalid <strong>JOIN</strong>. Only left and inner joins are allowed.</td>
+                    </tr>
+                    <tr>
+                      <td>authentication_error</td>
+                      <td>Failure to properly authenticate yourself in the request.</td>
+                    </tr>
+                    <tr>
+                      <td>missing schema</td>
+                      <td>Please provide the schema name to qualify the table name. Valid syntax: schemaName.tableName or schemaName.tableName as aliasName or schemaName.tableName aliasName.</td>
+                    </tr>
+                    <tr>
+                      <td>multiple table</td>
+                      <td>Specify only the schema qualified table name in the <strong>FROM</strong> key. Use joins to specify any joins.</td>
+                    </tr>
+                    <tr>
+                      <td>rate_limit_error</td>
+                      <td>Too many requests hit the API too quickly or the amount of rows you are trying to pull exceed the limit (500) rows.</td>
+                    </tr>
+                    <tr>
+                      <td>missing primary key</td>
+                      <td>If sql has <strong>GROUP BY</strong>, <strong>HAVING</strong> clause and any transaction table then <strong>HAVING</strong> clause must include primary key from the left-most transaction table.</td>
+                    </tr>
+                    <tr>
+                      <td>invalid usage of table alias "VW"</td>
+                      <td>Any query which has used <strong>vw</strong> as able alias. vw is reserved word for us and any query should not have use this word as table alias.</td>
+                    </tr>
+                    <tr>
+                      <td>invalid usage of table alias "USER"</td>
+                      <td>Any query which has used <strong>user</strong> as table without alias. user is reserved word for us and any query should not have use this table without table alias.</td>
+                    </tr>
+                    <tr>
+                      <td>database exception</td>
+                      <td>Syntax error. Please review and correct the syntax error in the query above.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <div class="tab-pane" id="tab7" role="tabpanel" aria-labelledby="tab7Tab">
+              <h2>Frequently Asked Questions</h2>
+              <h3>General Questions</h3>
+
+              <section>
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-1">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-general-1"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-1')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>When will the API be available to states?</span>
+                      </button>
+                    </div>
+                    <div id="iq-general-1" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p>
+                          iQIES State API is meant for access/pull the data from iQIES database via RESTful API endpoints and be available as each provider type comes online in iQIES.
+                          You can sign-up <a href="mailto:iQIES-UAT@ventera.hcqis.org">iQIES-UAT@ventera.hcqis.org</a> your state if you want to be part of our product preview users.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-2">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-general-2"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-2')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>What do I have to do to prepare my existing databases/environments for iQIES State API?</span>
+                      </button>
+                    </div>
+                    <div id="iq-general-2" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p>
+                          iQIES State API is meant for access/pull the data from iQIES Database via RESTful API endpoints.
+                        </p>
+                        <p>
+                          Once you pull the data via API, you should be able to manage the data in whatever format/database that suits your environment.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-3">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-general-3"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-3')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Can other states access my data? </span>
+                      </button>
+                    </div>
+                    <div id="iq-general-3" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p>
+                          No. A State can access/pull your State only data via iQIES API.
+                        </p>
+                        <p>
+                          We take security precautions to protect your State's data by biding your State with your login Token within your API key.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-4">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-general-4"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-4')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>What applications do we need to have on computers in order to run an API? I am guessing we need to have that ready for next week so we can do our testing?</span>
+                      </button>
+                    </div>
+                    <div id="iq-general-4" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p>
+                          Any platforms, tools, programming languages that support RESTFul API. For ex: Postman, cURL, Swagger, java, ODBR with JSON driver, etc.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h3>Data</h3>
+                <div class="iq-accordion">
+                  <div class="card ">
+                    <div class="card-header d-flex" id="iq-heading-5">
+                      <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions"
+                              data-toggle="collapse" data-target="#iq-data-1"
+                              aria-controls="iq-collapse-one" type="button"
+                              onclick="toggleArrow('iq-heading-5')" aria-expanded="false">
+                        <svg class="iq-icon" xmlns="http://www.w3.org/2000/svg"
+                             viewBox="help" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <path fill="none" stroke="#212121" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10"
+                                d="M.5 16.5l8-8-8-8"></path>
+                        </svg><span>Is data available the only data we can access through the API?</span>
+                      </button>
+                    </div>
+                    <div id="iq-data-1" class="collapse"
+                         aria-labelledby="iq-heading-one">
+                      <div class="card-body">
+                        <p>
+                          Yes. If you have other critical data that you need exposed kindly reach out <a href="mailto:iQIES-UAT@ventera.hcqis.org">iQIES-UAT@ventera.hcqis.org</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <nav class="nav flex-column iq-nav" role="navigation">
+            <a class="nav-link active" tabindex="0" id="tab1Tab" href="#tab1" data-toggle="tab" role="tab" aria-controls="tab1" aria-selected="true">
+              Overview
+            </a>
+            <a class="nav-link" tabindex="0" id="tab2Tab" href="#tab2" data-toggle="tab" role="tab" aria-controls="tab2" aria-selected="false">
+              Getting Started
+            </a>
+            <a class="nav-link" tabindex="0" id="tab3Tab" href="#tab3" data-toggle="tab" role="tab" aria-controls="tab3" aria-selected="false">
+              State API Syntax
+            </a>
+            <a class="nav-link" tabindex="0" id="tab4Tab" href="#tab4" data-toggle="tab" role="tab" aria-controls="tab4" aria-selected="false">
+              Endpoints Overview
+            </a>
+            <a class="nav-link" tabindex="0" id="tab5Tab" href="#tab5" data-toggle="tab" role="tab" aria-controls="tab5" aria-selected="false">
+              Endpoints Usage
+            </a>
+            <a class="nav-link" tabindex="0" id="tab6Tab" href="#tab6" data-toggle="tab" role="tab" aria-controls="tab6" aria-selected="false">
+              Status Codes & Errors
+            </a>
+            <a class="nav-link" tabindex="0" id="tab7Tab" href="#tab7" data-toggle="tab" role="tab" aria-controls="tab7" aria-selected="false">
+              Frequently Asked Questions
+            </a>
+          </nav>
+          
+          <div class="iq-callout">
+            <p>View examples in the <a href="https://git.hcqis.org/iQIES/iqies-state-api-examples" target="_blank">Github repository</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/">
+                    <img src="../../../src/assets/images/logo-iqies-reversed.svg"
+                         class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../src/assets/images/logo-cms.svg"
+                           class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="/help">Help</a><span>
+                  (800)
+                  339-9313
+                </span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank"
+                                                                     rel="noopener noreferrer">
+                  QTSO <img src="../../../src/assets/images/logo-cms.svg"
+                            class="iq-external-link-icon" alt="">
+                </a><a href="https://www.cms.gov/Medicare/Medicare.html"
+                       target="_blank" rel="noopener noreferrer">
+                  Medicare <img src="../../../src/assets/images/icon-link-external.svg"
+                                class="iq-external-link-icon" alt="">
+                </a><a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="https://www.medicare.gov/about-us/plain-writing"
+                     target="_blank" rel="noopener noreferrer">
+                    Plain Writing <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon" alt="">
+                  </a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html"
+                         target="_blank" rel="noopener noreferrer">
+                    Freedom of
+                    Information Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                         class="iq-external-link-icon" alt="">
+                  </a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html"
+                         target="_blank" rel="noopener noreferrer">
+                    No Fear Act <img src="../../../src/assets/images/icon-link-external.svg"
+                                     class="iq-external-link-icon" alt="">
+                  </a><a href="https://get.adobe.com/reader/" target="_blank"
+                         rel="noopener noreferrer">
+                    Adobe Acrobat <img src="../../../src/assets/images/icon-link-external.svg"
+                                       class="iq-external-link-icon" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 d-flex align-items-center">
+          <img src="../../../src/assets/images/logo-cms.svg"
+               class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js">
+  </script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script type="text/javascript"
+          src="../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="../../../src/assets/js/scripts.js">
+  </script>
+</body>
+
+</html>
