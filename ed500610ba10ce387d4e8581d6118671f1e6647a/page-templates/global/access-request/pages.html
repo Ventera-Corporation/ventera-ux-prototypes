@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/general.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Access Request Pages | iQIES</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/design-system.css">
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/prototype.css">
+<!-- styles needed for data tables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<!-- you need this font to have the right font weight expressed -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800&display=swap" rel="stylesheet">	
+<!-- to include fontsome icons professional version -->
+<script src="https://kit.fontawesome.com/51dd396d57.js"></script>
+<!-- to match design system definition -->
+<link rel="stylesheet" href="../../../../src/assets/prototype-styles/hha.css">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+  <header>
+	<div class="iq-global-nav">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col">
+			  <nav><a href="#"><img src="../../../../src/assets/images/logo-iqies.svg" class="iq-logo" alt="iQIES Logo"></a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block active">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-toggle="dropdown">Survey and Certification  <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#">Manage AO Providers</a> 
+					  <a class="dropdown-item" href="search.html">Search for a provider, survey, intake, or enforcement</a>
+					  <a class="dropdown-item" href="add-a-provider.html">Add a Provider</a>
+				  </div>
+				</div><a href="javascript:void(0)" class="iq-assessments-link d-none d-sm-block">Assessments</a>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block">
+					<a class="dropdown-toggle" href="javascript:void(0)" id="navbarDropdown2"
+					role="button" data-toggle="dropdown">Reports <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					<a class="dropdown-item" href="#">Reports Main</a>
+					<a class="dropdown-item" href="#">Find a Report Type</a>
+					<a class="dropdown-item" href="#">My Reports</a>
+				  </div>
+				</div>
+				<div class="dropdown d-none d-sm-block d-lg-inline-block"><a class="dropdown-toggle" href="#" id="navbarDropdown3"
+					role="button" data-toggle="dropdown">Administration <i class="fal fa-chevron-down"></i></a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+					  <a class="dropdown-item" href="#">Letters</a>
+					  <a class="dropdown-item" href="#">State Customizations</a>
+				  </div>
+				</div>
+				<div class="iq-nav-user-icon dropdown nav-item ml-lg-auto ml-sm-0"><a class="dropdown-toggle" href="#"
+					id="navbarDropdown4" role="button" data-toggle="dropdown">
+					<p>DF</p>
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown4"><a class="dropdown-item" href="#">My
+					  Profile</a>
+					<a class="dropdown-item" href="#">Help</a>
+					<a class="dropdown-item" href="#">Logout</a>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+  </div>
+  </header>
+
+  <main>
+	<!-- breadcrumb and header -->
+    <div class="iq-page-header-wrapper mb-0">
+      <div class="container-fluid">
+        <div class="iq-page-header">
+          <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+				<!-- InstanceBeginEditable name="breadcrumb" -->
+                  
+				<!-- InstanceEndEditable -->
+                </ol>
+              </nav>
+              <div class="iq-page-header-content">
+               <!-- InstanceBeginEditable name="headerRight" -->
+			   <!-- InstanceEndEditable -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="container-fluid" id="mainContent">
+	  <!-- InstanceBeginEditable name="pageLevelErrors" -->	
+	  <div class="alert alert-warning hide" role="alert">
+		<div class="alert-content">You do not have permission to manage this provider's information.</div>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	  </div>
+  	  <div class="alert alert-success successMsg hide" role="alert">
+	  	<div class="alert-content">Changes saved successfully</div>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	  </div>
+	  <div class="alert alert-danger errorMsg hide" role="alert">
+          <div class="alert-content"><div class="row">
+              <div class="col-sm-1"><i class="fas fa-exclamation-triangle fa-lg"></i></div>
+              <div class="col-sm-11">
+                 <p> Unable to save. Please review and correct the following:</p> 
+                  <ul>
+                      <li><a href="#address1M">Address 1</a> is required</li>
+                      <li><a href="#cityM">City</a> is required</li>
+                      <li><a href="#zipCodeX">Zip Code</a> is required</li>
+                  </ul>
+              </div></div>
+          </div>
+        </div> 
+	   <!-- InstanceEndEditable -->
+	  <!-- InstanceBeginEditable name="mainContent" -->	
+		<h1>Access Request Pages</h1>
+        <ul>
+            <li><a href="index.html">Global Landing: First Time User</a></li>
+            <li><a href="category.html">Access Request Start</a>
+            <br><br><strong>Notes</strong><ul><li>Depending on category selection, you can pick corresponding roles and then submit request</li>
+                <li>Once you have requested a role, if you click on request role again, you will be following the second request flow</li>
+                <li><a href="user-profile-pending.html">Pending Requests Page</a></li>
+                <li><a href="request-rejected.html">Rejected Request Example - RO</a>: First Request</li>
+                <li><a href="user-profile-rejected.html#ro">Rejected Request Example - RO</a>: Non-First Request</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-4"><h3>User Profile <small>with One Active Role</small></h3>
+                <ul>
+                    <li><a href="user-profile.html#ao">AO</a></li> 
+                    <li><a href="user-profile.html#co">CO</a></li>
+                    <li><a href="user-profile.html#mac">MAC</a></li>
+                    <li><a href="user-profile.html#ro">RO</a></li>
+                    <li><a href="user-profile.html#sa">Sa</a></li>
+                    <li><a href="user-profile.html#pa">PA</a></li>
+                    <li><a href="user-profile.html#v">V</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-4"><h3>User Profile <small>with One Active Role and One Pending</small></h3>
+                <ul>
+                    <li><a href="user-profile2.html#ao">AO</a></li> 
+                    <li><a href="user-profile2.html#co">CO</a></li>
+                    <li><a href="user-profile2.html#mac">MAC</a></li>
+                    <li><a href="user-profile2.html#ro">RO</a></li>
+                    <li><a href="user-profile2.html#sa">Sa</a></li>
+                    <li><a href="user-profile2.html#pa">PA</a></li>
+                    <li><a href="user-profile2.html#v">V</a></li>
+                </ul>
+            </div>
+        </div>
+            
+    
+		<!-- InstanceEndEditable -->
+	</div>
+  </main>
+   
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-xl-10">
+        <div class="iq-footer-content">
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-heading">
+                  <a href="/"><img src="../../../../src/assets/images/logo-iqies-reversed.svg" class="logo iq-logo" alt="Logo iQIES White">
+                  </a><img src="../../../../src/assets/images/logo-cms.svg" class="img-fluid logo cms-logo d-lg-none" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="#">Help</a><span>(800) 339-9313</span><a href="mailto:help@qtso.com">Email Us</a><a href="https://qtso.cms.gov/" target="_blank" rel="noopener noreferrer">QTSO <img src="../../../../src/assets/images/logo-cms.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/Medicare/Medicare.html" target="_blank" rel="noopener noreferrer">Medicare <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="iq-footer-links">
+                  <a href="https://www.medicare.gov/about-us/plain-writing" target="_blank" rel="noopener noreferrer">Plain Writing <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/center/freedom-of-information-act-center.html" target="_blank" rel="noopener noreferrer">Freedom of Information Act <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/NoFearAct.html" target="_blank" rel="noopener noreferrer">No Fear Act <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener noreferrer">Adobe Acrobat <img src="../../../../src/assets/images/icon-link-external.svg" class="iq-external-link-icon" alt=""></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-xl-2 d-flex align-items-center">
+          <img src="../../../../src/assets/images/logo-cms.svg" class="logo cms-logo d-none d-lg-block" alt="CMS Logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../../src/assets/third-party/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+  <script src="../../../../src/assets/third-party/popper/popper.min.js"></script>
+  <script src="../../../../src/assets/third-party/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <!-- to include text editor code -->
+  <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.5/js/froala_editor.pkgd.min.js"></script>
+  <!-- to include datatables for responsive table -->
+  <script src="https://cdn.datatables.net/t/dt/dt-1.10.11,fc-3.2.1,fh-3.1.1,r-2.0.2,rr-1.1.1,se-1.1.2/datatables.js"></script>
+  <!-- to include multi-select dropdown selector -->
+  <script src="../../../hhaung/js/BsMultiSelect.js"></script>
+  <script src="../../../../src/assets/js/scripts.js"></script>
+  <!-- InstanceBeginEditable name="footerScripts" -->
+  <script>
+	  $(document).ready(function () {
+		  $('table.responsive').DataTable( {
+			  //scrollY: 300,
+			  paging: false,
+			  lengthMenu: false,
+			  info: false,
+			  searching: false,
+			  responsive: {
+				details: { type: 'column'}
+			  },
+			  "order": [[ 1, 'asc' ]],
+			  columnDefs: [
+				{ className: 'control', orderable: false, targets: 0 },
+				{ responsivePriority: 0, targets: 1 },
+				{ responsivePriority: 1, targets: -1 },
+				{ "orderable": false, "targets": -1 }
+			 ]
+		  }); // to get all responsive tables sorted by order. be sure to trigger by ID if each table has diffrent sort column
+		  
+		  $('[data-toggle="tooltip"]').tooltip(); // to include tooltip
+		  $("select.multiselect").bsMultiSelect(); // to include multi-select dropdown selector
+		   var editor = new FroalaEditor('div.editTextDiv'); //to include text editor
+		  window.setTimeout(function() {
+				$(".alert-success").fadeTo(4000, 0).slideUp(4000, function(){
+					$(this).addClass('hide'); 
+				});
+			}, 5000); //to get save messages to disppear on its own 
+    
+     $('#fileDescriptionInput').keyup(function () {
+          var max = 256;
+          var char = 0; 
+          var len = $(this).val().length;
+          if (len >= max) {
+            var char = len - max; 
+            $('.fdt').addClass('iq-input-error-msg'); 
+            $('#charNum').html(len + '/256. You have exceeded the character limit by ' + char + ' characters.' );
+          } else {
+            $('#charNum').html(len + '/256.');
+          }
+        }); // to include character limit. Make sure you have the ID replaced with your own textarea ID OR use a class name if multiple
+	  });
+</script>
+	<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>
