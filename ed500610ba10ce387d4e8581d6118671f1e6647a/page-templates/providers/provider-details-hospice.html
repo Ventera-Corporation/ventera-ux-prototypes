@@ -3326,7 +3326,7 @@
                               <option value="additional" selected>Additional Contact</option>
                           </select>
                             <span class="help-text">Only one provider contact and one emergency contact can be added</span>
-                        </label>
+                        a</label>
                       </p>
                     </div>
                     </div>
@@ -3430,7 +3430,7 @@
               <p class="info-text"><span class="baCount">3</span> Additional Contacts</p>
             
               <table class="table table-striped">
-                  <thead><tr><th class="sortable ascending"><span>Type</span></th><th class="sortable"><span>Name</span></th><th>Contact Info</th><th class="text-right">Actions</th></tr></thead>
+                  <thead><tr><th class="sortable descending"><span>Type</span></th><th class="sortable"><span>Name</span></th><th>Contact Info</th><th class="text-right">Actions</th></tr></thead>
                   <tbody> <tr><td>Provider Contact</td><td>Minerva McGonagall, MD</td>
                       <td><dl class="iq-dl"><dt>Phone</dt>
                           <dd><span class="iq-not-available">No information</span></dd>
@@ -3702,6 +3702,7 @@
                   </div>
             </section>
           </div>
+         <!-- MAC Tab -->
           <div class="tab-pane " id="mac" role="tabpanel"
                     aria-labelledby="macTab">
             <div class="row tabTitle">
@@ -3856,15 +3857,45 @@
               </div>
             </section>
           </div>
+         <!-- Admin Tab -->
           <div class="tab-pane " id="admin" role="tabpanel"
                     aria-labelledby="adminTab">
-            <section class="edit-view newAdmin active">
+            <section class="edit-view newAdmin">
               <div class="row">
                 <div class="col-md-12">
                   <h2>Add Administrator</h2>
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                  <div class="row">
-                    <div class="col-md-6 col-lg-3">
+                  <p class="iqies-required-text">At least one field must be filled in below</p>
+                  <fieldset><legend class="sr-only">Basic Info</legend>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <fieldset class="">
+                            <legend class="iqies-legend-heading-no-error"></legend>
+                            <div class="custom-control custom-checkbox">
+                              <input id="isPrimary" type="checkbox" class="custom-control-input" onChange="confirmPrimary(this)">
+                              <label for="isPrimary" class="custom-control-label"><span class="">Primary Administrator</span></label>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="administratorTypeId">Administrator Type</label>
+                          <select id="administratorTypeId" class="form-control">
+                            <option value="">Select one</option>
+                            <option value="1">Administrator</option>
+                            <option value="5">Assessment Coordinator</option>
+                            <option value="2">Assistant Administrator</option>
+                            <option value="4">Director of Nursing</option>
+                            <option value="3">Medical Director</option>
+                          </select>
+                          <div class="form-text"> Role held by the administrator </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                    
+                    <div class="col-md-2 col-lg-2">
                       <div class="form-group">
                         <label for="salutationId">Salutation</label>
                         <select id="salutationId" class="form-control">
@@ -3877,7 +3908,7 @@
                         </select>
                       </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-4 col-lg-4">
                       <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input id="firstName" class="form-control" type="text" value="">
@@ -3896,14 +3927,24 @@
                       </div>
                     </div>
                   </div>
+                 </fieldset>
+                  <fieldset>
+                    <legend class="iq-form-group-title">Contact Info</legend>  
+                  
                   <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-3">
                       <div class="form-group">
                         <label for="phoneNumber">Phone</label>
                         <input id="phoneNumber" class="form-control" maxlength="10" type="tel" value="">
                       </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                      <div class="col-12 col-md-2">
+                      <div class="form-group">
+                        <label>Extension
+                        <input class="form-control" maxlength="5" autocapitalize="none" type="tel" value=""></label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-3">
                       <div class="form-group">
                         <label for="faxNumber">Fax</label>
                         <input id="faxNumber" class="form-control" maxlength="10" type="tel" value="">
@@ -3916,142 +3957,18 @@
                       </div>
                     </div>
                   </div>
-                  <fieldset>
-                    <!--<legend><h3>Address</h3></legend>-->
+                </fieldset>
+                    <fieldset>
+                    <legend class="iq-form-group-title">Details</legend>
                     <div class="row">
-                      <div class="col-md-12">
+                      
+                      <div class="col-md-4">
                         <div class="form-group">
-                          <label>Address Line 1 <span class="iq-asterisk">*</span></label>
-                          <input type="text" class="form-control"
-                            required>
-                          <span class="help-text">Number and street name or PO box</span> </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>Address Line 2</label>
-                          <input type="text" class="form-control">
-                          <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span> </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <div class="form-group">
-                          <label id="city-label" for="cityAdmin" class="">City</label>
-                          <input id="cityAdmin" name="city" class="form-control" autocapitalize="none" type="text" value="">
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-3">
-                        <div class="form-group">
-                          <label>State</label>
-                          <select>
-                            <option value="">Select one</option>
-                            <option value="19">Alabama</option>
-                            <option value="59">Alaska</option>
-                            <option value="52">American Samoa</option>
-                            <option value="48">Arizona</option>
-                            <option value="33">Arkansas</option>
-                            <option value="49">California</option>
-                            <option value="42">Colorado</option>
-                            <option value="1">Connecticut</option>
-                            <option value="13">Delaware</option>
-                            <option value="14">District of Columbia</option>
-                            <option value="20">Florida</option>
-                            <option value="21">Georgia</option>
-                            <option value="53">Guam</option>
-                            <option value="50">Hawaii</option>
-                            <option value="60">Idaho</option>
-                            <option value="27">Illinois</option>
-                            <option value="28">Indiana</option>
-                            <option value="38">Iowa</option>
-                            <option value="39">Kansas</option>
-                            <option value="22">Kentucky</option>
-                            <option value="34">Louisiana</option>
-                            <option value="2">Maine</option>
-                            <option value="56">Marshall Islands</option>
-                            <option value="15">Maryland</option>
-                            <option value="3">Massachusetts</option>
-                            <option value="29">Michigan</option>
-                            <option value="55">Micronesia</option>
-                            <option value="30">Minnesota</option>
-                            <option value="23">Mississippi</option>
-                            <option value="40">Missouri</option>
-                            <option value="43">Montana</option>
-                            <option value="41">Nebraska</option>
-                            <option value="51">Nevada</option>
-                            <option value="4">New Hampshire</option>
-                            <option value="7">New Jersey</option>
-                            <option value="35">New Mexico</option>
-                            <option value="8">New York</option>
-                            <option value="24">North Carolina</option>
-                            <option value="44">North Dakota</option>
-                            <option value="54">Northern Mariana Islands</option>
-                            <option value="31">Ohio</option>
-                            <option value="36">Oklahoma</option>
-                            <option value="61">Oregon</option>
-                            <option value="57">Palau</option>
-                            <option value="16">Pennsylvania</option>
-                            <option value="9">Puerto Rico</option>
-                            <option value="5">Rhode Island</option>
-                            <option value="25">South Carolina</option>
-                            <option value="45">South Dakota</option>
-                            <option value="26">Tennessee</option>
-                            <option value="37">Texas</option>
-                            <option value="46">Utah</option>
-                            <option value="6">Vermont</option>
-                            <option value="17">Virginia</option>
-                            <option value="10">Virgin Islands</option>
-                            <option value="62">Washington</option>
-                            <option value="18">West Virginia</option>
-                            <option value="32">Wisconsin</option>
-                            <option value="47">Wyoming</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-3">
-                        <div class="form-group">
-                          <label id="zip-label" for="zip" class="">Zip Code</label>
-                          <input id="zip" name="zip" class="form-control" maxlength="5" autocapitalize="none" type="text" value="">
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <legend class="iq-form-group-title">Administrator Details</legend>
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <fieldset class="">
-                            <legend class="iqies-legend-heading-no-error"></legend>
-                            <div class="custom-control custom-checkbox">
-                              <input id="isPrimary" type="checkbox" class="custom-control-input">
-                              <label for="isPrimary" class="custom-control-label"><span class="">Primary Administrator</span></label>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 col-md-6">
-                        <div class="form-group">
-                          <label for="administratorTypeId">Administrator Type</label>
-                          <select id="administratorTypeId" class="form-control">
-                            <option value="">Select one</option>
-                            <option value="1">Administrator</option>
-                            <option value="5">Assessment Coordinator</option>
-                            <option value="2">Assistant Administrator</option>
-                            <option value="4">Director of Nursing</option>
-                            <option value="3">Medical Director</option>
-                          </select>
-                          <div class="form-text"> Role held by the administrator </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <div class="form-group">
-                          <label>License Number</label>
+                          <label>Medical/Nursing License Number</label>
                           <input type="text" value="">
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 col-md-4">
+                        <div class="col-md-4">
                         <div class="form-group">
                           <label>License Expiration Date</label>
                           <div class="DayPickerInput">
@@ -4060,6 +3977,9 @@
                           <div class="form-text">MM/DD/YYYY</div>
                         </div>
                       </div>
+                    </div>
+                   <!-- <div class="row">
+                      
                       <div class="col-12 col-md-4">
                         <div class="form-group">
                           <label>Start Date</label>
@@ -4078,9 +3998,9 @@
                           <div class="form-text">MM/DD/YYYY</div>
                         </div>
                       </div>
-                    </div>
+                    </div>-->
                   </fieldset>
-                  <div class="row">
+                    <div class="row">
                     <div class="col">
                       <div class="iq-button-wrapper">
                         <button class="btn btn-primary" onClick="$('#admin .edit-view').removeClass('active'); $('#admin .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#admin .tabTitle .btn').removeClass('hide');">Save</button>
@@ -4091,7 +4011,7 @@
                 </div>
               </div>
             </section>
-            <section class="read-view">
+            <section class="read-view active">
               <div class="row tabTitle">
                 <div class="col-md-10">
                   <h2>Administrators</h2>
@@ -4101,97 +4021,479 @@
                 </div>
                 <div class="col-md-2 text-right"> </div>
               </div>
-              <p class="info-text"><span class="baCount">1</span> Administrators</p>
-              <div class="iqies-list-row">
-                <div class="iqies-list-row-header">
-                  <div class="row">
-                    <div class="col-md-10">
-                      <h3>Mr. Edward P. Munch<small class="bottom">Primary Administrator</small></h3>
+              <p class="info-text"><span class="baCount">3</span> Administrators</p>
+                <table class="table table-striped">
+                  <thead><tr><th class="sortable ascending"><span>Type</span></th><th class="sortable"><span>Name</span></th><th>Contact Info &amp; Details</th><th class="text-right">Actions</th></tr></thead>
+                  <tbody> <tr><td>Assessment Coordinator <br><span class="badge-pill badge">Primary Administrator</span></td><td>Mr. Edward P. Munch</td>
+                      <td><dl class="iq-dl">
+                          <dt>Phone</dt><dd>(703) 123-1111, ext. 123</dd>
+                          <dt>Fax</dt><dd>(703) 123-3333</dd>
+                          <dt>Email</dt><dd><a href="mailto:edward.munch@hha.org">edward.munch@hha.org</a></dd>
+                          <dt>License</dt><dd><span class="iq-not-available">No information</span></dd>
+                          <dt>Expires</dt><dd><span class="iq-not-available">No information</span></dd>
+                          </dl>
+                      </td>
+                      
+                      <td class="text-right">
+                        <button class="btn btn-link" data-toggle="modal" data-target="#confirmAdminDeletion">Delete</button>
+                        <button class="btn btn-link" onclick="$('#admin .read-view').removeClass('active'); $('#admin .edit-view').removeClass('active'); $('#admin .edit-view.editEdward').addClass('active');">Edit</button> </td>
+                    </tr>
+                      <tr><td>Director of Nursing</td><td><span class="iq-not-available">No information</span></td>
+                      <td><dl class="iq-dl">
+                          <dt>Phone</dt><dd>(703) 123-1212</dd>
+                          <dt>Fax</dt><dd><span class="iq-not-available">No information</span></dd>
+                          <dt>Email</dt><dd><span class="iq-not-available">No information</span></dd>
+                          <dt>License</dt><dd><span class="iq-not-available">No information</span></dd>
+                          <dt>Expires</dt><dd><span class="iq-not-available">No information</span></dd>
+                          </dl>
+                          
+                      </td>
+                      
+                      <td class="text-right">
+                        <button class="btn btn-link" data-toggle="modal" data-target="#confirmAdminDeletion">Delete</button>
+                        <button class="btn btn-link" onclick="$('#admin .read-view').removeClass('active'); $('#admin .edit-view').removeClass('active'); $('#admin .edit-view.editEmpty').addClass('active');">Edit</button> </td>
+                    </tr>
+                      <tr><td>Medical Director</td><td>Vicent van Gogh</td>
+                      <td><dl class="iq-dl">
+                          <dt>Phone</dt><dd>(123) 123-1222</dd>
+                          <dt>Fax</dt><dd><span class="iq-not-available">No information</span></dd>
+                          <dt>Email</dt><dd><span class="iq-not-available">No information</span></dd>
+                          <dt>License</dt><dd>23 123456</dd>
+                          <dt>Expires</dt><dd>12/31/2022</dd>
+                          </dl>
+                          
+                      </td>
+                      <td class="text-right">
+                        <button class="btn btn-link" data-toggle="modal" data-target="#confirmAdminDeletion">Delete</button>
+                        <button class="btn btn-link" onclick="$('#admin .read-view').removeClass('active'); $('#admin .edit-view').removeClass('active'); $('#admin .edit-view.editVincent').addClass('active');">Edit</button> </td>
+                    </tr>
+                      
+                      
+                    </tbody>
+              </table>
+                  
+              <!--<div class="accordion-wrapper addedAdmin">
+<div class="iq-accordion admin1">
+    <div class="card ">
+      <div class="card-header d-flex">
+        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#admin1" type="button" onclick="$(this).toggleClass('expanded');">
+          <span>Mr. Edward P. Munch<br><small>Assessment Coordinator <span class="badge-pill badge">Primary Administrator</span></small></span>
+        </button>
+        <div class="iq-accordion-actions d-flex align-items-center">
+          
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
+            Delete
+          </button><button type="button" class="btn btn-link" onClick="$('#admin .read-view').removeClass('active'); $('#admin .edit-view').removeClass('active'); $('#admin .edit-view.editEdward').addClass('active');">Edit</button>
+        </div>
+      </div>
+      <div id="admin1" class="collapse show">
+        <div class="card-body">
+            <dl class="iq-list">
+                <dt>Primary Administrator</dt>
+                <dd>Yes</dd>
+                <dt>Administrator Type</dt>
+                <dd>Assessment Coordinator</dd>
+                <dt>Phone</dt>
+                <dd>(703) 123-1111, ext. 123</dd>
+                <dt>Fax</dt>
+                <dd>(703) 123-3333</dd>
+                <dt>Email</dt>
+                <dd><a href="mailto:edward.munch@hha.org">edward.munch@hha.org</a></dd>
+                <dt>Medical/Nursing License Number</dt>
+                <dd><span class="iq-not-available">No information</span></dd>
+                <dt>License Expiration Date</dt>
+                <dd><span class="iq-not-available">No information</span></dd>
+            </dl>
+        
+          
+        </div>
+      </div>
+    </div>
+</div> 
+           <div class="iq-accordion admin2">
+    <div class="card ">
+      <div class="card-header d-flex">
+        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#admin2" type="button" onclick="$(this).toggleClass('expanded');">
+          <span>Vicent van Gogh<br><small>Medical Director</small></span>
+        </button>
+        <div class="iq-accordion-actions d-flex align-items-center">
+          
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
+            Delete
+          </button>
+          <button type="button" class="btn btn-link" onClick="$('#admin .read-view').removeClass('active'); $('#admin .edit-view').removeClass('active'); $('#admin .edit-view.editVicent').addClass('active');">Edit</button>
+        </div>
+      </div>
+      <div id="admin2" class="collapse">
+        <div class="card-body">
+            <dl class="iq-list">
+                <dt>Primary Administrator</dt>
+                <dd>No</dd>
+                <dt>Administrator Type</dt>
+                <dd>Medical Director</dd>
+                <dt>Phone</dt>
+                <dd>(703) 123-2222</dd>
+                <dt>Fax</dt>
+                <dd><span class="iq-not-available">No information</span></dd>
+                <dt>Email</dt>
+                <dd><span class="iq-not-available">No information</span></dd>
+                <dt>Medical/Nursing License Number</dt>
+                <dd>23 123456</dd>
+                <dt>License Expiration Date</dt>
+                <dd>12/31/2022</dd>
+            </dl>
+        
+          
+        </div>
+      </div>
+    </div>
+</div>
+                  <div class="iq-accordion admin3">
+    <div class="card ">
+      <div class="card-header d-flex">
+        <button class="btn btn-link btn-block d-flex align-items-center iq-accordion-label iq-accordion-actions" data-toggle="collapse" data-target="#admin3" type="button" onclick="$(this).toggleClass('expanded');">
+          <span><em class="iq-not-available">No information</em><br><small>Director of Nursing</small></span>
+        </button>
+        <div class="iq-accordion-actions d-flex align-items-center">
+          
+          <button type="button" class="btn btn-link" data-toggle="modal" data-target="#confirmAllegationDeletion">
+            Delete
+          </button>
+          <button type="button" class="btn btn-link" onClick="$('#admin .read-view').removeClass('active'); $('#admin .edit-view').removeClass('active'); $('#admin .edit-view.editVicent').addClass('active');">Edit</button>
+        </div>
+      </div>
+      <div id="admin3" class="collapse">
+        <div class="card-body">
+            <dl class="iq-list">
+                <dt>Primary Administrator</dt>
+                <dd>No</dd>
+                <dt>Administrator Type</dt>
+                <dd>Director of Nursing</dd>
+                <dt>Phone</dt>
+                <dd>(703) 123-1212</dd>
+                <dt>Fax</dt>
+                <dd><span class="iq-not-available">No information</span></dd>
+                <dt>Email</dt>
+                <dd><span class="iq-not-available">No information</span></dd>
+                <dt>Medical/Nursing License Number</dt>
+                <dd><span class="iq-not-available">No information</span></dd>
+                <dt>License Expiration Date</dt>
+                <dd><span class="iq-not-available">No information</span></dd>
+            </dl>
+        
+          
+        </div>
+      </div>
+    </div>
+</div>
+</div>-->
+                
+             
+            </section>
+            <section class="edit-view editEdward">
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <h2>Edit Administrator</h2>
+                  <p class="iqies-required-text">At least one field must be filled in below</p>
+                  <fieldset><legend class="sr-only">Basic Info</legend>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <fieldset class="">
+                            <legend class="iqies-legend-heading-no-error"></legend>
+                            <div class="custom-control custom-checkbox">
+                              <input id="isPrimaryEM" checked type="checkbox" class="custom-control-input">
+                              <label for="isPrimaryEM" class="custom-control-label"><span class="">Primary Administrator</span></label>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Administrator Type
+                          <select class="form-control">
+                            <option value="">Select one</option>
+                            <option value="1">Administrator</option>
+                            <option value="5" selected>Assessment Coordinator</option>
+                            <option value="2">Assistant Administrator</option>
+                            <option value="4">Director of Nursing</option>
+                            <option value="3">Medical Director</option>
+                          </select></label>
+                          <div class="form-text"> Role held by the administrator </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-md-2 text-right">
-                      <button class="btn btn-outline-primary" onclick="$('#admin .read-view').removeClass('active'); $('#admin .edit-view').removeClass('active'); $('#admin .edit-view.editEdward').addClass('active');">Edit</button>
+                    <div class="row">
+                    
+                    <div class="col-md-2 col-lg-2">
+                      <div class="form-group">
+                        <label>Salutation</label>
+                        <select class="form-control">
+                          <option value="">Select one</option>
+                          <option value="5">Dr.</option>
+                          <option value="4">Miss</option>
+                          <option value="2" selected>Mr.</option>
+                          <option value="3">Mrs.</option>
+                          <option value="1">Ms.</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input class="form-control" type="text" value="Edward">
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-1">
+                      <div class="form-group">
+                        <label>MI</label>
+                        <input class="form-control" maxlength="1" type="text" value="P">
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <label class="">Last Name</label>
+                        <input class="form-control" type="text" value="Munch">
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="iq-list">
+                 </fieldset>
+                  <fieldset>
+                    <legend class="iq-form-group-title">Contact Info</legend>  
+                  
                   <div class="row">
-                    <div class="col-md-4">
-                      <label>Administrator Type</label>
+                    <div class="col-12 col-md-3">
+                      <div class="form-group">
+                        <label>Phone</label>
+                        <input class="form-control" maxlength="10" type="tel" value="(703) 123-1111">
+                      </div>
                     </div>
-                    <div class="col-md-8">
-                      <p>Assessment Coordinator</p>
+                      <div class="col-12 col-md-2">
+                      <div class="form-group">
+                        <label>Extension
+                        <input class="form-control" maxlength="5" autocapitalize="none" type="tel" value="123"></label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <div class="form-group">
+                        <label>Fax</label>
+                        <input class="form-control" maxlength="10" type="tel" value="(703) 123-3333">
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group">
+                        <label class="">Email</label>
+                        <input class="form-control" type="email" value="edward.munch@hha.org">
+                      </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <label>License Number</label>
+                </fieldset>
+                    <fieldset>
+                    <legend class="iq-form-group-title">Details</legend>
+                    <div class="row">
+                      
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Medical/Nursing License Number</label>
+                          <input type="text" value="">
+                        </div>
+                      </div>
+                        <div class="col-md-4">
+                        <div class="form-group">
+                          <label>License Expiration Date</label>
+                          <div class="DayPickerInput">
+                            <input type="date" value="">
+                          </div>
+                          <div class="form-text">MM/DD/YYYY</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-md-8">
-                      <p>3413253515</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <label>License Expiration Date</label>
-                    </div>
-                    <div class="col-md-8">
-                      <p>01/31/2022</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <label>Start - End Date</label>
-                    </div>
-                    <div class="col-md-8">
-                      <p>07/30/2019 - 07/29/2020</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <label>Phone</label>
-                    </div>
-                    <div class="col-md-8">
-                      <p>(703) 123-1111</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <label>Fax</label>
-                    </div>
-                    <div class="col-md-8">
-                      <p>(703) 123-3333</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <label>Email</label>
-                    </div>
-                    <div class="col-md-8">
-                      <p>edward.munch@hha.org</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <label>Address</label>
-                    </div>
-                    <div class="col-md-8">
-                      <p>123 Reston Parkway, Suite 101<br>
-                        Reston, VA 20191</p>
+                  
+                  </fieldset>
+                    <div class="row">
+                    <div class="col">
+                      <div class="iq-button-wrapper">
+                        <button class="btn btn-primary" onClick="$('#admin .edit-view').removeClass('active'); $('#admin .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#admin .tabTitle .btn').removeClass('hide');">Save</button>
+                        <button class="btn btn-link" onClick="$('#admin .edit-view').removeClass('active'); $('#admin .read-view').addClass('active');  $('#admin .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
-            <section class="edit-view editEdward">
-              <h2>Edit Administrator</h2>
+              <section class="edit-view editEmpty">
+              
               <div class="row">
                 <div class="col-md-12">
-                  <p class="iqies-required-text">All required fields are marked with an asterisk (<span class="iq-asterisk">*</span>)</p>
-                  <div class="row">
-                    <div class="col-md-6 col-lg-3">
+                  <h2>Edit Administrator</h2>
+                  <p class="iqies-required-text">At least one field must be filled in below</p>
+                  <fieldset><legend class="sr-only">Basic Info</legend>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <fieldset class="">
+                            <legend class="iqies-legend-heading-no-error"></legend>
+                            <div class="custom-control custom-checkbox">
+                              <input id="isPrimaryEmpty" type="checkbox" class="custom-control-input" onChange="confirmPrimary(this)">
+                              <label for="isPrimaryEmpty" class="custom-control-label"><span class="">Primary Administrator</span></label>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Administrator Type
+                          <select class="form-control">
+                            <option value="">Select one</option>
+                            <option value="1">Administrator</option>
+                            <option value="5">Assessment Coordinator</option>
+                            <option value="2">Assistant Administrator</option>
+                            <option value="4" selected>Director of Nursing</option>
+                            <option value="3">Medical Director</option>
+                          </select></label>
+                          <div class="form-text"> Role held by the administrator </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                    
+                    <div class="col-md-2 col-lg-2">
                       <div class="form-group">
                         <label>Salutation</label>
-                        <select>
+                        <select class="form-control">
+                          <option value="">Select one</option>
+                          <option value="5">Dr.</option>
+                          <option value="4">Miss</option>
+                          <option value="2">Mr.</option>
+                          <option value="3">Mrs.</option>
+                          <option value="1" selected>Ms.</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4">
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input class="form-control" type="text" value="">
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-1">
+                      <div class="form-group">
+                        <label>MI</label>
+                        <input class="form-control" maxlength="1" type="text" value="">
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <label class="">Last Name</label>
+                        <input class="form-control" type="text" value="">
+                      </div>
+                    </div>
+                  </div>
+                 </fieldset>
+                  <fieldset>
+                    <legend class="iq-form-group-title">Contact Info</legend>  
+                  
+                  <div class="row">
+                    <div class="col-12 col-md-3">
+                      <div class="form-group">
+                        <label>Phone</label>
+                        <input class="form-control" maxlength="10" type="tel" value="(703) 123-1212">
+                      </div>
+                    </div>
+                      <div class="col-12 col-md-2">
+                      <div class="form-group">
+                        <label>Extension
+                        <input class="form-control" maxlength="5" autocapitalize="none" type="tel" value=""></label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <div class="form-group">
+                        <label>Fax</label>
+                        <input class="form-control" maxlength="10" type="tel" value="">
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                      <div class="form-group">
+                        <label class="">Email</label>
+                        <input class="form-control" type="email" value="">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                    <fieldset>
+                    <legend class="iq-form-group-title">Details</legend>
+                    <div class="row">
+                      
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Medical/Nursing License Number</label>
+                          <input type="text" value="">
+                        </div>
+                      </div>
+                        <div class="col-md-4">
+                        <div class="form-group">
+                          <label>License Expiration Date</label>
+                          <div class="DayPickerInput">
+                            <input type="date" value="">
+                          </div>
+                          <div class="form-text">MM/DD/YYYY</div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  </fieldset>
+                    <div class="row">
+                    <div class="col">
+                      <div class="iq-button-wrapper">
+                        <button class="btn btn-primary" onClick="$('#admin .edit-view').removeClass('active'); $('#admin .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#admin .tabTitle .btn').removeClass('hide');">Save</button>
+                        <button class="btn btn-link" onClick="$('#admin .edit-view').removeClass('active'); $('#admin .read-view').addClass('active');  $('#admin .tabTitle .btn').removeClass('hide'); ">Cancel</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+              <section class="edit-view editVincent">
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <h2>Edit Administrator</h2>
+                  <p class="iqies-required-text">At least one field must be filled in below</p>
+                  <fieldset><legend class="sr-only">Basic Info</legend>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <fieldset class="">
+                            <legend class="iqies-legend-heading-no-error"></legend>
+                            <div class="custom-control custom-checkbox">
+                              <input id="isPrimaryVin" type="checkbox" class="custom-control-input" onChange="confirmPrimary(this)">
+                              <label for="isPrimaryVin" class="custom-control-label"><span class="">Primary Administrator</span></label>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Administrator Type
+                          <select class="form-control">
+                            <option value="">Select one</option>
+                            <option value="1">Administrator</option>
+                            <option value="5">Assessment Coordinator</option>
+                            <option value="2">Assistant Administrator</option>
+                            <option value="4">Director of Nursing</option>
+                            <option value="3" selected>Medical Director</option>
+                          </select></label>
+                          <div class="form-text"> Role held by the administrator </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                    
+                    <div class="col-md-2 col-lg-2">
+                      <div class="form-group">
+                        <label>Salutation</label>
+                        <select class="form-control">
                           <option value="">Select one</option>
                           <option value="5">Dr.</option>
                           <option value="4">Miss</option>
@@ -4201,210 +4503,79 @@
                         </select>
                       </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-4 col-lg-4">
                       <div class="form-group">
-                        <label id="firstName-labelEE" for="firstNameEE" class="">First Name</label>
-                        <input id="firstNameEE" name="firstNameEE" class="form-control" autocapitalize="none" type="text" value="">
+                        <label>First Name</label>
+                        <input class="form-control" type="text" value="Vincent">
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-1">
                       <div class="form-group">
-                        <label id="middleInitial-labelEE" for="middleInitialEE" class="">MI</label>
-                        <input id="middleInitialEE" name="middleInitialEE" class="form-control" maxlength="1" autocapitalize="none" type="text" value="">
+                        <label>MI</label>
+                        <input class="form-control" maxlength="1" type="text" value="">
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="form-group">
-                        <label id="lastName-labelEE" for="lastNameEE" class="">Last Name</label>
-                        <input id="lastNameEE" name="lastNameEE" class="form-control" autocapitalize="none" type="text" value="">
+                        <label class="">Last Name</label>
+                        <input class="form-control" type="text" value="van Gogh">
                       </div>
                     </div>
                   </div>
+                 </fieldset>
+                  <fieldset>
+                    <legend class="iq-form-group-title">Contact Info</legend>  
+                  
                   <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-3">
                       <div class="form-group">
-                        <label id="phoneNumber-labelEE" for="phoneNumberEE" class="">Phone</label>
-                        <input id="phoneNumberEE" name="phoneNumberEE" class="form-control" maxlength="10" autocapitalize="none" type="tel" value="">
+                        <label>Phone</label>
+                        <input class="form-control" maxlength="10" type="tel" value="(123) 123-1222">
+                      </div>
+                    </div>
+                      <div class="col-12 col-md-2">
+                      <div class="form-group">
+                        <label>Extension
+                        <input class="form-control" maxlength="5" autocapitalize="none" type="tel" value=""></label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <div class="form-group">
+                        <label>Fax</label>
+                        <input class="form-control" maxlength="10" type="tel" value="">
                       </div>
                     </div>
                     <div class="col-12 col-md-4">
                       <div class="form-group">
-                        <label id="faxNumber-labelEE" for="faxNumberEE" class="">Fax</label>
-                        <input id="faxNumberEE" name="faxNumberEE" class="form-control" maxlength="10" autocapitalize="none" type="tel" value="">
-                      </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                      <div class="form-group">
-                        <label id="email-labelEE" for="emailEE" class="">Email</label>
-                        <input id="emailEE" name="emailEE" class="form-control" autocapitalize="none" type="email" value="">
+                        <label class="">Email</label>
+                        <input class="form-control" type="email" value="">
                       </div>
                     </div>
                   </div>
-                  <fieldset>
-                    <!--<legend><h3>Address</h3></legend>-->
+                </fieldset>
+                    <fieldset>
+                    <legend class="iq-form-group-title">Details</legend>
                     <div class="row">
-                      <div class="col-md-12">
+                      
+                      <div class="col-md-4">
                         <div class="form-group">
-                          <label>Address Line 1 <span class="iq-asterisk">*</span></label>
-                          <input type="text" class="form-control"
-                            required>
-                          <span class="help-text">Number and street name or PO box</span> </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>Address Line 2</label>
-                          <input type="text" class="form-control">
-                          <span class="help-text">Company, C/O, Apt, Suite, Unit Building, Floor, etc.</span> </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <div class="form-group">
-                          <label>City</label>
-                          <input type="text" value="">
+                          <label>Medical/Nursing License Number</label>
+                          <input type="text" value="23 123456">
                         </div>
                       </div>
-                      <div class="col-12 col-md-3">
-                        <div class="form-group">
-                          <label>State</label>
-                          <select>
-                            <option value="">Select one</option>
-                            <option value="19">Alabama</option>
-                            <option value="59">Alaska</option>
-                            <option value="52">American Samoa</option>
-                            <option value="48">Arizona</option>
-                            <option value="33">Arkansas</option>
-                            <option value="49">California</option>
-                            <option value="42">Colorado</option>
-                            <option value="1">Connecticut</option>
-                            <option value="13">Delaware</option>
-                            <option value="14">District of Columbia</option>
-                            <option value="20">Florida</option>
-                            <option value="21">Georgia</option>
-                            <option value="53">Guam</option>
-                            <option value="50">Hawaii</option>
-                            <option value="60">Idaho</option>
-                            <option value="27">Illinois</option>
-                            <option value="28">Indiana</option>
-                            <option value="38">Iowa</option>
-                            <option value="39">Kansas</option>
-                            <option value="22">Kentucky</option>
-                            <option value="34">Louisiana</option>
-                            <option value="2">Maine</option>
-                            <option value="56">Marshall Islands</option>
-                            <option value="15">Maryland</option>
-                            <option value="3">Massachusetts</option>
-                            <option value="29">Michigan</option>
-                            <option value="55">Micronesia</option>
-                            <option value="30">Minnesota</option>
-                            <option value="23">Mississippi</option>
-                            <option value="40">Missouri</option>
-                            <option value="43">Montana</option>
-                            <option value="41">Nebraska</option>
-                            <option value="51">Nevada</option>
-                            <option value="4">New Hampshire</option>
-                            <option value="7">New Jersey</option>
-                            <option value="35">New Mexico</option>
-                            <option value="8">New York</option>
-                            <option value="24">North Carolina</option>
-                            <option value="44">North Dakota</option>
-                            <option value="54">Northern Mariana Islands</option>
-                            <option value="31">Ohio</option>
-                            <option value="36">Oklahoma</option>
-                            <option value="61">Oregon</option>
-                            <option value="57">Palau</option>
-                            <option value="16">Pennsylvania</option>
-                            <option value="9">Puerto Rico</option>
-                            <option value="5">Rhode Island</option>
-                            <option value="25">South Carolina</option>
-                            <option value="45">South Dakota</option>
-                            <option value="26">Tennessee</option>
-                            <option value="37">Texas</option>
-                            <option value="46">Utah</option>
-                            <option value="6">Vermont</option>
-                            <option value="17">Virginia</option>
-                            <option value="10">Virgin Islands</option>
-                            <option value="62">Washington</option>
-                            <option value="18">West Virginia</option>
-                            <option value="32">Wisconsin</option>
-                            <option value="47">Wyoming</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-3">
-                        <div class="form-group">
-                          <label id="zip-labelEE" for="zipEE" class="">Zip Code</label>
-                          <input id="zipEE" name="zipEE" class="form-control" maxlength="5" autocapitalize="none" type="text" value="">
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                  <fieldset>
-                    <legend class="iq-form-group-title">Administrator Details</legend>
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <fieldset class="">
-                            <legend class="iqies-legend-heading-no-error"></legend>
-                            <div class="custom-control custom-checkbox">
-                              <input id="isPrimaryEE" type="checkbox" class="custom-control-input">
-                              <label for="isPrimaryEE" class="custom-control-label"><span class="">Primary Administrator</span></label>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 col-md-6">
-                        <div class="form-group">
-                          <label for="administratorTypeIdEE">Administrator Type</label>
-                          <select id="administratorTypeIdEE" class="form-control">
-                            <option value="">Select one</option>
-                            <option value="1">Administrator</option>
-                            <option value="5">Assessment Coordinator</option>
-                            <option value="2">Assistant Administrator</option>
-                            <option value="4">Director of Nursing</option>
-                            <option value="3">Medical Director</option>
-                          </select>
-                          <div class="form-text"> Role held by the administrator </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <div class="form-group">
-                          <label>License Number</label>
-                          <input class="form-control" type="text" value="">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 col-md-4">
+                        <div class="col-md-4">
                         <div class="form-group">
                           <label>License Expiration Date</label>
                           <div class="DayPickerInput">
-                            <input type="date" class="form-control" value="">
-                          </div>
-                          <div class="form-text">MM/DD/YYYY</div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-4">
-                        <div class="form-group">
-                          <label>Start Date</label>
-                          <div class="DayPickerInput">
-                            <input type="date" value="">
-                          </div>
-                          <div class="form-text">MM/DD/YYYY</div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-4">
-                        <div class="form-group">
-                          <label>End Date</label>
-                          <div class="DayPickerInput">
-                            <input type="date">
+                            <input type="date" value="2022-12-31">
                           </div>
                           <div class="form-text">MM/DD/YYYY</div>
                         </div>
                       </div>
                     </div>
+                  
                   </fieldset>
-                  <div class="row">
+                    <div class="row">
                     <div class="col">
                       <div class="iq-button-wrapper">
                         <button class="btn btn-primary" onClick="$('#admin .edit-view').removeClass('active'); $('#admin .read-view').addClass('active'); $('.successMsg').removeClass('hide'); $('#admin .tabTitle .btn').removeClass('hide');">Save</button>
@@ -4416,6 +4587,7 @@
               </div>
             </section>
           </div>
+        <!-- attachments -->
           <div class="tab-pane " id="attachment" role="tabpanel" aria-labelledby="attachmentTab">
             <section class="edit-view addAttachment">
               <div class="alert alert-danger fileTooLargeMsg hide" role="alert">
@@ -4717,6 +4889,24 @@
     </div>
   </div>
 </main>
+<!-- modal no more primary -->
+<div class="modal fade" id="confirmPrimaryAdmin" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Reassign Primary Administrator</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+      </div>
+      <div class="modal-body">
+        
+      <p>This provider already has a primary administor. Please confirm you want to reassign this role.</p></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal" onClick="$('#admin .edit-view.active input[type=checkbox]').click();">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- modal confirm building deletion -->
 <div class="modal fade" id="confirmBuildingDeletion" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -4814,7 +5004,24 @@
     </div>
   </div>
 </div>
-
+<!-- modal confirm admin deletion -->
+<div class="modal fade" id="confirmAdminDeletion" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Administrator</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+      </div>
+      <div class="modal-body">
+        <p>Please confirm you want to delete this administrator.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+    </div> 
 <!-- confirmation of saving after certificate and license modal -->
 <div class="modal fade" id="confirmCertificateSave" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -5088,6 +5295,12 @@
     }
 </script> 
 <script>
+    //admin tab primary admin checkbox 
+    function confirmPrimary(e){
+        if(e.checked){
+            $('#confirmPrimaryAdmin').modal('show');
+        }
+    }
     function saveBuilding(){
           $('#building .edit-view').removeClass('active'); 
           $('#building .read-view').addClass('active'); 
